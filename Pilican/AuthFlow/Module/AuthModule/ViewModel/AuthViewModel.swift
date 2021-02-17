@@ -9,7 +9,7 @@ final class AuthViewModel: ViewModel {
     }
 
     struct Output {
-        let isLogged: Observable<LoadingSequence<OAuthToken>>
+        let isLogged: Observable<LoadingSequence<UserAuthResponse>>
     }
 
     private let authService: AuthenticationService

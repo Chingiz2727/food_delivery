@@ -1,5 +1,6 @@
 import UIKit
 import Swinject
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         setupWindow()
         makeCoordinator(application: application)
+        setupKeyboardManager()
+        setupNavigationBar()
         LoggerConfigurator.configure()
         // Override point for customization after application launch.
         return true
@@ -21,21 +24,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        window?.rootViewController = CoordinatorNavigationController(
+            backBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal),
+            closeBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal)
+        )
     }
 
     func makeCoordinator(application: UIApplication) {
-        let rootContainer = Container()
-        rootContainer.register(AppRouter.self) { [unowned self] _ in
-            return AppRouterImpl(window: self.window)
+        guard let rootController = application.windows.first?.rootViewController as? CoordinatorNavigationController else {
+            fatalError("rootViewController must be CoordinatorNavigationController")
         }
 
-        let rootAssembler = Assembler(
-            [
-                DependencyContainerAssembly()
-            ],
-            container: rootContainer)
-
-        let coordinator = AppCoordinator(router: AppRouterImpl(window: window), container: rootAssembler.resolver)
-        coordinator.start()
+        appCoordinator = AppCoordinator(router: Router(rootController: rootController), container: assembler.resolver)
+        appCoordinator?.start()
     }
+
+    private func setupKeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.toolbarTintColor = .primary
+    }
+
+    private func setupNavigationBar() {
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.isTranslucent = false
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.titleTextAttributes = Constants.titleTextAttributes
+        navigationBar.tintColor = .pilicanBlack
+        navigationBar.barTintColor = .background
+    }
+}
+
+private enum Constants {
+    static let titleTextAttributes: [NSAttributedString.Key: Any] = [
+        :
+    ]
+    static let textViewAttributes: [NSAttributedString.Key: Any] = [
+        :
+    ]
 }

@@ -1,0 +1,43 @@
+disabled_rules:
+  - identifier_name
+identifier_name:
+  excluded:
+    - id
+type_name:
+  max_length:
+    warning: 50
+    error: 60
+line_length:
+  warning: 130
+  ignores_comments: true
+
+opt_in_rules: # some rules are only opt-in
+  - closing_brace
+  - opening_brace
+  - return_arrow_whitespace
+  - trailing_semicolon
+  - statement_position
+  - indentation_width
+  - multiline_parameters_brackets
+  - closure_spacing
+  - collection_alignment
+  - empty_count
+  - for_where
+  - closure_end_indentation
+  - closure_parameter_position
+  - literal_expression_end_indentation
+  - vertical_whitespace_closing_braces
+  - anyobject_protocol
+  - let_var_whitespace
+  - no_space_in_method_call
+  - operator_usage_whitespace
+
+indentation_width:
+  indentation_width: 4
+  include_comments: false
+  
+nesting:
+  type_level: 2
+excluded:
+- Core
+- Pods

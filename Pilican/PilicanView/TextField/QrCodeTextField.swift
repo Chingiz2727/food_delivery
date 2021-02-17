@@ -12,7 +12,6 @@ final class QrCodeTextField: TextField {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
-        isSecureTextEntry = true
     }
 
     required public init?(coder: NSCoder) {

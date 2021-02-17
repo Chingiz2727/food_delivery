@@ -9,6 +9,7 @@ final class RegisterView: UIView {
     let cityContainer = TextFieldContainer<TextField>()
 
     let registerButton = PrimaryButton()
+    let sendSmsButton = PrimaryButton()
 
     private let welcomeLabel: UILabel = {
         let label = UILabel()
@@ -27,8 +28,14 @@ final class RegisterView: UIView {
         return stack
     }()
 
-    private lazy var textFielContainerStack = UIStackView(
+    private lazy var textFieldContainerStack = UIStackView(
         views: [loginContainer, userNameContainer, cityContainer, promoCodeContainer, smsContainer],
+        axis: .vertical,
+        distribution: .equalSpacing,
+        spacing: 20)
+
+    private lazy var buttonContainerStack = UIStackView(
+        views: [registerButton, sendSmsButton],
         axis: .vertical,
         distribution: .equalSpacing,
         spacing: 20)
@@ -43,27 +50,45 @@ final class RegisterView: UIView {
         super.init(coder: coder)
     }
 
+    func setViewStatus(status: RegistrationStatus) {
+        switch status {
+        case .getSMS:
+            smsContainer.isHidden = true
+            sendSmsButton.isHidden = false
+            registerButton.isHidden = true
+        case .register:
+            smsContainer.isHidden = false
+            sendSmsButton.isHidden = true
+            registerButton.isHidden = false
+        }
+    }
+
     private func setupInitialLayout() {
         addSubview(welcomeStackView)
-        addSubview(textFielContainerStack)
-        addSubview(registerButton)
+        addSubview(textFieldContainerStack)
+        addSubview(buttonContainerStack)
 
         welcomeStackView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview().inset(30)
         }
 
-        textFielContainerStack.snp.makeConstraints { make in
+        textFieldContainerStack.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
             make.centerY.equalToSuperview()
         }
 
-        registerButton.snp.makeConstraints { make in
+        buttonContainerStack.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
-            make.height.equalTo(44)
             make.bottom.equalToSuperview().inset(30)
         }
 
-        textFielContainerStack.arrangedSubviews.forEach {
+        buttonContainerStack.arrangedSubviews.forEach {
+            $0.snp.makeConstraints { make in
+                make.height.equalTo(44)
+            }
+        }
+
+        textFieldContainerStack.arrangedSubviews.forEach {
             $0.snp.makeConstraints { make in
                 make.height.equalTo(40)
             }
@@ -78,6 +103,10 @@ final class RegisterView: UIView {
         smsContainer.title = "СМС Код"
         welcomeLabel.text = "Cоздать учетную запись"
         welcomeDescriptionLabel.text = "Зарегистрируйтесь, чтобы начать"
+        registerButton.setTitle("Регистрация", for: .normal)
+        sendSmsButton.setTitle("Получить смс", for: .normal)
+        registerButton.isHidden = true
+        smsContainer.isHidden = true
         backgroundColor = .background
     }
 }

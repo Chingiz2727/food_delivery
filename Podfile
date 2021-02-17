@@ -17,4 +17,6 @@ target 'Pilican' do
   pod 'Willow', '~> 6.0'
   pod 'IQKeyboardManagerSwift', '6.3.0'
   pod 'UltraDrawerView', '0.5.0'
+  pod 'SwiftMessages', '8.0.3'
+  pod 'lottie-ios', '3.1.2'
 end

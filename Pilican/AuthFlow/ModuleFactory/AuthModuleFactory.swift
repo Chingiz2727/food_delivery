@@ -1,3 +1,5 @@
+import Swinject
+
 final class AuthModuleFactory {
     private let container: DependencyContainer
 
@@ -6,28 +8,22 @@ final class AuthModuleFactory {
     }
 
     func makeAuthUserName() -> AuthModule {
-        let apiService = container.resolve(ApiService.self)!
-        let configService = container.resolve(ConfigService.self)!
-        let tokenService = container.resolve(AuthTokenService.self)!
-        let authService = AuthenticationServiceImpl(
-            apiService: apiService,
-            configService: configService,
-            authTokenService: tokenService
-        )
+        let authService = container.resolve(AuthenticationService.self)!
         let viewModel = AuthViewModel(authService: authService)
         let viewController = AuthViewController(viewModel: viewModel)
         return viewController
     }
 
+    func makeAuthBySms() -> AuthBySmsModule {
+        let authService = container.resolve(AuthenticationService.self)!
+
+        let viewModel = AuthBySmsViewModel(authService: authService)
+        let viewController = AuthBySmsViewController(viewModel: viewModel)
+        return viewController
+    }
+
     func makeRegistration() -> RegisterModule {
-        let apiService = container.resolve(ApiService.self)!
-        let configService = container.resolve(ConfigService.self)!
-        let tokenService = container.resolve(AuthTokenService.self)!
-        let authService = AuthenticationServiceImpl(
-            apiService: apiService,
-            configService: configService,
-            authTokenService: tokenService
-        )
+        let authService = container.resolve(AuthenticationService.self)!
         let viewModel = RegistrationViewModel(authService: authService)
         let viewControllerr = RegisterViewController(viewModel: viewModel)
         return viewControllerr

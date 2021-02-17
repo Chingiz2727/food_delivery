@@ -31,7 +31,7 @@ public extension ApiTarget {
   var defaultHeaders: [String: String] {
     var headers =  [String: String]()
     headers["Content-Type"] = "application/json"
-//    headers["Accept"] = "application/json"
+    headers["appver"] = "3.0.0"
     return headers
   }
 

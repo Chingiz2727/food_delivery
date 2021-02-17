@@ -4,6 +4,7 @@ final class RegistrationViewModel: ViewModel {
 
     struct Input {
         let registerTapped: Observable<Void>
+        let getSmsTapped: Observable<Void>
         let loadCity: Observable<Void>
         let userLogin: Observable<String>
         let userName: Observable<String?>
@@ -13,8 +14,9 @@ final class RegistrationViewModel: ViewModel {
     }
 
     struct Output {
-        let token: Observable<LoadingSequence<OAuthToken>>
+        let token: Observable<LoadingSequence<UserAuthResponse>>
         let getCity: Observable<[City]>
+        let getSms: Observable<LoadingSequence<ResponseStatus>>
     }
 
     private let authService: AuthenticationService
@@ -24,11 +26,17 @@ final class RegistrationViewModel: ViewModel {
     }
 
     func transform(input: Input) -> Output {
-        
         let registerUser = input.registerTapped
             .withLatestFrom(Observable.combineLatest(input.userLogin, input.userName, input.promoCode, input.city, input.smsCode))
             .flatMap { [unowned self] login, name, code, city, smsCode in
-                authService.createUser(phone: login , fullName: name ?? "", password: smsCode ?? "", cityId: city.id, promo: code ?? "")
+                authService.createUser(phone: login, fullName: name ?? "", password: smsCode ?? "", cityId: city.id, promo: code ?? "")
+            }
+            .share()
+
+        let getSmsCode = input.getSmsTapped
+            .withLatestFrom(input.userLogin)
+            .flatMap { [unowned self] login in
+                authService.getSMSCode(login)
             }
             .share()
 
@@ -37,7 +45,7 @@ final class RegistrationViewModel: ViewModel {
                 return Observable.just(loadJson())
             }
 
-        return .init(token: registerUser, getCity: loadCity)
+        return .init(token: registerUser, getCity: loadCity, getSms: getSmsCode)
     }
 
     private func loadJson() -> [City] {

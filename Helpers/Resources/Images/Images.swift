@@ -3,6 +3,9 @@ import UIKit
 enum Images: String {
     case qrCode
     case close
+    case Border
+    case flash
+    case rotate
 }
 
 extension Images {

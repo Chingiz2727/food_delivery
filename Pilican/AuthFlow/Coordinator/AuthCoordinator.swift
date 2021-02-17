@@ -1,46 +1,51 @@
-public protocol AuthCoordinatorOutput {
-    typealias OnFlowDidFinish = () -> Void
+import Swinject
 
-    var onFlowDidFinish: OnFlowDidFinish? { get set }
-}
-
-final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
-    var onFlowDidFinish: OnFlowDidFinish?
+final class AuthCoordinator: BaseCoordinator {
 
     private let moduleFactory: AuthModuleFactory
-    private let container: DependencyContainer
-
-    init(container: DependencyContainer, router: AppRouter) {
+    init(container: DependencyContainer, router: Router) {
         self.moduleFactory = AuthModuleFactory(container: container)
-        self.container = container
-        super.init(assembler: container, router: router)
+        super.init(router: router, container: container)
     }
 
     override func start() {
-//        showAuth()
-        showRegistration()
+        showAuth()
     }
 
     private func showAuth() {
         var module = moduleFactory.makeAuthUserName()
-        module.authButtonTapped = { [weak self] in
+        module.registerButtonTapped = { [weak self] in
             self?.showRegistration()
         }
+
+        module.authBySms = { [weak self] in
+            self?.showAuthBySms()
+        }
         router.setRootModule(module)
+    }
+
+    private func showAuthBySms() {
+        let module = moduleFactory.makeAuthBySms()
+        router.push(module)
     }
 
     private func showRegistration() {
         var module = moduleFactory.makeRegistration()
         module.qrScanTapped = { [weak self] in
-            print("scanme")
+            self?.showCamera(qrScanned: { promoCode in
+                module.putPromoCodeToText?(promoCode)
+            })
         }
-        router.setRootModule(module)
-//        router.push(module.withBackDismissButton())
+        router.push(module)
     }
 
-    private func showCamera() {
+    private func showCamera(qrScanned: @escaping((String) -> Void)) {
         var module = container.resolve(CameraModule.self)!
         module.cameraActionType = .readPromoCode
+        module.promoCodeScanned = { [weak self] promoCode in
+            self?.router.popModule()
+            qrScanned(promoCode)
+        }
         router.push(module)
     }
 }

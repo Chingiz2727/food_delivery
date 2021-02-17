@@ -18,13 +18,13 @@ enum AuthTarget: ApiTarget {
     var path: String {
         switch self {
         case .getSmsCode:
-            return "api/v1/auth/sms"
+            return "v1/auth/sms"
         case .getAuthSmsCode:
-            return "api/v1/auth/reset-password-request"
+            return "v1/auth/reset-password-request"
         case .verifySmsCode:
-            return "api/v1/auth/auth-sms"
+            return "v1/auth/auth-sms"
         case .register:
-            return "api/v1/auth/sign-up"
+            return "v1/auth/sign-up"
         case .loginUser:
             return "s/v1/manual/token/mobile"
         case .updateProfile:
@@ -42,19 +42,27 @@ enum AuthTarget: ApiTarget {
         switch self {
         case .loginUser(let phone, let password):
             return ["userName": phone, "password": password]
-        case .getAuthSmsCode(let phone):
-            return ["test": phone]
+        case .getSmsCode:
+            return ["test": "value"]
         case let .register(username, password, fullName, cityId, promo):
             let params = [
-                "username": username,
-                "password": password,
-                "fullName": fullName,
-                "cityId": cityId,
-                "promo": promo
+                "username": username.toBase64(),
+                "password": password.toBase64(),
+                "fullName": fullName.toBase64(),
+                "cityId": "\(cityId)".toBase64(),
+                "promo": promo?.toBase64()
             ] as [String: Any]
+            return params
+        case let .verifySmsCode(phone, code):
+            let params = [
+                "userName": phone,
+                "password": code
+            ]
             return params
         case .firbaseToken(let fireBaseToken):
             return ["": fireBaseToken]
+        case .getAuthSmsCode:
+            return ["test": "value"]
         default:
             return [:]
         }
@@ -66,12 +74,20 @@ enum AuthTarget: ApiTarget {
 
     var headers: [String: String]? {
         switch self {
-        case .loginUser:
+        case .loginUser, .register, .verifySmsCode:
             return
                 [
                     "clientId": "bW9iaWxl",
-                    "appver": "3.0.2"
+                    "appver": "3.0.0"
                 ]
+        case let .getSmsCode(phone):
+            return [
+                "userName": phone.toBase64()
+            ]
+        case let .getAuthSmsCode(phone):
+            return [
+                "userName": phone.toBase64()
+            ]
         default:
             return [:]
         }

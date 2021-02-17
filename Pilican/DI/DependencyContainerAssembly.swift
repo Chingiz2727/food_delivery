@@ -1,10 +1,10 @@
 import Swinject
 import AVFoundation
-
-public typealias DependencyContainer = Resolver
+typealias DependencyContainer = Resolver
 
 public final class DependencyContainerAssembly: Assembly {
     public func assemble(container: Container) {
+
         ApiServicesAssemblyImpl()
             .registerNetworkLayer(in: container)
         AuthServiceAssemblyImpl()
@@ -34,12 +34,6 @@ public final class DependencyContainerAssembly: Assembly {
             return AVCaptureDevice.default(for: mediaType)!
         }
 
-        container.register(AVCaptureMetadataOutput.self) { _ in
-            let output = AVCaptureMetadataOutput()
-            output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-            return output
-        }
-
         container.register(AVCaptureSession.self) { _ in
             return AVCaptureSession()
         }
@@ -50,16 +44,28 @@ public final class DependencyContainerAssembly: Assembly {
             return layer
         }
 
+        container.register(AuthenticationService.self) { _ in
+            let apiService = container.resolve(ApiService.self)!
+            let configService = container.resolve(ConfigService.self)!
+            let tokenService = container.resolve(AuthTokenService.self)!
+            let authService = AuthenticationServiceImpl(
+                apiService: apiService,
+                configService: configService,
+                authTokenService: tokenService
+            )
+            return authService
+        }
+
         container.register(CameraModule.self) { _ in
             let session = container.resolve(AVCaptureSession.self)!
             let device = container.resolve(AVCaptureDevice.self)!
             let layer = container.resolve(AVCaptureVideoPreviewLayer.self)!
-            let output = container.resolve(AVCaptureMetadataOutput.self)!
+            let cameraUsagePermission = container.resolve(CameraUsagePermission.self)!
             let controller = CameraViewController(
                 avCaptureSession: session,
                 avCaptureDevice: device,
                 avCapturePreviewLayer: layer,
-                avCaptureOuput: output)
+                cameraUsagePermession: cameraUsagePermission)
             return controller
         }
     }

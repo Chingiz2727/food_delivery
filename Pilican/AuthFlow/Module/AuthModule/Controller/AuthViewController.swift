@@ -1,7 +1,7 @@
 import RxSwift
 import UIKit
 
-final class AuthViewController: UIViewController, AuthModule, ViewHolder {
+final class AuthViewController: ViewController, AuthModule, ViewHolder {
 
     typealias RootViewType = AuthView
 

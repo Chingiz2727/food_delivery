@@ -11,9 +11,10 @@ public struct PilicanRequestAdapter: RequestAdapter {
 //    resultRequest.url = adaptedUrl(resultRequest.url)
 //        resultRequest.setValue(configService.redirectionUrl.absoluteString, forHTTPHeaderField: "X-User-Host")
 
-    resultRequest.setValue(String(configService.appVersion), forHTTPHeaderField: "X-User-Version")
-    resultRequest.setValue("ru", forHTTPHeaderField: "Accept-Language")
-    resultRequest.setValue("ios_app", forHTTPHeaderField: "X-User-Platform")
+//    resultRequest.setValue(String(configService.appVersion), forHTTPHeaderField: "X-User-Version")
+//    resultRequest.setValue("ru", forHTTPHeaderField: "Accept-Language")
+//    resultRequest.setValue("ios_app", forHTTPHeaderField: "X-User-Platform")
+//    resultRequest.setValue("appver", forHTTPHeaderField: "3.0.0")
 
 //    if let authHeader = urlRequest.value(forHTTPHeaderField: "Authorization"),
 //      authHeader.contains("Basic") || authHeader.contains("Social") {
@@ -21,7 +22,7 @@ public struct PilicanRequestAdapter: RequestAdapter {
 //      return resultRequest
 //    }
     if let token = authService.token, let accessToken = token.accessToken {
-      resultRequest.setValue("\(token.tokenType) \(accessToken)", forHTTPHeaderField: "Authorization")
+      resultRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
     }
     return resultRequest
   }

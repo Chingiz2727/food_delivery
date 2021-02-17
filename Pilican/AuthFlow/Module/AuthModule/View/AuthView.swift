@@ -95,6 +95,7 @@ final class AuthView: UIView {
         authBySmsButton.setTitleColor(.pilicanLightGray, for: .normal)
         authStackView.setCustomSpacing(15, after: passwordContainer)
         registerButton.setTitleColor(.primary, for: .normal)
-        welcomeLabel.text = "dasdsadsa"
+        welcomeLabel.text = "Добро пожаловать!"
+        welcomeDescriptionLabel.text = "Войдите чтобы продолжить"
     }
 }

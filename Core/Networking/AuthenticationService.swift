@@ -3,12 +3,15 @@ import RxRelay
 import Foundation
 
 public protocol AuthenticationService {
-    var token: OAuthToken! { get }
+    var token: Token! { get }
     var authenticated: Observable<Bool> { get }
     
-    func getSMSCode(_ phone: String) -> Observable<Void>
-    func login(phone: String, password: String) -> Observable<LoadingSequence<OAuthToken>>
-    func createUser(phone: String, fullName: String, password: String, cityId: Int, promo: String?) ->  Observable<LoadingSequence<OAuthToken>>
+    func getSMSCode(_ phone: String) -> Observable<LoadingSequence<ResponseStatus>>
+    func login(phone: String, password: String) -> Observable<LoadingSequence<UserAuthResponse>>
+    func createUser(phone: String, fullName: String, password: String, cityId: Int, promo: String?) ->  Observable<LoadingSequence<UserAuthResponse>>
+    
+    func getAuthSmsCode(_ phone: String) -> Observable<LoadingSequence<ResponseStatus>>
+    func verifySmsCode(_ phone: String, code: String) -> Observable<LoadingSequence<UserAuthResponse>>
 }
 
 public protocol LogoutListener {
@@ -17,7 +20,7 @@ public protocol LogoutListener {
 
 public final class AuthenticationServiceImpl: AuthenticationService {
     
-    public var token: OAuthToken! {
+    public var token: Token! {
         didSet {
             authenticatedRelay.accept(token != nil)
             authTokenService.set(token: token)
@@ -49,21 +52,23 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         authenticatedRelay.accept(token != nil)
     }
     
-    public func getSMSCode(_ phone: String) -> Observable<Void> {
+    public func getSMSCode(_ phone: String) -> Observable<LoadingSequence<ResponseStatus>> {
         return apiService.makeRequest(to: AuthTarget.getSmsCode(phone: phone))
             .result()
+            .asLoadingSequence()
     }
     
-    public func login(phone: String, password: String) -> Observable<LoadingSequence<OAuthToken>> {
+    public func login(phone: String, password: String) -> Observable<LoadingSequence<UserAuthResponse>> {
         return apiService.makeRequest(to: AuthTarget.loginUser(phone: phone, password: password))
-            .result(OAuthToken.self)
+            .result(UserAuthResponse.self)
             .asLoadingSequence()
             .do(onNext: { [weak self] token in
-                self?.updateToken(with: token.result?.element)
+                guard let token = token.result?.element?.token else { return }
+                self?.updateToken(with: token)
             })
     }
     
-    public func createUser(phone: String, fullName: String, password: String, cityId: Int, promo: String?) -> Observable<LoadingSequence<OAuthToken>> {
+    public func createUser(phone: String, fullName: String, password: String, cityId: Int, promo: String?) -> Observable<LoadingSequence<UserAuthResponse>> {
         return apiService.makeRequest(
             to: AuthTarget.register(
                 username: phone,
@@ -72,9 +77,27 @@ public final class AuthenticationServiceImpl: AuthenticationService {
                 cityId: cityId,
                 promo: promo)
         )
-        .result(OAuthToken.self).asLoadingSequence()
+        .result(UserAuthResponse.self).asLoadingSequence()
+        .do(onNext: { [weak self] token in
+            guard let token = token.result?.element?.token else { return }
+            self?.updateToken(with: token)
+        })
     }
     
+    public func getAuthSmsCode(_ phone: String) -> Observable<LoadingSequence<ResponseStatus>> {
+        return apiService.makeRequest(to: AuthTarget.getAuthSmsCode(phone: phone))
+            .result(ResponseStatus.self).asLoadingSequence()
+    }
+    
+    public func verifySmsCode(_ phone: String, code: String) -> Observable<LoadingSequence<UserAuthResponse>> {
+        return apiService.makeRequest(to: AuthTarget.verifySmsCode(phone: phone, code: code))
+            .result(UserAuthResponse.self).asLoadingSequence()
+            .do(onNext: { [weak self] token in
+                guard let token = token.result?.element?.token else { return }
+                self?.updateToken(with: token)
+            })
+    }
+
     public func addLogoutListener(_ logoutListener: LogoutListener) {
         logoutListeners.append(logoutListener)
     }
@@ -84,7 +107,7 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         logoutListeners.forEach { $0.cleanUpAfterLogout() }
     }
     
-    public func updateToken(with newToken: OAuthToken?) {
+    public func updateToken(with newToken: Token?) {
         token = newToken
     }
 }
