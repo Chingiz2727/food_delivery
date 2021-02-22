@@ -22,7 +22,7 @@ final class AppCoordinator: BaseCoordinator {
         authService.authenticated
             .subscribe(onNext: { [weak self] authed in
                 if authed {
-                    
+                    self?.startHomeFlow()
                 } else {
                     self?.startAuthFlow()
                 }
@@ -32,6 +32,12 @@ final class AppCoordinator: BaseCoordinator {
     private func startAuthFlow() {
         let coordinator = AuthCoordinator(container: container, router: router)
         authCoordinator = coordinator
+        coordinator.start()
+        addDependency(coordinator)
+    }
+
+    private func startHomeFlow() {
+        let coordinator = appCoordinatorFactory.homeCoordinator()
         coordinator.start()
         addDependency(coordinator)
     }

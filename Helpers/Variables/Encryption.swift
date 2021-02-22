@@ -1,15 +1,8 @@
-//
-//  EncryptionExtention.swift
-//  Pillikan
-//
-//  Created by aisulubekbossynova on 5/22/20.
-//  Copyright © 2020 bekbossynova. All rights reserved.
-//
-
 import Foundation
 import var CommonCrypto.CC_MD5_DIGEST_LENGTH
 import func CommonCrypto.CC_MD5
 import typealias CommonCrypto.CC_LONG
+
 extension String {
     func md5() -> String {
         let data = Data(utf8)
@@ -23,35 +16,27 @@ extension String {
     }
 
     var urlEscaped: String {
-            return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-        }
- 
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+    }
+
     var utf8Encoded: Data {
         return data(using: .utf8)!
     }
+    
     func fromBase64() -> String? {
         guard let data = Data(base64Encoded: self) else {
-              return nil
+            return nil
         }
-          
+
         return String(data: data, encoding: .utf8)
-      }
+    }
+
     func toBase64() -> String {
         return Data(self.utf8).base64EncodedString()
     }
 }
 extension Date {
-
     var unixTimestamp: TimeInterval {
         return self.timeIntervalSince1970 * 1_000
     }
-//Date().unixTimestamp
-
 }
-//let md5Data = MD5(string:"Hello")
-//
-//let md5Hex =  md5Data.map { String(format: "%02hhx", $0) }.joined()
-//print("md5Hex: \(md5Hex)")
-//
-//let md5Base64 = md5Data.base64EncodedString()
-//print("md5Base64: \(md5Base64)")

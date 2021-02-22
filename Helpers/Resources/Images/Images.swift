@@ -6,6 +6,9 @@ enum Images: String {
     case Border
     case flash
     case rotate
+    case mainqrcode
+    case cashback
+    case avatar
 }
 
 extension Images {

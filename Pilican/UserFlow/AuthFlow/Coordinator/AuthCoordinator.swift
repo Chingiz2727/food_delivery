@@ -3,6 +3,7 @@ import Swinject
 final class AuthCoordinator: BaseCoordinator {
 
     private let moduleFactory: AuthModuleFactory
+
     init(container: DependencyContainer, router: Router) {
         self.moduleFactory = AuthModuleFactory(container: container)
         super.init(router: router, container: container)
