@@ -12,4 +12,5 @@ extension UIColor {
     static let grayBackground = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
     static let pilicanWhite = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     static let pilicanLightGray = #colorLiteral(red: 0.631372549, green: 0.6745098039, blue: 0.7137254902, alpha: 1)
+    static let cashbackOrange = UIColor.init(displayP3Red: 1, green: 0.953, blue: 0.878, alpha: 1)
 }

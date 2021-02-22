@@ -7,9 +7,12 @@ final class HomeTabBar: UITabBar {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addShape()
         addSubview(tabView)
         tabView.snp.makeConstraints { $0.edges.equalToSuperview() }
+    }
+    
+    override func draw(_ rect: CGRect) {
+        self.addShape()
     }
 
     required init?(coder: NSCoder) {

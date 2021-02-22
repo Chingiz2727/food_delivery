@@ -9,6 +9,7 @@ enum Images: String {
     case mainqrcode
     case cashback
     case avatar
+    case mainqr
 }
 
 extension Images {
