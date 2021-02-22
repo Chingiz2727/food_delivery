@@ -59,6 +59,28 @@
 		A47CA04A25E1495200EB091C /* RetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA04925E1495200EB091C /* RetailTableViewCell.swift */; };
 		A47CA10825E14E2300EB091C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA10725E14E2300EB091C /* UIFont.swift */; };
 		A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA10C25E1588F00EB091C /* LabelBackgroundView.swift */; };
+		A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1AA25E36D9000EB091C /* CloseableViewController.swift */; };
+		A47CA1AF25E36DA200EB091C /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1AE25E36DA200EB091C /* BaseCoordinator.swift */; };
+		A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1B125E36DB200EB091C /* CoordinatorNavigationController.swift */; };
+		A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1B425E36DC700EB091C /* Coordinator.swift */; };
+		A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1B725E36DD400EB091C /* Presentable.swift */; };
+		A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1BB25E36DF600EB091C /* DeepLinkAction.swift */; };
+		A47CA1C025E36E0400EB091C /* DeepLinkActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1BF25E36E0400EB091C /* DeepLinkActionFactory.swift */; };
+		A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1C325E36E1B00EB091C /* NotificationDeepLinkAction.swift */; };
+		A47CA1C925E36E3200EB091C /* NotificationDeepLinkActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1C825E36E3200EB091C /* NotificationDeepLinkActionModel.swift */; };
+		A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1CC25E36E4D00EB091C /* Router.swift */; };
+		A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1D325E36E8000EB091C /* DropdownTransitioningDelegate.swift */; };
+		A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1D425E36E8000EB091C /* DropdownPresentationController.swift */; };
+		A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1D625E36E8000EB091C /* ActionSheetSegue.swift */; };
+		A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1D825E36E8000EB091C /* CardSegue.swift */; };
+		A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1D925E36E8000EB091C /* Router+Transitions.swift */; };
+		A47CA1E925E36E8000EB091C /* SlidingTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1DB25E36E8000EB091C /* SlidingTransitioningDelegate.swift */; };
+		A47CA1EA25E36E8000EB091C /* SlidingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1DC25E36E8000EB091C /* SlidingPresentationController.swift */; };
+		A47CA1EB25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1DE25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift */; };
+		A47CA1EC25E36E8000EB091C /* AdditionalMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1DF25E36E8000EB091C /* AdditionalMenuPresentationController.swift */; };
+		A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1E125E36E8000EB091C /* StoriesPresentAnimationController.swift */; };
+		A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1E225E36E8000EB091C /* StoriesTransitionDelegate.swift */; };
+		A47CA1EF25E36E8000EB091C /* StoriesDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1E325E36E8000EB091C /* StoriesDismissAnimationController.swift */; };
 		A483E26225D40ABE006D2DAF /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483E21225D40ABD006D2DAF /* UIViewController+Error.swift */; };
 		A483E26325D40ABE006D2DAF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483E21325D40ABD006D2DAF /* Result.swift */; };
 		A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483E21425D40ABD006D2DAF /* UIScrollView+ReachedBottom.swift */; };
@@ -116,25 +138,6 @@
 		A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483E25F25D40ABE006D2DAF /* InputSource.swift */; };
 		A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483E26025D40ABE006D2DAF /* PageIndicator.swift */; };
 		A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483E26125D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift */; };
-		A48CCFB525DAC9270010829F /* CloseableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCF9925DAC9270010829F /* CloseableViewController.swift */; };
-		A48CCFB625DAC9270010829F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCF9A25DAC9270010829F /* BaseCoordinator.swift */; };
-		A48CCFB725DAC9270010829F /* CoordinatorNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCF9B25DAC9270010829F /* CoordinatorNavigationController.swift */; };
-		A48CCFB825DAC9270010829F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCF9D25DAC9270010829F /* Presentable.swift */; };
-		A48CCFB925DAC9270010829F /* DeepLinkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCF9E25DAC9270010829F /* DeepLinkAction.swift */; };
-		A48CCFBA25DAC9270010829F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCF9F25DAC9270010829F /* Coordinator.swift */; };
-		A48CCFBB25DAC9270010829F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFA125DAC9270010829F /* Router.swift */; };
-		A48CCFBC25DAC9270010829F /* DropdownTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFA425DAC9270010829F /* DropdownTransitioningDelegate.swift */; };
-		A48CCFBD25DAC9270010829F /* DropdownPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFA525DAC9270010829F /* DropdownPresentationController.swift */; };
-		A48CCFBE25DAC9270010829F /* ActionSheetSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFA725DAC9270010829F /* ActionSheetSegue.swift */; };
-		A48CCFBF25DAC9270010829F /* CardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFA925DAC9270010829F /* CardSegue.swift */; };
-		A48CCFC025DAC9270010829F /* Router+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFAA25DAC9270010829F /* Router+Transitions.swift */; };
-		A48CCFC125DAC9270010829F /* SlidingTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFAC25DAC9270010829F /* SlidingTransitioningDelegate.swift */; };
-		A48CCFC225DAC9270010829F /* SlidingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFAD25DAC9270010829F /* SlidingPresentationController.swift */; };
-		A48CCFC325DAC9270010829F /* AdditionalMenuTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFAF25DAC9270010829F /* AdditionalMenuTransitioningDelegate.swift */; };
-		A48CCFC425DAC9270010829F /* AdditionalMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFB025DAC9270010829F /* AdditionalMenuPresentationController.swift */; };
-		A48CCFC525DAC9270010829F /* StoriesPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFB225DAC9270010829F /* StoriesPresentAnimationController.swift */; };
-		A48CCFC625DAC9270010829F /* StoriesTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFB325DAC9270010829F /* StoriesTransitionDelegate.swift */; };
-		A48CCFC725DAC9270010829F /* StoriesDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFB425DAC9270010829F /* StoriesDismissAnimationController.swift */; };
 		A48CCFE025DACB450010829F /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFDF25DACB450010829F /* Callback.swift */; };
 		A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFE225DACBFA0010829F /* setAnchorPoint.swift */; };
 		A48CCFE725DACF310010829F /* statusBarHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CCFE625DACF310010829F /* statusBarHeight.swift */; };
@@ -249,6 +252,28 @@
 		A47CA04925E1495200EB091C /* RetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailTableViewCell.swift; sourceTree = "<group>"; };
 		A47CA10725E14E2300EB091C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		A47CA10C25E1588F00EB091C /* LabelBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBackgroundView.swift; sourceTree = "<group>"; };
+		A47CA1AA25E36D9000EB091C /* CloseableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseableViewController.swift; sourceTree = "<group>"; };
+		A47CA1AE25E36DA200EB091C /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		A47CA1B125E36DB200EB091C /* CoordinatorNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorNavigationController.swift; sourceTree = "<group>"; };
+		A47CA1B425E36DC700EB091C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A47CA1B725E36DD400EB091C /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		A47CA1BB25E36DF600EB091C /* DeepLinkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkAction.swift; sourceTree = "<group>"; };
+		A47CA1BF25E36E0400EB091C /* DeepLinkActionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkActionFactory.swift; sourceTree = "<group>"; };
+		A47CA1C325E36E1B00EB091C /* NotificationDeepLinkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDeepLinkAction.swift; sourceTree = "<group>"; };
+		A47CA1C825E36E3200EB091C /* NotificationDeepLinkActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDeepLinkActionModel.swift; sourceTree = "<group>"; };
+		A47CA1CC25E36E4D00EB091C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A47CA1D325E36E8000EB091C /* DropdownTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownTransitioningDelegate.swift; sourceTree = "<group>"; };
+		A47CA1D425E36E8000EB091C /* DropdownPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPresentationController.swift; sourceTree = "<group>"; };
+		A47CA1D625E36E8000EB091C /* ActionSheetSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetSegue.swift; sourceTree = "<group>"; };
+		A47CA1D825E36E8000EB091C /* CardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSegue.swift; sourceTree = "<group>"; };
+		A47CA1D925E36E8000EB091C /* Router+Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Router+Transitions.swift"; sourceTree = "<group>"; };
+		A47CA1DB25E36E8000EB091C /* SlidingTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingTransitioningDelegate.swift; sourceTree = "<group>"; };
+		A47CA1DC25E36E8000EB091C /* SlidingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingPresentationController.swift; sourceTree = "<group>"; };
+		A47CA1DE25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalMenuTransitioningDelegate.swift; sourceTree = "<group>"; };
+		A47CA1DF25E36E8000EB091C /* AdditionalMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalMenuPresentationController.swift; sourceTree = "<group>"; };
+		A47CA1E125E36E8000EB091C /* StoriesPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesPresentAnimationController.swift; sourceTree = "<group>"; };
+		A47CA1E225E36E8000EB091C /* StoriesTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTransitionDelegate.swift; sourceTree = "<group>"; };
+		A47CA1E325E36E8000EB091C /* StoriesDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesDismissAnimationController.swift; sourceTree = "<group>"; };
 		A483E21225D40ABD006D2DAF /* UIViewController+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		A483E21325D40ABD006D2DAF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A483E21425D40ABD006D2DAF /* UIScrollView+ReachedBottom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ReachedBottom.swift"; sourceTree = "<group>"; };
@@ -306,25 +331,6 @@
 		A483E25F25D40ABE006D2DAF /* InputSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSource.swift; sourceTree = "<group>"; };
 		A483E26025D40ABE006D2DAF /* PageIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		A483E26125D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimatedTransitioning.swift; sourceTree = "<group>"; };
-		A48CCF9925DAC9270010829F /* CloseableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseableViewController.swift; sourceTree = "<group>"; };
-		A48CCF9A25DAC9270010829F /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		A48CCF9B25DAC9270010829F /* CoordinatorNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorNavigationController.swift; sourceTree = "<group>"; };
-		A48CCF9D25DAC9270010829F /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
-		A48CCF9E25DAC9270010829F /* DeepLinkAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkAction.swift; sourceTree = "<group>"; };
-		A48CCF9F25DAC9270010829F /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		A48CCFA125DAC9270010829F /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		A48CCFA425DAC9270010829F /* DropdownTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownTransitioningDelegate.swift; sourceTree = "<group>"; };
-		A48CCFA525DAC9270010829F /* DropdownPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPresentationController.swift; sourceTree = "<group>"; };
-		A48CCFA725DAC9270010829F /* ActionSheetSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetSegue.swift; sourceTree = "<group>"; };
-		A48CCFA925DAC9270010829F /* CardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSegue.swift; sourceTree = "<group>"; };
-		A48CCFAA25DAC9270010829F /* Router+Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Router+Transitions.swift"; sourceTree = "<group>"; };
-		A48CCFAC25DAC9270010829F /* SlidingTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingTransitioningDelegate.swift; sourceTree = "<group>"; };
-		A48CCFAD25DAC9270010829F /* SlidingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingPresentationController.swift; sourceTree = "<group>"; };
-		A48CCFAF25DAC9270010829F /* AdditionalMenuTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalMenuTransitioningDelegate.swift; sourceTree = "<group>"; };
-		A48CCFB025DAC9270010829F /* AdditionalMenuPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalMenuPresentationController.swift; sourceTree = "<group>"; };
-		A48CCFB225DAC9270010829F /* StoriesPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesPresentAnimationController.swift; sourceTree = "<group>"; };
-		A48CCFB325DAC9270010829F /* StoriesTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTransitionDelegate.swift; sourceTree = "<group>"; };
-		A48CCFB425DAC9270010829F /* StoriesDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesDismissAnimationController.swift; sourceTree = "<group>"; };
 		A48CCFDF25DACB450010829F /* Callback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
 		A48CCFE225DACBFA0010829F /* setAnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setAnchorPoint.swift; sourceTree = "<group>"; };
 		A48CCFE625DACF310010829F /* statusBarHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statusBarHeight.swift; sourceTree = "<group>"; };
@@ -805,11 +811,144 @@
 			path = LabelBackGroundView;
 			sourceTree = "<group>";
 		};
+		A47CA19C25E36D3200EB091C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA19D25E36D3200EB091C /* Base */,
+				A47CA19E25E36D3200EB091C /* Entities */,
+				A47CA19F25E36D3200EB091C /* Router */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A47CA19D25E36D3200EB091C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1AA25E36D9000EB091C /* CloseableViewController.swift */,
+				A47CA1AE25E36DA200EB091C /* BaseCoordinator.swift */,
+				A47CA1B125E36DB200EB091C /* CoordinatorNavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A47CA19E25E36D3200EB091C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1BA25E36DE900EB091C /* DeepLinkAction */,
+				A47CA1B425E36DC700EB091C /* Coordinator.swift */,
+				A47CA1B725E36DD400EB091C /* Presentable.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A47CA19F25E36D3200EB091C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1D125E36E8000EB091C /* Transitions */,
+				A47CA1CC25E36E4D00EB091C /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A47CA1BA25E36DE900EB091C /* DeepLinkAction */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1C225E36E1000EB091C /* NotificationDeepLinkAction */,
+				A47CA1BB25E36DF600EB091C /* DeepLinkAction.swift */,
+				A47CA1BF25E36E0400EB091C /* DeepLinkActionFactory.swift */,
+			);
+			path = DeepLinkAction;
+			sourceTree = "<group>";
+		};
+		A47CA1C225E36E1000EB091C /* NotificationDeepLinkAction */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1C725E36E2500EB091C /* Model */,
+				A47CA1C325E36E1B00EB091C /* NotificationDeepLinkAction.swift */,
+			);
+			path = NotificationDeepLinkAction;
+			sourceTree = "<group>";
+		};
+		A47CA1C725E36E2500EB091C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1C825E36E3200EB091C /* NotificationDeepLinkActionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A47CA1D125E36E8000EB091C /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1D225E36E8000EB091C /* Dropdown */,
+				A47CA1D525E36E8000EB091C /* ActionSheet */,
+				A47CA1D725E36E8000EB091C /* Card */,
+				A47CA1D925E36E8000EB091C /* Router+Transitions.swift */,
+				A47CA1DA25E36E8000EB091C /* Sliding */,
+				A47CA1DD25E36E8000EB091C /* AdditionalMenu */,
+				A47CA1E025E36E8000EB091C /* Stories */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		A47CA1D225E36E8000EB091C /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1D325E36E8000EB091C /* DropdownTransitioningDelegate.swift */,
+				A47CA1D425E36E8000EB091C /* DropdownPresentationController.swift */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		A47CA1D525E36E8000EB091C /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1D625E36E8000EB091C /* ActionSheetSegue.swift */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
+		A47CA1D725E36E8000EB091C /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1D825E36E8000EB091C /* CardSegue.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		A47CA1DA25E36E8000EB091C /* Sliding */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1DB25E36E8000EB091C /* SlidingTransitioningDelegate.swift */,
+				A47CA1DC25E36E8000EB091C /* SlidingPresentationController.swift */,
+			);
+			path = Sliding;
+			sourceTree = "<group>";
+		};
+		A47CA1DD25E36E8000EB091C /* AdditionalMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1DE25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift */,
+				A47CA1DF25E36E8000EB091C /* AdditionalMenuPresentationController.swift */,
+			);
+			path = AdditionalMenu;
+			sourceTree = "<group>";
+		};
+		A47CA1E025E36E8000EB091C /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				A47CA1E125E36E8000EB091C /* StoriesPresentAnimationController.swift */,
+				A47CA1E225E36E8000EB091C /* StoriesTransitionDelegate.swift */,
+				A47CA1E325E36E8000EB091C /* StoriesDismissAnimationController.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A47CA19C25E36D3200EB091C /* Coordinator */,
 				A48CD00A25DBC9D20010829F /* ViewController */,
-				A48CCF9725DAC9270010829F /* Coordinator */,
 				A4BBC6DD25D638F2006AF382 /* BackContainerModule */,
 				A4BBC6D925D638C6006AF382 /* NavigationBarConfigurable */,
 				A4E581E625D543B000EDC053 /* UIView+Extension */,
@@ -978,113 +1117,6 @@
 				A483E25D25D40ABE006D2DAF /* KingfisherSource.swift */,
 			);
 			path = InputSource;
-			sourceTree = "<group>";
-		};
-		A48CCF9725DAC9270010829F /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCF9825DAC9270010829F /* Base */,
-				A48CCF9C25DAC9270010829F /* Entities */,
-				A48CCFA025DAC9270010829F /* Router */,
-			);
-			name = Coordinator;
-			path = ../../../../Documents/GitHub/kaztelecom/Layers/Core/Main/Coordinator;
-			sourceTree = "<group>";
-		};
-		A48CCF9825DAC9270010829F /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCF9925DAC9270010829F /* CloseableViewController.swift */,
-				A48CCF9A25DAC9270010829F /* BaseCoordinator.swift */,
-				A48CCF9B25DAC9270010829F /* CoordinatorNavigationController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		A48CCF9C25DAC9270010829F /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCF9D25DAC9270010829F /* Presentable.swift */,
-				A48CCF9E25DAC9270010829F /* DeepLinkAction.swift */,
-				A48CCF9F25DAC9270010829F /* Coordinator.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		A48CCFA025DAC9270010829F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFA125DAC9270010829F /* Router.swift */,
-				A48CCFA225DAC9270010829F /* Transitions */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		A48CCFA225DAC9270010829F /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFA325DAC9270010829F /* Dropdown */,
-				A48CCFA625DAC9270010829F /* ActionSheet */,
-				A48CCFA825DAC9270010829F /* Card */,
-				A48CCFAA25DAC9270010829F /* Router+Transitions.swift */,
-				A48CCFAB25DAC9270010829F /* Sliding */,
-				A48CCFAE25DAC9270010829F /* AdditionalMenu */,
-				A48CCFB125DAC9270010829F /* Stories */,
-			);
-			path = Transitions;
-			sourceTree = "<group>";
-		};
-		A48CCFA325DAC9270010829F /* Dropdown */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFA425DAC9270010829F /* DropdownTransitioningDelegate.swift */,
-				A48CCFA525DAC9270010829F /* DropdownPresentationController.swift */,
-			);
-			path = Dropdown;
-			sourceTree = "<group>";
-		};
-		A48CCFA625DAC9270010829F /* ActionSheet */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFA725DAC9270010829F /* ActionSheetSegue.swift */,
-			);
-			path = ActionSheet;
-			sourceTree = "<group>";
-		};
-		A48CCFA825DAC9270010829F /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFA925DAC9270010829F /* CardSegue.swift */,
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
-		A48CCFAB25DAC9270010829F /* Sliding */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFAC25DAC9270010829F /* SlidingTransitioningDelegate.swift */,
-				A48CCFAD25DAC9270010829F /* SlidingPresentationController.swift */,
-			);
-			path = Sliding;
-			sourceTree = "<group>";
-		};
-		A48CCFAE25DAC9270010829F /* AdditionalMenu */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFAF25DAC9270010829F /* AdditionalMenuTransitioningDelegate.swift */,
-				A48CCFB025DAC9270010829F /* AdditionalMenuPresentationController.swift */,
-			);
-			path = AdditionalMenu;
-			sourceTree = "<group>";
-		};
-		A48CCFB125DAC9270010829F /* Stories */ = {
-			isa = PBXGroup;
-			children = (
-				A48CCFB225DAC9270010829F /* StoriesPresentAnimationController.swift */,
-				A48CCFB325DAC9270010829F /* StoriesTransitionDelegate.swift */,
-				A48CCFB425DAC9270010829F /* StoriesDismissAnimationController.swift */,
-			);
-			path = Stories;
 			sourceTree = "<group>";
 		};
 		A48CCFDE25DACB370010829F /* Variables */ = {
@@ -1635,29 +1667,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A48CCFBF25DAC9270010829F /* CardSegue.swift in Sources */,
 				A483E27425D40ABE006D2DAF /* NotificationTokenService.swift in Sources */,
-				A48CCFBE25DAC9270010829F /* ActionSheetSegue.swift in Sources */,
+				A47CA1EB25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift in Sources */,
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
 				A483E28825D40ABE006D2DAF /* DateContent.swift in Sources */,
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
+				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
-				A48CCFC025DAC9270010829F /* Router+Transitions.swift in Sources */,
 				A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */,
-				A48CCFC325DAC9270010829F /* AdditionalMenuTransitioningDelegate.swift in Sources */,
 				A483E26225D40ABE006D2DAF /* UIViewController+Error.swift in Sources */,
 				A483E28B25D40ABE006D2DAF /* PaginationTableFooterView.swift in Sources */,
+				A47CA1EF25E36E8000EB091C /* StoriesDismissAnimationController.swift in Sources */,
 				A40B960325DE6F0000E507FB /* Slider.swift in Sources */,
 				A40B95E925DE36C500E507FB /* HomeTableVIewHeaderView.swift in Sources */,
 				A483E28225D40ABE006D2DAF /* ApiServiceAssembly.swift in Sources */,
+				A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */,
 				A4FD7DAF25DD3306000DD49D /* TabImageInfoView.swift in Sources */,
-				A48CCFB625DAC9270010829F /* BaseCoordinator.swift in Sources */,
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
+				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
 				A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */,
 				A483E27825D40ABE006D2DAF /* PilicanRequestAdapter.swift in Sources */,
 				A4BBC6DF25D6390B006AF382 /* BackContainerViewController.swift in Sources */,
@@ -1677,23 +1709,23 @@
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
+				A47CA1EA25E36E8000EB091C /* SlidingPresentationController.swift in Sources */,
 				A4FD7DA225DCD109000DD49D /* AuthBySmsViewModel.swift in Sources */,
 				A483E27F25D40ABE006D2DAF /* ForceLogoutNotification.swift in Sources */,
 				A4BBC6F025D63D0F006AF382 /* BackButton.swift in Sources */,
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
-				A48CCFBA25DAC9270010829F /* Coordinator.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
+				A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */,
 				A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */,
 				A483E29725D40ABE006D2DAF /* UIImage+AspectFit.swift in Sources */,
-				A48CCFC225DAC9270010829F /* SlidingPresentationController.swift in Sources */,
 				A48CCFE725DACF310010829F /* statusBarHeight.swift in Sources */,
-				A48CCFBD25DAC9270010829F /* DropdownPresentationController.swift in Sources */,
 				A483E27725D40ABE006D2DAF /* AuthenticationService.swift in Sources */,
 				A4BBC7AF25D64A1C006AF382 /* RegisterModule.swift in Sources */,
+				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
 				A483E26625D40ABE006D2DAF /* LoadingSequence+Rx.swift in Sources */,
 				A483E29825D40ABE006D2DAF /* UIImageView+Tools.swift in Sources */,
 				A4BBC6E925D639DA006AF382 /* BackButtonContainerViewController.swift in Sources */,
@@ -1705,8 +1737,11 @@
 				A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */,
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
+				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
 				A4BBC6EC25D63CD6006AF382 /* BackButtonContainerView.swift in Sources */,
+				A47CA1C925E36E3200EB091C /* NotificationDeepLinkActionModel.swift in Sources */,
 				A4E581EC25D5482E00EDC053 /* ProgressView.swift in Sources */,
+				A47CA1E925E36E8000EB091C /* SlidingTransitioningDelegate.swift in Sources */,
 				A4BBC6E325D6394E006AF382 /* BackContainerView.swift in Sources */,
 				A4D7644825DA74A1009A6651 /* City.swift in Sources */,
 				A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */,
@@ -1726,43 +1761,48 @@
 				A43BC83625DFC2A600D45225 /* HomeTabBarCoordinator.swift in Sources */,
 				A483E28025D40ABE006D2DAF /* ApiTarget.swift in Sources */,
 				A483E29525D40ABE006D2DAF /* EmojiModifier.swift in Sources */,
+				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
 				A4D7641E25DA40E1009A6651 /* BaseButton.swift in Sources */,
+				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */,
 				A483E27525D40ABE006D2DAF /* ApiService.swift in Sources */,
 				A483E29025D40ABE006D2DAF /* ViewHolder.swift in Sources */,
 				A483E26725D40ABE006D2DAF /* String+Unwrap.swift in Sources */,
 				A48CD00825DBBB080010829F /* String+NumberContains.swift in Sources */,
 				A40B95F825DE65EF00E507FB /* UITableView+Reuse.swift in Sources */,
+				A47CA1EC25E36E8000EB091C /* AdditionalMenuPresentationController.swift in Sources */,
+				A47CA1AF25E36DA200EB091C /* BaseCoordinator.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */,
 				A4DD3DDC25D2476F002D2186 /* UIView+GradientLayer.swift in Sources */,
+				A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */,
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
 				A4DD3DD725D24527002D2186 /* Color.swift in Sources */,
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
+				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
+				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
-				A48CCFC625DAC9270010829F /* StoriesTransitionDelegate.swift in Sources */,
-				A48CCFBB25DAC9270010829F /* Router.swift in Sources */,
+				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
 				A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */,
+				A47CA1C025E36E0400EB091C /* DeepLinkActionFactory.swift in Sources */,
 				A4E5815925D540F800EDC053 /* AppEnviroment.swift in Sources */,
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
-				A48CCFC525DAC9270010829F /* StoriesPresentAnimationController.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
-				A48CCFC125DAC9270010829F /* SlidingTransitioningDelegate.swift in Sources */,
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
-				A48CCFB825DAC9270010829F /* Presentable.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
+				A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */,
 				A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */,
 				A40B94CE25DD974C00E507FB /* HomeTabBar.swift in Sources */,
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
@@ -1770,22 +1810,17 @@
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,
-				A48CCFC425DAC9270010829F /* AdditionalMenuPresentationController.swift in Sources */,
-				A48CCFB925DAC9270010829F /* DeepLinkAction.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
-				A48CCFB725DAC9270010829F /* CoordinatorNavigationController.swift in Sources */,
 				A4BBC70225D63ED8006AF382 /* UiViewController+Keyboard.swift in Sources */,
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,
 				A483E28925D40ABE006D2DAF /* IdPaginationAdapter.swift in Sources */,
 				A4D7645125DA7F7E009A6651 /* CityPickerViewDataSource.swift in Sources */,
-				A48CCFBC25DAC9270010829F /* DropdownTransitioningDelegate.swift in Sources */,
 				A483E29F25D40ABE006D2DAF /* SwiftSupport.swift in Sources */,
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,
 				A4BBC6F425D63D56006AF382 /* BackPressHandler.swift in Sources */,
-				A48CCFC725DAC9270010829F /* StoriesDismissAnimationController.swift in Sources */,
 				A48CCFE025DACB450010829F /* Callback.swift in Sources */,
 				A48CCFF025DB7EDD0010829F /* CameraView.swift in Sources */,
 				A483E26825D40ABE006D2DAF /* Observable+Timer.swift in Sources */,
@@ -1798,13 +1833,13 @@
 				A48CCFED25DB7B1F0010829F /* CameraMetadaOutputDelegate.swift in Sources */,
 				A48CD01225DBE1A50010829F /* Encryption.swift in Sources */,
 				A4D7641A25DA40B7009A6651 /* PrimaryButton.swift in Sources */,
+				A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */,
 				A4BBC72225D6402D006AF382 /* QrCodeTextField.swift in Sources */,
 				A483E27225D40ABE006D2DAF /* ConfigService.swift in Sources */,
 				A483E28A25D40ABE006D2DAF /* Pagination.swift in Sources */,
 				A40B960A25DE758E00E507FB /* WorkDay.swift in Sources */,
 				A436BCB625D1AB4B00DEC963 /* AuthView.swift in Sources */,
 				A483E26925D40ABE006D2DAF /* AccessCodeService.swift in Sources */,
-				A48CCFB525DAC9270010829F /* CloseableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

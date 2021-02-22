@@ -58,11 +58,12 @@ class RetailTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
+        configureView()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16))
     }
 
     required init?(coder: NSCoder) {
@@ -79,9 +80,18 @@ class RetailTableViewCell: UITableViewCell {
     }
 
     private func setupInitialLayout() {
-        addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(12) }
+        contentView.addSubview(horizontalStackView)
+        horizontalStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.bottom.equalToSuperview().inset(10)
+        }
+
         companyImageView.snp.makeConstraints { $0.size.equalTo(70) }
+    }
+
+    private func configureView() {
+        contentView.backgroundColor = .pilicanWhite
+        backgroundColor = .grayBackground
         selectionStyle = .none
     }
 }
