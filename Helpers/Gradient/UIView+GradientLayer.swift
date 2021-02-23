@@ -18,7 +18,7 @@ extension CAGradientLayer {
         layer.endPoint = CGPoint(x: 0, y: 1)
         return layer
     }()
-    
+
     static let redGradient: CAGradientLayer = {
         let layer = CAGradientLayer()
         let firstColor = #colorLiteral(red: 0.937254902, green: 0.3254901961, blue: 0.3137254902, alpha: 1)
@@ -28,7 +28,7 @@ extension CAGradientLayer {
         layer.endPoint = CGPoint(x: 0, y: 1)
         return layer
     }()
-    
+
     static let blueGradient: CAGradientLayer = {
         let layer = CAGradientLayer()
         let firstColor = #colorLiteral(red: 0.09803921569, green: 0.462745098, blue: 0.8235294118, alpha: 1)

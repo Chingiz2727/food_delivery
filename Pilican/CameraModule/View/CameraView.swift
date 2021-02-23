@@ -9,7 +9,7 @@ final class CameraView: UIView {
     private let titleLabel = UILabel()
     private let rectangleImageView = UIImageView()
     let contentView = UIView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()

@@ -65,8 +65,8 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
         let result = output.token.publish()
 
         result.element
-            .subscribe(onNext: { token in
-                print(token)
+            .subscribe(onNext: { [unowned self] _ in
+                self.registerTapped?()
             })
             .disposed(by: disposeBag)
 

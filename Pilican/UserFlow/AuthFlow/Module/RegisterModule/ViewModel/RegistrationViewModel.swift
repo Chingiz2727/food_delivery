@@ -29,7 +29,13 @@ final class RegistrationViewModel: ViewModel {
         let registerUser = input.registerTapped
             .withLatestFrom(Observable.combineLatest(input.userLogin, input.userName, input.promoCode, input.city, input.smsCode))
             .flatMap { [unowned self] login, name, code, city, smsCode in
-                authService.createUser(phone: login, fullName: name ?? "", password: smsCode ?? "", cityId: city.id, promo: code ?? "")
+                authService.createUser(
+                    phone: login,
+                    fullName: name ?? "",
+                    password: smsCode ?? "",
+                    cityId: city.id,
+                    promo: code ?? ""
+                )
             }
             .share()
 

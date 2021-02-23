@@ -4,9 +4,11 @@ import UIKit
 class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
     typealias RootViewType = AuthBySmsView
 
+    var onAuthDidFinish: Callback?
+
     private let viewModel: AuthBySmsViewModel
     private let disposeBag = DisposeBag()
-    
+
     init(viewModel: AuthBySmsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -36,9 +38,8 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
         let result = output.getSmsTapped.publish()
 
         result.element
-            .subscribe(onNext: {  [unowned self] status in
+            .subscribe(onNext: {  [unowned self] _ in
                 self.rootView.showPasswordContainer()
-                print(status)
             })
             .disposed(by: disposeBag)
 
@@ -56,8 +57,8 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
         let signInResult = output.loginTapped.publish()
 
         signInResult.element
-            .subscribe(onNext: { status in
-                print(status)
+            .subscribe(onNext: { [unowned self] _ in
+                self.onAuthDidFinish?()
             })
             .disposed(by: disposeBag)
 

@@ -35,7 +35,13 @@ public extension UIView {
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
-    func addSubviewMatchParent(_ subview: UIView, topMargin: CGFloat = 0.0, bottomMargin: CGFloat = 0.0, leftMargin: CGFloat = 0.0, rightMargin: CGFloat = 0.0) {
+    func addSubviewMatchParent(
+        _ subview: UIView,
+        topMargin: CGFloat = 0.0,
+        bottomMargin: CGFloat = 0.0,
+        leftMargin: CGFloat = 0.0,
+        rightMargin: CGFloat = 0.0
+    ) {
         addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false
         subview.topAnchor.constraint(equalTo: topAnchor, constant: topMargin).isActive = true
