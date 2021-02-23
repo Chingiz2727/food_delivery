@@ -7,6 +7,7 @@ struct Retail: Codable {
     let latitude: Double
     let longitude: Double
     let logo: String
+    let payIsWork: Int
     var imgLogo: String? {
         return "https://st.pillikan.kz/retail/logo\(logo)"
     }
