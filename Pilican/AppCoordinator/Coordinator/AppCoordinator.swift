@@ -30,8 +30,13 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     private func startAuthFlow() {
-        let coordinator = AuthCoordinator(container: container, router: router)
-        authCoordinator = coordinator
+        var coordinator = appCoordinatorFactory.makeAuthCoordinator()
+
+        coordinator.onFlowDidFinish = { [weak self] in
+            self?.removeDependency(coordinator)
+            self?.startHomeFlow()
+        }
+
         coordinator.start()
         addDependency(coordinator)
     }

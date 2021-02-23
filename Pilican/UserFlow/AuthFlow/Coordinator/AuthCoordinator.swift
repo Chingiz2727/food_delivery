@@ -1,7 +1,12 @@
 import Swinject
 
-final class AuthCoordinator: BaseCoordinator {
+public protocol AuthCoordinatorOutput {
+    var onFlowDidFinish: Callback? { get set }
+}
 
+final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
+
+    var onFlowDidFinish: Callback?
     private let moduleFactory: AuthModuleFactory
 
     init(container: DependencyContainer, router: Router) {
@@ -22,11 +27,18 @@ final class AuthCoordinator: BaseCoordinator {
         module.authBySms = { [weak self] in
             self?.showAuthBySms()
         }
+
+        module.authButtonTapped = { [weak self] in
+            self?.onFlowDidFinish?()
+        }
         router.setRootModule(module)
     }
 
     private func showAuthBySms() {
-        let module = moduleFactory.makeAuthBySms()
+        var module = moduleFactory.makeAuthBySms()
+        module.onAuthDidFinish = { [weak self] in
+            self?.onFlowDidFinish?()
+        }
         router.push(module)
     }
 
@@ -37,6 +49,11 @@ final class AuthCoordinator: BaseCoordinator {
                 module.putPromoCodeToText?(promoCode)
             })
         }
+
+        module.registerTapped = { [weak self] in
+            self?.onFlowDidFinish?()
+        }
+
         router.push(module)
     }
 

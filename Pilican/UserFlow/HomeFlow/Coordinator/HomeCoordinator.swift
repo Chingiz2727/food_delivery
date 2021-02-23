@@ -6,7 +6,7 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
 
     private let coordinatorFactory: HomeTabBarCoordinatorFactory
     private var tabRootContainers: [TabableRootControllerAndCoordinatorContainer] = []
-    private let tabBarController: HomeTabBarViewController
+    private var tabBarController: HomeTabBarModule
 
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container)
@@ -16,6 +16,11 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
 
     override func start() {
         makeTabBar()
+
+        tabBarController.qrCodeTap = { [weak self] in
+            self?.showCamera()
+        }
+
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
         router.setRootModule(tabBarController, isNavigationBarHidden: true)
@@ -27,5 +32,10 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
         addDependency(homeCoordinator)
         guard let controller = rootController.toPresent() else { return }
         tabRootContainers.append(.init(viewController: controller, coordinator: homeCoordinator))
+    }
+
+    private func showCamera() {
+        let module = container.resolve(CameraModule.self)!
+        router.push(module)
     }
 }

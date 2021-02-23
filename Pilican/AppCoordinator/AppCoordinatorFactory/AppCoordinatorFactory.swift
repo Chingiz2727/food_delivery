@@ -9,7 +9,7 @@ final class AppCoordinatorFactory {
         self.router = router
     }
 
-    func makeAuthCoordinator() -> Coordinator {
+    func makeAuthCoordinator() -> Coordinator & AuthCoordinatorOutput {
         AuthCoordinator(container: container, router: router)
     }
 

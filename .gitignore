@@ -1,8 +1,8 @@
 
 # xcode noise
 DerivedData
-xcuserdata
-project.xcworkspace
+xcuserdata/
+project.xcworkspace/
 build/*
 
 # osx noise
@@ -20,3 +20,4 @@ fastlane/report.xml
 
 # Build times
 buildtimes.log
+Pilican.xcworkspace/xcuserdata/shyngyskuandyk.xcuserdatad/UserInterfaceState.xcuserstate

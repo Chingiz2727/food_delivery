@@ -1,1 +1,3 @@
-protocol AuthBySmsModule: Presentable {}
+protocol AuthBySmsModule: Presentable {
+    var onAuthDidFinish: Callback? { get set }
+}

@@ -22,7 +22,7 @@ extension String {
     var utf8Encoded: Data {
         return data(using: .utf8)!
     }
-    
+
     func fromBase64() -> String? {
         guard let data = Data(base64Encoded: self) else {
             return nil

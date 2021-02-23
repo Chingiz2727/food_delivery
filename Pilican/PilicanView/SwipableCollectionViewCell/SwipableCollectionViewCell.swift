@@ -1,7 +1,7 @@
 import UIKit
 
 class SwipeableCollectionViewCell: UICollectionViewCell {
-    
+
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
         scrollView.isPagingEnabled = true
@@ -9,7 +9,7 @@ class SwipeableCollectionViewCell: UICollectionViewCell {
         scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
-    
+
     let visibleContainerView = UIView()
     let hiddenContainerView = UIView()
 
@@ -20,7 +20,7 @@ class SwipeableCollectionViewCell: UICollectionViewCell {
         setupSubviews()
         setupGestureRecognizer()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -47,7 +47,10 @@ class SwipeableCollectionViewCell: UICollectionViewCell {
         )
         hiddenContainerView.addGestureRecognizer(hiddenContainerTapGestureRecognizer)
 
-        let visibleContainerTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(visibleContainerViewTapped))
+        let visibleContainerTapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(visibleContainerViewTapped)
+        )
         visibleContainerView.addGestureRecognizer(visibleContainerTapGestureRecognizer)
     }
 
@@ -58,7 +61,7 @@ class SwipeableCollectionViewCell: UICollectionViewCell {
     @objc private func hiddenContainerViewTapped() {
         delegate?.hiddenContainerViewTapped(inCell: self)
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         if scrollView.contentOffset.x > 0 {

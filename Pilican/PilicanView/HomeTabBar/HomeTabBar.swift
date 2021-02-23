@@ -1,18 +1,18 @@
+import RxSwift
 import UIKit
 
 final class HomeTabBar: UITabBar {
-    let tabView = HomeTabView()
 
     private var shapeLayer: CALayer?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(tabView)
-        tabView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        tintColor = .clear
+        unselectedItemTintColor = .clear
     }
-    
+
     override func draw(_ rect: CGRect) {
-        self.addShape()
+        addShape()
     }
 
     required init?(coder: NSCoder) {
