@@ -56,7 +56,12 @@
 		A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4402CAE25DBEEE90004D1FC /* AuthBySmsModule.swift */; };
 		A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4402CB125DBEF000004D1FC /* AuthBySmsViewController.swift */; };
 		A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4402CB425DBEF260004D1FC /* AuthBySmsView.swift */; };
-		A47CA04A25E1495200EB091C /* RetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA04925E1495200EB091C /* RetailTableViewCell.swift */; };
+		A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3D525E371F3006835FA /* CompaniesFlowLayout.swift */; };
+		A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */; };
+		A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */; };
+		A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3E125E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift */; };
+		A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */; };
+		A47CA04A25E1495200EB091C /* RetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA04925E1495200EB091C /* RetailCollectionViewCell.swift */; };
 		A47CA10825E14E2300EB091C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA10725E14E2300EB091C /* UIFont.swift */; };
 		A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA10C25E1588F00EB091C /* LabelBackgroundView.swift */; };
 		A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA1AA25E36D9000EB091C /* CloseableViewController.swift */; };
@@ -249,7 +254,12 @@
 		A4402CAE25DBEEE90004D1FC /* AuthBySmsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBySmsModule.swift; sourceTree = "<group>"; };
 		A4402CB125DBEF000004D1FC /* AuthBySmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBySmsViewController.swift; sourceTree = "<group>"; };
 		A4402CB425DBEF260004D1FC /* AuthBySmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBySmsView.swift; sourceTree = "<group>"; };
-		A47CA04925E1495200EB091C /* RetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailTableViewCell.swift; sourceTree = "<group>"; };
+		A455B3D525E371F3006835FA /* CompaniesFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesFlowLayout.swift; sourceTree = "<group>"; };
+		A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuse.swift"; sourceTree = "<group>"; };
+		A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableCollectionViewCell.swift; sourceTree = "<group>"; };
+		A455B3E125E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		A47CA04925E1495200EB091C /* RetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		A47CA10725E14E2300EB091C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		A47CA10C25E1588F00EB091C /* LabelBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBackgroundView.swift; sourceTree = "<group>"; };
 		A47CA1AA25E36D9000EB091C /* CloseableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseableViewController.swift; sourceTree = "<group>"; };
@@ -552,6 +562,7 @@
 		A40B95DA25DE31FB00E507FB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A455B3EA25E3B11B006835FA /* DataSource */,
 				A40B95E025DE32F000E507FB /* Model */,
 				A40B95DF25DE32E700E507FB /* ViewModel */,
 				A40B95DE25DE321A00E507FB /* Controller */,
@@ -573,6 +584,7 @@
 		A40B95DC25DE320700E507FB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A455B3D425E371DD006835FA /* Layout */,
 				A47CA04825E1492F00EB091C /* Cell */,
 				A40B95E725DE365A00E507FB /* HeaderView */,
 				A40B95F025DE647500E507FB /* HomeView.swift */,
@@ -787,10 +799,35 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A455B3D425E371DD006835FA /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A455B3D525E371F3006835FA /* CompaniesFlowLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		A455B3DD25E38D2F006835FA /* SwipableCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */,
+				A455B3E125E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift */,
+			);
+			path = SwipableCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		A455B3EA25E3B11B006835FA /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		A47CA04825E1492F00EB091C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A47CA04925E1495200EB091C /* RetailTableViewCell.swift */,
+				A47CA04925E1495200EB091C /* RetailCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1388,6 +1425,7 @@
 		A4DD3E9525D24B98002D2186 /* PilicanView */ = {
 			isa = PBXGroup;
 			children = (
+				A455B3DD25E38D2F006835FA /* SwipableCollectionViewCell */,
 				A47CA10B25E1587700EB091C /* LabelBackGroundView */,
 				A40B95F325DE658C00E507FB /* SetSizedHeaderView */,
 				A40B95EC25DE3A8900E507FB /* CategoryView */,
@@ -1430,6 +1468,7 @@
 				A4BBC6F625D63DF4006AF382 /* UIStackView+Init.swift */,
 				A4BBC70125D63ED8006AF382 /* UiViewController+Keyboard.swift */,
 				A40B95F725DE65EF00E507FB /* UITableView+Reuse.swift */,
+				A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */,
 			);
 			path = "UIView+Extension";
 			sourceTree = "<group>";
@@ -1676,6 +1715,7 @@
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
+				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
@@ -1733,7 +1773,7 @@
 				A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */,
 				A483E27925D40ABE006D2DAF /* UploadService.swift in Sources */,
 				A483E29425D40ABE006D2DAF /* PilicanLogger+HTTP.swift in Sources */,
-				A47CA04A25E1495200EB091C /* RetailTableViewCell.swift in Sources */,
+				A47CA04A25E1495200EB091C /* RetailCollectionViewCell.swift in Sources */,
 				A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */,
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
@@ -1749,6 +1789,7 @@
 				A483E29B25D40ABE006D2DAF /* ImageSlideshow.swift in Sources */,
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
+				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
 				A4BBC6DB25D638DF006AF382 /* NavigationBarConfigurable.swift in Sources */,
@@ -1780,6 +1821,8 @@
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
 				A4DD3DD725D24527002D2186 /* Color.swift in Sources */,
+				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
+				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
@@ -1810,6 +1853,7 @@
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,
+				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,

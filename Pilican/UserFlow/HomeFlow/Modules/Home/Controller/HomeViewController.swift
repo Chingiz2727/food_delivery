@@ -1,13 +1,17 @@
 import RxSwift
+import RxDataSources
 import UIKit
 
 class HomeViewController: ViewController, HomeModule, ViewHolder {
     typealias RootViewType = HomeView
 
     private let viewModel: HomeViewModel
+    private let dataSource: HomeCollectionViewDataSource
+    private let slider = BehaviorSubject<[Slider]>(value: [])
     private let disposeBag = DisposeBag()
 
     init(viewModel: HomeViewModel) {
+        dataSource = HomeCollectionViewDataSource(slider: slider)
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,8 +31,9 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     }
 
     private func bindView() {
-        rootView.tableView.setSizedHeaderView(rootView.headerView)
-        rootView.tableView.registerClassForCell(RetailTableViewCell.self)
+        rootView.collectionView.registerClassForCell(RetailCollectionViewCell.self)
+        rootView.collectionView.registerClassForHeaderView(HomeTableVIewHeaderView.self)
+        rootView.layout.headerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 270)
     }
 
     private func bindViewModel() {
@@ -37,20 +42,21 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
         let slider = output.slider.publish()
         let retailList = output.retailList.publish()
 
-        slider.element
-            .subscribe(onNext: { [unowned self] slider in
-
-            })
-            .disposed(by: disposeBag)
+        slider.subscribe(onNext: { [unowned self] sliders in
+            guard let sliderList = sliders.result?.element else { return }
+            self.slider.onNext(sliderList.sliders)
+        })
+        .disposed(by: disposeBag)
 
         slider.connect()
             .disposed(by: disposeBag)
 
         retailList.element
-            .map { $0.retailList ?? [] }
-            .bind(to: rootView.tableView.rx.items(RetailTableViewCell.self)) { _, model, cell in
-                cell.setRetail(retail: model)
-            }.disposed(by: disposeBag)
+            .map { retail in
+                [ RetailSection(items: retail.retailList) ]
+            }
+            .bind(to: rootView.collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
 
         retailList.loading
             .bind(to: ProgressView.instance.rx.loading)

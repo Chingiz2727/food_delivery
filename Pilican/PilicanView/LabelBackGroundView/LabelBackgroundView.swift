@@ -8,12 +8,12 @@ final class LabelBackgroundView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitiallayout()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -21,18 +21,22 @@ final class LabelBackgroundView: UIView {
     func setTitle(title: String) {
         titleLabel.text = title
     }
-    
+
     func configureView(backColor: UIColor, textColor: UIColor) {
         backgroundColor = backColor
         titleLabel.textColor = textColor
     }
-    
+
     private func setupInitiallayout() {
         addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { $0.edges.equalToSuperview().inset(5) }
+        titleLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(2)
+        }
     }
-    
+
     override func layoutSubviews() {
         layer.cornerRadius = 6
+        layer.masksToBounds = true
     }
 }
