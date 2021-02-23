@@ -13,6 +13,7 @@ enum Images: String {
     case bus
     case group
     case cashbackgroup
+    case mainqr
 }
 
 extension Images {

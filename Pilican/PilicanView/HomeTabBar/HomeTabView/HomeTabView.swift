@@ -6,7 +6,7 @@ final class HomeTabView: UIView {
 
     let qrScanButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.mainqrcode.image, for: .normal)
+        button.setImage(Images.mainqr.image, for: .normal)
         button.layer.cornerRadius = 35
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +50,6 @@ final class HomeTabView: UIView {
 
     private func configureView() {
         userInfoView.configureView(backColor: #colorLiteral(red: 0.8823529412, green: 0.9607843137, blue: 0.9960784314, alpha: 1), icon: Images.avatar.image)
-        balanceInfoView.configureView(backColor: .blue, icon: Images.cashback.image)
-        qrScanButton.backgroundColor = .primary
+        balanceInfoView.configureView(backColor: .cashbackOrange, icon: Images.cashback.image)
     }
 }
