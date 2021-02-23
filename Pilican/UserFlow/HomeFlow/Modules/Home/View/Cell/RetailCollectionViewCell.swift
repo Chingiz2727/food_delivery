@@ -1,11 +1,11 @@
 import UIKit
 
-class RetailTableViewCell: UITableViewCell {
+class RetailCollectionViewCell: UICollectionViewCell {
     
     private let companyImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 35
+        imageView.layer.cornerRadius = 27
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         return imageView
@@ -46,24 +46,24 @@ class RetailTableViewCell: UITableViewCell {
     )
 
     private lazy var priceVerticalStack = UIStackView(
-        views: [discountView, workStatusView],
+        views: [discountView, UIView(), workStatusView],
         axis: .vertical,
         spacing: 15)
 
     private lazy var horizontalStackView = UIStackView(
-        views: [companyImageView, companyInfoVerticalStack, priceVerticalStack],
+        views: [companyInfoVerticalStack, UIView(), priceVerticalStack],
         axis: .horizontal,
         spacing: 8)
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupInitialLayout()
         configureView()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16))
+        layer.cornerRadius = 10
     }
 
     required init?(coder: NSCoder) {
@@ -73,25 +73,33 @@ class RetailTableViewCell: UITableViewCell {
     func setRetail(retail: Retail) {
         companyNameLabel.text = retail.name
         adressLabel.text = retail.address
-        discountView.setTitle(title: "\(retail.cashBack)")
+        discountView.setTitle(title: "\(retail.cashBack) %")
+        discountView.configureView(backColor: .primary, textColor: .pilicanWhite)
         companyTypeLabel.text = retail.name
         guard let imgUrl = retail.imgLogo else { return }
         companyImageView.kf.setImage(with: URL(string: imgUrl))
     }
 
     private func setupInitialLayout() {
-        contentView.addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.top.bottom.equalToSuperview().inset(10)
+        addSubview(horizontalStackView)
+        addSubview(companyImageView)
+        companyImageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().inset(10)
         }
 
-        companyImageView.snp.makeConstraints { $0.size.equalTo(70) }
+        horizontalStackView.snp.makeConstraints { make in
+            make.leading.equalTo(companyImageView.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(10)
+        }
+        companyImageView.snp.makeConstraints { $0.size.equalTo(54) }
+        let primaryGradient: CAGradientLayer = .primaryGradient
+        primaryGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        discountView.layer.insertSublayer(primaryGradient, at: 0)
     }
 
     private func configureView() {
-        contentView.backgroundColor = .pilicanWhite
-        backgroundColor = .grayBackground
-        selectionStyle = .none
+        backgroundColor = .pilicanWhite
     }
 }

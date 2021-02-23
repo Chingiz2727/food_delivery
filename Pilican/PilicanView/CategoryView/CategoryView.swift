@@ -7,13 +7,40 @@ final class CategoryView: UIControl {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
-    private let titleLabel = UILabel()
-    
+
+    private let backView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.pilicanBlack.withAlphaComponent(0.07)
+        view.layer.cornerRadius = 10
+        return view
+    }()
+
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .description3
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        return label
+    }()
+
     private lazy var verticalStackView = UIStackView(
-        views: [imageView, titleLabel],
+        views: [backView, titleLabel],
         axis: .vertical,
         spacing: 4)
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupInitialLayout()
+    }
+
+    override func layoutSubviews() {
+        clipsToBounds = true
+        layer.cornerRadius = 12
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 
     func configureView(title: String, image: UIImage?, backColor: UIColor, titleColor: UIColor) {
         titleLabel.text = title
@@ -23,7 +50,25 @@ final class CategoryView: UIControl {
     }
 
     private func setupInitialLayout() {
-        addSubview(verticalStackView)
-        verticalStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
+        addSubview(titleLabel)
+        addSubview(backView)
+        backView.addSubview(imageView)
+
+        backView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(40)
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(24)
+        }
+
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().inset(8)
+            make.leading.trailing.equalToSuperview().inset(2)
+        }
     }
 }

@@ -1,5 +1,5 @@
 struct Sliders: Codable {
-    let sliders: [Sliders]
+    let sliders: [Slider]
 }
 
 struct Slider: Codable {
@@ -8,4 +8,8 @@ struct Slider: Codable {
     let url: String
     let retailId: Int
     let type: Int
+
+    var imgLogo: String {
+        return "https://st.pillikan.kz/slider/\(image)"
+    }
 }
