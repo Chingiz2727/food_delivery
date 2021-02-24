@@ -1,12 +1,14 @@
 import Swinject
 
 public protocol AuthCoordinatorOutput {
-    var onFlowDidFinish: Callback? { get set }
+    typealias AuthCompletion = (Bool) -> Void
+
+    var onCompletion: AuthCompletion? { get set }
 }
 
 final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
 
-    var onFlowDidFinish: Callback?
+    var onCompletion: AuthCompletion?
     private let moduleFactory: AuthModuleFactory
 
     init(container: DependencyContainer, router: Router) {
@@ -29,7 +31,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         }
 
         module.authButtonTapped = { [weak self] in
-            self?.onFlowDidFinish?()
+            self?.onCompletion?(true)
         }
         router.setRootModule(module)
     }
@@ -37,7 +39,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     private func showAuthBySms() {
         var module = moduleFactory.makeAuthBySms()
         module.onAuthDidFinish = { [weak self] in
-            self?.onFlowDidFinish?()
+            self?.onCompletion?(true)
         }
         router.push(module)
     }
@@ -51,7 +53,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         }
 
         module.registerTapped = { [weak self] in
-            self?.onFlowDidFinish?()
+            self?.onCompletion?(true)
         }
 
         router.push(module)

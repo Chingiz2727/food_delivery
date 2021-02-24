@@ -64,6 +64,7 @@ public final class AuthenticationServiceImpl: AuthenticationService {
             .asLoadingSequence()
             .do(onNext: { [weak self] token in
                 guard let token = token.result?.element?.token else { return }
+                self?.updateToken(with: nil)
                 self?.updateToken(with: token)
             })
     }
@@ -80,6 +81,7 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         .result(UserAuthResponse.self).asLoadingSequence()
         .do(onNext: { [weak self] token in
             guard let token = token.result?.element?.token else { return }
+            self?.updateToken(with: nil)
             self?.updateToken(with: token)
         })
     }
@@ -94,6 +96,7 @@ public final class AuthenticationServiceImpl: AuthenticationService {
             .result(UserAuthResponse.self).asLoadingSequence()
             .do(onNext: { [weak self] token in
                 guard let token = token.result?.element?.token else { return }
+                self?.updateToken(with: nil)
                 self?.updateToken(with: token)
             })
     }
