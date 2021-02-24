@@ -17,7 +17,7 @@ final class HomeTableVIewHeaderView: UICollectionReusableView {
     private lazy var categoryStack = UIStackView(
         views: [cashBackCategory, busCategory, deliveryCategory, volunteerCategory],
         axis: .horizontal,
-        distribution: .fillEqually,
+        distribution: .equalSpacing,
         spacing: 10)
 
     private let titleLabel: UILabel = {
@@ -65,8 +65,8 @@ final class HomeTableVIewHeaderView: UICollectionReusableView {
             make.height.equalTo(130)
         }
 
-        categoryStack.snp.makeConstraints { make in
-            make.height.equalTo(75)
+        [cashBackCategory, busCategory, deliveryCategory, volunteerCategory].forEach { view in
+            view.snp.makeConstraints { $0.size.equalTo(80) }
         }
     }
 

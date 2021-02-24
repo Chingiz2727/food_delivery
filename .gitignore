@@ -21,3 +21,5 @@ fastlane/report.xml
 # Build times
 buildtimes.log
 Pilican.xcworkspace/xcuserdata/shyngyskuandyk.xcuserdatad/UserInterfaceState.xcuserstate
+Pilican.xcworkspace/xcuserdata/shyngyskuandyk.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
