@@ -21,7 +21,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     private func showAuth() {
         var module = moduleFactory.makeAuthUserName()
         module.registerButtonTapped = { [weak self] in
-            self?.showRegistration()
+            self?.showAcceptPermission()
         }
 
         module.authBySms = { [weak self] in
@@ -39,6 +39,9 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         module.onAuthDidFinish = { [weak self] in
             self?.onFlowDidFinish?()
         }
+        module.registerButtonTapped = { [weak self] in
+            self?.showRegistration()
+        }
         router.push(module)
     }
 
@@ -53,7 +56,6 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         module.registerTapped = { [weak self] in
             self?.onFlowDidFinish?()
         }
-
         router.push(module)
     }
 
@@ -65,5 +67,10 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
             qrScanned(promoCode)
         }
         router.push(module)
+    }
+    
+    private func showAcceptPermission() {
+        let module = moduleFactory.makeAcceptPermission()
+        router.present(module)
     }
 }

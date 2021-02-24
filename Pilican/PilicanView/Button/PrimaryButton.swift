@@ -24,6 +24,7 @@ final class PrimaryButton: BaseButton {
 
     private func configureView() {
         backgroundColor = .primary
+        titleLabel?.font = UIFont.medium16
         layer.cornerRadius = 20
         setTitleColor(.white, for: .normal)
     }
