@@ -32,7 +32,7 @@ final class ConfigServiceImpl: ConfigService {
   }()
 
   lazy var apiUrl: URL = {
-    guard let url = URL(string: "https://java.pillikan.kz/api") else {
+    guard let url = URL(string: AppEnviroment.baseURL) else {
       fatalError("Api URL not correct")
     }
     return url

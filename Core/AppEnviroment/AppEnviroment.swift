@@ -13,7 +13,7 @@ public enum AppEnviroment {
     public static let bundleIdentifier = Bundle.main.bundleIdentifier ?? ""
 
     public static let baseURL: String = {
-        guard let baseURL = AppEnviroment.infoDictionary["base_url"] as? String else {
+        guard let baseURL = AppEnviroment.infoDictionary["BASE_URL"] as? String else {
             fatalError("baseURL not found")
         }
         return baseURL

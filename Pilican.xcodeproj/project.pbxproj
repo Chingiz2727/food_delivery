@@ -157,7 +157,6 @@
 		A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9DE0125E6228B00A711CA /* AuthCheckCoordinator.swift */; };
 		A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B310E625D10C370003BA0B /* AppDelegate.swift */; };
 		A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B310EA25D10C370003BA0B /* AuthViewController.swift */; };
-		A4B310EE25D10C370003BA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B310EC25D10C370003BA0B /* Main.storyboard */; };
 		A4B310F025D10C3C0003BA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B310EF25D10C3C0003BA0B /* Assets.xcassets */; };
 		A4B310F325D10C3C0003BA0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B310F125D10C3C0003BA0B /* LaunchScreen.storyboard */; };
 		A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B312B825D117A60003BA0B /* DependencyContainerAssembly.swift */; };
@@ -208,7 +207,10 @@
 
 /* Begin PBXFileReference section */
 		0992AD76D1E54237A20041FD /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B7000975728E2FD67075134 /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
+		6F49A99C7F2C5E4C2FB8A041 /* Pods-Pilican.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(development).xcconfig"; sourceTree = "<group>"; };
+		783AEE61F24CC5966A2DBCCE /* Pods-Pilican.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(production).xcconfig"; sourceTree = "<group>"; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 		A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -355,10 +357,11 @@
 		A48CD00E25DBD37A0010829F /* RegistrationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStatus.swift; sourceTree = "<group>"; };
 		A48CD01125DBE1A50010829F /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
 		A4A9DE0125E6228B00A711CA /* AuthCheckCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCheckCoordinator.swift; sourceTree = "<group>"; };
+		A4A9DE9B25E6671100A711CA /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		A4A9DE9C25E6671E00A711CA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		A4B310E325D10C370003BA0B /* Pilican.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilican.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B310E625D10C370003BA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B310EA25D10C370003BA0B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		A4B310ED25D10C370003BA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4B310EF25D10C3C0003BA0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B310F225D10C3C0003BA0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4B310F425D10C3C0003BA0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -406,8 +409,7 @@
 		A4FD7DA925DCEF4F000DD49D /* UserAuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthResponse.swift; sourceTree = "<group>"; };
 		A4FD7DAE25DD3306000DD49D /* TabImageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabImageInfoView.swift; sourceTree = "<group>"; };
 		A4FD7DB325DD380C000DD49D /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
-		BF1257DCD9904E32C4488414 /* Pods-Pilican.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release.xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release.xcconfig"; sourceTree = "<group>"; };
-		E5863DB5A28ABD2BE0458594 /* Pods-Pilican.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug.xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug.xcconfig"; sourceTree = "<group>"; };
+		CB54EEC59C08475A3D2D972B /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,8 +427,10 @@
 		8176B9877CE758347B33479A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E5863DB5A28ABD2BE0458594 /* Pods-Pilican.debug.xcconfig */,
-				BF1257DCD9904E32C4488414 /* Pods-Pilican.release.xcconfig */,
+				CB54EEC59C08475A3D2D972B /* Pods-Pilican.debug(production).xcconfig */,
+				6F49A99C7F2C5E4C2FB8A041 /* Pods-Pilican.debug(development).xcconfig */,
+				783AEE61F24CC5966A2DBCCE /* Pods-Pilican.release(production).xcconfig */,
+				2B7000975728E2FD67075134 /* Pods-Pilican.release(development).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1182,6 +1186,42 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		A4A9DE9525E6663F00A711CA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9DE9A25E6668C00A711CA /* Configs */,
+				A4A9DE9725E6666500A711CA /* Plists */,
+				A4A9DE9625E6664A00A711CA /* Supporting Files */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A4A9DE9625E6664A00A711CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4B310EF25D10C3C0003BA0B /* Assets.xcassets */,
+				A4B310F125D10C3C0003BA0B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4A9DE9725E6666500A711CA /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				A4B310F425D10C3C0003BA0B /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		A4A9DE9A25E6668C00A711CA /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9DE9B25E6671100A711CA /* Development.xcconfig */,
+				A4A9DE9C25E6671E00A711CA /* Production.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		A4B310DA25D10C370003BA0B = {
 			isa = PBXGroup;
 			children = (
@@ -1205,15 +1245,12 @@
 		A4B310E525D10C370003BA0B /* Pilican */ = {
 			isa = PBXGroup;
 			children = (
-				A4B310F425D10C3C0003BA0B /* Info.plist */,
 				A4B310E625D10C370003BA0B /* AppDelegate.swift */,
-				A4B310EF25D10C3C0003BA0B /* Assets.xcassets */,
 				A4B3143E25D150010003BA0B /* AppCoordinator */,
 				A4BBC6C125D6124A006AF382 /* CameraModule */,
 				A4B312B725D117990003BA0B /* DI */,
-				A4B310F125D10C3C0003BA0B /* LaunchScreen.storyboard */,
-				A4B310EC25D10C370003BA0B /* Main.storyboard */,
 				A4DD3E9525D24B98002D2186 /* PilicanView */,
+				A4A9DE9525E6663F00A711CA /* Resources */,
 				A40B951425DE266000E507FB /* UserFlow */,
 			);
 			path = Pilican;
@@ -1639,7 +1676,6 @@
 				A4D7644125DA748C009A6651 /* city.json in Resources */,
 				A40A547925D26FA100BBFDFA /* Whitney-Book.ttf in Resources */,
 				A40A548325D26FAE00BBFDFA /* Whitney-MediumItalic.ttf in Resources */,
-				A4B310EE25D10C370003BA0B /* Main.storyboard in Resources */,
 				A40A547325D26F9B00BBFDFA /* Whitney-BlackItalic.ttf in Resources */,
 				A40A547125D26F9900BBFDFA /* Whitney-Black.ttf in Resources */,
 			);
@@ -1898,14 +1934,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A4B310EC25D10C370003BA0B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4B310ED25D10C370003BA0B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A4B310F125D10C3C0003BA0B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1917,8 +1945,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A4B310F525D10C3C0003BA0B /* Debug */ = {
+		A4A9DE0625E664C100A711CA /* Debug(Development) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4A9DE9B25E6671100A711CA /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1968,7 +1997,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1976,10 +2005,34 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = "Debug(Development)";
 		};
-		A4B310F625D10C3C0003BA0B /* Release */ = {
+		A4A9DE0725E664C100A711CA /* Debug(Development) */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F49A99C7F2C5E4C2FB8A041 /* Pods-Pilican.debug(development).xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug(Development)";
+		};
+		A4A9DE0825E664D800A711CA /* Release(Development) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4A9DE9B25E6671100A711CA /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -2023,7 +2076,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2031,18 +2084,158 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = "Release(Development)";
 		};
-		A4B310F825D10C3C0003BA0B /* Debug */ = {
+		A4A9DE0925E664D800A711CA /* Release(Development) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5863DB5A28ABD2BE0458594 /* Pods-Pilican.debug.xcconfig */;
+			baseConfigurationReference = 2B7000975728E2FD67075134 /* Pods-Pilican.release(development).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGL7D9XAQ6;
-				INFOPLIST_FILE = Pilican/Info.plist;
+				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Release(Development)";
+		};
+		A4B310F525D10C3C0003BA0B /* Debug(Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4A9DE9C25E6671E00A711CA /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug(Production)";
+		};
+		A4B310F625D10C3C0003BA0B /* Release(Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4A9DE9C25E6671E00A711CA /* Production.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release(Production)";
+		};
+		A4B310F825D10C3C0003BA0B /* Debug(Production) */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB54EEC59C08475A3D2D972B /* Pods-Pilican.debug(production).xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2054,18 +2247,18 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = Debug;
+			name = "Debug(Production)";
 		};
-		A4B310F925D10C3C0003BA0B /* Release */ = {
+		A4B310F925D10C3C0003BA0B /* Release(Production) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF1257DCD9904E32C4488414 /* Pods-Pilican.release.xcconfig */;
+			baseConfigurationReference = 783AEE61F24CC5966A2DBCCE /* Pods-Pilican.release(production).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KGL7D9XAQ6;
-				INFOPLIST_FILE = Pilican/Info.plist;
+				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2076,7 +2269,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
-			name = Release;
+			name = "Release(Production)";
 		};
 /* End XCBuildConfiguration section */
 
@@ -2084,20 +2277,24 @@
 		A4B310DE25D10C370003BA0B /* Build configuration list for PBXProject "Pilican" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4B310F525D10C3C0003BA0B /* Debug */,
-				A4B310F625D10C3C0003BA0B /* Release */,
+				A4B310F525D10C3C0003BA0B /* Debug(Production) */,
+				A4A9DE0625E664C100A711CA /* Debug(Development) */,
+				A4B310F625D10C3C0003BA0B /* Release(Production) */,
+				A4A9DE0825E664D800A711CA /* Release(Development) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = "Debug(Production)";
 		};
 		A4B310F725D10C3C0003BA0B /* Build configuration list for PBXNativeTarget "Pilican" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4B310F825D10C3C0003BA0B /* Debug */,
-				A4B310F925D10C3C0003BA0B /* Release */,
+				A4B310F825D10C3C0003BA0B /* Debug(Production) */,
+				A4A9DE0725E664C100A711CA /* Debug(Development) */,
+				A4B310F925D10C3C0003BA0B /* Release(Production) */,
+				A4A9DE0925E664D800A711CA /* Release(Development) */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = "Debug(Production)";
 		};
 /* End XCConfigurationList section */
 	};
