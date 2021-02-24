@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49CB2EA847BAC9678F0DBF20 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0992AD76D1E54237A20041FD /* Pods_Pilican.framework */; };
+		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C025D2596E00BBFDFA /* TextField.swift */; };
 		A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */; };
 		A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */; };
@@ -206,6 +207,7 @@
 
 /* Begin PBXFileReference section */
 		0992AD76D1E54237A20041FD /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 		A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 				A40B960925DE758E00E507FB /* WorkDay.swift */,
 				A40B960C25DE75A900E507FB /* RetailCategory.swift */,
 				A40B961025DE766E00E507FB /* RetailList.swift */,
+				55AD645825E52F2800034459 /* WorkStatus.swift */,
 			);
 			path = Retail;
 			sourceTree = "<group>";
@@ -1824,6 +1827,7 @@
 				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
 				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
+				55AD645925E52F2800034459 /* WorkStatus.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,

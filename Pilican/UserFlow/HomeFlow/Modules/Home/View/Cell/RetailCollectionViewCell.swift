@@ -76,8 +76,16 @@ class RetailCollectionViewCell: UICollectionViewCell {
         discountView.setTitle(title: "\(retail.cashBack) %")
         discountView.configureView(backColor: .primary, textColor: .pilicanWhite)
         companyTypeLabel.text = retail.name
+        setupWorkStatusView(retail: retail)
         guard let imgUrl = retail.imgLogo else { return }
         companyImageView.kf.setImage(with: URL(string: imgUrl))
+    }
+    
+    private func setupWorkStatusView(retail: Retail) {
+        if let status = WorkStatus(rawValue: retail.payIsWork) {
+        workStatusView.setTitle(title: status.title)
+        workStatusView.configureView(backColor: status.backColor, textColor: status.textColor)
+        }
     }
 
     private func setupInitialLayout() {
