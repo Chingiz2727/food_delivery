@@ -154,6 +154,7 @@
 		A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD00B25DBC9E20010829F /* ViewController.swift */; };
 		A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD00E25DBD37A0010829F /* RegistrationStatus.swift */; };
 		A48CD01225DBE1A50010829F /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD01125DBE1A50010829F /* Encryption.swift */; };
+		A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9DE0125E6228B00A711CA /* AuthCheckCoordinator.swift */; };
 		A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B310E625D10C370003BA0B /* AppDelegate.swift */; };
 		A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B310EA25D10C370003BA0B /* AuthViewController.swift */; };
 		A4B310EE25D10C370003BA0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B310EC25D10C370003BA0B /* Main.storyboard */; };
@@ -353,6 +354,7 @@
 		A48CD00B25DBC9E20010829F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A48CD00E25DBD37A0010829F /* RegistrationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStatus.swift; sourceTree = "<group>"; };
 		A48CD01125DBE1A50010829F /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
+		A4A9DE0125E6228B00A711CA /* AuthCheckCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCheckCoordinator.swift; sourceTree = "<group>"; };
 		A4B310E325D10C370003BA0B /* Pilican.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilican.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B310E625D10C370003BA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B310EA25D10C370003BA0B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -1267,6 +1269,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B3144425D150900003BA0B /* AuthCoordinator.swift */,
+				A4A9DE0125E6228B00A711CA /* AuthCheckCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1794,6 +1797,7 @@
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
+				A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */,
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
 				A4BBC6DB25D638DF006AF382 /* NavigationBarConfigurable.swift in Sources */,
 				A4B3144525D150900003BA0B /* AuthCoordinator.swift in Sources */,
