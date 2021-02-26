@@ -15,30 +15,9 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        checkAuth()
-    }
-
-    private func checkAuth() {
-        authService.authenticated
-            .subscribe(onNext: { [weak self] authed in
-                if authed {
-                    self?.startHomeFlow()
-                } else {
-                    self?.startAuthFlow()
-                }
-            }).disposed(by: disposeBag)
-    }
-
-    private func startAuthFlow() {
-        var coordinator = appCoordinatorFactory.makeAuthCoordinator()
-
-        coordinator.onFlowDidFinish = { [weak self] in
-            self?.removeDependency(coordinator)
+        checkAuth { [weak self] in
             self?.startHomeFlow()
         }
-
-        coordinator.start()
-        addDependency(coordinator)
     }
 
     private func startHomeFlow() {
@@ -47,3 +26,5 @@ final class AppCoordinator: BaseCoordinator {
         addDependency(coordinator)
     }
 }
+
+extension AppCoordinator: AuthCheckCoordinator {}

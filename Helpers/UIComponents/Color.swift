@@ -13,4 +13,8 @@ extension UIColor {
     static let pilicanWhite = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     static let pilicanLightGray = #colorLiteral(red: 0.631372549, green: 0.6745098039, blue: 0.7137254902, alpha: 1)
     static let cashbackOrange = UIColor.init(displayP3Red: 1, green: 0.953, blue: 0.878, alpha: 1)
+    static let workStatusPink = UIColor(red: 1, green: 0.922, blue: 0.933, alpha: 1)
+    static let workStatusGreen = UIColor(red: 0.91, green: 0.961, blue: 0.914, alpha: 1)
+    static let workStatusTextPink = UIColor(red: 0.957, green: 0.263, blue: 0.212, alpha: 1)
+    static let workStatusTextGreen = UIColor(red: 0.298, green: 0.686, blue: 0.314, alpha: 1)
 }

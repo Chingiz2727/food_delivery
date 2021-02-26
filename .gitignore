@@ -4,6 +4,7 @@ DerivedData
 xcuserdata/
 project.xcworkspace/
 build/*
+*.xcuserstate
 
 # osx noise
 .DS_Store
@@ -17,7 +18,4 @@ Pods/
 
 # Fastlane
 fastlane/report.xml
-
-# Build times
-buildtimes.log
-Pilican.xcworkspace/xcuserdata/shyngyskuandyk.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
