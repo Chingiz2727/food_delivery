@@ -14,6 +14,8 @@ enum Images: String {
     case group
     case cashbackgroup
     case mainqr
+    case checkboxSelected
+    case checkboxUnselected
 }
 
 extension Images {

@@ -13,8 +13,8 @@ final class AcceptPermissionView: UIView {
     let termsView = TermsofPolicyView()
     
     let checkButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "checkboxunselected")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        let button = UIButton()
+        button.setImage(Images.checkboxSelected.image, for: .normal)
         return button
     }()
     
@@ -36,20 +36,28 @@ final class AcceptPermissionView: UIView {
         button.backgroundColor = .primary
         button.clipsToBounds = true
         button.layer.cornerRadius = 20
-//        button.layer.borderWidth = 1
-//        button.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         return button
+    }()
+    
+    let termsContainer = UIView()
+    let bottomContainer = UIView()
+    
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        return stackView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupLayouts()
+        setupInitialLayouts()
     }
     
-    private func setupLayouts() {
-        backgroundColor = .white
-        let termsContainer = UIView()
+    private func setupInitialLayouts() {
         addSubview(termsContainer)
         termsContainer.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
@@ -63,23 +71,14 @@ final class AcceptPermissionView: UIView {
             make.bottom.equalToSuperview().inset(10)
         }
         
-        let bottomContainer = UIView()
-        bottomContainer.backgroundColor = .white
         addSubview(bottomContainer)
         bottomContainer.snp.makeConstraints { (make) in
             make.height.equalTo(185)
             make.top.equalTo(termsContainer.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
-
-        let stackView = UIStackView(arrangedSubviews: [
-           checkButton,
-           politiсyAgreementButton
-        ])
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.alignment = .center
-        stackView.distribution = .fill
+        
+        configureView()
 
         bottomContainer.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
@@ -93,6 +92,14 @@ final class AcceptPermissionView: UIView {
             make.left.right.bottom.equalToSuperview().inset(30)
             make.height.equalTo(40)
         }
+    }
+    
+    private func configureView() {
+        backgroundColor = .white
+        stackView.addArrangedSubview(checkButton)
+        stackView.addArrangedSubview(politiсyAgreementButton)
+        
+        bottomContainer.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

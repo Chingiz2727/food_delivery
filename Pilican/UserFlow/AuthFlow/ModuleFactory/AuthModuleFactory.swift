@@ -30,8 +30,7 @@ final class AuthModuleFactory {
     }
     
     func makeAcceptPermission() -> AcceptPermissionModule {
-        let viewModel = AcceptPermissionViewModel()
-        let viewController = AcceptPermissionViewController(viewModel: viewModel)
+        let viewController = AcceptPermissionViewController()
         return viewController
     }
 }
