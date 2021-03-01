@@ -1,4 +1,5 @@
 import RxSwift
+import Vision
 import AVFoundation
 import UIKit
 
@@ -16,6 +17,7 @@ class CameraViewController: UIViewController, CameraModule {
     private let cameraUsagePermission: CameraUsagePermission
     private let disposeBag = DisposeBag()
     private let cameraView = CameraView()
+    private var request: [VNRequest] = []
 
     init(
         avCaptureSession: AVCaptureSession,

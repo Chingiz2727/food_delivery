@@ -55,7 +55,6 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         module.registerTapped = { [weak self] in
             self?.onCompletion?(true)
         }
-
         router.push(module)
     }
 
