@@ -9,7 +9,7 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
     private var tabBarController: HomeTabBarModule
 
     override init(router: Router, container: DependencyContainer) {
-        coordinatorFactory = HomeTabBarCoordinatorFactory(container: container)
+        coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         tabBarController = HomeTabBarViewController()
         super.init(router: router, container: container)
     }
@@ -19,6 +19,10 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
 
         tabBarController.qrCodeTap = { [weak self] in
             self?.showCamera()
+        }
+
+        tabBarController.accountTap = { [weak self] in
+            self?.showProfileMenu()
         }
 
         let viewControllers = tabRootContainers.map { $0.viewController }
@@ -37,5 +41,11 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
     private func showCamera() {
         let module = container.resolve(CameraModule.self)!
         router.push(module)
+    }
+    
+    private func showProfileMenu() {
+        let coordinator = coordinatorFactory.makeProfileMenu()
+        coordinator.start()
+        addDependency(coordinator)
     }
 }
