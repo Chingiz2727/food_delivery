@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		49CB2EA847BAC9678F0DBF20 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0992AD76D1E54237A20041FD /* Pods_Pilican.framework */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
+		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
+		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
+		55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */; };
+		55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */; };
 		A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C025D2596E00BBFDFA /* TextField.swift */; };
 		A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */; };
 		A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */; };
@@ -215,6 +219,10 @@
 		0992AD76D1E54237A20041FD /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7000975728E2FD67075134 /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
+		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
+		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
+		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
+		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
 		6F49A99C7F2C5E4C2FB8A041 /* Pods-Pilican.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(development).xcconfig"; sourceTree = "<group>"; };
 		783AEE61F24CC5966A2DBCCE /* Pods-Pilican.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(production).xcconfig"; sourceTree = "<group>"; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -436,6 +444,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
+			isa = PBXGroup;
+			children = (
+				55ADCEA825E65D79003D3F3A /* ViewModel */,
+				55ADCEA725E65D73003D3F3A /* View */,
+				55ADCEA625E65D6B003D3F3A /* Module */,
+				55ADCEA525E65D59003D3F3A /* Controller */,
+			);
+			path = AcceptPermission;
+			sourceTree = "<group>";
+		};
+		55ADCEA525E65D59003D3F3A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55ADCEA625E65D6B003D3F3A /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		55ADCEA725E65D73003D3F3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */,
+				55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55ADCEA825E65D79003D3F3A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8176B9877CE758347B33479A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +753,7 @@
 		A436BC1F25D1A99800DEC963 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				55ADCEA425E65D48003D3F3A /* AcceptPermission */,
 				A4402CA725DBEB1B0004D1FC /* AuthBySms */,
 				A4E581EE25D54B3400EDC053 /* RegisterModule */,
 				A436BC2025D1A99E00DEC963 /* AuthModule */,
@@ -1817,6 +1869,7 @@
 				A483E27425D40ABE006D2DAF /* NotificationTokenService.swift in Sources */,
 				A47CA1EB25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift in Sources */,
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
+				55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */,
 				A483E28825D40ABE006D2DAF /* DateContent.swift in Sources */,
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
@@ -1854,6 +1907,7 @@
 				A4E581E825D543C400EDC053 /* UIViewController+Alert.swift in Sources */,
 				A483E28C25D40ABE006D2DAF /* PaginationManager.swift in Sources */,
 				A40B961125DE766E00E507FB /* RetailList.swift in Sources */,
+				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
@@ -1900,6 +1954,7 @@
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
+				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
 				A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */,
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
 				A4BBC6DB25D638DF006AF382 /* NavigationBarConfigurable.swift in Sources */,
@@ -1975,6 +2030,7 @@
 				A483E28925D40ABE006D2DAF /* IdPaginationAdapter.swift in Sources */,
 				A4D7645125DA7F7E009A6651 /* CityPickerViewDataSource.swift in Sources */,
 				A483E29F25D40ABE006D2DAF /* SwiftSupport.swift in Sources */,
+				55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */,
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,

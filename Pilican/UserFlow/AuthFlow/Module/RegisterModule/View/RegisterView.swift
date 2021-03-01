@@ -13,11 +13,15 @@ final class RegisterView: UIView {
 
     private let welcomeLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.semibold24
+        label.textColor = .pilicanGray
         return label
     }()
 
     private let welcomeDescriptionLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.book14
+        label.textColor = .pilicanLightGray
         return label
     }()
 
@@ -79,7 +83,7 @@ final class RegisterView: UIView {
 
         buttonContainerStack.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
-            make.bottom.equalToSuperview().inset(30)
+            make.top.equalTo(textFieldContainerStack.snp.bottom).offset(30)
         }
 
         buttonContainerStack.arrangedSubviews.forEach {
@@ -96,11 +100,11 @@ final class RegisterView: UIView {
     }
 
     private func configureView() {
-        loginContainer.title = "Логин"
-        userNameContainer.title = "Ф.И.О"
-        cityContainer.title = "Город"
-        promoCodeContainer.title = "Промо"
-        smsContainer.title = "СМС Код"
+        loginContainer.title = " Логин "
+        userNameContainer.title = " Ф.И.О "
+        cityContainer.title = " Город "
+        promoCodeContainer.title = " Промо "
+        smsContainer.title = " СМС Код "
         welcomeLabel.text = "Cоздать учетную запись"
         welcomeDescriptionLabel.text = "Зарегистрируйтесь, чтобы начать"
         registerButton.setTitle("Регистрация", for: .normal)
