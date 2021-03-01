@@ -2,10 +2,12 @@ import RxSwift
 import UIKit
 
 class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
+    
     typealias RootViewType = AuthBySmsView
 
     var onAuthDidFinish: Callback?
-
+    var registerButtonTapped: RegisterButtonTapped?
+    
     private let viewModel: AuthBySmsViewModel
     private let disposeBag = DisposeBag()
 
@@ -14,6 +16,10 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
         super.init(nibName: nil, bundle: nil)
     }
 
+    override func customBackButtonDidTap() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     required init?(coder: NSCoder) {
         nil
     }
@@ -25,6 +31,7 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        bindView()
     }
 
     private func bindViewModel() {
@@ -71,6 +78,14 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
 
         signInResult.errors
             .bind(to: rx.error)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindView() {
+        rootView.registerButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.registerButtonTapped?()
+            })
             .disposed(by: disposeBag)
     }
 }

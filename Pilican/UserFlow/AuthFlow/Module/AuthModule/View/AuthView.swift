@@ -18,7 +18,10 @@ final class AuthView: UIView {
 
     let registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Я новый пользователь, регистрация", for: .normal)
+        let attributedTitle = NSMutableAttributedString(string: "Я новый пользователь,", attributes: [NSAttributedString.Key.font: UIFont.book14!, NSAttributedString.Key.foregroundColor: UIColor.pilicanBlack ])
+        
+        attributedTitle.append(NSAttributedString(string: " регистрация", attributes: [NSAttributedString.Key.font: UIFont.book14!, NSAttributedString.Key.foregroundColor: UIColor.primary]))
+        button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
 
@@ -67,7 +70,7 @@ final class AuthView: UIView {
 
         welcomeStackView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(10)
-            make.leading.trailing.equalToSuperview().inset(8)
+            make.leading.trailing.equalToSuperview().inset(30)
         }
 
         authStackView.snp.makeConstraints { make in
@@ -76,7 +79,8 @@ final class AuthView: UIView {
         }
 
         registerButton.snp.makeConstraints {
-            $0.bottom.leading.trailing.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview().inset(8)
+            $0.bottom.equalToSuperview().inset(40)
             $0.height.equalTo(44)
         }
 
@@ -87,15 +91,21 @@ final class AuthView: UIView {
 
     private func configureView() {
         backgroundColor = .background
-        phoneContainer.title = "Телефон"
-        passwordContainer.title = "Пароль"
+        phoneContainer.title = " Телефон "
+        passwordContainer.title = " Пароль "
         signInButton.backgroundColor = .primary
         authBySmsButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         signInButton.layer.cornerRadius = 20
+        signInButton.titleLabel?.font = UIFont.medium16
         authBySmsButton.setTitleColor(.pilicanLightGray, for: .normal)
+        authBySmsButton.titleLabel?.font = UIFont.medium12
         authStackView.setCustomSpacing(15, after: passwordContainer)
         registerButton.setTitleColor(.primary, for: .normal)
         welcomeLabel.text = "Добро пожаловать!"
+        welcomeLabel.font = UIFont.semibold24
+        welcomeLabel.textColor = .pilicanGray
         welcomeDescriptionLabel.text = "Войдите чтобы продолжить"
+        welcomeDescriptionLabel.font = UIFont.book14
+        welcomeDescriptionLabel.textColor = .pilicanLightGray
     }
 }

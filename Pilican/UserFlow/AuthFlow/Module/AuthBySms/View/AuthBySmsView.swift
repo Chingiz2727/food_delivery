@@ -4,18 +4,23 @@ final class AuthBySmsView: UIView {
     let signInButton: UIButton = {
         let button = UIButton()
         button.setTitle("Войти", for: .normal)
+        button.titleLabel?.font = UIFont.medium16
         return button
     }()
 
     let getSmsButton: UIButton = {
         let button = UIButton()
         button.setTitle("Получить код", for: .normal)
+        button.titleLabel?.font = UIFont.medium16
         return button
     }()
 
     let registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Я новый пользователь, регистрация", for: .normal)
+        let attributedTitle = NSMutableAttributedString(string: "Я новый пользователь,", attributes: [NSAttributedString.Key.font: UIFont.book14!, NSAttributedString.Key.foregroundColor: UIColor.pilicanBlack ])
+        
+        attributedTitle.append(NSAttributedString(string: " регистрация", attributes: [NSAttributedString.Key.font: UIFont.book14!, NSAttributedString.Key.foregroundColor: UIColor.primary]))
+        button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
 
@@ -24,11 +29,15 @@ final class AuthBySmsView: UIView {
 
     private let welcomeLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.semibold24
+        label.textColor = .pilicanGray
         return label
     }()
 
     private let welcomeDescriptionLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.book14
+        label.textColor = .pilicanLightGray
         return label
     }()
 
@@ -69,7 +78,7 @@ final class AuthBySmsView: UIView {
 
         welcomeStackView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(10)
-            make.leading.trailing.equalToSuperview().inset(8)
+            make.leading.trailing.equalToSuperview().inset(30)
         }
 
         authStackView.snp.makeConstraints { make in
@@ -78,7 +87,8 @@ final class AuthBySmsView: UIView {
         }
 
         registerButton.snp.makeConstraints {
-            $0.bottom.leading.trailing.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview().inset(8)
+            $0.bottom.equalToSuperview().inset(40)
             $0.height.equalTo(44)
         }
 
@@ -90,8 +100,8 @@ final class AuthBySmsView: UIView {
 
     private func configureView() {
         backgroundColor = .background
-        phoneContainer.title = "Логин"
-        passwordContainer.title = "Код"
+        phoneContainer.title = " Логин "
+        passwordContainer.title = " Код "
         signInButton.backgroundColor = .primary
         signInButton.layer.cornerRadius = 20
         getSmsButton.backgroundColor = .primary

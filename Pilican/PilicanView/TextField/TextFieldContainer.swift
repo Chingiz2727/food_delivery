@@ -13,6 +13,7 @@ final class TextFieldContainer<T: TextField>: UIView {
         let label = UILabel()
         label.textColor = .pilicanLightGray
         label.backgroundColor = .background
+        label.font = UIFont.book14
         return label
     }()
 
@@ -30,6 +31,7 @@ final class TextFieldContainer<T: TextField>: UIView {
         addSubview(titleLabel)
 
         textField.snp.makeConstraints { $0.edges.equalToSuperview() }
+        textField.font = UIFont.medium14
 
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(textField.snp.top)
