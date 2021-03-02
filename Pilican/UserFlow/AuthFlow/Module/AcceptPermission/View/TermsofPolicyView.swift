@@ -75,6 +75,7 @@ class TermsofPolicyView: UIView {
         scrolView.bounces = false
     }
 }
+// swiftlint:disable line_length
 
 let termsText = """
 Перед использованием программы, пожалуйста, внимательно ознакомьтесь с условиями нижеследующего пользовательского соглашения. 
