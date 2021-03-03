@@ -1,7 +1,7 @@
 final class HomeTabBarCoordinatorFactory {
     private let container: DependencyContainer
     private let router: Router
-    
+
     init(container: DependencyContainer, router: Router) {
         self.container = container
         self.router = router

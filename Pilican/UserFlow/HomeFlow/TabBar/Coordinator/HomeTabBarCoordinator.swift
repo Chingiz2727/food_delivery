@@ -15,7 +15,7 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     private let moduleFactory: HomeCoordinatorModuleFactory
 
     override init(router: Router, container: DependencyContainer) {
-        moduleFactory = HomeCoordinatorModuleFactory(container: container)
+        moduleFactory = HomeCoordinatorModuleFactory(container: container, router: router)
         super.init(router: router, container: container)
     }
 
@@ -27,7 +27,20 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     }
 
     private func showHome() {
-        let module = moduleFactory.makeHome()
+        var module = moduleFactory.makeHome()
+        module.selectRetail = { [weak self] retail in
+            self?.startRetailDetailCoordinator(retail: retail)
+        }
         router.setRootModule(module)
+    }
+
+    private func startRetailDetailCoordinator(retail: Retail) {
+        let coordinator = moduleFactory.makeRetailDetailCoordinator(retail: retail)
+        coordinator.onFlowDidFinish = { [weak self] in
+            self?.removeDependency(coordinator)
+            self?.router.popModule()
+        }
+        coordinator.start()
+        addDependency(coordinator)
     }
 }

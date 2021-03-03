@@ -69,6 +69,11 @@
 		A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BC2325D1A9C500DEC963 /* AuthModule.swift */; };
 		A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BC2825D1AA2E00DEC963 /* AuthModuleFactory.swift */; };
 		A436BCB625D1AB4B00DEC963 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BCB525D1AB4B00DEC963 /* AuthView.swift */; };
+		A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4379FD325ECAF3000910A2D /* RetailDetailModule.swift */; };
+		A4379FD825ECAF5700910A2D /* RetailDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4379FD725ECAF5700910A2D /* RetailDetailViewController.swift */; };
+		A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A437A09625ECBBAD00910A2D /* RetailDetailCoordinator.swift */; };
+		A437A09B25ECBBFE00910A2D /* RetailDetailModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A437A09A25ECBBFE00910A2D /* RetailDetailModuleFactory.swift */; };
+		A437A0B825ECC4DF00910A2D /* RetailDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A437A0B725ECC4DF00910A2D /* RetailDetailHeaderView.swift */; };
 		A43BC83625DFC2A600D45225 /* HomeTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BC83525DFC2A600D45225 /* HomeTabBarCoordinator.swift */; };
 		A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BC83825DFC36000D45225 /* TababbleCoordinator.swift */; };
 		A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BC83C25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift */; };
@@ -82,6 +87,26 @@
 		A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */; };
 		A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3E125E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift */; };
 		A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */; };
+		A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA7C25EDF5560071FAA6 /* RetailDetailView.swift */; };
+		A468EA8225EDFC5C0071FAA6 /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA8125EDFC5C0071FAA6 /* SocialNetwork.swift */; };
+		A468EA8725EE0F3D0071FAA6 /* SocialLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA8625EE0F3D0071FAA6 /* SocialLinksView.swift */; };
+		A468EA8D25EE3D390071FAA6 /* IdentificatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA8C25EE3D390071FAA6 /* IdentificatorView.swift */; };
+		A468EA9125EE3D790071FAA6 /* IdentificatorPayControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA9025EE3D790071FAA6 /* IdentificatorPayControl.swift */; };
+		A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA9525EE45F60071FAA6 /* DeliveryView.swift */; };
+		A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EB5325EE522A0071FAA6 /* ShowMapViewUIControl.swift */; };
+		A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EB5825EE5BC00071FAA6 /* CashBackView.swift */; };
+		A475CC1B25EF3BCC00C596FB /* WorkTimeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CC1A25EF3BCC00C596FB /* WorkTimeHeaderView.swift */; };
+		A475CC2325EF3ED700C596FB /* Extentsion+BoolToInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CC2225EF3ED700C596FB /* Extentsion+BoolToInt.swift */; };
+		A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CC2525EF405400C596FB /* WorkTimeView.swift */; };
+		A475CCB425EF418500C596FB /* HelperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCB325EF418500C596FB /* HelperProtocols.swift */; };
+		A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCB825EF41AD00C596FB /* DateFormatting.swift */; };
+		A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCBC25EF41D500C596FB /* PropertyFormatter.swift */; };
+		A475CCC125EF421600C596FB /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCC025EF421600C596FB /* AppLanguage.swift */; };
+		A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCC425EF424400C596FB /* UserDefaultStorage.swift */; };
+		A475CCCA25EF462800C596FB /* WorkCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCC925EF462800C596FB /* WorkCalendar.swift */; };
+		A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCCF25EF647400C596FB /* RetailDescriptionView.swift */; };
+		A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCD325EF7E9F00C596FB /* RetailItemsView.swift */; };
+		A475CCD725EF972000C596FB /* RetaiImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A475CCD625EF971F00C596FB /* RetaiImages.swift */; };
 		A47CA04A25E1495200EB091C /* RetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA04925E1495200EB091C /* RetailCollectionViewCell.swift */; };
 		A47CA10825E14E2300EB091C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA10725E14E2300EB091C /* UIFont.swift */; };
 		A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47CA10C25E1588F00EB091C /* LabelBackgroundView.swift */; };
@@ -296,6 +321,11 @@
 		A436BC2325D1A9C500DEC963 /* AuthModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModule.swift; sourceTree = "<group>"; };
 		A436BC2825D1AA2E00DEC963 /* AuthModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleFactory.swift; sourceTree = "<group>"; };
 		A436BCB525D1AB4B00DEC963 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		A4379FD325ECAF3000910A2D /* RetailDetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDetailModule.swift; sourceTree = "<group>"; };
+		A4379FD725ECAF5700910A2D /* RetailDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDetailViewController.swift; sourceTree = "<group>"; };
+		A437A09625ECBBAD00910A2D /* RetailDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDetailCoordinator.swift; sourceTree = "<group>"; };
+		A437A09A25ECBBFE00910A2D /* RetailDetailModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDetailModuleFactory.swift; sourceTree = "<group>"; };
+		A437A0B725ECC4DF00910A2D /* RetailDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDetailHeaderView.swift; sourceTree = "<group>"; };
 		A43BC83525DFC2A600D45225 /* HomeTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarCoordinator.swift; sourceTree = "<group>"; };
 		A43BC83825DFC36000D45225 /* TababbleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TababbleCoordinator.swift; sourceTree = "<group>"; };
 		A43BC83C25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarCoordinatorFactory.swift; sourceTree = "<group>"; };
@@ -309,6 +339,26 @@
 		A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableCollectionViewCell.swift; sourceTree = "<group>"; };
 		A455B3E125E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		A468EA7C25EDF5560071FAA6 /* RetailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDetailView.swift; sourceTree = "<group>"; };
+		A468EA8125EDFC5C0071FAA6 /* SocialNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
+		A468EA8625EE0F3D0071FAA6 /* SocialLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLinksView.swift; sourceTree = "<group>"; };
+		A468EA8C25EE3D390071FAA6 /* IdentificatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificatorView.swift; sourceTree = "<group>"; };
+		A468EA9025EE3D790071FAA6 /* IdentificatorPayControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentificatorPayControl.swift; sourceTree = "<group>"; };
+		A468EA9525EE45F60071FAA6 /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
+		A468EB5325EE522A0071FAA6 /* ShowMapViewUIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMapViewUIControl.swift; sourceTree = "<group>"; };
+		A468EB5825EE5BC00071FAA6 /* CashBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackView.swift; sourceTree = "<group>"; };
+		A475CC1A25EF3BCC00C596FB /* WorkTimeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeHeaderView.swift; sourceTree = "<group>"; };
+		A475CC2225EF3ED700C596FB /* Extentsion+BoolToInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extentsion+BoolToInt.swift"; sourceTree = "<group>"; };
+		A475CC2525EF405400C596FB /* WorkTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimeView.swift; sourceTree = "<group>"; };
+		A475CCB325EF418500C596FB /* HelperProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperProtocols.swift; sourceTree = "<group>"; };
+		A475CCB825EF41AD00C596FB /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		A475CCBC25EF41D500C596FB /* PropertyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyFormatter.swift; sourceTree = "<group>"; };
+		A475CCC025EF421600C596FB /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		A475CCC425EF424400C596FB /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
+		A475CCC925EF462800C596FB /* WorkCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCalendar.swift; sourceTree = "<group>"; };
+		A475CCCF25EF647400C596FB /* RetailDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDescriptionView.swift; sourceTree = "<group>"; };
+		A475CCD325EF7E9F00C596FB /* RetailItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailItemsView.swift; sourceTree = "<group>"; };
+		A475CCD625EF971F00C596FB /* RetaiImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetaiImages.swift; sourceTree = "<group>"; };
 		A47CA04925E1495200EB091C /* RetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		A47CA10725E14E2300EB091C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		A47CA10C25E1588F00EB091C /* LabelBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBackgroundView.swift; sourceTree = "<group>"; };
@@ -753,9 +803,9 @@
 		A40B951525DE266700E507FB /* HomeFlow */ = {
 			isa = PBXGroup;
 			children = (
-				A43BC83325DFC28600D45225 /* TabBar */,
-				A40B951725DE267600E507FB /* Modules */,
 				A40B951625DE267000E507FB /* Coordinator */,
+				A40B951725DE267600E507FB /* Modules */,
+				A43BC83325DFC28600D45225 /* TabBar */,
 			);
 			path = HomeFlow;
 			sourceTree = "<group>";
@@ -772,6 +822,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A4379FD125ECAF1700910A2D /* RetailDetail */,
 				5584E82725EE36CD00025251 /* CashbackMenu */,
 				5568FECC25ECB276003AA72F /* Account */,
 				A4FAACEF25E75C2500A55CB8 /* ProfileMenu */,
@@ -899,6 +950,7 @@
 			isa = PBXGroup;
 			children = (
 				A40B960625DE70EC00E507FB /* Retail.swift */,
+				A475CCD625EF971F00C596FB /* RetaiImages.swift */,
 				A40B960925DE758E00E507FB /* WorkDay.swift */,
 				A40B960C25DE75A900E507FB /* RetailCategory.swift */,
 				A40B961025DE766E00E507FB /* RetailList.swift */,
@@ -959,6 +1011,73 @@
 				A436BCB525D1AB4B00DEC963 /* AuthView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A4379FD125ECAF1700910A2D /* RetailDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A437A09525ECBB9C00910A2D /* Coordinator */,
+				A4379FD225ECAF1E00910A2D /* Module */,
+				A437A09925ECBBEF00910A2D /* ModuleFactory */,
+				A437A0B525ECC4C600910A2D /* View */,
+				A4379FD625ECAF4600910A2D /* ViewController */,
+			);
+			path = RetailDetail;
+			sourceTree = "<group>";
+		};
+		A4379FD225ECAF1E00910A2D /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A4379FD325ECAF3000910A2D /* RetailDetailModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A4379FD625ECAF4600910A2D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4379FD725ECAF5700910A2D /* RetailDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A437A09525ECBB9C00910A2D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A437A09625ECBBAD00910A2D /* RetailDetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A437A09925ECBBEF00910A2D /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				A437A09A25ECBBFE00910A2D /* RetailDetailModuleFactory.swift */,
+			);
+			path = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		A437A0B525ECC4C600910A2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A468EA7C25EDF5560071FAA6 /* RetailDetailView.swift */,
+				A468EB5725EE59D20071FAA6 /* CashBackView */,
+				A468EA8B25EE3D1C0071FAA6 /* PaymentView */,
+				A475CCCE25EF63EA00C596FB /* RetailDescriptionView */,
+				A437A0B625ECC4CC00910A2D /* RetailDetailHeaderView */,
+				A468EB5225EE52100071FAA6 /* ShowMapView */,
+				A468EA7B25EDF5060071FAA6 /* SocialNetworkListView */,
+				A468EB5C25EE685C0071FAA6 /* WorkTimeView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A437A0B625ECC4CC00910A2D /* RetailDetailHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A437A0B725ECC4DF00910A2D /* RetailDetailHeaderView.swift */,
+			);
+			path = RetailDetailHeaderView;
 			sourceTree = "<group>";
 		};
 		A43BC83325DFC28600D45225 /* TabBar */ = {
@@ -1061,6 +1180,132 @@
 				A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A468EA7B25EDF5060071FAA6 /* SocialNetworkListView */ = {
+			isa = PBXGroup;
+			children = (
+				A468EA8525EE0F210071FAA6 /* View */,
+				A468EA8025EDFC480071FAA6 /* Model */,
+			);
+			path = SocialNetworkListView;
+			sourceTree = "<group>";
+		};
+		A468EA8025EDFC480071FAA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A468EA8125EDFC5C0071FAA6 /* SocialNetwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A468EA8525EE0F210071FAA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A468EA8625EE0F3D0071FAA6 /* SocialLinksView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A468EA8B25EE3D1C0071FAA6 /* PaymentView */ = {
+			isa = PBXGroup;
+			children = (
+				A468EA9425EE45220071FAA6 /* DeliveryView */,
+				A468EA9325EE45120071FAA6 /* IdentificatorView */,
+			);
+			path = PaymentView;
+			sourceTree = "<group>";
+		};
+		A468EA9325EE45120071FAA6 /* IdentificatorView */ = {
+			isa = PBXGroup;
+			children = (
+				A468EA8C25EE3D390071FAA6 /* IdentificatorView.swift */,
+				A468EA9025EE3D790071FAA6 /* IdentificatorPayControl.swift */,
+			);
+			path = IdentificatorView;
+			sourceTree = "<group>";
+		};
+		A468EA9425EE45220071FAA6 /* DeliveryView */ = {
+			isa = PBXGroup;
+			children = (
+				A468EA9525EE45F60071FAA6 /* DeliveryView.swift */,
+			);
+			path = DeliveryView;
+			sourceTree = "<group>";
+		};
+		A468EB5225EE52100071FAA6 /* ShowMapView */ = {
+			isa = PBXGroup;
+			children = (
+				A468EB5325EE522A0071FAA6 /* ShowMapViewUIControl.swift */,
+			);
+			path = ShowMapView;
+			sourceTree = "<group>";
+		};
+		A468EB5725EE59D20071FAA6 /* CashBackView */ = {
+			isa = PBXGroup;
+			children = (
+				A468EB5825EE5BC00071FAA6 /* CashBackView.swift */,
+			);
+			path = CashBackView;
+			sourceTree = "<group>";
+		};
+		A468EB5C25EE685C0071FAA6 /* WorkTimeView */ = {
+			isa = PBXGroup;
+			children = (
+				A475CC1A25EF3BCC00C596FB /* WorkTimeHeaderView.swift */,
+				A475CC2525EF405400C596FB /* WorkTimeView.swift */,
+			);
+			path = WorkTimeView;
+			sourceTree = "<group>";
+		};
+		A475CCB225EF417300C596FB /* HelperProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				A475CCB325EF418500C596FB /* HelperProtocols.swift */,
+			);
+			path = HelperProtocols;
+			sourceTree = "<group>";
+		};
+		A475CCB725EF419F00C596FB /* DateFormatting */ = {
+			isa = PBXGroup;
+			children = (
+				A475CCB825EF41AD00C596FB /* DateFormatting.swift */,
+				A475CCBC25EF41D500C596FB /* PropertyFormatter.swift */,
+			);
+			path = DateFormatting;
+			sourceTree = "<group>";
+		};
+		A475CCBF25EF420B00C596FB /* AppLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				A475CCC025EF421600C596FB /* AppLanguage.swift */,
+			);
+			path = AppLanguage;
+			sourceTree = "<group>";
+		};
+		A475CCC325EF422F00C596FB /* UserDefaultStore */ = {
+			isa = PBXGroup;
+			children = (
+				A475CCC425EF424400C596FB /* UserDefaultStorage.swift */,
+			);
+			path = UserDefaultStore;
+			sourceTree = "<group>";
+		};
+		A475CCC725EF45F600C596FB /* WorkCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A475CCC925EF462800C596FB /* WorkCalendar.swift */,
+			);
+			path = WorkCalendar;
+			sourceTree = "<group>";
+		};
+		A475CCCE25EF63EA00C596FB /* RetailDescriptionView */ = {
+			isa = PBXGroup;
+			children = (
+				A475CCCF25EF647400C596FB /* RetailDescriptionView.swift */,
+				A475CCD325EF7E9F00C596FB /* RetailItemsView.swift */,
+			);
+			path = RetailDescriptionView;
 			sourceTree = "<group>";
 		};
 		A47CA04825E1492F00EB091C /* Cell */ = {
@@ -1404,6 +1649,7 @@
 				A48CCFE925DACFC20010829F /* UIView+Constraint.swift */,
 				A48CD00725DBBB070010829F /* String+NumberContains.swift */,
 				A48CD01125DBE1A50010829F /* Encryption.swift */,
+				A475CC2225EF3ED700C596FB /* Extentsion+BoolToInt.swift */,
 			);
 			path = Variables;
 			sourceTree = "<group>";
@@ -1652,6 +1898,11 @@
 		A4DD3DC625D24359002D2186 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A475CCC725EF45F600C596FB /* WorkCalendar */,
+				A475CCC325EF422F00C596FB /* UserDefaultStore */,
+				A475CCBF25EF420B00C596FB /* AppLanguage */,
+				A475CCB725EF419F00C596FB /* DateFormatting */,
+				A475CCB225EF417300C596FB /* HelperProtocols */,
 				A47CA10625E14DD900EB091C /* Font */,
 				A48CCFDE25DACB370010829F /* Variables */,
 				A4E581FC25D5529A00EDC053 /* PilicanCamera */,
@@ -2023,6 +2274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A468EA9125EE3D790071FAA6 /* IdentificatorPayControl.swift in Sources */,
 				A483E27425D40ABE006D2DAF /* NotificationTokenService.swift in Sources */,
 				A47CA1EB25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift in Sources */,
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
@@ -2030,10 +2282,12 @@
 				A483E28825D40ABE006D2DAF /* DateContent.swift in Sources */,
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
+				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
+				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
 				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
@@ -2047,6 +2301,7 @@
 				A483E28225D40ABE006D2DAF /* ApiServiceAssembly.swift in Sources */,
 				A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */,
 				A4FD7DAF25DD3306000DD49D /* TabImageInfoView.swift in Sources */,
+				A475CC1B25EF3BCC00C596FB /* WorkTimeHeaderView.swift in Sources */,
 				5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */,
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
 				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
@@ -2055,6 +2310,7 @@
 				A4BBC6DF25D6390B006AF382 /* BackContainerViewController.swift in Sources */,
 				A483E29E25D40ABE006D2DAF /* KingfisherSource.swift in Sources */,
 				A483E27625D40ABE006D2DAF /* ApiRequestable.swift in Sources */,
+				A468EA8D25EE3D390071FAA6 /* IdentificatorView.swift in Sources */,
 				A483E27B25D40ABE006D2DAF /* AuthServiceAssembly.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
@@ -2079,8 +2335,10 @@
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
+				A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
+				A475CC2325EF3ED700C596FB /* Extentsion+BoolToInt.swift in Sources */,
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
 				A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */,
 				A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */,
@@ -2102,6 +2360,7 @@
 				A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */,
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
+				A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */,
 				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
 				A4BBC6EC25D63CD6006AF382 /* BackButtonContainerView.swift in Sources */,
 				A47CA1C925E36E3200EB091C /* NotificationDeepLinkActionModel.swift in Sources */,
@@ -2130,11 +2389,16 @@
 				A483E28025D40ABE006D2DAF /* ApiTarget.swift in Sources */,
 				A483E29525D40ABE006D2DAF /* EmojiModifier.swift in Sources */,
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
+				A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */,
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
 				A4D7641E25DA40E1009A6651 /* BaseButton.swift in Sources */,
+				A468EA8225EDFC5C0071FAA6 /* SocialNetwork.swift in Sources */,
+				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */,
+				A475CCCA25EF462800C596FB /* WorkCalendar.swift in Sources */,
 				A483E27525D40ABE006D2DAF /* ApiService.swift in Sources */,
+				A468EA8725EE0F3D0071FAA6 /* SocialLinksView.swift in Sources */,
 				A483E29025D40ABE006D2DAF /* ViewHolder.swift in Sources */,
 				A483E26725D40ABE006D2DAF /* String+Unwrap.swift in Sources */,
 				A48CD00825DBBB080010829F /* String+NumberContains.swift in Sources */,
@@ -2142,6 +2406,8 @@
 				A4FAAD1125E75D0B00A55CB8 /* ProfileMenuModule.swift in Sources */,
 				A47CA1EC25E36E8000EB091C /* AdditionalMenuPresentationController.swift in Sources */,
 				A47CA1AF25E36DA200EB091C /* BaseCoordinator.swift in Sources */,
+				A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */,
+				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */,
 				A4DD3DDC25D2476F002D2186 /* UIView+GradientLayer.swift in Sources */,
@@ -2149,6 +2415,7 @@
 				5584E81725EDF34100025251 /* AccountCard.swift in Sources */,
 				A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */,
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
+				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
 				A4DD3DD725D24527002D2186 /* Color.swift in Sources */,
 				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
@@ -2161,6 +2428,8 @@
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,
 				5568FED725ECBAC4003AA72F /* AccountModuleFactory.swift in Sources */,
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
+				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
+				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
@@ -2179,6 +2448,7 @@
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
+				A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
 				A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */,
 				A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */,
@@ -2189,6 +2459,7 @@
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,
+				A4379FD825ECAF5700910A2D /* RetailDetailViewController.swift in Sources */,
 				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
@@ -2199,16 +2470,21 @@
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,
 				A483E28925D40ABE006D2DAF /* IdPaginationAdapter.swift in Sources */,
 				A4D7645125DA7F7E009A6651 /* CityPickerViewDataSource.swift in Sources */,
+				A437A09B25ECBBFE00910A2D /* RetailDetailModuleFactory.swift in Sources */,
 				A483E29F25D40ABE006D2DAF /* SwiftSupport.swift in Sources */,
+				A437A0B825ECC4DF00910A2D /* RetailDetailHeaderView.swift in Sources */,
 				5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */,
 				55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */,
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,
 				A4BBC6F425D63D56006AF382 /* BackPressHandler.swift in Sources */,
+				A475CCC125EF421600C596FB /* AppLanguage.swift in Sources */,
 				A48CCFE025DACB450010829F /* Callback.swift in Sources */,
 				A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */,
+				A475CCB425EF418500C596FB /* HelperProtocols.swift in Sources */,
 				A48CCFF025DB7EDD0010829F /* CameraView.swift in Sources */,
+				A475CCD725EF972000C596FB /* RetaiImages.swift in Sources */,
 				A483E26825D40ABE006D2DAF /* Observable+Timer.swift in Sources */,
 				A44F581E25E90F5D00F5A39B /* HomeProfileMenu.swift in Sources */,
 				A4FD7DB425DD380C000DD49D /* HomeTabView.swift in Sources */,

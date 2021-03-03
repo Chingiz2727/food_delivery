@@ -70,7 +70,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         }
         router.push(module)
     }
-    
+
     private func showAcceptPermission() {
         let module = moduleFactory.makeAcceptPermission()
         router.present(module)
