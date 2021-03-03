@@ -59,7 +59,7 @@ final class CategoryView: UIControl {
             make.centerX.equalToSuperview()
             make.size.equalTo(40)
         }
-        
+
         imageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(24)

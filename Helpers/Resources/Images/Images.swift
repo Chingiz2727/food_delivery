@@ -16,6 +16,28 @@ enum Images: String {
     case mainqr
     case checkboxSelected
     case checkboxUnselected
+    case instagram
+    case facebook
+    case vk
+    case callCenter
+    case youtube
+    case web
+    case telegram
+    case whatsapp
+    case payButton
+    case deliveryBakcground
+    case mapBackground
+    case map
+    case ArrowCashBack
+    case silverLogo
+    case gradRectangle
+    case Path
+    case accountImage
+    case accountEdit
+    case accountCard
+    case accountKey
+    case accountPassword
+    case accountQR
 }
 
 extension Images {

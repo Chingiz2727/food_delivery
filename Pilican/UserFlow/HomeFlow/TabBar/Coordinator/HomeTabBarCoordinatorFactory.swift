@@ -1,7 +1,7 @@
 final class HomeTabBarCoordinatorFactory {
     private let container: DependencyContainer
     private let router: Router
-    
+
     init(container: DependencyContainer, router: Router) {
         self.container = container
         self.router = router
@@ -15,5 +15,9 @@ final class HomeTabBarCoordinatorFactory {
 
     func makeProfileMenu() -> ProfileMenuCoordinator {
         return ProfileMenuCoordinatorImpl(router: router, container: container)
+    }
+    
+    func makeCashbbackMenu() -> CashbackMenuCoordinator {
+        return CashbackMenuCoordinatorImpl(router: router, container: container)
     }
 }
