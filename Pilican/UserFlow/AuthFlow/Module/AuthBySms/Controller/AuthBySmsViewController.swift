@@ -43,6 +43,7 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
                 userSmsCode: rootView.passwordContainer.textField.rx.text.unwrap()))
 
         let result = output.getSmsTapped.publish()
+        
 
         result.element
             .subscribe(onNext: {  [unowned self] _ in

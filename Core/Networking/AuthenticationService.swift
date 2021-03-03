@@ -12,6 +12,7 @@ public protocol AuthenticationService {
     
     func getAuthSmsCode(_ phone: String) -> Observable<LoadingSequence<ResponseStatus>>
     func verifySmsCode(_ phone: String, code: String) -> Observable<LoadingSequence<UserAuthResponse>>
+    func updateToken(with newToken: Token?)
 }
 
 public protocol LogoutListener {
@@ -38,6 +39,7 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     private let authTokenService: AuthTokenService
     
     private var logoutListeners = [LogoutListener]()
+    private let cache = DiskCache<String, Any>()
     
     init(
         apiService: ApiService,
@@ -94,10 +96,14 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     public func verifySmsCode(_ phone: String, code: String) -> Observable<LoadingSequence<UserAuthResponse>> {
         return apiService.makeRequest(to: AuthTarget.verifySmsCode(phone: phone, code: code))
             .result(UserAuthResponse.self).asLoadingSequence()
-            .do(onNext: { [weak self] token in
-                guard let token = token.result?.element?.token else { return }
+            .do(onNext: { [weak self] res in
+                guard let token = res.result?.element?.token,
+                      let profileInfo = res.result?.element?.profile,
+                      let userInfo = res.result?.element?.user else { return }
                 self?.updateToken(with: nil)
                 self?.updateToken(with: token)
+                try? self?.cache.saveToDisk(name: "profileInfo", value: profileInfo)
+                try? self?.cache.saveToDisk(name: "userInfo", value: userInfo)
             })
     }
 
@@ -107,6 +113,8 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     
     public func forceLogout() {
         updateToken(with: nil)
+        try? cache.clearFromDisk(name: "profileInfo")
+        try? cache.clearFromDisk(name: "userInfo")
         logoutListeners.forEach { $0.cleanUpAfterLogout() }
     }
     
