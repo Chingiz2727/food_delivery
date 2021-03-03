@@ -36,7 +36,7 @@ struct Retail: Codable {
     }
 
     let wifi: Int
-    let rating: Int
+    let rating: Double
     let cash: Int
     let booking: Int
     let isPayable: Int

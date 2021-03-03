@@ -8,7 +8,7 @@
 import Foundation
 
 struct User: Codable {
-    let qrCode: String
+    let qrCode: String?
     let username: String
     let promoCode: String
     let balance: Int
