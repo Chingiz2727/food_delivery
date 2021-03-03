@@ -16,6 +16,12 @@ enum Images: String {
     case mainqr
     case checkboxSelected
     case checkboxUnselected
+    case accountImage
+    case accountEdit
+    case accountCard
+    case accountKey
+    case accountPassword
+    case accountQR
 }
 
 extension Images {
