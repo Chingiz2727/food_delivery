@@ -28,7 +28,7 @@ final class AuthModuleFactory {
         let viewControllerr = RegisterViewController(viewModel: viewModel)
         return viewControllerr
     }
-    
+
     func makeAcceptPermission() -> AcceptPermissionModule {
         let viewController = AcceptPermissionViewController()
         return viewController

@@ -17,7 +17,7 @@ final class LabelBackgroundView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     func setTitle(title: String) {
         titleLabel.text = title
     }

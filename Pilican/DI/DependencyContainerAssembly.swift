@@ -4,7 +4,9 @@ typealias DependencyContainer = Resolver
 
 public final class DependencyContainerAssembly: Assembly {
     public func assemble(container: Container) {
-
+        container.register(AppLanguage.self) { _ in
+            AppLanguage.default
+        }.inObjectScope(.container)
         ApiServicesAssemblyImpl()
             .registerNetworkLayer(in: container)
         AuthServiceAssemblyImpl()
@@ -37,13 +39,17 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(AVCaptureSession.self) { _ in
             return AVCaptureSession()
         }
-
+        container.register(Calendar.self) { _ in
+            Calendar.current
+        }
         container.register(AVCaptureVideoPreviewLayer.self) {  _ in
             let session = container.resolve(AVCaptureSession.self)!
             let layer = AVCaptureVideoPreviewLayer(session: session)
             return layer
         }
-
+        container.register(PropertyFormatter.self) { resolver in
+            PropertyFormatter(appLanguage: resolver.resolve(AppLanguage.self)!)
+        }.inObjectScope(.container)
         container.register(AuthenticationService.self) { _ in
             let apiService = container.resolve(ApiService.self)!
             let configService = container.resolve(ConfigService.self)!

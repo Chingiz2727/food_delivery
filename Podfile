@@ -3,6 +3,7 @@ inhibit_all_warnings!
 platform :ios, '11.0'
 use_frameworks!
 target 'Pilican' do
+  pod 'Cosmos', '~> 23.0'
   pod 'Swinject', '2.7.1'
   pod 'Alamofire', '4.8'
   pod 'KeychainAccess', '4.1.0'

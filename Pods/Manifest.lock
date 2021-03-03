@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
+  - Cosmos (23.0.0)
   - Differentiator (4.0.1)
   - InputMask (6.0.0)
   - IQKeyboardManagerSwift (6.3.0)
@@ -34,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.8)
+  - Cosmos (~> 23.0)
   - InputMask (= 6.0.0)
   - IQKeyboardManagerSwift (= 6.3.0)
   - KeychainAccess (= 4.1.0)
@@ -53,6 +55,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - Differentiator
     - InputMask
     - IQKeyboardManagerSwift
@@ -73,6 +76,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   InputMask: f340bdc905a4c4f377e44d865f129f752ac2383d
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
@@ -91,6 +95,6 @@ SPEC CHECKSUMS:
   UltraDrawerView: 50968b8838d22adf33d083a4d7a8e5293a74bec8
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
 
-PODFILE CHECKSUM: 5d40ce041fc27f6b3e8979f062e310df72ab4d94
+PODFILE CHECKSUM: a0b2c4e800ae8daa04c98ce965c1d555413b76c2
 
 COCOAPODS: 1.10.1

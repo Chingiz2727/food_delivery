@@ -5,11 +5,11 @@ import UIKit
 class HomeViewController: ViewController, HomeModule, ViewHolder {
     typealias RootViewType = HomeView
 
+    var selectRetail: SelectRetail?
     private let viewModel: HomeViewModel
     private let dataSource: HomeCollectionViewDataSource
     private let slider = BehaviorSubject<[Slider]>(value: [])
     private let disposeBag = DisposeBag()
-
     init(viewModel: HomeViewModel) {
         dataSource = HomeCollectionViewDataSource(slider: slider)
         self.viewModel = viewModel
@@ -67,6 +67,13 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
             .disposed(by: disposeBag)
 
         retailList.connect()
+            .disposed(by: disposeBag)
+
+        rootView.collectionView.rx.itemSelected
+            .withLatestFrom(retailList.element) { $1.retailList[$0.row] }
+            .bind { [unowned self] retail in
+                self.selectRetail?(retail)
+            }
             .disposed(by: disposeBag)
     }
 }
