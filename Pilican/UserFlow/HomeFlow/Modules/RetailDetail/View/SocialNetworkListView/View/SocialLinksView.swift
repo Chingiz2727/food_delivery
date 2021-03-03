@@ -6,7 +6,6 @@ public final class SocialLinksView: UIView {
 
     private let socialLinksStack = UIStackView(
         views: [],
-        distribution: .fillEqually,
         spacing: 10
     )
 
@@ -26,12 +25,14 @@ public final class SocialLinksView: UIView {
 
     private func setupInitialLayout() {
         addSubview(socialLinksStack)
-        socialLinksStack.snp.makeConstraints { $0.edges.equalToSuperview() }
+        socialLinksStack.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(5)
+        }
     }
 
     func setup(links: [SocialNetwork]) {
         var buttons: [UIButton] = []
-        socialLinksStack.addArrangedSubview(UIView())
         links.enumerated().forEach { network in
             switch network.element {
             case
@@ -48,6 +49,7 @@ public final class SocialLinksView: UIView {
                     button.tag = network.offset
                     button.addTarget(self, action: #selector(didTap(sender:)), for: .touchUpInside)
                     button.setImage(network.element.image, for: .normal)
+                    button.snp.makeConstraints { $0.size.equalTo(30) }
                     buttons.append(button)
                 }
             }

@@ -2,6 +2,7 @@ import UIKit
 
 final class RetailDetailView: UIView {
     private let scrollView = UIScrollView()
+    private let emptyView = UIView()
     private let sliderView = ImageSlideshow()
     private let headerView = RetailDetailHeaderView()
     private let socialLinkView = SocialLinksView()
@@ -21,7 +22,7 @@ final class RetailDetailView: UIView {
         button.setTitleColor(.pilicanWhite, for: .normal)
         return button
     }()
-    
+
     private lazy var stackView = UIStackView(
         views: [
             headerView,
@@ -32,7 +33,7 @@ final class RetailDetailView: UIView {
             workView,
             retailDescriptionView,
             faqButton,
-            UIView()
+            emptyView
         ],
         axis: .vertical,
         spacing: 15
@@ -80,7 +81,8 @@ final class RetailDetailView: UIView {
             make.bottom.equalToSuperview().inset(20)
             make.leading.trailing.width.equalTo(self).inset(8)
         }
-
+        
+        emptyView.snp.makeConstraints { $0.height.equalTo(40) }
         stackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
         headerView.snp.makeConstraints { $0.height.equalTo(90) }
         socialLinkView.snp.makeConstraints { $0.height.equalTo(50) }

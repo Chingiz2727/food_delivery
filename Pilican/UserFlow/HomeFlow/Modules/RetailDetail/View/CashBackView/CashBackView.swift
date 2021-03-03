@@ -13,6 +13,7 @@ final class CashBackView: UIView {
         label.textColor = .pilicanWhite
         label.font = .description1
         label.text = "5000 тг\ncредний чек:"
+        label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         label.textAlignment = .left
         return label
@@ -25,6 +26,7 @@ final class CashBackView: UIView {
         label.text = "1000 тг\nкэшбэк"
         label.numberOfLines = 2
         label.textAlignment = .right
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
 
@@ -34,7 +36,7 @@ final class CashBackView: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+
     private let secondArrow: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Images.ArrowCashBack.image
