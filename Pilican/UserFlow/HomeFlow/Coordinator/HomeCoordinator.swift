@@ -24,6 +24,10 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
         tabBarController.accountTap = { [weak self] in
             self?.showProfileMenu()
         }
+        
+        tabBarController.bonusTap = { [weak self] in
+            self?.showCashbackMenu()
+        }
 
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
@@ -45,6 +49,12 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
     
     private func showProfileMenu() {
         let coordinator = coordinatorFactory.makeProfileMenu()
+        coordinator.start()
+        addDependency(coordinator)
+    }
+    
+    private func showCashbackMenu() {
+        let coordinator = coordinatorFactory.makeCashbbackMenu()
         coordinator.start()
         addDependency(coordinator)
     }

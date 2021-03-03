@@ -16,4 +16,8 @@ final class HomeTabBarCoordinatorFactory {
     func makeProfileMenu() -> ProfileMenuCoordinator {
         return ProfileMenuCoordinatorImpl(router: router, container: container)
     }
+    
+    func makeCashbbackMenu() -> CashbackMenuCoordinator {
+        return CashbackMenuCoordinatorImpl(router: router, container: container)
+    }
 }

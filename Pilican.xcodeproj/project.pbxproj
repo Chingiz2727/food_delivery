@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		49CB2EA847BAC9678F0DBF20 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0992AD76D1E54237A20041FD /* Pods_Pilican.framework */; };
+		5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E82E25EE370900025251 /* HomeCashbackMenu.swift */; };
+		5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */; };
+		5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */; };
+		5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */; };
+		5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */; };
+		5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E84225EE406F00025251 /* CashbackMenuView.swift */; };
 		5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */; };
 		5568FED725ECBAC4003AA72F /* AccountModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */; };
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
@@ -227,6 +233,12 @@
 /* Begin PBXFileReference section */
 		0992AD76D1E54237A20041FD /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7000975728E2FD67075134 /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
+		5584E82E25EE370900025251 /* HomeCashbackMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCashbackMenu.swift; sourceTree = "<group>"; };
+		5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuCoordinator.swift; sourceTree = "<group>"; };
+		5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModuleFactory.swift; sourceTree = "<group>"; };
+		5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModule.swift; sourceTree = "<group>"; };
+		5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuViewController.swift; sourceTree = "<group>"; };
+		5584E84225EE406F00025251 /* CashbackMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuView.swift; sourceTree = "<group>"; };
 		5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
 		5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModuleFactory.swift; sourceTree = "<group>"; };
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
@@ -462,6 +474,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5584E82725EE36CD00025251 /* CashbackMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5584E84125EE405A00025251 /* View */,
+				5584E83D25EE3F9300025251 /* Controller */,
+				5584E83925EE3F2900025251 /* Module */,
+				5584E83125EE37CD00025251 /* Coordinator */,
+				5584E82825EE36D800025251 /* Model */,
+			);
+			path = CashbackMenu;
+			sourceTree = "<group>";
+		};
+		5584E82825EE36D800025251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5568FECC25ECB276003AA72F /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +511,47 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5584E83125EE37CD00025251 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83225EE37E000025251 /* ModuleFactory */,
+				5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5584E83225EE37E000025251 /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */,
+			);
+			path = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		5584E83925EE3F2900025251 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5584E83D25EE3F9300025251 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5584E84125EE405A00025251 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5584E84225EE406F00025251 /* CashbackMenuView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5568FECE25ECB385003AA72F /* Controller */ = {
@@ -699,6 +772,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5584E82725EE36CD00025251 /* CashbackMenu */,
 				5568FECC25ECB276003AA72F /* Account */,
 				A4FAACEF25E75C2500A55CB8 /* ProfileMenu */,
 				A40B95DA25DE31FB00E507FB /* Home */,
@@ -1973,6 +2047,7 @@
 				A483E28225D40ABE006D2DAF /* ApiServiceAssembly.swift in Sources */,
 				A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */,
 				A4FD7DAF25DD3306000DD49D /* TabImageInfoView.swift in Sources */,
+				5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */,
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
 				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
 				A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */,
@@ -1983,6 +2058,7 @@
 				A483E27B25D40ABE006D2DAF /* AuthServiceAssembly.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
+				5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */,
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
 				A40B94ED25DE21AA00E507FB /* HomeTabBarModule.swift in Sources */,
@@ -1994,6 +2070,7 @@
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
+				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
 				A47CA1EA25E36E8000EB091C /* SlidingPresentationController.swift in Sources */,
 				A4FD7DA225DCD109000DD49D /* AuthBySmsViewModel.swift in Sources */,
@@ -2068,6 +2145,7 @@
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */,
 				A4DD3DDC25D2476F002D2186 /* UIView+GradientLayer.swift in Sources */,
+				5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */,
 				5584E81725EDF34100025251 /* AccountCard.swift in Sources */,
 				A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */,
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
@@ -2116,11 +2194,13 @@
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
 				5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
+				5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */,
 				A4BBC70225D63ED8006AF382 /* UiViewController+Keyboard.swift in Sources */,
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,
 				A483E28925D40ABE006D2DAF /* IdPaginationAdapter.swift in Sources */,
 				A4D7645125DA7F7E009A6651 /* CityPickerViewDataSource.swift in Sources */,
 				A483E29F25D40ABE006D2DAF /* SwiftSupport.swift in Sources */,
+				5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */,
 				55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */,
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
