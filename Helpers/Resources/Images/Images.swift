@@ -32,6 +32,12 @@ enum Images: String {
     case silverLogo
     case gradRectangle
     case Path
+    case accountImage
+    case accountEdit
+    case accountCard
+    case accountKey
+    case accountPassword
+    case accountQR
 }
 
 extension Images {

@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		49CB2EA847BAC9678F0DBF20 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0992AD76D1E54237A20041FD /* Pods_Pilican.framework */; };
+		5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E82E25EE370900025251 /* HomeCashbackMenu.swift */; };
+		5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */; };
+		5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */; };
+		5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */; };
+		5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */; };
+		5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E84225EE406F00025251 /* CashbackMenuView.swift */; };
+		5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */; };
+		5568FED725ECBAC4003AA72F /* AccountModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */; };
+		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
+		5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDE25ECBDAE003AA72F /* AccountView.swift */; };
+		5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81225EDF2A300025251 /* AccountHeaderView.swift */; };
+		5584E81725EDF34100025251 /* AccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81625EDF34100025251 /* AccountCard.swift */; };
+		5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81A25EDFBD200025251 /* AccountKey.swift */; };
+		5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81D25EDFC0400025251 /* AccountPassword.swift */; };
+		5584E82125EDFC2500025251 /* AccountQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E82025EDFC2500025251 /* AccountQR.swift */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
@@ -243,6 +258,21 @@
 /* Begin PBXFileReference section */
 		0992AD76D1E54237A20041FD /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7000975728E2FD67075134 /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
+		5584E82E25EE370900025251 /* HomeCashbackMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCashbackMenu.swift; sourceTree = "<group>"; };
+		5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuCoordinator.swift; sourceTree = "<group>"; };
+		5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModuleFactory.swift; sourceTree = "<group>"; };
+		5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModule.swift; sourceTree = "<group>"; };
+		5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuViewController.swift; sourceTree = "<group>"; };
+		5584E84225EE406F00025251 /* CashbackMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuView.swift; sourceTree = "<group>"; };
+		5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
+		5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModuleFactory.swift; sourceTree = "<group>"; };
+		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
+		5568FEDE25ECBDAE003AA72F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		5584E81225EDF2A300025251 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		5584E81625EDF34100025251 /* AccountCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCard.swift; sourceTree = "<group>"; };
+		5584E81A25EDFBD200025251 /* AccountKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountKey.swift; sourceTree = "<group>"; };
+		5584E81D25EDFC0400025251 /* AccountPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPassword.swift; sourceTree = "<group>"; };
+		5584E82025EDFC2500025251 /* AccountQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountQR.swift; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
@@ -494,6 +524,131 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5584E82725EE36CD00025251 /* CashbackMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5584E84125EE405A00025251 /* View */,
+				5584E83D25EE3F9300025251 /* Controller */,
+				5584E83925EE3F2900025251 /* Module */,
+				5584E83125EE37CD00025251 /* Coordinator */,
+				5584E82825EE36D800025251 /* Model */,
+			);
+			path = CashbackMenu;
+			sourceTree = "<group>";
+		};
+		5584E82825EE36D800025251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5568FECC25ECB276003AA72F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				5568FED925ECBB92003AA72F /* Module */,
+				5568FED425ECBAA2003AA72F /* Coordinator */,
+				5568FECF25ECB38D003AA72F /* View */,
+				5568FECE25ECB385003AA72F /* Controller */,
+				5568FECD25ECB37D003AA72F /* Model */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		5568FECD25ECB37D003AA72F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5584E83125EE37CD00025251 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83225EE37E000025251 /* ModuleFactory */,
+				5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5584E83225EE37E000025251 /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */,
+			);
+			path = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		5584E83925EE3F2900025251 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5584E83D25EE3F9300025251 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5584E84125EE405A00025251 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5584E84225EE406F00025251 /* CashbackMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5568FECE25ECB385003AA72F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5568FECF25ECB38D003AA72F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5584E81225EDF2A300025251 /* AccountHeaderView.swift */,
+				5584E81625EDF34100025251 /* AccountCard.swift */,
+				5568FEDE25ECBDAE003AA72F /* AccountView.swift */,
+				5584E81A25EDFBD200025251 /* AccountKey.swift */,
+				5584E81D25EDFC0400025251 /* AccountPassword.swift */,
+				5584E82025EDFC2500025251 /* AccountQR.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5568FED425ECBAA2003AA72F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5568FED525ECBAAC003AA72F /* ModuleFactory */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5568FED525ECBAAC003AA72F /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */,
+			);
+			path = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		5568FED925ECBB92003AA72F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5568FEDA25ECBBA9003AA72F /* AccountModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +823,8 @@
 			isa = PBXGroup;
 			children = (
 				A4379FD125ECAF1700910A2D /* RetailDetail */,
+				5584E82725EE36CD00025251 /* CashbackMenu */,
+				5568FECC25ECB276003AA72F /* Account */,
 				A4FAACEF25E75C2500A55CB8 /* ProfileMenu */,
 				A40B95DA25DE31FB00E507FB /* Home */,
 			);
@@ -2132,6 +2289,7 @@
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
 				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
+				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
 				A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */,
@@ -2144,6 +2302,7 @@
 				A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */,
 				A4FD7DAF25DD3306000DD49D /* TabImageInfoView.swift in Sources */,
 				A475CC1B25EF3BCC00C596FB /* WorkTimeHeaderView.swift in Sources */,
+				5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */,
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
 				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
 				A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */,
@@ -2155,6 +2314,7 @@
 				A483E27B25D40ABE006D2DAF /* AuthServiceAssembly.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
+				5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */,
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
 				A40B94ED25DE21AA00E507FB /* HomeTabBarModule.swift in Sources */,
@@ -2166,6 +2326,7 @@
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
+				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
 				A47CA1EA25E36E8000EB091C /* SlidingPresentationController.swift in Sources */,
 				A4FD7DA225DCD109000DD49D /* AuthBySmsViewModel.swift in Sources */,
@@ -2189,6 +2350,7 @@
 				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
 				A483E26625D40ABE006D2DAF /* LoadingSequence+Rx.swift in Sources */,
 				A483E29825D40ABE006D2DAF /* UIImageView+Tools.swift in Sources */,
+				5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */,
 				A4BBC6E925D639DA006AF382 /* BackButtonContainerViewController.swift in Sources */,
 				A483E28E25D40ABE006D2DAF /* InputValidatable.swift in Sources */,
 				A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */,
@@ -2249,6 +2411,8 @@
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */,
 				A4DD3DDC25D2476F002D2186 /* UIView+GradientLayer.swift in Sources */,
+				5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */,
+				5584E81725EDF34100025251 /* AccountCard.swift in Sources */,
 				A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */,
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
@@ -2256,11 +2420,13 @@
 				A4DD3DD725D24527002D2186 /* Color.swift in Sources */,
 				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
 				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
+				5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */,
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
 				55AD645925E52F2800034459 /* WorkStatus.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,
+				5568FED725ECBAC4003AA72F /* AccountModuleFactory.swift in Sources */,
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
 				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
@@ -2278,6 +2444,7 @@
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
+				5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */,
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
@@ -2285,6 +2452,7 @@
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
 				A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */,
 				A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */,
+				5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */,
 				A40B94CE25DD974C00E507FB /* HomeTabBar.swift in Sources */,
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
@@ -2295,7 +2463,9 @@
 				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
+				5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
+				5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */,
 				A4BBC70225D63ED8006AF382 /* UiViewController+Keyboard.swift in Sources */,
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,
 				A483E28925D40ABE006D2DAF /* IdPaginationAdapter.swift in Sources */,
@@ -2303,6 +2473,7 @@
 				A437A09B25ECBBFE00910A2D /* RetailDetailModuleFactory.swift in Sources */,
 				A483E29F25D40ABE006D2DAF /* SwiftSupport.swift in Sources */,
 				A437A0B825ECC4DF00910A2D /* RetailDetailHeaderView.swift in Sources */,
+				5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */,
 				55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */,
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
@@ -2321,6 +2492,7 @@
 				A483E28125D40ABE006D2DAF /* StubApiRequest.swift in Sources */,
 				A40A557A25D28C7A00BBFDFA /* AuthViewModel.swift in Sources */,
 				A483E28425D40ABE006D2DAF /* ApiRequest.swift in Sources */,
+				5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */,
 				A4E581FA25D54BC500EDC053 /* RegisterView.swift in Sources */,
 				A48CCFED25DB7B1F0010829F /* CameraMetadaOutputDelegate.swift in Sources */,
 				A48CD01225DBE1A50010829F /* Encryption.swift in Sources */,
