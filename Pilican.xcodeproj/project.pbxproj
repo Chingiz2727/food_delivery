@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		49CB2EA847BAC9678F0DBF20 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0992AD76D1E54237A20041FD /* Pods_Pilican.framework */; };
+		5555236625EF672300537D3F /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236525EF672300537D3F /* DiskCache.swift */; };
+		5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236925EF674B00537D3F /* InMemoryCache.swift */; };
+		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
+		5555237425EF907A00537D3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555237325EF907A00537D3F /* User.swift */; };
 		5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E82E25EE370900025251 /* HomeCashbackMenu.swift */; };
 		5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */; };
 		5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */; };
@@ -258,6 +262,10 @@
 /* Begin PBXFileReference section */
 		0992AD76D1E54237A20041FD /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7000975728E2FD67075134 /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
+		5555236525EF672300537D3F /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		5555236925EF674B00537D3F /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
+		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		5555237325EF907A00537D3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5584E82E25EE370900025251 /* HomeCashbackMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCashbackMenu.swift; sourceTree = "<group>"; };
 		5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuCoordinator.swift; sourceTree = "<group>"; };
 		5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModuleFactory.swift; sourceTree = "<group>"; };
@@ -524,6 +532,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5555236425EF66E400537D3F /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				5555236825EF673700537D3F /* InMemoryCache */,
+				5555236525EF672300537D3F /* DiskCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		5555236825EF673700537D3F /* InMemoryCache */ = {
+			isa = PBXGroup;
+			children = (
+				5555236925EF674B00537D3F /* InMemoryCache.swift */,
+			);
+			path = InMemoryCache;
+			sourceTree = "<group>";
+		};
 		5584E82725EE36CD00025251 /* CashbackMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1468,6 +1493,7 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5555236425EF66E400537D3F /* Cache */,
 				A47CA19C25E36D3200EB091C /* Coordinator */,
 				A48CD00A25DBC9D20010829F /* ViewController */,
 				A4BBC6DD25D638F2006AF382 /* BackContainerModule */,
@@ -2100,6 +2126,8 @@
 			children = (
 				A4FD7DA525DCDD10000DD49D /* Token.swift */,
 				A4FD7DA925DCEF4F000DD49D /* UserAuthResponse.swift */,
+				5555236D25EF8FBA00537D3F /* Profile.swift */,
+				5555237325EF907A00537D3F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2289,6 +2317,7 @@
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
 				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
+				5555236E25EF8FBA00537D3F /* Profile.swift in Sources */,
 				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
@@ -2333,6 +2362,7 @@
 				A483E27F25D40ABE006D2DAF /* ForceLogoutNotification.swift in Sources */,
 				A4BBC6F025D63D0F006AF382 /* BackButton.swift in Sources */,
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
+				5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */,
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
 				A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */,
@@ -2441,6 +2471,7 @@
 				A4E5815925D540F800EDC053 /* AppEnviroment.swift in Sources */,
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
+				5555237425EF907A00537D3F /* User.swift in Sources */,
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
@@ -2457,6 +2488,7 @@
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
+				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,
 				A4379FD825ECAF5700910A2D /* RetailDetailViewController.swift in Sources */,
