@@ -31,6 +31,16 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         module.selectRetail = { [weak self] retail in
             self?.startRetailDetailCoordinator(retail: retail)
         }
+
+        module.selectMenu = { [weak self] category in
+            print("selected category", category)
+            switch category {
+            case .cashBack:
+                self?.showCashBackList()
+            default:
+                break
+            }
+        }
         router.setRootModule(module)
     }
 
@@ -42,5 +52,15 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         }
         coordinator.start()
         addDependency(coordinator)
+    }
+
+    private func showCashBackList() {
+        var module = moduleFactory.makeCashbackList()
+
+        module.onSelectRetail = { [weak self] retail in
+            self?.startRetailDetailCoordinator(retail: retail)
+        }
+
+        router.push(module)
     }
 }

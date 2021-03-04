@@ -18,4 +18,10 @@ final class HomeCoordinatorModuleFactory {
     func makeRetailDetailCoordinator(retail: Retail) -> RetailDetailCoordinatorOutput {
         return RetailDetailCoordinator(router: router, container: container, retail: retail)
     }
+    
+    func makeCashbackList() -> CashBackListModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = CashBackListViewModel(apiService: apiService)
+        return CashBackListViewController(viewModel: viewModel)
+    }
 }

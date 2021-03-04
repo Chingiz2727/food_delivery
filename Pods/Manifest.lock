@@ -32,6 +32,15 @@ PODS:
   - Swinject (2.7.1)
   - UltraDrawerView (0.5.0)
   - Willow (6.0.0)
+  - YandexMapsMobile (4.0.0-lite)
+  - YandexMobileMetrica (3.14.0):
+    - YandexMobileMetrica/Static (= 3.14.0)
+  - YandexMobileMetrica/Static (3.14.0):
+    - YandexMobileMetrica/Static/Core (= 3.14.0)
+    - YandexMobileMetrica/Static/Crashes (= 3.14.0)
+  - YandexMobileMetrica/Static/Core (3.14.0)
+  - YandexMobileMetrica/Static/Crashes (3.14.0):
+    - YandexMobileMetrica/Static/Core
 
 DEPENDENCIES:
   - Alamofire (= 4.8)
@@ -51,6 +60,8 @@ DEPENDENCIES:
   - Swinject (= 2.7.1)
   - UltraDrawerView (= 0.5.0)
   - Willow (~> 6.0)
+  - YandexMapsMobile (= 4.0.0-lite)
+  - YandexMobileMetrica (= 3.14.0)
 
 SPEC REPOS:
   trunk:
@@ -73,6 +84,8 @@ SPEC REPOS:
     - Swinject
     - UltraDrawerView
     - Willow
+    - YandexMapsMobile
+    - YandexMobileMetrica
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -94,7 +107,9 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   UltraDrawerView: 50968b8838d22adf33d083a4d7a8e5293a74bec8
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
+  YandexMapsMobile: d7d7f3b452209b4c2787beb53bb2dfcea259c70c
+  YandexMobileMetrica: a2dd4fd2f01ae7ae6850d786c443cb41fbbbea78
 
-PODFILE CHECKSUM: a0b2c4e800ae8daa04c98ce965c1d555413b76c2
+PODFILE CHECKSUM: 45dc9ad236c2cc37c6e8959856324eecf8a62664
 
 COCOAPODS: 1.10.1

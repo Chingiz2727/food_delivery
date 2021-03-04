@@ -1,8 +1,13 @@
 import RxDataSources
 
-struct RetailList: Codable {
+struct RetailList: Codable, Pagination {
+//    var totalPages: Int
     let retailList: [Retail]
     let totalElements: Int
+
+    var items: [Retail] {
+        retailList
+    }
 }
 
 struct RetailSection: SectionModelType {

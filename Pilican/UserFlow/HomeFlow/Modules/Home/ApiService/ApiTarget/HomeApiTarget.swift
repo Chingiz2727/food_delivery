@@ -1,8 +1,9 @@
 enum HomeApiTarget: ApiTarget {
 
     case slider
-    case newCompanies
+    case retailList
     case fetchBalance(limit: Int)
+    case fullPaginatedRetailList(pageNumber: Int, cityId: Int?, size: Int, categoryId: Int?, name: String)
 
     var version: ApiVersion {
         .custom("")
@@ -14,7 +15,7 @@ enum HomeApiTarget: ApiTarget {
         switch self {
         case .fetchBalance:
             return "v1/ads/download"
-        case .newCompanies:
+        case .retailList, .fullPaginatedRetailList:
             return "a/cb/retail/find/all"
         case .slider:
             return "a/slider/list"
@@ -36,8 +37,19 @@ enum HomeApiTarget: ApiTarget {
             return ["type": 0]
         case let.fetchBalance(limit):
             return ["limit": limit]
-        case .newCompanies:
+        case .retailList:
             return [:]
+        case let.fullPaginatedRetailList(pageNumber, cityId, size, categoryId, name):
+            let filter = [
+                "cityId": cityId,
+                "categoryId": categoryId,
+                "name": name
+            ] as [String: Any]
+            return [
+                "filter": filter,
+                "pageNumber": pageNumber,
+                "size": size
+            ]
         }
     }
 

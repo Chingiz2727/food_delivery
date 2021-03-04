@@ -38,6 +38,10 @@ enum Images: String {
     case accountKey
     case accountPassword
     case accountQR
+    case confetti
+    case girl
+    case knife
+    case shoppingCart
 }
 
 extension Images {

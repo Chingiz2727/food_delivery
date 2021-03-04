@@ -1,10 +1,11 @@
 import UIKit
 
-final class CategoryView: UIControl {
-
+final class CategoryView: UIView {
+    let control = UIControl()
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
 
@@ -12,6 +13,7 @@ final class CategoryView: UIControl {
         let view = UIView()
         view.backgroundColor = UIColor.pilicanBlack.withAlphaComponent(0.07)
         view.layer.cornerRadius = 10
+        view.isUserInteractionEnabled = true
         return view
     }()
 
@@ -19,6 +21,7 @@ final class CategoryView: UIControl {
         let label = UILabel()
         label.font = .description3
         label.numberOfLines = 1
+        label.isUserInteractionEnabled = true
         label.textAlignment = .center
         return label
     }()
@@ -47,11 +50,15 @@ final class CategoryView: UIControl {
         imageView.image = image
         backgroundColor = backColor
         titleLabel.textColor = titleColor
+        isUserInteractionEnabled = true
     }
 
     private func setupInitialLayout() {
+        
         addSubview(titleLabel)
         addSubview(backView)
+        addSubview(control)
+        control.snp.makeConstraints { $0.edges.equalToSuperview() }
         backView.addSubview(imageView)
 
         backView.snp.makeConstraints { make in

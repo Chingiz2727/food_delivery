@@ -21,7 +21,7 @@ final class HomeApiServiceImpl: HomeApiService {
     }
 
     func fetchNewCompaniesList() -> Observable<LoadingSequence<RetailList>> {
-        let companyList = apiService.makeRequest(to: HomeApiTarget.newCompanies)
+        let companyList = apiService.makeRequest(to: HomeApiTarget.retailList)
             .result(RetailList.self)
             .asLoadingSequence()
         return companyList

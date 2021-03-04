@@ -9,7 +9,7 @@ private enum Constants {
     static let volunteerTitle = "Volunteer"
 }
 
-final class HomeTableVIewHeaderView: UICollectionReusableView {
+final class HomeCollectionViewHeaderView: UICollectionReusableView {
 
     private let carouselView = ImageSlideshow()
     private(set) var disposeBag = DisposeBag()
@@ -32,7 +32,9 @@ final class HomeTableVIewHeaderView: UICollectionReusableView {
         views: [carouselView, categoryStack, titleLabel],
         axis: .vertical,
         spacing: 12)
-
+    
+    let selectedTag = PublishSubject<Int>()
+    
     private let cashBackCategory = CategoryView()
     private let busCategory = CategoryView()
     private let deliveryCategory = CategoryView()
@@ -98,6 +100,20 @@ final class HomeTableVIewHeaderView: UICollectionReusableView {
             backColor: .cyan,
             titleColor: .pilicanWhite
         )
+        cashBackCategory.tag = 0
+        busCategory.tag = 1
+        deliveryCategory.tag = 2
+        volunteerCategory.tag = 3
+
+        [cashBackCategory, busCategory, deliveryCategory, volunteerCategory].forEach { control in
+            control.control.rx.controlEvent(.touchUpInside)
+                .subscribe(
+                    onNext: { [unowned self] in
+                        self.selectedTag.onNext(control.tag)
+                    }
+                )
+                .disposed(by: disposeBag)
+        }
     }
 
     private func setupGradient() {

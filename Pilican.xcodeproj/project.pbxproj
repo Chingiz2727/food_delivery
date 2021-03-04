@@ -12,12 +12,6 @@
 		5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236925EF674B00537D3F /* InMemoryCache.swift */; };
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
 		5555237425EF907A00537D3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555237325EF907A00537D3F /* User.swift */; };
-		5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E82E25EE370900025251 /* HomeCashbackMenu.swift */; };
-		5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */; };
-		5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */; };
-		5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */; };
-		5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */; };
-		5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E84225EE406F00025251 /* CashbackMenuView.swift */; };
 		5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */; };
 		5568FED725ECBAC4003AA72F /* AccountModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */; };
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
@@ -27,6 +21,12 @@
 		5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81A25EDFBD200025251 /* AccountKey.swift */; };
 		5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81D25EDFC0400025251 /* AccountPassword.swift */; };
 		5584E82125EDFC2500025251 /* AccountQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E82025EDFC2500025251 /* AccountQR.swift */; };
+		5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E82E25EE370900025251 /* HomeCashbackMenu.swift */; };
+		5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */; };
+		5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */; };
+		5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */; };
+		5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */; };
+		5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E84225EE406F00025251 /* CashbackMenuView.swift */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
@@ -57,7 +57,7 @@
 		A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95D725DE27B600E507FB /* HomeCoordinatorModuleFactory.swift */; };
 		A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95E125DE32FD00E507FB /* HomeModule.swift */; };
 		A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95E425DE331600E507FB /* HomeViewController.swift */; };
-		A40B95E925DE36C500E507FB /* HomeTableVIewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95E825DE36C500E507FB /* HomeTableVIewHeaderView.swift */; };
+		A40B95E925DE36C500E507FB /* HomeCollectionViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95E825DE36C500E507FB /* HomeCollectionViewHeaderView.swift */; };
 		A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95ED25DE3A9600E507FB /* CategoryView.swift */; };
 		A40B95F125DE647500E507FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95F025DE647500E507FB /* HomeView.swift */; };
 		A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B95F425DE659E00E507FB /* SetSizedHeaderView.swift */; };
@@ -214,6 +214,16 @@
 		A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3143825D14D400003BA0B /* AppCoordinator.swift */; };
 		A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3143F25D150180003BA0B /* AppCoordinatorFactory.swift */; };
 		A4B3144525D150900003BA0B /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B3144425D150900003BA0B /* AuthCoordinator.swift */; };
+		A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A0F825F090F200F0A3D6 /* CashBackListView.swift */; };
+		A4B9A0FE25F092E500F0A3D6 /* CashBackListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A0FD25F092E500F0A3D6 /* CashBackListHeaderView.swift */; };
+		A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A12525F0A18600F0A3D6 /* CashBackListViewController.swift */; };
+		A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A1E225F0A41600F0A3D6 /* CashBackListModule.swift */; };
+		A4B9A1E625F0A4AA00F0A3D6 /* CashBackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A1E525F0A4AA00F0A3D6 /* CashBackListViewModel.swift */; };
+		A4B9A27525F0D06D00F0A3D6 /* CashBackListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A27425F0D06D00F0A3D6 /* CashBackListDataSource.swift */; };
+		A4B9A27A25F0D98100F0A3D6 /* CashBackListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A27925F0D98100F0A3D6 /* CashBackListTableViewCell.swift */; };
+		A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A3A925F0EBDC00F0A3D6 /* HomeCategoryMenu.swift */; };
+		A4B9A3AF25F1045500F0A3D6 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = A4B9A3AE25F1045500F0A3D6 /* Loader.json */; };
+		A4B9A3B325F104EF00F0A3D6 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9A3B225F104EF00F0A3D6 /* LoadingIndicatorView.swift */; };
 		A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBC6C625D61271006AF382 /* CameraAction.swift */; };
 		A4BBC6CC25D612C8006AF382 /* CameraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBC6CB25D612C8006AF382 /* CameraModule.swift */; };
 		A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BBC6D025D61336006AF382 /* CameraViewController.swift */; };
@@ -266,12 +276,6 @@
 		5555236925EF674B00537D3F /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5555237325EF907A00537D3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5584E82E25EE370900025251 /* HomeCashbackMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCashbackMenu.swift; sourceTree = "<group>"; };
-		5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuCoordinator.swift; sourceTree = "<group>"; };
-		5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModuleFactory.swift; sourceTree = "<group>"; };
-		5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModule.swift; sourceTree = "<group>"; };
-		5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuViewController.swift; sourceTree = "<group>"; };
-		5584E84225EE406F00025251 /* CashbackMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuView.swift; sourceTree = "<group>"; };
 		5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
 		5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModuleFactory.swift; sourceTree = "<group>"; };
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
@@ -281,6 +285,12 @@
 		5584E81A25EDFBD200025251 /* AccountKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountKey.swift; sourceTree = "<group>"; };
 		5584E81D25EDFC0400025251 /* AccountPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPassword.swift; sourceTree = "<group>"; };
 		5584E82025EDFC2500025251 /* AccountQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountQR.swift; sourceTree = "<group>"; };
+		5584E82E25EE370900025251 /* HomeCashbackMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCashbackMenu.swift; sourceTree = "<group>"; };
+		5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuCoordinator.swift; sourceTree = "<group>"; };
+		5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModuleFactory.swift; sourceTree = "<group>"; };
+		5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModule.swift; sourceTree = "<group>"; };
+		5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuViewController.swift; sourceTree = "<group>"; };
+		5584E84225EE406F00025251 /* CashbackMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuView.swift; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
@@ -313,7 +323,7 @@
 		A40B95D725DE27B600E507FB /* HomeCoordinatorModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorModuleFactory.swift; sourceTree = "<group>"; };
 		A40B95E125DE32FD00E507FB /* HomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		A40B95E425DE331600E507FB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A40B95E825DE36C500E507FB /* HomeTableVIewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableVIewHeaderView.swift; sourceTree = "<group>"; };
+		A40B95E825DE36C500E507FB /* HomeCollectionViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewHeaderView.swift; sourceTree = "<group>"; };
 		A40B95ED25DE3A9600E507FB /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		A40B95F025DE647500E507FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A40B95F425DE659E00E507FB /* SetSizedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSizedHeaderView.swift; sourceTree = "<group>"; };
@@ -474,6 +484,16 @@
 		A4B3143825D14D400003BA0B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A4B3143F25D150180003BA0B /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
 		A4B3144425D150900003BA0B /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		A4B9A0F825F090F200F0A3D6 /* CashBackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackListView.swift; sourceTree = "<group>"; };
+		A4B9A0FD25F092E500F0A3D6 /* CashBackListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackListHeaderView.swift; sourceTree = "<group>"; };
+		A4B9A12525F0A18600F0A3D6 /* CashBackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackListViewController.swift; sourceTree = "<group>"; };
+		A4B9A1E225F0A41600F0A3D6 /* CashBackListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackListModule.swift; sourceTree = "<group>"; };
+		A4B9A1E525F0A4AA00F0A3D6 /* CashBackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackListViewModel.swift; sourceTree = "<group>"; };
+		A4B9A27425F0D06D00F0A3D6 /* CashBackListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackListDataSource.swift; sourceTree = "<group>"; };
+		A4B9A27925F0D98100F0A3D6 /* CashBackListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashBackListTableViewCell.swift; sourceTree = "<group>"; };
+		A4B9A3A925F0EBDC00F0A3D6 /* HomeCategoryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryMenu.swift; sourceTree = "<group>"; };
+		A4B9A3AE25F1045500F0A3D6 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
+		A4B9A3B225F104EF00F0A3D6 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		A4BBC6C625D61271006AF382 /* CameraAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAction.swift; sourceTree = "<group>"; };
 		A4BBC6CB25D612C8006AF382 /* CameraModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModule.swift; sourceTree = "<group>"; };
 		A4BBC6D025D61336006AF382 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -549,26 +569,6 @@
 			path = InMemoryCache;
 			sourceTree = "<group>";
 		};
-		5584E82725EE36CD00025251 /* CashbackMenu */ = {
-			isa = PBXGroup;
-			children = (
-				5584E84125EE405A00025251 /* View */,
-				5584E83D25EE3F9300025251 /* Controller */,
-				5584E83925EE3F2900025251 /* Module */,
-				5584E83125EE37CD00025251 /* Coordinator */,
-				5584E82825EE36D800025251 /* Model */,
-			);
-			path = CashbackMenu;
-			sourceTree = "<group>";
-		};
-		5584E82825EE36D800025251 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		5568FECC25ECB276003AA72F /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,47 +586,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5584E83125EE37CD00025251 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				5584E83225EE37E000025251 /* ModuleFactory */,
-				5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		5584E83225EE37E000025251 /* ModuleFactory */ = {
-			isa = PBXGroup;
-			children = (
-				5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */,
-			);
-			path = ModuleFactory;
-			sourceTree = "<group>";
-		};
-		5584E83925EE3F2900025251 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		5584E83D25EE3F9300025251 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		5584E84125EE405A00025251 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5584E84225EE406F00025251 /* CashbackMenuView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		5568FECE25ECB385003AA72F /* Controller */ = {
@@ -672,6 +631,67 @@
 				5568FEDA25ECBBA9003AA72F /* AccountModule.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		5584E82725EE36CD00025251 /* CashbackMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5584E84125EE405A00025251 /* View */,
+				5584E83D25EE3F9300025251 /* Controller */,
+				5584E83925EE3F2900025251 /* Module */,
+				5584E83125EE37CD00025251 /* Coordinator */,
+				5584E82825EE36D800025251 /* Model */,
+			);
+			path = CashbackMenu;
+			sourceTree = "<group>";
+		};
+		5584E82825EE36D800025251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5584E83125EE37CD00025251 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83225EE37E000025251 /* ModuleFactory */,
+				5584E83325EE380100025251 /* CashbackMenuCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5584E83225EE37E000025251 /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */,
+			);
+			path = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		5584E83925EE3F2900025251 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5584E83D25EE3F9300025251 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5584E84125EE405A00025251 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5584E84225EE406F00025251 /* CashbackMenuView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
@@ -847,6 +867,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
 				A4379FD125ECAF1700910A2D /* RetailDetail */,
 				5584E82725EE36CD00025251 /* CashbackMenu */,
 				5568FECC25ECB276003AA72F /* Account */,
@@ -927,6 +948,7 @@
 			children = (
 				A40B960525DE70DF00E507FB /* Retail */,
 				A40B960125DE6EF100E507FB /* Slider */,
+				A4B9A3A925F0EBDC00F0A3D6 /* HomeCategoryMenu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -934,7 +956,7 @@
 		A40B95E725DE365A00E507FB /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				A40B95E825DE36C500E507FB /* HomeTableVIewHeaderView.swift */,
+				A40B95E825DE36C500E507FB /* HomeCollectionViewHeaderView.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -1493,6 +1515,7 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A4B9A3B125F104DC00F0A3D6 /* LoadingIndicatorView */,
 				5555236425EF66E400537D3F /* Cache */,
 				A47CA19C25E36D3200EB091C /* Coordinator */,
 				A48CD00A25DBC9D20010829F /* ViewController */,
@@ -1813,6 +1836,92 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		A4B9A0F325F08F2C00F0A3D6 /* CashBackList */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A27325F0D05900F0A3D6 /* DataSource */,
+				A4B9A0F725F08F5700F0A3D6 /* Module */,
+				A4B9A0F625F08F5300F0A3D6 /* ViewModel */,
+				A4B9A0F525F08F3F00F0A3D6 /* Controller */,
+				A4B9A0F425F08F3600F0A3D6 /* View */,
+			);
+			path = CashBackList;
+			sourceTree = "<group>";
+		};
+		A4B9A0F425F08F3600F0A3D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A27825F0D97000F0A3D6 /* Cell */,
+				A4B9A0FC25F092D200F0A3D6 /* HeaderView */,
+				A4B9A0F825F090F200F0A3D6 /* CashBackListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4B9A0F525F08F3F00F0A3D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A12525F0A18600F0A3D6 /* CashBackListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4B9A0F625F08F5300F0A3D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A1E525F0A4AA00F0A3D6 /* CashBackListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A4B9A0F725F08F5700F0A3D6 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A1E225F0A41600F0A3D6 /* CashBackListModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A4B9A0FC25F092D200F0A3D6 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A0FD25F092E500F0A3D6 /* CashBackListHeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		A4B9A27325F0D05900F0A3D6 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A27425F0D06D00F0A3D6 /* CashBackListDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A4B9A27825F0D97000F0A3D6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A27925F0D98100F0A3D6 /* CashBackListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A4B9A3AD25F1044A00F0A3D6 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A3AE25F1045500F0A3D6 /* Loader.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		A4B9A3B125F104DC00F0A3D6 /* LoadingIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9A3B225F104EF00F0A3D6 /* LoadingIndicatorView.swift */,
+			);
+			path = LoadingIndicatorView;
+			sourceTree = "<group>";
+		};
 		A4BBC6C125D6124A006AF382 /* CameraModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -1924,6 +2033,7 @@
 		A4DD3DC625D24359002D2186 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A4B9A3AD25F1044A00F0A3D6 /* Animation */,
 				A475CCC725EF45F600C596FB /* WorkCalendar */,
 				A475CCC325EF422F00C596FB /* UserDefaultStore */,
 				A475CCBF25EF420B00C596FB /* AppLanguage */,
@@ -2169,6 +2279,7 @@
 				A4B310E125D10C370003BA0B /* Resources */,
 				BDE1AB53E89B2609DFF07935 /* [CP] Embed Pods Frameworks */,
 				A483E1C925D3E61C006D2DAF /* SwiftLint */,
+				228F7BCA6193FC0A12A07794 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2227,6 +2338,7 @@
 				A40A547B25D26FA400BBFDFA /* Whitney-BookItalic.ttf in Resources */,
 				A40A547D25D26FA600BBFDFA /* Whitney-Light.ttf in Resources */,
 				A40A547725D26F9F00BBFDFA /* Whitney-BoldItalic.ttf in Resources */,
+				A4B9A3AF25F1045500F0A3D6 /* Loader.json in Resources */,
 				A4D7644125DA748C009A6651 /* city.json in Resources */,
 				A40A547925D26FA100BBFDFA /* Whitney-Book.ttf in Resources */,
 				A40A548325D26FAE00BBFDFA /* Whitney-MediumItalic.ttf in Resources */,
@@ -2238,6 +2350,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		228F7BCA6193FC0A12A07794 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A483E1C925D3E61C006D2DAF /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2323,14 +2452,17 @@
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
 				A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */,
 				A483E26225D40ABE006D2DAF /* UIViewController+Error.swift in Sources */,
+				A4B9A3B325F104EF00F0A3D6 /* LoadingIndicatorView.swift in Sources */,
+				A4B9A1E625F0A4AA00F0A3D6 /* CashBackListViewModel.swift in Sources */,
 				A483E28B25D40ABE006D2DAF /* PaginationTableFooterView.swift in Sources */,
 				A47CA1EF25E36E8000EB091C /* StoriesDismissAnimationController.swift in Sources */,
 				A40B960325DE6F0000E507FB /* Slider.swift in Sources */,
-				A40B95E925DE36C500E507FB /* HomeTableVIewHeaderView.swift in Sources */,
+				A40B95E925DE36C500E507FB /* HomeCollectionViewHeaderView.swift in Sources */,
 				A483E28225D40ABE006D2DAF /* ApiServiceAssembly.swift in Sources */,
 				A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */,
 				A4FD7DAF25DD3306000DD49D /* TabImageInfoView.swift in Sources */,
 				A475CC1B25EF3BCC00C596FB /* WorkTimeHeaderView.swift in Sources */,
+				A4B9A27525F0D06D00F0A3D6 /* CashBackListDataSource.swift in Sources */,
 				5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */,
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
 				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
@@ -2366,6 +2498,7 @@
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
 				A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */,
+				A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
 				A475CC2325EF3ED700C596FB /* Extentsion+BoolToInt.swift in Sources */,
@@ -2383,6 +2516,7 @@
 				5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */,
 				A4BBC6E925D639DA006AF382 /* BackButtonContainerViewController.swift in Sources */,
 				A483E28E25D40ABE006D2DAF /* InputValidatable.swift in Sources */,
+				A4B9A27A25F0D98100F0A3D6 /* CashBackListTableViewCell.swift in Sources */,
 				A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */,
 				A483E27925D40ABE006D2DAF /* UploadService.swift in Sources */,
 				A483E29425D40ABE006D2DAF /* PilicanLogger+HTTP.swift in Sources */,
@@ -2404,6 +2538,7 @@
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
+				A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
 				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
 				A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */,
@@ -2464,6 +2599,7 @@
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
+				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
 				A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */,
@@ -2488,6 +2624,7 @@
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
+				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,
@@ -2516,6 +2653,7 @@
 				A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */,
 				A475CCB425EF418500C596FB /* HelperProtocols.swift in Sources */,
 				A48CCFF025DB7EDD0010829F /* CameraView.swift in Sources */,
+				A4B9A0FE25F092E500F0A3D6 /* CashBackListHeaderView.swift in Sources */,
 				A475CCD725EF972000C596FB /* RetaiImages.swift in Sources */,
 				A483E26825D40ABE006D2DAF /* Observable+Timer.swift in Sources */,
 				A44F581E25E90F5D00F5A39B /* HomeProfileMenu.swift in Sources */,
