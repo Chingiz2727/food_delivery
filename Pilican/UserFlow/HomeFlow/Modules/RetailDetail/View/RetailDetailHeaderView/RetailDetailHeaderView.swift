@@ -31,6 +31,9 @@ final class RetailDetailHeaderView: UIView {
     private let ratingView: CosmosView = {
         let ratingView = CosmosView()
         ratingView.settings.totalStars = 5
+        ratingView.settings.updateOnTouch = false
+        ratingView.settings.emptyImage = Images.emptyStar.image
+        ratingView.settings.filledImage = Images.filledStar.image
         return ratingView
     }()
 
@@ -76,6 +79,7 @@ final class RetailDetailHeaderView: UIView {
         setupWorkStatusView(retail: retail)
         guard let imgUrl = retail.imgLogo else { return }
         logoImageView.kf.setImage(with: URL(string: imgUrl))
+        ratingView.rating = retail.rating
     }
 
     private func setupWorkStatusView(retail: Retail) {

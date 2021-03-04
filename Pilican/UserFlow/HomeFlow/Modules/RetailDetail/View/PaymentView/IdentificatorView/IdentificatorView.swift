@@ -35,6 +35,10 @@ final class IdentificatorView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    func setData(retail: Retail) {
+        identificatorLabel.text = "\(retail.id)"
+    }
 
     private func setupInitialLayout() {
         addSubview(stackView)
