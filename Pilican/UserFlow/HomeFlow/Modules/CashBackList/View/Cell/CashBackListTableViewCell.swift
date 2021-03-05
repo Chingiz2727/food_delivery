@@ -62,7 +62,7 @@ final class CashBackListTableViewCell: UITableViewCell {
         setupInitialLayout()
         configureView()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         dataView.layer.cornerRadius = 10

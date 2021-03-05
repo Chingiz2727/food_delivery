@@ -38,14 +38,14 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(loadView: Observable.just(())))
+        let output = viewModel.transform(input: .init(loadByCategoryId: rootView.headerView.selectedCategoryId))
 
         let retailList = output.retailList.publish()
 
         let adapter = viewModel.adapter
         adapter.connect(to: rootView.tableView)
         adapter.start()
-        
+
         retailList.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)

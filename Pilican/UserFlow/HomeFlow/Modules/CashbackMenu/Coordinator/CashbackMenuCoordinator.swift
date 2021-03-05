@@ -21,9 +21,10 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
     override func start() {
         presentMenu()
     }
-    
+
     private func presentMenu() {
         var module = moduleFactory.makeMenu()
+
         module.menuDidSelect = { [weak self] menu in
             self?.router.dismissModule()
         }

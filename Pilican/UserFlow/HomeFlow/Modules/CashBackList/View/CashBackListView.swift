@@ -6,6 +6,7 @@ final class CashBackListView: UIView {
     let headerView = CashBackListHeaderView()
 
     let footerView = PaginationTableFooterView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()

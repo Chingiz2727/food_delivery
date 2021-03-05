@@ -2,25 +2,26 @@ import RxSwift
 
 final class CashBackListViewModel: ViewModel {
     lazy var adapter = PaginationAdapter(manager: manager)
-    private let apiService: ApiService
-    private let manager: PaginationManager<RetailList>
-    private let disposeBag = DisposeBag()
 
+    private lazy var manager = PaginationManager<RetailList> { [unowned self] page, pageSize, _ in
+        return self.apiService.makeRequest(
+            to: HomeApiTarget.fullPaginatedRetailList(
+                pageNumber: page, cityId: nil, size: pageSize, categoryId: self.categoryId, name: "")
+        )
+        .result()
+    }
+
+    private let apiService: ApiService
+    private let disposeBag = DisposeBag()
+    private var categoryId: Int = 1
+    
     init(apiService: ApiService) {
         self.apiService = apiService
-        self.manager = PaginationManager(
-            pageSize: 15, shouldLoadOnEmptyQuery: true, requestFabric: { page, pageSize, _ in
-            return apiService.makeRequest(
-                to: HomeApiTarget.fullPaginatedRetailList(
-                    pageNumber: page, cityId: nil, size: pageSize, categoryId: nil, name: ""
-                )
-            ).result()
-            }
-        )
+        self.categoryId = 1
     }
     
     struct Input {
-        let loadView: Observable<Void>
+        let loadByCategoryId: Observable<Int>
     }
 
     struct Output {
@@ -28,8 +29,9 @@ final class CashBackListViewModel: ViewModel {
     }
 
     func transform(input: Input) -> Output {
-        input.loadView
-            .subscribe(onNext: { [unowned self] in
+        input.loadByCategoryId
+            .subscribe(onNext: { [unowned self] id in
+                self.categoryId = id
                 self.manager.resetData()
             })
             .disposed(by: disposeBag)

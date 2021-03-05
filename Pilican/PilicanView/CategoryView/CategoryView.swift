@@ -54,7 +54,6 @@ final class CategoryView: UIView {
     }
 
     private func setupInitialLayout() {
-        
         addSubview(titleLabel)
         addSubview(backView)
         addSubview(control)

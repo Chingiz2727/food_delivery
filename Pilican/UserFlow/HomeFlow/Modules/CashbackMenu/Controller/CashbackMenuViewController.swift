@@ -23,7 +23,7 @@ final class CashbackMenuViewController: UIViewController, ViewHolder, CashbackMe
         super.viewDidLoad()
         bindView()
     }
-    
+
     private func bindView() {
         Observable.just(HomeCashbackMenu.allCases)
             .bind(to: rootView.tableView.rx.items(UITableViewCell.self)) { _, model, cell  in

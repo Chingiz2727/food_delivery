@@ -1,3 +1,4 @@
+import RxSwift
 import UIKit
 
 private enum Constants {
@@ -8,6 +9,9 @@ private enum Constants {
 }
 
 final class CashBackListHeaderView: UIView {
+
+    let selectedCategoryId: BehaviorSubject<Int> = .init(value: 1)
+
     private let mapImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -15,10 +19,11 @@ final class CashBackListHeaderView: UIView {
         return imageView
     }()
     
-    let foodCategory = CategoryView()
-    let entertainmentCategory = CategoryView()
-    let salesCategory = CategoryView()
-    let servicesCategory = CategoryView()
+    private let disposeBag = DisposeBag()
+    private let foodCategory = CategoryView()
+    private let entertainmentCategory = CategoryView()
+    private let salesCategory = CategoryView()
+    private let servicesCategory = CategoryView()
 
     private lazy var categoryStack = UIStackView(
         views: [foodCategory, entertainmentCategory, salesCategory, servicesCategory],
@@ -44,7 +49,7 @@ final class CashBackListHeaderView: UIView {
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(137)
         }
-        
+
         categoryStack.snp.makeConstraints { make in
             make.top.equalTo(mapImageView.snp.bottom).offset(17)
             make.leading.trailing.equalToSuperview().inset(15)
@@ -56,7 +61,7 @@ final class CashBackListHeaderView: UIView {
             views.snp.makeConstraints { $0.size.equalTo(75) }
         }
     }
-    
+
     private func configureView() {
         foodCategory.configureView(
             title: Constants.foodTitle,
@@ -82,6 +87,19 @@ final class CashBackListHeaderView: UIView {
             backColor: .pilicanWhite,
             titleColor: .pilicanBlack
         )
+
+        foodCategory.control.tag = 1
+        servicesCategory.control.tag = 3
+        salesCategory.control.tag = 2
+        entertainmentCategory.control.tag = 4
+
+        [foodCategory, servicesCategory, salesCategory, entertainmentCategory].forEach { control in
+            control.control.rx.controlEvent(.touchUpInside)
+                .subscribe(onNext: { [unowned self] in
+                    self.selectedCategoryId.onNext(control.control.tag)
+                })
+                .disposed(by: disposeBag)
+        }
         backgroundColor = .background
     }
 }

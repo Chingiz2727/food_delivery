@@ -20,6 +20,7 @@ public final class ProgressView: UIView {
 
   private override init(frame: CGRect) {
     super.init(frame: frame)
+    backgroundColor = UIColor.background.withAlphaComponent(0.9)
   }
 
   public required init?(coder aDecoder: NSCoder) {

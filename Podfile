@@ -20,6 +20,4 @@ target 'Pilican' do
   pod 'UltraDrawerView', '0.5.0'
   pod 'SwiftMessages', '8.0.3'
   pod 'lottie-ios', '3.1.2'
-  pod 'YandexMapsMobile', '4.0.0-lite'
-  pod 'YandexMobileMetrica', '3.14.0'
 end
