@@ -39,11 +39,11 @@ class ProblemView: UIView, TagListViewDelegate {
     let sendButton: UIButton = {
         let button = UIButton()
         button.setTitle("ОТПРАВИТЬ", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.pilicanWhite, for: .normal)
         button.titleLabel?.font = UIFont.medium16
         button.clipsToBounds = false
         button.layer.cornerRadius = 20
-        button.backgroundColor = .orange
+        button.backgroundColor = .primary
         button.layer.addShadow()
         return button
     }()
@@ -110,9 +110,9 @@ class ProblemView: UIView, TagListViewDelegate {
     }
 
     private func setupTagList() {
-        tagListView.textFont = UIFont(name: "Whitney-Book", size: 12)!
+        tagListView.textFont = UIFont.book12!
         tagListView.alignment = .left
-        tagListView.borderColor = .white
+        tagListView.borderColor = .pilicanWhite
         tagListView.borderWidth = 1
         tagListView.cornerRadius = 8
 
@@ -125,12 +125,12 @@ class ProblemView: UIView, TagListViewDelegate {
             tag.paddingX = 5
         }
         tagListView.backgroundColor = .clear
-        tagListView.tagBackgroundColor = .white
-        tagListView.textColor = .gray
-        tagListView.borderColor = .gray
-        tagListView.selectedTextColor = .orange
-        tagListView.tagSelectedBackgroundColor = .white
-        tagListView.selectedBorderColor = .orange
+        tagListView.tagBackgroundColor = .pilicanWhite
+        tagListView.textColor = .pilicanGray
+        tagListView.borderColor = .pilicanGray
+        tagListView.selectedTextColor = .primary
+        tagListView.tagSelectedBackgroundColor = .pilicanWhite
+        tagListView.selectedBorderColor = .primary
         claimsList.forEach {
             self.tagListView.addTag($0.name)
         }
