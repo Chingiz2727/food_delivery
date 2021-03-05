@@ -15,7 +15,7 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }

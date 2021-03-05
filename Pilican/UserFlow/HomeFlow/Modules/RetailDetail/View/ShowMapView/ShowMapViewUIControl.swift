@@ -27,7 +27,7 @@ final class ShowMapViewUIControl: UIControl {
         setupInitialLayout()
         backgroundColor = .pilicanWhite
     }
-    
+
     override func layoutSubviews() {
         layer.cornerRadius = 10
     }
@@ -44,12 +44,12 @@ final class ShowMapViewUIControl: UIControl {
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(15)
         }
-        
+
         mapBackgroundImageView.snp.makeConstraints { make in
             make.top.bottom.trailing.equalToSuperview()
             make.width.equalTo(137)
         }
-        
+
         mapIcon.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(15)

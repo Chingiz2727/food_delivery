@@ -32,13 +32,13 @@ class AccountView: UIView {
         button.titleLabel?.font = UIFont.medium16
         return button
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
         configureView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -50,7 +50,7 @@ class AccountView: UIView {
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(12)
             make.height.equalTo(330)
         }
-        
+
         stackView.addArrangedSubview(accountHeaderView)
         stackView.addArrangedSubview(accountCard)
         stackView.addArrangedSubview(accountKey)
@@ -64,7 +64,7 @@ class AccountView: UIView {
             make.height.equalTo(40)
         }
     }
-    
+
     private func configureView() {
         backgroundColor = .grayBackground
     }

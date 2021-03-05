@@ -19,14 +19,17 @@ final class AcceptPermissionView: UIView {
 
     let politiсyAgreementButton: UIButton = {
         let button = UIButton()
-        button.setTitle("С условиями Пользовательского\nсоглашения и  Политикой конфиденциальности\nОзнакомлен(а) и Согласен(а)", for: .normal)
+        button.setTitle(
+            "С условиями Пользовательского\nсоглашения и  Политикой конфиденциальности\nОзнакомлен(а) и Согласен(а)",
+            for: .normal
+        )
         button.titleLabel?.font = UIFont.medium14
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.lineBreakMode = .byWordWrapping
         button.setTitleColor(.black, for: .normal)
         return button
     }()
-    
+
     let nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Далее", for: .normal)
@@ -40,7 +43,7 @@ final class AcceptPermissionView: UIView {
 
     let termsContainer = UIView()
     let bottomContainer = UIView()
-    
+
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -59,7 +62,7 @@ final class AcceptPermissionView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupInitialLayouts() {
         addSubview(termsContainer)
         termsContainer.snp.makeConstraints { (make) in
@@ -73,7 +76,7 @@ final class AcceptPermissionView: UIView {
             make.left.right.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(10)
         }
-        
+
         addSubview(bottomContainer)
         bottomContainer.snp.makeConstraints { (make) in
             make.height.equalTo(185)

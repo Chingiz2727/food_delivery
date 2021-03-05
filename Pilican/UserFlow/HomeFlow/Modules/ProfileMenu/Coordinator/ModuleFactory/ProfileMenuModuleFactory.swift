@@ -1,6 +1,6 @@
 final class ProfileMenuModuleFactory {
     private let container: DependencyContainer
-    
+
     init(container: DependencyContainer) {
         self.container = container
     }
@@ -8,5 +8,4 @@ final class ProfileMenuModuleFactory {
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
-    
 }

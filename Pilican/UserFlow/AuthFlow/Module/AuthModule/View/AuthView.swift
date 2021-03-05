@@ -26,9 +26,14 @@ final class AuthView: UIView {
             ]
         )
 
-        attributedTitle.append(NSAttributedString(
-                                string: " регистрация",
-                                attributes: [NSAttributedString.Key.font: UIFont.book14!, NSAttributedString.Key.foregroundColor: UIColor.primary]))
+        attributedTitle.append(
+            NSAttributedString(
+                string: " регистрация",
+                attributes: [
+                    NSAttributedString.Key.font: UIFont.book14!,
+                    NSAttributedString.Key.foregroundColor: UIColor.primary]
+            )
+        )
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()

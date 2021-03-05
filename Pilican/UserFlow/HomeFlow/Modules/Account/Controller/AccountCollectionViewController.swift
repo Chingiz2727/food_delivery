@@ -14,10 +14,8 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     override func loadView() {
         view = AccountView()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
     }
 }

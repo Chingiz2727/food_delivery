@@ -12,7 +12,7 @@ protocol CashbackMenuCoordinator: BaseCoordinator {}
 final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinator {
     
     private let moduleFactory: CashbackMenuModuleFactory
-    
+
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = CashbackMenuModuleFactory(container: container)
         super.init(router: router, container: container)

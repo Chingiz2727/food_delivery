@@ -32,9 +32,9 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
         views: [carouselView, categoryStack, titleLabel],
         axis: .vertical,
         spacing: 12)
-    
+
     let selectedTag = PublishSubject<Int>()
-    
+
     private let cashBackCategory = CategoryView()
     private let busCategory = CategoryView()
     private let deliveryCategory = CategoryView()

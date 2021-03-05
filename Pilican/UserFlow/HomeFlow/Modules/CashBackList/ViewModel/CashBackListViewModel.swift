@@ -14,7 +14,7 @@ final class CashBackListViewModel: ViewModel {
     private let apiService: ApiService
     private let disposeBag = DisposeBag()
     private var categoryId: Int = 1
-    
+
     init(apiService: ApiService) {
         self.apiService = apiService
         self.categoryId = 1
@@ -35,7 +35,6 @@ final class CashBackListViewModel: ViewModel {
                 self.manager.resetData()
             })
             .disposed(by: disposeBag)
-    
         return .init(retailList: self.manager.contentUpdate.asLoadingSequence())
     }
 }

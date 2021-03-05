@@ -17,7 +17,6 @@ final class HomeCollectionViewDataSource: RxCollectionViewSectionedReloadDataSou
             slider.subscribe(onNext: { sliders in
                 header.setupSlider(sliders: sliders)
             }).disposed(by: header.disposeBag)
-            
             header.selectedTag.subscribe(onNext: { tag in
                 categoryMenu.onNext(HomeCategoryMenu(rawValue: tag)!)
             }).disposed(by: header.disposeBag)

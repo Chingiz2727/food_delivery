@@ -18,7 +18,7 @@ final class CashBackListHeaderView: UIView {
         imageView.image = Images.mapBackground.image
         return imageView
     }()
-    
+
     private let disposeBag = DisposeBag()
     private let foodCategory = CategoryView()
     private let entertainmentCategory = CategoryView()
@@ -56,7 +56,7 @@ final class CashBackListHeaderView: UIView {
             make.height.equalTo(75)
             make.bottom.equalToSuperview().inset(15)
         }
-        
+
         categoryStack.arrangedSubviews.forEach { views in
             views.snp.makeConstraints { $0.size.equalTo(75) }
         }
