@@ -30,6 +30,7 @@ PODS:
     - SwiftMessages/App (= 8.0.3)
   - SwiftMessages/App (8.0.3)
   - Swinject (2.7.1)
+  - TagListView (1.4.1)
   - UltraDrawerView (0.5.0)
   - Willow (6.0.0)
 
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - SwiftLint (= 0.39.2)
   - SwiftMessages (= 8.0.3)
   - Swinject (= 2.7.1)
+  - TagListView (~> 1.0)
   - UltraDrawerView (= 0.5.0)
   - Willow (~> 6.0)
 
@@ -71,6 +73,7 @@ SPEC REPOS:
     - SwiftLint
     - SwiftMessages
     - Swinject
+    - TagListView
     - UltraDrawerView
     - Willow
 
@@ -92,9 +95,10 @@ SPEC CHECKSUMS:
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   UltraDrawerView: 50968b8838d22adf33d083a4d7a8e5293a74bec8
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
 
-PODFILE CHECKSUM: a0b2c4e800ae8daa04c98ce965c1d555413b76c2
+PODFILE CHECKSUM: 8dfecc2515206af04c60bb83f4ab8ab763147ee0
 
 COCOAPODS: 1.10.1
