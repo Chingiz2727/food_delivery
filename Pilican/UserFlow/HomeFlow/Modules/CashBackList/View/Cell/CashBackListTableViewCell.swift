@@ -56,7 +56,7 @@ final class CashBackListTableViewCell: UITableViewCell {
         spacing: 8)
 
     private let dataView = UIView()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()

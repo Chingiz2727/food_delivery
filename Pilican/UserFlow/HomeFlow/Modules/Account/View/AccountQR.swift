@@ -10,7 +10,7 @@ class AccountQR: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
     private let cellTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Мой QR"

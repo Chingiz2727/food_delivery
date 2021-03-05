@@ -12,13 +12,13 @@ final class CashbackMenuViewController: UIViewController, ViewHolder, CashbackMe
     typealias RootViewType = CashbackMenuView
     
     var menuDidSelect: MenuDidSelect?
-    
+
     private let disposeBag = DisposeBag()
-    
+
     override func loadView() {
         view = CashbackMenuView()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()

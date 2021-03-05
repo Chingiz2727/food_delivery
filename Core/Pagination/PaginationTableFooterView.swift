@@ -13,7 +13,7 @@ public final class PaginationTableFooterView: UIView {
     }()
     
     public override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 60)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 80)
     }
     
     public override init(frame: CGRect) {
@@ -66,6 +66,6 @@ public final class PaginationTableFooterView: UIView {
 private extension PaginationTableFooterView {
     
     enum Constants {
-        static let animationSize = 90
+        static let animationSize = 60
     }
 }
