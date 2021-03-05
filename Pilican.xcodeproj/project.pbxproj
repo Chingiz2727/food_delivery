@@ -38,6 +38,7 @@
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
 		55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */; };
 		55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */; };
+		55C401F325F2380E00145996 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C401F225F2380E00145996 /* Claim.swift */; };
 		A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C025D2596E00BBFDFA /* TextField.swift */; };
 		A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */; };
 		A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */; };
@@ -298,6 +299,7 @@
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
 		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
 		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
+		55C401F225F2380E00145996 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
 		6F49A99C7F2C5E4C2FB8A041 /* Pods-Pilican.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(development).xcconfig"; sourceTree = "<group>"; };
 		783AEE61F24CC5966A2DBCCE /* Pods-Pilican.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(production).xcconfig"; sourceTree = "<group>"; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 		558679BC25F0D06600A5A94B /* Problem */ = {
 			isa = PBXGroup;
 			children = (
+				55C401F125F237FF00145996 /* Model */,
 				558679F025F107E500A5A94B /* ViewModel */,
 				558679E925F0FCB600A5A94B /* Api */,
 				558679DF25F0D94400A5A94B /* Module */,
@@ -779,6 +782,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55C401F125F237FF00145996 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55C401F225F2380E00145996 /* Claim.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8176B9877CE758347B33479A /* Pods */ = {
@@ -2557,6 +2568,7 @@
 				5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */,
 				A40B94CE25DD974C00E507FB /* HomeTabBar.swift in Sources */,
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
+				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,

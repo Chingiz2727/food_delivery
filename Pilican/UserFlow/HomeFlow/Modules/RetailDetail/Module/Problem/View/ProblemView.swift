@@ -13,7 +13,6 @@ class ProblemView: UIView, TagListViewDelegate {
     
     let problemLabel: UILabel = {
         let label = UILabel()
-        label.frame = CGRect(x: 0, y: 0, width: 301, height: 31)
         label.font = UIFont.medium24
         label.textAlignment = .center
         label.text = "Расскажите нам, что не так?"
@@ -73,7 +72,6 @@ class ProblemView: UIView, TagListViewDelegate {
         tagView.isSelected = !tagView.isSelected
         let ids = selectedClaimList.map { String($0.id) }
         claimids.onNext(ids.joined(separator: ","))
-        print("Selected item", selectedClaimList, claimids)
     }
 
     private func setupInitialLayouts() {
@@ -82,6 +80,8 @@ class ProblemView: UIView, TagListViewDelegate {
         addSubview(problemLabel)
         problemLabel.snp.makeConstraints { (make) in
             make.left.top.right.equalToSuperview().inset(16)
+            make.height.equalTo(31)
+            make.width.equalTo(301)
         }
 
         addSubview(tagListView)
@@ -106,10 +106,10 @@ class ProblemView: UIView, TagListViewDelegate {
     }
 
     private func configureView() {
-        backgroundColor = .white
+        backgroundColor = .pilicanWhite
     }
 
-    fileprivate func setupTagList() {
+    private func setupTagList() {
         tagListView.textFont = UIFont(name: "Whitney-Book", size: 12)!
         tagListView.alignment = .left
         tagListView.borderColor = .white
@@ -135,9 +135,4 @@ class ProblemView: UIView, TagListViewDelegate {
             self.tagListView.addTag($0.name)
         }
     }
-}
-
-struct Claim: Equatable {
-    let id: Int
-    let name: String
 }

@@ -11,7 +11,7 @@ enum ProblemTarget: ApiTarget {
     case sendClaims(claimIds: String, retailId: Int, description: String?)
     
     var version: ApiVersion {
-        .custom("")
+        .custom("v1")
     }
 
     var servicePath: String { "" }
@@ -19,7 +19,7 @@ enum ProblemTarget: ApiTarget {
     var path: String {
         switch self {
         case .sendClaims:
-            return "/v1/claims/add"
+            return "/claims/add"
         default:
             return ""
         }

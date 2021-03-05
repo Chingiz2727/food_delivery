@@ -31,7 +31,6 @@ class ProblemViewController: ViewController, ViewHolder, ProblemModule {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindView()
         bindViewModel()
     }
 
@@ -40,7 +39,7 @@ class ProblemViewController: ViewController, ViewHolder, ProblemModule {
             sendTapped: rootView.sendButton.rx.tap.asObservable(),
             claimIds: rootView.claimids,
             description: rootView.textField.rx.text.asObservable())
-        
+
         let output = viewModel.transform(input: input)
 
         let result = output.claims.publish()
@@ -57,8 +56,5 @@ class ProblemViewController: ViewController, ViewHolder, ProblemModule {
 
         result.connect()
             .disposed(by: disposeBag)
-    }
-
-    private func bindView() {
     }
 }
