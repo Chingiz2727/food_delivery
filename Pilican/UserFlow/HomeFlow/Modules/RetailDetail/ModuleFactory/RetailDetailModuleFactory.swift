@@ -1,6 +1,6 @@
 final class RetailDetailModuleFactory {
     private let container: DependencyContainer
-    
+
     init(container: DependencyContainer) {
         self.container = container
     }

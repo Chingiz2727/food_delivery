@@ -10,7 +10,7 @@ import UIKit
 enum WorkStatus: Int {
     case closed
     case open
-    
+
     var title: String {
         switch self {
         case .closed:
@@ -28,7 +28,7 @@ enum WorkStatus: Int {
             return .workStatusGreen
         }
     }
-    
+
     var textColor: UIColor {
         switch self {
         case .closed:

@@ -6,12 +6,16 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     typealias RootViewType = HomeView
 
     var selectRetail: SelectRetail?
+    var selectMenu: SelectMenu?
+    
     private let viewModel: HomeViewModel
     private let dataSource: HomeCollectionViewDataSource
     private let slider = BehaviorSubject<[Slider]>(value: [])
+    private let selectedCategory = PublishSubject<HomeCategoryMenu>()
     private let disposeBag = DisposeBag()
+
     init(viewModel: HomeViewModel) {
-        dataSource = HomeCollectionViewDataSource(slider: slider)
+        dataSource = HomeCollectionViewDataSource(slider: slider, categoryMenu: selectedCategory)
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +36,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
 
     private func bindView() {
         rootView.collectionView.registerClassForCell(RetailCollectionViewCell.self)
-        rootView.collectionView.registerClassForHeaderView(HomeTableVIewHeaderView.self)
+        rootView.collectionView.registerClassForHeaderView(HomeCollectionViewHeaderView.self)
         rootView.layout.headerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 270)
     }
 
@@ -75,5 +79,10 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
                 self.selectRetail?(retail)
             }
             .disposed(by: disposeBag)
+
+        selectedCategory.subscribe(onNext: { [unowned self] category in
+            self.selectMenu?(category)
+        })
+        .disposed(by: disposeBag)
     }
 }

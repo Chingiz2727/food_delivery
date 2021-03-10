@@ -1,10 +1,3 @@
-//
-//  AccountQR.swift
-//  Pilican
-//
-//  Created by kairzhan on 3/2/21.
-//
-
 import UIKit
 
 class AccountQR: UIView {
@@ -17,7 +10,7 @@ class AccountQR: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
     private let cellTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Мой QR"
@@ -29,36 +22,35 @@ class AccountQR: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupInitialLayout()
         configureView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         layer.cornerRadius = 10
     }
-    
+
     private func setupInitialLayout() {
         snp.makeConstraints { (make) in
             make.height.equalTo(50)
         }
-        
+
         addSubview(cellImageView)
         cellImageView.snp.makeConstraints { (make) in
             make.left.top.equalToSuperview().inset(12)
         }
-        
+
         addSubview(cellTitleLabel)
         cellTitleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(cellImageView.snp.right).offset(12)
             make.top.equalToSuperview().inset(17)
         }
     }
-    
+
     private func configureView() {
         backgroundColor = .pilicanWhite
     }

@@ -9,7 +9,7 @@ enum SocialNetwork {
     case webUrl(String)
     case vk(String)
     case phone(String)
-    
+
     var image: UIImage? {
         switch self {
         case .facebook:

@@ -10,7 +10,7 @@ final class DeliveryView: UIView {
         label.textAlignment = .left
         return label
     }()
-    
+
     private let discountTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack

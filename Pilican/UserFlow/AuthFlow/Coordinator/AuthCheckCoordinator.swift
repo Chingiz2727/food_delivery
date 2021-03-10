@@ -7,6 +7,7 @@ extension AuthCheckCoordinator {
         let authservice = container.resolve(AuthenticationService.self)!
         guard authservice.token == nil else {
             onAuth?()
+            print("My token", authservice.token)
             return
         }
         let authCoordinator = AuthCoordinator(container: container, router: router)

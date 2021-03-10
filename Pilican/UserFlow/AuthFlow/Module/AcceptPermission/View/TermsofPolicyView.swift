@@ -10,7 +10,7 @@ import SnapKit
 
 class TermsofPolicyView: UIView {
     let scrolView = UIScrollView()
-    
+
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Пользовательское соглашение на использование программы Pillikan для Мобильных устройств"
@@ -20,7 +20,7 @@ class TermsofPolicyView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
+
     let textView: UITextView = {
         let textView = UITextView()
         textView.layer.masksToBounds = true
@@ -34,18 +34,17 @@ class TermsofPolicyView: UIView {
         return textView
     }()
     private let contentView = UIView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayouts()
         configureView()
     }
-    
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupLayouts() {
         addSubview(contentView)
         contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
@@ -56,13 +55,13 @@ class TermsofPolicyView: UIView {
         }
         scrolView.alwaysBounceVertical = true
         scrolView.showsHorizontalScrollIndicator = false
-        
+
         scrolView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(20)
             make.top.equalToSuperview().inset(35)
         }
-        
+
         scrolView.addSubview(textView)
         textView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
@@ -70,7 +69,7 @@ class TermsofPolicyView: UIView {
             make.width.equalToSuperview().inset(5)
         }
     }
-    
+
     private func configureView() {
         scrolView.bounces = false
     }
@@ -441,8 +440,4 @@ www.pillikan.kz и на других доменах, обращенное Пол
 В случае возникновения вопросов, Пользователь может обратиться по адресу:
 г. Шымкент, ул. Т.Рыскулова 84 , офис «Pillikan», по телефону Call – центра +7-775-
 000-22-19, +7-778-000-22-19: или посредством электронной почты support@pillikan.kz
-
-
 """
-
-

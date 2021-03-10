@@ -4,7 +4,7 @@ struct WorkDay: Codable {
     let timeStart: String
     let timeEnd: String
     let work: Bool
-    
+
     var title: String {
         switch day {
         case 1:

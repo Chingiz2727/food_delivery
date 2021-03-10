@@ -12,7 +12,7 @@ final class RetailDetailView: UIView {
     private let cashBackView = CashBackView()
     private let workView = WorkTimeView()
     private let retailDescriptionView = RetailDescriptionView()
-    
+
     let faqButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.9568627451, green: 0.262745098, blue: 0.2117647059, alpha: 1)

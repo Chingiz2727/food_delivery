@@ -12,18 +12,18 @@ final class CashbackMenuViewController: UIViewController, ViewHolder, CashbackMe
     typealias RootViewType = CashbackMenuView
     
     var menuDidSelect: MenuDidSelect?
-    
+
     private let disposeBag = DisposeBag()
-    
+
     override func loadView() {
         view = CashbackMenuView()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
     }
-    
+
     private func bindView() {
         Observable.just(HomeCashbackMenu.allCases)
             .bind(to: rootView.tableView.rx.items(UITableViewCell.self)) { _, model, cell  in

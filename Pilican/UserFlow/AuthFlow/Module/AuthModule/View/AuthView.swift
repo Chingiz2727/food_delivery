@@ -21,14 +21,19 @@ final class AuthView: UIView {
         let attributedTitle = NSMutableAttributedString(
             string: "Я новый пользователь,",
             attributes: [
-                NSAttributedString.Key.font: UIFont.book14!,
+                NSAttributedString.Key.font: UIFont.book14,
                 NSAttributedString.Key.foregroundColor: UIColor.pilicanBlack
             ]
         )
 
-        attributedTitle.append(NSAttributedString(
-                                string: " регистрация",
-                                attributes: [NSAttributedString.Key.font: UIFont.book14!, NSAttributedString.Key.foregroundColor: UIColor.primary]))
+        attributedTitle.append(
+            NSAttributedString(
+                string: " регистрация",
+                attributes: [
+                    NSAttributedString.Key.font: UIFont.book14,
+                    NSAttributedString.Key.foregroundColor: UIColor.primary]
+            )
+        )
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()

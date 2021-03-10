@@ -80,7 +80,7 @@ class RetailCollectionViewCell: UICollectionViewCell {
         guard let imgUrl = retail.imgLogo else { return }
         companyImageView.kf.setImage(with: URL(string: imgUrl))
     }
-    
+
     private func setupWorkStatusView(retail: Retail) {
         if let status = WorkStatus(rawValue: retail.payIsWork) {
         workStatusView.setTitle(title: status.title)

@@ -22,7 +22,6 @@ public final class PaginationAdapter<Page: Pagination> {
   public func connect(to tableView: UITableView) {
     let footer = tableView.tableFooterView as? PaginationTableFooterView
     let refresher = tableView.refreshControl
-
     tableView.rx.reachedBottom
       .subscribe(onNext: { [weak manager] in
         manager?.loadNextIfNeeded()
