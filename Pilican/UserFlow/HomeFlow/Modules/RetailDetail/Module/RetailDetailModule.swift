@@ -1,1 +1,3 @@
-protocol RetailDetailModule: Presentable {}
+protocol RetailDetailModule: Presentable {
+    var presentProblem: Callback? { get set }
+}

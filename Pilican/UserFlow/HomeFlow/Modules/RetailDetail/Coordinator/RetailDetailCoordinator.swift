@@ -25,7 +25,20 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
             dateFormatter: container.resolve(PropertyFormatter.self)!,
             calendar: container.resolve(Calendar.self)!
         )
-        let module = moduleFactory.makeRetailDetail(retail: retail, workCalendar: workCalendar)
+        var module = moduleFactory.makeRetailDetail(retail: retail, workCalendar: workCalendar)
+        module.presentProblem = { [weak self] in
+            self?.presentProblemVC()
+        }
         router.push(module)
+    }
+
+    private func presentProblemVC() {
+        var module = moduleFactory.makeProblemVC(retail: retail)
+
+        module.dissmissProblem = { [weak self] in
+            self?.router.dismissModule()
+        }
+
+        router.presentActionSheet(module, interactive: true)
     }
 }

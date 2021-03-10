@@ -60,6 +60,13 @@ final class RetailDetailView: UIView {
         socialLinkView.setup(links: retail.networkList)
         workView.setupData(workDay: retail.workDays, workCalendar: workCalendar)
         retailDescriptionView.setupData(retail: retail)
+        deliveryView.setData(retail: retail)
+        identificatorView.setData(retail: retail)
+        if retail.avgAmount == "" {
+            cashBackView.isHidden = true
+        } else {
+            cashBackView.setData(retail: retail)
+        }
     }
 
     private func setupInitialLayout() {

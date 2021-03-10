@@ -27,11 +27,18 @@
 		5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */; };
 		5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */; };
 		5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E84225EE406F00025251 /* CashbackMenuView.swift */; };
+		558679BF25F0D09600A5A94B /* ProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679BE25F0D09600A5A94B /* ProblemView.swift */; };
+		558679C225F0D4E400A5A94B /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679C125F0D4E400A5A94B /* UITextField+Extension.swift */; };
+		558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679DC25F0D87800A5A94B /* ProblemViewController.swift */; };
+		558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679E025F0D95800A5A94B /* ProblemModule.swift */; };
+		558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */; };
+		558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679F125F107F500A5A94B /* ProblemViewModel.swift */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
 		55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */; };
 		55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */; };
+		55C401F325F2380E00145996 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C401F225F2380E00145996 /* Claim.swift */; };
 		A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C025D2596E00BBFDFA /* TextField.swift */; };
 		A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */; };
 		A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */; };
@@ -291,12 +298,21 @@
 		5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModule.swift; sourceTree = "<group>"; };
 		5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuViewController.swift; sourceTree = "<group>"; };
 		5584E84225EE406F00025251 /* CashbackMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuView.swift; sourceTree = "<group>"; };
+		558679BE25F0D09600A5A94B /* ProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemView.swift; sourceTree = "<group>"; };
+		558679C125F0D4E400A5A94B /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		558679DC25F0D87800A5A94B /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
+		558679E025F0D95800A5A94B /* ProblemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModule.swift; sourceTree = "<group>"; };
+		558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemTarget.swift; sourceTree = "<group>"; };
+		558679F125F107F500A5A94B /* ProblemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewModel.swift; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
 		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
 		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
 		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C401F225F2380E00145996 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
+		6F49A99C7F2C5E4C2FB8A041 /* Pods-Pilican.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(development).xcconfig"; sourceTree = "<group>"; };
+		783AEE61F24CC5966A2DBCCE /* Pods-Pilican.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(production).xcconfig"; sourceTree = "<group>"; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 		A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -650,6 +666,50 @@
 			children = (
 				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
 			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5568FED425ECBAA2003AA72F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5568FED525ECBAAC003AA72F /* ModuleFactory */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5568FED525ECBAAC003AA72F /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */,
+			);
+			path = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		5568FED925ECBB92003AA72F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5568FEDA25ECBBA9003AA72F /* AccountModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5584E82725EE36CD00025251 /* CashbackMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5584E84125EE405A00025251 /* View */,
+				5584E83D25EE3F9300025251 /* Controller */,
+				5584E83925EE3F2900025251 /* Module */,
+				5584E83125EE37CD00025251 /* Coordinator */,
+				5584E82825EE36D800025251 /* Model */,
+			);
+			path = CashbackMenu;
+			sourceTree = "<group>";
+		};
+		5584E82825EE36D800025251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
+			);
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -666,6 +726,27 @@
 			isa = PBXGroup;
 			children = (
 				5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */,
+			);
+				path = ModuleFactory;
+				sourceTree = "<group>";
+		};
+		558679BC25F0D06600A5A94B /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				55C401F125F237FF00145996 /* Model */,
+				558679F025F107E500A5A94B /* ViewModel */,
+				558679E925F0FCB600A5A94B /* Api */,
+				558679DF25F0D94400A5A94B /* Module */,
+				558679DB25F0D86700A5A94B /* Controller */,
+				558679BD25F0D08700A5A94B /* View */,
+			);
+			path = Problem;
+			sourceTree = "<group>";
+		};
+		558679BD25F0D08700A5A94B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				558679BE25F0D09600A5A94B /* ProblemView.swift */,
 			);
 			path = ModuleFactory;
 			sourceTree = "<group>";
@@ -692,6 +773,38 @@
 				5584E84225EE406F00025251 /* CashbackMenuView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		558679DB25F0D86700A5A94B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				558679DC25F0D87800A5A94B /* ProblemViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		558679DF25F0D94400A5A94B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				558679E025F0D95800A5A94B /* ProblemModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		558679E925F0FCB600A5A94B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		558679F025F107E500A5A94B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				558679F125F107F500A5A94B /* ProblemViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
@@ -735,6 +848,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55C401F125F237FF00145996 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55C401F225F2380E00145996 /* Claim.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8176B9877CE758347B33479A /* Pods */ = {
@@ -1075,6 +1196,7 @@
 		A4379FD225ECAF1E00910A2D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				558679BC25F0D06600A5A94B /* Problem */,
 				A4379FD325ECAF3000910A2D /* RetailDetailModule.swift */,
 			);
 			path = Module;
@@ -2062,6 +2184,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DD3DD625D24527002D2186 /* Color.swift */,
+				558679C125F0D4E400A5A94B /* UITextField+Extension.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -2422,6 +2545,7 @@
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
 				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
+				558679BF25F0D09600A5A94B /* ProblemView.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
@@ -2461,6 +2585,7 @@
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
 				A40B94ED25DE21AA00E507FB /* HomeTabBarModule.swift in Sources */,
+				558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */,
 				A40B950625DE23CC00E507FB /* HomeTabBarViewController.swift in Sources */,
 				A4BBC6CC25D612C8006AF382 /* CameraModule.swift in Sources */,
 				A4E581E825D543C400EDC053 /* UIViewController+Alert.swift in Sources */,
@@ -2540,6 +2665,7 @@
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
 				A4D7641E25DA40E1009A6651 /* BaseButton.swift in Sources */,
 				A468EA8225EDFC5C0071FAA6 /* SocialNetwork.swift in Sources */,
+				558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */,
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */,
@@ -2551,6 +2677,7 @@
 				A48CD00825DBBB080010829F /* String+NumberContains.swift in Sources */,
 				A40B95F825DE65EF00E507FB /* UITableView+Reuse.swift in Sources */,
 				A4FAAD1125E75D0B00A55CB8 /* ProfileMenuModule.swift in Sources */,
+				558679C225F0D4E400A5A94B /* UITextField+Extension.swift in Sources */,
 				A47CA1EC25E36E8000EB091C /* AdditionalMenuPresentationController.swift in Sources */,
 				A47CA1AF25E36DA200EB091C /* BaseCoordinator.swift in Sources */,
 				A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */,
@@ -2599,11 +2726,13 @@
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
 				A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
+				558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */,
 				A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */,
 				A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */,
 				5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */,
 				A40B94CE25DD974C00E507FB /* HomeTabBar.swift in Sources */,
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
+				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
@@ -2611,6 +2740,7 @@
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,
 				A4379FD825ECAF5700910A2D /* RetailDetailViewController.swift in Sources */,
+				558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */,
 				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,

@@ -68,6 +68,10 @@ final class DeliveryView: UIView {
     required init?(coder: NSCoder) {
         nil
     }
+    
+    func setData(retail: Retail) {
+        discountLabel.text = "\(retail.dlvCashBack)"
+    }
 
     private func setupInitialLayout() {
         addSubview(stackView)

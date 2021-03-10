@@ -1,10 +1,14 @@
+import RxSwift
 import UIKit
 
 final class RetailDetailViewController: ViewController, ViewHolder, RetailDetailModule {
     typealias RootViewType = RetailDetailView
-    
+
+    var presentProblem: Callback?
+
     private let retail: Retail
     private let workCalendar: WorkCalendar
+    private let disposeBag = DisposeBag()
 
     init(retail: Retail, workCalendar: WorkCalendar) {
         self.retail = retail
@@ -22,6 +26,14 @@ final class RetailDetailViewController: ViewController, ViewHolder, RetailDetail
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindView()
+    }
+    
+    private func bindView() {
         rootView.setData(retail: retail, workCalendar: workCalendar)
+        rootView.faqButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.presentProblem?()
+            }).disposed(by: disposeBag)
     }
 }

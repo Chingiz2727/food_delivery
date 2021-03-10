@@ -18,6 +18,7 @@ struct Retail: Codable {
     let phone: String?
     let workDays: [WorkDay]
     let images: [RetailImages]
+    let avgAmount: String?
 
     var imgLogo: String? {
         return "https://st.pillikan.kz/retail/logo\(logo)"

@@ -42,6 +42,8 @@ enum Images: String {
     case girl
     case knife
     case shoppingCart
+    case filledStar
+    case emptyStar
 }
 
 extension Images {

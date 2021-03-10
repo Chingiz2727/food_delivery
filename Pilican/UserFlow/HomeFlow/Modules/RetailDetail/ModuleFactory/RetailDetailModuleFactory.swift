@@ -8,4 +8,11 @@ final class RetailDetailModuleFactory {
     func makeRetailDetail(retail: Retail, workCalendar: WorkCalendar) -> RetailDetailModule {
         return RetailDetailViewController(retail: retail, workCalendar: workCalendar)
     }
+    
+    func makeProblemVC(retail: Retail) -> ProblemModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = ProblemViewModel(apiService: apiService, retailId: retail.id)
+        let viewController = ProblemViewController(viewModel: viewModel)
+        return viewController
+    }
 }
