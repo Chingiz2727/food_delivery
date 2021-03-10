@@ -50,7 +50,7 @@ final class HomeTableVIewHeaderView: UICollectionReusableView {
     }
 
     func setupSlider(sliders: [Slider]) {
-        carouselView.setImageInputs( sliders.map { KingfisherSource(url: URL(string: $0.imgLogo )!) })
+//        carouselView.setImageInputs( sliders.map { KingfisherSource(url: URL(string: $0.imgLogo )!) })
     }
 
     private func setupInitialLayout() {

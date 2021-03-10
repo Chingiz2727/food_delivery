@@ -57,7 +57,7 @@ final class WorkTimeHeaderView: UIView {
 
     private func setupWorkStatusView(workDay: WorkDay) {
         if let status = WorkStatus(rawValue: workDay.work.intValue) {
-            workStatus.setTitle(title: "\(workDay.timeStart) - \(workDay.timeEnd)")
+            workStatus.setTitle(title: workDay.work ? "\(workDay.timeStart) - \(workDay.timeEnd)" : "Закрыто")
             workStatus.configureView(backColor: status.backColor, textColor: status.textColor)
         }
         titleLabel.text = workDay.title
