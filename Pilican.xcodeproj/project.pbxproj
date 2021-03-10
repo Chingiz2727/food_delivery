@@ -27,7 +27,6 @@
 		5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */; };
 		5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */; };
 		5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E84225EE406F00025251 /* CashbackMenuView.swift */; };
-		558679BF25F0D09600A5A94B /* ProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679BE25F0D09600A5A94B /* ProblemView.swift */; };
 		558679C225F0D4E400A5A94B /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679C125F0D4E400A5A94B /* UITextField+Extension.swift */; };
 		558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679DC25F0D87800A5A94B /* ProblemViewController.swift */; };
 		558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679E025F0D95800A5A94B /* ProblemModule.swift */; };
@@ -211,6 +210,7 @@
 		A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD00E25DBD37A0010829F /* RegistrationStatus.swift */; };
 		A48CD01225DBE1A50010829F /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CD01125DBE1A50010829F /* Encryption.swift */; };
 		A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9DE0125E6228B00A711CA /* AuthCheckCoordinator.swift */; };
+		A4AE13C525F87AE0006468A1 /* ProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE13C425F87AE0006468A1 /* ProblemView.swift */; };
 		A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B310E625D10C370003BA0B /* AppDelegate.swift */; };
 		A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B310EA25D10C370003BA0B /* AuthViewController.swift */; };
 		A4B310F025D10C3C0003BA0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B310EF25D10C3C0003BA0B /* Assets.xcassets */; };
@@ -298,7 +298,6 @@
 		5584E83A25EE3F4200025251 /* CashbackMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuModule.swift; sourceTree = "<group>"; };
 		5584E83E25EE3FAD00025251 /* CashbackMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuViewController.swift; sourceTree = "<group>"; };
 		5584E84225EE406F00025251 /* CashbackMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackMenuView.swift; sourceTree = "<group>"; };
-		558679BE25F0D09600A5A94B /* ProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemView.swift; sourceTree = "<group>"; };
 		558679C125F0D4E400A5A94B /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		558679DC25F0D87800A5A94B /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
 		558679E025F0D95800A5A94B /* ProblemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModule.swift; sourceTree = "<group>"; };
@@ -309,10 +308,8 @@
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
 		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
 		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
-		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C401F225F2380E00145996 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
-		6F49A99C7F2C5E4C2FB8A041 /* Pods-Pilican.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(development).xcconfig"; sourceTree = "<group>"; };
-		783AEE61F24CC5966A2DBCCE /* Pods-Pilican.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(production).xcconfig"; sourceTree = "<group>"; };
+		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 		A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -487,6 +484,7 @@
 		A4A9DE0125E6228B00A711CA /* AuthCheckCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCheckCoordinator.swift; sourceTree = "<group>"; };
 		A4A9DE9B25E6671100A711CA /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		A4A9DE9C25E6671E00A711CA /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		A4AE13C425F87AE0006468A1 /* ProblemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemView.swift; sourceTree = "<group>"; };
 		A4B310E325D10C370003BA0B /* Pilican.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilican.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B310E625D10C370003BA0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B310EA25D10C370003BA0B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -666,50 +664,6 @@
 			children = (
 				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5568FED425ECBAA2003AA72F /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				5568FED525ECBAAC003AA72F /* ModuleFactory */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		5568FED525ECBAAC003AA72F /* ModuleFactory */ = {
-			isa = PBXGroup;
-			children = (
-				5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */,
-			);
-			path = ModuleFactory;
-			sourceTree = "<group>";
-		};
-		5568FED925ECBB92003AA72F /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				5568FEDA25ECBBA9003AA72F /* AccountModule.swift */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		5584E82725EE36CD00025251 /* CashbackMenu */ = {
-			isa = PBXGroup;
-			children = (
-				5584E84125EE405A00025251 /* View */,
-				5584E83D25EE3F9300025251 /* Controller */,
-				5584E83925EE3F2900025251 /* Module */,
-				5584E83125EE37CD00025251 /* Coordinator */,
-				5584E82825EE36D800025251 /* Model */,
-			);
-			path = CashbackMenu;
-			sourceTree = "<group>";
-		};
-		5584E82825EE36D800025251 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5584E82E25EE370900025251 /* HomeCashbackMenu.swift */,
-			);
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -726,27 +680,6 @@
 			isa = PBXGroup;
 			children = (
 				5584E83625EE390A00025251 /* CashbackMenuModuleFactory.swift */,
-			);
-				path = ModuleFactory;
-				sourceTree = "<group>";
-		};
-		558679BC25F0D06600A5A94B /* Problem */ = {
-			isa = PBXGroup;
-			children = (
-				55C401F125F237FF00145996 /* Model */,
-				558679F025F107E500A5A94B /* ViewModel */,
-				558679E925F0FCB600A5A94B /* Api */,
-				558679DF25F0D94400A5A94B /* Module */,
-				558679DB25F0D86700A5A94B /* Controller */,
-				558679BD25F0D08700A5A94B /* View */,
-			);
-			path = Problem;
-			sourceTree = "<group>";
-		};
-		558679BD25F0D08700A5A94B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				558679BE25F0D09600A5A94B /* ProblemView.swift */,
 			);
 			path = ModuleFactory;
 			sourceTree = "<group>";
@@ -773,6 +706,19 @@
 				5584E84225EE406F00025251 /* CashbackMenuView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		558679BC25F0D06600A5A94B /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE13C325F87AE0006468A1 /* View */,
+				55C401F125F237FF00145996 /* Model */,
+				558679F025F107E500A5A94B /* ViewModel */,
+				558679E925F0FCB600A5A94B /* Api */,
+				558679DF25F0D94400A5A94B /* Module */,
+				558679DB25F0D86700A5A94B /* Controller */,
+			);
+			path = Problem;
 			sourceTree = "<group>";
 		};
 		558679DB25F0D86700A5A94B /* Controller */ = {
@@ -988,6 +934,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				558679BC25F0D06600A5A94B /* Problem */,
 				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
 				A4379FD125ECAF1700910A2D /* RetailDetail */,
 				5584E82725EE36CD00025251 /* CashbackMenu */,
@@ -1196,7 +1143,6 @@
 		A4379FD225ECAF1E00910A2D /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				558679BC25F0D06600A5A94B /* Problem */,
 				A4379FD325ECAF3000910A2D /* RetailDetailModule.swift */,
 			);
 			path = Module;
@@ -1867,6 +1813,14 @@
 				A4A9DE9C25E6671E00A711CA /* Production.xcconfig */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		A4AE13C325F87AE0006468A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE13C425F87AE0006468A1 /* ProblemView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A4B310DA25D10C370003BA0B = {
@@ -2545,7 +2499,6 @@
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
 				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
-				558679BF25F0D09600A5A94B /* ProblemView.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
@@ -2601,6 +2554,7 @@
 				A483E27F25D40ABE006D2DAF /* ForceLogoutNotification.swift in Sources */,
 				A4BBC6F025D63D0F006AF382 /* BackButton.swift in Sources */,
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
+				A4AE13C525F87AE0006468A1 /* ProblemView.swift in Sources */,
 				5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */,
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,

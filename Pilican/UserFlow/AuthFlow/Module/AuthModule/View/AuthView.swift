@@ -21,7 +21,7 @@ final class AuthView: UIView {
         let attributedTitle = NSMutableAttributedString(
             string: "Я новый пользователь,",
             attributes: [
-                NSAttributedString.Key.font: UIFont.book14!,
+                NSAttributedString.Key.font: UIFont.book14,
                 NSAttributedString.Key.foregroundColor: UIColor.pilicanBlack
             ]
         )
@@ -30,7 +30,7 @@ final class AuthView: UIView {
             NSAttributedString(
                 string: " регистрация",
                 attributes: [
-                    NSAttributedString.Key.font: UIFont.book14!,
+                    NSAttributedString.Key.font: UIFont.book14,
                     NSAttributedString.Key.foregroundColor: UIColor.primary]
             )
         )

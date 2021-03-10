@@ -1,10 +1,3 @@
-//
-//  ProblemView.swift
-//  Pilican
-//
-//  Created by kairzhan on 3/4/21.
-//
-
 import UIKit
 import TagListView
 import RxSwift
@@ -20,6 +13,7 @@ class ProblemView: UIView, TagListViewDelegate {
     }()
 
     let tagListView = TagListView()
+
     private let claimsList = [
         Claim(id: 1, name: "Другое"),
         Claim(id: 2, name: "Не приняли оплату"),
@@ -28,11 +22,11 @@ class ProblemView: UIView, TagListViewDelegate {
         Claim(id: 5, name: "Pillikan не работает здесь"),
         Claim(id: 6, name: "Плохое обслужование")
     ]
-    let textField: UITextField = {
-        let textField = UITextField()
+
+    let textField: TextField = {
+        let textField = TextField()
         textField.placeholder = "Опишите проблему подробнее"
         textField.font = UIFont.book16
-        textField.setBottomBorderWhite()
         return textField
     }()
 
@@ -55,6 +49,7 @@ class ProblemView: UIView, TagListViewDelegate {
         super.init(frame: frame)
         configureView()
         setupInitialLayouts()
+        setupTagList()
     }
 
     required init?(coder: NSCoder) {
@@ -75,13 +70,9 @@ class ProblemView: UIView, TagListViewDelegate {
     }
 
     private func setupInitialLayouts() {
-        setupTagList()
-        tagListView.delegate = self
         addSubview(problemLabel)
         problemLabel.snp.makeConstraints { (make) in
             make.left.top.right.equalToSuperview().inset(16)
-            make.height.equalTo(31)
-            make.width.equalTo(301)
         }
 
         addSubview(tagListView)
@@ -94,7 +85,7 @@ class ProblemView: UIView, TagListViewDelegate {
         textField.snp.makeConstraints { (make) in
             make.top.equalTo(tagListView.snp.bottom).offset(30)
             make.left.right.equalToSuperview().inset(16)
-            make.height.equalTo(21)
+            make.height.equalTo(40)
         }
 
         addSubview(sendButton)
@@ -106,30 +97,32 @@ class ProblemView: UIView, TagListViewDelegate {
     }
 
     private func configureView() {
-        backgroundColor = .pilicanWhite
+        backgroundColor = .background
     }
 
     private func setupTagList() {
-        tagListView.textFont = UIFont.book12!
+        tagListView.delegate = self
+        tagListView.textFont = .book12
         tagListView.alignment = .left
-        tagListView.borderColor = .pilicanWhite
-        tagListView.borderWidth = 1
-        tagListView.cornerRadius = 8
+        tagListView.borderWidth = 0.5
+        tagListView.cornerRadius = 15
 
-        tagListView.paddingY = 5
-        tagListView.paddingX = 5
-        tagListView.marginX = 5
-        tagListView.marginY = 5
+        tagListView.paddingY = 10
+        tagListView.paddingX = 10
+        tagListView.marginX = 10
+        tagListView.marginY = 10
+
         for tag in tagListView.tagViews {
-            tag.paddingY = 5
-            tag.paddingX = 5
+            tag.paddingY = 10
+            tag.paddingX = 10
         }
+
         tagListView.backgroundColor = .clear
-        tagListView.tagBackgroundColor = .pilicanWhite
+        tagListView.tagBackgroundColor = .background
         tagListView.textColor = .pilicanGray
-        tagListView.borderColor = .pilicanGray
+        tagListView.borderColor = .pilicanLightGray
         tagListView.selectedTextColor = .primary
-        tagListView.tagSelectedBackgroundColor = .pilicanWhite
+        tagListView.tagSelectedBackgroundColor = .background
         tagListView.selectedBorderColor = .primary
         claimsList.forEach {
             self.tagListView.addTag($0.name)
