@@ -1,5 +1,5 @@
 protocol ProfileMenuCoordinator: BaseCoordinator {}
-
+import UIKit
 final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator {
     
     private let moduleFactory: ProfileMenuModuleFactory
@@ -21,6 +21,8 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
             switch menu {
             case .account:
                 self?.showAccount()
+            case .guide:
+                self?.showGuide()
             default:
                 return
             }
@@ -28,9 +30,14 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showAccount() {
         let module = accountModuleFactory.makeAccount()
         router.push(module)
+    }
+    
+    private func showGuide() {
+        let url = URL(string: "https://pillikan.kz/users-faq")!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

@@ -4,7 +4,7 @@ final class ProfileMenuModuleFactory {
     init(container: DependencyContainer) {
         self.container = container
     }
-    
+
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
