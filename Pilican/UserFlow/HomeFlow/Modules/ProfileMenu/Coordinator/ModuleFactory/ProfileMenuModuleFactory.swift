@@ -8,4 +8,17 @@ final class ProfileMenuModuleFactory {
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
+    
+    func makeAbout() -> AboutModule {
+        return AboutViewController()
+    }
+
+    func makeAccount() -> AccountModule {
+        return AccountViewController()
+    }
+
+    func makeAcceptPermission() -> AcceptPermissionModule {
+        let viewController = AcceptPermissionViewController()
+        return viewController
+    }
 }
