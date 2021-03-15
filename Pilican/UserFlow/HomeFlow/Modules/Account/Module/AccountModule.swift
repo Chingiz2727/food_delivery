@@ -8,5 +8,6 @@
 import Foundation
 
 protocol AccountModule: Presentable {
-
+    typealias EditAccountDidSelect = () -> Void
+    var editAccountDidSelect: EditAccountDidSelect? { get set }
 }

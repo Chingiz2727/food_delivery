@@ -3,11 +3,9 @@ protocol ProfileMenuCoordinator: BaseCoordinator {}
 final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator {
     
     private let moduleFactory: ProfileMenuModuleFactory
-    private let accountModuleFactory: AccountModuleFactory
 
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = ProfileMenuModuleFactory(container: container)
-        accountModuleFactory = AccountModuleFactory(container: container)
         super.init(router: router, container: container)
     }
 
@@ -28,9 +26,17 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showAccount() {
-        let module = accountModuleFactory.makeAccount()
+        var module = moduleFactory.makeAccount()
+        module.editAccountDidSelect = { [weak self] in
+            self?.presentEditAccount()
+        }
+        router.push(module)
+    }
+
+    private func presentEditAccount() {
+        let module = moduleFactory.makeEditAccount()
         router.push(module)
     }
 }
