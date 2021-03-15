@@ -30,7 +30,15 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
     
     private func showAccount() {
-        let module = accountModuleFactory.makeAccount()
+        var module = accountModuleFactory.makeAccount()
+        module.changePinTap = { [weak self] in
+            self?.showChangePin()
+        }
+        router.push(module)
+    }
+    
+    private func showChangePin() {
+        let module = moduleFactory.makeChangePin()
         router.push(module)
     }
 }

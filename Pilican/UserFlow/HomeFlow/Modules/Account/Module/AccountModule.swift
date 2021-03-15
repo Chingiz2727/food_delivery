@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AccountModule: Presentable {
-
+    var changePinTap: Callback? { get set }
 }
