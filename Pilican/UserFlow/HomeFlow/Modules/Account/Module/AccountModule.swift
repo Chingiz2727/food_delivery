@@ -8,5 +8,6 @@
 import Foundation
 
 protocol AccountModule: Presentable {
-
+    typealias MyQRTapped = () -> Void
+    var myQRTapped: MyQRTapped? { get set }
 }
