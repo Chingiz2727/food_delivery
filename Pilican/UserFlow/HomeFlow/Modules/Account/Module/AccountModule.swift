@@ -8,5 +8,7 @@
 import Foundation
 
 protocol AccountModule: Presentable {
-
+    typealias ChangePasswordDidTap = () -> Void
+    
+    var changePasswordDidTap: ChangePasswordDidTap? { get set }
 }

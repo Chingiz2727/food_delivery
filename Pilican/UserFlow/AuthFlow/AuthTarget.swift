@@ -8,6 +8,7 @@ enum AuthTarget: ApiTarget {
     case updateProfile( sex: String, firstName: String, birthday: String, cityId: Int)
     case getAuthSmsCode(phone: String)
     case firbaseToken(fireBaseToken: String)
+    case changePassword(newPassword: String, acceptPassword: String)
 
     var servicePath: String { "" }
 
@@ -31,6 +32,8 @@ enum AuthTarget: ApiTarget {
             return "v1/profile/edit"
         case .firbaseToken:
             return "api/user/f-token"
+        case .changePassword:
+            return "v1/profile/change-password"
         }
     }
 
@@ -63,6 +66,8 @@ enum AuthTarget: ApiTarget {
             return ["": fireBaseToken]
         case .getAuthSmsCode:
             return ["test": "value"]
+        case .changePassword(let newPassword, let acceptPassword):
+            return ["password": newPassword, "password2": acceptPassword]
         default:
             return [:]
         }
@@ -74,7 +79,7 @@ enum AuthTarget: ApiTarget {
 
     var headers: [String: String]? {
         switch self {
-        case .loginUser, .register, .verifySmsCode:
+        case .loginUser, .register, .verifySmsCode, .changePassword:
             return
                 [
                     "clientId": "bW9iaWxl",

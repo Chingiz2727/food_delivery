@@ -28,9 +28,17 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showAccount() {
-        let module = accountModuleFactory.makeAccount()
+        var module = accountModuleFactory.makeAccount()
+        module.changePasswordDidTap = { [weak self] in
+            self?.showChangePassword()
+        }
+        router.push(module)
+    }
+
+    private func showChangePassword() {
+        let module = moduleFactory.makeChangePassword()
         router.push(module)
     }
 }

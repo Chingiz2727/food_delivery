@@ -12,7 +12,7 @@ class AccountView: UIView {
     private let accountHeaderView = AccountHeaderView()
     private let accountCard = AccountCard()
     private let accountKey = AccountKey()
-    private let accountPassword = AccountPassword()
+    let accountPassword = AccountPassword()
     private let accountQR = AccountQR()
     private let stackView: UIStackView = {
         let stackView = UIStackView()
