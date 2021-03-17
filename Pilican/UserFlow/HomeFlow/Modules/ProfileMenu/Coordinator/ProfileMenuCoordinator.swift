@@ -1,6 +1,7 @@
+import UIKit
+
 protocol ProfileMenuCoordinator: BaseCoordinator {}
 
-import UIKit
 final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator {
     
     private let moduleFactory: ProfileMenuModuleFactory
@@ -22,6 +23,8 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
             switch menu {
             case .account:
                 self?.showAccount()
+            case .guide:
+                self?.showGuide()
             case .about:
                 self?.showAbout()
             case .bonuses:
@@ -37,6 +40,11 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     private func showAccount() {
         let module = moduleFactory.makeAccount()
         router.push(module)
+    }
+    
+    private func showGuide() {
+        let url = URL(string: "https://pillikan.kz/users-faq")!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     private func showAbout() {
