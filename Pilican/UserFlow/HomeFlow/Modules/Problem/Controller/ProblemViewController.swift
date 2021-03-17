@@ -10,7 +10,7 @@ import RxSwift
 
 class ProblemViewController: ViewController, ViewHolder, ProblemModule {
     var dissmissProblem: Callback?
-    
+
     typealias RootViewType = ProblemView
 
     private let disposeBag = DisposeBag()

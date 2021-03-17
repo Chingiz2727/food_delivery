@@ -12,6 +12,12 @@ class AcceptPermissionViewController: ViewController, AcceptPermissionModule, Vi
 
     typealias RootViewType = AcceptPermissionView
 
+    var isHidden: Bool? {
+        didSet {
+            rootView.bottomContainer.isHidden = isHidden ?? false
+            rootView.updateConstraint()
+        }
+    }
     private let disposeBag = DisposeBag()
 
     override func loadView() {

@@ -14,6 +14,8 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     
     private let disposeBag = DisposeBag()
 
+    private let cache = DiskCache<String, Any>()
+
     override func loadView() {
         view = AccountView()
     }
@@ -28,5 +30,14 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
             .subscribe(onNext: { [unowned self] in
                 self.editAccountDidSelect?()
             }).disposed(by: disposeBag)
+        bindViewModel()
+    }
+
+    private func bindViewModel() {
+        let user: User? = try? cache.readFromDisk(name: "userInfo")
+        let profile: Profile? = try? cache.readFromDisk(name: "profileInfo")
+        let name = profile?.firstName
+        let phone = user?.username
+        rootView.accountHeaderView.setData(name: name ?? "", phone: phone ?? "")
     }
 }

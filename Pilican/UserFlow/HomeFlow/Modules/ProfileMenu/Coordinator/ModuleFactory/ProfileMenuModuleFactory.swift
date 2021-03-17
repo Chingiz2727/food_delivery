@@ -8,6 +8,15 @@ final class ProfileMenuModuleFactory {
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
+    
+    func makeAbout() -> AboutModule {
+        return AboutViewController()
+    }
+
+    func makeAcceptPermission() -> AcceptPermissionModule {
+        let viewController = AcceptPermissionViewController()
+        return viewController
+    }
 
     func makeAccount() -> AccountModule {
         return AccountViewController()
@@ -19,5 +28,9 @@ final class ProfileMenuModuleFactory {
         let dateFormatter = container.resolve(PropertyFormatter.self)!
         let viewController = EditAccountViewController(viewModel: viewModel, dateFormatter: dateFormatter)
         return viewController
+    }
+    
+    func makeBonus() -> BonusModule {
+        return BonusViewController()
     }
 }
