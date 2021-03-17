@@ -104,4 +104,10 @@ final class AcceptPermissionView: UIView {
         stackView.addArrangedSubview(politiсyAgreementButton)
         bottomContainer.backgroundColor = .white
     }
+
+    func updateConstraint() {
+        bottomContainer.snp.makeConstraints { (make) in
+            make.height.equalTo(0)
+        }
+    }
 }

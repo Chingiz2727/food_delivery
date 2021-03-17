@@ -9,7 +9,7 @@ final class TextFieldContainer<T: TextField>: UIView {
         }
     }
 
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanLightGray
         label.backgroundColor = .background

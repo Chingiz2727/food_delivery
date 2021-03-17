@@ -102,8 +102,12 @@ public final class AuthenticationServiceImpl: AuthenticationService {
                       let userInfo = res.result?.element?.user else { return }
                 self?.updateToken(with: nil)
                 self?.updateToken(with: token)
+                do {
                 try? self?.cache.saveToDisk(name: "profileInfo", value: profileInfo)
                 try? self?.cache.saveToDisk(name: "userInfo", value: userInfo)
+                } catch let error {
+                    print(error)
+                }
             })
     }
 

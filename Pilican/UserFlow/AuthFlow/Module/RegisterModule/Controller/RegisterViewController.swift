@@ -98,7 +98,7 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
 
         city.connect()
             .disposed(by: disposeBag)
-
+        
         registerStatus.subscribe(onNext: { [unowned self] status in
             rootView.setViewStatus(status: status)
         })

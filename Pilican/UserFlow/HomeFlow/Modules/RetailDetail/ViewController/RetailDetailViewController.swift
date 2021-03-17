@@ -15,7 +15,7 @@ final class RetailDetailViewController: ViewController, ViewHolder, RetailDetail
         self.workCalendar = workCalendar
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }
@@ -28,7 +28,7 @@ final class RetailDetailViewController: ViewController, ViewHolder, RetailDetail
         super.viewDidLoad()
         bindView()
     }
-    
+
     private func bindView() {
         rootView.setData(retail: retail, workCalendar: workCalendar)
         rootView.faqButton.rx.tap

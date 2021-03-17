@@ -9,7 +9,7 @@ import UIKit
 
 class AccountView: UIView {
     
-    private let accountHeaderView = AccountHeaderView()
+    let accountHeaderView = AccountHeaderView()
     private let accountCard = AccountCard()
     let accountKey = AccountKey()
     private let accountPassword = AccountPassword()
