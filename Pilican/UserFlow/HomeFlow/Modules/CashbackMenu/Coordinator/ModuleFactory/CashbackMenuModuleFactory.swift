@@ -17,4 +17,12 @@ final class CashbackMenuModuleFactory {
     func makeMenu() -> CashbackMenuModule {
         return CashbackMenuViewController()
     }
+    
+    func makeMyCards() -> MyCardsModule {
+        return MyCardsViewController()
+    }
+    
+    func makeBalance() -> BalanceModule {
+        return BalanceViewController()
+    }
 }

@@ -16,6 +16,9 @@
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
 		5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDE25ECBDAE003AA72F /* AccountView.swift */; };
 		556CF6AD2601D217007B8FB9 /* ProfileItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6AC2601D217007B8FB9 /* ProfileItems.swift */; };
+		556CF6BB2602025B007B8FB9 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6BA2602025B007B8FB9 /* BalanceView.swift */; };
+		556CF6BF26020708007B8FB9 /* BalanceModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6BE26020708007B8FB9 /* BalanceModule.swift */; };
+		556CF6C226020721007B8FB9 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6C126020721007B8FB9 /* BalanceViewController.swift */; };
 		5578855925FF639400B3A798 /* ChangePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855825FF639400B3A798 /* ChangePinView.swift */; };
 		5578855D25FF673100B3A798 /* ChangePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855C25FF673100B3A798 /* ChangePinViewController.swift */; };
 		5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578856025FF67E900B3A798 /* ChangePinModule.swift */; };
@@ -316,6 +319,9 @@
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
 		5568FEDE25ECBDAE003AA72F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		556CF6AC2601D217007B8FB9 /* ProfileItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItems.swift; sourceTree = "<group>"; };
+		556CF6BA2602025B007B8FB9 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		556CF6BE26020708007B8FB9 /* BalanceModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceModule.swift; sourceTree = "<group>"; };
+		556CF6C126020721007B8FB9 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		5578855825FF639400B3A798 /* ChangePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinView.swift; sourceTree = "<group>"; };
 		5578855C25FF673100B3A798 /* ChangePinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinViewController.swift; sourceTree = "<group>"; };
 		5578856025FF67E900B3A798 /* ChangePinModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinModule.swift; sourceTree = "<group>"; };
@@ -687,6 +693,40 @@
 				556CF6AC2601D217007B8FB9 /* ProfileItems.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		556CF6B82602024D007B8FB9 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6C4260207A7007B8FB9 /* Controller */,
+				556CF6BD260206FA007B8FB9 /* Module */,
+				556CF6B926020252007B8FB9 /* View */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		556CF6B926020252007B8FB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6BA2602025B007B8FB9 /* BalanceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		556CF6BD260206FA007B8FB9 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6BE26020708007B8FB9 /* BalanceModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		556CF6C4260207A7007B8FB9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6C126020721007B8FB9 /* BalanceViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5578855625FF637500B3A798 /* ChangePin */ = {
@@ -1278,6 +1318,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				556CF6B82602024D007B8FB9 /* Balance */,
 				55A5CD412600BC5D004AA13C /* MyCards */,
 				55A5CD2C2600A410004AA13C /* MyQR */,
 				55A5CCE926006100004AA13C /* ChangePassword */,
@@ -2928,6 +2969,7 @@
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
 				A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */,
 				A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */,
+				556CF6C226020721007B8FB9 /* BalanceViewController.swift in Sources */,
 				55FCC6F425F8874D000DED49 /* BonusView.swift in Sources */,
 				A483E29725D40ABE006D2DAF /* UIImage+AspectFit.swift in Sources */,
 				A48CCFE725DACF310010829F /* statusBarHeight.swift in Sources */,
@@ -3022,6 +3064,7 @@
 				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
 				5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */,
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
+				556CF6BB2602025B007B8FB9 /* BalanceView.swift in Sources */,
 				55AD645925E52F2800034459 /* WorkStatus.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
@@ -3106,6 +3149,7 @@
 				A483E26325D40ABE006D2DAF /* Result.swift in Sources */,
 				A483E28125D40ABE006D2DAF /* StubApiRequest.swift in Sources */,
 				A40A557A25D28C7A00BBFDFA /* AuthViewModel.swift in Sources */,
+				556CF6BF26020708007B8FB9 /* BalanceModule.swift in Sources */,
 				A483E28425D40ABE006D2DAF /* ApiRequest.swift in Sources */,
 				5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */,
 				A4E581FA25D54BC500EDC053 /* RegisterView.swift in Sources */,

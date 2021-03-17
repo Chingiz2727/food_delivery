@@ -26,8 +26,26 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         var module = moduleFactory.makeMenu()
 
         module.menuDidSelect = { [weak self] menu in
+            switch menu {
+            case .myCards:
+                self?.showMyCards()
+            case .balanceReplishment:
+                self?.showBalance()
+            default:
+                break
+            }
             self?.router.dismissModule()
         }
         router.presentActionSheet(module, interactive: true)
+    }
+
+    private func showMyCards() {
+        let module = moduleFactory.makeMyCards()
+        router.push(module)
+    }
+
+    private func showBalance() {
+        let module = moduleFactory.makeBalance()
+        router.push(module)
     }
 }
