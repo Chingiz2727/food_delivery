@@ -9,8 +9,11 @@ import UIKit
 import RxSwift
 
 class AccountViewController: ViewController, AccountModule, ViewHolder {
-    var editAccountDidSelect: EditAccountDidSelect?
+    var changePinTap: Callback?
+
     typealias RootViewType = AccountView
+    
+    var editAccountDidSelect: EditAccountDidSelect?
     
     private let disposeBag = DisposeBag()
 
@@ -23,14 +26,19 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        bindViewModel()
     }
-    
+
     private func bindView() {
-        rootView.accountHeaderView.editAccountButton.rx.tap
+        rootView.accountKey.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.changePinTap?()
+            }).disposed(by: disposeBag)
+    
+            rootView.accountHeaderView.editAccountButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.editAccountDidSelect?()
             }).disposed(by: disposeBag)
-        bindViewModel()
     }
 
     private func bindViewModel() {

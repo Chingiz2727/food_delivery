@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountKey: UIView {
+class AccountKey: UIControl {
 
     private let cellImageView: UIImageView = {
         let imageView = UIImageView()

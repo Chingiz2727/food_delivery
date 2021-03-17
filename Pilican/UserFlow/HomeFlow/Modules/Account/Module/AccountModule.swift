@@ -9,5 +9,7 @@ import Foundation
 
 protocol AccountModule: Presentable {
     typealias EditAccountDidSelect = () -> Void
+
+    var changePinTap: Callback? { get set }
     var editAccountDidSelect: EditAccountDidSelect? { get set }
 }

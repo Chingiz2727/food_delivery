@@ -8,7 +8,10 @@ final class ProfileMenuModuleFactory {
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
-    
+
+    func makeChangePin() -> ChangePinModule {
+        return ChangePinViewController()
+    }
     func makeAbout() -> AboutModule {
         return AboutViewController()
     }

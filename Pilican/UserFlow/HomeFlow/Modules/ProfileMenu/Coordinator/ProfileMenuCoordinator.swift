@@ -5,11 +5,15 @@ protocol ProfileMenuCoordinator: BaseCoordinator {}
 final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator {
     
     private let moduleFactory: ProfileMenuModuleFactory
+    private let accountModuleFactory: AccountModuleFactory
+
     private let phoneNumber = "+7(775)007-42-30"
     private let waNumber = "+77750002219"
 
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = ProfileMenuModuleFactory(container: container)
+        accountModuleFactory = AccountModuleFactory(container: container)
+
         super.init(router: router, container: container)
     }
 
@@ -38,10 +42,15 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
 
     private func showAccount() {
-        var module = moduleFactory.makeAccount()
-        module.editAccountDidSelect = { [weak self] in
-            self?.presentEditAccount()
+        var module = accountModuleFactory.makeAccount()
+        module.changePinTap = { [weak self] in
+            self?.showChangePin()
         }
+        router.push(module)
+    }
+    
+    private func showChangePin() {
+        let module = moduleFactory.makeChangePin()
         router.push(module)
     }
 
