@@ -4,7 +4,7 @@ final class ProfileMenuModuleFactory {
     init(container: DependencyContainer) {
         self.container = container
     }
-    
+
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
@@ -20,5 +20,11 @@ final class ProfileMenuModuleFactory {
     func makeAcceptPermission() -> AcceptPermissionModule {
         let viewController = AcceptPermissionViewController()
         return viewController
+    func makeAccount() -> AccountModule {
+        return AccountViewController()
+    }
+    
+    func makeBonus() -> BonusModule {
+        return BonusViewController()
     }
 }

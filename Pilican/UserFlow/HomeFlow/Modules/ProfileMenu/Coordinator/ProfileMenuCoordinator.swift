@@ -24,6 +24,8 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
                 self?.showAccount()
             case .about:
                 self?.showAbout()
+            case .bonuses:
+                self?.showBonus()
             default:
                 return
             }
@@ -57,6 +59,8 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
                 self?.handleRate()
             }
         }
+    private func showBonus() {
+        let module = moduleFactory.makeBonus()
         router.push(module)
     }
 
