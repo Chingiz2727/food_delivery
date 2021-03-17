@@ -59,6 +59,8 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
                 self?.handleRate()
             }
         }
+    }
+
     private func showBonus() {
         let module = moduleFactory.makeBonus()
         router.push(module)
