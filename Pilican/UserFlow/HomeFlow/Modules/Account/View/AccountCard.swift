@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountCard: UIView {
+class AccountCard: UIControl {
     
     private let cellImageView: UIImageView = {
         let imageView = UIImageView()
@@ -29,19 +29,19 @@ class AccountCard: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setupInitialLayout()
         configureView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         layer.cornerRadius = 10
     }
-    
+
     private func setupInitialLayout() {
         snp.makeConstraints { (make) in
             make.height.equalTo(50)
@@ -51,14 +51,14 @@ class AccountCard: UIView {
         cellImageView.snp.makeConstraints { (make) in
             make.left.top.equalToSuperview().inset(12)
         }
-        
+
         addSubview(cellTitleLabel)
         cellTitleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(cellImageView.snp.right).offset(12)
             make.top.equalToSuperview().inset(17)
         }
     }
-    
+
     private func configureView() {
         backgroundColor = .pilicanWhite
     }

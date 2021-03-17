@@ -30,7 +30,15 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
     
     private func showAccount() {
-        let module = accountModuleFactory.makeAccount()
+        var module = accountModuleFactory.makeAccount()
+        module.myCardsDidTap = { [weak self] in
+            self?.showMyCards()
+        }
+        router.push(module)
+    }
+    
+    private func showMyCards() {
+        let module = moduleFactory.makeMyCards()
         router.push(module)
     }
 }

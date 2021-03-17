@@ -8,5 +8,6 @@
 import Foundation
 
 protocol AccountModule: Presentable {
-
+    typealias MyCardsDidTap = () -> Void
+    var myCardsDidTap: MyCardsDidTap? { get set }
 }

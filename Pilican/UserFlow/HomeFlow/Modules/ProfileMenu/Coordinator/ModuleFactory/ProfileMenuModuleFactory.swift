@@ -8,4 +8,8 @@ final class ProfileMenuModuleFactory {
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
+    
+    func makeMyCards() -> MyCardsModule {
+        return MyCardsViewController()
+    }
 }

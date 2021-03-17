@@ -44,6 +44,9 @@ enum Images: String {
     case shoppingCart
     case filledStar
     case emptyStar
+    case card
+    case deleteCardButton
+    case selectedCardButton
 }
 
 extension Images {
