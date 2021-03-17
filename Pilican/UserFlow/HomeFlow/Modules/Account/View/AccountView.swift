@@ -13,7 +13,8 @@ class AccountView: UIView {
     private let accountCard = AccountCard()
     let accountKey = AccountKey()
     let accountPassword = AccountPassword()
-    private let accountQR = AccountQR()
+    let accountQR = AccountQR()
+    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical

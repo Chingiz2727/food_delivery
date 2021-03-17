@@ -1,6 +1,6 @@
 import UIKit
 
-class AccountQR: UIView {
+class AccountQR: UIControl {
     
     private let cellImageView: UIImageView = {
         let imageView = UIImageView()

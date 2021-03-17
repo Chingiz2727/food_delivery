@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 
 class AccountViewController: ViewController, AccountModule, ViewHolder {
+    var myQRTapped: MyQRTapped?
     var changePasswordDidTap: ChangePasswordDidTap?
     
     typealias RootViewType = AccountView
@@ -31,6 +32,11 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     }
 
     private func bindView() {
+        rootView.accountQR.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] _ in
+                self.myQRTapped?()
+            }).disposed(by: disposeBag)
+        
         rootView.accountPassword.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.changePasswordDidTap?()

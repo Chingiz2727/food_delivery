@@ -8,7 +8,11 @@ final class ProfileMenuModuleFactory {
     func makeMenu() -> ProfileMenuModule {
         return ProfileMenuViewController()
     }
-
+    
+    func makeMyQR() -> MyQRModule {
+        return MyQRViewController()
+    }
+    
     func makeChangePassword() -> ChangePasswordModule {
         let apiService = container.resolve(ApiService.self)!
         let viewModel = ChangePasswordViewModel(apiService: apiService)
@@ -44,3 +48,4 @@ final class ProfileMenuModuleFactory {
         return BonusViewController()
     }
 }
+
