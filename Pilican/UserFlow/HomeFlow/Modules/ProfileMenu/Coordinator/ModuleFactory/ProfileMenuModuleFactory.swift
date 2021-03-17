@@ -9,6 +9,13 @@ final class ProfileMenuModuleFactory {
         return ProfileMenuViewController()
     }
 
+    func makeChangePassword() -> ChangePasswordModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = ChangePasswordViewModel(apiService: apiService)
+        let viewController = ChangePasswordViewController(viewModel: viewModel)
+        return viewController
+    }
+    
     func makeChangePin() -> ChangePinModule {
         return ChangePinViewController()
     }

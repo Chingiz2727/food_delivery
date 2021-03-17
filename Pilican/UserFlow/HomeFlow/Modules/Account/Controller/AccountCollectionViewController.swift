@@ -9,14 +9,15 @@ import UIKit
 import RxSwift
 
 class AccountViewController: ViewController, AccountModule, ViewHolder {
-    var changePinTap: Callback?
-
+    var changePasswordDidTap: ChangePasswordDidTap?
+    
     typealias RootViewType = AccountView
+    
+    private let disposeBag = DisposeBag()
+    var changePinTap: Callback?
     
     var editAccountDidSelect: EditAccountDidSelect?
     
-    private let disposeBag = DisposeBag()
-
     private let cache = DiskCache<String, Any>()
 
     override func loadView() {
@@ -30,6 +31,12 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     }
 
     private func bindView() {
+        rootView.accountPassword.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.changePasswordDidTap?()
+            }).disposed(by: disposeBag)
+        ()
+
         rootView.accountKey.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.changePinTap?()

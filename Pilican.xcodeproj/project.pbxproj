@@ -34,6 +34,10 @@
 		558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679E025F0D95800A5A94B /* ProblemModule.swift */; };
 		558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */; };
 		558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679F125F107F500A5A94B /* ProblemViewModel.swift */; };
+		55A5CCED26006129004AA13C /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCEC26006129004AA13C /* ChangePasswordView.swift */; };
+		55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */; };
+		55A5CCF626006353004AA13C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */; };
+		55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
@@ -322,6 +326,10 @@
 		558679E025F0D95800A5A94B /* ProblemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModule.swift; sourceTree = "<group>"; };
 		558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemTarget.swift; sourceTree = "<group>"; };
 		558679F125F107F500A5A94B /* ProblemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewModel.swift; sourceTree = "<group>"; };
+		55A5CCEC26006129004AA13C /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModule.swift; sourceTree = "<group>"; };
+		55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
@@ -797,6 +805,49 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		55A5CCE926006100004AA13C /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCF926006CA9004AA13C /* ViewModel */,
+				55A5CCF42600633C004AA13C /* Controller */,
+				55A5CCEF26006317004AA13C /* Module */,
+				55A5CCEA26006108004AA13C /* View */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		55A5CCEA26006108004AA13C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCEC26006129004AA13C /* ChangePasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55A5CCEF26006317004AA13C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		55A5CCF42600633C004AA13C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55A5CCF926006CA9004AA13C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
 			isa = PBXGroup;
 			children = (
@@ -1117,6 +1168,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55A5CCE926006100004AA13C /* ChangePassword */,
 				5578855625FF637500B3A798 /* ChangePin */,
 				55D26C7225FA04CB005A36BD /* EditAccount */,
 				55FCC70225F8D483000DED49 /* About */,
@@ -2707,6 +2759,7 @@
 				A483E28B25D40ABE006D2DAF /* PaginationTableFooterView.swift in Sources */,
 				A47CA1EF25E36E8000EB091C /* StoriesDismissAnimationController.swift in Sources */,
 				A40B960325DE6F0000E507FB /* Slider.swift in Sources */,
+				55A5CCED26006129004AA13C /* ChangePasswordView.swift in Sources */,
 				A40B95E925DE36C500E507FB /* HomeCollectionViewHeaderView.swift in Sources */,
 				A483E28225D40ABE006D2DAF /* ApiServiceAssembly.swift in Sources */,
 				A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */,
@@ -2784,6 +2837,7 @@
 				A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */,
 				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
 				A4BBC6EC25D63CD6006AF382 /* BackButtonContainerView.swift in Sources */,
+				55A5CCF626006353004AA13C /* ChangePasswordViewController.swift in Sources */,
 				A47CA1C925E36E3200EB091C /* NotificationDeepLinkActionModel.swift in Sources */,
 				A4E581EC25D5482E00EDC053 /* ProgressView.swift in Sources */,
 				A47CA1E925E36E8000EB091C /* SlidingTransitioningDelegate.swift in Sources */,
@@ -2862,6 +2916,7 @@
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
+				55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
 				55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
@@ -2902,6 +2957,7 @@
 				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
+				55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */,
 				5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
 				5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */,
