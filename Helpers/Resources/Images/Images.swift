@@ -44,6 +44,8 @@ enum Images: String {
     case shoppingCart
     case filledStar
     case emptyStar
+    case pillikanLogo
+    case sloganLogo
     case volunteer
     case copyButton
 }

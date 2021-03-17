@@ -37,6 +37,10 @@
 		55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */; };
 		55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */; };
 		55C401F325F2380E00145996 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C401F225F2380E00145996 /* Claim.swift */; };
+		55D26C6725F9CB46005A36BD /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C6625F9CB46005A36BD /* About.swift */; };
+		55FCC70525F8D499000DED49 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70425F8D499000DED49 /* AboutView.swift */; };
+		55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70825F8E2D4000DED49 /* AboutViewController.swift */; };
+		55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70D25F8E31C000DED49 /* AboutModule.swift */; };
 		55FCC6F425F8874D000DED49 /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6F325F8874D000DED49 /* BonusView.swift */; };
 		55FCC6F825F89DCD000DED49 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6F725F89DCD000DED49 /* BonusViewController.swift */; };
 		55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6FB25F89E22000DED49 /* BonusModule.swift */; };
@@ -310,6 +314,10 @@
 		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
 		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
 		55C401F225F2380E00145996 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
+		55D26C6625F9CB46005A36BD /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		55FCC70425F8D499000DED49 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		55FCC70825F8E2D4000DED49 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		55FCC70D25F8E31C000DED49 /* AboutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModule.swift; sourceTree = "<group>"; };
 		55FCC6F325F8874D000DED49 /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
 		55FCC6F725F89DCD000DED49 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
 		55FCC6FB25F89E22000DED49 /* BonusModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusModule.swift; sourceTree = "<group>"; };
@@ -791,6 +799,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		55D26C6525F9CB38005A36BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55D26C6625F9CB46005A36BD /* About.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55FCC70225F8D483000DED49 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				55D26C6525F9CB38005A36BD /* Model */,
+				55FCC70C25F8E30D000DED49 /* Module */,
+				55FCC70725F8E2C2000DED49 /* Controller */,
+				55FCC70325F8D48C000DED49 /* View */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		55FCC70325F8D48C000DED49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55FCC70425F8D499000DED49 /* AboutView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		55FCC6F125F88731000DED49 /* Bonus */ = {
 			isa = PBXGroup;
 			children = (
@@ -809,12 +844,28 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		55FCC70725F8E2C2000DED49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55FCC70825F8E2D4000DED49 /* AboutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		55FCC6F625F89DB8000DED49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				55FCC6F725F89DCD000DED49 /* BonusViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		55FCC70C25F8E30D000DED49 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55FCC70D25F8E31C000DED49 /* AboutModule.swift */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 		55FCC6FA25F89E15000DED49 /* Module */ = {
@@ -955,6 +1006,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55FCC70225F8D483000DED49 /* About */,
 				55FCC6F125F88731000DED49 /* Bonus */,
 				558679BC25F0D06600A5A94B /* Problem */,
 				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
@@ -2579,6 +2631,7 @@
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
 				A4AE13C525F87AE0006468A1 /* ProblemView.swift in Sources */,
 				5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */,
+				55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */,
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
 				A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */,
@@ -2606,6 +2659,7 @@
 				A483E27925D40ABE006D2DAF /* UploadService.swift in Sources */,
 				A483E29425D40ABE006D2DAF /* PilicanLogger+HTTP.swift in Sources */,
 				A47CA04A25E1495200EB091C /* RetailCollectionViewCell.swift in Sources */,
+				55D26C6725F9CB46005A36BD /* About.swift in Sources */,
 				A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */,
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
@@ -2623,6 +2677,7 @@
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
+				55FCC70525F8D499000DED49 /* AboutView.swift in Sources */,
 				A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
 				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
@@ -2680,6 +2735,7 @@
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,
 				55FCC6F825F89DCD000DED49 /* BonusViewController.swift in Sources */,
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
+				55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */,
 				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
