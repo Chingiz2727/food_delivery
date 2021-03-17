@@ -1,3 +1,5 @@
 import Foundation
 
-protocol AcceptPermissionModule: Presentable {}
+protocol AcceptPermissionModule: Presentable {
+    var isHidden: Bool? { get set }
+}
