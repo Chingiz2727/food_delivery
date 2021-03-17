@@ -12,7 +12,7 @@ final class ProfileMenuModuleFactory {
     func makeMyCards() -> MyCardsModule {
         return MyCardsViewController()
     }
-    
+
     func makeMyQR() -> MyQRModule {
         return MyQRViewController()
     }
@@ -23,11 +23,11 @@ final class ProfileMenuModuleFactory {
         let viewController = ChangePasswordViewController(viewModel: viewModel)
         return viewController
     }
-    
+
     func makeChangePin() -> ChangePinModule {
         return ChangePinViewController()
     }
-        
+
     func makeAbout() -> AboutModule {
         return AboutViewController()
     }
@@ -48,9 +48,8 @@ final class ProfileMenuModuleFactory {
         let viewController = EditAccountViewController(viewModel: viewModel, dateFormatter: dateFormatter)
         return viewController
     }
-    
+
     func makeBonus() -> BonusModule {
         return BonusViewController()
     }
 }
-
