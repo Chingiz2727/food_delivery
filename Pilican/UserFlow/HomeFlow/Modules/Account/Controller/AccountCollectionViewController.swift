@@ -13,9 +13,7 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
 
     typealias RootViewType = AccountView
     
-    private let disposeBag = DisposeBag()
     var editAccountDidSelect: EditAccountDidSelect?
-    typealias RootViewType = AccountView
     
     private let disposeBag = DisposeBag()
 

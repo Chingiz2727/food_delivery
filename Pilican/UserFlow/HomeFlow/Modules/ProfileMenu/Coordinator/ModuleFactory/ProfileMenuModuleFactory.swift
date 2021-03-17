@@ -11,7 +11,7 @@ final class ProfileMenuModuleFactory {
 
     func makeChangePin() -> ChangePinModule {
         return ChangePinViewController()
-    
+    }
     func makeAbout() -> AboutModule {
         return AboutViewController()
     }
