@@ -1,28 +1,19 @@
-//
-//  AccountCollectionViewController.swift
-//  Pilican
-//
-//  Created by kairzhan on 3/1/21.
-//
-
 import UIKit
 import RxSwift
 
 class AccountViewController: ViewController, AccountModule, ViewHolder {
+    typealias RootViewType = AccountView
+
     var myCardsDidTap: MyCardsDidTap?
 
     var myQRTapped: MyQRTapped?
     var changePasswordDidTap: ChangePasswordDidTap?
-    
-    typealias RootViewType = AccountView
-    
-    private let disposeBag = DisposeBag()
+
     var changePinTap: Callback?
-    
+
     var editAccountDidSelect: EditAccountDidSelect?
     
     private let cache = DiskCache<String, Any>()
-
     private let disposeBag = DisposeBag()
 
     override func loadView() {

@@ -33,6 +33,7 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         var module = accountModuleFactory.makeAccount()
         module.myCardsDidTap = { [weak self] in
             self?.showMyCards()
+        }
         module.myQRTapped = { [weak self] in
             self?.showMyQR()
         }
@@ -41,6 +42,9 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     
     private func showMyCards() {
         let module = moduleFactory.makeMyCards()
+        router.push(module)
+    }
+    
     private func showMyQR() {
         let module = moduleFactory.makeMyQR()
         router.push(module)

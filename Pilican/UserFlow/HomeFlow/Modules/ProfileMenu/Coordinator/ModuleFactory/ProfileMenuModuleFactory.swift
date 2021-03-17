@@ -11,6 +11,8 @@ final class ProfileMenuModuleFactory {
     
     func makeMyCards() -> MyCardsModule {
         return MyCardsViewController()
+    }
+    
     func makeMyQR() -> MyQRModule {
         return MyQRViewController()
     }
@@ -25,6 +27,7 @@ final class ProfileMenuModuleFactory {
     func makeChangePin() -> ChangePinModule {
         return ChangePinViewController()
     }
+        
     func makeAbout() -> AboutModule {
         return AboutViewController()
     }
