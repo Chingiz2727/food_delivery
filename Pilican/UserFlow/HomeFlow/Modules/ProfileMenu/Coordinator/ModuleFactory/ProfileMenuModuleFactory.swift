@@ -22,6 +22,14 @@ final class ProfileMenuModuleFactory {
         return AccountViewController()
     }
 
+    func makeEditAccount() -> EditAccountModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = EditAccountViewModel(apiService: apiService)
+        let dateFormatter = container.resolve(PropertyFormatter.self)!
+        let viewController = EditAccountViewController(viewModel: viewModel, dateFormatter: dateFormatter)
+        return viewController
+    }
+    
     func makeBonus() -> BonusModule {
         return BonusViewController()
     }

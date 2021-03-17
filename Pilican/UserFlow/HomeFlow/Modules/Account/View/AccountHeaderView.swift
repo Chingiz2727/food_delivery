@@ -36,7 +36,7 @@ class AccountHeaderView: UIView {
         return label
     }()
 
-    private let editAccountButton: UIButton = {
+    let editAccountButton: UIButton = {
         let button = UIButton()
         button.setImage(Images.accountEdit.image, for: .normal)
         button.clipsToBounds = true

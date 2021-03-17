@@ -36,7 +36,14 @@
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
 		55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */; };
 		55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */; };
+		55BEF35925FB235300205BBD /* EditAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEF35825FB235300205BBD /* EditAccountViewModel.swift */; };
+		55BEF36325FB393000205BBD /* GenderPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEF36225FB393000205BBD /* GenderPickerViewDelegate.swift */; };
+		55BEF36725FB398300205BBD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEF36625FB398300205BBD /* Gender.swift */; };
+		55BEF36A25FB3E1000205BBD /* GenderPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEF36925FB3E1000205BBD /* GenderPickerDataSource.swift */; };
 		55C401F325F2380E00145996 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C401F225F2380E00145996 /* Claim.swift */; };
+		55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7425FA04E5005A36BD /* EditAccountView.swift */; };
+		55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7925FA1845005A36BD /* EditAccountViewController.swift */; };
+		55D26C7E25FA18C4005A36BD /* EditAccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */; };
 		55D26C6725F9CB46005A36BD /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C6625F9CB46005A36BD /* About.swift */; };
 		55FCC70525F8D499000DED49 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70425F8D499000DED49 /* AboutView.swift */; };
 		55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70825F8E2D4000DED49 /* AboutViewController.swift */; };
@@ -313,7 +320,14 @@
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
 		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
 		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
+		55BEF35825FB235300205BBD /* EditAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewModel.swift; sourceTree = "<group>"; };
+		55BEF36225FB393000205BBD /* GenderPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerViewDelegate.swift; sourceTree = "<group>"; };
+		55BEF36625FB398300205BBD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		55BEF36925FB3E1000205BBD /* GenderPickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerDataSource.swift; sourceTree = "<group>"; };
 		55C401F225F2380E00145996 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
+		55D26C7425FA04E5005A36BD /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
+		55D26C7925FA1845005A36BD /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountModule.swift; sourceTree = "<group>"; };
 		55D26C6625F9CB46005A36BD /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		55FCC70425F8D499000DED49 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		55FCC70825F8E2D4000DED49 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -791,6 +805,31 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		55BEF35725FB233E00205BBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55BEF35825FB235300205BBD /* EditAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55BEF36125FB38F800205BBD /* GenderPicker */ = {
+			isa = PBXGroup;
+			children = (
+				55BEF36225FB393000205BBD /* GenderPickerViewDelegate.swift */,
+				55BEF36925FB3E1000205BBD /* GenderPickerDataSource.swift */,
+			);
+			path = GenderPicker;
+			sourceTree = "<group>";
+		};
+		55BEF36525FB397700205BBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55BEF36625FB398300205BBD /* Gender.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		55C401F125F237FF00145996 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,6 +838,28 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		55D26C7225FA04CB005A36BD /* EditAccount */ = {
+			isa = PBXGroup;
+			children = (
+				55BEF36525FB397700205BBD /* Model */,
+				55BEF36125FB38F800205BBD /* GenderPicker */,
+				55BEF35725FB233E00205BBD /* ViewModel */,
+				55D26C7C25FA18B1005A36BD /* Module */,
+				55D26C7825FA182D005A36BD /* Controller */,
+				55D26C7325FA04D5005A36BD /* View */,
+			);
+			path = EditAccount;
+			sourceTree = "<group>";
+		};
+		55D26C7325FA04D5005A36BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55D26C7425FA04E5005A36BD /* EditAccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		
 		55D26C6525F9CB38005A36BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +905,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		55D26C7825FA182D005A36BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55D26C7925FA1845005A36BD /* EditAccountViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		55FCC70725F8E2C2000DED49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,6 +927,14 @@
 				55FCC6F725F89DCD000DED49 /* BonusViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		55D26C7C25FA18B1005A36BD /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 		55FCC70C25F8E30D000DED49 /* Module */ = {
@@ -1006,6 +1083,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55D26C7225FA04CB005A36BD /* EditAccount */,
 				55FCC70225F8D483000DED49 /* About */,
 				55FCC6F125F88731000DED49 /* Bonus */,
 				558679BC25F0D06600A5A94B /* Problem */,
@@ -2586,6 +2664,7 @@
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
 				A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */,
 				A483E26225D40ABE006D2DAF /* UIViewController+Error.swift in Sources */,
+				55BEF36A25FB3E1000205BBD /* GenderPickerDataSource.swift in Sources */,
 				A4B9A3B325F104EF00F0A3D6 /* LoadingIndicatorView.swift in Sources */,
 				A4B9A1E625F0A4AA00F0A3D6 /* CashBackListViewModel.swift in Sources */,
 				A483E28B25D40ABE006D2DAF /* PaginationTableFooterView.swift in Sources */,
@@ -2623,6 +2702,7 @@
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
+				55BEF36325FB393000205BBD /* GenderPickerViewDelegate.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
 				A47CA1EA25E36E8000EB091C /* SlidingPresentationController.swift in Sources */,
 				A4FD7DA225DCD109000DD49D /* AuthBySmsViewModel.swift in Sources */,
@@ -2676,6 +2756,7 @@
 				A483E29B25D40ABE006D2DAF /* ImageSlideshow.swift in Sources */,
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
+				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
 				55FCC70525F8D499000DED49 /* AboutView.swift in Sources */,
 				A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */,
@@ -2691,6 +2772,7 @@
 				A483E29A25D40ABE006D2DAF /* ActivityIndicator.swift in Sources */,
 				A40B95FC25DE6A5500E507FB /* HomeApiTarget.swift in Sources */,
 				A43BC83625DFC2A600D45225 /* HomeTabBarCoordinator.swift in Sources */,
+				55D26C7E25FA18C4005A36BD /* EditAccountModule.swift in Sources */,
 				A483E28025D40ABE006D2DAF /* ApiTarget.swift in Sources */,
 				A483E29525D40ABE006D2DAF /* EmojiModifier.swift in Sources */,
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
@@ -2742,6 +2824,7 @@
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
+				55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
@@ -2753,12 +2836,14 @@
 				5555237425EF907A00537D3F /* User.swift in Sources */,
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
+				55BEF36725FB398300205BBD /* Gender.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
 				5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */,
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
 				A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */,
+				55BEF35925FB235300205BBD /* EditAccountViewModel.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
 				558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */,
 				A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */,

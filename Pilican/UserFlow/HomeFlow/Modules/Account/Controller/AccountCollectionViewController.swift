@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class AccountViewController: ViewController, AccountModule, ViewHolder {
-
+    var editAccountDidSelect: EditAccountDidSelect?
     typealias RootViewType = AccountView
+    
+    private let disposeBag = DisposeBag()
 
     private let cache = DiskCache<String, Any>()
 
@@ -19,6 +22,14 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindView()
+    }
+    
+    private func bindView() {
+        rootView.accountHeaderView.editAccountButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.editAccountDidSelect?()
+            }).disposed(by: disposeBag)
         bindViewModel()
     }
 

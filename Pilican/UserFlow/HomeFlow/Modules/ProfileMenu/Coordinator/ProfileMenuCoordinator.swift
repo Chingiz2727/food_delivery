@@ -38,7 +38,15 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
 
     private func showAccount() {
-        let module = moduleFactory.makeAccount()
+        var module = moduleFactory.makeAccount()
+        module.editAccountDidSelect = { [weak self] in
+            self?.presentEditAccount()
+        }
+        router.push(module)
+    }
+
+    private func presentEditAccount() {
+        let module = moduleFactory.makeEditAccount()
         router.push(module)
     }
     
