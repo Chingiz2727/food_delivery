@@ -8,9 +8,8 @@
 import UIKit
 
 class AccountView: UIView {
-    
+    let accountCard = AccountCard()
     let accountHeaderView = AccountHeaderView()
-    private let accountCard = AccountCard()
     let accountKey = AccountKey()
     let accountPassword = AccountPassword()
     let accountQR = AccountQR()

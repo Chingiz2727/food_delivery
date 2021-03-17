@@ -34,6 +34,11 @@
 		558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679E025F0D95800A5A94B /* ProblemModule.swift */; };
 		558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */; };
 		558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679F125F107F500A5A94B /* ProblemViewModel.swift */; };
+		55A5CD452600C2AF004AA13C /* MyCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD442600C2AF004AA13C /* MyCardsView.swift */; };
+		55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD492600C55F004AA13C /* MyCardsViewController.swift */; };
+		55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */; };
+		55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */; };
+		55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */; };
 		55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD2E2600A427004AA13C /* MyQRView.swift */; };
 		55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD382600A8BB004AA13C /* MyQRViewController.swift */; };
 		55A5CD3D2600AA0E004AA13C /* MyQRModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */; };
@@ -329,6 +334,11 @@
 		558679E025F0D95800A5A94B /* ProblemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModule.swift; sourceTree = "<group>"; };
 		558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemTarget.swift; sourceTree = "<group>"; };
 		558679F125F107F500A5A94B /* ProblemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewModel.swift; sourceTree = "<group>"; };
+		55A5CD442600C2AF004AA13C /* MyCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsView.swift; sourceTree = "<group>"; };
+		55A5CD492600C55F004AA13C /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
+		55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsModule.swift; sourceTree = "<group>"; };
+		55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
+		55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsFooterView.swift; sourceTree = "<group>"; };
 		55A5CD2E2600A427004AA13C /* MyQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRView.swift; sourceTree = "<group>"; };
 		55A5CD382600A8BB004AA13C /* MyQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRViewController.swift; sourceTree = "<group>"; };
 		55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRModule.swift; sourceTree = "<group>"; };
@@ -811,6 +821,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		55A5CD412600BC5D004AA13C /* MyCards */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD4C2600C59D004AA13C /* Module */,
+				55A5CD482600C54A004AA13C /* Controller */,
+				55A5CD432600C2A2004AA13C /* View */,
+			);
+			path = MyCards;
+			sourceTree = "<group>";
+		};
+		55A5CD432600C2A2004AA13C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD542600D623004AA13C /* FooterView */,
+				55A5CD502600CCE9004AA13C /* Cell */,
+				55A5CD442600C2AF004AA13C /* MyCardsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		55A5CD2C2600A410004AA13C /* MyQR */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,6 +857,14 @@
 				55A5CD2E2600A427004AA13C /* MyQRView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		55A5CD482600C54A004AA13C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD492600C55F004AA13C /* MyCardsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		55A5CCE926006100004AA13C /* ChangePassword */ = {
@@ -856,13 +894,36 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		
+		55A5CD4C2600C59D004AA13C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		55A5CCEF26006317004AA13C /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		55A5CD502600CCE9004AA13C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		55A5CD542600D623004AA13C /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */,
+			);
+			path = FooterView;
 			sourceTree = "<group>";
 		};
 		55A5CCF42600633C004AA13C /* Controller */ = {
@@ -1209,6 +1270,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55A5CD412600BC5D004AA13C /* MyCards */,
 				55A5CD2C2600A410004AA13C /* MyQR */,
 				55A5CCE926006100004AA13C /* ChangePassword */,
 				5578855625FF637500B3A798 /* ChangePin */,
@@ -2817,6 +2879,7 @@
 				A4BBC6DF25D6390B006AF382 /* BackContainerViewController.swift in Sources */,
 				A483E29E25D40ABE006D2DAF /* KingfisherSource.swift in Sources */,
 				A483E27625D40ABE006D2DAF /* ApiRequestable.swift in Sources */,
+				55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */,
 				A468EA8D25EE3D390071FAA6 /* IdentificatorView.swift in Sources */,
 				A483E27B25D40ABE006D2DAF /* AuthServiceAssembly.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
@@ -2843,6 +2906,7 @@
 				A483E27F25D40ABE006D2DAF /* ForceLogoutNotification.swift in Sources */,
 				A4BBC6F025D63D0F006AF382 /* BackButton.swift in Sources */,
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
+				55A5CD452600C2AF004AA13C /* MyCardsView.swift in Sources */,
 				A4AE13C525F87AE0006468A1 /* ProblemView.swift in Sources */,
 				5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */,
 				55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */,
@@ -2914,6 +2978,7 @@
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
 				A444C3052601C021005C995F /* AccountModuleFactory.swift in Sources */,
 				A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */,
+				55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */,
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
 				A4D7641E25DA40E1009A6651 /* BaseButton.swift in Sources */,
 				A468EA8225EDFC5C0071FAA6 /* SocialNetwork.swift in Sources */,
@@ -2943,6 +3008,7 @@
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
+				55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */,
 				A4DD3DD725D24527002D2186 /* Color.swift in Sources */,
 				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
 				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
@@ -2992,6 +3058,7 @@
 				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
+				55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */,
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
