@@ -13,7 +13,6 @@
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
 		5555237425EF907A00537D3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555237325EF907A00537D3F /* User.swift */; };
 		5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */; };
-		5568FED725ECBAC4003AA72F /* AccountModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */; };
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
 		5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDE25ECBDAE003AA72F /* AccountView.swift */; };
 		5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81225EDF2A300025251 /* AccountHeaderView.swift */; };
@@ -38,6 +37,9 @@
 		55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */; };
 		55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */; };
 		55C401F325F2380E00145996 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C401F225F2380E00145996 /* Claim.swift */; };
+		55FCC6F425F8874D000DED49 /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6F325F8874D000DED49 /* BonusView.swift */; };
+		55FCC6F825F89DCD000DED49 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6F725F89DCD000DED49 /* BonusViewController.swift */; };
+		55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6FB25F89E22000DED49 /* BonusModule.swift */; };
 		A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C025D2596E00BBFDFA /* TextField.swift */; };
 		A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */; };
 		A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */; };
@@ -284,7 +286,6 @@
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5555237325EF907A00537D3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
-		5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModuleFactory.swift; sourceTree = "<group>"; };
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
 		5568FEDE25ECBDAE003AA72F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		5584E81225EDF2A300025251 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
@@ -309,6 +310,9 @@
 		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
 		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
 		55C401F225F2380E00145996 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
+		55FCC6F325F8874D000DED49 /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
+		55FCC6F725F89DCD000DED49 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
+		55FCC6FB25F89E22000DED49 /* BonusModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusModule.swift; sourceTree = "<group>"; };
 		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
@@ -587,7 +591,6 @@
 			isa = PBXGroup;
 			children = (
 				5568FED925ECBB92003AA72F /* Module */,
-				5568FED425ECBAA2003AA72F /* Coordinator */,
 				5568FECF25ECB38D003AA72F /* View */,
 				5568FECE25ECB385003AA72F /* Controller */,
 				5568FECD25ECB37D003AA72F /* Model */,
@@ -621,22 +624,6 @@
 				5584E82025EDFC2500025251 /* AccountQR.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5568FED425ECBAA2003AA72F /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				5568FED525ECBAAC003AA72F /* ModuleFactory */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		5568FED525ECBAAC003AA72F /* ModuleFactory */ = {
-			isa = PBXGroup;
-			children = (
-				5568FED625ECBAC4003AA72F /* AccountModuleFactory.swift */,
-			);
-			path = ModuleFactory;
 			sourceTree = "<group>";
 		};
 		5568FED925ECBB92003AA72F /* Module */ = {
@@ -804,6 +791,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		55FCC6F125F88731000DED49 /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				55FCC6FA25F89E15000DED49 /* Module */,
+				55FCC6F625F89DB8000DED49 /* Controller */,
+				55FCC6F225F8873C000DED49 /* View */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		55FCC6F225F8873C000DED49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55FCC6F325F8874D000DED49 /* BonusView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55FCC6F625F89DB8000DED49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55FCC6F725F89DCD000DED49 /* BonusViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55FCC6FA25F89E15000DED49 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55FCC6FB25F89E22000DED49 /* BonusModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		8176B9877CE758347B33479A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -934,6 +955,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55FCC6F125F88731000DED49 /* Bonus */,
 				558679BC25F0D06600A5A94B /* Problem */,
 				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
 				A4379FD125ECAF1700910A2D /* RetailDetail */,
@@ -2508,6 +2530,7 @@
 				5555236E25EF8FBA00537D3F /* Profile.swift in Sources */,
 				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
+				55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */,
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
 				A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */,
 				A483E26225D40ABE006D2DAF /* UIViewController+Error.swift in Sources */,
@@ -2566,6 +2589,7 @@
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
 				A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */,
 				A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */,
+				55FCC6F425F8874D000DED49 /* BonusView.swift in Sources */,
 				A483E29725D40ABE006D2DAF /* UIImage+AspectFit.swift in Sources */,
 				A48CCFE725DACF310010829F /* statusBarHeight.swift in Sources */,
 				A483E27725D40ABE006D2DAF /* AuthenticationService.swift in Sources */,
@@ -2654,7 +2678,7 @@
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,
-				5568FED725ECBAC4003AA72F /* AccountModuleFactory.swift in Sources */,
+				55FCC6F825F89DCD000DED49 /* BonusViewController.swift in Sources */,
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
 				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
@@ -2827,7 +2851,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2906,7 +2930,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3046,7 +3070,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3069,7 +3093,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

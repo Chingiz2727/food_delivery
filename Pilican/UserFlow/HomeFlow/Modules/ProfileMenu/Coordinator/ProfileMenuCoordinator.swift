@@ -3,11 +3,9 @@ protocol ProfileMenuCoordinator: BaseCoordinator {}
 final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator {
     
     private let moduleFactory: ProfileMenuModuleFactory
-    private let accountModuleFactory: AccountModuleFactory
 
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = ProfileMenuModuleFactory(container: container)
-        accountModuleFactory = AccountModuleFactory(container: container)
         super.init(router: router, container: container)
     }
 
@@ -21,6 +19,8 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
             switch menu {
             case .account:
                 self?.showAccount()
+            case .bonuses:
+                self?.showBonus()
             default:
                 return
             }
@@ -28,9 +28,14 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showAccount() {
-        let module = accountModuleFactory.makeAccount()
+        let module = moduleFactory.makeAccount()
+        router.push(module)
+    }
+
+    private func showBonus() {
+        let module = moduleFactory.makeBonus()
         router.push(module)
     }
 }
