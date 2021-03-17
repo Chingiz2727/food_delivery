@@ -47,6 +47,10 @@ enum Images: String {
     case card
     case deleteCardButton
     case selectedCardButton
+    case pillikanLogo
+    case sloganLogo
+    case volunteer
+    case copyButton
 }
 
 extension Images {

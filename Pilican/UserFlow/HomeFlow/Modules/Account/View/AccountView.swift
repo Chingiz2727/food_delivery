@@ -14,6 +14,12 @@ class AccountView: UIView {
     private let accountKey = AccountKey()
     private let accountPassword = AccountPassword()
     private let accountQR = AccountQR()
+    let accountHeaderView = AccountHeaderView()
+    private let accountCard = AccountCard()
+    let accountKey = AccountKey()
+    let accountPassword = AccountPassword()
+    let accountQR = AccountQR()
+    
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -67,5 +73,6 @@ class AccountView: UIView {
 
     private func configureView() {
         backgroundColor = .grayBackground
+        accountKey.isUserInteractionEnabled = true
     }
 }

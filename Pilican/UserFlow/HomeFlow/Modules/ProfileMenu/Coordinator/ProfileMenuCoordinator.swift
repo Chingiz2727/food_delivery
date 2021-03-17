@@ -28,17 +28,26 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showAccount() {
         var module = accountModuleFactory.makeAccount()
         module.myCardsDidTap = { [weak self] in
             self?.showMyCards()
+        module.myQRTapped = { [weak self] in
+            self?.showMyQR()
         }
         router.push(module)
     }
     
     private func showMyCards() {
         let module = moduleFactory.makeMyCards()
+    private func showMyQR() {
+        let module = moduleFactory.makeMyQR()
+        router.push(module)
+    }
+
+    private func showChangePassword() {
+        let module = moduleFactory.makeChangePassword()
         router.push(module)
     }
 }
