@@ -47,7 +47,6 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
 
     private func presentEditAccount() {
         let module = moduleFactory.makeEditAccount()
-        let module = moduleFactory.makeAccount()
         router.push(module)
     }
     
