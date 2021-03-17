@@ -15,6 +15,7 @@
 		5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */; };
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
 		5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDE25ECBDAE003AA72F /* AccountView.swift */; };
+		556CF6AD2601D217007B8FB9 /* ProfileItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6AC2601D217007B8FB9 /* ProfileItems.swift */; };
 		5578855925FF639400B3A798 /* ChangePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855825FF639400B3A798 /* ChangePinView.swift */; };
 		5578855D25FF673100B3A798 /* ChangePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855C25FF673100B3A798 /* ChangePinViewController.swift */; };
 		5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578856025FF67E900B3A798 /* ChangePinModule.swift */; };
@@ -34,18 +35,18 @@
 		558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679E025F0D95800A5A94B /* ProblemModule.swift */; };
 		558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */; };
 		558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679F125F107F500A5A94B /* ProblemViewModel.swift */; };
+		55A5CCED26006129004AA13C /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCEC26006129004AA13C /* ChangePasswordView.swift */; };
+		55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */; };
+		55A5CCF626006353004AA13C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */; };
+		55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */; };
+		55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD2E2600A427004AA13C /* MyQRView.swift */; };
+		55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD382600A8BB004AA13C /* MyQRViewController.swift */; };
+		55A5CD3D2600AA0E004AA13C /* MyQRModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */; };
 		55A5CD452600C2AF004AA13C /* MyCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD442600C2AF004AA13C /* MyCardsView.swift */; };
 		55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD492600C55F004AA13C /* MyCardsViewController.swift */; };
 		55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */; };
 		55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */; };
 		55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */; };
-		55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD2E2600A427004AA13C /* MyQRView.swift */; };
-		55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD382600A8BB004AA13C /* MyQRViewController.swift */; };
-		55A5CD3D2600AA0E004AA13C /* MyQRModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */; };
-		55A5CCED26006129004AA13C /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCEC26006129004AA13C /* ChangePasswordView.swift */; };
-		55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */; };
-		55A5CCF626006353004AA13C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */; };
-		55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
@@ -119,7 +120,6 @@
 		A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4402CAE25DBEEE90004D1FC /* AuthBySmsModule.swift */; };
 		A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4402CB125DBEF000004D1FC /* AuthBySmsViewController.swift */; };
 		A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4402CB425DBEF260004D1FC /* AuthBySmsView.swift */; };
-		A444C3052601C021005C995F /* AccountModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444C3042601C021005C995F /* AccountModuleFactory.swift */; };
 		A44F581E25E90F5D00F5A39B /* HomeProfileMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44F581D25E90F5D00F5A39B /* HomeProfileMenu.swift */; };
 		A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3D525E371F3006835FA /* CompaniesFlowLayout.swift */; };
 		A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */; };
@@ -315,6 +315,7 @@
 		5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
 		5568FEDE25ECBDAE003AA72F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		556CF6AC2601D217007B8FB9 /* ProfileItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItems.swift; sourceTree = "<group>"; };
 		5578855825FF639400B3A798 /* ChangePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinView.swift; sourceTree = "<group>"; };
 		5578855C25FF673100B3A798 /* ChangePinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinViewController.swift; sourceTree = "<group>"; };
 		5578856025FF67E900B3A798 /* ChangePinModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinModule.swift; sourceTree = "<group>"; };
@@ -334,18 +335,18 @@
 		558679E025F0D95800A5A94B /* ProblemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModule.swift; sourceTree = "<group>"; };
 		558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemTarget.swift; sourceTree = "<group>"; };
 		558679F125F107F500A5A94B /* ProblemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewModel.swift; sourceTree = "<group>"; };
+		55A5CCEC26006129004AA13C /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModule.swift; sourceTree = "<group>"; };
+		55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		55A5CD2E2600A427004AA13C /* MyQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRView.swift; sourceTree = "<group>"; };
+		55A5CD382600A8BB004AA13C /* MyQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRViewController.swift; sourceTree = "<group>"; };
+		55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRModule.swift; sourceTree = "<group>"; };
 		55A5CD442600C2AF004AA13C /* MyCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsView.swift; sourceTree = "<group>"; };
 		55A5CD492600C55F004AA13C /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
 		55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsModule.swift; sourceTree = "<group>"; };
 		55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
 		55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsFooterView.swift; sourceTree = "<group>"; };
-		55A5CD2E2600A427004AA13C /* MyQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRView.swift; sourceTree = "<group>"; };
-		55A5CD382600A8BB004AA13C /* MyQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRViewController.swift; sourceTree = "<group>"; };
-		55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQRModule.swift; sourceTree = "<group>"; };
-		55A5CCEC26006129004AA13C /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
-		55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModule.swift; sourceTree = "<group>"; };
-		55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
@@ -420,7 +421,6 @@
 		A4402CAE25DBEEE90004D1FC /* AuthBySmsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBySmsModule.swift; sourceTree = "<group>"; };
 		A4402CB125DBEF000004D1FC /* AuthBySmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBySmsViewController.swift; sourceTree = "<group>"; };
 		A4402CB425DBEF260004D1FC /* AuthBySmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBySmsView.swift; sourceTree = "<group>"; };
-		A444C3042601C021005C995F /* AccountModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountModuleFactory.swift; path = Pilican/UserFlow/HomeFlow/AccountModuleFactory.swift; sourceTree = SOURCE_ROOT; };
 		A44F581D25E90F5D00F5A39B /* HomeProfileMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileMenu.swift; sourceTree = "<group>"; };
 		A455B3D525E371F3006835FA /* CompaniesFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesFlowLayout.swift; sourceTree = "<group>"; };
 		A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuse.swift"; sourceTree = "<group>"; };
@@ -644,10 +644,10 @@
 		5568FECC25ECB276003AA72F /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				556CF6AB2601D1B8007B8FB9 /* Model */,
 				5568FED925ECBB92003AA72F /* Module */,
 				5568FECF25ECB38D003AA72F /* View */,
 				5568FECE25ECB385003AA72F /* Controller */,
-				A444C3042601C021005C995F /* AccountModuleFactory.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -679,6 +679,14 @@
 				5568FEDA25ECBBA9003AA72F /* AccountModule.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		556CF6AB2601D1B8007B8FB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6AC2601D217007B8FB9 /* ProfileItems.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5578855625FF637500B3A798 /* ChangePin */ = {
@@ -821,24 +829,47 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		55A5CD412600BC5D004AA13C /* MyCards */ = {
+		55A5CCE926006100004AA13C /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
-				55A5CD4C2600C59D004AA13C /* Module */,
-				55A5CD482600C54A004AA13C /* Controller */,
-				55A5CD432600C2A2004AA13C /* View */,
+				55A5CCF926006CA9004AA13C /* ViewModel */,
+				55A5CCF42600633C004AA13C /* Controller */,
+				55A5CCEF26006317004AA13C /* Module */,
+				55A5CCEA26006108004AA13C /* View */,
 			);
-			path = MyCards;
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
-		55A5CD432600C2A2004AA13C /* View */ = {
+		55A5CCEA26006108004AA13C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				55A5CD542600D623004AA13C /* FooterView */,
-				55A5CD502600CCE9004AA13C /* Cell */,
-				55A5CD442600C2AF004AA13C /* MyCardsView.swift */,
+				55A5CCEC26006129004AA13C /* ChangePasswordView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		55A5CCEF26006317004AA13C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		55A5CCF42600633C004AA13C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55A5CCF926006CA9004AA13C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55A5CD2C2600A410004AA13C /* MyQR */ = {
@@ -859,33 +890,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		55A5CD482600C54A004AA13C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				55A5CD492600C55F004AA13C /* MyCardsViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		55A5CCE926006100004AA13C /* ChangePassword */ = {
-			isa = PBXGroup;
-			children = (
-				55A5CCF926006CA9004AA13C /* ViewModel */,
-				55A5CCF42600633C004AA13C /* Controller */,
-				55A5CCEF26006317004AA13C /* Module */,
-				55A5CCEA26006108004AA13C /* View */,
-			);
-			path = ChangePassword;
-			sourceTree = "<group>";
-		};
-		55A5CCEA26006108004AA13C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				55A5CCEC26006129004AA13C /* ChangePasswordView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		55A5CD372600A8A1004AA13C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -894,18 +898,46 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		55A5CD4C2600C59D004AA13C /* Module */ = {
+		55A5CD3B2600A9FF004AA13C /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */,
+				55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		55A5CCEF26006317004AA13C /* Module */ = {
+		55A5CD412600BC5D004AA13C /* MyCards */ = {
 			isa = PBXGroup;
 			children = (
-				55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */,
+				55A5CD4C2600C59D004AA13C /* Module */,
+				55A5CD482600C54A004AA13C /* Controller */,
+				55A5CD432600C2A2004AA13C /* View */,
+			);
+			path = MyCards;
+			sourceTree = "<group>";
+		};
+		55A5CD432600C2A2004AA13C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD542600D623004AA13C /* FooterView */,
+				55A5CD502600CCE9004AA13C /* Cell */,
+				55A5CD442600C2AF004AA13C /* MyCardsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55A5CD482600C54A004AA13C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD492600C55F004AA13C /* MyCardsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55A5CD4C2600C59D004AA13C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -924,30 +956,6 @@
 				55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */,
 			);
 			path = FooterView;
-			sourceTree = "<group>";
-		};
-		55A5CCF42600633C004AA13C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		55A5CD3B2600A9FF004AA13C /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				55A5CD3C2600AA0E004AA13C /* MyQRModule.swift */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		55A5CCF926006CA9004AA13C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				55A5CCFA26006CBA004AA13C /* ChangePasswordViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
@@ -1283,7 +1291,6 @@
 				5584E82725EE36CD00025251 /* CashbackMenu */,
 				5568FECC25ECB276003AA72F /* Account */,
 				A4FAACEF25E75C2500A55CB8 /* ProfileMenu */,
-				A40B95DA25DE31FB00E507FB /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1541,6 +1548,7 @@
 		A43BC83325DFC28600D45225 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				A40B95DA25DE31FB00E507FB /* Home */,
 				A43BC83425DFC29200D45225 /* Coordinator */,
 			);
 			path = TabBar;
@@ -2976,7 +2984,6 @@
 				A483E28025D40ABE006D2DAF /* ApiTarget.swift in Sources */,
 				A483E29525D40ABE006D2DAF /* EmojiModifier.swift in Sources */,
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
-				A444C3052601C021005C995F /* AccountModuleFactory.swift in Sources */,
 				A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */,
 				55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */,
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
@@ -2990,6 +2997,7 @@
 				A483E27525D40ABE006D2DAF /* ApiService.swift in Sources */,
 				A468EA8725EE0F3D0071FAA6 /* SocialLinksView.swift in Sources */,
 				A483E29025D40ABE006D2DAF /* ViewHolder.swift in Sources */,
+				556CF6AD2601D217007B8FB9 /* ProfileItems.swift in Sources */,
 				A483E26725D40ABE006D2DAF /* String+Unwrap.swift in Sources */,
 				A48CD00825DBBB080010829F /* String+NumberContains.swift in Sources */,
 				A40B95F825DE65EF00E507FB /* UITableView+Reuse.swift in Sources */,
