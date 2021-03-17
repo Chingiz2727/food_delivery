@@ -26,4 +26,3 @@ final class ProfileMenuModuleFactory {
         return BonusViewController()
     }
 }
-
