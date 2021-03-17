@@ -39,9 +39,6 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     
     private func showMyQR() {
         let module = moduleFactory.makeMyQR()
-        module.changePasswordDidTap = { [weak self] in
-            self?.showChangePassword()
-        }
         router.push(module)
     }
 

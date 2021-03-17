@@ -28,6 +28,7 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        bindViewModel()
     }
 
     private func bindView() {
@@ -35,10 +36,7 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
             .subscribe(onNext: { [unowned self] _ in
                 self.myQRTapped?()
             }).disposed(by: disposeBag)
-        bindViewModel()
-    }
-
-    private func bindView() {
+        
         rootView.accountPassword.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.changePasswordDidTap?()
