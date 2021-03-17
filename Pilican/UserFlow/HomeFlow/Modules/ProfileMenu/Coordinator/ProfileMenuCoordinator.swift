@@ -28,7 +28,7 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showAccount() {
         var module = accountModuleFactory.makeAccount()
         module.myQRTapped = { [weak self] in
@@ -39,6 +39,14 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     
     private func showMyQR() {
         let module = moduleFactory.makeMyQR()
+        module.changePasswordDidTap = { [weak self] in
+            self?.showChangePassword()
+        }
+        router.push(module)
+    }
+
+    private func showChangePassword() {
+        let module = moduleFactory.makeChangePassword()
         router.push(module)
     }
 }

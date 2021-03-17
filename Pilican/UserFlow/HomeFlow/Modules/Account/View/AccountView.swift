@@ -9,11 +9,11 @@ import UIKit
 
 class AccountView: UIView {
     
-    private let accountHeaderView = AccountHeaderView()
+    let accountHeaderView = AccountHeaderView()
     private let accountCard = AccountCard()
-    private let accountKey = AccountKey()
-    private let accountPassword = AccountPassword()
-    let accountQR = AccountQR()
+    let accountKey = AccountKey()
+    let accountPassword = AccountPassword()
+    private let accountQR = AccountQR()
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -56,7 +56,7 @@ class AccountView: UIView {
         stackView.addArrangedSubview(accountKey)
         stackView.addArrangedSubview(accountPassword)
         stackView.addArrangedSubview(accountQR)
-        
+
         addSubview(existButton)
         existButton.snp.makeConstraints { (make) in
             make.top.equalTo(stackView.snp.bottom).offset(30)
@@ -67,5 +67,6 @@ class AccountView: UIView {
 
     private func configureView() {
         backgroundColor = .grayBackground
+        accountKey.isUserInteractionEnabled = true
     }
 }

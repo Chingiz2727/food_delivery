@@ -5,7 +5,6 @@ final class ProfileMenuViewController: UIViewController, ViewHolder, ProfileMenu
     typealias RootViewType = ProfileMenuView
 
     var menuDidSelect: MenuDidSelect?
-
     private let disposeBag = DisposeBag()
 
     override func loadView() {
