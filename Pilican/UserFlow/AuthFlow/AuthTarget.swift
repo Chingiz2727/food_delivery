@@ -5,7 +5,7 @@ enum AuthTarget: ApiTarget {
     case verifySmsCode (phone: String, code: String)
     case loginUser (phone: String, password: String)
     case register(username: String, password: String, fullName: String, cityId: Int, promo: String?)
-    case updateProfile( sex: String, firstName: String, birthday: String, cityId: Int)
+    case updateProfile(username: String, sex: String, fullName: String, birthday: String, cityId: String)
     case getAuthSmsCode(phone: String)
     case firbaseToken(fireBaseToken: String)
     case changePassword(newPassword: String, acceptPassword: String)
@@ -56,6 +56,15 @@ enum AuthTarget: ApiTarget {
                 "promo": promo?.toBase64()
             ] as [String: Any]
             return params
+        case let .updateProfile(username, sex, fullName, birthday, cityId):
+            let params = [
+                "username": username.toBase64(),
+                "sex": sex.toBase64(),
+                "fullName": fullName.toBase64(),
+                "birthday": birthday.toBase64(),
+                "cityId": cityId.toBase64()
+            ]
+            return params
         case let .verifySmsCode(phone, code):
             let params = [
                 "userName": phone,
@@ -80,6 +89,7 @@ enum AuthTarget: ApiTarget {
     var headers: [String: String]? {
         switch self {
         case .loginUser, .register, .verifySmsCode, .changePassword:
+        case .loginUser, .register, .verifySmsCode, .updateProfile:
             return
                 [
                     "clientId": "bW9iaWxl",

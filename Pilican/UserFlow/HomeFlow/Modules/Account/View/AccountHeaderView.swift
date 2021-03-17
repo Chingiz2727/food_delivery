@@ -27,7 +27,7 @@ class AccountHeaderView: UIView {
         return label
     }()
 
-    private let accountNumberLabel: UILabel = {
+    private let accountPhoneLabel: UILabel = {
         let label = UILabel()
         label.text = "+ 7 700 000 000"
         label.textColor = .black
@@ -36,7 +36,7 @@ class AccountHeaderView: UIView {
         return label
     }()
 
-    private let editAccountButton: UIButton = {
+    let editAccountButton: UIButton = {
         let button = UIButton()
         button.setImage(Images.accountEdit.image, for: .normal)
         button.clipsToBounds = true
@@ -57,6 +57,11 @@ class AccountHeaderView: UIView {
         super.layoutSubviews()
         layer.cornerRadius = 10
     }
+    
+    func setData(name: String, phone: String) {
+        accountNameLabel.text = name
+        accountPhoneLabel.text = phone
+    }
 
     private func setupInitialLayout() {
         snp.makeConstraints { (make) in
@@ -74,8 +79,8 @@ class AccountHeaderView: UIView {
             make.top.equalToSuperview().inset(19)
         }
 
-        addSubview(accountNumberLabel)
-        accountNumberLabel.snp.makeConstraints { (make) in
+        addSubview(accountPhoneLabel)
+        accountPhoneLabel.snp.makeConstraints { (make) in
             make.left.equalTo(accountNameLabel.snp.left)
             make.top.equalTo(accountNameLabel.snp.bottom)
         }

@@ -15,4 +15,32 @@ final class ProfileMenuModuleFactory {
         let viewController = ChangePasswordViewController(viewModel: viewModel)
         return viewController
     }
+    
+    func makeChangePin() -> ChangePinModule {
+        return ChangePinViewController()
+    }
+    func makeAbout() -> AboutModule {
+        return AboutViewController()
+    }
+
+    func makeAcceptPermission() -> AcceptPermissionModule {
+        let viewController = AcceptPermissionViewController()
+        return viewController
+    }
+
+    func makeAccount() -> AccountModule {
+        return AccountViewController()
+    }
+
+    func makeEditAccount() -> EditAccountModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = EditAccountViewModel(apiService: apiService)
+        let dateFormatter = container.resolve(PropertyFormatter.self)!
+        let viewController = EditAccountViewController(viewModel: viewModel, dateFormatter: dateFormatter)
+        return viewController
+    }
+    
+    func makeBonus() -> BonusModule {
+        return BonusViewController()
+    }
 }

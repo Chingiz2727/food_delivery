@@ -9,7 +9,7 @@ import UIKit
 
 class AccountView: UIView {
     
-    private let accountHeaderView = AccountHeaderView()
+    let accountHeaderView = AccountHeaderView()
     private let accountCard = AccountCard()
     private let accountKey = AccountKey()
     let accountPassword = AccountPassword()
@@ -67,5 +67,6 @@ class AccountView: UIView {
 
     private func configureView() {
         backgroundColor = .grayBackground
+        accountKey.isUserInteractionEnabled = true
     }
 }

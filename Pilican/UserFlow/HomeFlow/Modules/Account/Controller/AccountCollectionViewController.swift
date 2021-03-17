@@ -14,6 +14,15 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     typealias RootViewType = AccountView
     
     private let disposeBag = DisposeBag()
+    var changePinTap: Callback?
+
+    typealias RootViewType = AccountView
+    
+    var editAccountDidSelect: EditAccountDidSelect?
+    
+    private let disposeBag = DisposeBag()
+
+    private let cache = DiskCache<String, Any>()
 
     override func loadView() {
         view = AccountView()
@@ -22,6 +31,7 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        bindViewModel
     }
 
     private func bindView() {
@@ -29,5 +39,24 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
             .subscribe(onNext: { [unowned self] in
                 self.changePasswordDidTap?()
             }).disposed(by: disposeBag)
+        ()
+
+        rootView.accountKey.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.changePinTap?()
+            }).disposed(by: disposeBag)
+    
+            rootView.accountHeaderView.editAccountButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.editAccountDidSelect?()
+            }).disposed(by: disposeBag)
+    }
+
+    private func bindViewModel() {
+        let user: User? = try? cache.readFromDisk(name: "userInfo")
+        let profile: Profile? = try? cache.readFromDisk(name: "profileInfo")
+        let name = profile?.firstName
+        let phone = user?.username
+        rootView.accountHeaderView.setData(name: name ?? "", phone: phone ?? "")
     }
 }
