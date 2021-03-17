@@ -15,13 +15,9 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     
     private let disposeBag = DisposeBag()
     var changePinTap: Callback?
-
-    typealias RootViewType = AccountView
     
     var editAccountDidSelect: EditAccountDidSelect?
     
-    private let disposeBag = DisposeBag()
-
     private let cache = DiskCache<String, Any>()
 
     override func loadView() {
@@ -31,7 +27,7 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
-        bindViewModel
+        bindViewModel()
     }
 
     private func bindView() {

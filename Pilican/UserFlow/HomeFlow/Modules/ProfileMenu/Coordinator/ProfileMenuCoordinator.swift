@@ -8,7 +8,7 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = ProfileMenuModuleFactory(container: container)
         accountModuleFactory = AccountModuleFactory(container: container)
-        super.init(router: router, container: containers)
+        super.init(router: router, container: container)
     }
 
     override func start() {

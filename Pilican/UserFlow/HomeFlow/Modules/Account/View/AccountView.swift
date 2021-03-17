@@ -11,7 +11,7 @@ class AccountView: UIView {
     
     let accountHeaderView = AccountHeaderView()
     private let accountCard = AccountCard()
-    private let accountKey = AccountKey()
+    let accountKey = AccountKey()
     let accountPassword = AccountPassword()
     private let accountQR = AccountQR()
     private let stackView: UIStackView = {
@@ -56,7 +56,7 @@ class AccountView: UIView {
         stackView.addArrangedSubview(accountKey)
         stackView.addArrangedSubview(accountPassword)
         stackView.addArrangedSubview(accountQR)
-        
+
         addSubview(existButton)
         existButton.snp.makeConstraints { (make) in
             make.top.equalTo(stackView.snp.bottom).offset(30)

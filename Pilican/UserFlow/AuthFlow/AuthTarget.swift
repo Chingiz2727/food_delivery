@@ -77,8 +77,6 @@ enum AuthTarget: ApiTarget {
             return ["test": "value"]
         case .changePassword(let newPassword, let acceptPassword):
             return ["password": newPassword, "password2": acceptPassword]
-        default:
-            return [:]
         }
     }
 
@@ -88,8 +86,7 @@ enum AuthTarget: ApiTarget {
 
     var headers: [String: String]? {
         switch self {
-        case .loginUser, .register, .verifySmsCode, .changePassword:
-        case .loginUser, .register, .verifySmsCode, .updateProfile:
+        case .loginUser, .register, .verifySmsCode, .changePassword, .updateProfile:
             return
                 [
                     "clientId": "bW9iaWxl",
