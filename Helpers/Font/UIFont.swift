@@ -23,4 +23,5 @@ extension UIFont {
     static let medium24 = UIFont(name: "Whitney-Medium", size: 24)
     static let medium21 = UIFont(name: "Whitney-Medium", size: 21)
     static let medium8 = UIFont(name: "Whitney-Medium", size: 8)
+    static let medium10 = UIFont(name: "Whitney-Medium", size: 10)
 }
