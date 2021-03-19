@@ -17,4 +17,15 @@ final class CashbackMenuModuleFactory {
     func makeMenu() -> CashbackMenuModule {
         return CashbackMenuViewController()
     }
+
+    func makePayHistory() -> PayHistoryModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = PayHistoryViewModel(apiService: apiService)
+        let controller = PayHistoryViewController(viewModel: viewModel)
+        return controller
+    }
+    
+    func makePayDetail(payments: Payments) -> PayDetailModule {
+        return PayDetailViewController(payments: payments)
+    }
 }

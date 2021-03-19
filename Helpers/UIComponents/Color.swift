@@ -18,4 +18,5 @@ extension UIColor {
     static let workStatusTextPink = UIColor(red: 0.957, green: 0.263, blue: 0.212, alpha: 1)
     static let workStatusTextGreen = UIColor(red: 0.298, green: 0.686, blue: 0.314, alpha: 1)
     static let systemBlue = UIColor.systemBlue
+    static let reciep = UIColor(red: 0.545, green: 0.765, blue: 0.29, alpha: 1)
 }
