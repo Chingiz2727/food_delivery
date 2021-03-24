@@ -53,7 +53,7 @@ class MyQRView: UIView {
         distribution: .equalSpacing,
         spacing: 20)
 
-    func setData(phone: String, image: UIImage) {
+    func setData(phone: String, image: UIImage?) {
         phoneLabel.text = phone
         qrImageView.image = image
     }
