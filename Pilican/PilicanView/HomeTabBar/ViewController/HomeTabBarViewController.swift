@@ -12,6 +12,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
     private let tabView = HomeTabView()
 
     private let disposeBag = DisposeBag()
+    private let cache = DiskCache<String, Any>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,5 +50,11 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
                 self.accountTap?()
             })
             .disposed(by: disposeBag)
+
+        let profile: Profile? = try? cache.readFromDisk(name: "profileInfo")
+        let user: User? = try? cache.readFromDisk(name: "userInfo")
+        guard let username = profile?.firstName,
+              let balance = user?.balance else { return }
+        tabView.setData(profile: username, balance: String(balance))
     }
 }

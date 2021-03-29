@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01842F6297D537FBB0CFACB5 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */; };
+		5526DAD72603822800536589 /* PayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DAD62603822800536589 /* PayDetailView.swift */; };
+		5526DADB2603824000536589 /* PayDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DADA2603824000536589 /* PayDetailModule.swift */; };
+		5526DADF2603825E00536589 /* PayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DADE2603825E00536589 /* PayDetailViewController.swift */; };
 		5555236625EF672300537D3F /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236525EF672300537D3F /* DiskCache.swift */; };
 		5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236925EF674B00537D3F /* InMemoryCache.swift */; };
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
@@ -19,6 +22,13 @@
 		556CF6BB2602025B007B8FB9 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6BA2602025B007B8FB9 /* BalanceView.swift */; };
 		556CF6BF26020708007B8FB9 /* BalanceModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6BE26020708007B8FB9 /* BalanceModule.swift */; };
 		556CF6C226020721007B8FB9 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6C126020721007B8FB9 /* BalanceViewController.swift */; };
+		556CF6CA26021B62007B8FB9 /* PayHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6C926021B62007B8FB9 /* PayHistoryView.swift */; };
+		556CF6CE26021CF6007B8FB9 /* PayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6CD26021CF6007B8FB9 /* PayHistoryTableViewCell.swift */; };
+		556CF6D226022187007B8FB9 /* PayHistoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6D126022187007B8FB9 /* PayHistoryModule.swift */; };
+		556CF6D6260221A7007B8FB9 /* PayHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6D5260221A7007B8FB9 /* PayHistoryViewController.swift */; };
+		556CF6DA26022401007B8FB9 /* PayHistoryTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6D926022401007B8FB9 /* PayHistoryTarget.swift */; };
+		556CF6DE260225AA007B8FB9 /* PayHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6DD260225AA007B8FB9 /* PayHistoryViewModel.swift */; };
+		556CF6E22602278C007B8FB9 /* PayHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6E12602278C007B8FB9 /* PayHistoryResponse.swift */; };
 		5578855925FF639400B3A798 /* ChangePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855825FF639400B3A798 /* ChangePinView.swift */; };
 		5578855D25FF673100B3A798 /* ChangePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855C25FF673100B3A798 /* ChangePinViewController.swift */; };
 		5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578856025FF67E900B3A798 /* ChangePinModule.swift */; };
@@ -311,6 +321,9 @@
 /* Begin PBXFileReference section */
 		124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
 		206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
+		5526DAD62603822800536589 /* PayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailView.swift; sourceTree = "<group>"; };
+		5526DADA2603824000536589 /* PayDetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailModule.swift; sourceTree = "<group>"; };
+		5526DADE2603825E00536589 /* PayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailViewController.swift; sourceTree = "<group>"; };
 		5555236525EF672300537D3F /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		5555236925EF674B00537D3F /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -322,6 +335,13 @@
 		556CF6BA2602025B007B8FB9 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		556CF6BE26020708007B8FB9 /* BalanceModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceModule.swift; sourceTree = "<group>"; };
 		556CF6C126020721007B8FB9 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
+		556CF6C926021B62007B8FB9 /* PayHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryView.swift; sourceTree = "<group>"; };
+		556CF6CD26021CF6007B8FB9 /* PayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		556CF6D126022187007B8FB9 /* PayHistoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryModule.swift; sourceTree = "<group>"; };
+		556CF6D5260221A7007B8FB9 /* PayHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryViewController.swift; sourceTree = "<group>"; };
+		556CF6D926022401007B8FB9 /* PayHistoryTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryTarget.swift; sourceTree = "<group>"; };
+		556CF6DD260225AA007B8FB9 /* PayHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryViewModel.swift; sourceTree = "<group>"; };
+		556CF6E12602278C007B8FB9 /* PayHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryResponse.swift; sourceTree = "<group>"; };
 		5578855825FF639400B3A798 /* ChangePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinView.swift; sourceTree = "<group>"; };
 		5578855C25FF673100B3A798 /* ChangePinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinViewController.swift; sourceTree = "<group>"; };
 		5578856025FF67E900B3A798 /* ChangePinModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinModule.swift; sourceTree = "<group>"; };
@@ -630,6 +650,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5526DAD3260381FF00536589 /* PayDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5526DADD2603825100536589 /* Controller */,
+				5526DAD92603823200536589 /* Module */,
+				5526DAD42603820C00536589 /* View */,
+			);
+			path = PayDetail;
+			sourceTree = "<group>";
+		};
+		5526DAD42603820C00536589 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5526DAD62603822800536589 /* PayDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5526DAD92603823200536589 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5526DADA2603824000536589 /* PayDetailModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5526DADD2603825100536589 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5526DADE2603825E00536589 /* PayDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5555236425EF66E400537D3F /* Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,10 +767,50 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		556CF6C726021B45007B8FB9 /* PayHistory */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6E026022775007B8FB9 /* Model */,
+				556CF6DC26022596007B8FB9 /* ViewModel */,
+				556CF6D826022369007B8FB9 /* Api */,
+				556CF6D426022194007B8FB9 /* Controller */,
+				556CF6D026022171007B8FB9 /* Module */,
+				556CF6C826021B4E007B8FB9 /* View */,
+			);
+			path = PayHistory;
+			sourceTree = "<group>";
+		};
+		556CF6C826021B4E007B8FB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6CC26021CD1007B8FB9 /* Cell */,
+				556CF6C926021B62007B8FB9 /* PayHistoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+
 		556CF6BD260206FA007B8FB9 /* Module */ = {
 			isa = PBXGroup;
 			children = (
 				556CF6BE26020708007B8FB9 /* BalanceModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		
+		556CF6CC26021CD1007B8FB9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6CD26021CF6007B8FB9 /* PayHistoryTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		556CF6D026022171007B8FB9 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6D126022187007B8FB9 /* PayHistoryModule.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -727,6 +821,39 @@
 				556CF6C126020721007B8FB9 /* BalanceViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		
+		556CF6D426022194007B8FB9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6D5260221A7007B8FB9 /* PayHistoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		556CF6D826022369007B8FB9 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6D926022401007B8FB9 /* PayHistoryTarget.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		556CF6DC26022596007B8FB9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6DD260225AA007B8FB9 /* PayHistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		556CF6E026022775007B8FB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6E12602278C007B8FB9 /* PayHistoryResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5578855625FF637500B3A798 /* ChangePin */ = {
@@ -1319,6 +1446,8 @@
 			isa = PBXGroup;
 			children = (
 				556CF6B82602024D007B8FB9 /* Balance */,
+				5526DAD3260381FF00536589 /* PayDetail */,
+				556CF6C726021B45007B8FB9 /* PayHistory */,
 				55A5CD412600BC5D004AA13C /* MyCards */,
 				55A5CD2C2600A410004AA13C /* MyQR */,
 				55A5CCE926006100004AA13C /* ChangePassword */,
@@ -2897,6 +3026,7 @@
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
 				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
+				556CF6CE26021CF6007B8FB9 /* PayHistoryTableViewCell.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
 				5578855925FF639400B3A798 /* ChangePinView.swift in Sources */,
 				5555236E25EF8FBA00537D3F /* Profile.swift in Sources */,
@@ -2933,6 +3063,7 @@
 				A483E27B25D40ABE006D2DAF /* AuthServiceAssembly.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
+				556CF6DA26022401007B8FB9 /* PayHistoryTarget.swift in Sources */,
 				5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */,
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
@@ -2960,8 +3091,10 @@
 				5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */,
 				55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */,
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
+				556CF6DE260225AA007B8FB9 /* PayHistoryViewModel.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
 				A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */,
+				5526DADB2603824000536589 /* PayDetailModule.swift in Sources */,
 				A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
@@ -2978,6 +3111,7 @@
 				A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */,
 				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
 				A483E26625D40ABE006D2DAF /* LoadingSequence+Rx.swift in Sources */,
+				5526DADF2603825E00536589 /* PayDetailViewController.swift in Sources */,
 				55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */,
 				A483E29825D40ABE006D2DAF /* UIImageView+Tools.swift in Sources */,
 				5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */,
@@ -2985,6 +3119,7 @@
 				A483E28E25D40ABE006D2DAF /* InputValidatable.swift in Sources */,
 				A4B9A27A25F0D98100F0A3D6 /* CashBackListTableViewCell.swift in Sources */,
 				A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */,
+				556CF6D226022187007B8FB9 /* PayHistoryModule.swift in Sources */,
 				A483E27925D40ABE006D2DAF /* UploadService.swift in Sources */,
 				A483E29425D40ABE006D2DAF /* PilicanLogger+HTTP.swift in Sources */,
 				A47CA04A25E1495200EB091C /* RetailCollectionViewCell.swift in Sources */,
@@ -2999,6 +3134,7 @@
 				A47CA1C925E36E3200EB091C /* NotificationDeepLinkActionModel.swift in Sources */,
 				A4E581EC25D5482E00EDC053 /* ProgressView.swift in Sources */,
 				A47CA1E925E36E8000EB091C /* SlidingTransitioningDelegate.swift in Sources */,
+				556CF6E22602278C007B8FB9 /* PayHistoryResponse.swift in Sources */,
 				A4BBC6E325D6394E006AF382 /* BackContainerView.swift in Sources */,
 				A4D7644825DA74A1009A6651 /* City.swift in Sources */,
 				A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */,
@@ -3060,6 +3196,7 @@
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
 				55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */,
 				A4DD3DD725D24527002D2186 /* Color.swift in Sources */,
+				5526DAD72603822800536589 /* PayDetailView.swift in Sources */,
 				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
 				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
 				5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */,
@@ -3109,6 +3246,7 @@
 				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
+				556CF6D6260221A7007B8FB9 /* PayHistoryViewController.swift in Sources */,
 				55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */,
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
@@ -3122,6 +3260,7 @@
 				55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */,
 				5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
+				556CF6CA26021B62007B8FB9 /* PayHistoryView.swift in Sources */,
 				5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */,
 				A4BBC70225D63ED8006AF382 /* UiViewController+Keyboard.swift in Sources */,
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,

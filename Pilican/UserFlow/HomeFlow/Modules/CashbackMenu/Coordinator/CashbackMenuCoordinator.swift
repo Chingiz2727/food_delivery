@@ -31,6 +31,8 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
                 self?.showMyCards()
             case .balanceReplishment:
                 self?.showBalance()
+            case .historyOfPay:
+                self?.showPayHistory()
             default:
                 break
             }
@@ -47,5 +49,18 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
     private func showBalance() {
         let module = moduleFactory.makeBalance()
         router.push(module)
+    }
+    
+    private func showPayHistory() {
+        var module = moduleFactory.makePayHistory()
+        module.onSelectPayHistory = { [weak self] payments in
+            self?.showPayDetail(payments: payments)
+        }
+        router.push(module)
+    }
+    
+    private func showPayDetail(payments: Payments) {
+        let module = moduleFactory.makePayDetail(payments: payments)
+        router.presentCard(module)
     }
 }

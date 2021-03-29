@@ -12,12 +12,16 @@ extension UIFont {
     static let semibold16 = UIFont(name: "Whitney-Semibold", size: 16)
     static let semibold20 = UIFont(name: "Whitney-Semibold", size: 20)
     static let semibold18 = UIFont(name: "Whitney-Semibold", size: 18)
+    static let semibold14 = UIFont(name: "Whitney-Semibold", size: 14)
     static let book14 = UIFont(name: "Whitney-Book", size: 14)!
     static let book16 = UIFont(name: "Whitney-Book", size: 16)!
     static let book12 = UIFont(name: "Whitney-Book", size: 12)!
+    static let book10 = UIFont(name: "Whitney-Book", size: 10)!
     static let medium12 = UIFont(name: "Whitney-Medium", size: 12)!
     static let medium16 = UIFont(name: "Whitney-Medium", size: 16)!
     static let medium14 = UIFont(name: "Whitney-Medium", size: 14)!
     static let medium24 = UIFont(name: "Whitney-Medium", size: 24)
     static let medium21 = UIFont(name: "Whitney-Medium", size: 21)
+    static let medium8 = UIFont(name: "Whitney-Medium", size: 8)
+    static let medium10 = UIFont(name: "Whitney-Medium", size: 10)
 }
