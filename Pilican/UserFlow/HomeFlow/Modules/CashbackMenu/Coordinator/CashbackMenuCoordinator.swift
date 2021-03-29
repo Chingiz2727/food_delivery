@@ -26,8 +26,27 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         var module = moduleFactory.makeMenu()
 
         module.menuDidSelect = { [weak self] menu in
+            switch menu {
+            case .historyOfPay:
+                self?.showPayHistory()
+            default:
+                break
+            }
             self?.router.dismissModule()
         }
         router.presentActionSheet(module, interactive: true)
+    }
+
+    private func showPayHistory() {
+        var module = moduleFactory.makePayHistory()
+        module.onSelectPayHistory = { [weak self] payments in
+            self?.showPayDetail(payments: payments)
+        }
+        router.push(module)
+    }
+    
+    private func showPayDetail(payments: Payments) {
+        let module = moduleFactory.makePayDetail(payments: payments)
+        router.presentCard(module)
     }
 }

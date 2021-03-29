@@ -25,7 +25,7 @@ class MyQRViewController: ViewController, ViewHolder, MyQRModule {
     private func bindView() {
         let user: User? = try? cache.readFromDisk(name: "userInfo")
         let phone = user?.username ?? ""
-        rootView.setData(phone: phone, image: generateQRCode(from: phone)!)
+        rootView.setData(phone: phone, image: generateQRCode(from: phone))
     }
 
     private func generateQRCode(from string: String) -> UIImage? {
