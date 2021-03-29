@@ -11,7 +11,7 @@ final class RetailDetailHeaderView: UIView {
         imageView.clipsToBounds = true
         return imageView
     }()
-    
+
     private let companyNameLabel: UILabel = {
         let label = UILabel()
         label.font = .heading2

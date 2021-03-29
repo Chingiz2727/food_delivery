@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		01842F6297D537FBB0CFACB5 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */; };
+		5528385F2611C31C00511608 /* SuccessPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528385E2611C31C00511608 /* SuccessPaymentView.swift */; };
+		552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552838662611CDB600511608 /* SuccessPaymentModule.swift */; };
+		5528386B2611CDD900511608 /* SuccessPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */; };
+		5528386F2611E31B00511608 /* success-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5528386E2611E31B00511608 /* success-animation.json */; };
+		55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */; };
+		55454B2D260DA30500404238 /* QRPaymentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B2C260DA30500404238 /* QRPaymentTarget.swift */; };
+		55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */; };
 		5555236625EF672300537D3F /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236525EF672300537D3F /* DiskCache.swift */; };
 		5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236925EF674B00537D3F /* InMemoryCache.swift */; };
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
@@ -47,6 +54,12 @@
 		55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */; };
 		55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */; };
 		55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */; };
+		55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C06F260B0E250037D567 /* CameraTarget.swift */; };
+		55A7C076260B38720037D567 /* QRPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C075260B38720037D567 /* QRPaymentView.swift */; };
+		55A7C079260B58AA0037D567 /* CalculatePayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C078260B58AA0037D567 /* CalculatePayView.swift */; };
+		55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C07B260B604A0037D567 /* CommentForPartnerView.swift */; };
+		55A7C080260B693E0037D567 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C07F260B693E0037D567 /* PriceView.swift */; };
+		55A7C083260B6C4F0037D567 /* PaymentChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C082260B6C4F0037D567 /* PaymentChoiceView.swift */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
@@ -61,6 +74,10 @@
 		55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7425FA04E5005A36BD /* EditAccountView.swift */; };
 		55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7925FA1845005A36BD /* EditAccountViewController.swift */; };
 		55D26C7E25FA18C4005A36BD /* EditAccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */; };
+		55F4EEF0260C3ACC00EBEA9D /* QRPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */; };
+		55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */; };
+		55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */; };
+		55F4EEFB260C644300EBEA9D /* ScanRetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEFA260C644300EBEA9D /* ScanRetailResponse.swift */; };
 		55FCC6F425F8874D000DED49 /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6F325F8874D000DED49 /* BonusView.swift */; };
 		55FCC6F825F89DCD000DED49 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6F725F89DCD000DED49 /* BonusViewController.swift */; };
 		55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC6FB25F89E22000DED49 /* BonusModule.swift */; };
@@ -308,6 +325,13 @@
 /* Begin PBXFileReference section */
 		124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
 		206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
+		5528385E2611C31C00511608 /* SuccessPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentView.swift; sourceTree = "<group>"; };
+		552838662611CDB600511608 /* SuccessPaymentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentModule.swift; sourceTree = "<group>"; };
+		5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentViewController.swift; sourceTree = "<group>"; };
+		5528386E2611E31B00511608 /* success-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "success-animation.json"; path = "../../../../../pillikan-ios-3.0/Pillikan/AnimationJson/success-animation.json"; sourceTree = "<group>"; };
+		55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewModel.swift; sourceTree = "<group>"; };
+		55454B2C260DA30500404238 /* QRPaymentTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentTarget.swift; sourceTree = "<group>"; };
+		55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayByQRPartnerResponse.swift; sourceTree = "<group>"; };
 		5555236525EF672300537D3F /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		5555236925EF674B00537D3F /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -347,6 +371,12 @@
 		55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsModule.swift; sourceTree = "<group>"; };
 		55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
 		55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsFooterView.swift; sourceTree = "<group>"; };
+		55A7C06F260B0E250037D567 /* CameraTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTarget.swift; sourceTree = "<group>"; };
+		55A7C075260B38720037D567 /* QRPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentView.swift; sourceTree = "<group>"; };
+		55A7C078260B58AA0037D567 /* CalculatePayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePayView.swift; sourceTree = "<group>"; };
+		55A7C07B260B604A0037D567 /* CommentForPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentForPartnerView.swift; sourceTree = "<group>"; };
+		55A7C07F260B693E0037D567 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
+		55A7C082260B6C4F0037D567 /* PaymentChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChoiceView.swift; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
@@ -361,6 +391,10 @@
 		55D26C7425FA04E5005A36BD /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
 		55D26C7925FA1845005A36BD /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountModule.swift; sourceTree = "<group>"; };
+		55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentModule.swift; sourceTree = "<group>"; };
+		55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewController.swift; sourceTree = "<group>"; };
+		55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		55F4EEFA260C644300EBEA9D /* ScanRetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRetailResponse.swift; sourceTree = "<group>"; };
 		55FCC6F325F8874D000DED49 /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
 		55FCC6F725F89DCD000DED49 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
 		55FCC6FB25F89E22000DED49 /* BonusModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusModule.swift; sourceTree = "<group>"; };
@@ -624,6 +658,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5528385C2611C2DC00511608 /* SuccessPayment */ = {
+			isa = PBXGroup;
+			children = (
+				552838692611CDC400511608 /* Controller */,
+				552838652611CDA500511608 /* Module */,
+				5528385D2611C30B00511608 /* View */,
+			);
+			path = SuccessPayment;
+			sourceTree = "<group>";
+		};
+		5528385D2611C30B00511608 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5528385E2611C31C00511608 /* SuccessPaymentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552838652611CDA500511608 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				552838662611CDB600511608 /* SuccessPaymentModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		552838692611CDC400511608 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5528386D2611E31000511608 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				5528386E2611E31B00511608 /* success-animation.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		55454B27260D9AE500404238 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55454B2B260DA1C600404238 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				55454B2C260DA30500404238 /* QRPaymentTarget.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		55454B30260DA6D900404238 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5555236425EF66E400537D3F /* Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -958,6 +1058,39 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
+		55A7C06E260B0E010037D567 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				55A7C06F260B0E250037D567 /* CameraTarget.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		55A7C073260B385D0037D567 /* QRPayment */ = {
+			isa = PBXGroup;
+			children = (
+				55454B30260DA6D900404238 /* Model */,
+				55454B2B260DA1C600404238 /* Api */,
+				55454B27260D9AE500404238 /* ViewModel */,
+				55F4EEF2260C3ADE00EBEA9D /* Controller */,
+				55F4EEEE260C3ABA00EBEA9D /* Module */,
+				55A7C074260B38660037D567 /* View */,
+			);
+			path = QRPayment;
+			sourceTree = "<group>";
+		};
+		55A7C074260B38660037D567 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55A7C075260B38720037D567 /* QRPaymentView.swift */,
+				55A7C078260B58AA0037D567 /* CalculatePayView.swift */,
+				55A7C07B260B604A0037D567 /* CommentForPartnerView.swift */,
+				55A7C07F260B693E0037D567 /* PriceView.swift */,
+				55A7C082260B6C4F0037D567 /* PaymentChoiceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
 			isa = PBXGroup;
 			children = (
@@ -1077,6 +1210,30 @@
 				55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		55F4EEEE260C3ABA00EBEA9D /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		55F4EEF2260C3ADE00EBEA9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55F4EEF6260C628A00EBEA9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55FCC6F125F88731000DED49 /* Bonus */ = {
@@ -1278,6 +1435,8 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5528385C2611C2DC00511608 /* SuccessPayment */,
+				55A7C073260B385D0037D567 /* QRPayment */,
 				55A5CD412600BC5D004AA13C /* MyCards */,
 				55A5CD2C2600A410004AA13C /* MyQR */,
 				55A5CCE926006100004AA13C /* ChangePassword */,
@@ -2143,6 +2302,7 @@
 		A4A9DE9625E6664A00A711CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5528386D2611E31000511608 /* Json */,
 				A4B310EF25D10C3C0003BA0B /* Assets.xcassets */,
 				A4B310F125D10C3C0003BA0B /* LaunchScreen.storyboard */,
 			);
@@ -2352,6 +2512,8 @@
 		A4BBC6C125D6124A006AF382 /* CameraModule */ = {
 			isa = PBXGroup;
 			children = (
+				55F4EEF6260C628A00EBEA9D /* ViewModel */,
+				55A7C06E260B0E010037D567 /* Api */,
 				A4BBC6C525D61264006AF382 /* Model */,
 				A4BBC6C425D6125F006AF382 /* Module */,
 				A4BBC6C325D61257006AF382 /* View */,
@@ -2389,6 +2551,7 @@
 			isa = PBXGroup;
 			children = (
 				A4BBC6C625D61271006AF382 /* CameraAction.swift */,
+				55F4EEFA260C644300EBEA9D /* ScanRetailResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2765,6 +2928,7 @@
 				A40A547B25D26FA400BBFDFA /* Whitney-BookItalic.ttf in Resources */,
 				A40A547D25D26FA600BBFDFA /* Whitney-Light.ttf in Resources */,
 				A40A547725D26F9F00BBFDFA /* Whitney-BoldItalic.ttf in Resources */,
+				5528386F2611E31B00511608 /* success-animation.json in Resources */,
 				A4B9A3AF25F1045500F0A3D6 /* Loader.json in Resources */,
 				A4D7644125DA748C009A6651 /* city.json in Resources */,
 				A40A547925D26FA100BBFDFA /* Whitney-Book.ttf in Resources */,
@@ -2846,6 +3010,7 @@
 				A47CA1EB25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift in Sources */,
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
 				55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */,
+				55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */,
 				A483E28825D40ABE006D2DAF /* DateContent.swift in Sources */,
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
 				55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */,
@@ -2853,10 +3018,12 @@
 				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
+				55A7C079260B58AA0037D567 /* CalculatePayView.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
 				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
+				55A7C076260B38720037D567 /* QRPaymentView.swift in Sources */,
 				5578855925FF639400B3A798 /* ChangePinView.swift in Sources */,
 				5555236E25EF8FBA00537D3F /* Profile.swift in Sources */,
 				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
@@ -2904,6 +3071,7 @@
 				A483E28C25D40ABE006D2DAF /* PaginationManager.swift in Sources */,
 				A40B961125DE766E00E507FB /* RetailList.swift in Sources */,
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
+				55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
@@ -2935,12 +3103,15 @@
 				A4BBC7AF25D64A1C006AF382 /* RegisterModule.swift in Sources */,
 				A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */,
 				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
+				55A7C080260B693E0037D567 /* PriceView.swift in Sources */,
 				A483E26625D40ABE006D2DAF /* LoadingSequence+Rx.swift in Sources */,
 				55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */,
+				55A7C083260B6C4F0037D567 /* PaymentChoiceView.swift in Sources */,
 				A483E29825D40ABE006D2DAF /* UIImageView+Tools.swift in Sources */,
 				5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */,
 				A4BBC6E925D639DA006AF382 /* BackButtonContainerViewController.swift in Sources */,
 				A483E28E25D40ABE006D2DAF /* InputValidatable.swift in Sources */,
+				5528386B2611CDD900511608 /* SuccessPaymentViewController.swift in Sources */,
 				A4B9A27A25F0D98100F0A3D6 /* CashBackListTableViewCell.swift in Sources */,
 				A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */,
 				A483E27925D40ABE006D2DAF /* UploadService.swift in Sources */,
@@ -2950,6 +3121,7 @@
 				A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */,
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
+				55F4EEFB260C644300EBEA9D /* ScanRetailResponse.swift in Sources */,
 				A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */,
 				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
 				A4BBC6EC25D63CD6006AF382 /* BackButtonContainerView.swift in Sources */,
@@ -2972,6 +3144,7 @@
 				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
 				A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */,
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
+				55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */,
 				A4BBC6DB25D638DF006AF382 /* NavigationBarConfigurable.swift in Sources */,
 				A4B3144525D150900003BA0B /* AuthCoordinator.swift in Sources */,
 				A4BBC6D625D63664006AF382 /* Images.swift in Sources */,
@@ -2995,6 +3168,7 @@
 				A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */,
 				A475CCCA25EF462800C596FB /* WorkCalendar.swift in Sources */,
 				A483E27525D40ABE006D2DAF /* ApiService.swift in Sources */,
+				55454B2D260DA30500404238 /* QRPaymentTarget.swift in Sources */,
 				A468EA8725EE0F3D0071FAA6 /* SocialLinksView.swift in Sources */,
 				A483E29025D40ABE006D2DAF /* ViewHolder.swift in Sources */,
 				556CF6AD2601D217007B8FB9 /* ProfileItems.swift in Sources */,
@@ -3008,12 +3182,14 @@
 				A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */,
 				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
+				55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */,
 				A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */,
 				A4DD3DDC25D2476F002D2186 /* UIView+GradientLayer.swift in Sources */,
 				5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */,
 				5584E81725EDF34100025251 /* AccountCard.swift in Sources */,
 				A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */,
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
+				55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
 				55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */,
@@ -3050,6 +3226,7 @@
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
 				55BEF36725FB398300205BBD /* Gender.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
+				552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */,
 				5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */,
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
@@ -3062,6 +3239,7 @@
 				A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */,
 				5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */,
 				A40B94CE25DD974C00E507FB /* HomeTabBar.swift in Sources */,
+				55F4EEF0260C3ACC00EBEA9D /* QRPaymentModule.swift in Sources */,
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
 				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
@@ -3079,6 +3257,7 @@
 				55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */,
 				5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
+				5528385F2611C31C00511608 /* SuccessPaymentView.swift in Sources */,
 				5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */,
 				A4BBC70225D63ED8006AF382 /* UiViewController+Keyboard.swift in Sources */,
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,
@@ -3117,6 +3296,7 @@
 				A483E27225D40ABE006D2DAF /* ConfigService.swift in Sources */,
 				A483E28A25D40ABE006D2DAF /* Pagination.swift in Sources */,
 				A40B960A25DE758E00E507FB /* WorkDay.swift in Sources */,
+				55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */,
 				A436BCB625D1AB4B00DEC963 /* AuthView.swift in Sources */,
 				55A5CD3D2600AA0E004AA13C /* MyQRModule.swift in Sources */,
 				A483E26925D40ABE006D2DAF /* AccessCodeService.swift in Sources */,

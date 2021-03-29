@@ -63,10 +63,19 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
 
     private func showCamera(qrScanned: @escaping((String) -> Void)) {
         var module = container.resolve(CameraModule.self)!
-        module.cameraActionType = .readPromoCode
-        module.promoCodeScanned = { [weak self] promoCode in
-            self?.router.popModule()
-            qrScanned(promoCode)
+        switch module.cameraActionType {
+        case .readPromoCode:
+            module.promoCodeScanned = { [weak self] promoCode in
+                self?.router.popModule()
+                qrScanned(promoCode)
+            }
+        case .bus:
+            module.busScanned = { [weak self] bus in
+                self?.router.popModule()
+                qrScanned(bus)
+            }
+        default:
+            break
         }
         router.push(module)
     }

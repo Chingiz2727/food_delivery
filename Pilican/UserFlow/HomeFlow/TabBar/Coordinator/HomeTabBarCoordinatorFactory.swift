@@ -20,4 +20,12 @@ final class HomeTabBarCoordinatorFactory {
     func makeCashbbackMenu() -> CashbackMenuCoordinator {
         return CashbackMenuCoordinatorImpl(router: router, container: container)
     }
+
+    func makePayPartner(viewModel: QRPaymentViewModel) -> QRPaymentModule {
+        return QRPaymentViewController(viewModel: viewModel)
+    }
+
+    func makeSuccessPayment(retail: Retail, price: Int, cashback: Int) -> SuccessPaymentModule {
+        return SuccessPaymentViewController(retail: retail, price: price, cashback: cashback)
+    }
 }

@@ -18,6 +18,10 @@ extension UITextField {
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0
     }
+    
+    func setLeftPaddingPoints(_ amount:CGFloat){
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+            self.leftView = paddingView
+            self.leftViewMode = .always
+        }
 }
-
-
