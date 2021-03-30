@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		01842F6297D537FBB0CFACB5 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */; };
-		5528385F2611C31C00511608 /* SuccessPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528385E2611C31C00511608 /* SuccessPaymentView.swift */; };
-		552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552838662611CDB600511608 /* SuccessPaymentModule.swift */; };
-		5528386B2611CDD900511608 /* SuccessPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */; };
-		5528386F2611E31B00511608 /* success-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5528386E2611E31B00511608 /* success-animation.json */; };
-		55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */; };
-		55454B2D260DA30500404238 /* QRPaymentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B2C260DA30500404238 /* QRPaymentTarget.swift */; };
-		55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */; };
 		5526DAD72603822800536589 /* PayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DAD62603822800536589 /* PayDetailView.swift */; };
 		5526DADB2603824000536589 /* PayDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DADA2603824000536589 /* PayDetailModule.swift */; };
 		5526DADF2603825E00536589 /* PayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DADE2603825E00536589 /* PayDetailViewController.swift */; };
+		5528385F2611C31C00511608 /* SuccessPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528385E2611C31C00511608 /* SuccessPaymentView.swift */; };
+		552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552838662611CDB600511608 /* SuccessPaymentModule.swift */; };
+		5528386B2611CDD900511608 /* SuccessPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */; };
+		55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */; };
+		55454B2D260DA30500404238 /* QRPaymentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B2C260DA30500404238 /* QRPaymentTarget.swift */; };
+		55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */; };
 		5555236625EF672300537D3F /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236525EF672300537D3F /* DiskCache.swift */; };
 		5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236925EF674B00537D3F /* InMemoryCache.swift */; };
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
@@ -320,6 +319,7 @@
 		A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E581F525D54BAA00EDC053 /* RegisterViewController.swift */; };
 		A4E581FA25D54BC500EDC053 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E581F925D54BC500EDC053 /* RegisterView.swift */; };
 		A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E581FD25D552AB00EDC053 /* CameraUsagePermission.swift */; };
+		A4EFD3B42612E19700694D18 /* success-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = A4EFD3B32612E19700694D18 /* success-animation.json */; };
 		A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAACF325E75C6700A55CB8 /* ProfileMenuViewController.swift */; };
 		A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAAD0C25E75CCB00A55CB8 /* ProfileMenuView.swift */; };
 		A4FAAD1125E75D0B00A55CB8 /* ProfileMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAAD1025E75D0B00A55CB8 /* ProfileMenuModule.swift */; };
@@ -335,6 +335,9 @@
 /* Begin PBXFileReference section */
 		124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
 		206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
+		5526DAD62603822800536589 /* PayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailView.swift; sourceTree = "<group>"; };
+		5526DADA2603824000536589 /* PayDetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailModule.swift; sourceTree = "<group>"; };
+		5526DADE2603825E00536589 /* PayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailViewController.swift; sourceTree = "<group>"; };
 		5528385E2611C31C00511608 /* SuccessPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentView.swift; sourceTree = "<group>"; };
 		552838662611CDB600511608 /* SuccessPaymentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentModule.swift; sourceTree = "<group>"; };
 		5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentViewController.swift; sourceTree = "<group>"; };
@@ -342,9 +345,6 @@
 		55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewModel.swift; sourceTree = "<group>"; };
 		55454B2C260DA30500404238 /* QRPaymentTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentTarget.swift; sourceTree = "<group>"; };
 		55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayByQRPartnerResponse.swift; sourceTree = "<group>"; };
-		5526DAD62603822800536589 /* PayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailView.swift; sourceTree = "<group>"; };
-		5526DADA2603824000536589 /* PayDetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailModule.swift; sourceTree = "<group>"; };
-		5526DADE2603825E00536589 /* PayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailViewController.swift; sourceTree = "<group>"; };
 		5555236525EF672300537D3F /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		5555236925EF674B00537D3F /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -652,6 +652,7 @@
 		A4E581F525D54BAA00EDC053 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A4E581F925D54BC500EDC053 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A4E581FD25D552AB00EDC053 /* CameraUsagePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUsagePermission.swift; sourceTree = "<group>"; };
+		A4EFD3B32612E19700694D18 /* success-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "success-animation.json"; sourceTree = "<group>"; };
 		A4FAACF325E75C6700A55CB8 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		A4FAAD0C25E75CCB00A55CB8 /* ProfileMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuView.swift; sourceTree = "<group>"; };
 		A4FAAD1025E75D0B00A55CB8 /* ProfileMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuModule.swift; sourceTree = "<group>"; };
@@ -678,24 +679,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5528385C2611C2DC00511608 /* SuccessPayment */ = {
-			isa = PBXGroup;
-			children = (
-				552838692611CDC400511608 /* Controller */,
-				552838652611CDA500511608 /* Module */,
-				5528385D2611C30B00511608 /* View */,
-			);
-			path = SuccessPayment;
-			sourceTree = "<group>";
-		};
-		5528385D2611C30B00511608 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5528385E2611C31C00511608 /* SuccessPaymentView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		5526DAD3260381FF00536589 /* PayDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,14 +697,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		552838652611CDA500511608 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				552838662611CDB600511608 /* SuccessPaymentModule.swift */,
-			);
-			sourceTree = Module;
-			sourceTree = "<group>";
-		};
 		5526DAD92603823200536589 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,18 +705,44 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
-		552838692611CDC400511608 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>"
-		};
 		5526DADD2603825100536589 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				5526DADE2603825E00536589 /* PayDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5528385C2611C2DC00511608 /* SuccessPayment */ = {
+			isa = PBXGroup;
+			children = (
+				552838692611CDC400511608 /* Controller */,
+				552838652611CDA500511608 /* Module */,
+				5528385D2611C30B00511608 /* View */,
+			);
+			path = SuccessPayment;
+			sourceTree = "<group>";
+		};
+		5528385D2611C30B00511608 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5528385E2611C31C00511608 /* SuccessPaymentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552838652611CDA500511608 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				552838662611CDB600511608 /* SuccessPaymentModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		552838692611CDC400511608 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2622,6 +2623,7 @@
 		A4B9A3AD25F1044A00F0A3D6 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				A4EFD3B32612E19700694D18 /* success-animation.json */,
 				A4B9A3AE25F1045500F0A3D6 /* Loader.json */,
 			);
 			path = Animation;
@@ -3054,7 +3056,7 @@
 				A40A547B25D26FA400BBFDFA /* Whitney-BookItalic.ttf in Resources */,
 				A40A547D25D26FA600BBFDFA /* Whitney-Light.ttf in Resources */,
 				A40A547725D26F9F00BBFDFA /* Whitney-BoldItalic.ttf in Resources */,
-				5528386F2611E31B00511608 /* success-animation.json in Resources */,
+				A4EFD3B42612E19700694D18 /* success-animation.json in Resources */,
 				A4B9A3AF25F1045500F0A3D6 /* Loader.json in Resources */,
 				A4D7644125DA748C009A6651 /* city.json in Resources */,
 				A40A547925D26FA100BBFDFA /* Whitney-Book.ttf in Resources */,
