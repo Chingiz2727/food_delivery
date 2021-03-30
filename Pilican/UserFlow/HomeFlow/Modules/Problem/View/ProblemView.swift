@@ -3,7 +3,7 @@ import TagListView
 import RxSwift
 
 class ProblemView: UIView, TagListViewDelegate {
-    
+
     let problemLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.medium24

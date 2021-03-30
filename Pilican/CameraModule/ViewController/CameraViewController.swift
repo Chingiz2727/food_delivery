@@ -5,10 +5,15 @@ import UIKit
 
 class CameraViewController: UIViewController, CameraModule {
 
+    var busScanned: BusScanned?
     var promoCodeScanned: PromoCodeScanned?
     var paymentMaked: PaymentMaked?
     var cameraActionType: CameraAction?
-
+    
+    private let scanSubject = PublishSubject<Void>()
+    private let createdAtSubject = PublishSubject<String>()
+    private let sigSubject = PublishSubject<String>()
+    private let retailIdSubject = PublishSubject<Int>()
     private var avCaptureOuput: AVCaptureOutput?
     private let avCaptureSession: AVCaptureSession
     private var avCaptureDevice: AVCaptureDevice
@@ -18,17 +23,22 @@ class CameraViewController: UIViewController, CameraModule {
     private let disposeBag = DisposeBag()
     private let cameraView = CameraView()
     private var request: [VNRequest] = []
-
+    private var authTokenService: AuthTokenService
+    private let viewModel: CameraViewModel
     init(
         avCaptureSession: AVCaptureSession,
         avCaptureDevice: AVCaptureDevice,
         avCapturePreviewLayer: AVCaptureVideoPreviewLayer,
-        cameraUsagePermession: CameraUsagePermission
+        cameraUsagePermession: CameraUsagePermission,
+        authTokenService: AuthTokenService,
+        viewModel: CameraViewModel
     ) {
         self.avCaptureSession = avCaptureSession
         self.avCaptureDevice = avCaptureDevice
         self.avCapturePreviewLayer = avCapturePreviewLayer
         self.cameraUsagePermission = cameraUsagePermession
+        self.authTokenService = authTokenService
+        self.viewModel = viewModel
         avCaptureMetadaDegelegate = CameraMetadaOutputDelegate()
         super.init(nibName: nil, bundle: nil)
     }
@@ -66,11 +76,53 @@ class CameraViewController: UIViewController, CameraModule {
         avCaptureMetadaDegelegate?.qrScanned = { [unowned self] qr in
             self.avCaptureSession.stopRunning()
             if qr.isStringContainsOnlyNumbers() {
-                // create Order
+                qrScanned(qr: qr)
             } else {
                 self.promoCodeScanned?(qr)
             }
         }
+
+       let output = viewModel.transform(input: CameraViewModel.Input(
+                                loadInfo: scanSubject,
+                                createdAt: createdAtSubject,
+                                sig: sigSubject,
+                                retailId: retailIdSubject))
+
+        let result = output.scanRetailResponse.publish()
+
+        result.element
+            .subscribe(onNext: { [unowned self] info in
+                paymentMaked?(info)
+            }).disposed(by: disposeBag)
+
+        result.errors
+            .bind(to: rx.error)
+            .disposed(by: disposeBag)
+        
+        result.connect()
+            .disposed(by: disposeBag)
+    }
+
+    private func qrScanned(qr: String) {
+        switch cameraActionType {
+        case .makePayment:
+            if let retailId = Int(qr) {
+                createQrOrder(retailId: retailId)
+            }
+        default:
+            break
+        }
+    }
+
+    private func createQrOrder(retailId: Int) {
+        let createdAt = String(NSDate().timeIntervalSince1970).split(separator: ".")[0]
+        guard let token = authTokenService.token?.accessToken else { return }
+        let substring = ((token as NSString).substring(with: NSMakeRange(11, 21)) as NSString).substring(with:  NSMakeRange(0, 10))
+        let sig = ((substring + String(createdAt) + String(retailId)).toBase64()).md5()
+        createdAtSubject.onNext(String(createdAt))
+        sigSubject.onNext(sig)
+        retailIdSubject.onNext(retailId)
+        scanSubject.onNext(())
     }
 
     private func setupCamera() {
