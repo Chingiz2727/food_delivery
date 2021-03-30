@@ -11,7 +11,7 @@ public struct PilicanRequestAdapter: RequestAdapter {
 //    resultRequest.url = adaptedUrl(resultRequest.url)
 //        resultRequest.setValue(configService.redirectionUrl.absoluteString, forHTTPHeaderField: "X-User-Host")
 
-//    resultRequest.setValue(String(configService.appVersion), forHTTPHeaderField: "X-User-Version")
+    resultRequest.setValue(String(AppEnviroment.appVersion), forHTTPHeaderField: "appver")
 //    resultRequest.setValue("ru", forHTTPHeaderField: "Accept-Language")
 //    resultRequest.setValue("ios_app", forHTTPHeaderField: "X-User-Platform")
 //    resultRequest.setValue("appver", forHTTPHeaderField: "3.0.0")
@@ -21,8 +21,8 @@ public struct PilicanRequestAdapter: RequestAdapter {
 //      // Its OAuth request, shouldn't add Authentication header
 //      return resultRequest
 //    }
-    if let token = authService.token, let accessToken = token.accessToken {
-      resultRequest.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+    if let token = authService.token {
+      resultRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     }
     return resultRequest
   }

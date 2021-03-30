@@ -10,7 +10,8 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
 
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
-        tabBarController = HomeTabBarViewController()
+        let userInfoStorage = container.resolve(UserInfoStorage.self)!
+        tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
         super.init(router: router, container: container)
     }
 

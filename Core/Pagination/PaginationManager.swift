@@ -45,17 +45,16 @@ public final class PaginationManager<Page: Pagination> {
         }
     }
     
-    private var hasContentToRequest: Bool {
-        return maxElements > content.count
-    }
+    private var hasContentToRequest: Bool = true
     
     private var page = Constants.firstPage
     
     private var query: String = ""
-    
+    private var hasNext: Bool = true
     private let disposeBag = DisposeBag()
     private var contentRequest: Disposable?
     private var maxElements = Int.max
+    
     public func resetData() {
         contentRequest?.dispose()
         state = .idle
@@ -96,7 +95,12 @@ public final class PaginationManager<Page: Pagination> {
         return requestFabric(params)
             .do(onNext: { [weak self] (pagination: Page) in
                 self?.page += 1
-                self?.maxElements = pagination.totalElements
+                if let totalElements = pagination.totalElements {
+                    self?.hasContentToRequest = totalElements > pagination.items.count
+                }
+                if let hasNext = pagination.hasNext {
+                    self?.hasContentToRequest = hasNext
+                }
             })
             .map { $0.items }
     }
@@ -132,4 +136,8 @@ public extension PaginationManager where Page.Content: DateContent {
             }
         }
     }
+}
+
+struct Dict: Hashable {
+    let name: String
 }

@@ -37,6 +37,8 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
             switch category {
             case .cashBack:
                 self?.showCashBackList()
+            case .delivery:
+                self?.showDelivery()
             default:
                 break
             }
@@ -61,6 +63,11 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
             self?.startRetailDetailCoordinator(retail: retail)
         }
 
+        router.push(module)
+    }
+    
+    private func showDelivery() {
+        var module = moduleFactory.delivery()
         router.push(module)
     }
 }

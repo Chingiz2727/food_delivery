@@ -20,8 +20,6 @@ enum PayHistoryTarget: ApiTarget {
         switch self {
         case .getPayHistory:
             return "payment/history/user"
-        default:
-            break
         }
     }
     
@@ -33,8 +31,6 @@ enum PayHistoryTarget: ApiTarget {
         switch self {
         case .getPayHistory(let pageNumber):
             return ["pageNumber": pageNumber]
-        default:
-            return [:]
         }
     }
 
@@ -48,10 +44,7 @@ enum PayHistoryTarget: ApiTarget {
             return
                 [
                     "clientId": "bW9iaWxl",
-                    "appver": "3.0.0"
                 ]
-        default:
-            return [:]
         }
     }
 }

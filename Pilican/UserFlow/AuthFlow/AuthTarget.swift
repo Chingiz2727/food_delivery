@@ -90,7 +90,6 @@ enum AuthTarget: ApiTarget {
             return
                 [
                     "clientId": "bW9iaWxl",
-                    "appver": "3.0.0"
                 ]
         case let .getSmsCode(phone):
             return [

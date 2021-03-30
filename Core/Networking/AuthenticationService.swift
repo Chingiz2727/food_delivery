@@ -3,7 +3,7 @@ import RxRelay
 import Foundation
 
 public protocol AuthenticationService {
-    var token: Token! { get }
+    var token: String? { get }
     var authenticated: Observable<Bool> { get }
     
     func getSMSCode(_ phone: String) -> Observable<LoadingSequence<ResponseStatus>>
@@ -13,6 +13,7 @@ public protocol AuthenticationService {
     func getAuthSmsCode(_ phone: String) -> Observable<LoadingSequence<ResponseStatus>>
     func verifySmsCode(_ phone: String, code: String) -> Observable<LoadingSequence<UserAuthResponse>>
     func updateToken(with newToken: Token?)
+    func updateProfile(with profile: UserAuthResponse?)
 }
 
 public protocol LogoutListener {
@@ -21,12 +22,7 @@ public protocol LogoutListener {
 
 public final class AuthenticationServiceImpl: AuthenticationService {
     
-    public var token: Token! {
-        didSet {
-            authenticatedRelay.accept(token != nil)
-            authTokenService.set(token: token)
-        }
-    }
+    public var token: String?
     
     public var authenticated: Observable<Bool> {
         return authenticatedRelay.asObservable().distinctUntilChanged()
@@ -37,20 +33,24 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     private let apiService: ApiService
     private let configService: ConfigService
     private let authTokenService: AuthTokenService
-    
+    public var sessionStorage: UserSessionStorage
+    private let infoStorage: UserInfoStorage
     private var logoutListeners = [LogoutListener]()
     private let cache = DiskCache<String, Any>()
     
     init(
         apiService: ApiService,
         configService: ConfigService,
-        authTokenService: AuthTokenService
+        authTokenService: AuthTokenService,
+        sessionStorage: UserSessionStorage,
+        infoStorage: UserInfoStorage
     ) {
         self.apiService = apiService
         self.configService = configService
         self.authTokenService = authTokenService
-        
-        token = authTokenService.token
+        self.infoStorage = infoStorage
+        self.sessionStorage = sessionStorage
+        token = sessionStorage.accessToken
         authenticatedRelay.accept(token != nil)
     }
     
@@ -65,9 +65,9 @@ public final class AuthenticationServiceImpl: AuthenticationService {
             .result(UserAuthResponse.self)
             .asLoadingSequence()
             .do(onNext: { [weak self] token in
-                guard let token = token.result?.element?.token else { return }
-                self?.updateToken(with: nil)
-                self?.updateToken(with: token)
+                guard let result = token.result?.element else { return }
+                self?.updateToken(with: result.token)
+                self?.updateProfile(with: result)
             })
     }
     
@@ -81,10 +81,11 @@ public final class AuthenticationServiceImpl: AuthenticationService {
                 promo: promo)
         )
         .result(UserAuthResponse.self).asLoadingSequence()
-        .do(onNext: { [weak self] token in
-            guard let token = token.result?.element?.token else { return }
-            self?.updateToken(with: nil)
-            self?.updateToken(with: token)
+        .do(onNext: { [weak self] result in
+            guard let info = result.result?.element else { return }
+            self?.updateToken(with: info.token)
+            self?.updateProfile(with: info)
+            
         })
     }
     
@@ -97,20 +98,12 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         return apiService.makeRequest(to: AuthTarget.verifySmsCode(phone: phone, code: code))
             .result(UserAuthResponse.self).asLoadingSequence()
             .do(onNext: { [weak self] res in
-                guard let token = res.result?.element?.token,
-                      let profileInfo = res.result?.element?.profile,
-                      let userInfo = res.result?.element?.user else { return }
-                self?.updateToken(with: nil)
-                self?.updateToken(with: token)
-                do {
-                try? self?.cache.saveToDisk(name: "profileInfo", value: profileInfo)
-                try? self?.cache.saveToDisk(name: "userInfo", value: userInfo)
-                } catch let error {
-                    print(error)
-                }
+                guard let result = res.result?.element else { return }
+                self?.updateToken(with: result.token)
+                self?.updateProfile(with: result)
             })
     }
-
+    
     public func addLogoutListener(_ logoutListener: LogoutListener) {
         logoutListeners.append(logoutListener)
     }
@@ -123,8 +116,20 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     }
     
     public func updateToken(with newToken: Token?) {
-        token = newToken
+        sessionStorage.accessToken = newToken?.accessToken
+        sessionStorage.refreshToken = newToken?.refreshToken
     }
+    
+    public func updateProfile(with profile: UserAuthResponse?) {
+        infoStorage.fullName = profile?.profile.firstName
+        infoStorage.balance = profile?.user.balance
+        infoStorage.city = profile?.profile.city.name
+        infoStorage.cityId = profile?.profile.city.id
+        infoStorage.lastName = profile?.profile.lastName
+        infoStorage.promoCode = profile?.user.promoCode
+        infoStorage.mobilePhoneNumber = profile?.user.username
+    }
+    
 }
 
 public enum OAuthRefreshError: Error {
