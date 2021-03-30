@@ -27,8 +27,10 @@ final class TabImageInfoView: UIControl {
         iconImageView.image = icon
     }
 
-    func configureTitle(title: String) {
+    func configureTitle(title: String, titleTextColor: UIColor, font: UIFont) {
         titleLabel.text = title
+        titleLabel.textColor = titleTextColor
+        titleLabel.font = font
     }
 
     private func setupInitialLayout() {

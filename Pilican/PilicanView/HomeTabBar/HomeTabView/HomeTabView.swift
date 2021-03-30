@@ -23,6 +23,12 @@ final class HomeTabView: UIView {
         nil
     }
 
+    func setData(profile: String, balance: String) {
+        let profileArray = profile.components(separatedBy: " ")
+        userInfoView.configureTitle(title: "\(profileArray.first ?? "") \(profileArray[2].first ?? " ").", titleTextColor: .profile, font: UIFont.medium10!)
+        balanceInfoView.configureTitle(title: balance, titleTextColor: .primary, font: UIFont.medium10!)
+    }
+
     private func setupInitialLayout() {
         addSubview(userInfoView)
         addSubview(balanceInfoView)
