@@ -24,11 +24,11 @@ enum ProblemTarget: ApiTarget {
             return ""
         }
     }
-    
+
     var method: HTTPMethod {
         return .post
     }
-    
+
     var parameters: [String: Any]? {
         switch self {
         case .sendClaims(let claimIds, let retailId, let description?):
@@ -46,7 +46,7 @@ enum ProblemTarget: ApiTarget {
     var stubData: Any {
         return [:]
     }
-    
+
     var headers: [String: String]? {
         switch self {
         case .sendClaims:

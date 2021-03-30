@@ -52,6 +52,7 @@ enum Images: String {
     case volunteer
     case copyButton
     case balanceCard
+    case successPaymentBackground
 }
 
 extension Images {

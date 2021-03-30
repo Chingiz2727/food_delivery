@@ -42,7 +42,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
     private func bindView() {
         tabView.qrScanButton.rx.tap
             .subscribe(onNext: { [unowned self] in
-//                self.qrCodeTap?()
+                self.qrCodeTap?()
             })
             .disposed(by: disposeBag)
 

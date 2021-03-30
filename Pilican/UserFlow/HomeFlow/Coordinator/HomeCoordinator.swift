@@ -7,11 +7,14 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
     private let coordinatorFactory: HomeTabBarCoordinatorFactory
     private var tabRootContainers: [TabableRootControllerAndCoordinatorContainer] = []
     private var tabBarController: HomeTabBarModule
-
+    private let moduleFactory: HomeCoordinatorModuleFactory
+    
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         let userInfoStorage = container.resolve(UserInfoStorage.self)!
         tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
+        moduleFactory = HomeCoordinatorModuleFactory(container: container, router: router)
+        tabBarController = HomeTabBarViewController()
         super.init(router: router, container: container)
     }
 
@@ -44,7 +47,11 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
     }
 
     private func showCamera() {
-        let module = container.resolve(CameraModule.self)!
+        var module = container.resolve(CameraModule.self)!
+        module.cameraActionType = .makePayment
+        module.paymentMaked = { [weak self] info in
+            self?.showPaymentPartner(info: info)
+        }
         router.push(module)
     }
 
@@ -58,5 +65,25 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
         let coordinator = coordinatorFactory.makeCashbbackMenu()
         coordinator.start()
         addDependency(coordinator)
+    }
+
+    private func showPaymentPartner(info: ScanRetailResponse) {
+        let apiService = container.resolve(ApiService.self)!
+        let authTokenService = container.resolve(AuthTokenService.self)!
+
+        let viewModel = QRPaymentViewModel(apiService: apiService, info: info, tokenService: authTokenService)
+        var module = coordinatorFactory.makePayPartner(viewModel: viewModel)
+        module.openSuccessPayment = { [weak self] retail, price, cashback in
+            self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)
+        }
+        router.push(module)
+    }
+
+    private func showSuccessPayment(retail: Retail, price: Int, cashback: Int) {
+        var module = coordinatorFactory.makeSuccessPayment(retail: retail, price: price, cashback: cashback)
+        module.nextTapped = { [weak self] in
+            self?.router.popToRootModule()
+        }
+        router.push(module)
     }
 }
