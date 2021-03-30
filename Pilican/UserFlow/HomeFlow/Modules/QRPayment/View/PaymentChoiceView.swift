@@ -43,7 +43,7 @@ class PaymentChoiceView: UIView {
     func setData(cashback: String) {
         let attributedText = NSMutableAttributedString(string: "Накоплено", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.pilicanBlack])
         // swiftlint:disable line_length
-        attributedText.append(NSAttributedString(string: " \(cashback)", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.primary, NSMutableAttributedString.Key.font: UIFont.semibold16!]))
+        attributedText.append(NSAttributedString(string: " \(cashback)", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.primary, NSMutableAttributedString.Key.font: UIFont.semibold16]))
 
         attributedText.append(NSAttributedString(string: " баллов", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.pilicanBlack]))
         payChoiceCashbackLabel.attributedText = attributedText

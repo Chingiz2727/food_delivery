@@ -10,10 +10,19 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
     private let homeTabBar = HomeTabBar()
     private let tabView = HomeTabView()
-
+    private let userInfoStorage: UserInfoStorage
+    
     private let disposeBag = DisposeBag()
-    private let cache = DiskCache<String, Any>()
 
+    init(userInfoStorage: UserInfoStorage) {
+        self.userInfoStorage = userInfoStorage
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialLayout()
@@ -39,22 +48,15 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
         tabView.balanceInfoView.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
-                print("Tap balance")
                 self.bonusTap?()
             })
             .disposed(by: disposeBag)
 
         tabView.userInfoView.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
-                print("Tap account")
                 self.accountTap?()
             })
             .disposed(by: disposeBag)
-
-        let profile: Profile? = try? cache.readFromDisk(name: "profileInfo")
-        let user: User? = try? cache.readFromDisk(name: "userInfo")
-        guard let username = profile?.firstName,
-              let balance = user?.balance else { return }
-        tabView.setData(profile: username, balance: String(balance))
+        tabView.setData(profile: userInfoStorage.fullName ?? "", balance: String(userInfoStorage.balance ?? 0))
     }
 }

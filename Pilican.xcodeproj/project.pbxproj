@@ -25,6 +25,9 @@
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
 		5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDE25ECBDAE003AA72F /* AccountView.swift */; };
 		556CF6AD2601D217007B8FB9 /* ProfileItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6AC2601D217007B8FB9 /* ProfileItems.swift */; };
+		556CF6BB2602025B007B8FB9 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6BA2602025B007B8FB9 /* BalanceView.swift */; };
+		556CF6BF26020708007B8FB9 /* BalanceModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6BE26020708007B8FB9 /* BalanceModule.swift */; };
+		556CF6C226020721007B8FB9 /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6C126020721007B8FB9 /* BalanceViewController.swift */; };
 		556CF6CA26021B62007B8FB9 /* PayHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6C926021B62007B8FB9 /* PayHistoryView.swift */; };
 		556CF6CE26021CF6007B8FB9 /* PayHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6CD26021CF6007B8FB9 /* PayHistoryTableViewCell.swift */; };
 		556CF6D226022187007B8FB9 /* PayHistoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556CF6D126022187007B8FB9 /* PayHistoryModule.swift */; };
@@ -93,6 +96,20 @@
 		55FCC70525F8D499000DED49 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70425F8D499000DED49 /* AboutView.swift */; };
 		55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70825F8E2D4000DED49 /* AboutViewController.swift */; };
 		55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70D25F8E31C000DED49 /* AboutModule.swift */; };
+		A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D942611C4D80062BB5B /* UserInfoStorage.swift */; };
+		A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */; };
+		A4057DA22611C5240062BB5B /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DA12611C5240062BB5B /* KeyChainStorage.swift */; };
+		A4057DA72611C5470062BB5B /* BiometricService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DA62611C5470062BB5B /* BiometricService.swift */; };
+		A4057DAB2611C5540062BB5B /* BiometricAuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DAA2611C5540062BB5B /* BiometricAuthType.swift */; };
+		A4057DAF2611C5780062BB5B /* AppSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DAE2611C5780062BB5B /* AppSessionManager.swift */; };
+		A4057DBC2611D8F00062BB5B /* DeliveryRetailListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DBB2611D8F00062BB5B /* DeliveryRetailListModule.swift */; };
+		A4057DC12611D9E80062BB5B /* DeliveryRetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DC02611D9E80062BB5B /* DeliveryRetailListViewController.swift */; };
+		A4057DC62611DA310062BB5B /* DeliveryRetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DC52611DA310062BB5B /* DeliveryRetailListView.swift */; };
+		A4057DCA2611E2C60062BB5B /* DeliveryRetailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DC92611E2C60062BB5B /* DeliveryRetailListViewModel.swift */; };
+		A4057DF62611E50A0062BB5B /* DeliveryApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DF52611E50A0062BB5B /* DeliveryApiTarget.swift */; };
+		A4057DFA2611F3940062BB5B /* DeliveryRetailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DF92611F3940062BB5B /* DeliveryRetailList.swift */; };
+		A4057DFD2611F3C30062BB5B /* DeliveryRetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DFC2611F3C30062BB5B /* DeliveryRetail.swift */; };
+		A4057E012611F8700062BB5B /* DeliveryRetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057E002611F8700062BB5B /* DeliveryRetailContent.swift */; };
 		A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C025D2596E00BBFDFA /* TextField.swift */; };
 		A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */; };
 		A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */; };
@@ -319,6 +336,7 @@
 		A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E581F525D54BAA00EDC053 /* RegisterViewController.swift */; };
 		A4E581FA25D54BC500EDC053 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E581F925D54BC500EDC053 /* RegisterView.swift */; };
 		A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E581FD25D552AB00EDC053 /* CameraUsagePermission.swift */; };
+		A4EFD3AC2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EFD3AB2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift */; };
 		A4EFD3B42612E19700694D18 /* success-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = A4EFD3B32612E19700694D18 /* success-animation.json */; };
 		A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAACF325E75C6700A55CB8 /* ProfileMenuViewController.swift */; };
 		A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAAD0C25E75CCB00A55CB8 /* ProfileMenuView.swift */; };
@@ -353,6 +371,9 @@
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
 		5568FEDE25ECBDAE003AA72F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		556CF6AC2601D217007B8FB9 /* ProfileItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItems.swift; sourceTree = "<group>"; };
+		556CF6BA2602025B007B8FB9 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		556CF6BE26020708007B8FB9 /* BalanceModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceModule.swift; sourceTree = "<group>"; };
+		556CF6C126020721007B8FB9 /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		556CF6C926021B62007B8FB9 /* PayHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryView.swift; sourceTree = "<group>"; };
 		556CF6CD26021CF6007B8FB9 /* PayHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		556CF6D126022187007B8FB9 /* PayHistoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayHistoryModule.swift; sourceTree = "<group>"; };
@@ -422,6 +443,20 @@
 		55FCC70825F8E2D4000DED49 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		55FCC70D25F8E31C000DED49 /* AboutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModule.swift; sourceTree = "<group>"; };
 		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4057D942611C4D80062BB5B /* UserInfoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoStorage.swift; sourceTree = "<group>"; };
+		A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStorage.swift; sourceTree = "<group>"; };
+		A4057DA12611C5240062BB5B /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
+		A4057DA62611C5470062BB5B /* BiometricService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricService.swift; sourceTree = "<group>"; };
+		A4057DAA2611C5540062BB5B /* BiometricAuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthType.swift; sourceTree = "<group>"; };
+		A4057DAE2611C5780062BB5B /* AppSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionManager.swift; sourceTree = "<group>"; };
+		A4057DBB2611D8F00062BB5B /* DeliveryRetailListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailListModule.swift; sourceTree = "<group>"; };
+		A4057DC02611D9E80062BB5B /* DeliveryRetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailListViewController.swift; sourceTree = "<group>"; };
+		A4057DC52611DA310062BB5B /* DeliveryRetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailListView.swift; sourceTree = "<group>"; };
+		A4057DC92611E2C60062BB5B /* DeliveryRetailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailListViewModel.swift; sourceTree = "<group>"; };
+		A4057DF52611E50A0062BB5B /* DeliveryApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryApiTarget.swift; sourceTree = "<group>"; };
+		A4057DF92611F3940062BB5B /* DeliveryRetailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailList.swift; sourceTree = "<group>"; };
+		A4057DFC2611F3C30062BB5B /* DeliveryRetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetail.swift; sourceTree = "<group>"; };
+		A4057E002611F8700062BB5B /* DeliveryRetailContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailContent.swift; sourceTree = "<group>"; };
 		A40A53C025D2596E00BBFDFA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 		A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -652,6 +687,7 @@
 		A4E581F525D54BAA00EDC053 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A4E581F925D54BC500EDC053 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A4E581FD25D552AB00EDC053 /* CameraUsagePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUsagePermission.swift; sourceTree = "<group>"; };
+		A4EFD3AB2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailListTableViewCell.swift; sourceTree = "<group>"; };
 		A4EFD3B32612E19700694D18 /* success-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "success-animation.json"; sourceTree = "<group>"; };
 		A4FAACF325E75C6700A55CB8 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		A4FAAD0C25E75CCB00A55CB8 /* ProfileMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuView.swift; sourceTree = "<group>"; };
@@ -842,6 +878,40 @@
 				556CF6AC2601D217007B8FB9 /* ProfileItems.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		556CF6B82602024D007B8FB9 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6C4260207A7007B8FB9 /* Controller */,
+				556CF6BD260206FA007B8FB9 /* Module */,
+				556CF6B926020252007B8FB9 /* View */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		556CF6B926020252007B8FB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6BA2602025B007B8FB9 /* BalanceView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		556CF6BD260206FA007B8FB9 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6BE26020708007B8FB9 /* BalanceModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		556CF6C4260207A7007B8FB9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				556CF6C126020721007B8FB9 /* BalanceViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		556CF6C726021B45007B8FB9 /* PayHistory */ = {
@@ -1441,6 +1511,128 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A4057D932611C49A0062BB5B /* UserInfoStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A4057D942611C4D80062BB5B /* UserInfoStorage.swift */,
+			);
+			path = UserInfoStorage;
+			sourceTree = "<group>";
+		};
+		A4057D9B2611C5010062BB5B /* UserSessionStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */,
+			);
+			path = UserSessionStorage;
+			sourceTree = "<group>";
+		};
+		A4057DA02611C5170062BB5B /* KeyChainStorage */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DA12611C5240062BB5B /* KeyChainStorage.swift */,
+			);
+			path = KeyChainStorage;
+			sourceTree = "<group>";
+		};
+		A4057DA52611C5350062BB5B /* BiometricService */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DA62611C5470062BB5B /* BiometricService.swift */,
+				A4057DAA2611C5540062BB5B /* BiometricAuthType.swift */,
+			);
+			path = BiometricService;
+			sourceTree = "<group>";
+		};
+		A4057DAD2611C56D0062BB5B /* AppSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DAE2611C5780062BB5B /* AppSessionManager.swift */,
+			);
+			path = AppSessionManager;
+			sourceTree = "<group>";
+		};
+		A4057DB62611D6350062BB5B /* DeliveryFlow */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DF42611E4F70062BB5B /* ApiTarget */,
+				A4057DB72611D7E70062BB5B /* Modules */,
+			);
+			path = DeliveryFlow;
+			sourceTree = "<group>";
+		};
+		A4057DB72611D7E70062BB5B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A4EFD3AF2612DC6C00694D18 /* DeliveryRetailProducts */,
+				A4057DB82611D8870062BB5B /* DeliveryRetailList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A4057DB82611D8870062BB5B /* DeliveryRetailList */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DF82611F3870062BB5B /* Model */,
+				A4057DC82611E2B40062BB5B /* ViewModel */,
+				A4057DC42611DA220062BB5B /* View */,
+				A4057DBE2611D9CE0062BB5B /* Controller */,
+				A4057DB92611D8930062BB5B /* Module */,
+			);
+			path = DeliveryRetailList;
+			sourceTree = "<group>";
+		};
+		A4057DB92611D8930062BB5B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DBB2611D8F00062BB5B /* DeliveryRetailListModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A4057DBE2611D9CE0062BB5B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DC02611D9E80062BB5B /* DeliveryRetailListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4057DC42611DA220062BB5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4EFD3AA2612DA6F00694D18 /* Cell */,
+				A4057DC52611DA310062BB5B /* DeliveryRetailListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4057DC82611E2B40062BB5B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DC92611E2C60062BB5B /* DeliveryRetailListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A4057DF42611E4F70062BB5B /* ApiTarget */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DF52611E50A0062BB5B /* DeliveryApiTarget.swift */,
+			);
+			path = ApiTarget;
+			sourceTree = "<group>";
+		};
+		A4057DF82611F3870062BB5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A4057DF92611F3940062BB5B /* DeliveryRetailList.swift */,
+				A4057DFC2611F3C30062BB5B /* DeliveryRetail.swift */,
+				A4057E002611F8700062BB5B /* DeliveryRetailContent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A40A53C925D2697B00BBFDFA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1532,6 +1724,7 @@
 		A40B951425DE266000E507FB /* UserFlow */ = {
 			isa = PBXGroup;
 			children = (
+				A4057DB62611D6350062BB5B /* DeliveryFlow */,
 				A40B951525DE266700E507FB /* HomeFlow */,
 				A4B3136925D142F80003BA0B /* AuthFlow */,
 			);
@@ -1560,6 +1753,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				556CF6B82602024D007B8FB9 /* Balance */,
 				5528385C2611C2DC00511608 /* SuccessPayment */,
 				55A7C073260B385D0037D567 /* QRPayment */,
 				5526DAD3260381FF00536589 /* PayDetail */,
@@ -2220,23 +2414,29 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A4B9A3B125F104DC00F0A3D6 /* LoadingIndicatorView */,
+				A483E21925D40ABD006D2DAF /* AccessCode */,
+				A4E5815725D540E700EDC053 /* AppEnviroment */,
+				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
+				A4BBC6DD25D638F2006AF382 /* BackContainerModule */,
+				A4057DA52611C5350062BB5B /* BiometricService */,
 				5555236425EF66E400537D3F /* Cache */,
 				A47CA19C25E36D3200EB091C /* Coordinator */,
-				A48CD00A25DBC9D20010829F /* ViewController */,
-				A4BBC6DD25D638F2006AF382 /* BackContainerModule */,
-				A4BBC6D925D638C6006AF382 /* NavigationBarConfigurable */,
-				A4E581E625D543B000EDC053 /* UIView+Extension */,
-				A4E5815725D540E700EDC053 /* AppEnviroment */,
-				A483E21925D40ABD006D2DAF /* AccessCode */,
 				A483E25325D40ABE006D2DAF /* ImageSlideShow */,
 				A483E24525D40ABE006D2DAF /* InputValidatable */,
+				A4057DA02611C5170062BB5B /* KeyChainStorage */,
+				A4B9A3B125F104DC00F0A3D6 /* LoadingIndicatorView */,
 				A483E24E25D40ABE006D2DAF /* Logger */,
+				A4BBC6D925D638C6006AF382 /* NavigationBarConfigurable */,
 				A483E22525D40ABD006D2DAF /* Networking */,
 				A483E23B25D40ABE006D2DAF /* Pagination */,
 				A483E21125D40ABD006D2DAF /* Rx+Extension */,
 				A483E22325D40ABD006D2DAF /* TokenKeyChain */,
+				A4E581E625D543B000EDC053 /* UIView+Extension */,
+				A475CCC325EF422F00C596FB /* UserDefaultStore */,
+				A4057D932611C49A0062BB5B /* UserInfoStorage */,
+				A4057D9B2611C5010062BB5B /* UserSessionStorage */,
 				A483E24925D40ABE006D2DAF /* View */,
+				A48CD00A25DBC9D20010829F /* ViewController */,
 				A483E24725D40ABE006D2DAF /* ViewModel */,
 			);
 			path = Core;
@@ -2753,7 +2953,6 @@
 			children = (
 				A4B9A3AD25F1044A00F0A3D6 /* Animation */,
 				A475CCC725EF45F600C596FB /* WorkCalendar */,
-				A475CCC325EF422F00C596FB /* UserDefaultStore */,
 				A475CCBF25EF420B00C596FB /* AppLanguage */,
 				A475CCB725EF419F00C596FB /* DateFormatting */,
 				A475CCB225EF417300C596FB /* HelperProtocols */,
@@ -2895,6 +3094,21 @@
 				A4E581FD25D552AB00EDC053 /* CameraUsagePermission.swift */,
 			);
 			path = PilicanCamera;
+			sourceTree = "<group>";
+		};
+		A4EFD3AA2612DA6F00694D18 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A4EFD3AB2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A4EFD3AF2612DC6C00694D18 /* DeliveryRetailProducts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeliveryRetailProducts;
 			sourceTree = "<group>";
 		};
 		A4FAACEF25E75C2500A55CB8 /* ProfileMenu */ = {
@@ -3169,6 +3383,7 @@
 				A47CA1EF25E36E8000EB091C /* StoriesDismissAnimationController.swift in Sources */,
 				A40B960325DE6F0000E507FB /* Slider.swift in Sources */,
 				55A5CCED26006129004AA13C /* ChangePasswordView.swift in Sources */,
+				A4057DA22611C5240062BB5B /* KeyChainStorage.swift in Sources */,
 				A40B95E925DE36C500E507FB /* HomeCollectionViewHeaderView.swift in Sources */,
 				A483E28225D40ABE006D2DAF /* ApiServiceAssembly.swift in Sources */,
 				A47CA1C425E36E1B00EB091C /* NotificationDeepLinkAction.swift in Sources */,
@@ -3203,7 +3418,9 @@
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
+				A4057DBC2611D8F00062BB5B /* DeliveryRetailListModule.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
+				A4057DAF2611C5780062BB5B /* AppSessionManager.swift in Sources */,
 				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
 				55BEF36325FB393000205BBD /* GenderPickerViewDelegate.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
@@ -3228,11 +3445,13 @@
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
 				A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */,
 				A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */,
+				556CF6C226020721007B8FB9 /* BalanceViewController.swift in Sources */,
 				55FCC6F425F8874D000DED49 /* BonusView.swift in Sources */,
 				A483E29725D40ABE006D2DAF /* UIImage+AspectFit.swift in Sources */,
 				A48CCFE725DACF310010829F /* statusBarHeight.swift in Sources */,
 				A483E27725D40ABE006D2DAF /* AuthenticationService.swift in Sources */,
 				A4BBC7AF25D64A1C006AF382 /* RegisterModule.swift in Sources */,
+				A4057E012611F8700062BB5B /* DeliveryRetailContent.swift in Sources */,
 				A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */,
 				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
 				55A7C080260B693E0037D567 /* PriceView.swift in Sources */,
@@ -3274,6 +3493,7 @@
 				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
 				55FCC70525F8D499000DED49 /* AboutView.swift in Sources */,
+				A4057DC62611DA310062BB5B /* DeliveryRetailListView.swift in Sources */,
 				A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
 				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
@@ -3286,6 +3506,7 @@
 				A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */,
 				A40B95FF25DE6D1300E507FB /* HomeApiService.swift in Sources */,
 				A483E29A25D40ABE006D2DAF /* ActivityIndicator.swift in Sources */,
+				A4057DF62611E50A0062BB5B /* DeliveryApiTarget.swift in Sources */,
 				A40B95FC25DE6A5500E507FB /* HomeApiTarget.swift in Sources */,
 				A43BC83625DFC2A600D45225 /* HomeTabBarCoordinator.swift in Sources */,
 				55D26C7E25FA18C4005A36BD /* EditAccountModule.swift in Sources */,
@@ -3300,6 +3521,7 @@
 				558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */,
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
+				A4057DA72611C5470062BB5B /* BiometricService.swift in Sources */,
 				A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */,
 				A475CCCA25EF462800C596FB /* WorkCalendar.swift in Sources */,
 				A483E27525D40ABE006D2DAF /* ApiService.swift in Sources */,
@@ -3316,6 +3538,7 @@
 				A47CA1AF25E36DA200EB091C /* BaseCoordinator.swift in Sources */,
 				A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */,
 				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
+				A4057DCA2611E2C60062BB5B /* DeliveryRetailListViewModel.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */,
 				A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */,
@@ -3324,6 +3547,7 @@
 				5584E81725EDF34100025251 /* AccountCard.swift in Sources */,
 				A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */,
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
+				A4057DAB2611C5540062BB5B /* BiometricAuthType.swift in Sources */,
 				55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
@@ -3333,7 +3557,9 @@
 				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
 				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
 				5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */,
+				A4057DFD2611F3C30062BB5B /* DeliveryRetail.swift in Sources */,
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
+				556CF6BB2602025B007B8FB9 /* BalanceView.swift in Sources */,
 				55AD645925E52F2800034459 /* WorkStatus.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
@@ -3341,6 +3567,7 @@
 				55FCC6F825F89DCD000DED49 /* BonusViewController.swift in Sources */,
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
 				55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */,
+				A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */,
 				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
@@ -3367,6 +3594,7 @@
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
+				A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */,
 				A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */,
 				55BEF35925FB235300205BBD /* EditAccountViewModel.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
@@ -3396,6 +3624,7 @@
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
 				5528385F2611C31C00511608 /* SuccessPaymentView.swift in Sources */,
 				556CF6CA26021B62007B8FB9 /* PayHistoryView.swift in Sources */,
+				A4057DFA2611F3940062BB5B /* DeliveryRetailList.swift in Sources */,
 				5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */,
 				A4BBC70225D63ED8006AF382 /* UiViewController+Keyboard.swift in Sources */,
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,
@@ -3415,6 +3644,7 @@
 				A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */,
 				A475CCB425EF418500C596FB /* HelperProtocols.swift in Sources */,
 				A48CCFF025DB7EDD0010829F /* CameraView.swift in Sources */,
+				A4EFD3AC2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift in Sources */,
 				A4B9A0FE25F092E500F0A3D6 /* CashBackListHeaderView.swift in Sources */,
 				A475CCD725EF972000C596FB /* RetaiImages.swift in Sources */,
 				A483E26825D40ABE006D2DAF /* Observable+Timer.swift in Sources */,
@@ -3423,10 +3653,12 @@
 				A483E26325D40ABE006D2DAF /* Result.swift in Sources */,
 				A483E28125D40ABE006D2DAF /* StubApiRequest.swift in Sources */,
 				A40A557A25D28C7A00BBFDFA /* AuthViewModel.swift in Sources */,
+				556CF6BF26020708007B8FB9 /* BalanceModule.swift in Sources */,
 				A483E28425D40ABE006D2DAF /* ApiRequest.swift in Sources */,
 				5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */,
 				A4E581FA25D54BC500EDC053 /* RegisterView.swift in Sources */,
 				A48CCFED25DB7B1F0010829F /* CameraMetadaOutputDelegate.swift in Sources */,
+				A4057DC12611D9E80062BB5B /* DeliveryRetailListViewController.swift in Sources */,
 				A48CD01225DBE1A50010829F /* Encryption.swift in Sources */,
 				A4D7641A25DA40B7009A6651 /* PrimaryButton.swift in Sources */,
 				A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */,
@@ -3532,6 +3764,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3611,6 +3844,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -3751,6 +3985,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3774,6 +4009,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

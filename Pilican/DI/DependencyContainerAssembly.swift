@@ -17,6 +17,15 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(NotificationCenter.self) { _ in
             NotificationCenter.default
         }.inObjectScope(.container)
+        container.register(UserInfoStorage.self) { _ in
+            UserInfoStorage()
+        }.inObjectScope(.container)
+        container.register(BiometricAuthService.self) { _ in
+            BiometricAuthService()
+        }.inObjectScope(.container)
+        container.register(UserSessionStorage.self) { _ in
+            UserSessionStorage()
+        }.inObjectScope(.container)
         // CameraUsage DI
         container.register(AVAuthorizationStatus.self) { _ in
             AVCaptureDevice.authorizationStatus(for: .video)
@@ -50,17 +59,6 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(PropertyFormatter.self) { resolver in
             PropertyFormatter(appLanguage: resolver.resolve(AppLanguage.self)!)
         }.inObjectScope(.container)
-        container.register(AuthenticationService.self) { _ in
-            let apiService = container.resolve(ApiService.self)!
-            let configService = container.resolve(ConfigService.self)!
-            let tokenService = container.resolve(AuthTokenService.self)!
-            let authService = AuthenticationServiceImpl(
-                apiService: apiService,
-                configService: configService,
-                authTokenService: tokenService
-            )
-            return authService
-        }
 
         container.register(CameraModule.self) { _ in
             let session = container.resolve(AVCaptureSession.self)!

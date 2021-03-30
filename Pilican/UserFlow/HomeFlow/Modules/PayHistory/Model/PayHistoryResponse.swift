@@ -8,10 +8,10 @@
 import RxDataSources
 
 struct PaymentHistoryResponse: Codable, Pagination {
-    var totalElements: Int {
+    var totalElements: Int? {
         return totalCount
     }
-    
+    var hasNext: Bool?
     var payments: [Payments]
     var totalCount: Int
     var status: Int

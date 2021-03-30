@@ -3,8 +3,8 @@ import RxDataSources
 struct RetailList: Codable, Pagination {
 //    var totalPages: Int
     let retailList: [Retail]
-    let totalElements: Int
-
+    let totalElements: Int?
+    var hasNext: Bool?
     var items: [Retail] {
         retailList
     }

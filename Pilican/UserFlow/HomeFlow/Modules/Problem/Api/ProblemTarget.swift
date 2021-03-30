@@ -53,7 +53,6 @@ enum ProblemTarget: ApiTarget {
             return
                 [
                     "clientId": "bW9iaWxl",
-                    "appver": "3.0.0"
                 ]
         default:
             return [:]

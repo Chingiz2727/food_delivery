@@ -10,7 +10,7 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         moduleFactory = ProfileMenuModuleFactory(container: container)
         super.init(router: router, container: container)
     }
-    
+
     override func start() {
         presentMenu()
     }

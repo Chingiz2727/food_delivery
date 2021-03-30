@@ -1,8 +1,8 @@
-struct City: Codable {
-    let id: Int
-    let name: String
+public struct City: Codable {
+    public let id: Int
+    public let name: String
 }
 
-struct CityList: Codable {
-    let cities: [City]
+public struct CityList: Codable {
+    public let cities: [City]
 }

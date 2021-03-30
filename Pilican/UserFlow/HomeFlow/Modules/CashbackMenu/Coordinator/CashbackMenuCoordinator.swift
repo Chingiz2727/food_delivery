@@ -27,6 +27,10 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
 
         module.menuDidSelect = { [weak self] menu in
             switch menu {
+            case .myCards:
+                self?.showMyCards()
+            case .balanceReplishment:
+                self?.showBalance()
             case .historyOfPay:
                 self?.showPayHistory()
             default:
@@ -37,6 +41,16 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         router.presentActionSheet(module, interactive: true)
     }
 
+    private func showMyCards() {
+        let module = moduleFactory.makeMyCards()
+        router.push(module)
+    }
+
+    private func showBalance() {
+        let module = moduleFactory.makeBalance()
+        router.push(module)
+    }
+    
     private func showPayHistory() {
         var module = moduleFactory.makePayHistory()
         module.onSelectPayHistory = { [weak self] payments in

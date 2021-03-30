@@ -37,6 +37,8 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
             switch category {
             case .cashBack:
                 self?.showCashBackList()
+            case .delivery:
+                self?.showDelivery()
             case .bus:
                 self?.showCamera()
             default:
@@ -65,7 +67,12 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
 
         router.push(module)
     }
-
+    
+    private func showDelivery() {
+        var module = moduleFactory.delivery()
+        router.push(module)
+    }
+    
     private func showCamera() {
         let module = container.resolve(CameraModule.self)!
         router.push(module)
