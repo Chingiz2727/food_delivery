@@ -1,10 +1,3 @@
-//
-//  DiskCache.swift
-//  Pilican
-//
-//  Created by kairzhan on 3/3/21.
-//
-
 import Foundation
 
 public final class DiskCache<Key: Hashable, Value> {
