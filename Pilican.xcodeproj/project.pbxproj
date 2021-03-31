@@ -353,6 +353,7 @@
 		A4EFD4DC261320B200694D18 /* ScrollabeSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EFD4DB261320B200694D18 /* ScrollabeSegmentControl.swift */; };
 		A4EFD4DF261320C200694D18 /* SegmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EFD4DE261320C200694D18 /* SegmentItem.swift */; };
 		A4EFD4E2261320D200694D18 /* SegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EFD4E1261320D200694D18 /* SegmentControl.swift */; };
+		A4EFD4E8261474AF00694D18 /* DeliveryRetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EFD4E7261474AE00694D18 /* DeliveryRetailHeaderView.swift */; };
 		A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAACF325E75C6700A55CB8 /* ProfileMenuViewController.swift */; };
 		A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAAD0C25E75CCB00A55CB8 /* ProfileMenuView.swift */; };
 		A4FAAD1125E75D0B00A55CB8 /* ProfileMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAAD1025E75D0B00A55CB8 /* ProfileMenuModule.swift */; };
@@ -718,6 +719,7 @@
 		A4EFD4DB261320B200694D18 /* ScrollabeSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollabeSegmentControl.swift; sourceTree = "<group>"; };
 		A4EFD4DE261320C200694D18 /* SegmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItem.swift; sourceTree = "<group>"; };
 		A4EFD4E1261320D200694D18 /* SegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControl.swift; sourceTree = "<group>"; };
+		A4EFD4E7261474AE00694D18 /* DeliveryRetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailHeaderView.swift; sourceTree = "<group>"; };
 		A4FAACF325E75C6700A55CB8 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		A4FAAD0C25E75CCB00A55CB8 /* ProfileMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuView.swift; sourceTree = "<group>"; };
 		A4FAAD1025E75D0B00A55CB8 /* ProfileMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuModule.swift; sourceTree = "<group>"; };
@@ -3142,6 +3144,7 @@
 		A4EFD49D2612E6CD00694D18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4EFD4E62614748B00694D18 /* DeliveryRetailHeaderView */,
 				A4EFD4C82612F7FD00694D18 /* Cell */,
 				A4EFD4A32612E76400694D18 /* DeliveryRetailProductsView.swift */,
 			);
@@ -3216,6 +3219,14 @@
 				A4EFD4E1261320D200694D18 /* SegmentControl.swift */,
 			);
 			path = ScrollableSegment;
+			sourceTree = "<group>";
+		};
+		A4EFD4E62614748B00694D18 /* DeliveryRetailHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A4EFD4E7261474AE00694D18 /* DeliveryRetailHeaderView.swift */,
+			);
+			path = DeliveryRetailHeaderView;
 			sourceTree = "<group>";
 		};
 		A4FAACEF25E75C2500A55CB8 /* ProfileMenu */ = {
@@ -3766,6 +3777,7 @@
 				A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */,
 				A475CCB425EF418500C596FB /* HelperProtocols.swift in Sources */,
 				A48CCFF025DB7EDD0010829F /* CameraView.swift in Sources */,
+				A4EFD4E8261474AF00694D18 /* DeliveryRetailHeaderView.swift in Sources */,
 				A4EFD3AC2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift in Sources */,
 				A4B9A0FE25F092E500F0A3D6 /* CashBackListHeaderView.swift in Sources */,
 				A475CCD725EF972000C596FB /* RetaiImages.swift in Sources */,
