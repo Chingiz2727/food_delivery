@@ -40,7 +40,7 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
     private let discountView = LabelBackgroundView()
 
     private lazy var companyInfoVerticalStack = UIStackView(
-        views: [companyNameLabel, adressLabel, companyTypeLabel],
+        views: [companyNameLabel, adressLabel],
         axis: .vertical,
         spacing: 6
     )
@@ -77,7 +77,6 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
         adressLabel.text = retail.address
         discountView.setTitle(title: "\(retail.dlvCashBack) %")
         discountView.configureView(backColor: .primary, textColor: .pilicanWhite)
-        companyTypeLabel.text = retail.name
         setupWorkStatusView(retail: retail)
         guard let imgUrl = retail.imgLogo else { return }
         companyImageView.kf.setImage(with: URL(string: imgUrl))

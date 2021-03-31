@@ -1,6 +1,6 @@
 import UIKit
 
-class SwipeableCollectionViewCell: UICollectionViewCell {
+class SwipeableTableViewCell: UITableViewCell {
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
@@ -13,10 +13,10 @@ class SwipeableCollectionViewCell: UICollectionViewCell {
     let visibleContainerView = UIView()
     let hiddenContainerView = UIView()
 
-    weak var delegate: SwipeableCollectionViewCellDelegate?
+    weak var delegate: SwipeableTableViewCellDelegate?
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
         setupGestureRecognizer()
     }

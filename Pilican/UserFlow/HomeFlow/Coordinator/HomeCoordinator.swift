@@ -7,13 +7,10 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
     private let coordinatorFactory: HomeTabBarCoordinatorFactory
     private var tabRootContainers: [TabableRootControllerAndCoordinatorContainer] = []
     private var tabBarController: HomeTabBarModule
-    private let moduleFactory: HomeCoordinatorModuleFactory
 
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         let userInfoStorage = container.resolve(UserInfoStorage.self)!
-        tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
-        moduleFactory = HomeCoordinatorModuleFactory(container: container, router: router)
         tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
         super.init(router: router, container: container)
     }
@@ -86,4 +83,5 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
         }
         router.push(module)
     }
+    
 }

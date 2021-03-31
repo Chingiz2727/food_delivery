@@ -70,6 +70,14 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     
     private func showDelivery() {
         var module = moduleFactory.delivery()
+        module.onRetailDidSelect = { [weak self] retail in
+            self?.showDeliveryProduct(retail: retail)
+        }
+        router.push(module)
+    }
+    
+    private func showDeliveryProduct(retail: DeliveryRetail) {
+        let module = moduleFactory.makeDeliveryProductList(retail: retail)
         router.push(module)
     }
     

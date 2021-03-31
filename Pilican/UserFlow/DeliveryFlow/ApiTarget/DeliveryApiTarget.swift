@@ -1,10 +1,11 @@
 enum DeliveryApiTarget: ApiTarget {
     case deliveryRetailListByType(page: Int, size: Int, type: Int)
+    case deliveryRetailProductsList(retailId: Int)
 
     var version: ApiVersion {
         .custom("")
     }
-    
+
     var servicePath: String {
         return "a/cb"
     }
@@ -13,12 +14,14 @@ enum DeliveryApiTarget: ApiTarget {
         switch self {
         case .deliveryRetailListByType:
             return "retail/find/by-type"
+        case .deliveryRetailProductsList:
+            return "retail/find"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .deliveryRetailListByType:
+        case .deliveryRetailListByType, .deliveryRetailProductsList:
             return .get
         }
     }
@@ -31,6 +34,8 @@ enum DeliveryApiTarget: ApiTarget {
                 "size": size,
                 "type": type,
             ]
+        case let .deliveryRetailProductsList(retailId):
+            return ["id": retailId]
         }
     }
 

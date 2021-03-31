@@ -31,4 +31,10 @@ final class HomeCoordinatorModuleFactory {
         let controller = DeliveryRetailListViewController(viewModel: viewModel)
         return controller
     }
+    
+    func makeDeliveryProductList(retail: DeliveryRetail) -> DeliveryRetailProductsModule {
+        let apiSerivce = container.resolve(ApiService.self)!
+        let viewModel = DeliveryRetailProductViewModel(apiService: apiSerivce, retailInfo: retail)
+        return DeliveryRetailProductsViewController(viewModel: viewModel)
+    }
 }
