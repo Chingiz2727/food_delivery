@@ -67,12 +67,12 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
 
         router.push(module)
     }
-    
+
     private func showDelivery() {
-        var module = moduleFactory.delivery()
+        let module = moduleFactory.delivery()
         router.push(module)
     }
-    
+
     private func showCamera() {
         let module = container.resolve(CameraModule.self)!
         router.push(module)

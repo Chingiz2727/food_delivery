@@ -9,6 +9,5 @@ import Foundation
 
 protocol EditAccountModule: Presentable {
     typealias SaveTapped = () -> Void
-    
     var saveTapped: SaveTapped? { get set }
 }

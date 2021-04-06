@@ -20,16 +20,24 @@ public final class UserInfoStorage {
     @UserDefaultsEntry("cityId", defaultValue: nil)
     public var cityId: Int?
     
+    @UserDefaultsEntry("birthday", defaultValue: nil)
+    public var birthday: String?
+    
+    @UserDefaultsEntry("gender", defaultValue: nil)
+    public var gender: Bool?
+    
     public init() {}
 
     public func clearAll() {
-        fullName = nil
-        mobilePhoneNumber = nil
-        city = nil
-        lastName = nil
-        promoCode = nil
-        balance = nil
-        mobilePhoneNumber = nil
-        cityId = nil
+        fullName = ""
+        mobilePhoneNumber = ""
+        city = ""
+        lastName = ""
+        promoCode = ""
+        balance = 0
+        mobilePhoneNumber = ""
+        cityId = 0
+        birthday = ""
+        gender = false
     }
 }

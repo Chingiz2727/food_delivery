@@ -8,7 +8,7 @@
 import RxSwift
 
 final class ChangePasswordViewModel: ViewModel {
-    
+
     struct Input {
         let saveTapped: Observable<Void>
         let newPassword: Observable<String?>
@@ -24,21 +24,16 @@ final class ChangePasswordViewModel: ViewModel {
     init(apiService: ApiService) {
         self.apiService = apiService
     }
-    
+
     func transform(input: Input) -> Output {
-        let changedPassword = input.saveTapped
-            .withLatestFrom(
-                Observable.combineLatest(
-                    input.newPassword,
-                    input.acceptPassword
-                ).flatMap { [unowned self] newPassword, acceptPassword in
-                    return apiService.makeRequest(
-                        to: AuthTarget.changePassword(
-                            newPassword: newPassword ?? "new",
-                            acceptPassword: acceptPassword ?? "accept"))
-                        .result(ResponseStatus.self)
-                }.asLoadingSequence()
-            )
-        return .init(changedPassword: changedPassword)
+        let changePassword = input.saveTapped
+            .withLatestFrom(Observable.combineLatest(input.acceptPassword, input.newPassword))
+            .flatMap { [unowned self] newPassword, acceptPassword in
+                return self.apiService.makeRequest(to:
+                    AuthTarget.changePassword(newPassword: newPassword ?? "", acceptPassword: acceptPassword ?? ""))
+                    .result(ResponseStatus.self)
+                    .asLoadingSequence()
+            }.share()
+        return .init(changedPassword: changePassword)
     }
 }

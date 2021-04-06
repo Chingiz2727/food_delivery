@@ -7,7 +7,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
 
     var selectRetail: SelectRetail?
     var selectMenu: SelectMenu?
-    
+
     private let viewModel: HomeViewModel
     private let dataSource: HomeCollectionViewDataSource
     private let slider = BehaviorSubject<[Slider]>(value: [])
