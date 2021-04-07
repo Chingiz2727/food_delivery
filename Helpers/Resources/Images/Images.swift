@@ -53,6 +53,11 @@ enum Images: String {
     case copyButton
     case balanceCard
     case successPaymentBackground
+    case arrow
+    case takeAway
+    case inPlace
+    case deliveryType
+    case arrowGray
 }
 
 extension Images {
