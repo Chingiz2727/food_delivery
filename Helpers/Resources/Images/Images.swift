@@ -59,6 +59,11 @@ enum Images: String {
     case decline
     case delivery
     case fillStar
+    case arrow
+    case takeAway
+    case inPlace
+    case deliveryType
+    case arrowGray
 }
 
 extension Images {
