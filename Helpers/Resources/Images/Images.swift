@@ -53,6 +53,12 @@ enum Images: String {
     case copyButton
     case balanceCard
     case successPaymentBackground
+    case minus
+    case plus
+    case accept
+    case decline
+    case delivery
+    case fillStar
     case arrow
     case takeAway
     case inPlace

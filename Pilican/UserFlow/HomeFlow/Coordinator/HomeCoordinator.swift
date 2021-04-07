@@ -13,7 +13,6 @@ final class HomeCoordinator: BaseCoordinator {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         let userInfoStorage = container.resolve(UserInfoStorage.self)!
         tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
-        tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
         super.init(router: router, container: container)
     }
 

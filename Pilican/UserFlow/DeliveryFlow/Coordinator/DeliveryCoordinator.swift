@@ -17,7 +17,15 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
     }
     
     private func showDeliveryRetailList() {
-        let module = coordinatorFactory.delivery()
+        var module = coordinatorFactory.delivery()
+        module.onRetailDidSelect = { [weak self] retail in
+            self?.showDeliveryProduct(retail: retail)
+        }
         router.setRootModule(module)
+    }
+    
+    private func showDeliveryProduct(retail: DeliveryRetail) {
+        let module = coordinatorFactory.deliveryProduct(retail: retail)
+        router.push(module)
     }
 }
