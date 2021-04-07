@@ -10,6 +10,7 @@ final class HomeTabBarCoordinatorFactory {
     func makeHome() -> (coordinator: HomeTabBarCoordinatorOutput & TababbleCoordinator, module: Presentable) {
         let rootController = CoordinatorNavigationController(backBarButtonImage: Images.close.image)
         let coordinator = HomeTabBarCoordinator(router: Router(rootController: rootController), container: container)
+        
         return (coordinator, rootController)
     }
 
@@ -27,5 +28,10 @@ final class HomeTabBarCoordinatorFactory {
 
     func makeSuccessPayment(retail: Retail, price: Int, cashback: Int) -> SuccessPaymentModule {
         return SuccessPaymentViewController(retail: retail, price: price, cashback: cashback)
+    }
+    
+    func makeDeliveryTabBar() -> Coordinator {
+//        let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
+        return DeliveryTabBarCoordinator(router: router, container: container)
     }
 }

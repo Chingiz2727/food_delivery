@@ -1,19 +1,18 @@
 import Swinject
 
-final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
+final class HomeCoordinator: BaseCoordinator {
+    
     func goToHomeWithDeeplink(action: DeepLinkAction) {
     }
 
     private let coordinatorFactory: HomeTabBarCoordinatorFactory
     private var tabRootContainers: [TabableRootControllerAndCoordinatorContainer] = []
     private var tabBarController: HomeTabBarModule
-    private let moduleFactory: HomeCoordinatorModuleFactory
 
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         let userInfoStorage = container.resolve(UserInfoStorage.self)!
         tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
-        moduleFactory = HomeCoordinatorModuleFactory(container: container, router: router)
         tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
         super.init(router: router, container: container)
     }
@@ -43,6 +42,11 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
         homeCoordinator.start()
         addDependency(homeCoordinator)
         guard let controller = rootController.toPresent() else { return }
+
+        homeCoordinator.onDeliveryTab = { [weak self] in
+            self?.startDeliveryFlow()
+        }
+    
         tabRootContainers.append(.init(viewController: controller, coordinator: homeCoordinator))
     }
 
@@ -85,5 +89,11 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
             self?.router.popToRootModule()
         }
         router.push(module)
+    }
+    
+    private func startDeliveryFlow() {
+        let coordinator = coordinatorFactory.makeDeliveryTabBar()
+        coordinator.start()
+        addDependency(coordinator)
     }
 }

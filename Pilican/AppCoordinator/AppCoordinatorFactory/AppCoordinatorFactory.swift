@@ -13,7 +13,7 @@ final class AppCoordinatorFactory {
         AuthCoordinator(container: container, router: router)
     }
 
-    func homeCoordinator() -> Coordinator & HomeTabBarCoordinatorOutput {
+    func homeCoordinator() -> Coordinator {
         HomeCoordinator(router: router, container: container)
     }
 }
