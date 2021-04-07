@@ -96,6 +96,11 @@
 		55FCC70525F8D499000DED49 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70425F8D499000DED49 /* AboutView.swift */; };
 		55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70825F8E2D4000DED49 /* AboutViewController.swift */; };
 		55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70D25F8E31C000DED49 /* AboutModule.swift */; };
+		7284347B261D748200E21209 /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284347A261D748100E21209 /* DeliveryCoordinator.swift */; };
+		7284347E261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284347D261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift */; };
+		72843481261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72843480261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift */; };
+		72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */; };
+		72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */; };
 		A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D942611C4D80062BB5B /* UserInfoStorage.swift */; };
 		A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */; };
 		A4057DA22611C5240062BB5B /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DA12611C5240062BB5B /* KeyChainStorage.swift */; };
@@ -443,6 +448,11 @@
 		55FCC70825F8E2D4000DED49 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		55FCC70D25F8E31C000DED49 /* AboutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModule.swift; sourceTree = "<group>"; };
 		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7284347A261D748100E21209 /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
+		7284347D261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinatorModuleFactory.swift; sourceTree = "<group>"; };
+		72843480261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarCoordinatorFactory.swift; sourceTree = "<group>"; };
+		72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarController.swift; sourceTree = "<group>"; };
+		72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarCoordinator.swift; sourceTree = "<group>"; };
 		A4057D942611C4D80062BB5B /* UserInfoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoStorage.swift; sourceTree = "<group>"; };
 		A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStorage.swift; sourceTree = "<group>"; };
 		A4057DA12611C5240062BB5B /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
@@ -1500,6 +1510,41 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		72843479261D747500E21209 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7284347A261D748100E21209 /* DeliveryCoordinator.swift */,
+				7284347D261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		72FABA18261D6D6600EC7EB9 /* DeliveryTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				72FABA1E261D6F6400EC7EB9 /* Coordinator */,
+				72FABA1D261D6F5700EC7EB9 /* Controller */,
+			);
+			path = DeliveryTabBar;
+			sourceTree = "<group>";
+		};
+		72FABA1D261D6F5700EC7EB9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72FABA1E261D6F6400EC7EB9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */,
+				72843480261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		8176B9877CE758347B33479A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1555,6 +1600,7 @@
 		A4057DB62611D6350062BB5B /* DeliveryFlow */ = {
 			isa = PBXGroup;
 			children = (
+				72843479261D747500E21209 /* Coordinator */,
 				A4057DF42611E4F70062BB5B /* ApiTarget */,
 				A4057DB72611D7E70062BB5B /* Modules */,
 			);
@@ -1564,7 +1610,6 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A4EFD3AF2612DC6C00694D18 /* DeliveryRetailProducts */,
 				A4057DB82611D8870062BB5B /* DeliveryRetailList */,
 			);
 			path = Modules;
@@ -1724,6 +1769,7 @@
 		A40B951425DE266000E507FB /* UserFlow */ = {
 			isa = PBXGroup;
 			children = (
+				72FABA18261D6D6600EC7EB9 /* DeliveryTabBar */,
 				A4057DB62611D6350062BB5B /* DeliveryFlow */,
 				A40B951525DE266700E507FB /* HomeFlow */,
 				A4B3136925D142F80003BA0B /* AuthFlow */,
@@ -3104,13 +3150,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A4EFD3AF2612DC6C00694D18 /* DeliveryRetailProducts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DeliveryRetailProducts;
-			sourceTree = "<group>";
-		};
 		A4FAACEF25E75C2500A55CB8 /* ProfileMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -3512,6 +3551,7 @@
 				55D26C7E25FA18C4005A36BD /* EditAccountModule.swift in Sources */,
 				A483E28025D40ABE006D2DAF /* ApiTarget.swift in Sources */,
 				A483E29525D40ABE006D2DAF /* EmojiModifier.swift in Sources */,
+				72843481261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift in Sources */,
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
 				A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */,
 				55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */,
@@ -3532,6 +3572,7 @@
 				A483E26725D40ABE006D2DAF /* String+Unwrap.swift in Sources */,
 				A48CD00825DBBB080010829F /* String+NumberContains.swift in Sources */,
 				A40B95F825DE65EF00E507FB /* UITableView+Reuse.swift in Sources */,
+				72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */,
 				A4FAAD1125E75D0B00A55CB8 /* ProfileMenuModule.swift in Sources */,
 				558679C225F0D4E400A5A94B /* UITextField+Extension.swift in Sources */,
 				A47CA1EC25E36E8000EB091C /* AdditionalMenuPresentationController.swift in Sources */,
@@ -3617,6 +3658,7 @@
 				A4379FD825ECAF5700910A2D /* RetailDetailViewController.swift in Sources */,
 				558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */,
 				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
+				7284347E261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
 				55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */,
@@ -3628,6 +3670,7 @@
 				5584E83F25EE3FAD00025251 /* CashbackMenuViewController.swift in Sources */,
 				A4BBC70225D63ED8006AF382 /* UiViewController+Keyboard.swift in Sources */,
 				A483E27125D40ABE006D2DAF /* ApiError.swift in Sources */,
+				7284347B261D748200E21209 /* DeliveryCoordinator.swift in Sources */,
 				A483E28925D40ABE006D2DAF /* IdPaginationAdapter.swift in Sources */,
 				A4D7645125DA7F7E009A6651 /* CityPickerViewDataSource.swift in Sources */,
 				A437A09B25ECBBFE00910A2D /* RetailDetailModuleFactory.swift in Sources */,
@@ -3637,6 +3680,7 @@
 				55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */,
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
+				72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,
 				A4BBC6F425D63D56006AF382 /* BackPressHandler.swift in Sources */,
 				A475CCC125EF421600C596FB /* AppLanguage.swift in Sources */,
