@@ -1,4 +1,5 @@
 import Cosmos
+import Kingfisher
 import UIKit
 
 final class DeliveryRetailHeaderView: UIView {
@@ -6,7 +7,13 @@ final class DeliveryRetailHeaderView: UIView {
     private let favButtonHeight: CGFloat = 30
     private let imageHeight: CGFloat = 20
     private let deliveryImageSize: CGFloat = 30
-    
+
+    private let productImageView:  UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleToFill
+        return image
+    }()
+
     private let companyNameLabel: UILabel = {
         let label = UILabel()
         label.font = .semibold16
@@ -31,7 +38,7 @@ final class DeliveryRetailHeaderView: UIView {
     
     private let favouriteButton: UIButton = {
         let button = UIButton()
-        button.setImage(#imageLiteral(resourceName: "staricon"), for: .normal)
+        button.setImage(Images.emptyStar.image, for: .normal)
         return button
     }()
     
@@ -63,15 +70,15 @@ final class DeliveryRetailHeaderView: UIView {
         let view = CosmosView()
         view.rating = 4
         view.settings.fillMode = .half
-        view.settings.emptyImage = #imageLiteral(resourceName: "star")
-        view.settings.filledImage = #imageLiteral(resourceName: "fav_retail")
+        view.settings.emptyImage = Images.emptyStar.image
+        view.settings.filledImage = Images.filledStar.image
         view.isUserInteractionEnabled = false
         return view
     }()
     
     private let deliveryImage: UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "Delivery")
+        image.image = Images.delivery.image
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -109,7 +116,7 @@ final class DeliveryRetailHeaderView: UIView {
     }()
 
     lazy var fullStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [infoStackView, bottomStack])
+        let stackView = UIStackView(arrangedSubviews: [productImageView,infoStackView, bottomStack])
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.distribution = .fill
@@ -128,23 +135,28 @@ final class DeliveryRetailHeaderView: UIView {
         nil
     }
 
-    func setData(retail: Retail) {
+    func setData(retail: DeliveryRetail) {
         companyNameLabel.text = retail.name
         companyAdressLabel.text = retail.address
-        ratingLabel.text = "\(retail.rating )"
-        ratingView.rating = retail.rating
+        ratingLabel.text = "\(retail.rating ?? 0)"
+        ratingView.rating = retail.rating ?? 0
+        productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
     }
 
     private func setupInitialLayout() {
         addSubview(fullStackView)
         fullStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(10)
             make.leading.trailing.equalToSuperview().inset(20)
         }
 
         ratingView.snp.makeConstraints { make in
             make.height.equalTo(imageHeight)
             make.width.equalTo(80)
+        }
+        
+        productImageView.snp.makeConstraints { make in
+            make.height.equalTo(180)
+            make.width.equalToSuperview()
         }
         
         favouriteButton.setContentHuggingPriority(.required, for: .horizontal)

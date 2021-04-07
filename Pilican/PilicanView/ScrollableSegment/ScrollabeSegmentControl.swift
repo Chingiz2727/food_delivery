@@ -41,7 +41,7 @@ public final class ScrollabeSegmentControl: UIView {
     private func setupInitialLayout() {
         addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(8)
         }
 
         scrollView.addSubview(contentView)

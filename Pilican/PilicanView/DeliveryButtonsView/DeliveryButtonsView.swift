@@ -67,7 +67,6 @@ final class DeliveryButtonsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
-        
     }
 
     required init?(coder: NSCoder) {

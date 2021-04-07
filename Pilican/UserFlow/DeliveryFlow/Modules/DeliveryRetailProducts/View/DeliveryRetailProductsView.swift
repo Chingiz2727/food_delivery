@@ -10,22 +10,16 @@ final class DeliveryRetailProductsView: UIView {
     private var contentSizeObserver: NSKeyValueObservation?
     private var tableViewHeightConstraint: Constraint?
     private var stickyHeaderrHeightConstraint: Constraint?
-    private let stickyHeaderView = UIView()
-    
+    private let stickyHeaderView = DeliveryRetailHeaderView()
+    private let calculateView = ProductCalculateView()
     private lazy var stackView = UIStackView(
-        views: [stickyHeaderView, segmentControl, tableView],
+        views: [stickyHeaderView, segmentControl, tableView, calculateView],
         axis: .vertical,
-        distribution: .fillProportionally,
-        spacing: 10)
+        distribution: .fill,
+        spacing: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentSizeObserver = tableView.observe(
-            \.contentSize,
-            options: [.initial, .new]
-        ) { [weak self] tableView, _ in
-            self?.tableViewHeightConstraint?.update(offset: max(400, tableView.contentSize.height))
-        }
         setupInitialLayout()
         configureView()
     }
@@ -34,6 +28,10 @@ final class DeliveryRetailProductsView: UIView {
         nil
     }
 
+    func setRetail(retail: DeliveryRetail) {
+        stickyHeaderView.setData(retail: retail)
+    }
+    
     func setTitles(titles: [String]) {
         segmentControl.set(titles: titles)
     }
@@ -46,10 +44,16 @@ final class DeliveryRetailProductsView: UIView {
         segmentControl.colorAtIndex(index: section)
     }
 
+    func setProductToPay(product: [Product]) {
+        calculateView.isHidden = product.count == 0
+        calculateView.setupProductToCalculate(product: product)
+    }
+    
     private func setupInitialLayout() {
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.bottom.equalTo(safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview()
         }
 
         stickyHeaderView.snp.makeConstraints { make in
@@ -62,18 +66,22 @@ final class DeliveryRetailProductsView: UIView {
         }
 
         segmentControl.snp.makeConstraints { make in
-            make.height.equalTo(40)
+            make.height.equalTo(60)
             make.width.equalToSuperview()
         }
-
+        
+        calculateView.snp.makeConstraints { $0.height.equalTo(45) }
+        
         stickyHeaderrHeightConstraint?.activate()
-        tableViewHeightConstraint?.activate()
     }
 
     private func configureView() {
         backgroundColor = .background
+        tableView.separatorStyle = .none
         tableView.bounces = true
-        stickyHeaderView.backgroundColor = .blue
+        segmentControl.backgroundColor = .background
+        stackView.backgroundColor = .background
+        calculateView.isHidden = true
         tableView.registerClassForCell(DeliveryRetailProductTableViewCell.self)
     }
 }

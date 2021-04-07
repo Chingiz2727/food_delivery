@@ -1,6 +1,8 @@
+import Kingfisher
 import UIKit
 
-class DeliveryRetailProductTableViewCell: SwipeableTableViewCell {
+class DeliveryRetailProductTableViewCell: UITableViewCell {
+    private let backView = UIView()
     
     private let nameLabel: UILabel = {
         let label = UILabel()
@@ -8,7 +10,7 @@ class DeliveryRetailProductTableViewCell: SwipeableTableViewCell {
         label.textColor = .pilicanBlack
         return label
     }()
-    
+    private let deliveryLine = UIView()
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .medium12
@@ -21,6 +23,7 @@ class DeliveryRetailProductTableViewCell: SwipeableTableViewCell {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 50
+        image.clipsToBounds = true
         return image
     }()
     
@@ -41,7 +44,7 @@ class DeliveryRetailProductTableViewCell: SwipeableTableViewCell {
         stackView.spacing = 5
         return stackView
     }()
-
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel, UIView(), priceStackView])
         stackView.distribution = .fill
@@ -49,12 +52,13 @@ class DeliveryRetailProductTableViewCell: SwipeableTableViewCell {
         stackView.spacing = 3
         return stackView
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
+        configureView()
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }
@@ -62,32 +66,49 @@ class DeliveryRetailProductTableViewCell: SwipeableTableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    
     func setData(product: Product) {
         nameLabel.text = product.name
         descriptionLabel.text = product.composition
         buttonsLabel.setDish(companyDish: product)
         priceLabel.text = "\(product.price)"
+        deliveryLine.isHidden = product.shoppingCount ?? 0 == 0
+        
+        productImage.kf.setImage(with: URL(string: product.imgLogo ?? "")!)
     }
-
+    
     private func setupInitialLayout() {
-        visibleContainerView.addSubview(stackView)
-        visibleContainerView.addSubview(productImage)
-        hiddenContainerView.addSubview(swipeView)
-        swipeView.backgroundColor = .red
-        stackView.snp.makeConstraints { make in
-            make.leading.top.bottom.equalToSuperview().inset(10)
-            make.trailing.equalTo(productImage.snp.leading).offset(10)
-        }
-        productImage.snp.makeConstraints { make in
-            make.trailing.top.bottom.equalToSuperview().inset(10)
-            make.size.equalTo(100)
+        contentView.addSubview(backView)
+        backView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
+        backView.addSubview(stackView)
+        backView.addSubview(productImage)
+        backView.addSubview(deliveryLine)
+        deliveryLine.snp.makeConstraints { make in
+            make.leading.top.bottom.equalToSuperview()
+            make.width.equalTo(5)
         }
         
-        swipeView.snp.makeConstraints { make in
-            make.height.equalToSuperview()
-            make.width.equalTo(50)
+        stackView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(10)
+            make.leading.equalTo(deliveryLine.snp.trailing).offset(10)
+            make.trailing.equalTo(productImage.snp.leading).offset(-10)
         }
+        productImage.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(10)
+            make.centerY.equalToSuperview()
+            make.size.equalTo(100)
+            make.top.bottom.equalToSuperview().inset(10)
+        }
+        
+        deliveryLine.backgroundColor = .primary
+        deliveryLine.isHidden = true
         selectionStyle = .none
+    }
+    
+    private func configureView() {
+        backgroundColor = .background
+        backView.layer.cornerRadius = 10
+        backView.backgroundColor = .white
     }
 }

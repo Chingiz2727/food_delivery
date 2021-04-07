@@ -1,13 +1,17 @@
 import RxSwift
 
 final class DeliveryRetailProductViewModel: ViewModel {
+
     let retailInfo: DeliveryRetail
+    let dishList: DishList
 
     private let apiService: ApiService
     
-    init(apiService: ApiService, retailInfo: DeliveryRetail) {
+    init(apiService: ApiService, retailInfo: DeliveryRetail, dishList: DishList) {
         self.apiService = apiService
         self.retailInfo = retailInfo
+        self.dishList = dishList
+        self.dishList.retail = retailInfo
     }
 
     struct Input {

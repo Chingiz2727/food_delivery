@@ -6,10 +6,11 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     
     private let viewModel: DeliveryRetailProductViewModel
     private let disposeBag = DisposeBag()
-    private let dataSource = DeliveryRetailProductDataSource()
-    
+    private let sourceDelegate: DeliveryRetailTableViewDataSourceDelegate
+
     init(viewModel: DeliveryRetailProductViewModel) {
         self.viewModel = viewModel
+        self.sourceDelegate = DeliveryRetailTableViewDataSourceDelegate(dishList: viewModel.dishList)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -23,7 +24,9 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        rootView.setRetail(retail: viewModel.retailInfo)
         bindViewModel()
+        bindView()
     }
     
     private func bindViewModel() {
@@ -35,11 +38,13 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         
         productList.element
             .map { $0.retail.deliveryCategories }
-            .do(onNext: { [unowned self] products in
-                let categories = products.map { $0.name }
-                self.rootView.setTitles(titles: categories)
+            .subscribe(onNext: { [unowned self] products in
+                let productCategory = self.viewModel.dishList.checkForContainProductOnDish(listCategory: products)
+                let categoriesTitle = productCategory.map { $0.name }
+                self.rootView.setTitles(titles: categoriesTitle)
+                self.sourceDelegate.productCategory = productCategory
+                self.rootView.tableView.reloadData()
             })
-            .bind(to: rootView.tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
         productList.errors
@@ -47,6 +52,22 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
             .disposed(by: disposeBag)
 
         productList.connect()
+            .disposed(by: disposeBag)
+        
+        viewModel.dishList.dishList
+            .subscribe(onNext: { [unowned self] product in
+                self.rootView.setProductToPay(product: product)
+            })
+            .disposed(by: disposeBag)
+        
+        rootView.setProductToPay(product: viewModel.dishList.products)
+    }
+    
+    private func bindView() {
+        rootView.tableView.rx.setDelegate(sourceDelegate)
+            .disposed(by: disposeBag)
+
+        rootView.tableView.rx.setDataSource(sourceDelegate)
             .disposed(by: disposeBag)
 
         rootView.tableView.rx.contentOffset
@@ -68,6 +89,5 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 }
             })
             .disposed(by: disposeBag)
-        
     }
 }

@@ -59,7 +59,11 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(PropertyFormatter.self) { resolver in
             PropertyFormatter(appLanguage: resolver.resolve(AppLanguage.self)!)
         }.inObjectScope(.container)
-
+        
+        container.register(DishList.self) { resolver in
+            DishList()
+        }.inObjectScope(.container)
+        
         container.register(CameraModule.self) { _ in
             let session = container.resolve(AVCaptureSession.self)!
             let device = container.resolve(AVCaptureDevice.self)!

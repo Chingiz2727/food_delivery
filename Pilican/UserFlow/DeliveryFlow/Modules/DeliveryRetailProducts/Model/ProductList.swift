@@ -1,3 +1,3 @@
 struct ProductList: Codable {
-    let retail: ProductRetail
+    var retail: ProductRetail
 }
