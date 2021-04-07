@@ -1,6 +1,7 @@
 import Swinject
 
-final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
+final class HomeCoordinator: BaseCoordinator {
+    
     func goToHomeWithDeeplink(action: DeepLinkAction) {
     }
 
@@ -40,6 +41,11 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
         homeCoordinator.start()
         addDependency(homeCoordinator)
         guard let controller = rootController.toPresent() else { return }
+
+        homeCoordinator.onDeliveryTab = { [weak self] in
+            self?.startDeliveryFlow()
+        }
+    
         tabRootContainers.append(.init(viewController: controller, coordinator: homeCoordinator))
     }
 
@@ -84,4 +90,9 @@ final class HomeCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput {
         router.push(module)
     }
     
+    private func startDeliveryFlow() {
+        let coordinator = coordinatorFactory.makeDeliveryTabBar()
+        coordinator.start()
+        addDependency(coordinator)
+    }
 }

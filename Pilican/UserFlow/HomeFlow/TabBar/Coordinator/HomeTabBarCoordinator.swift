@@ -8,12 +8,14 @@ struct TabableRootControllerAndCoordinatorContainer {
 
 public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
     func goToHomeWithDeeplink(action: DeepLinkAction)
+    var onDeliveryTab: Callback? { get set }
 }
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
 
     private let moduleFactory: HomeCoordinatorModuleFactory
-
+    var onDeliveryTab: Callback?
+    
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = HomeCoordinatorModuleFactory(container: container, router: router)
         super.init(router: router, container: container)
@@ -69,16 +71,7 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     }
     
     private func showDelivery() {
-        var module = moduleFactory.delivery()
-        module.onRetailDidSelect = { [weak self] retail in
-            self?.showDeliveryProduct(retail: retail)
-        }
-        router.push(module)
-    }
-    
-    private func showDeliveryProduct(retail: DeliveryRetail) {
-        let module = moduleFactory.makeDeliveryProductList(retail: retail)
-        router.push(module)
+        onDeliveryTab?()
     }
     
     private func showCamera() {
