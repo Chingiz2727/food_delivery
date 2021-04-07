@@ -12,6 +12,8 @@ public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
 }
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
+    var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
+    
 
     private let moduleFactory: HomeCoordinatorModuleFactory
     var onDeliveryTab: Callback?

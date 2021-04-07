@@ -14,4 +14,12 @@ final class DeliveryTabBarCoordinatorFactory {
         let coordinator = DeliveryCoordinator(router: Router(rootController: rootController), container: container)
         return (coordinator, rootController)
     }
+
+    func makeBasket() -> (coordinator: DeliveryTabBarItemCoordinator, module: Presentable) {
+        let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
+        rootController.tabBarItem.image = Images.basket.image?.withRenderingMode(.alwaysOriginal)
+        rootController.tabBarItem.selectedImage = Images.basketSelected.image?.withRenderingMode(.alwaysOriginal)
+        let coordinator = OrderTypeCoordinator(router: Router(rootController: rootController), container: container)
+        return (coordinator, rootController)
+    }
 }

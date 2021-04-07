@@ -45,7 +45,7 @@ final class DeliveryRetailProductsView: UIView {
     }
 
     func setProductToPay(product: [Product]) {
-        calculateView.isHidden = product.count == 0
+        calculateView.isHidden = product.isEmpty
         calculateView.setupProductToCalculate(product: product)
     }
     
