@@ -1,5 +1,4 @@
 import UIKit
-
 enum DeliveryTabBarItem: Int {
     case delivery
     case search
@@ -20,7 +19,6 @@ protocol DeliveryTabBarPresentable {
 final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresentable {
     func setViewControllers(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
-
     }
     
     func changeSelectedTabBarItem(_ tabBarItem: DeliveryTabBarItem, completion: Callback?) {

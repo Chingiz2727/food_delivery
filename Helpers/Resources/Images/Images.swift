@@ -67,6 +67,8 @@ enum Images: String {
     case search
     case SearchSelected
     case searchDelivery
+    case basket
+    case basketSelected
 }
 
 extension Images {
