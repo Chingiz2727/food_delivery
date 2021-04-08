@@ -17,7 +17,7 @@ struct Retail: Codable {
     let vk: String?
     let phone: String?
     let workDays: [WorkDay]
-    let images: [RetailImages]
+    let images: [RetailImages]?
     let avgAmount: String?
 
     var imgLogo: String? {
@@ -36,16 +36,16 @@ struct Retail: Codable {
         return list
     }
 
-    let wifi: Int
-    let rating: Double
-    let cash: Int
-    let booking: Int
-    let isPayable: Int
-    let isVisible: Int
-    let kaspi: Int
-    let card: Int
-    let delivery: Int
-    let description: String
+    let wifi: Int?
+    let rating: Double?
+    let cash: Int?
+    let booking: Int?
+    let isPayable: Int?
+    let isVisible: Int?
+    let kaspi: Int?
+    let card: Int?
+    let delivery: Int?
+    let description: String?
 
     var paymentOptions: [String] {
         var options: [String] = []

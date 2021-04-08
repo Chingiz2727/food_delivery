@@ -64,6 +64,9 @@ enum Images: String {
     case inPlace
     case deliveryType
     case arrowGray
+    case search
+    case SearchSelected
+    case searchDelivery
     case basket
     case basketSelected
 }
