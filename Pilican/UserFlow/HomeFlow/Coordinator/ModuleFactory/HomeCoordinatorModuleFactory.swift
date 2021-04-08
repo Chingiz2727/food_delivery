@@ -24,4 +24,9 @@ final class HomeCoordinatorModuleFactory {
         let viewModel = CashBackListViewModel(apiService: apiService)
         return CashBackListViewController(viewModel: viewModel)
     }
+    
+    func makeRate() -> RateDeliveryModule {
+        let controller = RateDeliveryViewController()
+        return controller
+    }
 }

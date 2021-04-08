@@ -15,7 +15,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         coordinatorFactory = DeliveryTabBarCoordinatorFactory(container: container)
         super.init(router: router, container: container)
     }
-    
+
     override func start() {
         setupDeliveryFlow()
         let viewController = tabRootContainers.map { $0.viewController }

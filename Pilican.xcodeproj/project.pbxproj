@@ -22,11 +22,19 @@
 		5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236925EF674B00537D3F /* InMemoryCache.swift */; };
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
 		5555237425EF907A00537D3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555237325EF907A00537D3F /* User.swift */; };
+		5561DF08261EBFF700B05321 /* RateDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561DF07261EBFF700B05321 /* RateDelivery.swift */; };
 		55654397261D72CF009A4E62 /* OrderTypeDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55654396261D72CF009A4E62 /* OrderTypeDeliveryView.swift */; };
 		5565439A261D768D009A4E62 /* OrderTypeTakeAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55654399261D768D009A4E62 /* OrderTypeTakeAway.swift */; };
 		556543A1261D76FC009A4E62 /* OrderTypeInPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A0261D76FC009A4E62 /* OrderTypeInPlaceView.swift */; };
 		556543A6261D7B16009A4E62 /* OrderTypeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A5261D7B16009A4E62 /* OrderTypeModule.swift */; };
 		556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A9261D7B33009A4E62 /* OrderTypeViewController.swift */; };
+		556543D5261DB7BC009A4E62 /* RateDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543D4261DB7BC009A4E62 /* RateDeliveryView.swift */; };
+		556543DA261DC5DD009A4E62 /* RateDeliveryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543D9261DC5DD009A4E62 /* RateDeliveryModule.swift */; };
+		556543DE261DC606009A4E62 /* RateDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543DD261DC606009A4E62 /* RateDeliveryViewController.swift */; };
+		556543E4261DC698009A4E62 /* RateMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543E3261DC698009A4E62 /* RateMealView.swift */; };
+		556543E8261DC6DA009A4E62 /* RateMealModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543E7261DC6DA009A4E62 /* RateMealModule.swift */; };
+		556543ED261DC700009A4E62 /* RateMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543EC261DC700009A4E62 /* RateMealViewController.swift */; };
+		556543F0261DD294009A4E62 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543EF261DD294009A4E62 /* RateView.swift */; };
 		5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */; };
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
 		5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDE25ECBDAE003AA72F /* AccountView.swift */; };
@@ -396,11 +404,19 @@
 		5555236925EF674B00537D3F /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5555237325EF907A00537D3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5561DF07261EBFF700B05321 /* RateDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDelivery.swift; sourceTree = "<group>"; };
 		55654396261D72CF009A4E62 /* OrderTypeDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeDeliveryView.swift; sourceTree = "<group>"; };
 		55654399261D768D009A4E62 /* OrderTypeTakeAway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeTakeAway.swift; sourceTree = "<group>"; };
 		556543A0261D76FC009A4E62 /* OrderTypeInPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeInPlaceView.swift; sourceTree = "<group>"; };
 		556543A5261D7B16009A4E62 /* OrderTypeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeModule.swift; sourceTree = "<group>"; };
 		556543A9261D7B33009A4E62 /* OrderTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeViewController.swift; sourceTree = "<group>"; };
+		556543D4261DB7BC009A4E62 /* RateDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDeliveryView.swift; sourceTree = "<group>"; };
+		556543D9261DC5DD009A4E62 /* RateDeliveryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDeliveryModule.swift; sourceTree = "<group>"; };
+		556543DD261DC606009A4E62 /* RateDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDeliveryViewController.swift; sourceTree = "<group>"; };
+		556543E3261DC698009A4E62 /* RateMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMealView.swift; sourceTree = "<group>"; };
+		556543E7261DC6DA009A4E62 /* RateMealModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMealModule.swift; sourceTree = "<group>"; };
+		556543EC261DC700009A4E62 /* RateMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMealViewController.swift; sourceTree = "<group>"; };
+		556543EF261DD294009A4E62 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
 		5568FEDE25ECBDAE003AA72F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -915,6 +931,14 @@
 			path = InMemoryCache;
 			sourceTree = "<group>";
 		};
+		5561DF06261EBFEB00B05321 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5561DF07261EBFF700B05321 /* RateDelivery.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		556543A3261D7AFE009A4E62 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -929,6 +953,76 @@
 				556543A5261D7B16009A4E62 /* OrderTypeModule.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		556543D2261DB7A5009A4E62 /* RateDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				5561DF06261EBFEB00B05321 /* Model */,
+				556543DC261DC5EC009A4E62 /* Controller */,
+				556543D8261DC5D0009A4E62 /* Module */,
+				556543D3261DB7AE009A4E62 /* View */,
+			);
+			path = RateDelivery;
+			sourceTree = "<group>";
+		};
+		556543D3261DB7AE009A4E62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				556543D4261DB7BC009A4E62 /* RateDeliveryView.swift */,
+				556543EF261DD294009A4E62 /* RateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		556543D8261DC5D0009A4E62 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				556543D9261DC5DD009A4E62 /* RateDeliveryModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		556543DC261DC5EC009A4E62 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				556543DD261DC606009A4E62 /* RateDeliveryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		556543E1261DC688009A4E62 /* RateMeal */ = {
+			isa = PBXGroup;
+			children = (
+				556543EB261DC6F2009A4E62 /* Controller */,
+				556543E6261DC6C7009A4E62 /* Module */,
+				556543E2261DC68F009A4E62 /* View */,
+			);
+			path = RateMeal;
+			sourceTree = "<group>";
+		};
+		556543E2261DC68F009A4E62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				556543E3261DC698009A4E62 /* RateMealView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		556543E6261DC6C7009A4E62 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				556543E7261DC6DA009A4E62 /* RateMealModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		556543EB261DC6F2009A4E62 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				556543EC261DC700009A4E62 /* RateMealViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5568FECC25ECB276003AA72F /* Account */ = {
@@ -1819,9 +1913,10 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				556543E1261DC688009A4E62 /* RateMeal */,
+				556543D2261DB7A5009A4E62 /* RateDelivery */,
 				728434B8261D7F2700E21209 /* DeliveryProducts */,
 				5517324E261D6B970031623B /* OrderType */,
-				A4EFD3AF2612DC6C00694D18 /* DeliveryRetailProducts */,
 				A4057DB82611D8870062BB5B /* DeliveryRetailList */,
 			);
 			path = Modules;
@@ -3675,6 +3770,7 @@
 				A483E29E25D40ABE006D2DAF /* KingfisherSource.swift in Sources */,
 				A483E27625D40ABE006D2DAF /* ApiRequestable.swift in Sources */,
 				55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */,
+				556543F0261DD294009A4E62 /* RateView.swift in Sources */,
 				A468EA8D25EE3D390071FAA6 /* IdentificatorView.swift in Sources */,
 				A483E27B25D40ABE006D2DAF /* AuthServiceAssembly.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
@@ -3692,6 +3788,8 @@
 				A483E28C25D40ABE006D2DAF /* PaginationManager.swift in Sources */,
 				5565439A261D768D009A4E62 /* OrderTypeTakeAway.swift in Sources */,
 				A40B961125DE766E00E507FB /* RetailList.swift in Sources */,
+				556543ED261DC700009A4E62 /* RateMealViewController.swift in Sources */,
+				5561DF08261EBFF700B05321 /* RateDelivery.swift in Sources */,
 				728434D2261D7FEE00E21209 /* ProductList.swift in Sources */,
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */,
@@ -3743,6 +3841,7 @@
 				A4BBC6E925D639DA006AF382 /* BackButtonContainerViewController.swift in Sources */,
 				A483E28E25D40ABE006D2DAF /* InputValidatable.swift in Sources */,
 				5528386B2611CDD900511608 /* SuccessPaymentViewController.swift in Sources */,
+				556543E8261DC6DA009A4E62 /* RateMealModule.swift in Sources */,
 				A4B9A27A25F0D98100F0A3D6 /* CashBackListTableViewCell.swift in Sources */,
 				728434C7261D7FAB00E21209 /* DeliveryRetailTableViewDataSourceDelegate.swift in Sources */,
 				A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */,
@@ -3751,6 +3850,7 @@
 				A483E29425D40ABE006D2DAF /* PilicanLogger+HTTP.swift in Sources */,
 				A47CA04A25E1495200EB091C /* RetailCollectionViewCell.swift in Sources */,
 				55D26C6725F9CB46005A36BD /* About.swift in Sources */,
+				556543D5261DB7BC009A4E62 /* RateDeliveryView.swift in Sources */,
 				A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */,
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
@@ -3774,7 +3874,7 @@
 				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
 				556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */,
-				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
+				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
 				55FCC70525F8D499000DED49 /* AboutView.swift in Sources */,
 				A4057DC62611DA310062BB5B /* DeliveryRetailListView.swift in Sources */,
 				A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */,
@@ -3841,6 +3941,7 @@
 				A4057DAB2611C5540062BB5B /* BiometricAuthType.swift in Sources */,
 				55654397261D72CF009A4E62 /* OrderTypeDeliveryView.swift in Sources */,
 				55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */,
+				556543E4261DC698009A4E62 /* RateMealView.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
 				728434C2261D7F8400E21209 /* DeliveryRetailProductsViewController.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
@@ -3871,6 +3972,7 @@
 				55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
 				55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */,
+				556543DA261DC5DD009A4E62 /* RateDeliveryModule.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
@@ -3881,6 +3983,7 @@
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
 				5555237425EF907A00537D3F /* User.swift in Sources */,
+				556543DE261DC606009A4E62 /* RateDeliveryViewController.swift in Sources */,
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
 				55BEF36725FB398300205BBD /* Gender.swift in Sources */,

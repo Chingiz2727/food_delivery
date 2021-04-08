@@ -45,7 +45,7 @@ final class HomeCoordinator: BaseCoordinator {
         homeCoordinator.onDeliveryTab = { [weak self] in
             self?.startDeliveryFlow()
         }
-    
+
         tabRootContainers.append(.init(viewController: controller, coordinator: homeCoordinator))
     }
 

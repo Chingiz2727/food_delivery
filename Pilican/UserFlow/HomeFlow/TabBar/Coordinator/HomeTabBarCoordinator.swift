@@ -12,6 +12,7 @@ public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
 }
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
+    var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
 
     private let moduleFactory: HomeCoordinatorModuleFactory
     var onDeliveryTab: Callback?
@@ -43,11 +44,18 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
                 self?.showDelivery()
             case .bus:
                 self?.showCamera()
+            case .volunteer:
+                self?.showRate()
             default:
                 break
             }
         }
         router.setRootModule(module)
+    }
+    
+    private func showRate() {
+        let module = moduleFactory.makeRate()
+        router.present(module)
     }
 
     private func startRetailDetailCoordinator(retail: Retail) {
