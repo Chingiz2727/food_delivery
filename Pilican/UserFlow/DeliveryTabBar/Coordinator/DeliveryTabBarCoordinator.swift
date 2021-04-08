@@ -18,6 +18,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
     
     override func start() {
         setupDeliveryFlow()
+        setupSearchFlow()
         let viewController = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewController)
         router.setRootModule(tabBarController, isNavigationBarHidden: false)
@@ -25,6 +26,14 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
     
     private func setupDeliveryFlow() {
         let (coordinator, rooController) = coordinatorFactory.makeDeliveryCoordinator()
+        coordinator.start()
+        addDependency(coordinator)
+        guard let controller = rooController.toPresent() else { return }
+        tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
+    }
+    
+    private func setupSearchFlow() {
+        let (coordinator, rooController) = coordinatorFactory.makeSearchCoordinator()
         coordinator.start()
         addDependency(coordinator)
         guard let controller = rooController.toPresent() else { return }

@@ -79,7 +79,7 @@ final class RetailDetailHeaderView: UIView {
         setupWorkStatusView(retail: retail)
         guard let imgUrl = retail.imgLogo else { return }
         logoImageView.kf.setImage(with: URL(string: imgUrl))
-        ratingView.rating = retail.rating
+        ratingView.rating = retail.rating ?? 0
     }
 
     private func setupWorkStatusView(retail: Retail) {

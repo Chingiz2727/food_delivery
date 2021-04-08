@@ -120,6 +120,31 @@
 		728434F2261D80AA00E21209 /* DeliveryRetailProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */; };
 		72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */; };
 		72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */; };
+		72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07DF261DA4BD00F04395 /* SearchContainerModule.swift */; };
+		72FB07E4261DA4CB00F04395 /* UIViewController+SearchContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07E3261DA4CB00F04395 /* UIViewController+SearchContainerModule.swift */; };
+		72FB07ED261DA50A00F04395 /* SearchDismissTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07EC261DA50A00F04395 /* SearchDismissTransitioning.swift */; };
+		72FB07F1261DA51800F04395 /* SearchPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07F0261DA51800F04395 /* SearchPresentationController.swift */; };
+		72FB07F4261DA52A00F04395 /* SearchPresentTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07F3261DA52A00F04395 /* SearchPresentTransitioning.swift */; };
+		72FB07F7261DA53B00F04395 /* SearchTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07F6261DA53B00F04395 /* SearchTransitionManager.swift */; };
+		72FB07FB261DA55500F04395 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07FA261DA55500F04395 /* SearchBar.swift */; };
+		72FB07FE261DA56400F04395 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07FD261DA56400F04395 /* SearchView.swift */; };
+		72FB0801261DA57900F04395 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0800261DA57900F04395 /* SearchViewController.swift */; };
+		72FB0805261DA6EB00F04395 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0804261DA6EB00F04395 /* UIView+Screenshot.swift */; };
+		72FB0808261DA71600F04395 /* UIView+DeepCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0807261DA71600F04395 /* UIView+DeepCopy.swift */; };
+		72FB080B261DA73D00F04395 /* UIView+NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB080A261DA73D00F04395 /* UIView+NavigationItem.swift */; };
+		72FB0811261DAB3000F04395 /* RetailSearchModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0810261DAB3000F04395 /* RetailSearchModule.swift */; };
+		72FB0816261DAB9F00F04395 /* RetailSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0815261DAB9F00F04395 /* RetailSearchViewController.swift */; };
+		72FB081A261DAC0B00F04395 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0819261DAC0B00F04395 /* SearchCoordinator.swift */; };
+		72FB081E261DAD0400F04395 /* SearchCoordinatorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB081D261DAD0400F04395 /* SearchCoordinatorModuleFactory.swift */; };
+		72FB0822261DB40300F04395 /* BarButtonContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0821261DB40300F04395 /* BarButtonContainerModule.swift */; };
+		72FB0825261DB41000F04395 /* BarButtonItemConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0824261DB41000F04395 /* BarButtonItemConvertable.swift */; };
+		72FB082A261DB50500F04395 /* RetailSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0829261DB50500F04395 /* RetailSearchView.swift */; };
+		72FB0832261DBF2F00F04395 /* ItemSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0831261DBF2F00F04395 /* ItemSearchViewController.swift */; };
+		72FB0839261DBFD700F04395 /* ItemSearchModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0838261DBFD700F04395 /* ItemSearchModule.swift */; };
+		72FB083D261DC02600F04395 /* ItemSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB083C261DC02600F04395 /* ItemSearchViewModel.swift */; };
+		72FB0840261DC27100F04395 /* SearchApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB083F261DC27100F04395 /* SearchApiTarget.swift */; };
+		72FB0844261DC92100F04395 /* SearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0843261DC92100F04395 /* SearchList.swift */; };
+		72FB0848261DC93700F04395 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0847261DC93700F04395 /* SearchItem.swift */; };
 		A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D942611C4D80062BB5B /* UserInfoStorage.swift */; };
 		A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */; };
 		A4057DA22611C5240062BB5B /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DA12611C5240062BB5B /* KeyChainStorage.swift */; };
@@ -498,6 +523,31 @@
 		72FABA13261D5E4900EC7EB9 /* ProductCalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCalculateView.swift; sourceTree = "<group>"; };
 		72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarController.swift; sourceTree = "<group>"; };
 		72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarCoordinator.swift; sourceTree = "<group>"; };
+		72FB07DF261DA4BD00F04395 /* SearchContainerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContainerModule.swift; sourceTree = "<group>"; };
+		72FB07E3261DA4CB00F04395 /* UIViewController+SearchContainerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SearchContainerModule.swift"; sourceTree = "<group>"; };
+		72FB07EC261DA50A00F04395 /* SearchDismissTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDismissTransitioning.swift; sourceTree = "<group>"; };
+		72FB07F0261DA51800F04395 /* SearchPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresentationController.swift; sourceTree = "<group>"; };
+		72FB07F3261DA52A00F04395 /* SearchPresentTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresentTransitioning.swift; sourceTree = "<group>"; };
+		72FB07F6261DA53B00F04395 /* SearchTransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransitionManager.swift; sourceTree = "<group>"; };
+		72FB07FA261DA55500F04395 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		72FB07FD261DA56400F04395 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		72FB0800261DA57900F04395 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		72FB0804261DA6EB00F04395 /* UIView+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
+		72FB0807261DA71600F04395 /* UIView+DeepCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DeepCopy.swift"; sourceTree = "<group>"; };
+		72FB080A261DA73D00F04395 /* UIView+NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NavigationItem.swift"; sourceTree = "<group>"; };
+		72FB0810261DAB3000F04395 /* RetailSearchModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailSearchModule.swift; sourceTree = "<group>"; };
+		72FB0815261DAB9F00F04395 /* RetailSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailSearchViewController.swift; sourceTree = "<group>"; };
+		72FB0819261DAC0B00F04395 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		72FB081D261DAD0400F04395 /* SearchCoordinatorModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinatorModuleFactory.swift; sourceTree = "<group>"; };
+		72FB0821261DB40300F04395 /* BarButtonContainerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonContainerModule.swift; sourceTree = "<group>"; };
+		72FB0824261DB41000F04395 /* BarButtonItemConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItemConvertable.swift; sourceTree = "<group>"; };
+		72FB0829261DB50500F04395 /* RetailSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailSearchView.swift; sourceTree = "<group>"; };
+		72FB0831261DBF2F00F04395 /* ItemSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchViewController.swift; sourceTree = "<group>"; };
+		72FB0838261DBFD700F04395 /* ItemSearchModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchModule.swift; sourceTree = "<group>"; };
+		72FB083C261DC02600F04395 /* ItemSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchViewModel.swift; sourceTree = "<group>"; };
+		72FB083F261DC27100F04395 /* SearchApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiTarget.swift; sourceTree = "<group>"; };
+		72FB0843261DC92100F04395 /* SearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchList.swift; sourceTree = "<group>"; };
+		72FB0847261DC93700F04395 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		A4057D942611C4D80062BB5B /* UserInfoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoStorage.swift; sourceTree = "<group>"; };
 		A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStorage.swift; sourceTree = "<group>"; };
 		A4057DA12611C5240062BB5B /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
@@ -1754,6 +1804,153 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		72FB07DD261DA3C600F04395 /* RetailSearch */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0828261DB4F800F04395 /* View */,
+				72FB0818261DABFC00F04395 /* Coordinator */,
+				72FB0814261DAB8A00F04395 /* Controller */,
+				72FB080F261DAB1C00F04395 /* Module */,
+			);
+			path = RetailSearch;
+			sourceTree = "<group>";
+		};
+		72FB07DE261DA4B200F04395 /* SearchContainerModule */ = {
+			isa = PBXGroup;
+			children = (
+				72FB07DF261DA4BD00F04395 /* SearchContainerModule.swift */,
+				72FB07E3261DA4CB00F04395 /* UIViewController+SearchContainerModule.swift */,
+			);
+			path = SearchContainerModule;
+			sourceTree = "<group>";
+		};
+		72FB07EA261DA4EE00F04395 /* SearchController */ = {
+			isa = PBXGroup;
+			children = (
+				72FB07F9261DA54A00F04395 /* View */,
+				72FB07EB261DA4FE00F04395 /* TransitionAnimations */,
+				72FB0800261DA57900F04395 /* SearchViewController.swift */,
+			);
+			path = SearchController;
+			sourceTree = "<group>";
+		};
+		72FB07EB261DA4FE00F04395 /* TransitionAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				72FB07EC261DA50A00F04395 /* SearchDismissTransitioning.swift */,
+				72FB07F0261DA51800F04395 /* SearchPresentationController.swift */,
+				72FB07F6261DA53B00F04395 /* SearchTransitionManager.swift */,
+				72FB07F3261DA52A00F04395 /* SearchPresentTransitioning.swift */,
+			);
+			path = TransitionAnimations;
+			sourceTree = "<group>";
+		};
+		72FB07F9261DA54A00F04395 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72FB07FA261DA55500F04395 /* SearchBar.swift */,
+				72FB07FD261DA56400F04395 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72FB0803261DA6D600F04395 /* UIView+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0804261DA6EB00F04395 /* UIView+Screenshot.swift */,
+				72FB080A261DA73D00F04395 /* UIView+NavigationItem.swift */,
+				72FB0807261DA71600F04395 /* UIView+DeepCopy.swift */,
+			);
+			path = "UIView+Extension";
+			sourceTree = "<group>";
+		};
+		72FB080F261DAB1C00F04395 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0810261DAB3000F04395 /* RetailSearchModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72FB0814261DAB8A00F04395 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0815261DAB9F00F04395 /* RetailSearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72FB0818261DABFC00F04395 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0819261DAC0B00F04395 /* SearchCoordinator.swift */,
+				72FB081D261DAD0400F04395 /* SearchCoordinatorModuleFactory.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		72FB0820261DB3EF00F04395 /* BarButtonContainerModule */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0821261DB40300F04395 /* BarButtonContainerModule.swift */,
+				72FB0824261DB41000F04395 /* BarButtonItemConvertable.swift */,
+			);
+			path = BarButtonContainerModule;
+			sourceTree = "<group>";
+		};
+		72FB0828261DB4F800F04395 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0829261DB50500F04395 /* RetailSearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72FB082E261DBE6700F04395 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0837261DBF7D00F04395 /* Model */,
+				72FB0836261DBF6300F04395 /* Module */,
+				72FB0835261DBF5700F04395 /* ViewModel */,
+				72FB0830261DBF1E00F04395 /* Controller */,
+				72FB083F261DC27100F04395 /* SearchApiTarget.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		72FB0830261DBF1E00F04395 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0831261DBF2F00F04395 /* ItemSearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72FB0835261DBF5700F04395 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72FB083C261DC02600F04395 /* ItemSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72FB0836261DBF6300F04395 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0838261DBFD700F04395 /* ItemSearchModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72FB0837261DBF7D00F04395 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72FB0843261DC92100F04395 /* SearchList.swift */,
+				72FB0847261DC93700F04395 /* SearchItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8176B9877CE758347B33479A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1819,9 +2016,10 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				72FB082E261DBE6700F04395 /* Search */,
+				72FB07DD261DA3C600F04395 /* RetailSearch */,
 				728434B8261D7F2700E21209 /* DeliveryProducts */,
 				5517324E261D6B970031623B /* OrderType */,
-				A4EFD3AF2612DC6C00694D18 /* DeliveryRetailProducts */,
 				A4057DB82611D8870062BB5B /* DeliveryRetailList */,
 			);
 			path = Modules;
@@ -2672,6 +2870,9 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				72FB0820261DB3EF00F04395 /* BarButtonContainerModule */,
+				72FB07EA261DA4EE00F04395 /* SearchController */,
+				72FB07DE261DA4B200F04395 /* SearchContainerModule */,
 				A483E21925D40ABD006D2DAF /* AccessCode */,
 				A4E5815725D540E700EDC053 /* AppEnviroment */,
 				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
@@ -3253,6 +3454,7 @@
 		A4DD3E9525D24B98002D2186 /* PilicanView */ = {
 			isa = PBXGroup;
 			children = (
+				72FB0803261DA6D600F04395 /* UIView+Extension */,
 				A4EFD4D62613208A00694D18 /* ScrollableSegment */,
 				A4EFD4CC2612F87800694D18 /* DeliveryButtonsView */,
 				A455B3DD25E38D2F006835FA /* SwipableCollectionViewCell */,
@@ -3631,10 +3833,12 @@
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
 				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
+				72FB0848261DC93700F04395 /* SearchItem.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
 				55A7C079260B58AA0037D567 /* CalculatePayView.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
+				72FB07F4261DA52A00F04395 /* SearchPresentTransitioning.swift in Sources */,
 				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
 				556CF6CE26021CF6007B8FB9 /* PayHistoryTableViewCell.swift in Sources */,
 				A47CA10825E14E2300EB091C /* UIFont.swift in Sources */,
@@ -3676,7 +3880,9 @@
 				A483E27625D40ABE006D2DAF /* ApiRequestable.swift in Sources */,
 				55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */,
 				A468EA8D25EE3D390071FAA6 /* IdentificatorView.swift in Sources */,
+				72FB07F1261DA51800F04395 /* SearchPresentationController.swift in Sources */,
 				A483E27B25D40ABE006D2DAF /* AuthServiceAssembly.swift in Sources */,
+				72FB0844261DC92100F04395 /* SearchList.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
 				556CF6DA26022401007B8FB9 /* PayHistoryTarget.swift in Sources */,
@@ -3687,12 +3893,15 @@
 				558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */,
 				A40B950625DE23CC00E507FB /* HomeTabBarViewController.swift in Sources */,
 				A4BBC6CC25D612C8006AF382 /* CameraModule.swift in Sources */,
+				72FB0811261DAB3000F04395 /* RetailSearchModule.swift in Sources */,
 				5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */,
+				72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */,
 				A4E581E825D543C400EDC053 /* UIViewController+Alert.swift in Sources */,
 				A483E28C25D40ABE006D2DAF /* PaginationManager.swift in Sources */,
 				5565439A261D768D009A4E62 /* OrderTypeTakeAway.swift in Sources */,
 				A40B961125DE766E00E507FB /* RetailList.swift in Sources */,
 				728434D2261D7FEE00E21209 /* ProductList.swift in Sources */,
+				72FB07FB261DA55500F04395 /* SearchBar.swift in Sources */,
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
@@ -3700,12 +3909,15 @@
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				A4057DAF2611C5780062BB5B /* AppSessionManager.swift in Sources */,
 				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
+				72FB083D261DC02600F04395 /* ItemSearchViewModel.swift in Sources */,
 				55BEF36325FB393000205BBD /* GenderPickerViewDelegate.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
 				A47CA1EA25E36E8000EB091C /* SlidingPresentationController.swift in Sources */,
 				A4FD7DA225DCD109000DD49D /* AuthBySmsViewModel.swift in Sources */,
 				A483E27F25D40ABE006D2DAF /* ForceLogoutNotification.swift in Sources */,
+				72FB0816261DAB9F00F04395 /* RetailSearchViewController.swift in Sources */,
 				A4BBC6F025D63D0F006AF382 /* BackButton.swift in Sources */,
+				72FB07F7261DA53B00F04395 /* SearchTransitionManager.swift in Sources */,
 				A4EFD4D82613209D00694D18 /* ScrollabeSegmentItem.swift in Sources */,
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
 				55A5CD452600C2AF004AA13C /* MyCardsView.swift in Sources */,
@@ -3731,6 +3943,7 @@
 				A483E27725D40ABE006D2DAF /* AuthenticationService.swift in Sources */,
 				A4BBC7AF25D64A1C006AF382 /* RegisterModule.swift in Sources */,
 				A4057E012611F8700062BB5B /* DeliveryRetailContent.swift in Sources */,
+				72FB0805261DA6EB00F04395 /* UIView+Screenshot.swift in Sources */,
 				A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */,
 				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
 				55A7C080260B693E0037D567 /* PriceView.swift in Sources */,
@@ -3761,11 +3974,14 @@
 				55A5CCF626006353004AA13C /* ChangePasswordViewController.swift in Sources */,
 				A47CA1C925E36E3200EB091C /* NotificationDeepLinkActionModel.swift in Sources */,
 				A4E581EC25D5482E00EDC053 /* ProgressView.swift in Sources */,
+				72FB0839261DBFD700F04395 /* ItemSearchModule.swift in Sources */,
 				A47CA1E925E36E8000EB091C /* SlidingTransitioningDelegate.swift in Sources */,
 				556CF6E22602278C007B8FB9 /* PayHistoryResponse.swift in Sources */,
 				A4BBC6E325D6394E006AF382 /* BackContainerView.swift in Sources */,
 				A4D7644825DA74A1009A6651 /* City.swift in Sources */,
 				A40A53C725D25C4100BBFDFA /* PasswordTextField.swift in Sources */,
+				72FB0822261DB40300F04395 /* BarButtonContainerModule.swift in Sources */,
+				72FB0825261DB41000F04395 /* BarButtonItemConvertable.swift in Sources */,
 				A483E27C25D40ABE006D2DAF /* HTTPMethod.swift in Sources */,
 				A4EFD4DC261320B200694D18 /* ScrollabeSegmentControl.swift in Sources */,
 				A483E29B25D40ABE006D2DAF /* ImageSlideshow.swift in Sources */,
@@ -3774,12 +3990,14 @@
 				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
 				556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */,
-				A455B3E225E38D55006835FA /* SwipeableCollectionViewCellDelegate.swift in Sources */,
+				72FB0801261DA57900F04395 /* SearchViewController.swift in Sources */,
+				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
 				55FCC70525F8D499000DED49 /* AboutView.swift in Sources */,
 				A4057DC62611DA310062BB5B /* DeliveryRetailListView.swift in Sources */,
 				A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
 				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
+				72FB081E261DAD0400F04395 /* SearchCoordinatorModuleFactory.swift in Sources */,
 				A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */,
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
 				55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */,
@@ -3788,6 +4006,7 @@
 				A4BBC6D625D63664006AF382 /* Images.swift in Sources */,
 				A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */,
 				A40B95FF25DE6D1300E507FB /* HomeApiService.swift in Sources */,
+				72FB0840261DC27100F04395 /* SearchApiTarget.swift in Sources */,
 				A483E29A25D40ABE006D2DAF /* ActivityIndicator.swift in Sources */,
 				A4057DF62611E50A0062BB5B /* DeliveryApiTarget.swift in Sources */,
 				A40B95FC25DE6A5500E507FB /* HomeApiTarget.swift in Sources */,
@@ -3798,6 +4017,7 @@
 				A483E28025D40ABE006D2DAF /* ApiTarget.swift in Sources */,
 				A483E29525D40ABE006D2DAF /* EmojiModifier.swift in Sources */,
 				72843481261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift in Sources */,
+				72FB07ED261DA50A00F04395 /* SearchDismissTransitioning.swift in Sources */,
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
 				A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */,
 				55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */,
@@ -3842,6 +4062,7 @@
 				55654397261D72CF009A4E62 /* OrderTypeDeliveryView.swift in Sources */,
 				55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
+				72FB07FE261DA56400F04395 /* SearchView.swift in Sources */,
 				728434C2261D7F8400E21209 /* DeliveryRetailProductsViewController.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
 				55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */,
@@ -3884,13 +4105,16 @@
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
 				55BEF36725FB398300205BBD /* Gender.swift in Sources */,
+				72FB0832261DBF2F00F04395 /* ItemSearchViewController.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
 				552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */,
+				72FB07E4261DA4CB00F04395 /* UIViewController+SearchContainerModule.swift in Sources */,
 				5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */,
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
 				A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */,
+				72FB081A261DAC0B00F04395 /* SearchCoordinator.swift in Sources */,
 				A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */,
 				55BEF35925FB235300205BBD /* EditAccountViewModel.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
@@ -3914,6 +4138,7 @@
 				A4379FD825ECAF5700910A2D /* RetailDetailViewController.swift in Sources */,
 				558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */,
 				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
+				72FB082A261DB50500F04395 /* RetailSearchView.swift in Sources */,
 				7284347E261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
@@ -3935,6 +4160,7 @@
 				A437A0B825ECC4DF00910A2D /* RetailDetailHeaderView.swift in Sources */,
 				5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */,
 				55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */,
+				72FB080B261DA73D00F04395 /* UIView+NavigationItem.swift in Sources */,
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
 				72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */,
@@ -3962,6 +4188,7 @@
 				A48CCFED25DB7B1F0010829F /* CameraMetadaOutputDelegate.swift in Sources */,
 				A4057DC12611D9E80062BB5B /* DeliveryRetailListViewController.swift in Sources */,
 				A48CD01225DBE1A50010829F /* Encryption.swift in Sources */,
+				72FB0808261DA71600F04395 /* UIView+DeepCopy.swift in Sources */,
 				A4D7641A25DA40B7009A6651 /* PrimaryButton.swift in Sources */,
 				A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */,
 				A4BBC72225D6402D006AF382 /* QrCodeTextField.swift in Sources */,
