@@ -18,7 +18,7 @@ class OrderTypeInPlaceView: UIView {
         let label = UILabel()
         label.text = "На месте"
         label.font = UIFont.book18
-        label.textColor = .pilicanGray
+        label.textColor = .pilicanLightGray
         return label
     }()
 
@@ -26,7 +26,7 @@ class OrderTypeInPlaceView: UIView {
         let label = UILabel()
         label.text = "Недоступно"
         label.font = UIFont.book12
-        label.textColor = .pilicanGray
+        label.textColor = .pilicanLightGray
         return label
     }()
 
