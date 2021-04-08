@@ -44,18 +44,11 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
                 self?.showDelivery()
             case .bus:
                 self?.showCamera()
-            case .volunteer:
-                self?.showRate()
             default:
                 break
             }
         }
         router.setRootModule(module)
-    }
-    
-    private func showRate() {
-        let module = moduleFactory.makeRate()
-        router.present(module)
     }
 
     private func startRetailDetailCoordinator(retail: Retail) {
