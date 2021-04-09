@@ -21,14 +21,13 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         setupAllFlows()
         let viewController = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewController)
-        router.setRootModule(tabBarController, isNavigationBarHidden: false)
+        router.setRootModule(tabBarController, isNavigationBarHidden: true)
     }
     
     private func setupAllFlows() {
         setupDeliveryFlow()
         setupBasketFlow()
         setupSearchFlow()
-
     }
 
     private func setupBasketFlow() {

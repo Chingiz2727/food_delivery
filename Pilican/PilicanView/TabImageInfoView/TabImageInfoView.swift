@@ -1,13 +1,15 @@
 import UIKit
 
-final class TabImageInfoView: UIControl {
+final class TabImageInfoView: UIView {
+    let control = UIControl()
     private let iconImageView = UIImageView()
     private let titleLabel = UILabel()
-
+    
     private lazy var horizontalStackView = UIStackView(
-        views: [iconImageView, titleLabel],
+        views: [UIView(),iconImageView, titleLabel, UIView()],
         axis: .horizontal,
-        spacing: 11)
+        distribution: .equalCentering,
+        spacing: 5)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,8 +38,12 @@ final class TabImageInfoView: UIControl {
     private func setupInitialLayout() {
         addSubview(horizontalStackView)
         horizontalStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(5)
             make.top.bottom.equalToSuperview().inset(10)
         }
+        addSubview(control)
+        control.snp.makeConstraints { $0.edges.equalToSuperview() }
+        titleLabel.textAlignment = .left
+        iconImageView.contentMode = .scaleAspectFit
     }
 }

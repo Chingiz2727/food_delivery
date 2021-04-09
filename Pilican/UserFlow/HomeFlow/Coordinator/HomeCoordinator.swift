@@ -12,13 +12,15 @@ final class HomeCoordinator: BaseCoordinator {
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         let userInfoStorage = container.resolve(UserInfoStorage.self)!
-        tabBarController = HomeTabBarViewController(userInfoStorage: userInfoStorage)
+        let controller = HomeTabBarViewController(userInfoStorage: userInfoStorage)
+        controller.navigationController?.navigationBar.isHidden = true
+        tabBarController = controller
         super.init(router: router, container: container)
     }
 
     override func start() {
         makeTabBar()
-
+        
         tabBarController.qrCodeTap = { [weak self] in
             self?.showCamera()
         }
@@ -33,7 +35,7 @@ final class HomeCoordinator: BaseCoordinator {
 
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
-        router.setRootModule(tabBarController, isNavigationBarHidden: true)
+        router.setRootModule(tabBarController, isNavigationBarHidden: false)
     }
 
     private func makeTabBar() {

@@ -37,18 +37,21 @@ final class HomeTabView: UIView {
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(18)
             make.height.equalTo(31)
+            make.width.equalTo(105)
         }
 
         balanceInfoView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(18)
             make.height.equalTo(31)
+            make.width.equalTo(105)
         }
 
         qrScanButton.snp.makeConstraints { make in
             make.centerY.equalTo(self.snp.top)
             make.centerX.equalToSuperview()
             make.size.equalTo(70)
+            
         }
     }
 
