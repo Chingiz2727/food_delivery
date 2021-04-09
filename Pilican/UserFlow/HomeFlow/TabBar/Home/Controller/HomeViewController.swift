@@ -32,6 +32,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
         super.viewDidLoad()
         bindView()
         bindViewModel()
+        navigationController?.navigationBar.isHidden = true
     }
 
     private func bindView() {

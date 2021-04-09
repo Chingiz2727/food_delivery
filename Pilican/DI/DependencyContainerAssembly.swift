@@ -1,4 +1,5 @@
 import Swinject
+import CoreLocation
 import AVFoundation
 typealias DependencyContainer = Resolver
 
@@ -13,6 +14,9 @@ public final class DependencyContainerAssembly: Assembly {
             .registerAuthService(in: container)
         container.register(ConfigService.self) { _ in
             ConfigServiceImpl()
+        }.inObjectScope(.container)
+        container.register(CLLocationManager.self) { _ in
+            CLLocationManager()
         }.inObjectScope(.container)
         container.register(NotificationCenter.self) { _ in
             NotificationCenter.default

@@ -7,7 +7,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
     var qrCodeTap: Callback?
 
     var bonusTap: Callback?
-
+    var notifyMenuTap: Callback?
     private let homeTabBar = HomeTabBar()
     private let tabView = HomeTabView()
     private let userInfoStorage: UserInfoStorage
@@ -23,16 +23,26 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
         nil
     }
 
+    override var navigationBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialLayout()
         bindView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: Images.alarm.image?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(showNotifyMenu))
     }
 
     override func setViewControllers(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
     }
 
+    
     private func setupInitialLayout() {
         setValue(homeTabBar, forKey: "tabBar")
         view.addSubview(tabView)
@@ -46,17 +56,21 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
             })
             .disposed(by: disposeBag)
 
-        tabView.balanceInfoView.rx.controlEvent(.touchUpInside)
+        tabView.balanceInfoView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.bonusTap?()
             })
             .disposed(by: disposeBag)
 
-        tabView.userInfoView.rx.controlEvent(.touchUpInside)
+        tabView.userInfoView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.accountTap?()
             })
             .disposed(by: disposeBag)
         tabView.setData(profile: userInfoStorage.fullName ?? "", balance: String(userInfoStorage.balance ?? 0))
+    }
+    
+    @objc private func showNotifyMenu() {
+        self.notifyMenuTap?()
     }
 }

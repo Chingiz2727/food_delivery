@@ -76,6 +76,7 @@ enum Images: String {
     case searchDelivery
     case basket
     case basketSelected
+    case alarm
 }
 
 extension Images {

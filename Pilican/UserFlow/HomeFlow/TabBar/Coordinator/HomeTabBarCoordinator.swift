@@ -36,7 +36,6 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         }
 
         module.selectMenu = { [weak self] category in
-            print("selected category", category)
             switch category {
             case .cashBack:
                 self?.showCashBackList()
@@ -63,11 +62,9 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
 
     private func showCashBackList() {
         var module = moduleFactory.makeCashbackList()
-
         module.onSelectRetail = { [weak self] retail in
             self?.startRetailDetailCoordinator(retail: retail)
         }
-
         router.push(module)
     }
     

@@ -19,7 +19,7 @@ struct Retail: Codable {
     let workDays: [WorkDay]
     let images: [RetailImages]?
     let avgAmount: String?
-
+    let delivery: Int
     var imgLogo: String? {
         return "https://st.pillikan.kz/retail/logo\(logo)"
     }
@@ -44,7 +44,6 @@ struct Retail: Codable {
     let isVisible: Int?
     let kaspi: Int?
     let card: Int?
-    let delivery: Int?
     let description: String?
 
     var paymentOptions: [String] {

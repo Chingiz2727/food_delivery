@@ -89,7 +89,7 @@ final class CashBackView: UIView {
     private func calculateCashback(cashback: Int, avgAmount: String) -> Int {
         let div = Double(cashback) / 100.0
         let averageAmount = avgAmount == "" ? "1" : avgAmount
-        let cash = Int(div * Double(averageAmount)!)
+        let cash = Int(div * (Double(averageAmount) ?? 0))
         return cash
     }
 }

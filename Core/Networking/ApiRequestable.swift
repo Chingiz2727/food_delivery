@@ -51,10 +51,11 @@ public extension ApiRequestable {
   }
 
   private func mapResult<O>(mapper: @escaping (Data) throws -> O) -> Observable<O> {
-    return run()
+    let networkItem = run()
       .observeOn(networkQueueScheduler)
       .map(mapper)
       .observeOn(MainScheduler.instance)
+    return networkItem
   }
 
   func result<T: Decodable>(_ type: T.Type) -> Observable<T> {

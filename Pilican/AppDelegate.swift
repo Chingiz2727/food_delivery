@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNavigationBar()
         setupKingfisher()
         LoggerConfigurator.configure()
-        // Override point for customization after application launch.
         return true
     }
 

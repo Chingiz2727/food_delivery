@@ -62,6 +62,7 @@ final class RetailDetailView: UIView {
         retailDescriptionView.setupData(retail: retail)
         deliveryView.setData(retail: retail)
         identificatorView.setData(retail: retail)
+        deliveryView.isHidden = retail.delivery == 0
         if retail.avgAmount == "" {
             cashBackView.isHidden = true
         } else {
