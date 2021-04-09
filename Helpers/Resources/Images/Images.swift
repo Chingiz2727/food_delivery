@@ -71,6 +71,11 @@ enum Images: String {
     case middle
     case good
     case cool
+    case search
+    case SearchSelected
+    case searchDelivery
+    case basket
+    case basketSelected
 }
 
 extension Images {

@@ -6,6 +6,7 @@ struct TabableDeliveryControllerAndCoordinatorContainer {
 }
 
 final class DeliveryTabBarCoordinator: BaseCoordinator {
+    
     private var tabRootContainers: [TabableDeliveryControllerAndCoordinatorContainer] = []
     private let tabBarController: DeliveryTabBarController
     private let coordinatorFactory: DeliveryTabBarCoordinatorFactory
@@ -17,14 +18,37 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        setupDeliveryFlow()
+        setupAllFlows()
         let viewController = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewController)
         router.setRootModule(tabBarController, isNavigationBarHidden: false)
     }
     
+    private func setupAllFlows() {
+        setupDeliveryFlow()
+        setupBasketFlow()
+        setupSearchFlow()
+
+    }
+
+    private func setupBasketFlow() {
+        let (coordinator, rootController) = coordinatorFactory.makeBasket()
+        coordinator.start()
+        addDependency(coordinator)
+        guard let controller = rootController.toPresent() else { return }
+        tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
+    }
+    
     private func setupDeliveryFlow() {
         let (coordinator, rooController) = coordinatorFactory.makeDeliveryCoordinator()
+        coordinator.start()
+        addDependency(coordinator)
+        guard let controller = rooController.toPresent() else { return }
+        tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
+    }
+    
+    private func setupSearchFlow() {
+        let (coordinator, rooController) = coordinatorFactory.makeSearchCoordinator()
         coordinator.start()
         addDependency(coordinator)
         guard let controller = rooController.toPresent() else { return }
