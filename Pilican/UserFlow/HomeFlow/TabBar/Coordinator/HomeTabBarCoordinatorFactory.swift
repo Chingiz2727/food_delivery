@@ -28,7 +28,7 @@ final class HomeTabBarCoordinatorFactory {
     func makeSuccessPayment(retail: Retail, price: Int, cashback: Int) -> SuccessPaymentModule {
         return SuccessPaymentViewController(retail: retail, price: price, cashback: cashback)
     }
-    
+
     func makeDeliveryTabBar() -> Coordinator {
         return DeliveryTabBarCoordinator(router: router, container: container)
     }
