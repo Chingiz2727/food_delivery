@@ -21,4 +21,6 @@ target 'Pilican' do
   pod 'SwiftMessages', '8.0.3'
   pod 'lottie-ios', '3.1.2'
   pod 'TagListView', '~> 1.0'
+  pod 'YandexMapsMobile', ’4.0.0-full’
+
 end

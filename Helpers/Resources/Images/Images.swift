@@ -77,6 +77,11 @@ enum Images: String {
     case basket
     case basketSelected
     case alarm
+    case Location
+    case LocationSelected
+    case homeDelivery
+    case homeDeliverySelected
+    case mapIcon
 }
 
 extension Images {

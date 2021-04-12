@@ -2,6 +2,7 @@ import UIKit
 import Swinject
 import Kingfisher
 import IQKeyboardManagerSwift
+import YandexMapsMobile
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNavigationBar()
         setupKingfisher()
         LoggerConfigurator.configure()
+        YMKMapKit.setApiKey("7b4d5f85-da95-462c-a67c-61a2f218cc13")
         return true
     }
 

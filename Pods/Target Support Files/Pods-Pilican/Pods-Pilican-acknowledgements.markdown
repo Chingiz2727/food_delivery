@@ -414,6 +414,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## YandexMapsMobile
+
+https://yandex.ru/legal/maps_api/ 2016 © Yandex. All rights reserved.
+
 ## lottie-ios
 
                                  Apache License

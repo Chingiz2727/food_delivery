@@ -17,10 +17,13 @@ public final class DependencyContainerAssembly: Assembly {
         }.inObjectScope(.container)
         container.register(CLLocationManager.self) { _ in
             CLLocationManager()
-        }.inObjectScope(.container)
+        }.inObjectScope(.transient)
         container.register(NotificationCenter.self) { _ in
             NotificationCenter.default
         }.inObjectScope(.container)
+        container.register(MapManager.self, factory: { _ in
+            MapManager(engine: YandexMapViewModel())
+        }).inObjectScope(.container)
         container.register(UserInfoStorage.self) { _ in
             UserInfoStorage()
         }.inObjectScope(.container)
