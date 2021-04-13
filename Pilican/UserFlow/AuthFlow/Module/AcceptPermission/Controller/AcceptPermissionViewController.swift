@@ -9,7 +9,8 @@ import UIKit
 import RxSwift
 
 class AcceptPermissionViewController: ViewController, AcceptPermissionModule, ViewHolder {
-
+    var nextTapped: NextTapped?
+    
     typealias RootViewType = AcceptPermissionView
 
     var isHidden: Bool? {
@@ -26,5 +27,13 @@ class AcceptPermissionViewController: ViewController, AcceptPermissionModule, Vi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindView()
+    }
+    
+    private func bindView() {
+        rootView.nextButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.nextTapped?()
+            }).disposed(by: disposeBag)
     }
 }

@@ -13,7 +13,7 @@ public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
     var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
-    
+
     private let moduleFactory: HomeCoordinatorModuleFactory
     var onDeliveryTab: Callback?
     
@@ -67,11 +67,11 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         }
         router.push(module)
     }
-    
+
     private func showDelivery() {
-        onDeliveryTab?()
+        self.onDeliveryTab?()
     }
-    
+
     private func showCamera() {
         let module = container.resolve(CameraModule.self)!
         router.push(module)

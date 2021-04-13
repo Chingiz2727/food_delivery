@@ -95,7 +95,7 @@ final class HomeCoordinator: BaseCoordinator {
         }
         router.push(module)
     }
-    
+
     private func startDeliveryFlow() {
         let coordinator = coordinatorFactory.makeDeliveryTabBar()
         coordinator.start()

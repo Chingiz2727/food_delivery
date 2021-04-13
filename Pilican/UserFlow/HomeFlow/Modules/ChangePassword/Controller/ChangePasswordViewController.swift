@@ -10,19 +10,20 @@ import RxSwift
 
 class ChangePasswordViewController: ViewController, ViewHolder, ChangePasswordModule {
     var saveTapped: SaveTapped?
-    
+
     typealias RootViewType = ChangePasswordView
 
     private let disposeBag = DisposeBag()
-    private let cache = DiskCache<String, Any>()
     private let viewModel: ChangePasswordViewModel
+    private let userInfoStorage: UserInfoStorage
 
     override func loadView() {
         view = ChangePasswordView()
     }
 
-    init(viewModel: ChangePasswordViewModel) {
+    init(viewModel: ChangePasswordViewModel, userInfoStorage: UserInfoStorage) {
         self.viewModel = viewModel
+        self.userInfoStorage = userInfoStorage
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -42,8 +43,7 @@ class ChangePasswordViewController: ViewController, ViewHolder, ChangePasswordMo
             acceptPassword: rootView.acceptPasswordContainer.textField.rx.text.asObservable())
         let output = viewModel.transform(input: input)
 
-        let user: User? = try? cache.readFromDisk(name: "userInfo")
-        let login = user?.username ?? ""
+        guard let login = userInfoStorage.mobilePhoneNumber else { return }
         rootView.setData(login: login)
 
         let result = output.changedPassword.publish()

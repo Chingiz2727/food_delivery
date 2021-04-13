@@ -33,6 +33,7 @@ PODS:
   - TagListView (1.4.1)
   - UltraDrawerView (0.5.0)
   - Willow (6.0.0)
+  - YandexMapsMobile (4.0.0-full)
 
 DEPENDENCIES:
   - Alamofire (= 4.8)
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - TagListView (~> 1.0)
   - UltraDrawerView (= 0.5.0)
   - Willow (~> 6.0)
+  - YandexMapsMobile (= 4.0.0-full)
 
 SPEC REPOS:
   trunk:
@@ -76,6 +78,7 @@ SPEC REPOS:
     - TagListView
     - UltraDrawerView
     - Willow
+    - YandexMapsMobile
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -98,7 +101,8 @@ SPEC CHECKSUMS:
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   UltraDrawerView: 50968b8838d22adf33d083a4d7a8e5293a74bec8
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
+  YandexMapsMobile: 0f3d8c92fad685dc33d07f83eed4eb0166089743
 
-PODFILE CHECKSUM: 8dfecc2515206af04c60bb83f4ab8ab763147ee0
+PODFILE CHECKSUM: 6a182c0df3c5647157f2666eb59c882aaad55a60
 
 COCOAPODS: 1.10.0

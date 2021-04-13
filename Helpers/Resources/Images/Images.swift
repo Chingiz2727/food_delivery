@@ -80,6 +80,11 @@ enum Images: String {
     case pillikanInfo
     case pillikanPay
     case action
+    case Location
+    case LocationSelected
+    case homeDelivery
+    case homeDeliverySelected
+    case mapIcon
 }
 
 extension Images {

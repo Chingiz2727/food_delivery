@@ -69,6 +69,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Please Accept to use your camera</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Нам необходим доступ к локации для определения ближайших партнеров</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Нам необходим доступ к локации для определения ближайших партнеров</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Нам необходим доступ к локации для определения ближайших партнеров</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Whitney-Black.ttf</string>

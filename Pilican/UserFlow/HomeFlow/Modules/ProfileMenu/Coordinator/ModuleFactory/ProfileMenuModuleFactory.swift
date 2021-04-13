@@ -16,16 +16,19 @@ final class ProfileMenuModuleFactory {
     func makeMyQR() -> MyQRModule {
         return MyQRViewController()
     }
-    
+
     func makeChangePassword() -> ChangePasswordModule {
         let apiService = container.resolve(ApiService.self)!
+        let userInfoStorage = container.resolve(UserInfoStorage.self)!
         let viewModel = ChangePasswordViewModel(apiService: apiService)
-        let viewController = ChangePasswordViewController(viewModel: viewModel)
+        let viewController = ChangePasswordViewController(viewModel: viewModel, userInfoStorage: userInfoStorage)
         return viewController
     }
 
     func makeChangePin() -> ChangePinModule {
-        return ChangePinViewController()
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = ChangePinViewModel(apiservice: apiService)
+        return ChangePinViewController(viewModel: viewModel)
     }
 
     func makeAbout() -> AboutModule {
@@ -38,14 +41,16 @@ final class ProfileMenuModuleFactory {
     }
 
     func makeAccount() -> AccountModule {
-        return AccountViewController()
+        let userInfoStorage = container.resolve(UserInfoStorage.self)!
+        return AccountViewController(userInfoStorage: userInfoStorage)
     }
 
     func makeEditAccount() -> EditAccountModule {
         let apiService = container.resolve(ApiService.self)!
-        let viewModel = EditAccountViewModel(apiService: apiService)
+        let userInfoStorage = container.resolve(UserInfoStorage.self)!
+        let viewModel = EditAccountViewModel(apiService: apiService, userInfoStorage: userInfoStorage)
         let dateFormatter = container.resolve(PropertyFormatter.self)!
-        let viewController = EditAccountViewController(viewModel: viewModel, dateFormatter: dateFormatter)
+        let viewController = EditAccountViewController(viewModel: viewModel, dateFormatter: dateFormatter, userInfoStorage: userInfoStorage)
         return viewController
     }
 

@@ -1,13 +1,18 @@
-protocol ProfileMenuCoordinator: BaseCoordinator {}
+protocol ProfileMenuCoordinator: BaseCoordinator {
+    var onLogoutDidTap: Callback? { get set }
+}
 import UIKit
 final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator {
+    var onLogoutDidTap: Callback?
     
     private let moduleFactory: ProfileMenuModuleFactory
+    private let authService: AuthStateObserver
     private let phoneNumber = "+7(775)007-42-30"
     private let waNumber = "+77750002219"
 
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = ProfileMenuModuleFactory(container: container)
+        authService = container.resolve(AuthStateObserver.self)!
         super.init(router: router, container: container)
     }
 
@@ -82,9 +87,15 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
                 self?.showChangePin()
             case .myQR:
                 self?.showMyQR()
+            case .logout:
+                self?.logout()
             }
         }
         router.push(module)
+    }
+
+    private func logout() {
+        authService.forceLogout()
     }
 
     private func showMyCards() {
@@ -103,12 +114,18 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
 
     private func showChangePin() {
-        let module = moduleFactory.makeChangePin()
+        var module = moduleFactory.makeChangePin()
+        module.saveTapped = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
     private func showEditAccount() {
-        let module = moduleFactory.makeEditAccount()
+        var module = moduleFactory.makeEditAccount()
+        module.saveTapped = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 

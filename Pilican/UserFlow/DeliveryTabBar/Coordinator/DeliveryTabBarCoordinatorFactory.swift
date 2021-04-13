@@ -11,6 +11,8 @@ final class DeliveryTabBarCoordinatorFactory {
     func makeDeliveryCoordinator() -> (coordinator: DeliveryCoordinatorOutput, module: Presentable) {
         let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
         rootController.navigationBar.isHidden = false
+        rootController.tabBarItem.image = Images.homeDelivery.image?.withRenderingMode(.alwaysOriginal)
+        rootController.tabBarItem.selectedImage = Images.homeDeliverySelected.image?.withRenderingMode(.alwaysOriginal)
         let coordinator = DeliveryCoordinator(router: Router(rootController: rootController), container: container)
         return (coordinator, rootController)
     }
@@ -29,6 +31,14 @@ final class DeliveryTabBarCoordinatorFactory {
         rootController.tabBarItem.image = Images.basket.image?.withRenderingMode(.alwaysOriginal)
         rootController.tabBarItem.selectedImage = Images.basketSelected.image?.withRenderingMode(.alwaysOriginal)
         let coordinator = OrderTypeCoordinator(router: Router(rootController: rootController), container: container)
+        return (coordinator, rootController)
+    }
+    
+    func makeMap() -> (coordinator: RetailListMapCoordinator, module: Presentable) {
+        let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
+        rootController.tabBarItem.image = Images.Location.image?.withRenderingMode(.alwaysOriginal)
+        rootController.tabBarItem.selectedImage = Images.LocationSelected.image?.withRenderingMode(.alwaysOriginal)
+        let coordinator = RetailListMapCoordinator(router: Router(rootController: rootController), container: container)
         return (coordinator, rootController)
     }
 }

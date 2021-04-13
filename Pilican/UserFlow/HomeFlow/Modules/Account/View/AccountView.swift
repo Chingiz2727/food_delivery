@@ -21,7 +21,7 @@ class AccountView: UIView {
         stackView.spacing = 10
         return stackView
     }()
-    private let existButton: UIButton = {
+    let existButton: UIButton = {
         let button = UIButton()
         button.setTitle("Выйти", for: .normal)
         button.backgroundColor = .orange

@@ -3,12 +3,21 @@ import RxSwift
 
 class AccountViewController: ViewController, AccountModule, ViewHolder {
     var profileItemsDidSelect: ProfileItemsDidSelect?
-    
+
     typealias RootViewType = AccountView
 
-    private let cache = DiskCache<String, Any>()
     private let disposeBag = DisposeBag()
-
+    private let userInfoStorage: UserInfoStorage
+    
+    init(userInfoStorage: UserInfoStorage) {
+        self.userInfoStorage = userInfoStorage
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = AccountView()
     }
@@ -24,7 +33,7 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
             .subscribe(onNext: { [unowned self] in
                 self.profileItemsDidSelect?(.myCards)
             }).disposed(by: disposeBag)
-            
+
         rootView.accountQR.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] _ in
                 self.profileItemsDidSelect?(.myQR)
@@ -45,13 +54,16 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
             .subscribe(onNext: { [unowned self] in
                 self.profileItemsDidSelect?(.editAccount)
             }).disposed(by: disposeBag)
+
+        rootView.existButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.profileItemsDidSelect?(.logout)
+            }).disposed(by: disposeBag)
     }
 
     private func bindViewModel() {
-        let user: User? = try? cache.readFromDisk(name: "userInfo")
-        let profile: Profile? = try? cache.readFromDisk(name: "profileInfo")
-        let name = profile?.firstName
-        let phone = user?.username
+        let name = userInfoStorage.fullName
+        let phone = userInfoStorage.mobilePhoneNumber
         rootView.accountHeaderView.setData(name: name ?? "", phone: phone ?? "")
     }
 }

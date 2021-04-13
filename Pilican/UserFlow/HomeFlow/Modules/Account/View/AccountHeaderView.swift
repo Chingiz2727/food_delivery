@@ -57,7 +57,7 @@ class AccountHeaderView: UIView {
         super.layoutSubviews()
         layer.cornerRadius = 10
     }
-    
+
     func setData(name: String, phone: String) {
         accountNameLabel.text = name
         accountPhoneLabel.text = phone

@@ -28,6 +28,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         setupDeliveryFlow()
         setupBasketFlow()
         setupSearchFlow()
+        setupMapFlow()
     }
 
     private func setupBasketFlow() {
@@ -51,6 +52,16 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         coordinator.start()
         addDependency(coordinator)
         guard let controller = rooController.toPresent() else { return }
+        tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
+    }
+    
+    private func setupMapFlow() {
+        let (coordinator, rootController) = coordinatorFactory.makeMap()
+        coordinator.start()
+        addDependency(coordinator)
+        guard let controller = rootController.toPresent() else {
+            return
+        }
         tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
     }
 }

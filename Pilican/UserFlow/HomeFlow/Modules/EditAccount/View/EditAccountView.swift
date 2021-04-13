@@ -56,12 +56,12 @@ class EditAccountView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setData(user: User, profile: Profile) {
-        loginContainer.textField.text = user.username
-        usernameContainer.textField.text = profile.firstName
-        cityContainer.textField.text = profile.city.name
-        genderContainer.textField.text = profile.sex ? "Мужчина" : "Женщина"
-        birthdayContainer.textField.text = profile.birthDay
+    func setData(userInfoStorage: UserInfoStorage) {
+        loginContainer.textField.text = userInfoStorage.mobilePhoneNumber
+        usernameContainer.textField.text = userInfoStorage.fullName
+        cityContainer.textField.text = userInfoStorage.city
+        genderContainer.textField.text = userInfoStorage.gender ?? true ? "Мужчина" : "Женщина"
+        birthdayContainer.textField.text = userInfoStorage.birthday
     }
 
     private func setupInitialLayouts() {
