@@ -1,1 +1,3 @@
-public protocol TababbleCoordinator: BaseCoordinator {}
+protocol TababbleCoordinator: BaseCoordinator {
+    var onTabBarItemNeedsToBeChanged: ((_ toTabBarItem: DeliveryTabBarItem) -> Void)? { get set }
+}

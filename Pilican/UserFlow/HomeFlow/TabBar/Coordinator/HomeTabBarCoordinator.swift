@@ -8,12 +8,15 @@ struct TabableRootControllerAndCoordinatorContainer {
 
 public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
     func goToHomeWithDeeplink(action: DeepLinkAction)
+    var onDeliveryTab: Callback? { get set }
 }
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
-
+    var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
+    
     private let moduleFactory: HomeCoordinatorModuleFactory
-
+    var onDeliveryTab: Callback?
+    
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = HomeCoordinatorModuleFactory(container: container, router: router)
         super.init(router: router, container: container)
@@ -33,7 +36,6 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         }
 
         module.selectMenu = { [weak self] category in
-            print("selected category", category)
             switch category {
             case .cashBack:
                 self?.showCashBackList()
@@ -60,11 +62,9 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
 
     private func showCashBackList() {
         var module = moduleFactory.makeCashbackList()
-
         module.onSelectRetail = { [weak self] retail in
             self?.startRetailDetailCoordinator(retail: retail)
         }
-
         router.push(module)
     }
 

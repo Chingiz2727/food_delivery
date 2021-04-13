@@ -48,7 +48,7 @@ enum CameraTarget: ApiTarget {
         case .retailScan:
             return [
                 "clientId": "bW9iaWxl",
-                "appver": "3.0.0"
+                "appver": "3.2.1"
             ]
         }
     }

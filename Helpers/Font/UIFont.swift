@@ -16,6 +16,7 @@ extension UIFont {
     static let book14 = UIFont(name: "Whitney-Book", size: 14)!
     static let book16 = UIFont(name: "Whitney-Book", size: 16)!
     static let book12 = UIFont(name: "Whitney-Book", size: 12)!
+    static let book18 = UIFont(name: "Whitney-Book", size: 18)!
     static let book9 = UIFont(name: "Whitney-Book", size: 9)!
     static let book8 = UIFont(name: "Whitney-Book", size: 8)!
     static let book10 = UIFont(name: "Whitney-Book", size: 10)!

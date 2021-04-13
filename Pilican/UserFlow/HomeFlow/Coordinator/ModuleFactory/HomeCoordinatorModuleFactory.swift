@@ -24,11 +24,4 @@ final class HomeCoordinatorModuleFactory {
         let viewModel = CashBackListViewModel(apiService: apiService)
         return CashBackListViewController(viewModel: viewModel)
     }
-
-    func delivery() -> DeliveryRetailListModule {
-        let apiSevice = container.resolve(ApiService.self)!
-        let viewModel = DeliveryRetailListViewModel(apiService: apiSevice)
-        let controller = DeliveryRetailListViewController(viewModel: viewModel)
-        return controller
-    }
 }

@@ -1,6 +1,8 @@
 import UIKit
 import Swinject
+import Kingfisher
 import IQKeyboardManagerSwift
+import YandexMapsMobile
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         makeCoordinator(application: application)
         setupKeyboardManager()
         setupNavigationBar()
+        setupKingfisher()
         LoggerConfigurator.configure()
-        // Override point for customization after application launch.
+        YMKMapKit.setApiKey("7b4d5f85-da95-462c-a67c-61a2f218cc13")
         return true
     }
 
@@ -48,6 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarTintColor = .primary
     }
 
+    private func setupKingfisher() {
+        let cache = ImageCache.default
+        cache.memoryStorage.config.expiration = .seconds(30)
+        cache.diskStorage.config.expiration = .days(2)
+        cache.memoryStorage.config.totalCostLimit = getMB(10)
+    }
+
     private func setupNavigationBar() {
         let navigationBar = UINavigationBar.appearance()
         navigationBar.isTranslucent = false
@@ -56,6 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.titleTextAttributes = Constants.titleTextAttributes
         navigationBar.tintColor = .pilicanBlack
         navigationBar.barTintColor = .background
+    }
+
+    private func getMB(_ value: Int) -> Int {
+        return value * 1024 * 1024
     }
 }
 

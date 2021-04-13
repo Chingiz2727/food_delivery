@@ -3,7 +3,7 @@ import UIKit
 final class DeliveryRetailListView: UIView {
 
     let tableView = UITableView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
@@ -18,7 +18,7 @@ final class DeliveryRetailListView: UIView {
         addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalTo(safeAreaLayoutGuide) }
     }
-    
+
     private func configureView() {
         backgroundColor = .background
         tableView.registerClassForCell(DeliveryRetailListTableViewCell.self)
