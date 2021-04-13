@@ -77,6 +77,9 @@ enum Images: String {
     case basket
     case basketSelected
     case alarm
+    case pillikanInfo
+    case pillikanPay
+    case action
 }
 
 extension Images {
