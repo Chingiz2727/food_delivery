@@ -80,16 +80,16 @@ final class CashBackView: UIView {
             make.top.bottom.equalToSuperview().inset(10)
         }
     }
-    
+
     func setData(retail: Retail) {
         costLabel.text = "\(retail.avgAmount ?? "1") тг\ncредний чек"
         cashBackLabel.text = "\(calculateCashback(cashback: retail.cashBack, avgAmount: retail.avgAmount ?? "1")) тг\nкэшбэк"
     }
-    
+
     private func calculateCashback(cashback: Int, avgAmount: String) -> Int {
         let div = Double(cashback) / 100.0
         let averageAmount = avgAmount == "" ? "1" : avgAmount
-        let cash = Int(div * (Double(averageAmount) ?? 0))
+        let cash = Int(div * (Double(averageAmount) ?? 1))
         return cash
     }
 }

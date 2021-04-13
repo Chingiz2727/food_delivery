@@ -11,7 +11,6 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
     private let homeTabBar = HomeTabBar()
     private let tabView = HomeTabView()
     private let userInfoStorage: UserInfoStorage
-
     private let disposeBag = DisposeBag()
 
     init(userInfoStorage: UserInfoStorage) {

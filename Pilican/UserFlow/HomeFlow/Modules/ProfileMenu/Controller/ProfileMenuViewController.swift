@@ -2,7 +2,6 @@ import RxSwift
 import UIKit
 
 final class ProfileMenuViewController: UIViewController, ViewHolder, ProfileMenuModule {
-    
     typealias RootViewType = ProfileMenuView
 
     var menuDidSelect: MenuDidSelect?

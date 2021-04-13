@@ -80,6 +80,7 @@
 		55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */; };
 		55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */; };
 		55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */; };
+		55A762CD261C598E00480BAC /* AuthStateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A762CC261C598D00480BAC /* AuthStateObserver.swift */; };
 		55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C06F260B0E250037D567 /* CameraTarget.swift */; };
 		55A7C076260B38720037D567 /* QRPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C075260B38720037D567 /* QRPaymentView.swift */; };
 		55A7C079260B58AA0037D567 /* CalculatePayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C078260B58AA0037D567 /* CalculatePayView.swift */; };
@@ -91,6 +92,8 @@
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
 		55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */; };
 		55ADCEB325E6625E003D3F3A /* TermsofPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */; };
+		55AE8972261B145900D82489 /* ChangePinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8971261B145900D82489 /* ChangePinViewModel.swift */; };
+		55AE8978261B302100D82489 /* PinCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE8977261B302100D82489 /* PinCodeResponse.swift */; };
 		55BEF35925FB235300205BBD /* EditAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEF35825FB235300205BBD /* EditAccountViewModel.swift */; };
 		55BEF36325FB393000205BBD /* GenderPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEF36225FB393000205BBD /* GenderPickerViewDelegate.swift */; };
 		55BEF36725FB398300205BBD /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BEF36625FB398300205BBD /* Gender.swift */; };
@@ -528,6 +531,7 @@
 		55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsModule.swift; sourceTree = "<group>"; };
 		55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
 		55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsFooterView.swift; sourceTree = "<group>"; };
+		55A762CC261C598D00480BAC /* AuthStateObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthStateObserver.swift; path = "../../../cert-ios/Core/AuthStateObserver/AuthStateObserver.swift"; sourceTree = "<group>"; };
 		55A7C06F260B0E250037D567 /* CameraTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTarget.swift; sourceTree = "<group>"; };
 		55A7C075260B38720037D567 /* QRPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentView.swift; sourceTree = "<group>"; };
 		55A7C078260B58AA0037D567 /* CalculatePayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePayView.swift; sourceTree = "<group>"; };
@@ -539,6 +543,8 @@
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
 		55ADCEAF25E65E93003D3F3A /* AcceptPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionView.swift; sourceTree = "<group>"; };
 		55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsofPolicyView.swift; sourceTree = "<group>"; };
+		55AE8971261B145900D82489 /* ChangePinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinViewModel.swift; sourceTree = "<group>"; };
+		55AE8977261B302100D82489 /* PinCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeResponse.swift; sourceTree = "<group>"; };
 		55BEF35825FB235300205BBD /* EditAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewModel.swift; sourceTree = "<group>"; };
 		55BEF36225FB393000205BBD /* GenderPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPickerViewDelegate.swift; sourceTree = "<group>"; };
 		55BEF36625FB398300205BBD /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
@@ -1323,6 +1329,8 @@
 		5578855625FF637500B3A798 /* ChangePin */ = {
 			isa = PBXGroup;
 			children = (
+				55AE8975261B2FFF00D82489 /* Model */,
+				55AE8970261B144900D82489 /* ViewModel */,
 				5578855F25FF67D900B3A798 /* Module */,
 				5578855B25FF671300B3A798 /* Controller */,
 				5578855725FF637E00B3A798 /* View */,
@@ -1589,6 +1597,14 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
+		55A762CB261C588E00480BAC /* AuthStateObserver */ = {
+			isa = PBXGroup;
+			children = (
+				55A762CC261C598D00480BAC /* AuthStateObserver.swift */,
+			);
+			path = AuthStateObserver;
+			sourceTree = "<group>";
+		};
 		55A7C06E260B0E010037D567 /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -1663,6 +1679,22 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55AE8970261B144900D82489 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55AE8971261B145900D82489 /* ChangePinViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55AE8975261B2FFF00D82489 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55AE8977261B302100D82489 /* PinCodeResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		55BEF35725FB233E00205BBD /* ViewModel */ = {
@@ -3231,6 +3263,7 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				55A762CB261C588E00480BAC /* AuthStateObserver */,
 				724FC58E262419BD00C1DED3 /* UltraDrawerView */,
 				721127F42620141A0055A83A /* UserLocation */,
 				721127E526200CEB0055A83A /* MapManager */,
@@ -4332,6 +4365,7 @@
 				5526DADB2603824000536589 /* PayDetailModule.swift in Sources */,
 				A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
+				55AE8978261B302100D82489 /* PinCodeResponse.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
 				A475CC2325EF3ED700C596FB /* Extentsion+BoolToInt.swift in Sources */,
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
@@ -4413,6 +4447,7 @@
 				722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */,
 				A4B3144525D150900003BA0B /* AuthCoordinator.swift in Sources */,
 				A4BBC6D625D63664006AF382 /* Images.swift in Sources */,
+				55A762CD261C598E00480BAC /* AuthStateObserver.swift in Sources */,
 				A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */,
 				A40B95FF25DE6D1300E507FB /* HomeApiService.swift in Sources */,
 				724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */,
@@ -4607,6 +4642,7 @@
 				A44F581E25E90F5D00F5A39B /* HomeProfileMenu.swift in Sources */,
 				A4FD7DB425DD380C000DD49D /* HomeTabView.swift in Sources */,
 				A483E26325D40ABE006D2DAF /* Result.swift in Sources */,
+				55AE8972261B145900D82489 /* ChangePinViewModel.swift in Sources */,
 				A483E28125D40ABE006D2DAF /* StubApiRequest.swift in Sources */,
 				A40A557A25D28C7A00BBFDFA /* AuthViewModel.swift in Sources */,
 				556CF6BF26020708007B8FB9 /* BalanceModule.swift in Sources */,

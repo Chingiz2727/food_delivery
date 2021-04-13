@@ -9,6 +9,7 @@ enum AuthTarget: ApiTarget {
     case getAuthSmsCode(phone: String)
     case firbaseToken(fireBaseToken: String)
     case changePassword(newPassword: String, acceptPassword: String)
+    case changePin(password: String, newPin: String, acceptPin: String)
 
     var servicePath: String { "" }
 
@@ -34,6 +35,8 @@ enum AuthTarget: ApiTarget {
             return "api/user/f-token"
         case .changePassword:
             return "v1/profile/change-password"
+        case .changePin:
+            return "v1/profile/change-pin"
         }
     }
 
@@ -58,11 +61,11 @@ enum AuthTarget: ApiTarget {
             return params
         case let .updateProfile(username, sex, fullName, birthday, cityId):
             let params = [
-                "username": username.toBase64(),
-                "sex": sex.toBase64(),
-                "fullName": fullName.toBase64(),
-                "birthday": birthday.toBase64(),
-                "cityId": cityId.toBase64()
+                "username": username,
+                "sex": sex,
+                "fullName": fullName,
+                "birthday": birthday,
+                "cityId": cityId
             ]
             return params
         case let .verifySmsCode(phone, code):
@@ -77,6 +80,8 @@ enum AuthTarget: ApiTarget {
             return ["test": "value"]
         case .changePassword(let newPassword, let acceptPassword):
             return ["password": newPassword, "password2": acceptPassword]
+        case let .changePin(password, newPin, acceptPin):
+            return ["password": password, "pin1": newPin, "pin2": acceptPin]
         }
     }
 
@@ -86,7 +91,7 @@ enum AuthTarget: ApiTarget {
 
     var headers: [String: String]? {
         switch self {
-        case .loginUser, .register, .verifySmsCode, .changePassword, .updateProfile:
+        case .loginUser, .register, .verifySmsCode, .changePassword, .updateProfile, .changePin:
             return
                 [
                     "clientId": "bW9iaWxl",

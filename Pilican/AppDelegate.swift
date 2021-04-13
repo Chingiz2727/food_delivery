@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         appCoordinator = AppCoordinator(router: Router(rootController: rootController), container: assembler.resolver)
+        assembler.resolver.resolve(AuthStateObserver.self)!.setCoordinator(appCoordinator)
         appCoordinator?.start()
     }
 

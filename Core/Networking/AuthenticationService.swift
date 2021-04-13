@@ -14,6 +14,7 @@ public protocol AuthenticationService {
     func verifySmsCode(_ phone: String, code: String) -> Observable<LoadingSequence<UserAuthResponse>>
     func updateToken(with newToken: Token?)
     func updateProfile(with profile: UserAuthResponse?)
+    func forceLogout()
 }
 
 public protocol LogoutListener {
@@ -109,9 +110,6 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     }
     
     public func forceLogout() {
-        updateToken(with: nil)
-        try? cache.clearFromDisk(name: "profileInfo")
-        try? cache.clearFromDisk(name: "userInfo")
         logoutListeners.forEach { $0.cleanUpAfterLogout() }
     }
     
@@ -128,6 +126,8 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         infoStorage.lastName = profile?.profile.lastName
         infoStorage.promoCode = profile?.user.promoCode
         infoStorage.mobilePhoneNumber = profile?.user.username
+        infoStorage.birthday = profile?.profile.birthDay
+        infoStorage.gender = profile?.profile.sex
     }
     
 }

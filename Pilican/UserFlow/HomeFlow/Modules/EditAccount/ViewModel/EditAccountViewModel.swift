@@ -11,7 +11,7 @@ final class EditAccountViewModel: ViewModel {
     
     struct Input {
         let saveTapped: Observable<Void>
-        let username: Observable<String>
+        let username: Observable<String?>
         let fullname: Observable<String?>
         let city: Observable<City>
         let gender: Observable<Gender>
@@ -27,9 +27,11 @@ final class EditAccountViewModel: ViewModel {
     }
 
     private let apiService: ApiService
+    private let userInfoStorage: UserInfoStorage
 
-    init(apiService: ApiService) {
+    init(apiService: ApiService, userInfoStorage: UserInfoStorage) {
         self.apiService = apiService
+        self.userInfoStorage = userInfoStorage
     }
 
     func transform(input: Input) -> Output {
@@ -45,23 +47,24 @@ final class EditAccountViewModel: ViewModel {
                 return apiService.makeRequest(
                     to:
                         AuthTarget.updateProfile(
-                        username: userName,
+                            username: userName ?? "",
                             sex: "\(gender.id)",
                             fullName: fullName ?? "",
-                        birthday: birth ?? "",
-                        cityId: "\(city.id)"))
+                            birthday: birth ?? "",
+                            cityId: "\(city.id)"))
                     .result(ResponseStatus.self)
-            }.asLoadingSequence()
+                    .asLoadingSequence()
+            }.share()
 
         let loadCity = input.loadCity
             .flatMap { [unowned self] in
                 return Observable.just(loadJson())
-            }
+            }.share()
 
         let loadGender = input.loadGender
             .flatMap {
                 return Observable.just([Gender.init(id: 1, gender: "Мужчина"), Gender.init(id: 0, gender: "Женщина")])
-            }
+            }.share()
 
         return .init(updatedAccount: updateAccount, getCity: loadCity, getGender: loadGender)
     }
