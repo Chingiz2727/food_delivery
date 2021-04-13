@@ -6,5 +6,10 @@ final class MakeOrderCommentTitleView: UIView {
         return imageView
     }()
     
-    private let titleLabel: U
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    
 }
