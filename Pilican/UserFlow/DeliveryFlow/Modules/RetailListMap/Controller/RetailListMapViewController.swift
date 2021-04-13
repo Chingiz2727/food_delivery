@@ -32,7 +32,7 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Карта"
+        navigationItem.title = "Карта" 
         bindViewModel()
         configureView()
         setupMap()
@@ -53,6 +53,7 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
                 retails.forEach { retail in
                     self.mapManager.createAnnotation(in: self.rootView.mapView, at: MapPoint(latitude: retail.latitude, longitude: retail.longitude), image: Images.mapIcon.image, associatedData: retail)
                 }
+                self.rootView.drawerView.isHidden = retails.isEmpty
             })
             .bind(to: rootView.tableView.rx.items(DeliveryRetailListTableViewCell.self)) { _, model, cell  in
                 cell.setRetail(retail: model)
@@ -86,13 +87,13 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
     }
     
     private func setupMap() {
-        guard let location = secondManager.location?.coordinate else {
-            return
-        }
-        locationSubject.onNext(MapPoint(latitude: location.latitude, longitude: location.longitude))
+        let latitude = secondManager.location?.coordinate.latitude ?? 42.340782
+        let longitude = secondManager.location?.coordinate.longitude ?? 69.596329
+        
+        locationSubject.onNext(MapPoint(latitude: latitude, longitude: longitude))
         mapManager.showCurrentLocation(in: rootView.mapView)
-        let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 14)
-        mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: location.latitude, longitude: location.longitude), transitionViewModel: viewModel)
+        let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 13)
+        mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: latitude, longitude: longitude), transitionViewModel: viewModel)
     }
 }
 

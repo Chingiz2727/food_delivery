@@ -7,15 +7,11 @@ enum DishListAction {
 
 final class DishList {
 
-    var dishList: Observable<[Product]> {
-        wishDishList
-    }
-    
     var retail: DeliveryRetail?
     
     let productList: PublishSubject<[ProductCategory]> = .init()
 
-    private let wishDishList: PublishSubject<[Product]> = .init()
+    let wishDishList: BehaviorSubject<[Product]> = .init(value: [])
 
     var products: [Product] = .init() {
         didSet {
