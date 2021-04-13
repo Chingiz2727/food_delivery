@@ -123,6 +123,13 @@
 		7211285226202B760055A83A /* RetailListMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7211285126202B760055A83A /* RetailListMapCoordinator.swift */; };
 		72112856262070F10055A83A /* RetailListMapModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72112855262070F10055A83A /* RetailListMapModuleFactory.swift */; };
 		722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */; };
+		722A33C6262568E3003FB38A /* MakeOrderModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33C5262568E3003FB38A /* MakeOrderModule.swift */; };
+		722A33CA262568FC003FB38A /* MakeOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33C9262568FC003FB38A /* MakeOrderViewController.swift */; };
+		722A33CD26256CF7003FB38A /* MakeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33CC26256CF7003FB38A /* MakeOrderView.swift */; };
+		722A33D126257147003FB38A /* DeliveryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33D026257147003FB38A /* DeliveryItemView.swift */; };
+		722A33D726259CF7003FB38A /* BasketItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33D626259CF7003FB38A /* BasketItemView.swift */; };
+		722A33DB2625B093003FB38A /* MakeOrderCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33DA2625B093003FB38A /* MakeOrderCommentView.swift */; };
+		722A33E12625B931003FB38A /* MakeOrderCommentTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33E02625B931003FB38A /* MakeOrderCommentTitleView.swift */; };
 		724FC563262300B400C1DED3 /* YandexMapEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC562262300B400C1DED3 /* YandexMapEngine.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
@@ -572,6 +579,13 @@
 		7211285126202B760055A83A /* RetailListMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapCoordinator.swift; sourceTree = "<group>"; };
 		72112855262070F10055A83A /* RetailListMapModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapModuleFactory.swift; sourceTree = "<group>"; };
 		722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeHeaderView.swift; sourceTree = "<group>"; };
+		722A33C5262568E3003FB38A /* MakeOrderModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderModule.swift; sourceTree = "<group>"; };
+		722A33C9262568FC003FB38A /* MakeOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderViewController.swift; sourceTree = "<group>"; };
+		722A33CC26256CF7003FB38A /* MakeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderView.swift; sourceTree = "<group>"; };
+		722A33D026257147003FB38A /* DeliveryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItemView.swift; sourceTree = "<group>"; };
+		722A33D626259CF7003FB38A /* BasketItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItemView.swift; sourceTree = "<group>"; };
+		722A33DA2625B093003FB38A /* MakeOrderCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderCommentView.swift; sourceTree = "<group>"; };
+		722A33E02625B931003FB38A /* MakeOrderCommentTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderCommentTitleView.swift; sourceTree = "<group>"; };
 		724FC562262300B400C1DED3 /* YandexMapEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapEngine.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
@@ -1936,6 +1950,84 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
+		722A33C0262568AA003FB38A /* MakeOrder */ = {
+			isa = PBXGroup;
+			children = (
+				722A33C4262568C8003FB38A /* ViewModel */,
+				722A33C3262568C3003FB38A /* View */,
+				722A33C2262568BD003FB38A /* Controller */,
+				722A33C1262568B7003FB38A /* Module */,
+			);
+			path = MakeOrder;
+			sourceTree = "<group>";
+		};
+		722A33C1262568B7003FB38A /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				722A33C5262568E3003FB38A /* MakeOrderModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		722A33C2262568BD003FB38A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				722A33C9262568FC003FB38A /* MakeOrderViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		722A33C3262568C3003FB38A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				722A33CF26257127003FB38A /* Views */,
+				722A33CC26256CF7003FB38A /* MakeOrderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		722A33C4262568C8003FB38A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		722A33CF26257127003FB38A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				722A33DF2625B914003FB38A /* MakeOrderCommentView */,
+				722A33DE2625B90A003FB38A /* BasketItemView */,
+				722A33DD2625B8FD003FB38A /* DeliveryItemView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		722A33DD2625B8FD003FB38A /* DeliveryItemView */ = {
+			isa = PBXGroup;
+			children = (
+				722A33D026257147003FB38A /* DeliveryItemView.swift */,
+			);
+			path = DeliveryItemView;
+			sourceTree = "<group>";
+		};
+		722A33DE2625B90A003FB38A /* BasketItemView */ = {
+			isa = PBXGroup;
+			children = (
+				722A33D626259CF7003FB38A /* BasketItemView.swift */,
+			);
+			path = BasketItemView;
+			sourceTree = "<group>";
+		};
+		722A33DF2625B914003FB38A /* MakeOrderCommentView */ = {
+			isa = PBXGroup;
+			children = (
+				722A33DA2625B093003FB38A /* MakeOrderCommentView.swift */,
+				722A33E02625B931003FB38A /* MakeOrderCommentTitleView.swift */,
+			);
+			path = MakeOrderCommentView;
+			sourceTree = "<group>";
+		};
 		724FC5802624132C00C1DED3 /* ApiTarget */ = {
 			isa = PBXGroup;
 			children = (
@@ -2374,6 +2466,7 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				722A33C0262568AA003FB38A /* MakeOrder */,
 				72112840262027850055A83A /* RetailListMap */,
 				556543E1261DC688009A4E62 /* RateMeal */,
 				556543D2261DB7A5009A4E62 /* RateDelivery */,
@@ -4233,6 +4326,7 @@
 				728434D9261D801900E21209 /* DeliveryRetailProductsModule.swift in Sources */,
 				5578855925FF639400B3A798 /* ChangePinView.swift in Sources */,
 				5555236E25EF8FBA00537D3F /* Profile.swift in Sources */,
+				722A33E12625B931003FB38A /* MakeOrderCommentTitleView.swift in Sources */,
 				7211283B262020660055A83A /* YandexMapViewModel.swift in Sources */,
 				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
@@ -4289,6 +4383,7 @@
 				72FB0811261DAB3000F04395 /* RetailSearchModule.swift in Sources */,
 				5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */,
 				72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */,
+				722A33CD26256CF7003FB38A /* MakeOrderView.swift in Sources */,
 				A4E581E825D543C400EDC053 /* UIViewController+Alert.swift in Sources */,
 				A483E28C25D40ABE006D2DAF /* PaginationManager.swift in Sources */,
 				A40B961125DE766E00E507FB /* RetailList.swift in Sources */,
@@ -4441,6 +4536,7 @@
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A4EFD4DF261320C200694D18 /* SegmentItem.swift in Sources */,
+				722A33DB2625B093003FB38A /* MakeOrderCommentView.swift in Sources */,
 				724FC5B9262419BE00C1DED3 /* DrawerView+UIScrollView.swift in Sources */,
 				A4057DA72611C5470062BB5B /* BiometricService.swift in Sources */,
 				A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */,
@@ -4496,6 +4592,7 @@
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,
+				722A33C6262568E3003FB38A /* MakeOrderModule.swift in Sources */,
 				55FCC6F825F89DCD000DED49 /* BonusViewController.swift in Sources */,
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
 				55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */,
@@ -4505,6 +4602,7 @@
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
+				722A33D126257147003FB38A /* DeliveryItemView.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
 				55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
@@ -4591,6 +4689,7 @@
 				A40A53C425D25C0B00BBFDFA /* PhoneNumberTextField.swift in Sources */,
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
 				72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */,
+				722A33CA262568FC003FB38A /* MakeOrderViewController.swift in Sources */,
 				721127F2262012AF0055A83A /* MapTransitionViewModel.swift in Sources */,
 				7211284A2620297C0055A83A /* RetailListMapViewController.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,
@@ -4609,6 +4708,7 @@
 				A483E26325D40ABE006D2DAF /* Result.swift in Sources */,
 				A483E28125D40ABE006D2DAF /* StubApiRequest.swift in Sources */,
 				A40A557A25D28C7A00BBFDFA /* AuthViewModel.swift in Sources */,
+				722A33D726259CF7003FB38A /* BasketItemView.swift in Sources */,
 				556CF6BF26020708007B8FB9 /* BalanceModule.swift in Sources */,
 				728434F2261D80AA00E21209 /* DeliveryRetailProductViewModel.swift in Sources */,
 				A483E28425D40ABE006D2DAF /* ApiRequest.swift in Sources */,
