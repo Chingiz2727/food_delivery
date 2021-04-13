@@ -32,6 +32,10 @@ final class HomeCoordinator: BaseCoordinator {
         tabBarController.bonusTap = { [weak self] in
             self?.showCashbackMenu()
         }
+        
+        tabBarController.notifyMenuTap = { [weak self] in
+            self?.showNotificationList()
+        }
 
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
@@ -96,5 +100,26 @@ final class HomeCoordinator: BaseCoordinator {
         let coordinator = coordinatorFactory.makeDeliveryTabBar()
         coordinator.start()
         addDependency(coordinator)
+    }
+    
+    private func showNotificationList() {
+        var module = coordinatorFactory.makeNotificationList()
+        module.notificationsListDidSelect = { [weak self] item in
+            switch item {
+            case .pillikanInfo: self?.showNotificationPillikanInfo()
+            case .pillikanPay: self?.showNotificationPillikanPay()
+            }
+        }
+        router.push(module)
+    }
+    
+    private func showNotificationPillikanInfo() {
+        let module = coordinatorFactory.pillikanInfoNotifications()
+        router.push(module)
+    }
+    
+    private func showNotificationPillikanPay() {
+        let module = coordinatorFactory.pillikanPayNotifications()
+        router.push(module)
     }
 }

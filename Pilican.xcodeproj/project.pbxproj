@@ -113,6 +113,22 @@
 		55FCC70525F8D499000DED49 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70425F8D499000DED49 /* AboutView.swift */; };
 		55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70825F8E2D4000DED49 /* AboutViewController.swift */; };
 		55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70D25F8E31C000DED49 /* AboutModule.swift */; };
+		5FD2F05026240BB80012110C /* NotificationListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2F04F26240BB80012110C /* NotificationListModule.swift */; };
+		5FD2F05426240C0C0012110C /* NotificationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2F05326240C0C0012110C /* NotificationListController.swift */; };
+		5FD2F058262417FB0012110C /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2F057262417FB0012110C /* NotificationListView.swift */; };
+		5FD2F05C262421A50012110C /* NotificationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2F05B262421A50012110C /* NotificationListTableViewCell.swift */; };
+		5FD2F06126243E940012110C /* NotificationsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2F06026243E940012110C /* NotificationsList.swift */; };
+		5FF910BB26254BDD00E1EF00 /* PillikanInfoNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910BA26254BDD00E1EF00 /* PillikanInfoNotificationsViewController.swift */; };
+		5FF910BE26254C4C00E1EF00 /* PillikanInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910BD26254C4C00E1EF00 /* PillikanInfoModule.swift */; };
+		5FF910C126254C7B00E1EF00 /* PillikanInfoNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910C026254C7B00E1EF00 /* PillikanInfoNotificationsView.swift */; };
+		5FF910C92625748300E1EF00 /* PillikanInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910C82625748300E1EF00 /* PillikanInfoViewModel.swift */; };
+		5FF910CC262577BF00E1EF00 /* NotificationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910CB262577BF00E1EF00 /* NotificationTarget.swift */; };
+		5FF910CF26258F9600E1EF00 /* NotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910CE26258F9600E1EF00 /* NotificationResponse.swift */; };
+		5FF910D52625B56600E1EF00 /* PillikanPayModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910D42625B56600E1EF00 /* PillikanPayModule.swift */; };
+		5FF910D92625B58C00E1EF00 /* PillikanPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910D82625B58C00E1EF00 /* PillikanPayViewController.swift */; };
+		5FF910DC2625B5FE00E1EF00 /* PillikanPayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910DB2625B5FE00E1EF00 /* PillikanPayViewModel.swift */; };
+		5FF910E02625B80600E1EF00 /* PillikanPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910DF2625B80600E1EF00 /* PillikanPayView.swift */; };
+		5FF910E42625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF910E32625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift */; };
 		721127E726200EDA0055A83A /* MapStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127E626200EDA0055A83A /* MapStatus.swift */; };
 		721127EB26200F050055A83A /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127EA26200F050055A83A /* MapPoint.swift */; };
 		721127EF262012980055A83A /* UserlocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127EE262012980055A83A /* UserlocationViewModel.swift */; };
@@ -564,6 +580,22 @@
 		55FCC70425F8D499000DED49 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		55FCC70825F8E2D4000DED49 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		55FCC70D25F8E31C000DED49 /* AboutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModule.swift; sourceTree = "<group>"; };
+		5FD2F04F26240BB80012110C /* NotificationListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListModule.swift; sourceTree = "<group>"; };
+		5FD2F05326240C0C0012110C /* NotificationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListController.swift; sourceTree = "<group>"; };
+		5FD2F057262417FB0012110C /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
+		5FD2F05B262421A50012110C /* NotificationListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListTableViewCell.swift; sourceTree = "<group>"; };
+		5FD2F06026243E940012110C /* NotificationsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsList.swift; sourceTree = "<group>"; };
+		5FF910BA26254BDD00E1EF00 /* PillikanInfoNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanInfoNotificationsViewController.swift; sourceTree = "<group>"; };
+		5FF910BD26254C4C00E1EF00 /* PillikanInfoModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanInfoModule.swift; sourceTree = "<group>"; };
+		5FF910C026254C7B00E1EF00 /* PillikanInfoNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanInfoNotificationsView.swift; sourceTree = "<group>"; };
+		5FF910C82625748300E1EF00 /* PillikanInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanInfoViewModel.swift; sourceTree = "<group>"; };
+		5FF910CB262577BF00E1EF00 /* NotificationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTarget.swift; sourceTree = "<group>"; };
+		5FF910CE26258F9600E1EF00 /* NotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationResponse.swift; sourceTree = "<group>"; };
+		5FF910D42625B56600E1EF00 /* PillikanPayModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanPayModule.swift; sourceTree = "<group>"; };
+		5FF910D82625B58C00E1EF00 /* PillikanPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanPayViewController.swift; sourceTree = "<group>"; };
+		5FF910DB2625B5FE00E1EF00 /* PillikanPayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanPayViewModel.swift; sourceTree = "<group>"; };
+		5FF910DF2625B80600E1EF00 /* PillikanPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanPayView.swift; sourceTree = "<group>"; };
+		5FF910E32625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanNotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		721127E626200EDA0055A83A /* MapStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatus.swift; sourceTree = "<group>"; };
 		721127EA26200F050055A83A /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
@@ -1868,6 +1900,90 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		5FD2F04B26240B870012110C /* NotificationList */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2F05F26243E3A0012110C /* Model */,
+				5FD2F04E26240BA80012110C /* Module */,
+				5FD2F04D26240B9C0012110C /* View */,
+				5FD2F04C26240B950012110C /* Controller */,
+				5FF910CB262577BF00E1EF00 /* NotificationTarget.swift */,
+			);
+			path = NotificationList;
+			sourceTree = "<group>";
+		};
+		5FD2F04C26240B950012110C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2F05326240C0C0012110C /* NotificationListController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FD2F04D26240B9C0012110C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2F05A262421880012110C /* Cell */,
+				5FD2F057262417FB0012110C /* NotificationListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FD2F04E26240BA80012110C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2F04F26240BB80012110C /* NotificationListModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5FD2F05A262421880012110C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2F05B262421A50012110C /* NotificationListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5FD2F05F26243E3A0012110C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5FD2F06026243E940012110C /* NotificationsList.swift */,
+				5FF910CE26258F9600E1EF00 /* NotificationResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910C72625747000E1EF00 /* ViewModel */,
+				5FF910B926254BC200E1EF00 /* View */,
+				5FF910B826254BBD00E1EF00 /* Module */,
+				5FF910B726254BB400E1EF00 /* Controller */,
+			);
+			path = PillikanInfoNotifications;
+			sourceTree = "<group>";
+		};
+		5FF910B626254BA200E1EF00 /* PillikanPayNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910DE2625B7F800E1EF00 /* View */,
+				5FF910D32625B41B00E1EF00 /* Module */,
+				5FF910D22625B41500E1EF00 /* ViewModel */,
+				5FF910D12625B40700E1EF00 /* Controller */,
+			);
+			path = PillikanPayNotifications;
+			sourceTree = "<group>";
+		};
+		5FF910B726254BB400E1EF00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910BA26254BDD00E1EF00 /* PillikanInfoNotificationsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		721127E526200CEB0055A83A /* MapManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1952,6 +2068,39 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5FF910B826254BBD00E1EF00 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910BD26254C4C00E1EF00 /* PillikanInfoModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5FF910B926254BC200E1EF00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910C32625539C00E1EF00 /* Cell */,
+				5FF910C026254C7B00E1EF00 /* PillikanInfoNotificationsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FF910C32625539C00E1EF00 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910E32625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5FF910C72625747000E1EF00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910C82625748300E1EF00 /* PillikanInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		72112844262027B60055A83A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1982,6 +2131,38 @@
 				724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FF910D12625B40700E1EF00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910D82625B58C00E1EF00 /* PillikanPayViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FF910D22625B41500E1EF00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910DB2625B5FE00E1EF00 /* PillikanPayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FF910D32625B41B00E1EF00 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910D42625B56600E1EF00 /* PillikanPayModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5FF910DE2625B7F800E1EF00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910DF2625B80600E1EF00 /* PillikanPayView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		724FC5892624171D00C1DED3 /* Model */ = {
@@ -2602,6 +2783,9 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5FF910B626254BA200E1EF00 /* PillikanPayNotifications */,
+				5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */,
+				5FD2F04B26240B870012110C /* NotificationList */,
 				556CF6B82602024D007B8FB9 /* Balance */,
 				5528385C2611C2DC00511608 /* SuccessPayment */,
 				55A7C073260B385D0037D567 /* QRPayment */,
@@ -4246,12 +4430,14 @@
 				55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */,
 				A483E28825D40ABE006D2DAF /* DateContent.swift in Sources */,
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
+				5FF910CC262577BF00E1EF00 /* NotificationTarget.swift in Sources */,
 				55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
 				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				72FB0848261DC93700F04395 /* SearchItem.swift in Sources */,
 				556543B5261DA3F9009A4E62 /* OrderTypeCoordinatorModuleFactory.swift in Sources */,
+				5FF910D92625B58C00E1EF00 /* PillikanPayViewController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
 				55A7C079260B58AA0037D567 /* CalculatePayView.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
@@ -4319,6 +4505,7 @@
 				558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */,
 				A40B950625DE23CC00E507FB /* HomeTabBarViewController.swift in Sources */,
 				A4BBC6CC25D612C8006AF382 /* CameraModule.swift in Sources */,
+				5FD2F058262417FB0012110C /* NotificationListView.swift in Sources */,
 				72FB0811261DAB3000F04395 /* RetailSearchModule.swift in Sources */,
 				5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */,
 				72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */,
@@ -4332,6 +4519,7 @@
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
+				5FF910CF26258F9600E1EF00 /* NotificationResponse.swift in Sources */,
 				A4057DBC2611D8F00062BB5B /* DeliveryRetailListModule.swift in Sources */,
 				724FC5A6262419BE00C1DED3 /* DrawerView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
@@ -4350,6 +4538,7 @@
 				A4EFD4D82613209D00694D18 /* ScrollabeSegmentItem.swift in Sources */,
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
 				55A5CD452600C2AF004AA13C /* MyCardsView.swift in Sources */,
+				5FD2F05426240C0C0012110C /* NotificationListController.swift in Sources */,
 				A4AE13C525F87AE0006468A1 /* ProblemView.swift in Sources */,
 				5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */,
 				55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */,
@@ -4428,6 +4617,7 @@
 				A483E29B25D40ABE006D2DAF /* ImageSlideshow.swift in Sources */,
 				724FC5AD262419BE00C1DED3 /* AnimationParameters.swift in Sources */,
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
+				5FF910C92625748300E1EF00 /* PillikanInfoViewModel.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
@@ -4464,6 +4654,7 @@
 				72843481261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift in Sources */,
 				72FB07ED261DA50A00F04395 /* SearchDismissTransitioning.swift in Sources */,
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
+				5FD2F05026240BB80012110C /* NotificationListModule.swift in Sources */,
 				A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */,
 				55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */,
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
@@ -4476,6 +4667,7 @@
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A4EFD4DF261320C200694D18 /* SegmentItem.swift in Sources */,
+				5FF910C126254C7B00E1EF00 /* PillikanInfoNotificationsView.swift in Sources */,
 				724FC5B9262419BE00C1DED3 /* DrawerView+UIScrollView.swift in Sources */,
 				A4057DA72611C5470062BB5B /* BiometricService.swift in Sources */,
 				A40B95D825DE27B600E507FB /* HomeCoordinatorModuleFactory.swift in Sources */,
@@ -4503,6 +4695,7 @@
 				724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */,
 				A48CD00C25DBC9E20010829F /* ViewController.swift in Sources */,
 				A4DD3DDC25D2476F002D2186 /* UIView+GradientLayer.swift in Sources */,
+				5FF910E42625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift in Sources */,
 				5584E83B25EE3F4200025251 /* CashbackMenuModule.swift in Sources */,
 				724FC5BA262419BE00C1DED3 /* DrawerOriginChangeSource.swift in Sources */,
 				5584E81725EDF34100025251 /* AccountCard.swift in Sources */,
@@ -4535,6 +4728,7 @@
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
 				55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */,
 				A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */,
+				5FF910BB26254BDD00E1EF00 /* PillikanInfoNotificationsViewController.swift in Sources */,
 				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
 				724FC5A9262419BE00C1DED3 /* WeakCollection.swift in Sources */,
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
@@ -4546,6 +4740,7 @@
 				721127EF262012980055A83A /* UserlocationViewModel.swift in Sources */,
 				55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */,
 				556543DA261DC5DD009A4E62 /* RateDeliveryModule.swift in Sources */,
+				5FF910BE26254C4C00E1EF00 /* PillikanInfoModule.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
@@ -4557,6 +4752,7 @@
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
 				5555237425EF907A00537D3F /* User.swift in Sources */,
+				5FF910E02625B80600E1EF00 /* PillikanPayView.swift in Sources */,
 				556543DE261DC606009A4E62 /* RateDeliveryViewController.swift in Sources */,
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
@@ -4615,6 +4811,8 @@
 				7284347B261D748200E21209 /* DeliveryCoordinator.swift in Sources */,
 				A483E28925D40ABE006D2DAF /* IdPaginationAdapter.swift in Sources */,
 				A4D7645125DA7F7E009A6651 /* CityPickerViewDataSource.swift in Sources */,
+				5FD2F06126243E940012110C /* NotificationsList.swift in Sources */,
+				5FF910DC2625B5FE00E1EF00 /* PillikanPayViewModel.swift in Sources */,
 				A437A09B25ECBBFE00910A2D /* RetailDetailModuleFactory.swift in Sources */,
 				A483E29F25D40ABE006D2DAF /* SwiftSupport.swift in Sources */,
 				A437A0B825ECC4DF00910A2D /* RetailDetailHeaderView.swift in Sources */,
@@ -4654,6 +4852,7 @@
 				A48CCFED25DB7B1F0010829F /* CameraMetadaOutputDelegate.swift in Sources */,
 				A4057DC12611D9E80062BB5B /* DeliveryRetailListViewController.swift in Sources */,
 				A48CD01225DBE1A50010829F /* Encryption.swift in Sources */,
+				5FD2F05C262421A50012110C /* NotificationListTableViewCell.swift in Sources */,
 				72FB0808261DA71600F04395 /* UIView+DeepCopy.swift in Sources */,
 				A4D7641A25DA40B7009A6651 /* PrimaryButton.swift in Sources */,
 				A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */,
@@ -4661,6 +4860,7 @@
 				A483E27225D40ABE006D2DAF /* ConfigService.swift in Sources */,
 				A483E28A25D40ABE006D2DAF /* Pagination.swift in Sources */,
 				A40B960A25DE758E00E507FB /* WorkDay.swift in Sources */,
+				5FF910D52625B56600E1EF00 /* PillikanPayModule.swift in Sources */,
 				55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */,
 				724FC5B6262419BE00C1DED3 /* TimerAnimation.swift in Sources */,
 				A436BCB625D1AB4B00DEC963 /* AuthView.swift in Sources */,
