@@ -23,9 +23,7 @@
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
 		5555237425EF907A00537D3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555237325EF907A00537D3F /* User.swift */; };
 		5561DF08261EBFF700B05321 /* RateDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561DF07261EBFF700B05321 /* RateDelivery.swift */; };
-		55654397261D72CF009A4E62 /* OrderTypeDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55654396261D72CF009A4E62 /* OrderTypeDeliveryView.swift */; };
-		5565439A261D768D009A4E62 /* OrderTypeTakeAway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55654399261D768D009A4E62 /* OrderTypeTakeAway.swift */; };
-		556543A1261D76FC009A4E62 /* OrderTypeInPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A0261D76FC009A4E62 /* OrderTypeInPlaceView.swift */; };
+		55654397261D72CF009A4E62 /* OrderTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55654396261D72CF009A4E62 /* OrderTypeTableViewCell.swift */; };
 		556543A6261D7B16009A4E62 /* OrderTypeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A5261D7B16009A4E62 /* OrderTypeModule.swift */; };
 		556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A9261D7B33009A4E62 /* OrderTypeViewController.swift */; };
 		556543B5261DA3F9009A4E62 /* OrderTypeCoordinatorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543B4261DA3F9009A4E62 /* OrderTypeCoordinatorModuleFactory.swift */; };
@@ -124,6 +122,7 @@
 		7211284E26202B490055A83A /* RetailListMapModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7211284D26202B490055A83A /* RetailListMapModule.swift */; };
 		7211285226202B760055A83A /* RetailListMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7211285126202B760055A83A /* RetailListMapCoordinator.swift */; };
 		72112856262070F10055A83A /* RetailListMapModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72112855262070F10055A83A /* RetailListMapModuleFactory.swift */; };
+		722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */; };
 		724FC563262300B400C1DED3 /* YandexMapEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC562262300B400C1DED3 /* YandexMapEngine.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
@@ -151,6 +150,7 @@
 		724FC5BA262419BE00C1DED3 /* DrawerOriginChangeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5A4262419BE00C1DED3 /* DrawerOriginChangeSource.swift */; };
 		724FC5BB262419BE00C1DED3 /* ScrollDrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5A5262419BE00C1DED3 /* ScrollDrawerViewContent.swift */; };
 		724FC5BF262419F600C1DED3 /* SVPrivateScrollDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5BE262419F600C1DED3 /* SVPrivateScrollDelegateProxy.m */; };
+		724FC60C26244FB000C1DED3 /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC60B26244FB000C1DED3 /* OrderType.swift */; };
 		7284347B261D748200E21209 /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284347A261D748100E21209 /* DeliveryCoordinator.swift */; };
 		7284347E261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284347D261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift */; };
 		72843481261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72843480261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift */; };
@@ -471,9 +471,7 @@
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5555237325EF907A00537D3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5561DF07261EBFF700B05321 /* RateDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDelivery.swift; sourceTree = "<group>"; };
-		55654396261D72CF009A4E62 /* OrderTypeDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeDeliveryView.swift; sourceTree = "<group>"; };
-		55654399261D768D009A4E62 /* OrderTypeTakeAway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeTakeAway.swift; sourceTree = "<group>"; };
-		556543A0261D76FC009A4E62 /* OrderTypeInPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeInPlaceView.swift; sourceTree = "<group>"; };
+		55654396261D72CF009A4E62 /* OrderTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeTableViewCell.swift; sourceTree = "<group>"; };
 		556543A5261D7B16009A4E62 /* OrderTypeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeModule.swift; sourceTree = "<group>"; };
 		556543A9261D7B33009A4E62 /* OrderTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeViewController.swift; sourceTree = "<group>"; };
 		556543B4261DA3F9009A4E62 /* OrderTypeCoordinatorModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeCoordinatorModuleFactory.swift; sourceTree = "<group>"; };
@@ -573,6 +571,7 @@
 		7211284D26202B490055A83A /* RetailListMapModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapModule.swift; sourceTree = "<group>"; };
 		7211285126202B760055A83A /* RetailListMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapCoordinator.swift; sourceTree = "<group>"; };
 		72112855262070F10055A83A /* RetailListMapModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapModuleFactory.swift; sourceTree = "<group>"; };
+		722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeHeaderView.swift; sourceTree = "<group>"; };
 		724FC562262300B400C1DED3 /* YandexMapEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapEngine.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
@@ -601,6 +600,7 @@
 		724FC5A5262419BE00C1DED3 /* ScrollDrawerViewContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDrawerViewContent.swift; sourceTree = "<group>"; };
 		724FC5BD262419F600C1DED3 /* Pilican-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pilican-Bridging-Header.h"; sourceTree = "<group>"; };
 		724FC5BE262419F600C1DED3 /* SVPrivateScrollDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPrivateScrollDelegateProxy.m; sourceTree = "<group>"; };
+		724FC60B26244FB000C1DED3 /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
 		727686EC261AE2D700E441A8 /* DishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishList.swift; sourceTree = "<group>"; };
 		727686EF261B2DB700E441A8 /* DeliveryRetailTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailTableViewDataSource.swift; sourceTree = "<group>"; };
 		7284347A261D748100E21209 /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
@@ -937,6 +937,7 @@
 		5517324E261D6B970031623B /* OrderType */ = {
 			isa = PBXGroup;
 			children = (
+				724FC60A26244FA100C1DED3 /* Model */,
 				556543B3261DA3CE009A4E62 /* Coordinator */,
 				556543A4261D7B05009A4E62 /* Module */,
 				556543A3261D7AFE009A4E62 /* Controller */,
@@ -948,10 +949,9 @@
 		5517324F261D6B9F0031623B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				722A33B926255469003FB38A /* HeaderView */,
 				55173250261D6BAE0031623B /* OrderTypeView.swift */,
-				55654396261D72CF009A4E62 /* OrderTypeDeliveryView.swift */,
-				55654399261D768D009A4E62 /* OrderTypeTakeAway.swift */,
-				556543A0261D76FC009A4E62 /* OrderTypeInPlaceView.swift */,
+				55654396261D72CF009A4E62 /* OrderTypeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1928,6 +1928,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		722A33B926255469003FB38A /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		724FC5802624132C00C1DED3 /* ApiTarget */ = {
 			isa = PBXGroup;
 			children = (
@@ -1989,6 +1997,14 @@
 				724FC5A1262419BE00C1DED3 /* Notifier.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		724FC60A26244FA100C1DED3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				724FC60B26244FB000C1DED3 /* OrderType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		72843479261D747500E21209 /* Coordinator */ = {
@@ -4275,7 +4291,6 @@
 				72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */,
 				A4E581E825D543C400EDC053 /* UIViewController+Alert.swift in Sources */,
 				A483E28C25D40ABE006D2DAF /* PaginationManager.swift in Sources */,
-				5565439A261D768D009A4E62 /* OrderTypeTakeAway.swift in Sources */,
 				A40B961125DE766E00E507FB /* RetailList.swift in Sources */,
 				556543ED261DC700009A4E62 /* RateMealViewController.swift in Sources */,
 				5561DF08261EBFF700B05321 /* RateDelivery.swift in Sources */,
@@ -4395,6 +4410,7 @@
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
 				55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */,
 				A4BBC6DB25D638DF006AF382 /* NavigationBarConfigurable.swift in Sources */,
+				722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */,
 				A4B3144525D150900003BA0B /* AuthCoordinator.swift in Sources */,
 				A4BBC6D625D63664006AF382 /* Images.swift in Sources */,
 				A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */,
@@ -4458,7 +4474,7 @@
 				A47CA1E625E36E8000EB091C /* ActionSheetSegue.swift in Sources */,
 				A4402CAF25DBEEEA0004D1FC /* AuthBySmsModule.swift in Sources */,
 				A4057DAB2611C5540062BB5B /* BiometricAuthType.swift in Sources */,
-				55654397261D72CF009A4E62 /* OrderTypeDeliveryView.swift in Sources */,
+				55654397261D72CF009A4E62 /* OrderTypeTableViewCell.swift in Sources */,
 				55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */,
 				556543E4261DC698009A4E62 /* RateMealView.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
@@ -4485,7 +4501,6 @@
 				55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */,
 				A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */,
 				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
-				556543A1261D76FC009A4E62 /* OrderTypeInPlaceView.swift in Sources */,
 				724FC5A9262419BE00C1DED3 /* WeakCollection.swift in Sources */,
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
@@ -4500,6 +4515,7 @@
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
 				A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */,
+				724FC60C26244FB000C1DED3 /* OrderType.swift in Sources */,
 				A47CA1C025E36E0400EB091C /* DeepLinkActionFactory.swift in Sources */,
 				A4E5815925D540F800EDC053 /* AppEnviroment.swift in Sources */,
 				55173251261D6BAE0031623B /* OrderTypeView.swift in Sources */,

@@ -54,7 +54,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         productList.connect()
             .disposed(by: disposeBag)
         
-        viewModel.dishList.dishList
+        viewModel.dishList.wishDishList
             .subscribe(onNext: { [unowned self] product in
                 self.rootView.setProductToPay(product: product)
             })

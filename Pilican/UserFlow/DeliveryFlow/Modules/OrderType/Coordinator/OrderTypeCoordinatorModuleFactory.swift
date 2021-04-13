@@ -18,7 +18,8 @@ final class OrderTypeCoordinatorModuleFactory {
     }
 
     func makeBasket() -> OrderTypeModule {
-        let controller = OrderTypeViewController()
+        let dishList = container.resolve(DishList.self)!
+        let controller = OrderTypeViewController(dishList: dishList)
         return controller
     }
 }
