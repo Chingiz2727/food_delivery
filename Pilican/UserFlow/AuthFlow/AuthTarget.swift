@@ -94,7 +94,7 @@ enum AuthTarget: ApiTarget {
         case .loginUser, .register, .verifySmsCode, .changePassword, .updateProfile, .changePin:
             return
                 [
-                    "clientId": "bW9iaWxl",
+                    "clientId": "bW9iaWxl"
                 ]
         case let .getSmsCode(phone):
             return [

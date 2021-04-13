@@ -10,8 +10,6 @@ private enum Constants {
 
 final class CashBackListHeaderView: UIView {
 
-    let selectedCategoryId: BehaviorSubject<Int> = .init(value: 1)
-
     private let mapImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -20,10 +18,10 @@ final class CashBackListHeaderView: UIView {
     }()
 
     private let disposeBag = DisposeBag()
-    private let foodCategory = CategoryView()
-    private let entertainmentCategory = CategoryView()
-    private let salesCategory = CategoryView()
-    private let servicesCategory = CategoryView()
+    let foodCategory = CategoryView()
+    let entertainmentCategory = CategoryView()
+    let salesCategory = CategoryView()
+    let servicesCategory = CategoryView()
 
     private lazy var categoryStack = UIStackView(
         views: [foodCategory, entertainmentCategory, salesCategory, servicesCategory],
@@ -88,18 +86,6 @@ final class CashBackListHeaderView: UIView {
             titleColor: .pilicanBlack
         )
 
-        foodCategory.control.tag = 1
-        servicesCategory.control.tag = 3
-        salesCategory.control.tag = 2
-        entertainmentCategory.control.tag = 4
-
-        [foodCategory, servicesCategory, salesCategory, entertainmentCategory].forEach { control in
-            control.control.rx.controlEvent(.touchUpInside)
-                .subscribe(onNext: { [unowned self] in
-                    self.selectedCategoryId.onNext(control.control.tag)
-                })
-                .disposed(by: disposeBag)
-        }
         backgroundColor = .background
     }
 }
