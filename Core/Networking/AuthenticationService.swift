@@ -64,10 +64,11 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         return apiService.makeRequest(to: AuthTarget.loginUser(phone: phone, password: password))
             .result(UserAuthResponse.self)
             .asLoadingSequence()
-            .do(onNext: { [weak self] token in
-                guard let result = token.result?.element else { return }
-                self?.updateToken(with: result.token)
-                self?.updateProfile(with: result)
+            .do(onNext: { [weak self] result in
+                guard let info = result.result?.element else { return }
+                self?.updateToken(with: info.token)
+                self?.updateProfile(with: info)
+                self?.token = result.result?.element?.token.accessToken
             })
     }
     

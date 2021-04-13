@@ -35,6 +35,6 @@ final class CashBackListViewModel: ViewModel {
                 self.manager.resetData()
             })
             .disposed(by: disposeBag)
-        return .init(retailList: self.manager.contentUpdate.asLoadingSequence())
+        return .init(retailList: self.manager.contentUpdate.asLoadingSequence().share())
     }
 }

@@ -10,6 +10,7 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
     private let viewModel: CashBackListViewModel
     private let disposeBag = DisposeBag()
     private let dataSource = CashBackListDataSource()
+    private let itemSubject = BehaviorSubject<Int>(value: 1)
 
     init(viewModel: CashBackListViewModel) {
         self.viewModel = viewModel
@@ -38,7 +39,7 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(loadByCategoryId: rootView.headerView.selectedCategoryId))
+        let output = viewModel.transform(input: .init(loadByCategoryId: itemSubject))
 
         let retailList = output.retailList.publish()
 
@@ -69,5 +70,25 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
 
         retailList.connect()
             .disposed(by: disposeBag)
+
+        rootView.headerView.foodCategory.control.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.itemSubject.onNext(1)
+            }).disposed(by: disposeBag)
+
+        rootView.headerView.servicesCategory.control.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.itemSubject.onNext(3)
+            }).disposed(by: disposeBag)
+
+        rootView.headerView.salesCategory.control.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.itemSubject.onNext(2)
+            }).disposed(by: disposeBag)
+
+        rootView.headerView.entertainmentCategory.control.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.itemSubject.onNext(4)
+            }).disposed(by: disposeBag)
     }
 }
