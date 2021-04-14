@@ -35,6 +35,7 @@
 		556543E8261DC6DA009A4E62 /* RateMealModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543E7261DC6DA009A4E62 /* RateMealModule.swift */; };
 		556543ED261DC700009A4E62 /* RateMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543EC261DC700009A4E62 /* RateMealViewController.swift */; };
 		556543F0261DD294009A4E62 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543EF261DD294009A4E62 /* RateView.swift */; };
+		556626432626DF8F0015CD41 /* AboutOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556626422626DF8F0015CD41 /* AboutOrder.swift */; };
 		5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */; };
 		5568FEDB25ECBBA9003AA72F /* AccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDA25ECBBA9003AA72F /* AccountModule.swift */; };
 		5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568FEDE25ECBDAE003AA72F /* AccountView.swift */; };
@@ -68,6 +69,11 @@
 		558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679E025F0D95800A5A94B /* ProblemModule.swift */; };
 		558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */; };
 		558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679F125F107F500A5A94B /* ProblemViewModel.swift */; };
+		559AFDC02625ADB400048CE1 /* AboutOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDBF2625ADB400048CE1 /* AboutOrderView.swift */; };
+		559AFDC32625B51F00048CE1 /* AboutDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDC22625B51F00048CE1 /* AboutDeliveryView.swift */; };
+		559AFDC62625C27A00048CE1 /* AboutContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDC52625C27A00048CE1 /* AboutContactsView.swift */; };
+		559AFDCA2625CB9D00048CE1 /* AboutOrderModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDC92625CB9D00048CE1 /* AboutOrderModule.swift */; };
+		559AFDCE2625CC1600048CE1 /* AboutOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDCD2625CC1600048CE1 /* AboutOrderViewController.swift */; };
 		55A5CCED26006129004AA13C /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCEC26006129004AA13C /* ChangePasswordView.swift */; };
 		55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */; };
 		55A5CCF626006353004AA13C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */; };
@@ -483,6 +489,7 @@
 		556543E7261DC6DA009A4E62 /* RateMealModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMealModule.swift; sourceTree = "<group>"; };
 		556543EC261DC700009A4E62 /* RateMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMealViewController.swift; sourceTree = "<group>"; };
 		556543EF261DD294009A4E62 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		556626422626DF8F0015CD41 /* AboutOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutOrder.swift; sourceTree = "<group>"; };
 		5568FED125ECB74E003AA72F /* AccountCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewController.swift; sourceTree = "<group>"; };
 		5568FEDA25ECBBA9003AA72F /* AccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModule.swift; sourceTree = "<group>"; };
 		5568FEDE25ECBDAE003AA72F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -516,6 +523,11 @@
 		558679E025F0D95800A5A94B /* ProblemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModule.swift; sourceTree = "<group>"; };
 		558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemTarget.swift; sourceTree = "<group>"; };
 		558679F125F107F500A5A94B /* ProblemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewModel.swift; sourceTree = "<group>"; };
+		559AFDBF2625ADB400048CE1 /* AboutOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutOrderView.swift; sourceTree = "<group>"; };
+		559AFDC22625B51F00048CE1 /* AboutDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDeliveryView.swift; sourceTree = "<group>"; };
+		559AFDC52625C27A00048CE1 /* AboutContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutContactsView.swift; sourceTree = "<group>"; };
+		559AFDC92625CB9D00048CE1 /* AboutOrderModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutOrderModule.swift; sourceTree = "<group>"; };
+		559AFDCD2625CC1600048CE1 /* AboutOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutOrderViewController.swift; sourceTree = "<group>"; };
 		55A5CCEC26006129004AA13C /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		55A5CCF02600632A004AA13C /* ChangePasswordModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModule.swift; sourceTree = "<group>"; };
 		55A5CCF526006353004AA13C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -1168,6 +1180,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		556626412626DF830015CD41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				556626422626DF8F0015CD41 /* AboutOrder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5568FECC25ECB276003AA72F /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -1458,6 +1478,43 @@
 				558679F125F107F500A5A94B /* ProblemViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		559AFDBD2625AD7900048CE1 /* AboutOrder */ = {
+			isa = PBXGroup;
+			children = (
+				556626412626DF830015CD41 /* Model */,
+				559AFDCC2625CBB900048CE1 /* Controller */,
+				559AFDC82625CB9000048CE1 /* Module */,
+				559AFDBE2625AD9A00048CE1 /* View */,
+			);
+			path = AboutOrder;
+			sourceTree = "<group>";
+		};
+		559AFDBE2625AD9A00048CE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				559AFDBF2625ADB400048CE1 /* AboutOrderView.swift */,
+				559AFDC22625B51F00048CE1 /* AboutDeliveryView.swift */,
+				559AFDC52625C27A00048CE1 /* AboutContactsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		559AFDC82625CB9000048CE1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				559AFDC92625CB9D00048CE1 /* AboutOrderModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		559AFDCC2625CBB900048CE1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				559AFDCD2625CC1600048CE1 /* AboutOrderViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		55A5CCE926006100004AA13C /* ChangePassword */ = {
@@ -2374,6 +2431,7 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				559AFDBD2625AD7900048CE1 /* AboutOrder */,
 				72112840262027850055A83A /* RetailListMap */,
 				556543E1261DC688009A4E62 /* RateMeal */,
 				556543D2261DB7A5009A4E62 /* RateDelivery */,
@@ -4298,6 +4356,7 @@
 				72FB07FB261DA55500F04395 /* SearchBar.swift in Sources */,
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
 				55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */,
+				556626432626DF8F0015CD41 /* AboutOrder.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				A4057DBC2611D8F00062BB5B /* DeliveryRetailListModule.swift in Sources */,
 				724FC5A6262419BE00C1DED3 /* DrawerView.swift in Sources */,
@@ -4361,6 +4420,7 @@
 				5528386B2611CDD900511608 /* SuccessPaymentViewController.swift in Sources */,
 				556543E8261DC6DA009A4E62 /* RateMealModule.swift in Sources */,
 				A4B9A27A25F0D98100F0A3D6 /* CashBackListTableViewCell.swift in Sources */,
+				559AFDC32625B51F00048CE1 /* AboutDeliveryView.swift in Sources */,
 				728434C7261D7FAB00E21209 /* DeliveryRetailTableViewDataSourceDelegate.swift in Sources */,
 				A4402CB525DBEF260004D1FC /* AuthBySmsView.swift in Sources */,
 				556CF6D226022187007B8FB9 /* PayHistoryModule.swift in Sources */,
@@ -4426,6 +4486,7 @@
 				55D26C7E25FA18C4005A36BD /* EditAccountModule.swift in Sources */,
 				A483E28025D40ABE006D2DAF /* ApiTarget.swift in Sources */,
 				A483E29525D40ABE006D2DAF /* EmojiModifier.swift in Sources */,
+				559AFDCE2625CC1600048CE1 /* AboutOrderViewController.swift in Sources */,
 				72843481261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift in Sources */,
 				72FB07ED261DA50A00F04395 /* SearchDismissTransitioning.swift in Sources */,
 				A47CA1EE25E36E8000EB091C /* StoriesTransitionDelegate.swift in Sources */,
@@ -4526,6 +4587,7 @@
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
 				55BEF36725FB398300205BBD /* Gender.swift in Sources */,
+				559AFDCA2625CB9D00048CE1 /* AboutOrderModule.swift in Sources */,
 				72FB0832261DBF2F00F04395 /* ItemSearchViewController.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
 				552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */,
@@ -4541,6 +4603,7 @@
 				7211285226202B760055A83A /* RetailListMapCoordinator.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
 				558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */,
+				559AFDC02625ADB400048CE1 /* AboutOrderView.swift in Sources */,
 				A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */,
 				A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */,
 				728434CF261D7FDA00E21209 /* ProductCategory.swift in Sources */,
@@ -4571,6 +4634,7 @@
 				72112856262070F10055A83A /* RetailListMapModuleFactory.swift in Sources */,
 				5584E81E25EDFC0400025251 /* AccountPassword.swift in Sources */,
 				A4BBC6D125D61336006AF382 /* CameraViewController.swift in Sources */,
+				559AFDC62625C27A00048CE1 /* AboutContactsView.swift in Sources */,
 				5528385F2611C31C00511608 /* SuccessPaymentView.swift in Sources */,
 				556CF6CA26021B62007B8FB9 /* PayHistoryView.swift in Sources */,
 				A4057DFA2611F3940062BB5B /* DeliveryRetailList.swift in Sources */,
@@ -4718,7 +4782,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4799,7 +4863,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4941,7 +5005,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -4966,7 +5030,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
