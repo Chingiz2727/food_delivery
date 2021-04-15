@@ -7,5 +7,5 @@
 
 import Foundation
 protocol OrderTypeModule: Presentable {
-    
+    var onDeliveryChoose: Callback? { get set }
 }

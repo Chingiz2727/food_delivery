@@ -84,6 +84,8 @@ enum Images: String {
     case mapIcon
     case minusDelivery
     case plusDelivery
+    case comment
+    case checkD
 }
 
 extension Images {

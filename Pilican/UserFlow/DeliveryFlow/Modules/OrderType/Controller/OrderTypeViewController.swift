@@ -7,6 +7,8 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
     private let disposeBag = DisposeBag()
     private let dishList: DishList
     
+    var onDeliveryChoose: Callback?
+    
     init(dishList: DishList) {
         self.dishList = dishList
         super.init(nibName: nil, bundle: nil)
@@ -29,6 +31,12 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
         dishList.wishDishList
             .subscribe(onNext: { [unowned self] product in
                 self.rootView.setup(product: product)
+            })
+            .disposed(by: disposeBag)
+        
+        rootView.tableView.rx.itemSelected
+            .subscribe(onNext: { [unowned self] path in
+                self.onDeliveryChoose?()
             })
             .disposed(by: disposeBag)
         

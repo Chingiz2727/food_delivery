@@ -1,7 +1,10 @@
 import Kingfisher
 import UIKit
 
-final class BasketItemView: UIView {
+final class BasketItemViewCell: UITableViewCell {
+    
+    var removeProduct: Callback?
+    var addProduct: Callback?
     
     let clearButton: UIButton = {
         let button = UIButton()
@@ -32,12 +35,16 @@ final class BasketItemView: UIView {
     
     private let minusButton: UIButton = {
         let button = UIButton()
+        button.tag = 1
+        button.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
         button.setImage(Images.minusDelivery.image, for: .normal)
         return button
     }()
     
     private let plusButton: UIButton = {
         let button = UIButton()
+        button.tag = 0
+        button.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
         button.setImage(Images.plusDelivery.image, for: .normal)
         return button
     }()
@@ -54,13 +61,17 @@ final class BasketItemView: UIView {
         distribution: .fillEqually,
         spacing: 10)
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
     }
     
     required init?(coder: NSCoder) {
         nil
+    }
+    
+    override func layoutSubviews() {
+        layer.cornerRadius = 10
     }
     
     func setup(product: Product) {
@@ -84,17 +95,30 @@ final class BasketItemView: UIView {
         textStackView.snp.makeConstraints { make in
             make.leading.equalTo(productImageView.snp.trailing).offset(10)
             make.top.bottom.equalToSuperview().inset(18)
-            make.trailing.equalTo(buttonStackView.snp.trailing).offset(-10)
+            make.trailing.equalTo(buttonStackView.snp.leading).offset(10)
         }
         
         buttonStackView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(14)
-            make.height.equalTo(20)
+            make.height.equalTo(40)
+            make.top.bottom.equalToSuperview().inset(18)
         }
         
         [minusButton, plusButton].forEach { button in
             button.snp.makeConstraints { $0.size.equalTo(20) }
+        }
+        buttonStackView.isUserInteractionEnabled = true
+        selectionStyle = .blue
+        backgroundColor = .white
+    }
+    
+    @objc func setProduct(sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            self.addProduct?()
+        default:
+            self.removeProduct?()
         }
     }
 }

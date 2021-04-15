@@ -13,14 +13,16 @@ final class DeliveryItemView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .medium16
+        label.numberOfLines = 0
+        label.font = .heading2
         label.textAlignment = .left
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .regular2
+        label.font = .medium12
+        label.numberOfLines = 0
         label.textAlignment = .left
         return label
     }()
@@ -28,10 +30,10 @@ final class DeliveryItemView: UIView {
     private lazy var textStackView = UIStackView(
         views: [titleLabel, descriptionLabel],
         axis: .vertical,
-        spacing: 10)
+        spacing: 5)
     
     private lazy var stackView = UIStackView(
-        views: [imageView, textStackView, UIView(), switchControl],
+        views: [textStackView, UIView(), switchControl],
         axis: .horizontal,
         spacing: 10)
     
@@ -44,6 +46,10 @@ final class DeliveryItemView: UIView {
         nil
     }
 
+    override func layoutSubviews() {
+        layer.cornerRadius = 10
+    }
+    
     func setup(title: String, subTitle: String, image: UIImage?) {
         titleLabel.text = title
         descriptionLabel.text = subTitle
@@ -65,7 +71,21 @@ final class DeliveryItemView: UIView {
     private func setupInitialLayout() {
         addSubview(uiControl)
         addSubview(stackView)
+        addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(10)
+            make.size.equalTo(50)
+        }
+        
         uiControl.snp.makeConstraints { $0.edges.equalToSuperview() }
-        stackView.snp.makeConstraints  { $0.edges.equalToSuperview() }
+        stackView.snp.makeConstraints  { make in
+            make.leading.equalTo(imageView.snp.trailing).offset(10)
+            make.trailing.top.bottom.equalToSuperview().inset(10)
+        }
+        imageView.snp.makeConstraints { $0.size.equalTo(40) }
+        imageView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        switchControl.isHidden = true
+        backgroundColor = .white
     }
 }

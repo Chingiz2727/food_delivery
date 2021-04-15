@@ -22,4 +22,12 @@ final class OrderTypeCoordinatorModuleFactory {
         let controller = OrderTypeViewController(dishList: dishList)
         return controller
     }
+    
+    func makeMakeOrder() -> MakeOrderModule {
+        let dishList = container.resolve(DishList.self)!
+        let userInfo = container.resolve(UserInfoStorage.self)!
+        let viewModel = MakeOrderViewModel(dishList: dishList, userInfo: userInfo)
+        let controller = MakeOrderViewController(viewModel: viewModel)
+        return controller
+    }
 }

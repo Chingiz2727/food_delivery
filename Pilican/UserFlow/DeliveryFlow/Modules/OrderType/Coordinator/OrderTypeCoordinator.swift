@@ -22,7 +22,15 @@ final class OrderTypeCoordinator: BaseCoordinator, DeliveryTabBarItemCoordinator
     }
     
     private func showBasket() {
-        let module = moduleFactory.makeBasket()
+        var module = moduleFactory.makeBasket()
+        module.onDeliveryChoose = { [weak self] in
+            self?.showMakeOrder()
+        }
         router.setRootModule(module)
+    }
+    
+    private func showMakeOrder() {
+        let module = moduleFactory.makeMakeOrder()
+        router.push(module)
     }
 }
