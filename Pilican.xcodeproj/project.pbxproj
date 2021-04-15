@@ -87,6 +87,8 @@
 		55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C07B260B604A0037D567 /* CommentForPartnerView.swift */; };
 		55A7C080260B693E0037D567 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C07F260B693E0037D567 /* PriceView.swift */; };
 		55A7C083260B6C4F0037D567 /* PaymentChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C082260B6C4F0037D567 /* PaymentChoiceView.swift */; };
+		55AA1FDF262814FA004C8F67 /* TaxiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA1FDE262814FA004C8F67 /* TaxiView.swift */; };
+		55AA1FE626283904004C8F67 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA1FE526283904004C8F67 /* Control.swift */; };
 		55AD645925E52F2800034459 /* WorkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD645825E52F2800034459 /* WorkStatus.swift */; };
 		55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */; };
 		55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */; };
@@ -554,6 +556,8 @@
 		55A7C07B260B604A0037D567 /* CommentForPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentForPartnerView.swift; sourceTree = "<group>"; };
 		55A7C07F260B693E0037D567 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		55A7C082260B6C4F0037D567 /* PaymentChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentChoiceView.swift; sourceTree = "<group>"; };
+		55AA1FDE262814FA004C8F67 /* TaxiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiView.swift; sourceTree = "<group>"; };
+		55AA1FE526283904004C8F67 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		55AD645825E52F2800034459 /* WorkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkStatus.swift; sourceTree = "<group>"; };
 		55ADCEA925E65DCB003D3F3A /* AcceptPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionViewController.swift; sourceTree = "<group>"; };
 		55ADCEAC25E65E19003D3F3A /* AcceptPermissionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPermissionModule.swift; sourceTree = "<group>"; };
@@ -1670,6 +1674,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		55AA1FDD262814EA004C8F67 /* TaxiView */ = {
+			isa = PBXGroup;
+			children = (
+				55AA1FDE262814FA004C8F67 /* TaxiView.swift */,
+			);
+			path = TaxiView;
+			sourceTree = "<group>";
+		};
+		55AA1FE4262838FA004C8F67 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				55AA1FE526283904004C8F67 /* Control.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
 			isa = PBXGroup;
 			children = (
@@ -1984,6 +2004,71 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		5FF910B826254BBD00E1EF00 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910BD26254C4C00E1EF00 /* PillikanInfoModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5FF910B926254BC200E1EF00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910C32625539C00E1EF00 /* Cell */,
+				5FF910C026254C7B00E1EF00 /* PillikanInfoNotificationsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FF910C32625539C00E1EF00 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910E32625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5FF910C72625747000E1EF00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910C82625748300E1EF00 /* PillikanInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FF910D12625B40700E1EF00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910D82625B58C00E1EF00 /* PillikanPayViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FF910D22625B41500E1EF00 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910DB2625B5FE00E1EF00 /* PillikanPayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FF910D32625B41B00E1EF00 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910D42625B56600E1EF00 /* PillikanPayModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5FF910DE2625B7F800E1EF00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FF910DF2625B80600E1EF00 /* PillikanPayView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		721127E526200CEB0055A83A /* MapManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2068,39 +2153,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5FF910B826254BBD00E1EF00 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910BD26254C4C00E1EF00 /* PillikanInfoModule.swift */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		5FF910B926254BC200E1EF00 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910C32625539C00E1EF00 /* Cell */,
-				5FF910C026254C7B00E1EF00 /* PillikanInfoNotificationsView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5FF910C32625539C00E1EF00 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910E32625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		5FF910C72625747000E1EF00 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910C82625748300E1EF00 /* PillikanInfoViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		72112844262027B60055A83A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2131,38 +2183,6 @@
 				724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5FF910D12625B40700E1EF00 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910D82625B58C00E1EF00 /* PillikanPayViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		5FF910D22625B41500E1EF00 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910DB2625B5FE00E1EF00 /* PillikanPayViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		5FF910D32625B41B00E1EF00 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910D42625B56600E1EF00 /* PillikanPayModule.swift */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		5FF910DE2625B7F800E1EF00 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				5FF910DF2625B80600E1EF00 /* PillikanPayView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		724FC5892624171D00C1DED3 /* Model */ = {
@@ -3447,6 +3467,7 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				55AA1FE4262838FA004C8F67 /* Control */,
 				55A762CB261C588E00480BAC /* AuthStateObserver */,
 				724FC58E262419BD00C1DED3 /* UltraDrawerView */,
 				721127F42620141A0055A83A /* UserLocation */,
@@ -4035,6 +4056,7 @@
 		A4DD3E9525D24B98002D2186 /* PilicanView */ = {
 			isa = PBXGroup;
 			children = (
+				55AA1FDD262814EA004C8F67 /* TaxiView */,
 				72112839262020100055A83A /* YandexMapViewModel */,
 				72FB0803261DA6D600F04395 /* UIView+Extension */,
 				A4EFD4D62613208A00694D18 /* ScrollableSegment */,
@@ -4430,6 +4452,7 @@
 				55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */,
 				A483E28825D40ABE006D2DAF /* DateContent.swift in Sources */,
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
+				55AA1FE626283904004C8F67 /* Control.swift in Sources */,
 				5FF910CC262577BF00E1EF00 /* NotificationTarget.swift in Sources */,
 				55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
@@ -4853,6 +4876,7 @@
 				A4057DC12611D9E80062BB5B /* DeliveryRetailListViewController.swift in Sources */,
 				A48CD01225DBE1A50010829F /* Encryption.swift in Sources */,
 				5FD2F05C262421A50012110C /* NotificationListTableViewCell.swift in Sources */,
+				55AA1FDF262814FA004C8F67 /* TaxiView.swift in Sources */,
 				72FB0808261DA71600F04395 /* UIView+DeepCopy.swift in Sources */,
 				A4D7641A25DA40B7009A6651 /* PrimaryButton.swift in Sources */,
 				A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */,

@@ -6,6 +6,14 @@ final class YandexMapEngine: NSObject, MapStatus {
     var onAnnotationDidTap: ((_ data: Any?) -> Void)?
     var userLocationViewModel: MapUserLocationViewModel?
     
+    func getAddressName(long: Double, lat: Double) -> String {
+        return ""
+    }
+    
+    func getDistance(userPoint: MapPoint, retailPoint: MapPoint) -> Float {
+        return 0.0
+    }
+    
     func showCurrentLocation(in view: MapView) {
         let mapKit = YMKMapKit.sharedInstance()
         let userLocationLayer = mapKit.createUserLocationLayer(with: view.mapWindow)
