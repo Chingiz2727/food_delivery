@@ -1,5 +1,5 @@
 import UIKit
-
+import YandexMapsMobile
 public protocol MapStatus: class {
     associatedtype MapView: UIView
     
@@ -10,4 +10,6 @@ public protocol MapStatus: class {
     func moveTo(in view: MapView, point: MapPoint, transitionViewModel: MapTransitionViewModel, completionHandler: Callback?)
     func setRegion(in view: MapView, minPoint: MapPoint, maxPoint: MapPoint, transitionViewModel: MapTransitionViewModel, completionHandler: Callback?)
     func createAnnotation(in view: MapView, at point: MapPoint, image: UIImage?, associatedData: Any?)
+    func getAddressName(long: Double, lat: Double) -> String
+    func getDistance(userPoint: MapPoint, retailPoint: MapPoint) -> Float
 }

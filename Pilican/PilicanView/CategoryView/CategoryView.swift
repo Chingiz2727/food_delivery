@@ -1,7 +1,8 @@
 import UIKit
 
-final class CategoryView: UIView {
-    let control = UIControl()
+final class CategoryView: UIView, Control {
+    var control = UIControl()
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit

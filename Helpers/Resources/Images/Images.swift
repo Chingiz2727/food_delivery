@@ -85,6 +85,10 @@ enum Images: String {
     case homeDelivery
     case homeDeliverySelected
     case mapIcon
+    case qr
+    case moji
+    case taxi
+    case scooter
 }
 
 extension Images {
