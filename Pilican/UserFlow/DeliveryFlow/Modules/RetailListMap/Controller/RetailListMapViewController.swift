@@ -51,6 +51,7 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
             .map { $0.retails }
             .do(onNext: { [unowned self] retails in
                 retails.forEach { retail in
+                    // swiftlint:disable line_length
                     self.mapManager.createAnnotation(in: self.rootView.mapView, at: MapPoint(latitude: retail.latitude, longitude: retail.longitude), image: Images.mapIcon.image, associatedData: retail)
                 }
                 self.rootView.drawerView.isHidden = retails.isEmpty
@@ -59,11 +60,11 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
                 cell.setRetail(retail: model)
             }
             .disposed(by: disposeBag)
-        
+
         retaillist.errors
             .bind(to: rx.error)
             .disposed(by: disposeBag)
-        
+
         retaillist.connect()
             .disposed(by: disposeBag)
         
@@ -85,7 +86,7 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
         secondManager.requestAlwaysAuthorization()
         secondManager.startUpdatingLocation()
     }
-    
+
     private func setupMap() {
         let latitude = secondManager.location?.coordinate.latitude ?? 42.340782
         let longitude = secondManager.location?.coordinate.longitude ?? 69.596329
