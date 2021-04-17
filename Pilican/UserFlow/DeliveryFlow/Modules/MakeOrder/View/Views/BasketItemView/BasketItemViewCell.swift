@@ -1,11 +1,13 @@
+import RxSwift
 import Kingfisher
 import UIKit
 
 final class BasketItemViewCell: UITableViewCell {
     
-    var removeProduct: Callback?
-    var addProduct: Callback?
-    
+    var removeProduct: ((Product) ->())?
+    var addProduct: ((Product?)->())?
+    var product: Product?
+    let disposeBag = DisposeBag()
     let clearButton: UIButton = {
         let button = UIButton()
         return button
@@ -33,18 +35,16 @@ final class BasketItemViewCell: UITableViewCell {
         return label
     }()
     
-    private let minusButton: UIButton = {
+    let minusButton: UIButton = {
         let button = UIButton()
         button.tag = 1
-        button.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
         button.setImage(Images.minusDelivery.image, for: .normal)
         return button
     }()
     
-    private let plusButton: UIButton = {
+    let plusButton: UIButton = {
         let button = UIButton()
         button.tag = 0
-        button.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
         button.setImage(Images.plusDelivery.image, for: .normal)
         return button
     }()
@@ -75,7 +75,10 @@ final class BasketItemViewCell: UITableViewCell {
     }
     
     func setup(product: Product) {
-        productImageView.kf.setImage(with: URL(string: product.imgLogo ?? ""))
+        self.product = product
+        if productImageView.image == nil {
+            productImageView.kf.setImage(with: URL(string: product.imgLogo ?? ""))
+        }
         nameLabel.text = product.name
         priceLabel.text = "\(product.price) тг"
         countLabel.text = "\(product.shoppingCount ?? 0)"
@@ -108,17 +111,24 @@ final class BasketItemViewCell: UITableViewCell {
         [minusButton, plusButton].forEach { button in
             button.snp.makeConstraints { $0.size.equalTo(20) }
         }
+        minusButton.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
         buttonStackView.isUserInteractionEnabled = true
         selectionStyle = .blue
         backgroundColor = .white
     }
     
-    @objc func setProduct(sender: UIButton) {
-        switch sender.tag {
+    @objc private func setProduct(button: UIButton) {
+        guard var product = product else { return }
+        switch button.tag {
         case 0:
-            self.addProduct?()
+            product.shoppingCount! += 1
+            self.addProduct?(product)
+        case 1:
+            product.shoppingCount! -= 1
+            self.removeProduct?(product)
         default:
-            self.removeProduct?()
+            break
         }
     }
 }

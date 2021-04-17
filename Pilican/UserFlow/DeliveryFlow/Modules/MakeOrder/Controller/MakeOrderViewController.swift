@@ -28,15 +28,23 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     
     private func bindViewModel() {
         viewModel.dishList.wishDishList
+            .do(onNext: { [unowned self] products in
+                self.rootView.setupAmount(products: products)
+            })
             .bind(to: rootView.tableView.rx.items(BasketItemViewCell.self)) { _, model, cell  in
                 cell.setup(product: model)
-                cell.addProduct = { [unowned self] in
-                    _ = self.viewModel.dishList.changeDishList(dishAction: .addToDish(model))
+                cell.addProduct = { product in
+                    self.changeDishList(action: .addToDish(product!))
                 }
-                cell.removeProduct = { [unowned self] in
-                    _ = self.viewModel.dishList.changeDishList(dishAction: .removeFromDish(model))
+                cell.removeProduct = { product in
+                    self.changeDishList(action: .removeFromDish(product))
                 }
+                cell.contentView.isUserInteractionEnabled = false
             }.disposed(by: disposeBag)
+    }
+    
+    func changeDishList(action: DishListAction) {
+       _ = viewModel.dishList.changeDishList(dishAction: action)
     }
     
     private func bindView() {

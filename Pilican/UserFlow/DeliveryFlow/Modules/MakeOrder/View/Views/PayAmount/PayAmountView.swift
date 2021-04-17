@@ -45,7 +45,7 @@ final class PayAmountView: UIView {
     private lazy var fullInfoStackView = UIStackView(
         views: [titleLabel, orderCost, deliveryCost, extraPayment, horizontalStackView],
         axis: .vertical,
-        spacing: 10)
+        spacing: 3)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,11 +68,16 @@ final class PayAmountView: UIView {
     }
 
     func setupExtraCost() {
+        extraPayment.isHidden = false
         extraPayment.setup(title: "Доплата до минимальной суммы заказа")
         extraPayment.setup(detail: "Минимальная сумма заказа - 2000 тенге. За заказы меньше этой сумма взимается дполнительная комиссия.")
         extraPayment.setup(price: "600 тг")
     }
 
+    func clearExtraCost() {
+        extraPayment.isHidden = true
+    }
+    
     private func setupInitialLayout() {
         addSubview(fullInfoStackView)
         fullInfoStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }

@@ -110,6 +110,19 @@ final class MakeOrderView: UIView {
         heightConstraint?.activate()
     }
     
+    func setupAmount(products: [Product]) {
+        let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
+        let totalSum = amount.reduce(0,+)
+        if totalSum < 2000 {
+            payAmountView.setupExtraCost()
+        } else {
+            payAmountView.clearExtraCost()
+        }
+        payAmountView.setupDeliveryCost(cost: "1200")
+        payAmountView.setupOrderCost(cost: "\(totalSum)")
+        
+    }
+    
     private func configureView() {
         deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.deliveryType.image)
         locationView.setup(title: "Адрес доставки", subTitle: "Тулеметова 69/40", image: Images.Location.image)

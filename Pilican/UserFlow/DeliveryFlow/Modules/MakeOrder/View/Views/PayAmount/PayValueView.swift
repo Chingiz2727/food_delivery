@@ -33,6 +33,7 @@ final class PayValueView: UIView {
     private lazy var horizontalStackView = UIStackView(
         views: [stackView, UIView(), costLabel],
         axis: .horizontal,
+        distribution: .fillProportionally,
         spacing: 10)
     
     override init(frame: CGRect) {
@@ -49,7 +50,7 @@ final class PayValueView: UIView {
     }
     
     func setup(price: String) {
-        detailLabel.text = price
+        costLabel.text = price
     }
     
     func setup(detail: String) {
@@ -58,6 +59,6 @@ final class PayValueView: UIView {
     
     private func setupInitialLayout() {
         addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(5) }
+        horizontalStackView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 }
