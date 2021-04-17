@@ -45,7 +45,7 @@ final class PillikanNotificationTableViewCell: UITableViewCell {
         axis: .vertical,
         distribution: .fill,
         spacing: 5)
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayouts()
@@ -56,7 +56,7 @@ final class PillikanNotificationTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupInitialLayouts() {
         addSubview(messageImageView)
         messageImageView.snp.makeConstraints { make in
@@ -64,7 +64,7 @@ final class PillikanNotificationTableViewCell: UITableViewCell {
             make.leading.equalToSuperview().inset(15)
             make.size.equalTo(28)
         }
-        
+
         addSubview(containerView)
         containerView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(20)
@@ -72,17 +72,17 @@ final class PillikanNotificationTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().inset(15)
             make.bottom.equalToSuperview().inset(10)
         }
-        
+
         containerView.addSubview(messageStackView)
         messageStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
     }
-    
+
     func setupNotifications(notification: NotificationInfo) {
         messageTitle.text = notification.title
         messageText.text = notification.description
         dateLabel.text = convertDate(timeResult: notification.createdAt)
     }
-    
+
     fileprivate func convertDate(timeResult: String) -> String {
         let timeDouble = Double(timeResult)
         let date = Date(timeIntervalSince1970: timeDouble!)
@@ -93,6 +93,4 @@ final class PillikanNotificationTableViewCell: UITableViewCell {
         dateFormatter.timeZone = .current
         return dateFormatter.string(from: date)
     }
-    
-    
 }

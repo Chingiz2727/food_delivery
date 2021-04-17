@@ -9,7 +9,7 @@ enum DeliveryApiTarget: ApiTarget {
     var servicePath: String {
         return "a/cb"
     }
-    
+
     var path: String {
         switch self {
         case .deliveryRetailListByType:
@@ -18,14 +18,14 @@ enum DeliveryApiTarget: ApiTarget {
             return "retail/find"
         }
     }
-    
+
     var method: HTTPMethod {
         switch self {
         case .deliveryRetailListByType, .deliveryRetailProductsList:
             return .get
         }
     }
-    
+
     var parameters: [String: Any]? {
         switch self {
         case let .deliveryRetailListByType(page, size, type):

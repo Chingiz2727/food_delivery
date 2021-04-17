@@ -38,7 +38,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         guard let controller = rootController.toPresent() else { return }
         tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
     }
-    
+
     private func setupDeliveryFlow() {
         let (coordinator, rooController) = coordinatorFactory.makeDeliveryCoordinator()
         coordinator.start()
@@ -54,7 +54,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         guard let controller = rooController.toPresent() else { return }
         tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
     }
-    
+
     private func setupMapFlow() {
         let (coordinator, rootController) = coordinatorFactory.makeMap()
         coordinator.start()

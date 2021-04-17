@@ -2,6 +2,8 @@ import RxSwift
 import UIKit
 
 final class DeliveryRetailListViewController: UIViewController, DeliveryRetailListModule, ViewHolder {
+    var deliveryMenuDidSelect: DeliveryMenuDidSelect?
+    
     typealias RootViewType = DeliveryRetailListView
 
     var onRetailDidSelect: OnRetailDidSelect?
@@ -25,8 +27,17 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: Images.deliveryMenu.image?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(showMenu))
     }
     
+    @objc private func showMenu() {
+        deliveryMenuDidSelect?()
+    }
+
     private func bindViewModel() {
         let output = viewModel.transform(input: .init(loadRetailList: .just(())))
 

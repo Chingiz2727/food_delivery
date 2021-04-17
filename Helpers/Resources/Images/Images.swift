@@ -89,6 +89,7 @@ enum Images: String {
     case moji
     case taxi
     case scooter
+    case deliveryMenu
 }
 
 extension Images {
