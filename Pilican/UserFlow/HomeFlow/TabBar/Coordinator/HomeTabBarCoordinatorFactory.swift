@@ -32,4 +32,20 @@ final class HomeTabBarCoordinatorFactory {
     func makeDeliveryTabBar() -> Coordinator {
         return DeliveryTabBarCoordinator(router: router, container: container)
     }
+    
+    func makeNotificationList() -> NotificationListModule {
+        return NotificationListController()
+    }
+    
+    func pillikanInfoNotifications() -> PillikanInfoModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = PillikanInfoViewModel(apiService: apiService)
+        return PillikanInfoNotificationsViewController(viewModel: viewModel)
+    }
+    
+    func pillikanPayNotifications() -> PillikanPayModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = PillikanPayViewModel(apiService: apiService)
+        return PillikanPayViewController(viewModel: viewModel)
+    }
 }

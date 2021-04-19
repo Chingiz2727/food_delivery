@@ -1,5 +1,5 @@
 import UIKit
-import Foundation
+import RxSwift
 
 struct TabableRootControllerAndCoordinatorContainer {
     var viewController: UIViewController
@@ -13,7 +13,7 @@ public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
     var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
-    
+
     private let moduleFactory: HomeCoordinatorModuleFactory
     var onDeliveryTab: Callback?
     
@@ -43,11 +43,18 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
                 self?.showDelivery()
             case .bus:
                 self?.showCamera()
-            default:
-                break
+            case .volunteer:
+                self?.showAlert()
             }
         }
         router.setRootModule(module)
+    }
+
+    private func showAlert() {
+        // swiftlint:disable line_length
+        let alert = UIAlertController(title: "Пристегивайтесь!", message: "Наш новый сервис Pillikan Taxi почти готов к запуску. Следите за нами в Instagram и вы все узнаете первыми!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        router.present(alert)
     }
 
     private func startRetailDetailCoordinator(retail: Retail) {
@@ -67,11 +74,11 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         }
         router.push(module)
     }
-    
+
     private func showDelivery() {
-        onDeliveryTab?()
+        self.onDeliveryTab?()
     }
-    
+
     private func showCamera() {
         let module = container.resolve(CameraModule.self)!
         router.push(module)

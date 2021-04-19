@@ -11,4 +11,5 @@ enum ProfileItems: String, CaseIterable {
     case changePin = "Сменить PIN код"
     case changePassword = "Сменить пароль"
     case myQR = "Мой QR"
+    case logout = ""
 }

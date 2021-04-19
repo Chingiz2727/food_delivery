@@ -3,7 +3,7 @@ import Kingfisher
 import UIKit
 
 private enum Constants {
-    static let cashBackTitle = "Cashback"
+    static let cashBackTitle = "Pillikan QR"
     static let busTitle = "Автобус"
     static let deliveryTitle = "Доставка"
     static let volunteerTitle = "Volunteer"
@@ -15,7 +15,7 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
     private(set) var disposeBag = DisposeBag()
 
     private lazy var categoryStack = UIStackView(
-        views: [cashBackCategory, busCategory, deliveryCategory, volunteerCategory],
+        views: [cashBackCategory, busCategory, deliveryCategory, taxiCategory],
         axis: .horizontal,
         distribution: .equalSpacing,
         spacing: 10)
@@ -38,7 +38,7 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
     private let cashBackCategory = CategoryView()
     private let busCategory = CategoryView()
     private let deliveryCategory = CategoryView()
-    private let volunteerCategory = CategoryView()
+    let taxiCategory = TaxiView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,8 +67,8 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
             make.height.equalTo(130)
         }
 
-        [cashBackCategory, busCategory, deliveryCategory, volunteerCategory].forEach { view in
-            view.snp.makeConstraints { $0.size.equalTo(80) }
+        [cashBackCategory, busCategory, deliveryCategory, taxiCategory].forEach { view in
+            view.snp.makeConstraints { $0.size.equalTo(75) }
         }
     }
 
@@ -79,7 +79,7 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
         carouselView.layer.cornerRadius = 10
         cashBackCategory.configureView(
             title: Constants.cashBackTitle,
-            image: Images.cashbackgroup.image,
+            image: Images.qr.image,
             backColor: .primary, titleColor: .pilicanWhite
         )
         busCategory.configureView(
@@ -90,29 +90,21 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
         )
         deliveryCategory.configureView(
             title: Constants.deliveryTitle,
-            image: Images.breaking.image,
+            image: Images.scooter.image,
             backColor: .error,
             titleColor: .pilicanWhite
         )
-        volunteerCategory.configureView(
-            title: Constants.volunteerTitle,
-            image: Images.group.image,
-            backColor: .cyan,
-            titleColor: .pilicanWhite
-        )
-        cashBackCategory.tag = 0
-        busCategory.tag = 1
-        deliveryCategory.tag = 2
-        volunteerCategory.tag = 3
+        cashBackCategory.control.tag = 0
+        busCategory.control.tag = 1
+        deliveryCategory.control.tag = 2
+        taxiCategory.control.tag = 3
+        let controls: [Control] = [cashBackCategory, busCategory, deliveryCategory, taxiCategory]
 
-        [cashBackCategory, busCategory, deliveryCategory, volunteerCategory].forEach { control in
+        controls.forEach { control in
             control.control.rx.controlEvent(.touchUpInside)
-                .subscribe(
-                    onNext: { [unowned self] in
-                        self.selectedTag.onNext(control.tag)
-                    }
-                )
-                .disposed(by: disposeBag)
+                .subscribe(onNext: { [unowned self] in
+                    self.selectedTag.onNext(control.control.tag)
+                }).disposed(by: disposeBag)
         }
     }
 
@@ -126,8 +118,5 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
         let deliveryBackGradient: CAGradientLayer = .redGradient
         deliveryBackGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         deliveryCategory.layer.insertSublayer(deliveryBackGradient, at: 0)
-        let volunteerBackGradient: CAGradientLayer = .blueGradient
-        volunteerBackGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        volunteerCategory.layer.insertSublayer(volunteerBackGradient, at: 0)
     }
 }

@@ -12,7 +12,7 @@ final class DeliveryButtonsView: UIView {
             countLabel.isHidden =  currentDish?.shoppingCount ?? 0 < 1
         }
     }
-    
+
     let plusButton: UIButton = {
         let button = UIButton()
         button.tag = 0
@@ -20,7 +20,7 @@ final class DeliveryButtonsView: UIView {
         button.addTarget(self, action: #selector(setDish(button:)), for: .touchUpInside)
         return button
     }()
-    
+
     let minusButton: UIButton = {
         let button = UIButton()
         button.setImage(Images.minus.image, for: .normal)
@@ -35,7 +35,7 @@ final class DeliveryButtonsView: UIView {
         label.font = .medium16
         return label
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [minusButton, countLabel, plusButton])
         stackView.spacing = 10
@@ -76,7 +76,7 @@ final class DeliveryButtonsView: UIView {
     func setDish(companyDish: Product) {
         currentDish = companyDish
     }
-    
+
     private func setupInitialLayout() {
         addSubview(stackView)
         stackView.snp.makeConstraints { make in

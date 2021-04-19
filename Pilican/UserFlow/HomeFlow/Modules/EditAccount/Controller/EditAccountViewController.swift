@@ -22,15 +22,16 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
     private let genderPickerView = UIPickerView()
     private let viewModel: EditAccountViewModel
     private let dateFormatter: DateFormatting
-    private let cache = DiskCache<String, Any>()
+    private let userInfoStorage: UserInfoStorage
 
-    init(viewModel: EditAccountViewModel, dateFormatter: DateFormatting) {
+    init(viewModel: EditAccountViewModel, dateFormatter: DateFormatting, userInfoStorage: UserInfoStorage) {
         self.viewModel = viewModel
         self.cityPickerDelegate = CityPickerViewDelegate()
         self.cityPickerDataSource = CityPickerViewDataSource()
         self.genderPickerDelegate = GenderPickerViewDelegate()
         self.genderPickerDataSource = GenderPickerViewDataSource()
         self.dateFormatter = dateFormatter
+        self.userInfoStorage = userInfoStorage
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -44,24 +45,22 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
         setupCityPickerView()
         setupGenderPickerView()
+        bindViewModel()
     }
 
     private func bindViewModel() {
-        let input = EditAccountViewModel.Input(
-            saveTapped: rootView.saveButton.rx.tap.asObservable(),
-            username: rootView.loginContainer.textField.phoneText.asObservable(),
-            fullname: rootView.usernameContainer.textField.rx.text.asObservable(),
-            city: cityPickerDelegate.selectedCity.asObservable(),
-            gender: genderPickerDelegate.selectedGender.asObservable(),
-            birthday: rootView.birthdayContainer.textField.rx.text.asObservable(),
-            loadCity: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in
-            },
-            loadGender: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in
-            })
-        let output = viewModel.transform(input: input)
+        let output = viewModel.transform(
+            input: .init(
+                saveTapped: rootView.saveButton.rx.tap.asObservable(),
+                username: rootView.loginContainer.textField.rx.text.asObservable().debug(),
+                fullname: rootView.usernameContainer.textField.rx.text.asObservable().debug(),
+                city: cityPickerDelegate.selectedCity.asObservable().debug(),
+                gender: genderPickerDelegate.selectedGender.asObservable().debug(),
+                birthday: rootView.birthdayContainer.textField.rx.text.asObservable().debug(),
+                loadCity: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in }.debug(),
+                loadGender: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in }.debug()))
 
         let city = output.getCity.publish()
 
@@ -69,21 +68,18 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
             .subscribe(onNext: { [unowned self] date in
                 let currentDate = dateFormatter.string(from: date, type: .birthday)
                 rootView.birthdayContainer.textField.text = "\(currentDate ?? "")"
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
 
         city.subscribe(onNext: { [unowned self] city in
             self.cityPickerDataSource.city = city
             self.cityPickerDelegate.city = city
             self.cityPickerView.reloadAllComponents()
-        })
-        .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
 
         cityPickerDelegate.selectedCity
             .subscribe(onNext: { [unowned self] city in
                 rootView.cityContainer.textField.text = city.name
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
 
         city.connect()
             .disposed(by: disposeBag)
@@ -94,27 +90,30 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
             self.genderPickerDelegate.gender = gender
             self.genderPickerDataSource.gender = gender
             self.genderPickerView.reloadAllComponents()
-        })
-        .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
 
         genderPickerDelegate.selectedGender
             .subscribe(onNext: { [unowned self] gender in
                 rootView.genderContainer.textField.text = gender.gender
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
 
         gender.connect()
             .disposed(by: disposeBag)
 
-        guard let user: User = try? cache.readFromDisk(name: "userInfo"),
-              let profile: Profile = try? cache.readFromDisk(name: "profileInfo")
-        else { return }
-        rootView.setData(user: user, profile: profile)
+        rootView.setData(userInfoStorage: userInfoStorage)
         let result = output.updatedAccount.publish()
 
         result.element
-            .subscribe(onNext: { [unowned self]  _ in
-                self.saveTapped?()
+            .subscribe(onNext: { [unowned self]  result in
+                if result.status == 200 {
+                    userInfoStorage.mobilePhoneNumber = rootView.loginContainer.textField.text
+                    userInfoStorage.fullName = rootView.usernameContainer.textField.text
+                    userInfoStorage.city = rootView.cityContainer.textField.text
+                    userInfoStorage.gender = rootView.genderContainer.textField.text == "Мужчина" ? true : false
+                    userInfoStorage.birthday = rootView.birthdayContainer.textField.text
+                    self.saveTapped?()
+                    self.showSimpleAlert(title: "", message: "Данные успешно сохранились!")
+                }
             }).disposed(by: disposeBag)
 
         result.errors
@@ -122,11 +121,6 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
             .disposed(by: disposeBag)
 
         result.connect()
-            .disposed(by: disposeBag)
-        rootView.saveButton.rx.tap
-            .subscribe(onNext: { _  in
-                print("tapped")
-            })
             .disposed(by: disposeBag)
     }
 

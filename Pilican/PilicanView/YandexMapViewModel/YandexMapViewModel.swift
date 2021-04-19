@@ -2,6 +2,13 @@ import CoreLocation
 import YandexMapsMobile
 
 final class YandexMapViewModel: NSObject, MapStatus {
+    func getAddressName(long: Double, lat: Double) -> String {
+        return ""
+    }
+    
+    func getDistance(userPoint: MapPoint, retailPoint: MapPoint) -> Float {
+        return 0.0
+    }
     
     typealias MapView = YMKMapView
     var userLocationViewModel: MapUserLocationViewModel?
@@ -86,7 +93,7 @@ final class YandexMapViewModel: NSObject, MapStatus {
                  cameraCallback: .some({ _ in completionHandler?() }))
     }
     
-    
+
     private func mapAnimationTypeToYMKAnimationType(_ type: MapTransitionAnimationType) -> YMKAnimationType {
         let ymkAnimationType: YMKAnimationType = type == .linear ? .linear : .smooth
         return ymkAnimationType
@@ -112,9 +119,9 @@ extension YandexMapViewModel: YMKUserLocationObjectListener {
         view.accuracyCircle.fillColor = viewModel.radiusColor
         view.accuracyCircle.geometry = .init(center: view.accuracyCircle.geometry.center, radius: viewModel.accuracyCircleRadius)
     }
-    
+
     func onObjectRemoved(with view: YMKUserLocationView) {}
-    
+
     func onObjectUpdated(with view: YMKUserLocationView, event: YMKObjectEvent) {}
 }
 

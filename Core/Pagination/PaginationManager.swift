@@ -29,7 +29,7 @@ public final class PaginationManager<Page: Pagination> {
     private let pageSize: Int
     private let shouldLoadOnEmptyQuery: Bool
     
-    public init(pageSize: Int = 20, shouldLoadOnEmptyQuery: Bool = true, requestFabric: @escaping RequestFabric) {
+    public init(pageSize: Int = 15, shouldLoadOnEmptyQuery: Bool = true, requestFabric: @escaping RequestFabric) {
         self.requestFabric = requestFabric
         self.shouldLoadOnEmptyQuery = shouldLoadOnEmptyQuery
         self.pageSize = pageSize

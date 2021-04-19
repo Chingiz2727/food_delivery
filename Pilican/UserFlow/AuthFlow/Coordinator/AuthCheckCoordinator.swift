@@ -5,7 +5,8 @@ protocol AuthCheckCoordinator: BaseCoordinator {}
 extension AuthCheckCoordinator {
     func checkAuth(onAuth: (() -> Void)?) {
         let authservice = container.resolve(AuthenticationService.self)!
-        guard authservice.token == nil else {
+        let session = container.resolve(UserSessionStorage.self)!
+        guard session.accessToken == nil else {
             onAuth?()
             print("My token", authservice.token)
             return

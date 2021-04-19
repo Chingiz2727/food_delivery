@@ -14,6 +14,7 @@ public protocol AuthenticationService {
     func verifySmsCode(_ phone: String, code: String) -> Observable<LoadingSequence<UserAuthResponse>>
     func updateToken(with newToken: Token?)
     func updateProfile(with profile: UserAuthResponse?)
+    func forceLogout()
 }
 
 public protocol LogoutListener {
@@ -64,10 +65,11 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         return apiService.makeRequest(to: AuthTarget.loginUser(phone: phone, password: password))
             .result(UserAuthResponse.self)
             .asLoadingSequence()
-            .do(onNext: { [weak self] token in
-                guard let result = token.result?.element else { return }
-                self?.updateToken(with: result.token)
-                self?.updateProfile(with: result)
+            .do(onNext: { [weak self] result in
+                guard let info = result.result?.element else { return }
+                self?.updateToken(with: info.token)
+                self?.updateProfile(with: info)
+                self?.token = result.result?.element?.token.accessToken
             })
     }
     
@@ -109,9 +111,6 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     }
     
     public func forceLogout() {
-        updateToken(with: nil)
-        try? cache.clearFromDisk(name: "profileInfo")
-        try? cache.clearFromDisk(name: "userInfo")
         logoutListeners.forEach { $0.cleanUpAfterLogout() }
     }
     
@@ -128,6 +127,8 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         infoStorage.lastName = profile?.profile.lastName
         infoStorage.promoCode = profile?.user.promoCode
         infoStorage.mobilePhoneNumber = profile?.user.username
+        infoStorage.birthday = profile?.profile.birthDay
+        infoStorage.gender = profile?.profile.sex
     }
     
 }

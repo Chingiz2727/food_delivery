@@ -42,7 +42,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
             self?.onCompletion?(true)
         }
         module.registerButtonTapped = { [weak self] in
-            self?.showRegistration()
+            self?.showAcceptPermission()
         }
         router.push(module)
     }
@@ -81,7 +81,11 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     }
 
     private func showAcceptPermission() {
-        let module = moduleFactory.makeAcceptPermission()
+        var module = moduleFactory.makeAcceptPermission()
+        module.nextTapped = { [weak self] in
+            self?.showRegistration()
+            self?.router.dismissModule()
+        }
         router.present(module)
     }
 }

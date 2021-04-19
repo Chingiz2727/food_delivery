@@ -8,4 +8,6 @@
 import Foundation
 
 protocol ChangePinModule: Presentable {
+    typealias SaveTapped = () -> Void
+    var saveTapped: SaveTapped? { get set }
 }

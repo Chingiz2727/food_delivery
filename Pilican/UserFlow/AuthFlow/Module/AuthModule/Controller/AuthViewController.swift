@@ -54,7 +54,8 @@ final class AuthViewController: ViewController, AuthModule, ViewHolder {
         let result = output.isLogged.publish()
 
         result.element
-            .subscribe(onNext: { [unowned self] _ in
+            .subscribe(onNext: { [unowned self] result in
+                
                 self.authButtonTapped?()
             })
             .disposed(by: disposeBag)
