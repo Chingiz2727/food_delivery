@@ -30,7 +30,15 @@ final class OrderTypeCoordinator: BaseCoordinator, DeliveryTabBarItemCoordinator
     }
     
     private func showMakeOrder() {
-        let module = moduleFactory.makeMakeOrder()
+        var module = moduleFactory.makeMakeOrder()
+        module.onMapShowDidSelect = { [weak self] in
+            self?.makeMapSearch()
+        }
+        router.push(module)
+    }
+    
+    func makeMapSearch() {
+        let module = container.resolve(DeliveryLocationModule.self)!
         router.push(module)
     }
 }

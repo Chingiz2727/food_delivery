@@ -13,9 +13,9 @@ class BonusChoiceView: UIView {
     private let payChoiceTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Мои бонусы"
-        label.font = .book16
+        label.font = .book12
         label.textColor = .pilicanGray
-        label.textAlignment = .center
+        label.textAlignment = .left
         return label
     }()
     
@@ -23,14 +23,15 @@ class BonusChoiceView: UIView {
 
     private let payChoiceCashbackLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.book10
+        label.font = UIFont.book16
+        label.textAlignment = .left
         return label
     }()
     
     private let bonusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        
+        imageView.image = Images.tenge.image
         return imageView
     }()
     
@@ -41,6 +42,17 @@ class BonusChoiceView: UIView {
         return choiceSwitch
     }()
 
+    private lazy var textStackView = UIStackView(
+        views: [payChoiceTitleLabel, payChoiceCashbackLabel],
+        axis: .vertical,
+        spacing: 2)
+    
+    private lazy var horizontalStackView = UIStackView(
+        views: [bonusImageView, UIView(), textStackView, UIView(), choiceSwitch],
+        axis: .horizontal,
+        distribution: .equalSpacing,
+        spacing: 10)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayouts()
@@ -68,27 +80,13 @@ class BonusChoiceView: UIView {
         }
         addSubview(containerView)
         containerView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.left.bottom.right.equalToSuperview().inset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.left.bottom.right.equalToSuperview().inset(5)
         }
-
-        containerView.addSubview(payChoiceTitleLabel)
-        payChoiceTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().inset(10)
-            make.left.equalToSuperview().inset(15)
-        }
-
-        containerView.addSubview(payChoiceCashbackLabel)
-        payChoiceCashbackLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(payChoiceTitleLabel.snp.bottom).offset(1)
-            make.bottom.equalToSuperview().inset(5)
-            make.left.equalToSuperview().inset(15)
-        }
-
-        containerView.addSubview(choiceSwitch)
-        choiceSwitch.snp.makeConstraints { (make) in
-            make.trailing.equalToSuperview().inset(10)
-            make.centerY.equalToSuperview()
+        containerView.addSubview(horizontalStackView)
+        horizontalStackView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(4)
+            make.leading.trailing.equalToSuperview().inset(10)
         }
     }
 

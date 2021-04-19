@@ -5,15 +5,17 @@ final class PayValueView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .heading2
+        label.font = .medium16
         label.textAlignment = .left
+        label.numberOfLines = 0
         return label
     }()
     
     private let detailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .heading2
+        label.font = .description2
+        label.numberOfLines = 0
         label.textAlignment = .left
         return label
     }()
@@ -28,12 +30,12 @@ final class PayValueView: UIView {
     private lazy var stackView = UIStackView(
         views: [titleLabel, detailLabel],
         axis: .vertical,
-        spacing: 10)
+        spacing: 5)
     
     private lazy var horizontalStackView = UIStackView(
         views: [stackView, UIView(), costLabel],
         axis: .horizontal,
-        distribution: .fillProportionally,
+        distribution: .fill,
         spacing: 10)
     
     override init(frame: CGRect) {

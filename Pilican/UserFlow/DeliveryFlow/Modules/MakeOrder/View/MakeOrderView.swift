@@ -19,7 +19,7 @@ final class MakeOrderView: UIView {
         return label
     }()
     
-    private let addressView = AdresssChoiceView()
+    let addressView = AdresssChoiceView()
     private let bonusChoiceView = BonusChoiceView()
     private let deliveryOptionsView = UIView()
     private lazy var orderInfoStackView = UIStackView(
@@ -119,7 +119,7 @@ final class MakeOrderView: UIView {
             payAmountView.clearExtraCost()
         }
         payAmountView.setupDeliveryCost(cost: "1200")
-        payAmountView.setupOrderCost(cost: "\(totalSum)")
+        payAmountView.setupOrderCost(cost: "\(totalSum) тг")
         
     }
     

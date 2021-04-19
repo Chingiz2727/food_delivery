@@ -110,6 +110,11 @@
 		55FCC70525F8D499000DED49 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70425F8D499000DED49 /* AboutView.swift */; };
 		55FCC70925F8E2D5000DED49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70825F8E2D4000DED49 /* AboutViewController.swift */; };
 		55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FCC70D25F8E31C000DED49 /* AboutModule.swift */; };
+		7201594F262CC6EE0083C758 /* DeliveryLocationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201594E262CC6EE0083C758 /* DeliveryLocationModule.swift */; };
+		72015954262CC7370083C758 /* DeliveryLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72015953262CC7370083C758 /* DeliveryLocationViewController.swift */; };
+		72015959262CC7B60083C758 /* DeliveryLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72015958262CC7B60083C758 /* DeliveryLocationMapView.swift */; };
+		7201595C262CC91A0083C758 /* DeliveryLocationMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201595B262CC91A0083C758 /* DeliveryLocationMapViewModel.swift */; };
+		72015960262CD7BD0083C758 /* DeliveryLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201595F262CD7BD0083C758 /* DeliveryLocation.swift */; };
 		721127E726200EDA0055A83A /* MapStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127E626200EDA0055A83A /* MapStatus.swift */; };
 		721127EB26200F050055A83A /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127EA26200F050055A83A /* MapPoint.swift */; };
 		721127EF262012980055A83A /* UserlocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127EE262012980055A83A /* UserlocationViewModel.swift */; };
@@ -135,7 +140,6 @@
 		722A34882626BB24003FB38A /* BonusChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A34872626BB24003FB38A /* BonusChoiceView.swift */; };
 		722A348D2626E7BD003FB38A /* PayAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348C2626E7BD003FB38A /* PayAmountView.swift */; };
 		722A34902626EAC6003FB38A /* PayValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348F2626EAC6003FB38A /* PayValueView.swift */; };
-		724FC563262300B400C1DED3 /* YandexMapEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC562262300B400C1DED3 /* YandexMapEngine.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
 		724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC58A2624172800C1DED3 /* MapRetail.swift */; };
@@ -571,6 +575,11 @@
 		55FCC70825F8E2D4000DED49 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		55FCC70D25F8E31C000DED49 /* AboutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModule.swift; sourceTree = "<group>"; };
 		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7201594E262CC6EE0083C758 /* DeliveryLocationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationModule.swift; sourceTree = "<group>"; };
+		72015953262CC7370083C758 /* DeliveryLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationViewController.swift; sourceTree = "<group>"; };
+		72015958262CC7B60083C758 /* DeliveryLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationMapView.swift; sourceTree = "<group>"; };
+		7201595B262CC91A0083C758 /* DeliveryLocationMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationMapViewModel.swift; sourceTree = "<group>"; };
+		7201595F262CD7BD0083C758 /* DeliveryLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocation.swift; sourceTree = "<group>"; };
 		721127E626200EDA0055A83A /* MapStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatus.swift; sourceTree = "<group>"; };
 		721127EA26200F050055A83A /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		721127EE262012980055A83A /* UserlocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserlocationViewModel.swift; sourceTree = "<group>"; };
@@ -596,7 +605,6 @@
 		722A34872626BB24003FB38A /* BonusChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusChoiceView.swift; sourceTree = "<group>"; };
 		722A348C2626E7BD003FB38A /* PayAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAmountView.swift; sourceTree = "<group>"; };
 		722A348F2626EAC6003FB38A /* PayValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValueView.swift; sourceTree = "<group>"; };
-		724FC562262300B400C1DED3 /* YandexMapEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapEngine.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
 		724FC58A2624172800C1DED3 /* MapRetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRetail.swift; sourceTree = "<group>"; };
@@ -1860,6 +1868,58 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		7201594C262CC6CC0083C758 /* DeliveryLocationMap */ = {
+			isa = PBXGroup;
+			children = (
+				7201595E262CD7AB0083C758 /* Model */,
+				72015957262CC7A20083C758 /* View */,
+				72015956262CC79A0083C758 /* ViewModel */,
+				72015952262CC7280083C758 /* Controller */,
+				7201594D262CC6DC0083C758 /* Module */,
+			);
+			path = DeliveryLocationMap;
+			sourceTree = "<group>";
+		};
+		7201594D262CC6DC0083C758 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				7201594E262CC6EE0083C758 /* DeliveryLocationModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72015952262CC7280083C758 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72015953262CC7370083C758 /* DeliveryLocationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72015956262CC79A0083C758 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7201595B262CC91A0083C758 /* DeliveryLocationMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72015957262CC7A20083C758 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72015958262CC7B60083C758 /* DeliveryLocationMapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7201595E262CD7AB0083C758 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7201595F262CD7BD0083C758 /* DeliveryLocation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		721127E526200CEB0055A83A /* MapManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1867,7 +1927,6 @@
 				721127E926200EFB0055A83A /* Model */,
 				721127E626200EDA0055A83A /* MapStatus.swift */,
 				7211283D262024830055A83A /* MapManager.swift */,
-				724FC562262300B400C1DED3 /* YandexMapEngine.swift */,
 			);
 			path = MapManager;
 			sourceTree = "<group>";
@@ -3363,6 +3422,7 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7201594C262CC6CC0083C758 /* DeliveryLocationMap */,
 				724FC58E262419BD00C1DED3 /* UltraDrawerView */,
 				721127F42620141A0055A83A /* UserLocation */,
 				721127E526200CEB0055A83A /* MapManager */,
@@ -4342,6 +4402,7 @@
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
 				55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */,
 				721127E726200EDA0055A83A /* MapStatus.swift in Sources */,
+				7201595C262CC91A0083C758 /* DeliveryLocationMapViewModel.swift in Sources */,
 				55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */,
 				A483E28825D40ABE006D2DAF /* DateContent.swift in Sources */,
 				A4BBC6C725D61271006AF382 /* CameraAction.swift in Sources */,
@@ -4372,7 +4433,6 @@
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */,
 				724FC5AA262419BE00C1DED3 /* CGPoint+Utils.swift in Sources */,
-				724FC563262300B400C1DED3 /* YandexMapEngine.swift in Sources */,
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
 				5578855D25FF673100B3A798 /* ChangePinViewController.swift in Sources */,
 				A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */,
@@ -4380,6 +4440,7 @@
 				A483E26225D40ABE006D2DAF /* UIViewController+Error.swift in Sources */,
 				722A3468262629B9003FB38A /* MakeOrderViewModel.swift in Sources */,
 				55BEF36A25FB3E1000205BBD /* GenderPickerDataSource.swift in Sources */,
+				72015954262CC7370083C758 /* DeliveryLocationViewController.swift in Sources */,
 				A4B9A3B325F104EF00F0A3D6 /* LoadingIndicatorView.swift in Sources */,
 				A4B9A1E625F0A4AA00F0A3D6 /* CashBackListViewModel.swift in Sources */,
 				A483E28B25D40ABE006D2DAF /* PaginationTableFooterView.swift in Sources */,
@@ -4602,6 +4663,7 @@
 				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
 				A4057DCA2611E2C60062BB5B /* DeliveryRetailListViewModel.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
+				72015960262CD7BD0083C758 /* DeliveryLocation.swift in Sources */,
 				55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */,
 				556543B8261DA45D009A4E62 /* OrderTypeCoordinator.swift in Sources */,
 				724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */,
@@ -4631,6 +4693,7 @@
 				A4057DFD2611F3C30062BB5B /* DeliveryRetail.swift in Sources */,
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
 				556CF6BB2602025B007B8FB9 /* BalanceView.swift in Sources */,
+				72015959262CC7B60083C758 /* DeliveryLocationMapView.swift in Sources */,
 				55AD645925E52F2800034459 /* WorkStatus.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
@@ -4672,6 +4735,7 @@
 				552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */,
 				72FB07E4261DA4CB00F04395 /* UIViewController+SearchContainerModule.swift in Sources */,
 				5568FEDF25ECBDAE003AA72F /* AccountView.swift in Sources */,
+				7201594F262CC6EE0083C758 /* DeliveryLocationModule.swift in Sources */,
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,

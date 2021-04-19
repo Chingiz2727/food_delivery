@@ -1,14 +1,20 @@
 import RxSwift
+import YandexMapsMobile
 import UIKit
 
 class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 
     typealias RootViewType = MakeOrderView
+    var onMapShowDidSelect: Callback?
     private let viewModel: MakeOrderViewModel
     private let disposeBag = DisposeBag()
-    
-    init(viewModel: MakeOrderViewModel) {
+    private let mapManager: MapManager<YandexMapViewModel>
+    private var searchManager: YMKSearchManager?
+    private var searchSession: YMKSearchSession?
+
+    init(viewModel: MakeOrderViewModel, mapManager: MapManager<YandexMapViewModel>) {
         self.viewModel = viewModel
+        self.mapManager = mapManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -22,6 +28,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
         bindViewModel()
         bindView()
     }
@@ -41,6 +48,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                 }
                 cell.contentView.isUserInteractionEnabled = false
             }.disposed(by: disposeBag)
+        
+        rootView.addressView.control.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.onMapShowDidSelect?()
+            }).disposed(by: disposeBag)
     }
     
     func changeDishList(action: DishListAction) {
@@ -53,3 +65,4 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         rootView.tableView.estimatedRowHeight = 100
     }
 }
+

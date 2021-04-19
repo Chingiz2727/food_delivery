@@ -86,6 +86,8 @@ enum Images: String {
     case plusDelivery
     case comment
     case checkD
+    case tenge
+    case placeholder
 }
 
 extension Images {

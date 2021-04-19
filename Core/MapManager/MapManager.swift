@@ -13,6 +13,12 @@ open class MapManager<T: MapStatus> {
         }
     }
     
+    var onCameraPositionChanged: ((MapPoint?) -> Void)? {
+        didSet {
+            engine.onCameraPositionChanged = onCameraPositionChanged
+        }
+    }
+
     private var engine: T
 
     init(engine: T) {
@@ -33,5 +39,13 @@ open class MapManager<T: MapStatus> {
     
     func createAnnotation(in view: T.MapView, at point: MapPoint, image: UIImage?, associatedData: Any?) {
         engine.createAnnotation(in: view, at: point, image: image, associatedData: associatedData)
+    }
+    
+    func getDistance(firstPoint: MapPoint, secondPoint: MapPoint) -> Double {
+        engine.getDistance(firstPoint: firstPoint, secondPoint: secondPoint)
+    }
+    
+    func setupCameraListener(in view: T.MapView) {
+        engine.setupCameraListener(in: view)
     }
 }

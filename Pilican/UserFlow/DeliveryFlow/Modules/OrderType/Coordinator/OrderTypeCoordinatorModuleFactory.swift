@@ -27,7 +27,7 @@ final class OrderTypeCoordinatorModuleFactory {
         let dishList = container.resolve(DishList.self)!
         let userInfo = container.resolve(UserInfoStorage.self)!
         let viewModel = MakeOrderViewModel(dishList: dishList, userInfo: userInfo)
-        let controller = MakeOrderViewController(viewModel: viewModel)
+        let controller = MakeOrderViewController(viewModel: viewModel, mapManager: container.resolve(MapManager.self)!)
         return controller
     }
 }
