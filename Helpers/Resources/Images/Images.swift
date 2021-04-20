@@ -94,6 +94,8 @@ enum Images: String {
     case qr
     case moji
     case taxi
+    case pillikanDelivery
+    case contactlessDellivery
     case scooter
 }
 

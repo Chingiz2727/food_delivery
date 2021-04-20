@@ -53,7 +53,9 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
         rootView.tableView.rx.itemSelected
             .withLatestFrom(retailList.element) { $1[$0.row] }
             .bind { [unowned self] retail in
-                self.onRetailDidSelect?(retail)
+                if retail.isWork == 0 {
+                    self.onRetailDidSelect?(retail)
+                }
             }
             .disposed(by: disposeBag)
 

@@ -20,7 +20,7 @@ final class MakeOrderView: UIView {
     }()
     
     let addressView = AdresssChoiceView()
-    private let bonusChoiceView = BonusChoiceView()
+    let bonusChoiceView = BonusChoiceView()
     private let deliveryOptionsView = UIView()
     private lazy var orderInfoStackView = UIStackView(
         views: [deliveryView, locationView, maskEscapeView],
@@ -110,20 +110,28 @@ final class MakeOrderView: UIView {
         heightConstraint?.activate()
     }
     
-    func setupAmount(totalSum: Int) {
+    func setupAmount(totalSum: Int, delivery: Int) {
         if totalSum < 2000 {
             payAmountView.setupExtraCost()
         } else {
             payAmountView.clearExtraCost()
         }
-        payAmountView.setupDeliveryCost(cost: "1200")
+        payAmountView.setupDeliveryCost(cost: "\(delivery) тг")
         payAmountView.setupOrderCost(cost: "\(totalSum) тг")
+        payAmountView.setupFullCost(cost: totalSum + delivery)
+        
     }
     
+    func setOrderType(orderType: OrderType) {
+        if orderType == .takeAway {
+            maskEscapeView.isHidden = true
+        }
+    }
     private func configureView() {
-        deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.deliveryType.image)
-        locationView.setup(title: "Адрес доставки", subTitle: "", image: Images.Location.image)
-        maskEscapeView.setup(title: "Бесконтакная доставка", subTitle: "Пожалуйста, оставьте заказ возле двери/входа", image: Images.deliveryType.image)
+        deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.pillikanDelivery.image)
+        locationView.setup(title: "Адрес доставки", subTitle: "", image: Images.LocationSelected.image)
+        maskEscapeView.setup(title: "Бесконтакная доставка", subTitle: "Пожалуйста, оставьте заказ возле двери/входа", image: Images.contactlessDellivery.image)
+        maskEscapeView.switchControl.isHidden = false
         backgroundColor =  .background
         deliveryOptionsView.backgroundColor = .white
         bonusChoiceView.backgroundColor = .white

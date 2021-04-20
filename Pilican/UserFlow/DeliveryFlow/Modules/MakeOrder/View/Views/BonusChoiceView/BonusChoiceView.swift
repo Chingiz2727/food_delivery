@@ -53,6 +53,63 @@ class BonusChoiceView: UIView {
         distribution: .equalSpacing,
         spacing: 10)
     
+    private let bonusDecreaseTitle: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .medium12
+        label.text = "Будет списано"
+        return label
+    }()
+    
+    private let cashTitleView = LabelBackgroundView()
+    
+    private let cashTitleDescription: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .medium12
+        label.text = "с карты"
+        return label
+    }()
+    
+    let plusLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .medium12
+        label.text = "+"
+        return label
+    }()
+    
+    let bonusSpendTitleView = LabelBackgroundView()
+    
+    let bonusDescription: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .medium12
+        label.text = "балл"
+        return label
+    }()
+    
+    private lazy var cashStack = UIStackView(
+        views: [cashTitleView, cashTitleDescription],
+        axis: .vertical,
+        spacing: 3)
+    
+    private lazy var bonusStack = UIStackView(
+        views: [bonusSpendTitleView, bonusDescription],
+        axis: .vertical,
+        spacing: 3)
+    
+    private lazy var horizontalSpendStack = UIStackView(
+        views: [cashStack, plusLabel, bonusStack],
+        axis: .horizontal,
+        distribution: .equalSpacing,
+        spacing: 15)
+    
+    lazy var fullPayBonusStackView = UIStackView(
+        views: [bonusDecreaseTitle, horizontalSpendStack],
+        axis: .vertical,
+        spacing: 10)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayouts()
@@ -71,7 +128,15 @@ class BonusChoiceView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    func setupBonus(bonus: Double) {
+        bonusSpendTitleView.setTitle(title: "\(bonus)")
+    }
+    
+    func setupSpendedMoney(money: Double) {
+        cashTitleView.setTitle(title: "\(money)")
+    }
+    
     private func setupInitialLayouts() {
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -81,12 +146,20 @@ class BonusChoiceView: UIView {
         addSubview(containerView)
         containerView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.left.bottom.right.equalToSuperview().inset(5)
+            make.left.right.equalToSuperview().inset(5)
         }
         containerView.addSubview(horizontalStackView)
         horizontalStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(4)
             make.leading.trailing.equalToSuperview().inset(10)
+        }
+        
+        addSubview(fullPayBonusStackView)
+        
+        fullPayBonusStackView.snp.makeConstraints { make in
+            make.top.equalTo(containerView.snp.bottom).offset(5)
+            make.bottom.equalToSuperview().inset(5)
+            make.centerX.equalToSuperview()
         }
     }
 
@@ -94,5 +167,7 @@ class BonusChoiceView: UIView {
         containerView.backgroundColor = .background
         backgroundColor = .white
         containerView.layer.cornerRadius = 8
+        bonusSpendTitleView.backgroundColor = .primary
+        cashTitleView.backgroundColor = .background
     }
 }

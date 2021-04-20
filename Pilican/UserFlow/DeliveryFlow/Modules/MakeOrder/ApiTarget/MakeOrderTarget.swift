@@ -10,7 +10,7 @@ enum MakeOrderTarget: ApiTarget {
     var servicePath: String {
         switch self {
         case .deliveryDistance:
-            return "/api/rates/delivery"
+            return "rates/delivery"
         }
     }
     

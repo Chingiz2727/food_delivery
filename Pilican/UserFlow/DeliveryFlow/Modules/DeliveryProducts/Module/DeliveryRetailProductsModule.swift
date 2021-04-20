@@ -1,1 +1,3 @@
-protocol DeliveryRetailProductsModule: Presentable { }
+protocol DeliveryRetailProductsModule: Presentable {
+    var onMakeOrdedDidTap: Callback? { get set }
+}

@@ -7,13 +7,15 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 
     typealias RootViewType = MakeOrderView
     var onMapShowDidSelect: Callback?
+    var orderType: OrderType!
     private let viewModel: MakeOrderViewModel
     private let disposeBag = DisposeBag()
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
-    private let currentLocation = PublishSubject<MapPoint>()
-    private let selectedLocationObject = PublishSubject<DeliveryLocation>()
+    private let currentLocation = PublishSubject<DeliveryLocation>()
+    private let distance = PublishSubject<Double>()
     private let locationManager = CLLocationManager()
+    private let totalSum = PublishSubject<Int>()
     
     init(viewModel: MakeOrderViewModel) {
         self.viewModel = viewModel
@@ -54,6 +56,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         
         distance.subscribe(onNext: { [unowned self] distance in
             self.rootView.deliveryView.setup(subTitle: "Расстояние доставки \(distance / 1000) км")
+            self.distance.onNext(distance)
         })
         .disposed(by: disposeBag)
         
@@ -61,20 +64,29 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         
         currentLocation.subscribe(onNext: { [unowned self] location in
             self.rootView.locationView.setup(subTitle: location.name)
-            self.selectedLocationObject.onNext(location)
         })
         .disposed(by: disposeBag)
         
-        selectedLocationObject.subscribe(onNext: { [unowned self] location in
+        let rate = output.deliveryRate.publish()
+        
+        rate.subscribe(onNext: { [unowned self] rate in
+            print(rate)
+        })
+        .disposed(by: disposeBag)
+        
+        rate.errors
+            .bind(to: rx.error)
+            .disposed(by: disposeBag)
+        
+        rate.connect()
+            .disposed(by: disposeBag)
+        
+        currentLocation.subscribe(onNext: { [unowned self] location in
             self.rootView.addressView.setupAdressName(adress: location.name)
         })
         .disposed(by: disposeBag)
+        
         viewModel.dishList.wishDishList
-            .do(onNext: { [unowned self] products in
-                let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
-                let totalSum = amount.reduce(0,+)
-                self.rootView.setupAmount(totalSum: totalSum)
-            })
             .bind(to: rootView.tableView.rx.items(BasketItemViewCell.self)) { _, model, cell  in
                 cell.setup(product: model)
                 cell.addProduct = { product in
@@ -86,10 +98,37 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                 cell.contentView.isUserInteractionEnabled = false
             }.disposed(by: disposeBag)
         
+        Observable.combineLatest(viewModel.dishList.wishDishList, rate.element)
+            .subscribe(onNext: { [unowned self] products, rate in
+                let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
+                let totalSum = amount.reduce(0,+)
+                if totalSum < 2000 {
+                    self.totalSum.onNext(totalSum + 600 + rate.rate)
+                    self.rootView.setupAmount(totalSum: totalSum + 600, delivery: rate.rate)
+                } else {
+                    self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate)
+                    self.totalSum.onNext(totalSum + rate.rate)
+                }
+                self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate)
+            })
+            .disposed(by: disposeBag)
+        
+        totalSum.subscribe(onNext: { [unowned self] sum in
+            let bonusSpend = self.viewModel.userInfo.balance ?? 0 > sum ? sum : self.viewModel.userInfo.balance ?? 0
+            let sumSpend = self.viewModel.userInfo.balance ?? 0 > sum ? 0 : self.viewModel.userInfo.balance ?? 0 - sum
+            self.rootView.bonusChoiceView.setupBonus(bonus: Double(bonusSpend))
+            self.rootView.bonusChoiceView.setupSpendedMoney(money: Double(sumSpend))
+        })
+        .disposed(by: disposeBag)
+        
+        rootView.bonusChoiceView.choiceSwitch.rx.isOn.map { !$0 }
+            .bind(to: rootView.bonusChoiceView.fullPayBonusStackView.rx.isHidden)
+            .disposed(by: disposeBag)
         rootView.addressView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.onMapShowDidSelect?()
             }).disposed(by: disposeBag)
+        
     }
     
     func changeDishList(action: DishListAction) {
@@ -100,10 +139,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         rootView.setupUserInfo(storage: viewModel.userInfo)
         rootView.tableView.rowHeight = 100
         rootView.tableView.estimatedRowHeight = 100
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+        rootView.setOrderType(orderType: orderType)
         if let coordinate = locationManager.location?.coordinate {
-            currentLocation.onNext(MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude))
+            currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: ""))
         }
     }
     
@@ -118,7 +156,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         let alert = UIAlertController(title: "Выберите адрес", message: nil, preferredStyle: .actionSheet)
         adressList.forEach { adress in
             let action = UIAlertAction(title: adress.name, style: .default) { [unowned self] _ in
-                self.selectedLocationObject.onNext(adress)
+                self.currentLocation.onNext(adress)
                 self.rootView.locationView.setup(subTitle: adress.name)
             }
             alert.addAction(action)
@@ -130,6 +168,6 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 extension MakeOrderViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         guard let coordinate = manager.location else { return }
-        self.currentLocation.onNext(MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude))
+        self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude), name: ""))
     }
 }

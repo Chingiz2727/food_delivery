@@ -40,7 +40,7 @@ final class PayAmountView: UIView {
     private lazy var horizontalStackView = UIStackView(
         views: [stackView, UIView(), payButton],
         axis: .horizontal,
-        spacing: 10)
+        spacing: 30)
     
     private lazy var fullInfoStackView = UIStackView(
         views: [titleLabel, orderCost, deliveryCost, extraPayment, horizontalStackView],
@@ -73,7 +73,10 @@ final class PayAmountView: UIView {
         extraPayment.setup(detail: "Минимальная сумма заказа - 2000 тенге. За заказы меньше этой сумма взимается дполнительная комиссия.")
         extraPayment.setup(price: "600 тг")
     }
-
+    
+    func setupFullCost(cost: Int) {
+        costLabel.text = "\(cost) тг"
+    }
     func clearExtraCost() {
         extraPayment.isHidden = true
     }
@@ -83,7 +86,6 @@ final class PayAmountView: UIView {
         fullInfoStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
         payButton.snp.makeConstraints { make in
             make.width.equalTo(160)
-            make.height.equalTo(40)
         }
         backgroundColor = .white
     }

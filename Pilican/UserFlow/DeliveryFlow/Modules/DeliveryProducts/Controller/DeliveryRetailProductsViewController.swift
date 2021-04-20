@@ -4,10 +4,11 @@ import UIKit
 class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProductsModule, ViewHolder {
     typealias RootViewType = DeliveryRetailProductsView
     
+    var onMakeOrdedDidTap: Callback?
+    
     private let viewModel: DeliveryRetailProductViewModel
     private let disposeBag = DisposeBag()
     private let sourceDelegate: DeliveryRetailTableViewDataSourceDelegate
-
     init(viewModel: DeliveryRetailProductViewModel) {
         self.viewModel = viewModel
         self.sourceDelegate = DeliveryRetailTableViewDataSourceDelegate(dishList: viewModel.dishList)
@@ -87,6 +88,11 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 if self.rootView.tableView.numberOfSections != 0 {
                     self.rootView.tableView.scrollToRow(at: .init(row: 0, section: section), at: .top, animated: true)
                 }
+            })
+            .disposed(by: disposeBag)
+        rootView.calculateView.control.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.onMakeOrdedDidTap?()
             })
             .disposed(by: disposeBag)
     }

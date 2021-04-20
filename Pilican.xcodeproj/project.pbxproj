@@ -142,7 +142,7 @@
 		72015959262CC7B60083C758 /* DeliveryLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72015958262CC7B60083C758 /* DeliveryLocationMapView.swift */; };
 		7201595C262CC91A0083C758 /* DeliveryLocationMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201595B262CC91A0083C758 /* DeliveryLocationMapViewModel.swift */; };
 		72015960262CD7BD0083C758 /* DeliveryLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201595F262CD7BD0083C758 /* DeliveryLocation.swift */; };
-		7201596A262E907B0083C758 /* MakeOrderApiTarget\.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72015969262E907B0083C758 /* MakeOrderApiTarget\.swift */; };
+		7201596A262E907B0083C758 /* MakeOrderTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72015969262E907B0083C758 /* MakeOrderTarget.swift */; };
 		7201596F262E95EA0083C758 /* DeliveryRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201596E262E95EA0083C758 /* DeliveryRate.swift */; };
 		721127E726200EDA0055A83A /* MapStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127E626200EDA0055A83A /* MapStatus.swift */; };
 		721127EB26200F050055A83A /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127EA26200F050055A83A /* MapPoint.swift */; };
@@ -169,6 +169,7 @@
 		722A34882626BB24003FB38A /* BonusChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A34872626BB24003FB38A /* BonusChoiceView.swift */; };
 		722A348D2626E7BD003FB38A /* PayAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348C2626E7BD003FB38A /* PayAmountView.swift */; };
 		722A34902626EAC6003FB38A /* PayValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348F2626EAC6003FB38A /* PayValueView.swift */; };
+		72340C2C262F5D94000569D6 /* OrderValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C2B262F5D94000569D6 /* OrderValue.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
 		724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC58A2624172800C1DED3 /* MapRetail.swift */; };
@@ -636,7 +637,7 @@
 		72015958262CC7B60083C758 /* DeliveryLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationMapView.swift; sourceTree = "<group>"; };
 		7201595B262CC91A0083C758 /* DeliveryLocationMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationMapViewModel.swift; sourceTree = "<group>"; };
 		7201595F262CD7BD0083C758 /* DeliveryLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocation.swift; sourceTree = "<group>"; };
-		72015969262E907B0083C758 /* MakeOrderApiTarget\.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MakeOrderApiTarget\\.swift"; sourceTree = "<group>"; };
+		72015969262E907B0083C758 /* MakeOrderTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderTarget.swift; sourceTree = "<group>"; };
 		7201596E262E95EA0083C758 /* DeliveryRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRate.swift; sourceTree = "<group>"; };
 		721127E626200EDA0055A83A /* MapStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatus.swift; sourceTree = "<group>"; };
 		721127EA26200F050055A83A /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
@@ -663,6 +664,7 @@
 		722A34872626BB24003FB38A /* BonusChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusChoiceView.swift; sourceTree = "<group>"; };
 		722A348C2626E7BD003FB38A /* PayAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAmountView.swift; sourceTree = "<group>"; };
 		722A348F2626EAC6003FB38A /* PayValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValueView.swift; sourceTree = "<group>"; };
+		72340C2B262F5D94000569D6 /* OrderValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderValue.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
 		724FC58A2624172800C1DED3 /* MapRetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRetail.swift; sourceTree = "<group>"; };
@@ -2217,7 +2219,7 @@
 		72015968262E906B0083C758 /* ApiTarget */ = {
 			isa = PBXGroup;
 			children = (
-				72015969262E907B0083C758 /* MakeOrderApiTarget\.swift */,
+				72015969262E907B0083C758 /* MakeOrderTarget.swift */,
 			);
 			path = ApiTarget;
 			sourceTree = "<group>";
@@ -2226,6 +2228,7 @@
 			isa = PBXGroup;
 			children = (
 				7201596E262E95EA0083C758 /* DeliveryRate.swift */,
+				72340C2B262F5D94000569D6 /* OrderValue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4930,6 +4933,7 @@
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
 				55FCC70525F8D499000DED49 /* AboutView.swift in Sources */,
 				A4057DC62611DA310062BB5B /* DeliveryRetailListView.swift in Sources */,
+				72340C2C262F5D94000569D6 /* OrderValue.swift in Sources */,
 				A4B9A1E325F0A41600F0A3D6 /* CashBackListModule.swift in Sources */,
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
 				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
@@ -5098,7 +5102,7 @@
 				721127EB26200F050055A83A /* MapPoint.swift in Sources */,
 				724FC5AB262419BE00C1DED3 /* RubberBand.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
-				7201596A262E907B0083C758 /* MakeOrderApiTarget\.swift in Sources */,
+				7201596A262E907B0083C758 /* MakeOrderTarget.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				556CF6D6260221A7007B8FB9 /* PayHistoryViewController.swift in Sources */,
 				55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */,

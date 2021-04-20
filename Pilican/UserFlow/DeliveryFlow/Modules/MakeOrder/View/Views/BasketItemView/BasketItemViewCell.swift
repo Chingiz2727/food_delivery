@@ -114,7 +114,7 @@ final class BasketItemViewCell: UITableViewCell {
         minusButton.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
         plusButton.addTarget(self, action: #selector(setProduct), for: .touchUpInside)
         buttonStackView.isUserInteractionEnabled = true
-        selectionStyle = .blue
+        selectionStyle = .none
         backgroundColor = .white
     }
     
