@@ -12,7 +12,7 @@ final class DeliveryRetailProductsView: UIView {
     private var stickyHeaderrHeightConstraint: Constraint?
     let calculateView = ProductCalculateView()
     let stickyHeaderView = DeliveryRetailHeaderView()
-    private let calculateView = ProductCalculateView()
+    
     private lazy var stackView = UIStackView(
         views: [stickyHeaderView, segmentControl, tableView, calculateView],
         axis: .vertical,
