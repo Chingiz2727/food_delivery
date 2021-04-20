@@ -20,7 +20,7 @@ final class HomeCoordinator: BaseCoordinator {
 
     override func start() {
         makeTabBar()
-        
+
         tabBarController.qrCodeTap = { [weak self] in
             self?.showCamera()
         }
@@ -32,7 +32,7 @@ final class HomeCoordinator: BaseCoordinator {
         tabBarController.bonusTap = { [weak self] in
             self?.showCashbackMenu()
         }
-        
+
         tabBarController.notifyMenuTap = { [weak self] in
             self?.showNotificationList()
         }
@@ -101,7 +101,7 @@ final class HomeCoordinator: BaseCoordinator {
         coordinator.start()
         addDependency(coordinator)
     }
-    
+
     private func showNotificationList() {
         var module = coordinatorFactory.makeNotificationList()
         module.notificationsListDidSelect = { [weak self] item in
@@ -112,12 +112,12 @@ final class HomeCoordinator: BaseCoordinator {
         }
         router.push(module)
     }
-    
+
     private func showNotificationPillikanInfo() {
         let module = coordinatorFactory.pillikanInfoNotifications()
         router.push(module)
     }
-    
+
     private func showNotificationPillikanPay() {
         let module = coordinatorFactory.pillikanPayNotifications()
         router.push(module)

@@ -8,7 +8,7 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
     private let coordinatorFactory: DeliveryCoordinatorModuleFactory
     
     override init(router: Router, container: DependencyContainer) {
-        coordinatorFactory = DeliveryCoordinatorModuleFactory(container: container)
+        coordinatorFactory = DeliveryCoordinatorModuleFactory(container: container, router: router)
         super.init(router: router, container: container)
     }
     
@@ -21,11 +21,20 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         module.onRetailDidSelect = { [weak self] retail in
             self?.showDeliveryProduct(retail: retail)
         }
+        module.deliveryMenuDidSelect = { [weak self] in
+            self?.showDeliveryMenu()
+        }
         router.setRootModule(module)
     }
     
     private func showDeliveryProduct(retail: DeliveryRetail) {
         let module = coordinatorFactory.deliveryProduct(retail: retail)
         router.push(module)
+    }
+    
+    private func showDeliveryMenu() {
+        let coordinator = coordinatorFactory.makeDeliveryMenu()
+        coordinator.start()
+        addDependency(coordinator)
     }
 }

@@ -8,7 +8,7 @@ final class DeliveryRetailHeaderView: UIView {
     private let imageHeight: CGFloat = 20
     private let deliveryImageSize: CGFloat = 30
 
-    private let productImageView:  UIImageView = {
+    private let productImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleToFill
         return image
@@ -36,7 +36,7 @@ final class DeliveryRetailHeaderView: UIView {
         return label
     }()
     
-    private let favouriteButton: UIButton = {
+    let favouriteButton: UIButton = {
         let button = UIButton()
         button.setImage(Images.emptyStar.image, for: .normal)
         return button
@@ -49,7 +49,7 @@ final class DeliveryRetailHeaderView: UIView {
         stackView.axis = .vertical
         return stackView
     }()
-    
+
     private lazy var infoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [labelStackView, workTimeLabel, UIView(), favouriteButton])
         stackView.spacing = 10
@@ -75,14 +75,14 @@ final class DeliveryRetailHeaderView: UIView {
         view.isUserInteractionEnabled = false
         return view
     }()
-    
+
     private let deliveryImage: UIImageView = {
         let image = UIImageView()
         image.image = Images.delivery.image
         image.contentMode = .scaleAspectFit
         return image
     }()
-    
+
     private let deliveryTitle: UILabel = {
         let label = UILabel()
         label.text = "Доставка \n30-60 мин"
@@ -90,7 +90,7 @@ final class DeliveryRetailHeaderView: UIView {
         label.font = .description3
         return label
     }()
-    
+
     private lazy var deliveryStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [deliveryImage, deliveryTitle])
         stackView.spacing = 2
@@ -141,6 +141,7 @@ final class DeliveryRetailHeaderView: UIView {
         ratingLabel.text = "\(retail.rating ?? 0)"
         ratingView.rating = retail.rating ?? 0
         productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
+        favouriteButton.setImage(retail.status == 1 ? Images.fillStar.image : Images.emptyStar.image, for: .normal)
     }
 
     private func setupInitialLayout() {
@@ -153,12 +154,12 @@ final class DeliveryRetailHeaderView: UIView {
             make.height.equalTo(imageHeight)
             make.width.equalTo(80)
         }
-        
+
         productImageView.snp.makeConstraints { make in
             make.height.equalTo(180)
             make.width.equalToSuperview()
         }
-        
+
         favouriteButton.setContentHuggingPriority(.required, for: .horizontal)
         backgroundColor = .background
     }
