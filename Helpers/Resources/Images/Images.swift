@@ -97,6 +97,7 @@ enum Images: String {
     case pillikanDelivery
     case contactlessDellivery
     case scooter
+    case deliveryMenu
 }
 
 extension Images {

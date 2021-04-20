@@ -33,8 +33,6 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
                 self?.showBalance()
             case .historyOfPay:
                 self?.showPayHistory()
-            default:
-                break
             }
             self?.router.dismissModule()
         }

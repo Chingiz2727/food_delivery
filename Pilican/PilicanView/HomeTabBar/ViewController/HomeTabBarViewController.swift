@@ -25,7 +25,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
     override var navigationBarHidden: Bool {
         return true
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialLayout()

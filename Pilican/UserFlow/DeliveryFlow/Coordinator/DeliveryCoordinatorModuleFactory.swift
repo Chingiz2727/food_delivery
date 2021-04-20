@@ -2,9 +2,11 @@ import UIKit
 
 final class DeliveryCoordinatorModuleFactory {
     private let container: DependencyContainer
+    private let router: Router
     
-    init(container: DependencyContainer) {
+    init(container: DependencyContainer, router: Router) {
         self.container = container
+        self.router = router
     }
     
     func delivery() -> DeliveryRetailListModule {
@@ -35,5 +37,9 @@ final class DeliveryCoordinatorModuleFactory {
         let controller = MakeOrderViewController(viewModel: viewModel)
         controller.orderType = orderType
         return controller
+    }
+    
+    func makeDeliveryMenu() -> DeliveryMenuCoordinator {
+        return DeliveryMenuCoordinatorImpl(router: router, container: container)
     }
 }

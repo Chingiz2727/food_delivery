@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		01842F6297D537FBB0CFACB5 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */; };
 		55173251261D6BAE0031623B /* OrderTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55173250261D6BAE0031623B /* OrderTypeView.swift */; };
+		5525317D26293B6E00888DEE /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525317C26293B6E00888DEE /* FavoritesView.swift */; };
+		5525318126293E4500888DEE /* FavoritesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525318026293E4500888DEE /* FavoritesModule.swift */; };
+		5525318626293E9B00888DEE /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525318526293E9B00888DEE /* FavoritesViewController.swift */; };
+		5525318926293F5A00888DEE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525318826293F5A00888DEE /* FavoritesViewModel.swift */; };
+		5525318D262941DD00888DEE /* FavoritesTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525318C262941DD00888DEE /* FavoritesTarget.swift */; };
+		55253191262942E700888DEE /* FavoriteStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55253190262942E700888DEE /* FavoriteStatus.swift */; };
+		552531AE2629BECC00888DEE /* DeliveryMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531AD2629BECC00888DEE /* DeliveryMenuView.swift */; };
+		552531B22629BF1800888DEE /* DeliveryMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531B12629BF1800888DEE /* DeliveryMenuViewController.swift */; };
+		552531B62629BF6C00888DEE /* DeliveryMenuModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531B52629BF6C00888DEE /* DeliveryMenuModule.swift */; };
+		552531BA2629BF9200888DEE /* DeliveryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531B92629BF9200888DEE /* DeliveryMenu.swift */; };
+		552531BF2629ECD300888DEE /* DeliveryMenuModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531BE2629ECD300888DEE /* DeliveryMenuModuleFactory.swift */; };
+		552531C22629ED5D00888DEE /* DeliveryMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531C12629ED5D00888DEE /* DeliveryMenuCoordinator.swift */; };
+		552531CB262AC92600888DEE /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531CA262AC92600888DEE /* OrderHistoryView.swift */; };
+		552531CF262AC96100888DEE /* OrderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531CE262AC96100888DEE /* OrderHistoryTableViewCell.swift */; };
+		552531D4262ACDD600888DEE /* OrderHistoryModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531D3262ACDD600888DEE /* OrderHistoryModule.swift */; };
+		552531D8262ACE6C00888DEE /* OrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531D7262ACE6C00888DEE /* OrderHistoryViewController.swift */; };
+		552531DC262ACF4B00888DEE /* OrderHistoryTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531DB262ACF4B00888DEE /* OrderHistoryTarget.swift */; };
+		552531E0262AD07000888DEE /* OrderHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531DF262AD07000888DEE /* OrderHistoryViewModel.swift */; };
+		552531E5262AD0F600888DEE /* OrderHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552531E4262AD0F600888DEE /* OrderHistoryResponse.swift */; };
 		5526DAD72603822800536589 /* PayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DAD62603822800536589 /* PayDetailView.swift */; };
 		5526DADB2603824000536589 /* PayDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DADA2603824000536589 /* PayDetailModule.swift */; };
 		5526DADF2603825E00536589 /* PayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526DADE2603825E00536589 /* PayDetailViewController.swift */; };
@@ -503,6 +522,25 @@
 		124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
 		206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
 		55173250261D6BAE0031623B /* OrderTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeView.swift; sourceTree = "<group>"; };
+		5525317C26293B6E00888DEE /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		5525318026293E4500888DEE /* FavoritesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModule.swift; sourceTree = "<group>"; };
+		5525318526293E9B00888DEE /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		5525318826293F5A00888DEE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		5525318C262941DD00888DEE /* FavoritesTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTarget.swift; sourceTree = "<group>"; };
+		55253190262942E700888DEE /* FavoriteStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStatus.swift; sourceTree = "<group>"; };
+		552531AD2629BECC00888DEE /* DeliveryMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuView.swift; sourceTree = "<group>"; };
+		552531B12629BF1800888DEE /* DeliveryMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuViewController.swift; sourceTree = "<group>"; };
+		552531B52629BF6C00888DEE /* DeliveryMenuModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuModule.swift; sourceTree = "<group>"; };
+		552531B92629BF9200888DEE /* DeliveryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenu.swift; sourceTree = "<group>"; };
+		552531BE2629ECD300888DEE /* DeliveryMenuModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuModuleFactory.swift; sourceTree = "<group>"; };
+		552531C12629ED5D00888DEE /* DeliveryMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuCoordinator.swift; sourceTree = "<group>"; };
+		552531CA262AC92600888DEE /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
+		552531CE262AC96100888DEE /* OrderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		552531D3262ACDD600888DEE /* OrderHistoryModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryModule.swift; sourceTree = "<group>"; };
+		552531D7262ACE6C00888DEE /* OrderHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewController.swift; sourceTree = "<group>"; };
+		552531DB262ACF4B00888DEE /* OrderHistoryTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTarget.swift; sourceTree = "<group>"; };
+		552531DF262AD07000888DEE /* OrderHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryViewModel.swift; sourceTree = "<group>"; };
+		552531E4262AD0F600888DEE /* OrderHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryResponse.swift; sourceTree = "<group>"; };
 		5526DAD62603822800536589 /* PayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailView.swift; sourceTree = "<group>"; };
 		5526DADA2603824000536589 /* PayDetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailModule.swift; sourceTree = "<group>"; };
 		5526DADE2603825E00536589 /* PayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDetailViewController.swift; sourceTree = "<group>"; };
@@ -1046,6 +1084,198 @@
 				55654396261D72CF009A4E62 /* OrderTypeTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5525317A26293B4700888DEE /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				5525318F262942DB00888DEE /* Model */,
+				5525318B262941C700888DEE /* Api */,
+				5525318426293E8700888DEE /* ViewModel */,
+				5525318326293E7D00888DEE /* Controller */,
+				5525317F26293E3400888DEE /* Module */,
+				5525317B26293B5100888DEE /* View */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		5525317B26293B5100888DEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5525317C26293B6E00888DEE /* FavoritesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5525317F26293E3400888DEE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5525318026293E4500888DEE /* FavoritesModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5525318326293E7D00888DEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5525318526293E9B00888DEE /* FavoritesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5525318426293E8700888DEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5525318826293F5A00888DEE /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5525318B262941C700888DEE /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5525318C262941DD00888DEE /* FavoritesTarget.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5525318F262942DB00888DEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55253190262942E700888DEE /* FavoriteStatus.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		552531AB2629BEAA00888DEE /* DeliveryMenu */ = {
+			isa = PBXGroup;
+			children = (
+				552531BC2629EC8D00888DEE /* Coordinator */,
+				552531B82629BF8100888DEE /* Model */,
+				552531B42629BF5000888DEE /* Module */,
+				552531B02629BF0700888DEE /* Controller */,
+				552531AC2629BEB300888DEE /* View */,
+			);
+			path = DeliveryMenu;
+			sourceTree = "<group>";
+		};
+		552531AC2629BEB300888DEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				552531AD2629BECC00888DEE /* DeliveryMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552531B02629BF0700888DEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				552531B12629BF1800888DEE /* DeliveryMenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		552531B42629BF5000888DEE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				552531B52629BF6C00888DEE /* DeliveryMenuModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		552531B82629BF8100888DEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				552531B92629BF9200888DEE /* DeliveryMenu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		552531BC2629EC8D00888DEE /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				552531BD2629ECA600888DEE /* ModuleFactory */,
+				552531C12629ED5D00888DEE /* DeliveryMenuCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		552531BD2629ECA600888DEE /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				552531BE2629ECD300888DEE /* DeliveryMenuModuleFactory.swift */,
+			);
+			name = ModuleFactory;
+			sourceTree = "<group>";
+		};
+		552531C4262AC83000888DEE /* OrderHistory */ = {
+			isa = PBXGroup;
+			children = (
+				552531E3262AD0DA00888DEE /* Model */,
+				552531DE262AD05D00888DEE /* ViewModel */,
+				552531DA262ACF3F00888DEE /* Api */,
+				552531D6262ACE1F00888DEE /* Controller */,
+				552531D2262ACDB800888DEE /* Module */,
+				552531C5262AC8BB00888DEE /* View */,
+			);
+			path = OrderHistory;
+			sourceTree = "<group>";
+		};
+		552531C5262AC8BB00888DEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				552531CD262AC94700888DEE /* Cell */,
+				552531CA262AC92600888DEE /* OrderHistoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		552531CD262AC94700888DEE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				552531CE262AC96100888DEE /* OrderHistoryTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		552531D2262ACDB800888DEE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				552531D3262ACDD600888DEE /* OrderHistoryModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		552531D6262ACE1F00888DEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				552531D7262ACE6C00888DEE /* OrderHistoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		552531DA262ACF3F00888DEE /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				552531DB262ACF4B00888DEE /* OrderHistoryTarget.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		552531DE262AD05D00888DEE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				552531DF262AD07000888DEE /* OrderHistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		552531E3262AD0DA00888DEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				552531E4262AD0F600888DEE /* OrderHistoryResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5526DAD3260381FF00536589 /* PayDetail */ = {
@@ -2880,6 +3110,9 @@
 			isa = PBXGroup;
 			children = (
 				722A33C0262568AA003FB38A /* MakeOrder */,
+				552531C4262AC83000888DEE /* OrderHistory */,
+				552531AB2629BEAA00888DEE /* DeliveryMenu */,
+				5525317A26293B4700888DEE /* Favorites */,
 				559AFDBD2625AD7900048CE1 /* AboutOrder */,
 				72112840262027850055A83A /* RetailListMap */,
 				556543E1261DC688009A4E62 /* RateMeal */,
@@ -4741,6 +4974,7 @@
 				55A7C079260B58AA0037D567 /* CalculatePayView.swift in Sources */,
 				A483E29C25D40ABE006D2DAF /* PageIndicatorPosition.swift in Sources */,
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
+				552531D8262ACE6C00888DEE /* OrderHistoryViewController.swift in Sources */,
 				72FB07F4261DA52A00F04395 /* SearchPresentTransitioning.swift in Sources */,
 				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
 				722A346C2626A3C1003FB38A /* AdressChoiceView.swift in Sources */,
@@ -4782,6 +5016,7 @@
 				A4B9A27525F0D06D00F0A3D6 /* CashBackListDataSource.swift in Sources */,
 				5584E83725EE390A00025251 /* CashbackMenuModuleFactory.swift in Sources */,
 				722A348D2626E7BD003FB38A /* PayAmountView.swift in Sources */,
+				552531CF262AC96100888DEE /* OrderHistoryTableViewCell.swift in Sources */,
 				556543A6261D7B16009A4E62 /* OrderTypeModule.swift in Sources */,
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
 				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
@@ -4821,6 +5056,7 @@
 				728434D2261D7FEE00E21209 /* ProductList.swift in Sources */,
 				72FB07FB261DA55500F04395 /* SearchBar.swift in Sources */,
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
+				552531AE2629BECC00888DEE /* DeliveryMenuView.swift in Sources */,
 				55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */,
 				556626432626DF8F0015CD41 /* AboutOrder.swift in Sources */,
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
@@ -4856,14 +5092,17 @@
 				556CF6DE260225AA007B8FB9 /* PayHistoryViewModel.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
 				724FC5B0262419BE00C1DED3 /* DampingTimingParameters.swift in Sources */,
+				5525318D262941DD00888DEE /* FavoritesTarget.swift in Sources */,
 				A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */,
 				5526DADB2603824000536589 /* PayDetailModule.swift in Sources */,
 				A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */,
+				55253191262942E700888DEE /* FavoriteStatus.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
 				55AE8978261B302100D82489 /* PinCodeResponse.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
 				A475CC2325EF3ED700C596FB /* Extentsion+BoolToInt.swift in Sources */,
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
+				552531E0262AD07000888DEE /* OrderHistoryViewModel.swift in Sources */,
 				A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */,
 				A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */,
 				556CF6C226020721007B8FB9 /* BalanceViewController.swift in Sources */,
@@ -4904,6 +5143,8 @@
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
 				7211284E26202B490055A83A /* RetailListMapModule.swift in Sources */,
+				552531DC262ACF4B00888DEE /* OrderHistoryTarget.swift in Sources */,
+				552531BA2629BF9200888DEE /* DeliveryMenu.swift in Sources */,
 				55F4EEFB260C644300EBEA9D /* ScanRetailResponse.swift in Sources */,
 				A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */,
 				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
@@ -4943,12 +5184,15 @@
 				55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */,
 				A4BBC6DB25D638DF006AF382 /* NavigationBarConfigurable.swift in Sources */,
 				722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */,
+				5525318126293E4500888DEE /* FavoritesModule.swift in Sources */,
 				A4B3144525D150900003BA0B /* AuthCoordinator.swift in Sources */,
 				A4BBC6D625D63664006AF382 /* Images.swift in Sources */,
+				552531BF2629ECD300888DEE /* DeliveryMenuModuleFactory.swift in Sources */,
 				55A762CD261C598E00480BAC /* AuthStateObserver.swift in Sources */,
 				A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */,
 				A40B95FF25DE6D1300E507FB /* HomeApiService.swift in Sources */,
 				724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */,
+				552531B62629BF6C00888DEE /* DeliveryMenuModule.swift in Sources */,
 				72FB0840261DC27100F04395 /* SearchApiTarget.swift in Sources */,
 				A483E29A25D40ABE006D2DAF /* ActivityIndicator.swift in Sources */,
 				A4057DF62611E50A0062BB5B /* DeliveryApiTarget.swift in Sources */,
@@ -5000,6 +5244,7 @@
 				A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */,
 				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
 				A4057DCA2611E2C60062BB5B /* DeliveryRetailListViewModel.swift in Sources */,
+				552531E5262AD0F600888DEE /* OrderHistoryResponse.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				72015960262CD7BD0083C758 /* DeliveryLocation.swift in Sources */,
 				55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */,
@@ -5027,6 +5272,8 @@
 				5526DAD72603822800536589 /* PayDetailView.swift in Sources */,
 				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
 				728434BE261D7F6100E21209 /* DishList.swift in Sources */,
+				552531B22629BF1800888DEE /* DeliveryMenuViewController.swift in Sources */,
+				5525318626293E9B00888DEE /* FavoritesViewController.swift in Sources */,
 				A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */,
 				5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */,
 				A4057DFD2611F3C30062BB5B /* DeliveryRetail.swift in Sources */,
@@ -5072,6 +5319,7 @@
 				A4FAAD1625E75FBE00A55CB8 /* ProfileMenuCoordinator.swift in Sources */,
 				A483E2A225D40ABE006D2DAF /* ZoomAnimatedTransitioning.swift in Sources */,
 				55BEF36725FB398300205BBD /* Gender.swift in Sources */,
+				5525317D26293B6E00888DEE /* FavoritesView.swift in Sources */,
 				559AFDCA2625CB9D00048CE1 /* AboutOrderModule.swift in Sources */,
 				72FB0832261DBF2F00F04395 /* ItemSearchViewController.swift in Sources */,
 				A4402CA525DBE3620004D1FC /* ResponseStatus.swift in Sources */,
@@ -5084,6 +5332,7 @@
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
 				A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */,
 				72FB081A261DAC0B00F04395 /* SearchCoordinator.swift in Sources */,
+				552531CB262AC92600888DEE /* OrderHistoryView.swift in Sources */,
 				A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */,
 				55BEF35925FB235300205BBD /* EditAccountViewModel.swift in Sources */,
 				7211285226202B760055A83A /* RetailListMapCoordinator.swift in Sources */,
@@ -5101,6 +5350,7 @@
 				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				721127EB26200F050055A83A /* MapPoint.swift in Sources */,
 				724FC5AB262419BE00C1DED3 /* RubberBand.swift in Sources */,
+				5525318926293F5A00888DEE /* FavoritesViewModel.swift in Sources */,
 				A4E581F625D54BAA00EDC053 /* RegisterViewController.swift in Sources */,
 				7201596A262E907B0083C758 /* MakeOrderTarget.swift in Sources */,
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
@@ -5109,6 +5359,7 @@
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
+				552531D4262ACDD600888DEE /* OrderHistoryModule.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,
 				A4379FD825ECAF5700910A2D /* RetailDetailViewController.swift in Sources */,
 				558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */,
@@ -5173,6 +5424,7 @@
 				A4E581FA25D54BC500EDC053 /* RegisterView.swift in Sources */,
 				724FC5B5262419BE00C1DED3 /* Collection+Utils.swift in Sources */,
 				A48CCFED25DB7B1F0010829F /* CameraMetadaOutputDelegate.swift in Sources */,
+				552531C22629ED5D00888DEE /* DeliveryMenuCoordinator.swift in Sources */,
 				A4057DC12611D9E80062BB5B /* DeliveryRetailListViewController.swift in Sources */,
 				A48CD01225DBE1A50010829F /* Encryption.swift in Sources */,
 				5FD2F05C262421A50012110C /* NotificationListTableViewCell.swift in Sources */,

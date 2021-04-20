@@ -20,7 +20,7 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     func setViewControllers(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
     }
-    
+
     func changeSelectedTabBarItem(_ tabBarItem: DeliveryTabBarItem, completion: Callback?) {
         guard let viewController = viewControllers?[tabBarItem.rawValue] else { return }
         selectedViewController = viewController
