@@ -14,7 +14,7 @@ final class YandexMapViewModel: NSObject, MapStatus {
     var userLocationViewModel: MapUserLocationViewModel?
     
     var onAnnotationDidTap: ((Any?) -> Void)?
-    var onCameraPositionChanged: ((MapPoint?) -> Void)?
+    var onCameraPositionChanged: ((MapPoint?, Bool) -> Void)?
     
     func showCurrentLocation(in view: YMKMapView) {
         let mapKit = YMKMapKit.sharedInstance()
@@ -127,7 +127,7 @@ extension YandexMapViewModel: YMKUserLocationObjectListener {
 
 extension YandexMapViewModel: YMKMapCameraListener {
     func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateReason: YMKCameraUpdateReason, finished: Bool) {
-        onCameraPositionChanged?(MapPoint(latitude: cameraPosition.target.latitude, longitude: cameraPosition.target.longitude))
+        onCameraPositionChanged?(MapPoint(latitude: cameraPosition.target.latitude, longitude: cameraPosition.target.longitude), finished)
     }
 }
 

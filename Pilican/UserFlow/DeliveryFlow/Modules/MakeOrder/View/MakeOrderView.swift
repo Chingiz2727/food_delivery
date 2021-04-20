@@ -5,8 +5,8 @@ import UIKit
 final class MakeOrderView: UIView {
     let mapView = YMKMapView()
     let tableView = UITableView()
-    private let deliveryView = DeliveryItemView()
-    private let locationView = DeliveryItemView()
+    let deliveryView = DeliveryItemView()
+    let locationView = DeliveryItemView()
     private let maskEscapeView = DeliveryItemView()
     private var contentSizeObserver: NSKeyValueObservation?
     private var heightConstraint: Constraint?
@@ -110,9 +110,7 @@ final class MakeOrderView: UIView {
         heightConstraint?.activate()
     }
     
-    func setupAmount(products: [Product]) {
-        let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
-        let totalSum = amount.reduce(0,+)
+    func setupAmount(totalSum: Int) {
         if totalSum < 2000 {
             payAmountView.setupExtraCost()
         } else {
@@ -120,12 +118,11 @@ final class MakeOrderView: UIView {
         }
         payAmountView.setupDeliveryCost(cost: "1200")
         payAmountView.setupOrderCost(cost: "\(totalSum) тг")
-        
     }
     
     private func configureView() {
         deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.deliveryType.image)
-        locationView.setup(title: "Адрес доставки", subTitle: "Тулеметова 69/40", image: Images.Location.image)
+        locationView.setup(title: "Адрес доставки", subTitle: "", image: Images.Location.image)
         maskEscapeView.setup(title: "Бесконтакная доставка", subTitle: "Пожалуйста, оставьте заказ возле двери/входа", image: Images.deliveryType.image)
         backgroundColor =  .background
         deliveryOptionsView.backgroundColor = .white

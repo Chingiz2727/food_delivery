@@ -38,7 +38,11 @@ final class OrderTypeCoordinator: BaseCoordinator, DeliveryTabBarItemCoordinator
     }
     
     func makeMapSearch() {
-        let module = container.resolve(DeliveryLocationModule.self)!
+        var module = container.resolve(DeliveryLocationModule.self)!
+        module.onlocationDidSelect = { [weak self] location in
+            print(location)
+            self?.router.popModule()
+        }
         router.push(module)
     }
 }

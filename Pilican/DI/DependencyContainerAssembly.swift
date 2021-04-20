@@ -43,7 +43,7 @@ public final class DependencyContainerAssembly: Assembly {
             return CameraUsagePermission(avAuthorizationStatus: status)
         }
         container.register(DeliveryLocationModule.self) { _ in
-            let viewModel = DeliveryLocationMapViewModel(mapManager: container.resolve(MapManager.self)!)
+            let viewModel = DeliveryLocationMapViewModel(mapManager: container.resolve(MapManager.self)!, userInfoStorage: container.resolve(UserInfoStorage.self)!)
             return DeliveryLocationViewController(viewModel: viewModel)
         }.inObjectScope(.container)
         

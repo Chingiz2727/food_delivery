@@ -5,7 +5,7 @@ public protocol MapStatus: class {
     
     var userLocationViewModel: MapUserLocationViewModel? { get set }
     var onAnnotationDidTap: ((_ data: Any?) -> Void)? { get set }
-    var onCameraPositionChanged: ((MapPoint?) -> Void)? { get set }
+    var onCameraPositionChanged: ((MapPoint?, Bool) -> Void)? { get set }
 
     func showCurrentLocation(in view: MapView)
     func moveTo(in view: MapView, point: MapPoint, transitionViewModel: MapTransitionViewModel, completionHandler: Callback?)

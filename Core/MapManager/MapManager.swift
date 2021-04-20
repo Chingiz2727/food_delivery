@@ -13,7 +13,7 @@ open class MapManager<T: MapStatus> {
         }
     }
     
-    var onCameraPositionChanged: ((MapPoint?) -> Void)? {
+    var onCameraPositionChanged: ((MapPoint?, Bool) -> Void)? {
         didSet {
             engine.onCameraPositionChanged = onCameraPositionChanged
         }

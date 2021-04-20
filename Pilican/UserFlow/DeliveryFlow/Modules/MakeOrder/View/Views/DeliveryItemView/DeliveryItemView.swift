@@ -84,6 +84,7 @@ final class DeliveryItemView: UIView {
             make.trailing.top.bottom.equalToSuperview().inset(10)
         }
         imageView.snp.makeConstraints { $0.size.equalTo(40) }
+        bringSubviewToFront(uiControl)
         imageView.setContentHuggingPriority(.defaultLow, for: .vertical)
         switchControl.isHidden = true
         backgroundColor = .white

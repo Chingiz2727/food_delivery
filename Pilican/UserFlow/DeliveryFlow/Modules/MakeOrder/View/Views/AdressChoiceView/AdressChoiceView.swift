@@ -15,8 +15,8 @@ final class AdresssChoiceView: UIView {
     private let adressLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = .medium12
-        label.textColor = .pilicanLightGray
+        label.font = .medium16
+        label.textColor = .pilicanBlack
         return label
     }()
     
@@ -37,6 +37,10 @@ final class AdresssChoiceView: UIView {
     
     required init?(coder: NSCoder) {
         nil
+    }
+    
+    func setupAdressName(adress: String) {
+        adressLabel.text = adress
     }
     
     private func setupInitialLayout() {
@@ -64,6 +68,8 @@ final class AdresssChoiceView: UIView {
             make.top.bottom.trailing.equalToSuperview().inset(5)
             make.size.equalTo(22)
         }
+        containerView.addSubview(control)
+        control.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
     private func configureView() {

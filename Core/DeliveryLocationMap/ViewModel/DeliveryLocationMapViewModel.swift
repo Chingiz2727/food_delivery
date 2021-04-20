@@ -3,14 +3,17 @@ import YandexMapsMobile
 
 final class DeliveryLocationMapViewModel: ViewModel {
     let mapManager: MapManager<YandexMapViewModel>
+    let userInfoStorage: UserInfoStorage
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
     private let location: PublishSubject<DeliveryLocation> = .init()
     private let locationArray: PublishSubject<[DeliveryLocation]> = .init()
     private let disposeBag = DisposeBag()
-    
-    init(mapManager: MapManager<YandexMapViewModel>) {
+    private let cache = DiskCache<String, [DeliveryLocation]>()
+
+    init(mapManager: MapManager<YandexMapViewModel>, userInfoStorage: UserInfoStorage) {
         self.mapManager = mapManager
+        self.userInfoStorage = userInfoStorage
     }
     
     struct Input {
@@ -25,22 +28,39 @@ final class DeliveryLocationMapViewModel: ViewModel {
     func transform(input: Input) -> Output {
         searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
 
-        mapManager.onCameraPositionChanged = { [unowned self] mapPoint in
+        mapManager.onCameraPositionChanged = { [unowned self] mapPoint, finished in
             guard let mapPoint = mapPoint else  { return }
-            self.searchByCameraLocation(mapPoint: mapPoint)
+            if finished {
+                self.searchByCameraLocation(mapPoint: mapPoint)
+            }
         }
         
         input.text
             .subscribe(onNext: { [unowned self] text in
-                self.searchByText(text: text)
+                if !text.isEmpty {
+                    self.searchByText(text: text)
+                }
             })
             .disposed(by: disposeBag)
 
         return .init(locationName: location, locationArray: locationArray)
     }
     
+    func saveAdress(adress: DeliveryLocation) {
+        var cacheaddress = getAddress() ?? []
+
+        if cacheaddress.count > 4 {
+            cacheaddress.removeFirst(1)
+        }
+        cacheaddress.append(adress)
+        removeAddress()
+        saveAddress(address: cacheaddress)
+    }
+
     private func searchByCameraLocation(mapPoint: MapPoint) {
-        searchSession = searchManager?.submit(with: YMKPoint(latitude: mapPoint.latitude, longitude: mapPoint.longitude), zoom: 18, searchOptions: YMKSearchOptions.init(), responseHandler: { [unowned self] (res, err) in
+        let options = YMKSearchOptions()
+        options.geometry = true
+        searchSession = searchManager?.submit(with: YMKPoint(latitude: mapPoint.latitude, longitude: mapPoint.longitude), zoom: 18, searchOptions: options, responseHandler: { [unowned self] (res, err) in
             if let name = res?.collection.children[0].obj?.name, let coordinate = res?.collection.children[0].obj?.geometry[0].point {
                 let deliveryLocation = DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: name)
                 self.location.onNext(deliveryLocation)
@@ -49,7 +69,9 @@ final class DeliveryLocationMapViewModel: ViewModel {
     }
     
     private func searchByText(text: String) {
-        searchSession = searchManager?.submit(withText: text, polyline: Constants.ShymkentPolyLine, geometry: .init(polyline: Constants.ShymkentPolyLine), searchOptions: YMKSearchOptions(), responseHandler: { [unowned self] (response, error) in
+        let options = YMKSearchOptions()
+        options.geometry = true
+        searchSession = searchManager?.submit(withText: text, polyline: Constants.ShymkentPolyLine, geometry: .init(polyline: Constants.ShymkentPolyLine), searchOptions: options, responseHandler: { [unowned self] (response, error) in
             guard let collection = response?.collection.children else { return }
             let locationArray: [DeliveryLocation] = collection.map { object in
                 let name = object.obj?.name
@@ -59,28 +81,30 @@ final class DeliveryLocationMapViewModel: ViewModel {
             self.locationArray.onNext(locationArray)
         })
     }
+    
+    private func getAddress() -> [DeliveryLocation]? {
+        let address: [DeliveryLocation]? = try? self.cache.readFromDisk(name: "adressList")
+        return address
+    }
+    
+    private func saveAddress(address: [DeliveryLocation]){
+        if getAddress() == nil {
+            try? cache.saveToDisk(name: "adressList", value: address)
+        }
+    }
+    
+    private func removeAddress() {
+        try? cache.clearFromDisk(name: "adressList")
+    }
 }
 
 private enum Constants {
     static let ShymkentPolyLine = YMKPolyline(
         points: [
-            YMKPoint(latitude: 42.34517891311695, longitude: 69.50908088183532),
-            YMKPoint(latitude: 42.380313451969386, longitude: 69.52470206713805),
-            YMKPoint(latitude: 42.387921232511964, longitude: 69.55165290331969),
-            YMKPoint(latitude: 42.38373706729813, longitude: 69.58255195117125),
-            YMKPoint(latitude: 42.38373706729813, longitude: 69.60315131640563),
-            YMKPoint(latitude: 42.384624640798584, longitude: 69.62993049121032),
-            YMKPoint(latitude: 42.38849177888856, longitude: 42.38849177888856),
-            YMKPoint(latitude: 42.38563899514845, longitude: 69.66134452319274),
-            YMKPoint(latitude: 42.36198759693794, longitude: 69.73112487292418),
-            YMKPoint(latitude: 42.31424553666617, longitude: 69.67160129046569),
-            YMKPoint(latitude: 42.30912816615637, longitude: 69.65521835780272),
-            YMKPoint(latitude: 42.29943972549621, longitude: 69.64467191195617),
-            YMKPoint(latitude: 42.282090439438065, longitude: 69.67267417407164),
-            YMKPoint(latitude: 42.27237402217843, longitude: 69.61491012072692),
-            YMKPoint(latitude: 69.61491012072692, longitude: 69.57225226855407),
-            YMKPoint(latitude: 42.30729533227581, longitude: 69.55366992449889),
-            YMKPoint(latitude: 42.319418021668206, longitude: 69.53834914660582),
+            YMKPoint(latitude: 42.271008, longitude: 69.558747),
+            YMKPoint(latitude: 42.382227, longitude: 69.491084),
+            YMKPoint(latitude: 42.410608, longitude: 69.636103),
+            YMKPoint(latitude: 42.311006, longitude: 69.660448)
         ]
     )
 }

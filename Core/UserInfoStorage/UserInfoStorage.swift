@@ -26,6 +26,9 @@ public final class UserInfoStorage {
     @UserDefaultsEntry("gender", defaultValue: nil)
     public var gender: Bool?
     
+    @UserDefaultsEntry("deliveryLocation", defaultValue: [])
+    public var location: [DeliveryLocation]
+    
     public init() {}
 
     public func clearAll() {
@@ -39,5 +42,6 @@ public final class UserInfoStorage {
         cityId = 0
         birthday = ""
         gender = false
+        location = []
     }
 }

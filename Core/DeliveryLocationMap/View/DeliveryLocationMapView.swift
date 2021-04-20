@@ -1,4 +1,5 @@
 import YandexMapsMobile
+import SnapKit
 import UIKit
 
 final class DeliveryLocationMapView: UIView {
@@ -7,10 +8,20 @@ final class DeliveryLocationMapView: UIView {
     let saveButton = PrimaryButton()
     let currentLocationPin = UIImageView()
     let currentLocationButton = UIButton()
+    let tableView = UITableView()
     
+    private var contentSizeObserver: NSKeyValueObservation?
+    private var heightConstraint: Constraint?
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentSizeObserver = tableView.observe(
+            \.contentSize,
+            options: [.initial, .new]
+        ) { [weak self] tableView, _ in
+            self?.heightConstraint?.update(offset: max(40, tableView.contentSize.height))
+        }
         setupInitialLayout()
+        configureView()
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +35,14 @@ final class DeliveryLocationMapView: UIView {
         addSubview(saveButton)
         addSubview(currentLocationButton)
         addSubview(currentLocationPin)
+        addSubview(tableView)
+        
+        tableView.snp.makeConstraints  { make in
+            make.top.equalTo(textField.snp.bottom)
+            make.leading.trailing.equalTo(textField)
+            heightConstraint = make.height.equalTo(0).constraint
+        }
+        
         textField.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(20)
             make.leading.trailing.equalToSuperview().inset(20)
@@ -39,6 +58,17 @@ final class DeliveryLocationMapView: UIView {
             make.center.equalToSuperview()
             make.size.equalTo(40)
         }
+        
+    }
+    
+    private func configureView() {
+        textField.clearButtonMode = .always
         currentLocationPin.image = Images.placeholder.image
+        tableView.registerClassForCell(UITableViewCell.self)
+        tableView.tableHeaderView = nil
+        tableView.tableFooterView = nil
+        tableView.isHidden = true
+        tableView.estimatedRowHeight = 40
+        tableView.rowHeight = 40
     }
 }
