@@ -1,6 +1,8 @@
 import UIKit
 
-final class ProductCalculateView: UIControl {
+final class ProductCalculateView: UIView {
+    let control = UIControl()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -43,7 +45,9 @@ final class ProductCalculateView: UIControl {
 
     private func setupInitialLayout() {
         addSubview(stackView)
+        addSubview(control)
         stackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(5) }
+        control.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
     private func configureView() {

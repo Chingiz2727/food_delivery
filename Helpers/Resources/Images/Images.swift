@@ -85,9 +85,17 @@ enum Images: String {
     case homeDelivery
     case homeDeliverySelected
     case mapIcon
+    case minusDelivery
+    case plusDelivery
+    case comment
+    case checkD
+    case tenge
+    case placeholder
     case qr
     case moji
     case taxi
+    case pillikanDelivery
+    case contactlessDellivery
     case scooter
     case deliveryMenu
 }

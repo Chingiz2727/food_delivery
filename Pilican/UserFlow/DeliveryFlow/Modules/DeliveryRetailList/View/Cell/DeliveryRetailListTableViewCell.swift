@@ -57,6 +57,9 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
 
     private let dataView = UIView()
 
+    private let closedView = UIView()
+    private let closedLabel = UILabel()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
@@ -78,6 +81,11 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
         discountView.setTitle(title: "\(retail.dlvCashBack) %")
         discountView.configureView(backColor: .primary, textColor: .pilicanWhite)
         setupWorkStatusView(retail: retail)
+        if retail.isWork == 1 {
+            configureClosed()
+        } else {
+            closedView.removeFromSuperview()
+        }
         guard let imgUrl = retail.imgLogo else { return }
         companyImageView.kf.setImage(with: URL(string: imgUrl))
     }
@@ -113,9 +121,21 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
         companyImageView.snp.makeConstraints { $0.size.equalTo(54) }
     }
 
+    private func configureClosed() {
+        dataView.addSubview(closedView)
+        closedView.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+        closedView.addSubview(closedLabel)
+        closedView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        closedLabel.snp.makeConstraints { $0.center.equalToSuperview() }
+        closedLabel.text = "Временно не работает"
+        closedLabel.textAlignment = .center
+        closedLabel.font = .heading1
+    }
     private func configureView() {
         dataView.backgroundColor = .pilicanWhite
         backgroundColor = .background
         selectionStyle = .none
     }
 }
+
+

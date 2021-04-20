@@ -5,14 +5,16 @@ final class OrderTypeHeaderView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.text = "Как вы хотите получить заказ?"
         label.font = .semibold20
         label.textColor = .black
         return label
     }()
     
-    private let descriptionLabel: UILabel = {
+    let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .medium12
+        label.textAlignment = .left
         label.textColor = .black
         return label
     }()
@@ -21,10 +23,6 @@ final class OrderTypeHeaderView: UIView {
         views: [titleLabel, descriptionLabel],
         axis: .vertical,
         spacing: 5)
-    
-    func setupData(retail: DeliveryRetail, avarage: Double) {
-        descriptionLabel.text = retail.name
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,11 +39,12 @@ final class OrderTypeHeaderView: UIView {
         
         mapView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
+            make.width.equalToSuperview()
             make.height.equalTo(200)
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(mapView.snp.bottom).offset(10)
+            make.top.equalTo(mapView.snp.bottom).offset(5)
             make.leading.trailing.bottom.equalToSuperview().inset(10)
         }
     }
