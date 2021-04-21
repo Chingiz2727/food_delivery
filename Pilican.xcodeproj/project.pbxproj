@@ -169,6 +169,17 @@
 		7211285226202B760055A83A /* RetailListMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7211285126202B760055A83A /* RetailListMapCoordinator.swift */; };
 		72112856262070F10055A83A /* RetailListMapModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72112855262070F10055A83A /* RetailListMapModuleFactory.swift */; };
 		722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */; };
+		72340C4F262FC439000569D6 /* CardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C4E262FC439000569D6 /* CardNumberTextField.swift */; };
+		72340C53262FC491000569D6 /* CVVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C52262FC491000569D6 /* CVVTextField.swift */; };
+		72340C56262FC6E9000569D6 /* DateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C55262FC6E9000569D6 /* DateTextField.swift */; };
+		72340C59262FC710000569D6 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C58262FC710000569D6 /* NameTextField.swift */; };
+		72340C5D262FC739000569D6 /* AddCardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C5C262FC739000569D6 /* AddCardModule.swift */; };
+		72340C61262FC7B2000569D6 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C60262FC7B2000569D6 /* AddCardView.swift */; };
+		72340C67262FC971000569D6 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C66262FC971000569D6 /* AddCardViewModel.swift */; };
+		72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6A262FC9F7000569D6 /* AddCardViewController.swift */; };
+		72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */; };
+		72340C74262FCC00000569D6 /* BindCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C73262FCC00000569D6 /* BindCardModel.swift */; };
+		72340C79262FD2FD000569D6 /* AddCardApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C78262FD2FD000569D6 /* AddCardApiService.swift */; };
 		724FC563262300B400C1DED3 /* YandexMapEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC562262300B400C1DED3 /* YandexMapEngine.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
@@ -664,6 +675,17 @@
 		7211285126202B760055A83A /* RetailListMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapCoordinator.swift; sourceTree = "<group>"; };
 		72112855262070F10055A83A /* RetailListMapModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapModuleFactory.swift; sourceTree = "<group>"; };
 		722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeHeaderView.swift; sourceTree = "<group>"; };
+		72340C4E262FC439000569D6 /* CardNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberTextField.swift; sourceTree = "<group>"; };
+		72340C52262FC491000569D6 /* CVVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVVTextField.swift; sourceTree = "<group>"; };
+		72340C55262FC6E9000569D6 /* DateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTextField.swift; sourceTree = "<group>"; };
+		72340C58262FC710000569D6 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		72340C5C262FC739000569D6 /* AddCardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardModule.swift; sourceTree = "<group>"; };
+		72340C60262FC7B2000569D6 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		72340C66262FC971000569D6 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		72340C6A262FC9F7000569D6 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiTarget.swift; sourceTree = "<group>"; };
+		72340C73262FCC00000569D6 /* BindCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardModel.swift; sourceTree = "<group>"; };
+		72340C78262FD2FD000569D6 /* AddCardApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiService.swift; sourceTree = "<group>"; };
 		724FC562262300B400C1DED3 /* YandexMapEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapEngine.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
@@ -2456,6 +2478,76 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
+		72340C4D262FC393000569D6 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				72340C77262FD2EF000569D6 /* ApiService */,
+				72340C72262FCBF7000569D6 /* Model */,
+				72340C6D262FCB7B000569D6 /* ApiTarget */,
+				72340C69262FC9EA000569D6 /* Controller */,
+				72340C64262FC935000569D6 /* ViewModel */,
+				72340C5F262FC7A8000569D6 /* View */,
+				72340C5B262FC72D000569D6 /* Module */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		72340C5B262FC72D000569D6 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72340C5C262FC739000569D6 /* AddCardModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72340C5F262FC7A8000569D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72340C60262FC7B2000569D6 /* AddCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72340C64262FC935000569D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72340C66262FC971000569D6 /* AddCardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72340C69262FC9EA000569D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72340C6A262FC9F7000569D6 /* AddCardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72340C6D262FCB7B000569D6 /* ApiTarget */ = {
+			isa = PBXGroup;
+			children = (
+				72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */,
+			);
+			path = ApiTarget;
+			sourceTree = "<group>";
+		};
+		72340C72262FCBF7000569D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72340C73262FCC00000569D6 /* BindCardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72340C77262FD2EF000569D6 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				72340C78262FD2FD000569D6 /* AddCardApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
 		724FC5802624132C00C1DED3 /* ApiTarget */ = {
 			isa = PBXGroup;
 			children = (
@@ -3094,6 +3186,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				72340C4D262FC393000569D6 /* AddCard */,
 				5FF910B626254BA200E1EF00 /* PillikanPayNotifications */,
 				5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */,
 				5FD2F04B26240B870012110C /* NotificationList */,
@@ -4374,6 +4467,10 @@
 				A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */,
 				A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */,
 				A4BBC72125D6402D006AF382 /* QrCodeTextField.swift */,
+				72340C4E262FC439000569D6 /* CardNumberTextField.swift */,
+				72340C52262FC491000569D6 /* CVVTextField.swift */,
+				72340C55262FC6E9000569D6 /* DateTextField.swift */,
+				72340C58262FC710000569D6 /* NameTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -4734,10 +4831,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72340C74262FCC00000569D6 /* BindCardModel.swift in Sources */,
 				A468EA9125EE3D790071FAA6 /* IdentificatorPayControl.swift in Sources */,
 				A483E27425D40ABE006D2DAF /* NotificationTokenService.swift in Sources */,
 				A47CA1EB25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift in Sources */,
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
+				72340C53262FC491000569D6 /* CVVTextField.swift in Sources */,
 				55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */,
 				721127E726200EDA0055A83A /* MapStatus.swift in Sources */,
 				55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */,
@@ -4799,6 +4898,7 @@
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
 				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
 				A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */,
+				72340C59262FC710000569D6 /* NameTextField.swift in Sources */,
 				A483E27825D40ABE006D2DAF /* PilicanRequestAdapter.swift in Sources */,
 				A4BBC6DF25D6390B006AF382 /* BackContainerViewController.swift in Sources */,
 				A4EFD4CE2612F89100694D18 /* DeliveryButtonsView.swift in Sources */,
@@ -4819,6 +4919,7 @@
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
 				A40B94ED25DE21AA00E507FB /* HomeTabBarModule.swift in Sources */,
 				558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */,
+				72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */,
 				A40B950625DE23CC00E507FB /* HomeTabBarViewController.swift in Sources */,
 				A4BBC6CC25D612C8006AF382 /* CameraModule.swift in Sources */,
 				5FD2F058262417FB0012110C /* NotificationListView.swift in Sources */,
@@ -4873,6 +4974,7 @@
 				5526DADB2603824000536589 /* PayDetailModule.swift in Sources */,
 				A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */,
 				55253191262942E700888DEE /* FavoriteStatus.swift in Sources */,
+				72340C61262FC7B2000569D6 /* AddCardView.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
 				55AE8978261B302100D82489 /* PinCodeResponse.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
@@ -4941,10 +5043,12 @@
 				A483E29B25D40ABE006D2DAF /* ImageSlideshow.swift in Sources */,
 				724FC5AD262419BE00C1DED3 /* AnimationParameters.swift in Sources */,
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
+				72340C5D262FC739000569D6 /* AddCardModule.swift in Sources */,
 				5FF910C92625748300E1EF00 /* PillikanInfoViewModel.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
+				72340C4F262FC439000569D6 /* CardNumberTextField.swift in Sources */,
 				556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */,
 				72FB0801261DA57900F04395 /* SearchViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
@@ -5015,6 +5119,7 @@
 				72112846262027C70055A83A /* RetailListMapView.swift in Sources */,
 				A47CA1AF25E36DA200EB091C /* BaseCoordinator.swift in Sources */,
 				A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */,
+				72340C79262FD2FD000569D6 /* AddCardApiService.swift in Sources */,
 				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
 				A4057DCA2611E2C60062BB5B /* DeliveryRetailListViewModel.swift in Sources */,
 				552531E5262AD0F600888DEE /* OrderHistoryResponse.swift in Sources */,
@@ -5073,6 +5178,7 @@
 				556543DA261DC5DD009A4E62 /* RateDeliveryModule.swift in Sources */,
 				5FF910BE26254C4C00E1EF00 /* PillikanInfoModule.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
+				72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
 				A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */,
@@ -5081,6 +5187,7 @@
 				A4E5815925D540F800EDC053 /* AppEnviroment.swift in Sources */,
 				55173251261D6BAE0031623B /* OrderTypeView.swift in Sources */,
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
+				72340C67262FC971000569D6 /* AddCardViewModel.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
 				5555237425EF907A00537D3F /* User.swift in Sources */,
 				5FF910E02625B80600E1EF00 /* PillikanPayView.swift in Sources */,
@@ -5113,6 +5220,7 @@
 				5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */,
 				A40B94CE25DD974C00E507FB /* HomeTabBar.swift in Sources */,
 				55F4EEF0260C3ACC00EBEA9D /* QRPaymentModule.swift in Sources */,
+				72340C56262FC6E9000569D6 /* DateTextField.swift in Sources */,
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
 				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				721127EB26200F050055A83A /* MapPoint.swift in Sources */,
@@ -5294,7 +5402,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5375,7 +5483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5517,7 +5625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5542,7 +5650,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -41,11 +41,4 @@ final class ConfigServiceImpl: ConfigService {
   var apiUrlScheme: String {
     return "https"
   }
-
-  //  var redirectionUrl: URL = {
-  //    guard let url = URL(string: "") else {
-  //      fatalError("Api URL not correct")
-  //    }
-  //    return url
-  //  }()
 }

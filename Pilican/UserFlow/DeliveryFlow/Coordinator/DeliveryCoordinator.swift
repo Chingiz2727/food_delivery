@@ -29,6 +29,7 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
     
     private func showDeliveryProduct(retail: DeliveryRetail) {
         let module = coordinatorFactory.deliveryProduct(retail: retail)
+        
         router.push(module)
     }
     
