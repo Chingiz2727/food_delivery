@@ -32,7 +32,7 @@ final class HomeCoordinator: BaseCoordinator {
         tabBarController.bonusTap = { [weak self] in
             self?.showCashbackMenu()
         }
-        
+
         tabBarController.notifyMenuTap = { [weak self] in
             self?.showNotificationList()
         }
@@ -78,9 +78,9 @@ final class HomeCoordinator: BaseCoordinator {
 
     private func showPaymentPartner(info: ScanRetailResponse) {
         let apiService = container.resolve(ApiService.self)!
-        let authTokenService = container.resolve(AuthTokenService.self)!
+        let userSessionStorage = container.resolve(UserSessionStorage.self)!
 
-        let viewModel = QRPaymentViewModel(apiService: apiService, info: info, tokenService: authTokenService)
+        let viewModel = QRPaymentViewModel(apiService: apiService, info: info, userSessionStorage: userSessionStorage)
         var module = coordinatorFactory.makePayPartner(viewModel: viewModel)
         module.openSuccessPayment = { [weak self] retail, price, cashback in
             self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)
@@ -101,7 +101,7 @@ final class HomeCoordinator: BaseCoordinator {
         coordinator.start()
         addDependency(coordinator)
     }
-    
+
     private func showNotificationList() {
         var module = coordinatorFactory.makeNotificationList()
         module.notificationsListDidSelect = { [weak self] item in
@@ -112,12 +112,12 @@ final class HomeCoordinator: BaseCoordinator {
         }
         router.push(module)
     }
-    
+
     private func showNotificationPillikanInfo() {
         let module = coordinatorFactory.pillikanInfoNotifications()
         router.push(module)
     }
-    
+
     private func showNotificationPillikanPay() {
         let module = coordinatorFactory.pillikanPayNotifications()
         router.push(module)

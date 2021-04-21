@@ -26,6 +26,9 @@ public final class UserInfoStorage {
     @UserDefaultsEntry("gender", defaultValue: nil)
     public var gender: Bool?
     
+    @UserDefaultsEntry("isCard", defaultValue: nil)
+    public var isCard: Int?
+    
     public init() {}
 
     public func clearAll() {
@@ -39,5 +42,6 @@ public final class UserInfoStorage {
         cityId = 0
         birthday = ""
         gender = false
+        isCard = 0
     }
 }
