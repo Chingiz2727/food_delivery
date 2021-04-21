@@ -148,6 +148,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     private func configureMap() {
         let transitionViewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 11)
         viewModel.mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: 42.340782, longitude: 69.596329), transitionViewModel: transitionViewModel)
+        // swiftlint:disable line_length
         viewModel.mapManager.createAnnotation(in: rootView.mapView, at: MapPoint(latitude: viewModel.dishList.retail?.latitude ?? 0, longitude: viewModel.dishList.retail?.longitude ?? 0), image: Images.mapIcon.image, associatedData: nil)
         viewModel.mapManager.showCurrentLocation(in: rootView.mapView)
     }

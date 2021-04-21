@@ -58,22 +58,23 @@ final class MakeOrderViewModel: ViewModel {
             return self.apiService.makeRequest(to: MakeOrderTarget.deliveryDistance(km: distance / 1000))
                 .result(DeliveryRate.self)
         }.asLoadingSequence()
-        
+    
         return .init(
             savedLocationList: savedLocations,
             deliveryDistance: distance,
             currentLocationName: location,
             deliveryRate: deliveryRate)
     }
-    
+
     private func getAddress() -> [DeliveryLocation] {
         let address: [DeliveryLocation]? = try? self.cache.readFromDisk(name: "adressList")
         return address ?? []
     }
-    
+
     private func searchByLocation(mapPoint: MapPoint) {
         let options = YMKSearchOptions()
         options.geometry = true
+        // swiftlint:disable line_length
         searchSession = searchManager?.submit(with: YMKPoint(latitude: mapPoint.latitude, longitude: mapPoint.longitude), zoom: 18, searchOptions: options, responseHandler: { [unowned self] (res, err) in
             if let name = res?.collection.children[0].obj?.name, let coordinate = res?.collection.children[0].obj?.geometry[0].point {
                 let deliveryLocation = DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: name)
