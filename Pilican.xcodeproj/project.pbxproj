@@ -34,6 +34,9 @@
 		5528385F2611C31C00511608 /* SuccessPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528385E2611C31C00511608 /* SuccessPaymentView.swift */; };
 		552838672611CDB600511608 /* SuccessPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552838662611CDB600511608 /* SuccessPaymentModule.swift */; };
 		5528386B2611CDD900511608 /* SuccessPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */; };
+		55312292262EC37400D33A1E /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55312291262EC37400D33A1E /* BalanceViewModel.swift */; };
+		55312297262EC3A400D33A1E /* BalanceTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55312296262EC3A400D33A1E /* BalanceTarget.swift */; };
+		5531229C262ECE2400D33A1E /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5531229B262ECE2400D33A1E /* BalanceResponse.swift */; };
 		55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */; };
 		55454B2D260DA30500404238 /* QRPaymentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B2C260DA30500404238 /* QRPaymentTarget.swift */; };
 		55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */; };
@@ -554,6 +557,9 @@
 		5528385E2611C31C00511608 /* SuccessPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentView.swift; sourceTree = "<group>"; };
 		552838662611CDB600511608 /* SuccessPaymentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentModule.swift; sourceTree = "<group>"; };
 		5528386A2611CDD900511608 /* SuccessPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessPaymentViewController.swift; sourceTree = "<group>"; };
+		55312291262EC37400D33A1E /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		55312296262EC3A400D33A1E /* BalanceTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTarget.swift; sourceTree = "<group>"; };
+		5531229B262ECE2400D33A1E /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
 		55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewModel.swift; sourceTree = "<group>"; };
 		55454B2C260DA30500404238 /* QRPaymentTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentTarget.swift; sourceTree = "<group>"; };
 		55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayByQRPartnerResponse.swift; sourceTree = "<group>"; };
@@ -1360,6 +1366,30 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		55312290262EC36100D33A1E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				55312291262EC37400D33A1E /* BalanceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		55312294262EC38500D33A1E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				55312296262EC3A400D33A1E /* BalanceTarget.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5531229A262ECE1100D33A1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5531229B262ECE2400D33A1E /* BalanceResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		55454B27260D9AE500404238 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1563,6 +1593,9 @@
 		556CF6B82602024D007B8FB9 /* Balance */ = {
 			isa = PBXGroup;
 			children = (
+				5531229A262ECE1100D33A1E /* Model */,
+				55312294262EC38500D33A1E /* Api */,
+				55312290262EC36100D33A1E /* ViewModel */,
 				556CF6C4260207A7007B8FB9 /* Controller */,
 				556CF6BD260206FA007B8FB9 /* Module */,
 				556CF6B926020252007B8FB9 /* View */,
@@ -5189,6 +5222,7 @@
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
 				A475CC2325EF3ED700C596FB /* Extentsion+BoolToInt.swift in Sources */,
 				A483E27E25D40ABE006D2DAF /* OAuthResponse.swift in Sources */,
+				55312297262EC3A400D33A1E /* BalanceTarget.swift in Sources */,
 				552531E0262AD07000888DEE /* OrderHistoryViewModel.swift in Sources */,
 				A47CA1B225E36DB200EB091C /* CoordinatorNavigationController.swift in Sources */,
 				A4B310E725D10C370003BA0B /* AppDelegate.swift in Sources */,
@@ -5200,6 +5234,7 @@
 				724FC5B1262419BE00C1DED3 /* SpringTimingParameters.swift in Sources */,
 				A4BBC7AF25D64A1C006AF382 /* RegisterModule.swift in Sources */,
 				A4057E012611F8700062BB5B /* DeliveryRetailContent.swift in Sources */,
+				5531229C262ECE2400D33A1E /* BalanceResponse.swift in Sources */,
 				72FB0805261DA6EB00F04395 /* UIView+Screenshot.swift in Sources */,
 				A4FAAD0D25E75CCB00A55CB8 /* ProfileMenuView.swift in Sources */,
 				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
@@ -5450,6 +5485,7 @@
 				55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */,
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
+				55312292262EC37400D33A1E /* BalanceViewModel.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
 				552531D4262ACDD600888DEE /* OrderHistoryModule.swift in Sources */,
 				A4DD3E9725D24BA6002D2186 /* TextFieldContainer.swift in Sources */,

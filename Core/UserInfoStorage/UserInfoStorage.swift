@@ -26,6 +26,8 @@ public final class UserInfoStorage {
     @UserDefaultsEntry("gender", defaultValue: nil)
     public var gender: Bool?
     
+    @UserDefaultsEntry("isCard", defaultValue: nil)
+    public var isCard: Int?
     @UserDefaultsEntry("deliveryLocation", defaultValue: [])
     public var location: [DeliveryLocation]
     
@@ -42,6 +44,7 @@ public final class UserInfoStorage {
         cityId = 0
         birthday = ""
         gender = false
+        isCard = 0
         location = []
     }
 }

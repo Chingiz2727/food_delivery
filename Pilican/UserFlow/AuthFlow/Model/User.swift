@@ -3,4 +3,5 @@ public struct User: Codable {
     public let username: String
     public let promoCode: String
     public let balance: Int
+    public let isCard: Int
 }
