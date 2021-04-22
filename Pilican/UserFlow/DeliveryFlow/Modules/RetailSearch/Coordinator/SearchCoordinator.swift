@@ -53,6 +53,9 @@ final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
         module.onMapShowDidSelect = { [weak self] in
             self?.makeMapSearch()
         }
+        module.emptyDishList = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
     

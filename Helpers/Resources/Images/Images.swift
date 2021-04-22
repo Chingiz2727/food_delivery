@@ -98,6 +98,8 @@ enum Images: String {
     case contactlessDellivery
     case scooter
     case deliveryMenu
+    case orderSuccess
+    case orderError
 }
 
 extension Images {

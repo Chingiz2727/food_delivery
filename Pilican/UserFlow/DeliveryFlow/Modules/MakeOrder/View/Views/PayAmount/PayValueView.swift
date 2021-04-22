@@ -20,7 +20,7 @@ final class PayValueView: UIView {
         return label
     }()
     
-    private let costLabel: UILabel = {
+    let costLabel: UILabel = {
         let label = UILabel()
         label.textColor = .primary
         label.textAlignment = .left

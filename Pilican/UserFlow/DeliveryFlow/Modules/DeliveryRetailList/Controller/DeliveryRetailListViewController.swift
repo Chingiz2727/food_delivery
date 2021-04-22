@@ -64,7 +64,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
         rootView.tableView.rx.itemSelected
             .withLatestFrom(retailList.element) { $1[$0.row] }
             .bind { [unowned self] retail in
-                if retail.isWork == 0 {
+                if retail.isWork == 1 {
                     self.onRetailDidSelect?(retail)
                 }
             }

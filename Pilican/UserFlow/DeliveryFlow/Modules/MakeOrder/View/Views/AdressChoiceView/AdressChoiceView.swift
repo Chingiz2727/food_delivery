@@ -12,7 +12,7 @@ final class AdresssChoiceView: UIView {
     
     let control = UIControl()
     
-    private let adressLabel: UILabel = {
+    let adressLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .medium16
