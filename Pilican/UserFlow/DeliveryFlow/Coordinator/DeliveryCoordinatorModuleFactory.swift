@@ -38,8 +38,16 @@ final class DeliveryCoordinatorModuleFactory {
         controller.orderType = orderType
         return controller
     }
-    
+
     func makeDeliveryMenu() -> DeliveryMenuCoordinator {
         return DeliveryMenuCoordinatorImpl(router: router, container: container)
+    }
+    
+    func makeOrderSuccess(order: OrderResponse) -> OrderSuccessModule {
+        return OrderSuccessViewController(order: order)
+    }
+    
+    func makeOrderError() -> OrderErrorModule {
+        return OrderErrorViewController()
     }
 }

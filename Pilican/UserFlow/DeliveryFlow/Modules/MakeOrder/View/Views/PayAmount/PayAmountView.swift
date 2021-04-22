@@ -9,7 +9,7 @@ final class PayAmountView: UIView {
         label.text = "Цены в kzt, вкл. налоги"
         return label
     }()
-    
+
     private let totalLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -19,7 +19,7 @@ final class PayAmountView: UIView {
         return label
     }()
     
-    private let costLabel: UILabel = {
+    let costLabel: UILabel = {
         let label = UILabel()
         label.textColor = .primary
         label.textAlignment = .left
@@ -28,40 +28,40 @@ final class PayAmountView: UIView {
     
     let payButton = PrimaryButton()
     
-    private let orderCost = PayValueView()
-    private let deliveryCost = PayValueView()
-    private let extraPayment = PayValueView()
-    
+    let orderCost = PayValueView()
+    let deliveryCost = PayValueView()
+    let extraPayment = PayValueView()
+
     private lazy var stackView = UIStackView(
         views: [totalLabel, costLabel],
         axis: .vertical,
         spacing: 10)
-    
+
     private lazy var horizontalStackView = UIStackView(
         views: [stackView, UIView(), payButton],
         axis: .horizontal,
         spacing: 30)
-    
+
     private lazy var fullInfoStackView = UIStackView(
         views: [titleLabel, orderCost, deliveryCost, extraPayment, horizontalStackView],
         axis: .vertical,
         spacing: 3)
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
         configureView()
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }
-    
+
     func setupOrderCost(cost: String) {
         orderCost.setup(title: "Сумма заказа")
         orderCost.setup(price: cost)
     }
-    
+
     func setupDeliveryCost(cost: String) {
         deliveryCost.setup(title: "Доставка")
         deliveryCost.setup(price: cost)
@@ -73,14 +73,14 @@ final class PayAmountView: UIView {
         extraPayment.setup(detail: "Минимальная сумма заказа - 2000 тенге. За заказы меньше этой сумма взимается дполнительная комиссия.")
         extraPayment.setup(price: "600 тг")
     }
-    
+
     func setupFullCost(cost: Int) {
         costLabel.text = "\(cost) тг"
     }
     func clearExtraCost() {
         extraPayment.isHidden = true
     }
-    
+
     private func setupInitialLayout() {
         addSubview(fullInfoStackView)
         fullInfoStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
@@ -89,7 +89,7 @@ final class PayAmountView: UIView {
         }
         backgroundColor = .white
     }
-    
+
     private func configureView() {
         payButton.setTitle("Оформить заказ", for: .normal)
         layer.cornerRadius = 10

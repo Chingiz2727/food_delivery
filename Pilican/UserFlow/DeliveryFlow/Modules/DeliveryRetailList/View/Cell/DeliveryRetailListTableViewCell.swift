@@ -81,7 +81,7 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
         discountView.setTitle(title: "\(retail.dlvCashBack) %")
         discountView.configureView(backColor: .primary, textColor: .pilicanWhite)
         setupWorkStatusView(retail: retail)
-        if retail.isWork == 1 {
+        if retail.isWork == 0 {
             configureClosed()
         } else {
             closedView.removeFromSuperview()

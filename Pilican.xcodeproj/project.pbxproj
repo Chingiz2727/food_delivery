@@ -72,6 +72,7 @@
 		5578855925FF639400B3A798 /* ChangePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855825FF639400B3A798 /* ChangePinView.swift */; };
 		5578855D25FF673100B3A798 /* ChangePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855C25FF673100B3A798 /* ChangePinViewController.swift */; };
 		5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578856025FF67E900B3A798 /* ChangePinModule.swift */; };
+		557AA0DC262FE664008FF4AF /* OrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557AA0DB262FE663008FF4AF /* OrderResponse.swift */; };
 		5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81225EDF2A300025251 /* AccountHeaderView.swift */; };
 		5584E81725EDF34100025251 /* AccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81625EDF34100025251 /* AccountCard.swift */; };
 		5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81A25EDFBD200025251 /* AccountKey.swift */; };
@@ -130,6 +131,12 @@
 		55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7425FA04E5005A36BD /* EditAccountView.swift */; };
 		55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7925FA1845005A36BD /* EditAccountViewController.swift */; };
 		55D26C7E25FA18C4005A36BD /* EditAccountModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */; };
+		55DB7D8E263128EC0086B562 /* OrderSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7D8D263128EC0086B562 /* OrderSuccessView.swift */; };
+		55DB7D9326312B0B0086B562 /* OrderSuccessModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7D9226312B0B0086B562 /* OrderSuccessModule.swift */; };
+		55DB7D9726312B290086B562 /* OrderSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7D9626312B290086B562 /* OrderSuccessViewController.swift */; };
+		55DB7D9C263137720086B562 /* OrderErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7D9B263137720086B562 /* OrderErrorView.swift */; };
+		55DB7DA02631381D0086B562 /* OrderErrorModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7D9F2631381D0086B562 /* OrderErrorModule.swift */; };
+		55DB7DA42631383D0086B562 /* OrderErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DA32631383D0086B562 /* OrderErrorViewController.swift */; };
 		55F4EEF0260C3ACC00EBEA9D /* QRPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */; };
 		55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */; };
 		55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */; };
@@ -585,6 +592,7 @@
 		5578855825FF639400B3A798 /* ChangePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinView.swift; sourceTree = "<group>"; };
 		5578855C25FF673100B3A798 /* ChangePinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinViewController.swift; sourceTree = "<group>"; };
 		5578856025FF67E900B3A798 /* ChangePinModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinModule.swift; sourceTree = "<group>"; };
+		557AA0DB262FE663008FF4AF /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
 		5584E81225EDF2A300025251 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
 		5584E81625EDF34100025251 /* AccountCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCard.swift; sourceTree = "<group>"; };
 		5584E81A25EDFBD200025251 /* AccountKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountKey.swift; sourceTree = "<group>"; };
@@ -643,6 +651,12 @@
 		55D26C7425FA04E5005A36BD /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
 		55D26C7925FA1845005A36BD /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		55D26C7D25FA18C4005A36BD /* EditAccountModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountModule.swift; sourceTree = "<group>"; };
+		55DB7D8D263128EC0086B562 /* OrderSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessView.swift; sourceTree = "<group>"; };
+		55DB7D9226312B0B0086B562 /* OrderSuccessModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessModule.swift; sourceTree = "<group>"; };
+		55DB7D9626312B290086B562 /* OrderSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessViewController.swift; sourceTree = "<group>"; };
+		55DB7D9B263137720086B562 /* OrderErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderErrorView.swift; sourceTree = "<group>"; };
+		55DB7D9F2631381D0086B562 /* OrderErrorModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderErrorModule.swift; sourceTree = "<group>"; };
+		55DB7DA32631383D0086B562 /* OrderErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderErrorViewController.swift; sourceTree = "<group>"; };
 		55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentModule.swift; sourceTree = "<group>"; };
 		55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewController.swift; sourceTree = "<group>"; };
 		55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -2152,6 +2166,74 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		55DB7D8B263128D60086B562 /* OrderSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7D9526312B190086B562 /* Controller */,
+				55DB7D9126312AFB0086B562 /* Module */,
+				55DB7D8C263128DE0086B562 /* View */,
+			);
+			path = OrderSuccess;
+			sourceTree = "<group>";
+		};
+		55DB7D8C263128DE0086B562 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7D8D263128EC0086B562 /* OrderSuccessView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55DB7D9126312AFB0086B562 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7D9226312B0B0086B562 /* OrderSuccessModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		55DB7D9526312B190086B562 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7D9626312B290086B562 /* OrderSuccessViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		55DB7D99263137090086B562 /* OrderError */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7DA22631382E0086B562 /* Controller */,
+				55DB7D9E263138080086B562 /* Module */,
+				55DB7D9A263137600086B562 /* View */,
+			);
+			path = OrderError;
+			sourceTree = "<group>";
+		};
+		55DB7D9A263137600086B562 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7D9B263137720086B562 /* OrderErrorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55DB7D9E263138080086B562 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7D9F2631381D0086B562 /* OrderErrorModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		55DB7DA22631382E0086B562 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7DA32631383D0086B562 /* OrderErrorViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		55F4EEEE260C3ABA00EBEA9D /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -2459,6 +2541,7 @@
 			children = (
 				7201596E262E95EA0083C758 /* DeliveryRate.swift */,
 				72340C2B262F5D94000569D6 /* OrderValue.swift */,
+				557AA0DB262FE663008FF4AF /* OrderResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3109,6 +3192,8 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55DB7D99263137090086B562 /* OrderError */,
+				55DB7D8B263128D60086B562 /* OrderSuccess */,
 				722A33C0262568AA003FB38A /* MakeOrder */,
 				552531C4262AC83000888DEE /* OrderHistory */,
 				552531AB2629BEAA00888DEE /* DeliveryMenu */,
@@ -4988,6 +5073,7 @@
 				5555236E25EF8FBA00537D3F /* Profile.swift in Sources */,
 				722A33E12625B931003FB38A /* MakeOrderCommentTitleView.swift in Sources */,
 				7211283B262020660055A83A /* YandexMapViewModel.swift in Sources */,
+				55DB7D8E263128EC0086B562 /* OrderSuccessView.swift in Sources */,
 				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */,
@@ -5093,6 +5179,7 @@
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
 				724FC5B0262419BE00C1DED3 /* DampingTimingParameters.swift in Sources */,
 				5525318D262941DD00888DEE /* FavoritesTarget.swift in Sources */,
+				55DB7DA42631383D0086B562 /* OrderErrorViewController.swift in Sources */,
 				A475CC2625EF405400C596FB /* WorkTimeView.swift in Sources */,
 				5526DADB2603824000536589 /* PayDetailModule.swift in Sources */,
 				A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */,
@@ -5179,6 +5266,7 @@
 				A4B3136F25D143840003BA0B /* UserPhoneExistance.swift in Sources */,
 				55ADCEAD25E65E19003D3F3A /* AcceptPermissionModule.swift in Sources */,
 				72FB081E261DAD0400F04395 /* SearchCoordinatorModuleFactory.swift in Sources */,
+				55DB7D9C263137720086B562 /* OrderErrorView.swift in Sources */,
 				A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */,
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
 				55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */,
@@ -5236,6 +5324,7 @@
 				A48CD00825DBBB080010829F /* String+NumberContains.swift in Sources */,
 				A40B95F825DE65EF00E507FB /* UITableView+Reuse.swift in Sources */,
 				72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */,
+				55DB7D9726312B290086B562 /* OrderSuccessViewController.swift in Sources */,
 				A4FAAD1125E75D0B00A55CB8 /* ProfileMenuModule.swift in Sources */,
 				558679C225F0D4E400A5A94B /* UITextField+Extension.swift in Sources */,
 				A47CA1EC25E36E8000EB091C /* AdditionalMenuPresentationController.swift in Sources */,
@@ -5302,7 +5391,9 @@
 				721127EF262012980055A83A /* UserlocationViewModel.swift in Sources */,
 				55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */,
 				556543DA261DC5DD009A4E62 /* RateDeliveryModule.swift in Sources */,
+				557AA0DC262FE664008FF4AF /* OrderResponse.swift in Sources */,
 				5FF910BE26254C4C00E1EF00 /* PillikanInfoModule.swift in Sources */,
+				55DB7D9326312B0B0086B562 /* OrderSuccessModule.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
@@ -5311,6 +5402,7 @@
 				A47CA1C025E36E0400EB091C /* DeepLinkActionFactory.swift in Sources */,
 				A4E5815925D540F800EDC053 /* AppEnviroment.swift in Sources */,
 				55173251261D6BAE0031623B /* OrderTypeView.swift in Sources */,
+				55DB7DA02631381D0086B562 /* OrderErrorModule.swift in Sources */,
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
 				5555237425EF907A00537D3F /* User.swift in Sources */,
@@ -5530,7 +5622,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5611,7 +5703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5753,7 +5845,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5778,7 +5870,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
