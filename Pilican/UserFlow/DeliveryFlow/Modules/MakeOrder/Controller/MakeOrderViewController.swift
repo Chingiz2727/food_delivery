@@ -66,7 +66,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         order.element
             .subscribe(onNext: { [unowned self] res in
                 if res.status == 200 {
-                    self.orderError?()
+                    self.orderSuccess?(res)
                 } else {
                     self.orderError?()
                 }
