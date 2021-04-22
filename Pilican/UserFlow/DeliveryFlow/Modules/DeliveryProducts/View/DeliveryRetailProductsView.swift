@@ -10,8 +10,9 @@ final class DeliveryRetailProductsView: UIView {
     private var contentSizeObserver: NSKeyValueObservation?
     private var tableViewHeightConstraint: Constraint?
     private var stickyHeaderrHeightConstraint: Constraint?
-    private let stickyHeaderView = DeliveryRetailHeaderView()
-    private let calculateView = ProductCalculateView()
+    let calculateView = ProductCalculateView()
+    let stickyHeaderView = DeliveryRetailHeaderView()
+    
     private lazy var stackView = UIStackView(
         views: [stickyHeaderView, segmentControl, tableView, calculateView],
         axis: .vertical,
@@ -70,7 +71,7 @@ final class DeliveryRetailProductsView: UIView {
             make.height.equalTo(60)
             make.width.equalToSuperview()
         }
-        
+
         calculateView.snp.makeConstraints { $0.height.equalTo(45) }
         
         stickyHeaderrHeightConstraint?.activate()

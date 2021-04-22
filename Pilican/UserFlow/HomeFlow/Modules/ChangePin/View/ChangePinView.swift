@@ -79,6 +79,15 @@ class ChangePinView: UIView, UITextFieldDelegate {
         acceptPinContainer.textField.keyboardType = .numberPad
         newPinContainer.textField.delegate = self
         acceptPinContainer.textField.delegate = self
+        passwordContainer.setTitleBackground(background: .pilicanWhite)
+        passwordContainer.textField.normalBackgroundColor = .pilicanWhite
+        passwordContainer.textField.selectedBackgroundColor = .pilicanWhite
+        newPinContainer.setTitleBackground(background: .pilicanWhite)
+        newPinContainer.textField.normalBackgroundColor = .pilicanWhite
+        newPinContainer.textField.selectedBackgroundColor = .pilicanWhite
+        acceptPinContainer.setTitleBackground(background: .pilicanWhite)
+        acceptPinContainer.textField.normalBackgroundColor = .pilicanWhite
+        acceptPinContainer.textField.selectedBackgroundColor = .pilicanWhite
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

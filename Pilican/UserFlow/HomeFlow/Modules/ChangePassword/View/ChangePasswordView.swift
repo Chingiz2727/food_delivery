@@ -73,5 +73,15 @@ class ChangePasswordView: UIView {
         acceptPasswordContainer.title = " Повторите пароль "
         backgroundColor = .background
         containerView.backgroundColor = .pilicanWhite
+        loginContainer.textField.isUserInteractionEnabled = false
+        loginContainer.setTitleBackground(background: .pilicanWhite)
+        loginContainer.textField.normalBackgroundColor = .pilicanWhite
+        loginContainer.textField.selectedBackgroundColor = .pilicanWhite
+        newPasswordContainer.setTitleBackground(background: .pilicanWhite)
+        newPasswordContainer.textField.normalBackgroundColor = .pilicanWhite
+        newPasswordContainer.textField.selectedBackgroundColor = .pilicanWhite
+        acceptPasswordContainer.setTitleBackground(background: .pilicanWhite)
+        acceptPasswordContainer.textField.normalBackgroundColor = .pilicanWhite
+        acceptPasswordContainer.textField.selectedBackgroundColor = .pilicanWhite
     }
 }

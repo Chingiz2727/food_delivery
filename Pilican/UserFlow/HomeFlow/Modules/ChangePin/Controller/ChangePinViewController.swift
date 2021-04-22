@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 
 class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
+    var closeButton: CloseButton?
+    
     var saveTapped: SaveTapped?
     
     typealias RootViewType = ChangePinView
@@ -47,8 +49,7 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
         result.element
             .subscribe(onNext: { [unowned self] result in
                 if result.status == 200 {
-                    self.saveTapped?()
-                    self.showSimpleAlert(title: "", message: "Вы успешно поменяли пин код!")
+                    showAlert()
                 }
             }).disposed(by: disposeBag)
 
@@ -58,5 +59,15 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
 
         result.connect()
             .disposed(by: disposeBag)
+    }
+
+    private func showAlert() {
+        self.showSuccessAlert { [unowned self] in
+            self.saveTapped?()
+        }
+    }
+
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

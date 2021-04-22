@@ -7,5 +7,6 @@
 
 import Foundation
 protocol OrderTypeModule: Presentable {
-    
+    typealias OnDeliveryChoose = (OrderType) -> Void
+    var onDeliveryChoose: OnDeliveryChoose? { get set }
 }

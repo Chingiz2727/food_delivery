@@ -13,15 +13,16 @@ final class RetailListMapView: UIView {
     let listButton: PrimaryButton = {
         let button = PrimaryButton()
         button.setTitle("Назад к списку", for: .normal)
+        button.setTitleColor(.pilicanWhite, for: .normal)
         return button
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
         setupDrawerView()
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }

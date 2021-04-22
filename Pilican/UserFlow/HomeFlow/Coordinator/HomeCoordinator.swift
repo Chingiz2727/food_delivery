@@ -20,7 +20,7 @@ final class HomeCoordinator: BaseCoordinator {
 
     override func start() {
         makeTabBar()
-        
+
         tabBarController.qrCodeTap = { [weak self] in
             self?.showCamera()
         }
@@ -60,6 +60,9 @@ final class HomeCoordinator: BaseCoordinator {
         module.cameraActionType = .makePayment
         module.paymentMaked = { [weak self] info in
             self?.showPaymentPartner(info: info)
+        }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
         }
         router.push(module)
     }

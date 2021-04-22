@@ -2,11 +2,16 @@ import RxSwift
 import UIKit
 
 class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProductsModule, ViewHolder {
+    var favoriteButtonTapped: FavoriteButtonTapped?
+    
     typealias RootViewType = DeliveryRetailProductsView
+    
+    var onMakeOrdedDidTap: Callback?
     
     private let viewModel: DeliveryRetailProductViewModel
     private let disposeBag = DisposeBag()
     private let sourceDelegate: DeliveryRetailTableViewDataSourceDelegate
+    private var isFavorite = false
 
     init(viewModel: DeliveryRetailProductViewModel) {
         self.viewModel = viewModel
@@ -30,12 +35,22 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     }
     
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: .just(())))
+        let output = viewModel.transform(input: .init(viewDidLoad: .just(()), favoriteButtonTapped: rootView.stickyHeaderView.favouriteButton.rx.tap.asObservable()))
+        
+        let favorite = output.favoriteButtonTapped.publish()
+        
+        favorite.errors
+            .bind(to: rx.error)
+            .disposed(by: disposeBag)
+        
+        favorite.connect()
+            .disposed(by: disposeBag)
+        
         let productList = output.productsList.publish()
         productList.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)
-        
+
         productList.element
             .map { $0.retail.deliveryCategories }
             .subscribe(onNext: { [unowned self] products in
@@ -59,10 +74,10 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 self.rootView.setProductToPay(product: product)
             })
             .disposed(by: disposeBag)
-        
+
         rootView.setProductToPay(product: viewModel.dishList.products)
     }
-    
+
     private func bindView() {
         rootView.tableView.rx.setDelegate(sourceDelegate)
             .disposed(by: disposeBag)
@@ -81,7 +96,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 self.rootView.scrollSegmentToSection(section: indexPath.section)
             })
             .disposed(by: disposeBag)
-        
+
         rootView.segmentControl.rx.selectedIndex
             .subscribe(onNext: { [unowned self] section in
                 if self.rootView.tableView.numberOfSections != 0 {
@@ -89,5 +104,17 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 }
             })
             .disposed(by: disposeBag)
+        rootView.calculateView.control.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [unowned self] in
+                self.onMakeOrdedDidTap?()
+            })
+            .disposed(by: disposeBag)
+
+        rootView.stickyHeaderView.favouriteButton.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                //isFavorite = viewModel.retailInfo.status == 1 ? true : false
+                rootView.stickyHeaderView.favouriteButton.setImage(isFavorite ? Images.fillStar.image : Images.emptyStar.image, for: .normal)
+                isFavorite = !isFavorite
+            }).disposed(by: disposeBag)
     }
 }

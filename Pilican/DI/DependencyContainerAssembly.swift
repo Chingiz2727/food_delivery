@@ -42,7 +42,11 @@ public final class DependencyContainerAssembly: Assembly {
             let status = container.resolve(AVAuthorizationStatus.self)!
             return CameraUsagePermission(avAuthorizationStatus: status)
         }
-
+        container.register(DeliveryLocationModule.self) { _ in
+            let viewModel = DeliveryLocationMapViewModel(mapManager: container.resolve(MapManager.self)!, userInfoStorage: container.resolve(UserInfoStorage.self)!)
+            return DeliveryLocationViewController(viewModel: viewModel)
+        }.inObjectScope(.container)
+        
         container.register(AVMediaType.self) { _ in
             AVMediaType.video
         }
