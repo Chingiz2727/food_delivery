@@ -56,7 +56,7 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         }
         router.push(module)
     }
-    
+
     private func showPayDetail(payments: Payments) {
         let module = moduleFactory.makePayDetail(payments: payments)
         router.presentCard(module)

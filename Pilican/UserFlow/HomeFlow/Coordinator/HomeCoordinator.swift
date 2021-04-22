@@ -61,6 +61,9 @@ final class HomeCoordinator: BaseCoordinator {
         module.paymentMaked = { [weak self] info in
             self?.showPaymentPartner(info: info)
         }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 

@@ -10,4 +10,6 @@ import Foundation
 protocol AccountModule: Presentable {
     typealias ProfileItemsDidSelect = (ProfileItems) -> Void
     var profileItemsDidSelect: ProfileItemsDidSelect? { get set }
+    typealias CloseButton = () -> Void
+    var closeButton: CloseButton? { get set }
 }

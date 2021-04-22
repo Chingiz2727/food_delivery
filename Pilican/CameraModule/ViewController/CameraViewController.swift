@@ -4,12 +4,12 @@ import AVFoundation
 import UIKit
 
 class CameraViewController: UIViewController, CameraModule {
-
+    var closeButton: CloseButton?
     var busScanned: BusScanned?
     var promoCodeScanned: PromoCodeScanned?
     var paymentMaked: PaymentMaked?
     var cameraActionType: CameraAction?
-    
+
     private let scanSubject = PublishSubject<Void>()
     private let createdAtSubject = PublishSubject<String>()
     private let sigSubject = PublishSubject<String>()
@@ -25,6 +25,7 @@ class CameraViewController: UIViewController, CameraModule {
     private var request: [VNRequest] = []
     private var authTokenService: AuthTokenService
     private let viewModel: CameraViewModel
+
     init(
         avCaptureSession: AVCaptureSession,
         avCaptureDevice: AVCaptureDevice,
@@ -62,6 +63,11 @@ class CameraViewController: UIViewController, CameraModule {
                 }
             }).disposed(by: disposeBag)
 
+        cameraView.closeButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.closeButton?()
+            }).disposed(by: disposeBag)
+
         cameraView.rotateCameraButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
                 self.rotateCamera()
@@ -75,10 +81,13 @@ class CameraViewController: UIViewController, CameraModule {
 
         avCaptureMetadaDegelegate?.qrScanned = { [unowned self] qr in
             self.avCaptureSession.stopRunning()
-            if qr.isStringContainsOnlyNumbers() {
-                qrScanned(qr: qr)
-            } else {
+            switch self.cameraActionType {
+            case .readPromoCode:
                 self.promoCodeScanned?(qr)
+            case .makePayment:
+                self.qrScanned(qr: qr)
+            default:
+                break
             }
         }
 
