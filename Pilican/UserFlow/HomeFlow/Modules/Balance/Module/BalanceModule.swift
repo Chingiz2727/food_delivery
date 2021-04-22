@@ -7,5 +7,6 @@
 
 import Foundation
 protocol BalanceModule: Presentable {
-    
+    typealias DissmissBalanceModule = () -> Void
+    var dissmissBalanceModule: DissmissBalanceModule? { get set }
 }

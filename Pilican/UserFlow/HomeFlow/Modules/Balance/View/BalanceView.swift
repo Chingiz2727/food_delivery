@@ -20,7 +20,7 @@ class BalanceView: UIView {
         return label
     }()
     
-    private let enterBalanceTextField: UITextField = {
+    let enterBalanceTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = " Введите сумму пополнения"
         textField.font = UIFont.book16
@@ -41,7 +41,7 @@ class BalanceView: UIView {
         return imageView
     }()
 
-    private let replishmentButton: UIButton = {
+    let replishmentButton: UIButton = {
         let button = UIButton()
         button.setTitle("Пополнить", for: .normal)
         button.titleLabel?.font = UIFont.medium16
@@ -50,6 +50,19 @@ class BalanceView: UIView {
         button.clipsToBounds = true
         button.layer.cornerRadius = 20
         button.layer.addShadow()
+        return button
+    }()
+    
+    let addCardButton: UIButton = {
+        let button = UIButton()
+        button.setTitle( "Добавить карту", for: .normal)
+        button.backgroundColor = .primary
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 20
+        button.layer.addShadow()
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.medium16
+        button.isHidden = true
         return button
     }()
 
@@ -92,6 +105,13 @@ class BalanceView: UIView {
 
         containerView.addSubview(replishmentButton)
         replishmentButton.snp.makeConstraints { (make) in
+            make.top.equalTo(cardImageView.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(41)
+            make.height.equalTo(40)
+        }
+        
+        containerView.addSubview(addCardButton)
+        addCardButton.snp.makeConstraints { (make) in
             make.top.equalTo(cardImageView.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(41)
             make.height.equalTo(40)

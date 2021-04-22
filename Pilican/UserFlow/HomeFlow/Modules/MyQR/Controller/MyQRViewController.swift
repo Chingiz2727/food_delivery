@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 
 class MyQRViewController: ViewController, ViewHolder, MyQRModule {
+    var closeButton: CloseButton?
+    
     typealias RootViewType = MyQRView
     
     private let cache = DiskCache<String, Any>()
@@ -38,5 +40,9 @@ class MyQRViewController: ViewController, ViewHolder, MyQRModule {
             }
         }
         return nil
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

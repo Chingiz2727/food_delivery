@@ -9,4 +9,6 @@ import Foundation
 
 protocol MyCardsModule: Presentable {
     var addCard: Callback? { get set }
+    typealias CloseButton = () -> Void
+    var closeButton: CloseButton? { get set }
 }

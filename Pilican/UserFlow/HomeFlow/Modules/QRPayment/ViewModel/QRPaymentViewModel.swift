@@ -20,12 +20,12 @@ final class QRPaymentViewModel: ViewModel {
         let payByQRPartnerResponse: Observable<LoadingSequence<PayByQRPartnerResponse>>
     }
     let info: ScanRetailResponse
-    private let tokenService: AuthTokenService
+    private let userSessionStorage: UserSessionStorage
     private let apiService: ApiService
 
-    init(apiService: ApiService, info: ScanRetailResponse, tokenService: AuthTokenService) {
+    init(apiService: ApiService, info: ScanRetailResponse, userSessionStorage: UserSessionStorage) {
         self.apiService = apiService
-        self.tokenService = tokenService
+        self.userSessionStorage = userSessionStorage
         self.info = info
     }
 
@@ -35,7 +35,7 @@ final class QRPaymentViewModel: ViewModel {
             .flatMap { [unowned self] amount, epay, comment -> Observable<PayByQRPartnerResponse> in
                 let orderId = self.info.orderId
                 let createdAt = String(NSDate().timeIntervalSince1970).split(separator: ".")[0]
-                let token = tokenService.token?.accessToken
+                let token = userSessionStorage.accessToken
                 let substring = ((token! as NSString).substring(with: NSMakeRange(11, 21)) as NSString).substring(with: NSMakeRange(0, 10))
                 let sig = ((substring + String(amount) + String(createdAt) + String(self.info.orderId)).toBase64()).md5()
                 return apiService.makeRequest(to: QRPaymentTarget.payByQRPartner(

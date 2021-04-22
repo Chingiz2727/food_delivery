@@ -34,6 +34,9 @@ final class OrderTypeCoordinator: BaseCoordinator, DeliveryTabBarItemCoordinator
         module.onMapShowDidSelect = { [weak self] in
             self?.makeMapSearch()
         }
+        module.emptyDishList = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
     

@@ -61,6 +61,9 @@ final class HomeCoordinator: BaseCoordinator {
         module.paymentMaked = { [weak self] info in
             self?.showPaymentPartner(info: info)
         }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
@@ -78,9 +81,9 @@ final class HomeCoordinator: BaseCoordinator {
 
     private func showPaymentPartner(info: ScanRetailResponse) {
         let apiService = container.resolve(ApiService.self)!
-        let authTokenService = container.resolve(AuthTokenService.self)!
+        let userSessionStorage = container.resolve(UserSessionStorage.self)!
 
-        let viewModel = QRPaymentViewModel(apiService: apiService, info: info, tokenService: authTokenService)
+        let viewModel = QRPaymentViewModel(apiService: apiService, info: info, userSessionStorage: userSessionStorage)
         var module = coordinatorFactory.makePayPartner(viewModel: viewModel)
         module.openSuccessPayment = { [weak self] retail, price, cashback in
             self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)

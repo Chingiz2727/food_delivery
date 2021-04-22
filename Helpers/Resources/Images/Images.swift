@@ -101,6 +101,8 @@ enum Images: String {
     case correctCircle
     case correct
     case quit
+    case orderSuccess
+    case orderError
 }
 
 extension Images {

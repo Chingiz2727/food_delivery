@@ -129,6 +129,7 @@ public final class AuthenticationServiceImpl: AuthenticationService {
         infoStorage.mobilePhoneNumber = profile?.user.username
         infoStorage.birthday = profile?.profile.birthDay
         infoStorage.gender = profile?.profile.sex
+        infoStorage.isCard = profile?.user.isCard
     }
     
 }

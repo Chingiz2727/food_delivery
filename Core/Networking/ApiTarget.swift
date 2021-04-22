@@ -50,13 +50,13 @@ public extension ApiTarget {
 }
 
 public enum ApiResponseError: LocalizedError {
-    
-    case badServerResponse
-    
-    public var errorDescription: String? {
-        switch self {
-        case .badServerResponse:
-            return "error_bad_server_response"
-        }
+
+  case badServerResponse
+
+  public var errorDescription: String? {
+    switch self {
+    case .badServerResponse:
+      return "Что-то пошло не так"
     }
+}
 }

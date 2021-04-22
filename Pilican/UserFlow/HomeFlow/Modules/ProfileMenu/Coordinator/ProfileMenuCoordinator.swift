@@ -91,6 +91,9 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
                 self?.logout()
             }
         }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
@@ -99,17 +102,26 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
 
     private func showMyCards() {
-        let module = moduleFactory.makeMyCards()
+        var module = moduleFactory.makeMyCards()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
     private func showMyQR() {
-        let module = moduleFactory.makeMyQR()
+        var module = moduleFactory.makeMyQR()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
     private func showChangePassword() {
-        let module = moduleFactory.makeChangePassword()
+        var module = moduleFactory.makeChangePassword()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
@@ -118,12 +130,18 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         module.saveTapped = { [weak self] in
             self?.router.popModule()
         }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
     private func showEditAccount() {
         var module = moduleFactory.makeEditAccount()
         module.saveTapped = { [weak self] in
+            self?.router.popModule()
+        }
+        module.closeButton = { [weak self] in
             self?.router.popModule()
         }
         router.push(module)

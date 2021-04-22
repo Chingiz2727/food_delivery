@@ -8,7 +8,9 @@
 import UIKit
 import RxSwift
 
-final class MyCardsViewController: UIViewController, ViewHolder, MyCardsModule {
+final class MyCardsViewController: ViewController, ViewHolder, MyCardsModule {
+    var closeButton: CloseButton?
+    
     typealias RootViewType = MyCardsView
     
     var addCard: Callback?
@@ -96,5 +98,9 @@ final class MyCardsViewController: UIViewController, ViewHolder, MyCardsModule {
         rootView.footerView.addCardButton.rx.tap.subscribe(onNext: { [unowned self] in
             self.addCard?()
         }).disposed(by: disposeBag)
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

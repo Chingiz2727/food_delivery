@@ -2,6 +2,8 @@ import UIKit
 import RxSwift
 
 class AccountViewController: ViewController, AccountModule, ViewHolder {
+    var closeButton: CloseButton?
+    
     var profileItemsDidSelect: ProfileItemsDidSelect?
 
     typealias RootViewType = AccountView
@@ -59,6 +61,10 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
             .subscribe(onNext: { [unowned self] in
                 self.profileItemsDidSelect?(.logout)
             }).disposed(by: disposeBag)
+    }
+
+    override func customBackButtonDidTap() {
+        self.closeButton?()
     }
 
     private func bindViewModel() {

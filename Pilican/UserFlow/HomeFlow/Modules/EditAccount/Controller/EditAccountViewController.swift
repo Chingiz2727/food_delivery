@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 
 class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
+    var closeButton: CloseButton?
+    
     var saveTapped: SaveTapped?
 
     typealias RootViewType = EditAccountView
@@ -106,13 +108,7 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
         result.element
             .subscribe(onNext: { [unowned self]  result in
                 if result.status == 200 {
-                    userInfoStorage.mobilePhoneNumber = rootView.loginContainer.textField.text
-                    userInfoStorage.fullName = rootView.usernameContainer.textField.text
-                    userInfoStorage.city = rootView.cityContainer.textField.text
-                    userInfoStorage.gender = rootView.genderContainer.textField.text == "Мужчина" ? true : false
-                    userInfoStorage.birthday = rootView.birthdayContainer.textField.text
-                    self.saveTapped?()
-                    self.showSimpleAlert(title: "", message: "Данные успешно сохранились!")
+                    self.showAlert()
                 }
             }).disposed(by: disposeBag)
 
@@ -122,6 +118,21 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
 
         result.connect()
             .disposed(by: disposeBag)
+    }
+
+    private func showAlert() {
+        self.showSuccessAlert { [unowned self] in
+            userInfoStorage.mobilePhoneNumber = rootView.loginContainer.textField.text
+            userInfoStorage.fullName = rootView.usernameContainer.textField.text
+            userInfoStorage.city = rootView.cityContainer.textField.text
+            userInfoStorage.gender = rootView.genderContainer.textField.text == "Мужчина" ? true : false
+            userInfoStorage.birthday = rootView.birthdayContainer.textField.text
+            self.saveTapped?()
+        }
+    }
+
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 
     private func setupCityPickerView() {

@@ -48,7 +48,14 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
     }
 
     private func showBalance() {
-        let module = moduleFactory.makeBalance()
+        let userInfoStorage = container.resolve(UserInfoStorage.self)!
+        let apiService = container.resolve(ApiService.self)!
+        let userSessionStorage = container.resolve(UserSessionStorage.self)!
+        let viewModel = BalanceViewModel(apiService: apiService, userSessionStorage: userSessionStorage)
+        var module = moduleFactory.makeBalance(viewModel: viewModel, userInfoStorage: userInfoStorage)
+        module.dissmissBalanceModule = { [weak self] in
+            self?.router.dismissModule()
+        }
         router.push(module)
     }
     
@@ -59,7 +66,7 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         }
         router.push(module)
     }
-    
+
     private func showPayDetail(payments: Payments) {
         let module = moduleFactory.makePayDetail(payments: payments)
         router.presentCard(module)
