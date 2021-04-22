@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 
 class ChangePasswordViewController: ViewController, ViewHolder, ChangePasswordModule {
+    var closeButton: CloseButton?
+    
     var saveTapped: SaveTapped?
 
     typealias RootViewType = ChangePasswordView
@@ -49,8 +51,10 @@ class ChangePasswordViewController: ViewController, ViewHolder, ChangePasswordMo
         let result = output.changedPassword.publish()
 
         result.element
-            .subscribe(onNext: { [unowned self] _ in
-                self.saveTapped?()
+            .subscribe(onNext: { [unowned self] res in
+                if res.status == 200 {
+                    self.showAlert()
+                }
             }).disposed(by: disposeBag)
 
         result.errors
@@ -59,5 +63,15 @@ class ChangePasswordViewController: ViewController, ViewHolder, ChangePasswordMo
 
         result.connect()
             .disposed(by: disposeBag)
+    }
+
+    private func showAlert() {
+        self.showSuccessAlert { [unowned self] in
+            self.saveTapped?()
+        }
+    }
+
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

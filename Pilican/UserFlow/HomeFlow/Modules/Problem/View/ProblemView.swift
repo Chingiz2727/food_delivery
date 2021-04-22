@@ -20,7 +20,7 @@ class ProblemView: UIView, TagListViewDelegate {
         Claim(id: 3, name: "Не начислили кэшбэк"),
         Claim(id: 4, name: "Нет  QR-Код"),
         Claim(id: 5, name: "Pillikan не работает здесь"),
-        Claim(id: 6, name: "Плохое обслужование")
+        Claim(id: 6, name: "Плохое обслуживание")
     ]
 
     let textField: TextField = {

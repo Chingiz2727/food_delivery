@@ -110,6 +110,7 @@ final class AuthBySmsView: UIView {
         passwordContainer.snp.makeConstraints { $0.height.equalTo(43) }
         signInButton.snp.makeConstraints { $0.height.equalTo(40) }
         getSmsButton.snp.makeConstraints { $0.height.equalTo(40) }
+        passwordContainer.textField.keyboardType = .numberPad
     }
 
     private func configureView() {

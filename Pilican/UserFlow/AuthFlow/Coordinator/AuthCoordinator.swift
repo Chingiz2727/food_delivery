@@ -52,7 +52,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         module.qrScanTapped = { [weak self] in
             self?.showCamera(qrScanned: { promoCode in
                 module.putPromoCodeToText?(promoCode)
-            })
+            }, actionType: .readPromoCode)
         }
 
         module.registerTapped = { [weak self] in
@@ -61,21 +61,20 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         router.push(module)
     }
 
-    private func showCamera(qrScanned: @escaping((String) -> Void)) {
+    private func showCamera(qrScanned: @escaping((String) -> Void), actionType: CameraAction) {
         var module = container.resolve(CameraModule.self)!
+        module.cameraActionType = actionType
         switch module.cameraActionType {
         case .readPromoCode:
             module.promoCodeScanned = { [weak self] promoCode in
                 self?.router.popModule()
                 qrScanned(promoCode)
             }
-        case .bus:
-            module.busScanned = { [weak self] bus in
-                self?.router.popModule()
-                qrScanned(bus)
-            }
         default:
             break
+        }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
         }
         router.push(module)
     }

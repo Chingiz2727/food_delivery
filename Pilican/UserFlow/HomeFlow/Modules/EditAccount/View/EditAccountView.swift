@@ -93,5 +93,19 @@ class EditAccountView: UIView {
         birthdayContainer.title = " Дата рождения "
         backgroundColor = .background
         containerView.backgroundColor = .pilicanWhite
+        loginContainer.textField.isUserInteractionEnabled = false
+        loginContainer.setTitleBackground(background: .pilicanWhite)
+        usernameContainer.setTitleBackground(background: .pilicanWhite)
+        usernameContainer.textField.normalBackgroundColor = .pilicanWhite
+        usernameContainer.textField.selectedBackgroundColor = .pilicanWhite
+        cityContainer.setTitleBackground(background: .pilicanWhite)
+        cityContainer.textField.normalBackgroundColor = .pilicanWhite
+        cityContainer.textField.selectedBackgroundColor = .pilicanWhite
+        genderContainer.setTitleBackground(background: .pilicanWhite)
+        genderContainer.textField.normalBackgroundColor = .pilicanWhite
+        genderContainer.textField.selectedBackgroundColor = .pilicanWhite
+        birthdayContainer.setTitleBackground(background: .pilicanWhite)
+        birthdayContainer.textField.normalBackgroundColor = .pilicanWhite
+        birthdayContainer.textField.selectedBackgroundColor = .pilicanWhite
     }
 }

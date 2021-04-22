@@ -39,6 +39,12 @@ final class TextFieldContainer<T: TextField>: UIView {
         }
     }
 
+    func setTitleBackground(background: UIColor) {
+        titleLabel.backgroundColor = background
+        textField.backgroundColor = background
+        backgroundColor = background
+    }
+
     private func updateTitle() {
         titleLabel.text = title
         titleLabel.textColor = .pilicanLightGray

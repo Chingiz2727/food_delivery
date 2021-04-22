@@ -80,7 +80,10 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     }
 
     private func showCamera() {
-        let module = container.resolve(CameraModule.self)!
+        var module = container.resolve(CameraModule.self)!
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 }

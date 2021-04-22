@@ -47,7 +47,7 @@ public enum ApiResponseError: LocalizedError {
   public var errorDescription: String? {
     switch self {
     case .badServerResponse:
-      return "error_bad_server_response"
+      return "Что-то пошло не так"
     }
   }
 }
