@@ -22,5 +22,7 @@ target 'Pilican' do
   pod 'lottie-ios', '3.1.2'
   pod 'TagListView', '~> 1.0'
   pod 'YandexMapsMobile', ’4.0.0-full’
+  pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "master"
+  pod 'Moya', '~> 13.0.0'
 
 end

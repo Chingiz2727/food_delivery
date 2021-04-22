@@ -48,9 +48,9 @@ public struct ApiRequest: ApiRequestable {
         request.resume()
         return request
             .validate { _, response, data in
+                print(response)
                 guard let data = data else { return .failure(ApiResponseError.badServerResponse) }
-                
-                if 200..<300 ~= response.statusCode { return .success } 
+                if 200..<300 ~= response.statusCode { return .success }
                 
                 guard let apiError = try? JSONDecoder().decode(ApiError.self, from: data) else {
                     return .failure(ApiResponseError.badServerResponse)

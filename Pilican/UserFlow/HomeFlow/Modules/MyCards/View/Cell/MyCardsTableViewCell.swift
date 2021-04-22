@@ -16,7 +16,7 @@ final class MyCardsTableViewCell: UITableViewCell {
         imageView.layer.cornerRadius = 24
         return imageView
     }()
-
+    
     private let cardNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Kaspi"
@@ -25,7 +25,7 @@ final class MyCardsTableViewCell: UITableViewCell {
         label.textColor = .pilicanBlack
         return label
     }()
-
+    
     private let cardNumberLabel: UILabel = {
         let label = UILabel()
         label.text = "6123 12XX XXXX XX53"
@@ -34,78 +34,90 @@ final class MyCardsTableViewCell: UITableViewCell {
         label.textColor = .pilicanLightGray
         return label
     }()
-
+    
     lazy var choiceCheckButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.selectedCardButton.image, for: .normal)
+        button.setImage(Images.correctCircle.image, for: .normal)
         button.clipsToBounds = true
         return button
     }()
-
+    
     lazy var deleteCardButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(Images.deleteCardButton.image, for: .normal)
+        button.setImage(Images.quit.image?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.clipsToBounds = true
         return button
     }()
-
+    
+    private lazy var textStackView = UIStackView(
+        views: [cardNameLabel, cardNumberLabel],
+        axis: .vertical,
+        spacing: 6)
+    
+    private lazy var buttonStackView = UIStackView(
+        views: [choiceCheckButton, deleteCardButton],
+        axis: .horizontal,
+        distribution: .fillEqually,
+        spacing: 6)
+    
     private let dataView = UIView()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayouts()
         configureView()
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         dataView.layer.cornerRadius = 10
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    func setupData(card: MyCard) {
+        if card.isMain == 0 {
+            self.choiceCheckButton.setImage(Images.correct.image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else {
+            self.choiceCheckButton.setImage(Images.correctCircle.image?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        cardNameLabel.text = card.name
+        cardNumberLabel.text = card.cardHash
+    }
+    
     private func setupInitialLayouts() {
         addSubview(dataView)
         dataView.snp.makeConstraints { (make) in
-            make.left.right.top.equalToSuperview().inset(16)
-            make.bottom.equalToSuperview()
+            make.left.right.bottom.top.equalToSuperview().inset(16)
         }
-
+        
         dataView.addSubview(cardImageView)
+        
         cardImageView.snp.makeConstraints { (make) in
+            make.top.bottom.leading.equalToSuperview().inset(14)
+        }
+        
+        dataView.addSubview(textStackView)
+        
+        textStackView.snp.makeConstraints { make in
+            make.leading.equalTo(cardImageView.snp.trailing).offset(14)
             make.centerY.equalToSuperview()
-            make.left.equalToSuperview().inset(16)
         }
-
-        dataView.addSubview(cardNameLabel)
-        cardNameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(cardImageView.snp.right).offset(14)
-            make.top.equalToSuperview().inset(19)
-        }
-
-        dataView.addSubview(cardNumberLabel)
-        cardNumberLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(cardNameLabel.snp.left)
-            make.top.equalTo(cardNameLabel.snp.bottom).offset(6)
-        }
-
-        dataView.addSubview(deleteCardButton)
-        deleteCardButton.snp.makeConstraints { (make) in
-            make.top.right.equalToSuperview().inset(27)
-            make.height.width.equalTo(20)
-        }
-
-        dataView.addSubview(choiceCheckButton)
-        choiceCheckButton.snp.makeConstraints { (make) in
-            make.top.equalTo(deleteCardButton.snp.top)
-            make.right.equalTo(deleteCardButton.snp.left).offset(10)
-            make.height.width.equalTo(20)
+        
+        dataView.addSubview(buttonStackView)
+        buttonStackView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(14)
         }
     }
-
+    
+    
     private func configureView() {
         dataView.backgroundColor = .pilicanWhite
+        dataView.layer.cornerRadius = 10
+        backgroundColor = .clear
+        selectionStyle = .none
     }
 }

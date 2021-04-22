@@ -23,12 +23,9 @@ final class NameTextField: TextField {
             guard let text = field.text else {
                 return
             }
-            self?.textSubject.onNext(
-                text.replacingOccurrences(of: " ", with: "")
-            )
+            self?.textSubject.onNext(text)
             self?.isFilledSubject.onNext(isFilled)
         }
-        keyboardType = .numberPad
     }
 
     required public init?(coder: NSCoder) {

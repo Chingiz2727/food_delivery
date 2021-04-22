@@ -23,9 +23,7 @@ final class DateTextField: TextField {
             guard let text = field.text else {
                 return
             }
-            self?.textSubject.onNext(
-                text.replacingOccurrences(of: " ", with: "")
-            )
+            self?.textSubject.onNext(text)
             self?.isFilledSubject.onNext(isFilled)
         }
         keyboardType = .numberPad

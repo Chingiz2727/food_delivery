@@ -24,7 +24,7 @@ final class CardNumberTextField: TextField {
                 return
             }
             self?.textSubject.onNext(
-                text.replacingOccurrences(of: " ", with: "")
+                text.replacingOccurrences(of: " ", with: "").trimmingCharacters(in: .whitespaces)
             )
             self?.isFilledSubject.onNext(isFilled)
         }

@@ -40,7 +40,10 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
     }
 
     private func showMyCards() {
-        let module = moduleFactory.makeMyCards()
+        var module = moduleFactory.makeMyCards()
+        module.addCard = { [weak self] in
+            self?.showAddCard()
+        }
         router.push(module)
     }
 
@@ -60,5 +63,21 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
     private func showPayDetail(payments: Payments) {
         let module = moduleFactory.makePayDetail(payments: payments)
         router.presentCard(module)
+    }
+    
+    private func showAddCard() {
+        var module = moduleFactory.makeAddCard()
+        module.sendToWebController = { [weak self] model, html in
+            self?.show3dsWebView(cardModel: model, htmlString: html)
+        }
+        router.push(module)
+    }
+    
+    private func show3dsWebView(cardModel: BindCardModel, htmlString: String) {
+        var module = moduleFactory.make3dsWeb(cardModel: cardModel, htmlString: htmlString)
+        module.onCardAddTryed = { [weak self] status in
+            print(status)
+        }
+        router.push(module)
     }
 }

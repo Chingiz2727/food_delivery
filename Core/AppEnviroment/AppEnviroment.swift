@@ -26,6 +26,13 @@ public enum AppEnviroment {
         return infoDictionary
     }()
     
+    public static let cloudPaymentId: String = {
+        guard let baseURL = AppEnviroment.infoDictionary["CLOUD_ID"] as? String else {
+            fatalError("baseURL not found")
+        }
+        return baseURL
+    }()
+    
     public static let appVersion: String = {
         guard let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
             fatalError("appVersion not found")

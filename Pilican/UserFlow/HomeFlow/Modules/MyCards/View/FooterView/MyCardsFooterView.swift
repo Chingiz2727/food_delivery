@@ -10,7 +10,7 @@ import UIKit
 
 final class MyCardsFooterView: UIView {
     
-    private let addCardButton: UIButton = {
+    let addCardButton: UIButton = {
         let button = UIButton()
         button.setTitle( "Добавить карту", for: .normal)
         button.backgroundColor = .primary

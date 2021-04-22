@@ -25,6 +25,7 @@ public struct LoadingSequence<Element>: LoadingSequenceConvertible {
     guard let result = result else {
       return LoadingSequence<R>(isLoading: isLoading)
     }
+    
     switch result {
     case .error(let error):
       return LoadingSequence<R>(result: .error(error))

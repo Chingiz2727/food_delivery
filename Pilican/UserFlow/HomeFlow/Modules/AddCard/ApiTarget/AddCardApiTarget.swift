@@ -16,8 +16,10 @@ enum AddCardApiTarget: ApiTarget {
         switch self {
         case .post3ds:
             return "https://api.cloudpayments.ru/"
+        case .need3DSecure(let url, _ ):
+            return url
         default:
-            return nil
+            return AppEnviroment.baseURL
         }
     }
     
@@ -83,7 +85,7 @@ enum AddCardApiTarget: ApiTarget {
         }
         return nil
     }
-    
+
     var stubData: Any {
         return [:]
     }

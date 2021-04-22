@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MyCardsModule: Presentable {
-    
+    var addCard: Callback? { get set }
 }

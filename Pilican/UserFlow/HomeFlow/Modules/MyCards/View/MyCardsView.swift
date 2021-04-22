@@ -29,10 +29,12 @@ final class MyCardsView: UIView {
             make.leading.trailing.equalToSuperview()
             make.top.bottom.equalTo(safeAreaLayoutGuide).inset(10)
         }
+        footerView.isUserInteractionEnabled = true
     }
 
     private func configureView() {
         tableView.backgroundColor = .background
         backgroundColor = .background
+        tableView.tableFooterView = footerView
     }
 }

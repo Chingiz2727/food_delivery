@@ -176,18 +176,6 @@
 		7211285226202B760055A83A /* RetailListMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7211285126202B760055A83A /* RetailListMapCoordinator.swift */; };
 		72112856262070F10055A83A /* RetailListMapModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72112855262070F10055A83A /* RetailListMapModuleFactory.swift */; };
 		722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */; };
-		72340C4F262FC439000569D6 /* CardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C4E262FC439000569D6 /* CardNumberTextField.swift */; };
-		72340C53262FC491000569D6 /* CVVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C52262FC491000569D6 /* CVVTextField.swift */; };
-		72340C56262FC6E9000569D6 /* DateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C55262FC6E9000569D6 /* DateTextField.swift */; };
-		72340C59262FC710000569D6 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C58262FC710000569D6 /* NameTextField.swift */; };
-		72340C5D262FC739000569D6 /* AddCardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C5C262FC739000569D6 /* AddCardModule.swift */; };
-		72340C61262FC7B2000569D6 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C60262FC7B2000569D6 /* AddCardView.swift */; };
-		72340C67262FC971000569D6 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C66262FC971000569D6 /* AddCardViewModel.swift */; };
-		72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6A262FC9F7000569D6 /* AddCardViewController.swift */; };
-		72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */; };
-		72340C74262FCC00000569D6 /* BindCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C73262FCC00000569D6 /* BindCardModel.swift */; };
-		72340C79262FD2FD000569D6 /* AddCardApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C78262FD2FD000569D6 /* AddCardApiService.swift */; };
-		724FC563262300B400C1DED3 /* YandexMapEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC562262300B400C1DED3 /* YandexMapEngine.swift */; };
 		722A33C6262568E3003FB38A /* MakeOrderModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33C5262568E3003FB38A /* MakeOrderModule.swift */; };
 		722A33CA262568FC003FB38A /* MakeOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33C9262568FC003FB38A /* MakeOrderViewController.swift */; };
 		722A33CD26256CF7003FB38A /* MakeOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A33CC26256CF7003FB38A /* MakeOrderView.swift */; };
@@ -201,6 +189,17 @@
 		722A348D2626E7BD003FB38A /* PayAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348C2626E7BD003FB38A /* PayAmountView.swift */; };
 		722A34902626EAC6003FB38A /* PayValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348F2626EAC6003FB38A /* PayValueView.swift */; };
 		72340C2C262F5D94000569D6 /* OrderValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C2B262F5D94000569D6 /* OrderValue.swift */; };
+		72340C4F262FC439000569D6 /* CardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C4E262FC439000569D6 /* CardNumberTextField.swift */; };
+		72340C53262FC491000569D6 /* CVVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C52262FC491000569D6 /* CVVTextField.swift */; };
+		72340C56262FC6E9000569D6 /* DateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C55262FC6E9000569D6 /* DateTextField.swift */; };
+		72340C59262FC710000569D6 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C58262FC710000569D6 /* NameTextField.swift */; };
+		72340C5D262FC739000569D6 /* AddCardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C5C262FC739000569D6 /* AddCardModule.swift */; };
+		72340C61262FC7B2000569D6 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C60262FC7B2000569D6 /* AddCardView.swift */; };
+		72340C67262FC971000569D6 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C66262FC971000569D6 /* AddCardViewModel.swift */; };
+		72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6A262FC9F7000569D6 /* AddCardViewController.swift */; };
+		72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */; };
+		72340C74262FCC00000569D6 /* BindCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C73262FCC00000569D6 /* BindCardModel.swift */; };
+		72340C79262FD2FD000569D6 /* AddCardApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C78262FD2FD000569D6 /* AddCardApiService.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
 		724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC58A2624172800C1DED3 /* MapRetail.swift */; };
@@ -271,6 +270,12 @@
 		72FB0840261DC27100F04395 /* SearchApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB083F261DC27100F04395 /* SearchApiTarget.swift */; };
 		72FB0844261DC92100F04395 /* SearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0843261DC92100F04395 /* SearchList.swift */; };
 		72FB0848261DC93700F04395 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0847261DC93700F04395 /* SearchItem.swift */; };
+		72FC29B126311BB10042745F /* MoyaApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29B026311BB10042745F /* MoyaApiService.swift */; };
+		72FC29B426311CC40042745F /* MoyaAddCardApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29B326311CC40042745F /* MoyaAddCardApiTarget.swift */; };
+		72FC29BB263121930042745F /* Post3dsWebViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29BA263121930042745F /* Post3dsWebViewModule.swift */; };
+		72FC29BE263121EC0042745F /* Post3dsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29BD263121EC0042745F /* Post3dsWebViewController.swift */; };
+		72FC29C226312A720042745F /* MyCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29C126312A720042745F /* MyCardsViewModel.swift */; };
+		72FC29C626312CA60042745F /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29C526312CA60042745F /* CardList.swift */; };
 		A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D942611C4D80062BB5B /* UserInfoStorage.swift */; };
 		A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */; };
 		A4057DA22611C5240062BB5B /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DA12611C5240062BB5B /* KeyChainStorage.swift */; };
@@ -702,18 +707,6 @@
 		7211285126202B760055A83A /* RetailListMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapCoordinator.swift; sourceTree = "<group>"; };
 		72112855262070F10055A83A /* RetailListMapModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapModuleFactory.swift; sourceTree = "<group>"; };
 		722A33BA26255483003FB38A /* OrderTypeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeHeaderView.swift; sourceTree = "<group>"; };
-		72340C4E262FC439000569D6 /* CardNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberTextField.swift; sourceTree = "<group>"; };
-		72340C52262FC491000569D6 /* CVVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVVTextField.swift; sourceTree = "<group>"; };
-		72340C55262FC6E9000569D6 /* DateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTextField.swift; sourceTree = "<group>"; };
-		72340C58262FC710000569D6 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
-		72340C5C262FC739000569D6 /* AddCardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardModule.swift; sourceTree = "<group>"; };
-		72340C60262FC7B2000569D6 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
-		72340C66262FC971000569D6 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
-		72340C6A262FC9F7000569D6 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
-		72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiTarget.swift; sourceTree = "<group>"; };
-		72340C73262FCC00000569D6 /* BindCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardModel.swift; sourceTree = "<group>"; };
-		72340C78262FD2FD000569D6 /* AddCardApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiService.swift; sourceTree = "<group>"; };
-		724FC562262300B400C1DED3 /* YandexMapEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapEngine.swift; sourceTree = "<group>"; };
 		722A33C5262568E3003FB38A /* MakeOrderModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderModule.swift; sourceTree = "<group>"; };
 		722A33C9262568FC003FB38A /* MakeOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderViewController.swift; sourceTree = "<group>"; };
 		722A33CC26256CF7003FB38A /* MakeOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderView.swift; sourceTree = "<group>"; };
@@ -727,6 +720,17 @@
 		722A348C2626E7BD003FB38A /* PayAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAmountView.swift; sourceTree = "<group>"; };
 		722A348F2626EAC6003FB38A /* PayValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValueView.swift; sourceTree = "<group>"; };
 		72340C2B262F5D94000569D6 /* OrderValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderValue.swift; sourceTree = "<group>"; };
+		72340C4E262FC439000569D6 /* CardNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberTextField.swift; sourceTree = "<group>"; };
+		72340C52262FC491000569D6 /* CVVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVVTextField.swift; sourceTree = "<group>"; };
+		72340C55262FC6E9000569D6 /* DateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTextField.swift; sourceTree = "<group>"; };
+		72340C58262FC710000569D6 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		72340C5C262FC739000569D6 /* AddCardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardModule.swift; sourceTree = "<group>"; };
+		72340C60262FC7B2000569D6 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		72340C66262FC971000569D6 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		72340C6A262FC9F7000569D6 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiTarget.swift; sourceTree = "<group>"; };
+		72340C73262FCC00000569D6 /* BindCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardModel.swift; sourceTree = "<group>"; };
+		72340C78262FD2FD000569D6 /* AddCardApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiService.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
 		724FC58A2624172800C1DED3 /* MapRetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRetail.swift; sourceTree = "<group>"; };
@@ -801,6 +805,12 @@
 		72FB083F261DC27100F04395 /* SearchApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiTarget.swift; sourceTree = "<group>"; };
 		72FB0843261DC92100F04395 /* SearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchList.swift; sourceTree = "<group>"; };
 		72FB0847261DC93700F04395 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		72FC29B026311BB10042745F /* MoyaApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaApiService.swift; sourceTree = "<group>"; };
+		72FC29B326311CC40042745F /* MoyaAddCardApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaAddCardApiTarget.swift; sourceTree = "<group>"; };
+		72FC29BA263121930042745F /* Post3dsWebViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post3dsWebViewModule.swift; sourceTree = "<group>"; };
+		72FC29BD263121EC0042745F /* Post3dsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post3dsWebViewController.swift; sourceTree = "<group>"; };
+		72FC29C126312A720042745F /* MyCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewModel.swift; sourceTree = "<group>"; };
+		72FC29C526312CA60042745F /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		A4057D942611C4D80062BB5B /* UserInfoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoStorage.swift; sourceTree = "<group>"; };
 		A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStorage.swift; sourceTree = "<group>"; };
 		A4057DA12611C5240062BB5B /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
@@ -1933,6 +1943,8 @@
 		55A5CD412600BC5D004AA13C /* MyCards */ = {
 			isa = PBXGroup;
 			children = (
+				72FC29C426312C9C0042745F /* Model */,
+				72FC29C026312A630042745F /* ViewModel */,
 				55A5CD4C2600C59D004AA13C /* Module */,
 				55A5CD482600C54A004AA13C /* Controller */,
 				55A5CD432600C2A2004AA13C /* View */,
@@ -2586,28 +2598,6 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
-		72340C4D262FC393000569D6 /* AddCard */ = {
-			isa = PBXGroup;
-			children = (
-				72340C77262FD2EF000569D6 /* ApiService */,
-				72340C72262FCBF7000569D6 /* Model */,
-				72340C6D262FCB7B000569D6 /* ApiTarget */,
-				72340C69262FC9EA000569D6 /* Controller */,
-				72340C64262FC935000569D6 /* ViewModel */,
-				72340C5F262FC7A8000569D6 /* View */,
-				72340C5B262FC72D000569D6 /* Module */,
-			);
-			path = AddCard;
-			sourceTree = "<group>";
-		};
-		72340C5B262FC72D000569D6 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				72340C5C262FC739000569D6 /* AddCardModule.swift */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
 		722A33C0262568AA003FB38A /* MakeOrder */ = {
 			isa = PBXGroup;
 			children = (
@@ -2629,14 +2619,6 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
-		72340C5F262FC7A8000569D6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				72340C60262FC7B2000569D6 /* AddCardView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		722A33C2262568BD003FB38A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -2654,52 +2636,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		72340C64262FC935000569D6 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				72340C66262FC971000569D6 /* AddCardViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		722A33C4262568C8003FB38A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				722A3467262629B9003FB38A /* MakeOrderViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		72340C69262FC9EA000569D6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				72340C6A262FC9F7000569D6 /* AddCardViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		72340C6D262FCB7B000569D6 /* ApiTarget */ = {
-			isa = PBXGroup;
-			children = (
-				72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */,
-			);
-			path = ApiTarget;
-			sourceTree = "<group>";
-		};
-		72340C72262FCBF7000569D6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				72340C73262FCC00000569D6 /* BindCardModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		72340C77262FD2EF000569D6 /* ApiService */ = {
-			isa = PBXGroup;
-			children = (
-				72340C78262FD2FD000569D6 /* AddCardApiService.swift */,
-			);
-			path = ApiService;
 			sourceTree = "<group>";
 		};
 		722A33CF26257127003FB38A /* Views */ = {
@@ -2763,6 +2705,78 @@
 				722A348F2626EAC6003FB38A /* PayValueView.swift */,
 			);
 			path = PayAmount;
+			sourceTree = "<group>";
+		};
+		72340C4D262FC393000569D6 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				72340C77262FD2EF000569D6 /* ApiService */,
+				72340C72262FCBF7000569D6 /* Model */,
+				72340C6D262FCB7B000569D6 /* ApiTarget */,
+				72340C69262FC9EA000569D6 /* Controller */,
+				72340C64262FC935000569D6 /* ViewModel */,
+				72340C5F262FC7A8000569D6 /* View */,
+				72340C5B262FC72D000569D6 /* Module */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		72340C5B262FC72D000569D6 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72340C5C262FC739000569D6 /* AddCardModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72340C5F262FC7A8000569D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72340C60262FC7B2000569D6 /* AddCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72340C64262FC935000569D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72340C66262FC971000569D6 /* AddCardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72340C69262FC9EA000569D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72340C6A262FC9F7000569D6 /* AddCardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72340C6D262FCB7B000569D6 /* ApiTarget */ = {
+			isa = PBXGroup;
+			children = (
+				72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */,
+				72FC29B326311CC40042745F /* MoyaAddCardApiTarget.swift */,
+			);
+			path = ApiTarget;
+			sourceTree = "<group>";
+		};
+		72340C72262FCBF7000569D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72340C73262FCC00000569D6 /* BindCardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72340C77262FD2EF000569D6 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				72340C78262FD2FD000569D6 /* AddCardApiService.swift */,
+				72FC29B026311BB10042745F /* MoyaApiService.swift */,
+			);
+			path = ApiService;
 			sourceTree = "<group>";
 		};
 		724FC5802624132C00C1DED3 /* ApiTarget */ = {
@@ -3138,6 +3152,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		72FC29B6263121420042745F /* Post3dsWebView */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29B9263121810042745F /* Controller */,
+				72FC29B7263121780042745F /* Module */,
+			);
+			path = Post3dsWebView;
+			sourceTree = "<group>";
+		};
+		72FC29B7263121780042745F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29BA263121930042745F /* Post3dsWebViewModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72FC29B9263121810042745F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29BD263121EC0042745F /* Post3dsWebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72FC29C026312A630042745F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29C126312A720042745F /* MyCardsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72FC29C426312C9C0042745F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29C526312CA60042745F /* CardList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8176B9877CE758347B33479A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3404,6 +3459,7 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				72FC29B6263121420042745F /* Post3dsWebView */,
 				72340C4D262FC393000569D6 /* AddCard */,
 				5FF910B626254BA200E1EF00 /* PillikanPayNotifications */,
 				5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */,
@@ -5141,6 +5197,7 @@
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
 				724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */,
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
+				72FC29B426311CC40042745F /* MoyaAddCardApiTarget.swift in Sources */,
 				A40B94ED25DE21AA00E507FB /* HomeTabBarModule.swift in Sources */,
 				558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */,
 				72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */,
@@ -5249,6 +5306,7 @@
 				7211284E26202B490055A83A /* RetailListMapModule.swift in Sources */,
 				552531DC262ACF4B00888DEE /* OrderHistoryTarget.swift in Sources */,
 				552531BA2629BF9200888DEE /* DeliveryMenu.swift in Sources */,
+				72FC29C226312A720042745F /* MyCardsViewModel.swift in Sources */,
 				55F4EEFB260C644300EBEA9D /* ScanRetailResponse.swift in Sources */,
 				A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */,
 				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
@@ -5323,6 +5381,7 @@
 				A4D7641E25DA40E1009A6651 /* BaseButton.swift in Sources */,
 				A4EFD4E2261320D200694D18 /* SegmentControl.swift in Sources */,
 				A468EA8225EDFC5C0071FAA6 /* SocialNetwork.swift in Sources */,
+				72FC29C626312CA60042745F /* CardList.swift in Sources */,
 				558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */,
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
@@ -5352,6 +5411,7 @@
 				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
 				A4057DCA2611E2C60062BB5B /* DeliveryRetailListViewModel.swift in Sources */,
 				552531E5262AD0F600888DEE /* OrderHistoryResponse.swift in Sources */,
+				72FC29BE263121EC0042745F /* Post3dsWebViewController.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				72015960262CD7BD0083C758 /* DeliveryLocation.swift in Sources */,
 				55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */,
@@ -5466,6 +5526,7 @@
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				556CF6D6260221A7007B8FB9 /* PayHistoryViewController.swift in Sources */,
 				55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */,
+				72FC29B126311BB10042745F /* MoyaApiService.swift in Sources */,
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,
@@ -5516,6 +5577,7 @@
 				A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */,
 				A475CCB425EF418500C596FB /* HelperProtocols.swift in Sources */,
 				A48CCFF025DB7EDD0010829F /* CameraView.swift in Sources */,
+				72FC29BB263121930042745F /* Post3dsWebViewModule.swift in Sources */,
 				A4EFD3AC2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift in Sources */,
 				A4B9A0FE25F092E500F0A3D6 /* CashBackListHeaderView.swift in Sources */,
 				A475CCD725EF972000C596FB /* RetaiImages.swift in Sources */,
@@ -5648,7 +5710,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5729,7 +5791,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -5871,7 +5933,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5896,7 +5958,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

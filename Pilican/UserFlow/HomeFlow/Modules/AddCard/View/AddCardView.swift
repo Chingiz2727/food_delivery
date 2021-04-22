@@ -119,8 +119,8 @@ class AddCardView: UIView {
         return l
     }()
     
-    lazy var addCardButton: UIButton = {
-        let b = UIButton()
+    lazy var addCardButton: PrimaryButton = {
+        let b = PrimaryButton()
         b.setTitle("Добавить карту", for: .normal)
         b.setImage(UIImage(named: "lock")?.withRenderingMode(.alwaysOriginal), for: .normal)
         b.imageEdgeInsets.left = -40
@@ -128,7 +128,6 @@ class AddCardView: UIView {
         b.titleLabel?.textColor = .white
         b.backgroundColor = UIColor(red: 1, green: 0.596, blue: 0, alpha: 0.4)
         b.layer.cornerRadius = 16
-        b.isEnabled = false
         return b
     }()
     

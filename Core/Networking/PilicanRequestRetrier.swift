@@ -50,6 +50,9 @@ final class PilicanRequestRetrierImpl: PilicanRequestRetrier {
     with error: Error,
     completion: @escaping RequestRetryCompletion
   ) {
+    print("MyURL")
+    
+    print(request.request?.urlRequest?.url)
     shouldRetryRequestFailed(with: error, completion: completion)
   }
 }
