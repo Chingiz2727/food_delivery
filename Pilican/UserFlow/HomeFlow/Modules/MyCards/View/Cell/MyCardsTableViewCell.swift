@@ -8,6 +8,7 @@
 import UIKit
 
 final class MyCardsTableViewCell: UITableViewCell {
+    var removeCard: Callback?
     
     private let cardImageView: UIImageView = {
         let imageView = UIImageView()
@@ -46,6 +47,7 @@ final class MyCardsTableViewCell: UITableViewCell {
         let button = UIButton(type: .system)
         button.setImage(Images.quit.image?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.clipsToBounds = true
+        button.addTarget(self, action: #selector(removeFromCard), for: .touchUpInside)
         return button
     }()
     
@@ -77,8 +79,12 @@ final class MyCardsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc private func removeFromCard() {
+        self.removeCard?()
+    }
+    
     func setupData(card: MyCard) {
-        if card.isMain == 0 {
+        if card.isMain == 1 {
             self.choiceCheckButton.setImage(Images.correct.image?.withRenderingMode(.alwaysOriginal), for: .normal)
         } else {
             self.choiceCheckButton.setImage(Images.correctCircle.image?.withRenderingMode(.alwaysOriginal), for: .normal)

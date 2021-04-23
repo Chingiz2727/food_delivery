@@ -253,6 +253,11 @@
 		728434E9261D807300E21209 /* DeliveryRetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */; };
 		728434ED261D808400E21209 /* DeliveryRetailProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */; };
 		728434F2261D80AA00E21209 /* DeliveryRetailProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */; };
+		72C5E4B62632583D00FEABA1 /* CardRemoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */; };
+		72C5E4BE263261E500FEABA1 /* AddCardStatusModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */; };
+		72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */; };
+		72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */; };
+		72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E51D2632708900FEABA1 /* CardScanner.swift */; };
 		72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */; };
 		72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */; };
 		72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07DF261DA4BD00F04395 /* SearchContainerModule.swift */; };
@@ -797,6 +802,11 @@
 		728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailHeaderView.swift; sourceTree = "<group>"; };
 		728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductsView.swift; sourceTree = "<group>"; };
 		728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductViewModel.swift; sourceTree = "<group>"; };
+		72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRemoveResult.swift; sourceTree = "<group>"; };
+		72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusModule.swift; sourceTree = "<group>"; };
+		72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusView.swift; sourceTree = "<group>"; };
+		72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusViewController.swift; sourceTree = "<group>"; };
+		72C5E51D2632708900FEABA1 /* CardScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanner.swift; sourceTree = "<group>"; };
 		72FABA13261D5E4900EC7EB9 /* ProductCalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCalculateView.swift; sourceTree = "<group>"; };
 		72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarController.swift; sourceTree = "<group>"; };
 		72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -3095,6 +3105,56 @@
 			path = DeliveryRetailProductViewModel;
 			sourceTree = "<group>";
 		};
+		72C5E4B82632616300FEABA1 /* AddCardStatus */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4BC2632618000FEABA1 /* Module */,
+				72C5E4BB2632617A00FEABA1 /* View */,
+				72C5E4BA2632617100FEABA1 /* Controller */,
+			);
+			path = AddCardStatus;
+			sourceTree = "<group>";
+		};
+		72C5E4BA2632617100FEABA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72C5E4BB2632617A00FEABA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72C5E4BC2632618000FEABA1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72C5E51A2632708900FEABA1 /* CardScanner */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E51B2632708900FEABA1 /* Classes */,
+			);
+			path = CardScanner;
+			sourceTree = "<group>";
+		};
+		72C5E51B2632708900FEABA1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E51D2632708900FEABA1 /* CardScanner.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		72FABA18261D6D6600EC7EB9 /* DeliveryTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -3305,6 +3365,7 @@
 			isa = PBXGroup;
 			children = (
 				72FC29C526312CA60042745F /* CardList.swift */,
+				72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3577,29 +3638,30 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				72FC29B6263121420042745F /* Post3dsWebView */,
+				72C5E4B82632616300FEABA1 /* AddCardStatus */,
+				55FCC70225F8D483000DED49 /* About */,
+				5568FECC25ECB276003AA72F /* Account */,
 				72340C4D262FC393000569D6 /* AddCard */,
-				5FF910B626254BA200E1EF00 /* PillikanPayNotifications */,
-				5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */,
-				5FD2F04B26240B870012110C /* NotificationList */,
 				556CF6B82602024D007B8FB9 /* Balance */,
-				5528385C2611C2DC00511608 /* SuccessPayment */,
-				55A7C073260B385D0037D567 /* QRPayment */,
-				5526DAD3260381FF00536589 /* PayDetail */,
-				556CF6C726021B45007B8FB9 /* PayHistory */,
-				55A5CD412600BC5D004AA13C /* MyCards */,
-				55A5CD2C2600A410004AA13C /* MyQR */,
+				55FCC6F125F88731000DED49 /* Bonus */,
+				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
+				5584E82725EE36CD00025251 /* CashbackMenu */,
 				55A5CCE926006100004AA13C /* ChangePassword */,
 				5578855625FF637500B3A798 /* ChangePin */,
 				55D26C7225FA04CB005A36BD /* EditAccount */,
-				55FCC70225F8D483000DED49 /* About */,
-				55FCC6F125F88731000DED49 /* Bonus */,
+				55A5CD412600BC5D004AA13C /* MyCards */,
+				55A5CD2C2600A410004AA13C /* MyQR */,
+				5FD2F04B26240B870012110C /* NotificationList */,
+				5526DAD3260381FF00536589 /* PayDetail */,
+				556CF6C726021B45007B8FB9 /* PayHistory */,
+				5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */,
+				5FF910B626254BA200E1EF00 /* PillikanPayNotifications */,
+				72FC29B6263121420042745F /* Post3dsWebView */,
 				558679BC25F0D06600A5A94B /* Problem */,
-				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
-				A4379FD125ECAF1700910A2D /* RetailDetail */,
-				5584E82725EE36CD00025251 /* CashbackMenu */,
-				5568FECC25ECB276003AA72F /* Account */,
 				A4FAACEF25E75C2500A55CB8 /* ProfileMenu */,
+				55A7C073260B385D0037D567 /* QRPayment */,
+				A4379FD125ECAF1700910A2D /* RetailDetail */,
+				5528385C2611C2DC00511608 /* SuccessPayment */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -4833,6 +4895,7 @@
 		A4DD3E9525D24B98002D2186 /* PilicanView */ = {
 			isa = PBXGroup;
 			children = (
+				72C5E51A2632708900FEABA1 /* CardScanner */,
 				55AA1FDD262814EA004C8F67 /* TaxiView */,
 				72112839262020100055A83A /* YandexMapViewModel */,
 				72FB0803261DA6D600F04395 /* UIView+Extension */,
@@ -5241,6 +5304,7 @@
 				55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
 				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
+				72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				72FB0848261DC93700F04395 /* SearchItem.swift in Sources */,
 				556543B5261DA3F9009A4E62 /* OrderTypeCoordinatorModuleFactory.swift in Sources */,
@@ -5507,6 +5571,7 @@
 				72FC29C626312CA60042745F /* CardList.swift in Sources */,
 				558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */,
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
+				72C5E4BE263261E500FEABA1 /* AddCardStatusModule.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A4EFD4DF261320C200694D18 /* SegmentItem.swift in Sources */,
 				722A33DB2625B093003FB38A /* MakeOrderCommentView.swift in Sources */,
@@ -5586,6 +5651,7 @@
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
+				72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */,
 				722A33D126257147003FB38A /* DeliveryItemView.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
 				55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */,
@@ -5599,6 +5665,7 @@
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
 				72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
+				72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
 				A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */,
 				724FC60C26244FB000C1DED3 /* OrderType.swift in Sources */,
@@ -5696,6 +5763,7 @@
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
 				72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */,
 				722A33CA262568FC003FB38A /* MakeOrderViewController.swift in Sources */,
+				72C5E4B62632583D00FEABA1 /* CardRemoveResult.swift in Sources */,
 				721127F2262012AF0055A83A /* MapTransitionViewModel.swift in Sources */,
 				7211284A2620297C0055A83A /* RetailListMapViewController.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,
@@ -5830,7 +5898,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5911,7 +5979,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6053,7 +6121,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6078,7 +6146,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

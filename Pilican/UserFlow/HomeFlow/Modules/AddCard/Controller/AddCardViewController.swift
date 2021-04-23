@@ -1,12 +1,15 @@
 import RxSwift
-
 import UIKit
 
+#if canImport(CardScanner)
+import CardScanner
+#endif
 class AddCardViewController: ViewController, AddCardModule, ViewHolder {
-
+    
     typealias RootViewType = AddCardView
     var onAddCardTapped: Callback?
     var sendToWebController: SendToWebContrroller?
+    var showCardStatus: ShowAddCardStatus?
     private let viewModel: AddCardViewModel
     private let disposeBag = DisposeBag()
     private let bindCardSubject = PublishSubject<BindCardModel>()
@@ -25,13 +28,14 @@ class AddCardViewController: ViewController, AddCardModule, ViewHolder {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Добавить карту"
         bindViewModel()
+        binvdView()
     }
-
+    
     private func bindViewModel() {
         let output = viewModel.transform(
             input: .init(
-                cardName: .just("Shyngyscard"),
                 holderName: rootView.userNameCardTextField.cardText,
                 cardNumber: rootView.scancardTextField.cardText,
                 cvv: rootView.cvcTextField.cardText,
@@ -43,13 +47,17 @@ class AddCardViewController: ViewController, AddCardModule, ViewHolder {
         
         bindCardModel.element.subscribe(onNext: { [unowned self] model in
             if model.needConfirmation == true {
+                ProgressView.instance.show(.loading, animated: true)
                 MoyaApiService.shared.pass3DSecure(url: model.acsUrl!, model: model, token: self.viewModel.sessionStorage.accessToken ?? "") { (html, error) in
                     if let html = html {
                         self.sendToWebController?(model,html)
                     } else {
-                        self.showErrorInAlert(text: error?.localizedDescription ?? "")
+                        self.showCardStatus?(.failure)
                     }
+                    ProgressView.instance.hide()
                 }
+            } else {
+                self.showCardStatus?(.succes)
             }
         })
         .disposed(by: disposeBag)
@@ -65,22 +73,10 @@ class AddCardViewController: ViewController, AddCardModule, ViewHolder {
         bindCardModel.connect()
             .disposed(by: disposeBag)
         
-        let need3ds = output.need3ds.publish()
-        need3ds.element.subscribe(onNext: { [unowned self] model in
-           print(model)
-        })
-        .disposed(by: disposeBag)
-        need3ds.loading
-            .bind(to: ProgressView.instance.rx.loading)
-            .disposed(by: disposeBag)
         
-        need3ds.errors
-            .bind(to: rx.error)
-            .disposed(by: disposeBag)
-        
-        need3ds.connect()
-            .disposed(by: disposeBag)
-        
+    }
+    
+    private func binvdView() {
         let filled = [
             rootView.userNameCardTextField.isFilled,
             rootView.scancardTextField.isFilled,
@@ -91,5 +87,29 @@ class AddCardViewController: ViewController, AddCardModule, ViewHolder {
             .distinctUntilChanged()
             .bind(to: rootView.addCardButton.rx.isEnabled)
             .disposed(by: disposeBag)
+
+        rootView.scancardTextField.scanButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.showCardScanner()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func showCardScanner() {
+        if #available(iOS 13.0, *) {
+            let scannerView = CardScanner.getScanner { [unowned self] card, date, cvv in
+                print(card)
+                self.rootView.scancardTextField.setValue(text: card ?? "")
+                self.rootView.dateTextField.setValue(text: date ?? "")
+                self.rootView.cvcTextField.setValue(text: cvv ?? "")
+            }
+            self.present(scannerView, animated: true, completion: nil)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    override func customBackButtonDidTap() {
+        navigationController?.popViewController(animated: true)
     }
 }

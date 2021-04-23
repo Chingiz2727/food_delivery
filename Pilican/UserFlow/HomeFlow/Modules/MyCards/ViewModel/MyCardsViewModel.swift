@@ -17,7 +17,7 @@ final class MyCardsViewModel: ViewModel {
     struct Output {
         let result: Observable<LoadingSequence<CardList>>
         let cardSetMain: Observable<LoadingSequence<CardList>>
-        let cardSetRemove: Observable<LoadingSequence<Data>>
+        let cardSetRemove: Observable<LoadingSequence<CardRemoveResult>>
     }
     
     
@@ -39,7 +39,7 @@ final class MyCardsViewModel: ViewModel {
         let removeCard = input.removeCard
             .flatMap { [unowned self] id in
                 return self.apiService.makeRequest(to: AddCardApiTarget.deleteCard(cardID: id))
-                    .result(CardList.self)
+                    .result(CardRemoveResult.self)
                     .asLoadingSequence()
             }.share()
         

@@ -11,10 +11,34 @@ import SnapKit
 
 final class MyCardsView: UIView {
     let tableView = UITableView()
-    let footerView = MyCardsFooterView()
-
+    let addCardButton: UIButton = {
+        let button = UIButton()
+        button.setTitle( "Добавить карту", for: .normal)
+        button.backgroundColor = .primary
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 20
+        button.layer.addShadow()
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.medium16
+        return button
+    }()
+    private var heightConstraint: Constraint?
+    private var contentSizeObserver: NSKeyValueObservation?
+    private lazy var stackView = UIStackView(
+        views: [tableView, addCardButton, UIView()],
+        axis: .vertical,
+        distribution: .fill,
+        spacing: 10)
+    private lazy var scrollView = UIScrollView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentSizeObserver = tableView.observe(
+            \.contentSize,
+            options: [.initial, .new]
+        ) { [weak self] tableView, _ in
+            self?.heightConstraint?.update(offset: max(40, tableView.contentSize.height))
+        }
         setupInitialLayout()
         configureView()
     }
@@ -24,17 +48,23 @@ final class MyCardsView: UIView {
     }
 
     private func setupInitialLayout() {
-        addSubview(tableView)
+        addSubview(scrollView)
+        scrollView.snp.makeConstraints { $0.edges.width.height.equalToSuperview() }
+        scrollView.addSubview(stackView)
+        stackView.snp.makeConstraints { $0.edges.equalTo(self) }
         tableView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.bottom.equalTo(safeAreaLayoutGuide).inset(10)
+            make.top.equalTo(safeAreaLayoutGuide).inset(10)
+            heightConstraint = make.height.equalTo(0).constraint
         }
-        footerView.isUserInteractionEnabled = true
+        addCardButton.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.leading.trailing.equalTo(self).inset(20)
+        }
     }
 
     private func configureView() {
         tableView.backgroundColor = .background
         backgroundColor = .background
-        tableView.tableFooterView = footerView
     }
 }

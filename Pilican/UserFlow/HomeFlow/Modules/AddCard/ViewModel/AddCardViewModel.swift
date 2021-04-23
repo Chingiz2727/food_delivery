@@ -6,15 +6,16 @@ import RxSwift
 final class AddCardViewModel: ViewModel {
     
     private let addCardApiService: AddCardApiService
+    private let cardName: String
+    
     let sessionStorage: UserSessionStorage
-
-    init(addCardApiService: AddCardApiService, sessionStorage: UserSessionStorage) {
+    init(addCardApiService: AddCardApiService, sessionStorage: UserSessionStorage, cardName: String) {
         self.addCardApiService = addCardApiService
         self.sessionStorage = sessionStorage
+        self.cardName = cardName
     }
     
     struct Input {
-        let cardName: Observable<String>
         let holderName: Observable<String>
         let cardNumber: Observable<String>
         let cvv: Observable<String>
@@ -33,14 +34,13 @@ final class AddCardViewModel: ViewModel {
 
         let makeCryptogram = input.addTapped
             .withLatestFrom(Observable.combineLatest(
-                input.cardName,
                 input.holderName,
                 input.cardNumber,
                 input.cvv,
                 input.date
-            )).flatMap { [unowned self] cardName, userName, cardNumber, cvv, date -> Observable<LoadingSequence<BindCardModel>> in
+            )).flatMap { [unowned self] userName, cardNumber, cvv, date -> Observable<LoadingSequence<BindCardModel>> in
                 let cryptoGram = card.makeCryptogramPacket(cardNumber, andExpDate: date, andCVV: cvv, andMerchantPublicID: AppEnviroment.cloudPaymentId)
-                return self.addCardApiService.bindCard(cardHolderName: userName, cryptoGram: cryptoGram ?? "", cardName: cardName)
+                return self.addCardApiService.bindCard(cardHolderName: userName, cryptoGram: cryptoGram ?? "", cardName: self.cardName)
             }
         
         let need3ds = input.makeCryptogram
