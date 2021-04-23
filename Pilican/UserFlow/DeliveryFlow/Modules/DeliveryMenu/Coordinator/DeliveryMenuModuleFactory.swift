@@ -25,7 +25,9 @@ final class DeliveryMenuModuleFactory {
     }
     
     func makeMyCards() -> MyCardsModule {
-        return MyCardsViewController()
+        let apiService = container.resolve(ApiService.self)!
+        let myCardViewModel = MyCardsViewModel(apiService: apiService)
+        return MyCardsViewController(viewModel: myCardViewModel)
     }
     
     func makeOrderHistory() -> OrderHistoryModule {

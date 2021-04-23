@@ -40,7 +40,10 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
     }
 
     private func showMyCards() {
-        let module = moduleFactory.makeMyCards()
+        var module = moduleFactory.makeMyCards()
+        module.addCard = { [weak self] cardName in
+            self?.showAddCard(cardName: cardName)
+        }
         router.push(module)
     }
 
@@ -67,5 +70,39 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
     private func showPayDetail(payments: Payments) {
         let module = moduleFactory.makePayDetail(payments: payments)
         router.presentCard(module)
+    }
+    
+    private func showAddCard(cardName: String) {
+        var module = moduleFactory.makeAddCard(cardName: cardName)
+        module.sendToWebController = { [weak self] model, html in
+            self?.show3dsWebView(cardModel: model, htmlString: html)
+        }
+        
+        module.showCardStatus = { [weak self] status in
+            self?.showCardStatus(status: status)
+        }
+        
+        router.push(module)
+    }
+    
+    private func show3dsWebView(cardModel: BindCardModel, htmlString: String) {
+        var module = moduleFactory.make3dsWeb(cardModel: cardModel, htmlString: htmlString)
+        module.onCardAddTryed = { [weak self] status in
+            self?.router.dismissModule(animated: true, completion: {
+                self?.showCardStatus(status: status)
+            })
+        }
+        router.present(module)
+    }
+    
+    private func showCardStatus(status: Status) {
+        var module = moduleFactory.showCardStatus(status: status)
+        module.onReturnDidTap = { [unowned self] in
+            self.router.popModule()
+        }
+        module.onCloseDidTap = { [unowned self] in
+            self.router.popToRootModule()
+        }
+        router.push(module)
     }
 }
