@@ -202,6 +202,17 @@
 		722A348D2626E7BD003FB38A /* PayAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348C2626E7BD003FB38A /* PayAmountView.swift */; };
 		722A34902626EAC6003FB38A /* PayValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A348F2626EAC6003FB38A /* PayValueView.swift */; };
 		72340C2C262F5D94000569D6 /* OrderValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C2B262F5D94000569D6 /* OrderValue.swift */; };
+		72340C4F262FC439000569D6 /* CardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C4E262FC439000569D6 /* CardNumberTextField.swift */; };
+		72340C53262FC491000569D6 /* CVVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C52262FC491000569D6 /* CVVTextField.swift */; };
+		72340C56262FC6E9000569D6 /* DateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C55262FC6E9000569D6 /* DateTextField.swift */; };
+		72340C59262FC710000569D6 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C58262FC710000569D6 /* NameTextField.swift */; };
+		72340C5D262FC739000569D6 /* AddCardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C5C262FC739000569D6 /* AddCardModule.swift */; };
+		72340C61262FC7B2000569D6 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C60262FC7B2000569D6 /* AddCardView.swift */; };
+		72340C67262FC971000569D6 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C66262FC971000569D6 /* AddCardViewModel.swift */; };
+		72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6A262FC9F7000569D6 /* AddCardViewController.swift */; };
+		72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */; };
+		72340C74262FCC00000569D6 /* BindCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C73262FCC00000569D6 /* BindCardModel.swift */; };
+		72340C79262FD2FD000569D6 /* AddCardApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C78262FD2FD000569D6 /* AddCardApiService.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
 		724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC58A2624172800C1DED3 /* MapRetail.swift */; };
@@ -245,6 +256,11 @@
 		728434E9261D807300E21209 /* DeliveryRetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */; };
 		728434ED261D808400E21209 /* DeliveryRetailProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */; };
 		728434F2261D80AA00E21209 /* DeliveryRetailProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */; };
+		72C5E4B62632583D00FEABA1 /* CardRemoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */; };
+		72C5E4BE263261E500FEABA1 /* AddCardStatusModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */; };
+		72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */; };
+		72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */; };
+		72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E51D2632708900FEABA1 /* CardScanner.swift */; };
 		72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */; };
 		72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */; };
 		72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07DF261DA4BD00F04395 /* SearchContainerModule.swift */; };
@@ -272,6 +288,12 @@
 		72FB0840261DC27100F04395 /* SearchApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB083F261DC27100F04395 /* SearchApiTarget.swift */; };
 		72FB0844261DC92100F04395 /* SearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0843261DC92100F04395 /* SearchList.swift */; };
 		72FB0848261DC93700F04395 /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB0847261DC93700F04395 /* SearchItem.swift */; };
+		72FC29B126311BB10042745F /* MoyaApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29B026311BB10042745F /* MoyaApiService.swift */; };
+		72FC29B426311CC40042745F /* MoyaAddCardApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29B326311CC40042745F /* MoyaAddCardApiTarget.swift */; };
+		72FC29BB263121930042745F /* Post3dsWebViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29BA263121930042745F /* Post3dsWebViewModule.swift */; };
+		72FC29BE263121EC0042745F /* Post3dsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29BD263121EC0042745F /* Post3dsWebViewController.swift */; };
+		72FC29C226312A720042745F /* MyCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29C126312A720042745F /* MyCardsViewModel.swift */; };
+		72FC29C626312CA60042745F /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC29C526312CA60042745F /* CardList.swift */; };
 		A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D942611C4D80062BB5B /* UserInfoStorage.swift */; };
 		A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */; };
 		A4057DA22611C5240062BB5B /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4057DA12611C5240062BB5B /* KeyChainStorage.swift */; };
@@ -729,6 +751,17 @@
 		722A348C2626E7BD003FB38A /* PayAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayAmountView.swift; sourceTree = "<group>"; };
 		722A348F2626EAC6003FB38A /* PayValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValueView.swift; sourceTree = "<group>"; };
 		72340C2B262F5D94000569D6 /* OrderValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderValue.swift; sourceTree = "<group>"; };
+		72340C4E262FC439000569D6 /* CardNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberTextField.swift; sourceTree = "<group>"; };
+		72340C52262FC491000569D6 /* CVVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVVTextField.swift; sourceTree = "<group>"; };
+		72340C55262FC6E9000569D6 /* DateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTextField.swift; sourceTree = "<group>"; };
+		72340C58262FC710000569D6 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		72340C5C262FC739000569D6 /* AddCardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardModule.swift; sourceTree = "<group>"; };
+		72340C60262FC7B2000569D6 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		72340C66262FC971000569D6 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		72340C6A262FC9F7000569D6 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiTarget.swift; sourceTree = "<group>"; };
+		72340C73262FCC00000569D6 /* BindCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardModel.swift; sourceTree = "<group>"; };
+		72340C78262FD2FD000569D6 /* AddCardApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiService.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
 		724FC58A2624172800C1DED3 /* MapRetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRetail.swift; sourceTree = "<group>"; };
@@ -775,6 +808,11 @@
 		728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailHeaderView.swift; sourceTree = "<group>"; };
 		728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductsView.swift; sourceTree = "<group>"; };
 		728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductViewModel.swift; sourceTree = "<group>"; };
+		72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRemoveResult.swift; sourceTree = "<group>"; };
+		72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusModule.swift; sourceTree = "<group>"; };
+		72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusView.swift; sourceTree = "<group>"; };
+		72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusViewController.swift; sourceTree = "<group>"; };
+		72C5E51D2632708900FEABA1 /* CardScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanner.swift; sourceTree = "<group>"; };
 		72FABA13261D5E4900EC7EB9 /* ProductCalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCalculateView.swift; sourceTree = "<group>"; };
 		72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarController.swift; sourceTree = "<group>"; };
 		72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -803,6 +841,12 @@
 		72FB083F261DC27100F04395 /* SearchApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchApiTarget.swift; sourceTree = "<group>"; };
 		72FB0843261DC92100F04395 /* SearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchList.swift; sourceTree = "<group>"; };
 		72FB0847261DC93700F04395 /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		72FC29B026311BB10042745F /* MoyaApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaApiService.swift; sourceTree = "<group>"; };
+		72FC29B326311CC40042745F /* MoyaAddCardApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaAddCardApiTarget.swift; sourceTree = "<group>"; };
+		72FC29BA263121930042745F /* Post3dsWebViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post3dsWebViewModule.swift; sourceTree = "<group>"; };
+		72FC29BD263121EC0042745F /* Post3dsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post3dsWebViewController.swift; sourceTree = "<group>"; };
+		72FC29C126312A720042745F /* MyCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewModel.swift; sourceTree = "<group>"; };
+		72FC29C526312CA60042745F /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		A4057D942611C4D80062BB5B /* UserInfoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoStorage.swift; sourceTree = "<group>"; };
 		A4057D9C2611C5080062BB5B /* UserSessionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionStorage.swift; sourceTree = "<group>"; };
 		A4057DA12611C5240062BB5B /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
@@ -1962,6 +2006,8 @@
 		55A5CD412600BC5D004AA13C /* MyCards */ = {
 			isa = PBXGroup;
 			children = (
+				72FC29C426312C9C0042745F /* Model */,
+				72FC29C026312A630042745F /* ViewModel */,
 				55A5CD4C2600C59D004AA13C /* Module */,
 				55A5CD482600C54A004AA13C /* Controller */,
 				55A5CD432600C2A2004AA13C /* View */,
@@ -2827,6 +2873,78 @@
 			path = PayAmount;
 			sourceTree = "<group>";
 		};
+		72340C4D262FC393000569D6 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				72340C77262FD2EF000569D6 /* ApiService */,
+				72340C72262FCBF7000569D6 /* Model */,
+				72340C6D262FCB7B000569D6 /* ApiTarget */,
+				72340C69262FC9EA000569D6 /* Controller */,
+				72340C64262FC935000569D6 /* ViewModel */,
+				72340C5F262FC7A8000569D6 /* View */,
+				72340C5B262FC72D000569D6 /* Module */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		72340C5B262FC72D000569D6 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72340C5C262FC739000569D6 /* AddCardModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72340C5F262FC7A8000569D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72340C60262FC7B2000569D6 /* AddCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72340C64262FC935000569D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72340C66262FC971000569D6 /* AddCardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72340C69262FC9EA000569D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72340C6A262FC9F7000569D6 /* AddCardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72340C6D262FCB7B000569D6 /* ApiTarget */ = {
+			isa = PBXGroup;
+			children = (
+				72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */,
+				72FC29B326311CC40042745F /* MoyaAddCardApiTarget.swift */,
+			);
+			path = ApiTarget;
+			sourceTree = "<group>";
+		};
+		72340C72262FCBF7000569D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72340C73262FCC00000569D6 /* BindCardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72340C77262FD2EF000569D6 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				72340C78262FD2FD000569D6 /* AddCardApiService.swift */,
+				72FC29B026311BB10042745F /* MoyaApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
 		724FC5802624132C00C1DED3 /* ApiTarget */ = {
 			isa = PBXGroup;
 			children = (
@@ -3027,6 +3145,56 @@
 			path = DeliveryRetailProductViewModel;
 			sourceTree = "<group>";
 		};
+		72C5E4B82632616300FEABA1 /* AddCardStatus */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4BC2632618000FEABA1 /* Module */,
+				72C5E4BB2632617A00FEABA1 /* View */,
+				72C5E4BA2632617100FEABA1 /* Controller */,
+			);
+			path = AddCardStatus;
+			sourceTree = "<group>";
+		};
+		72C5E4BA2632617100FEABA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72C5E4BB2632617A00FEABA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72C5E4BC2632618000FEABA1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72C5E51A2632708900FEABA1 /* CardScanner */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E51B2632708900FEABA1 /* Classes */,
+			);
+			path = CardScanner;
+			sourceTree = "<group>";
+		};
+		72C5E51B2632708900FEABA1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				72C5E51D2632708900FEABA1 /* CardScanner.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		72FABA18261D6D6600EC7EB9 /* DeliveryTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -3196,6 +3364,48 @@
 			children = (
 				72FB0843261DC92100F04395 /* SearchList.swift */,
 				72FB0847261DC93700F04395 /* SearchItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72FC29B6263121420042745F /* Post3dsWebView */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29B9263121810042745F /* Controller */,
+				72FC29B7263121780042745F /* Module */,
+			);
+			path = Post3dsWebView;
+			sourceTree = "<group>";
+		};
+		72FC29B7263121780042745F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29BA263121930042745F /* Post3dsWebViewModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72FC29B9263121810042745F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29BD263121EC0042745F /* Post3dsWebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72FC29C026312A630042745F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29C126312A720042745F /* MyCardsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72FC29C426312C9C0042745F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72FC29C526312CA60042745F /* CardList.swift */,
+				72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3469,27 +3679,30 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				5FF910B626254BA200E1EF00 /* PillikanPayNotifications */,
-				5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */,
-				5FD2F04B26240B870012110C /* NotificationList */,
+				72C5E4B82632616300FEABA1 /* AddCardStatus */,
+				55FCC70225F8D483000DED49 /* About */,
+				5568FECC25ECB276003AA72F /* Account */,
+				72340C4D262FC393000569D6 /* AddCard */,
 				556CF6B82602024D007B8FB9 /* Balance */,
-				5528385C2611C2DC00511608 /* SuccessPayment */,
-				55A7C073260B385D0037D567 /* QRPayment */,
-				5526DAD3260381FF00536589 /* PayDetail */,
-				556CF6C726021B45007B8FB9 /* PayHistory */,
-				55A5CD412600BC5D004AA13C /* MyCards */,
-				55A5CD2C2600A410004AA13C /* MyQR */,
+				55FCC6F125F88731000DED49 /* Bonus */,
+				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
+				5584E82725EE36CD00025251 /* CashbackMenu */,
 				55A5CCE926006100004AA13C /* ChangePassword */,
 				5578855625FF637500B3A798 /* ChangePin */,
 				55D26C7225FA04CB005A36BD /* EditAccount */,
-				55FCC70225F8D483000DED49 /* About */,
-				55FCC6F125F88731000DED49 /* Bonus */,
+				55A5CD412600BC5D004AA13C /* MyCards */,
+				55A5CD2C2600A410004AA13C /* MyQR */,
+				5FD2F04B26240B870012110C /* NotificationList */,
+				5526DAD3260381FF00536589 /* PayDetail */,
+				556CF6C726021B45007B8FB9 /* PayHistory */,
+				5FF910B526254B4000E1EF00 /* PillikanInfoNotifications */,
+				5FF910B626254BA200E1EF00 /* PillikanPayNotifications */,
+				72FC29B6263121420042745F /* Post3dsWebView */,
 				558679BC25F0D06600A5A94B /* Problem */,
-				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
-				A4379FD125ECAF1700910A2D /* RetailDetail */,
-				5584E82725EE36CD00025251 /* CashbackMenu */,
-				5568FECC25ECB276003AA72F /* Account */,
 				A4FAACEF25E75C2500A55CB8 /* ProfileMenu */,
+				55A7C073260B385D0037D567 /* QRPayment */,
+				A4379FD125ECAF1700910A2D /* RetailDetail */,
+				5528385C2611C2DC00511608 /* SuccessPayment */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -4723,6 +4936,7 @@
 		A4DD3E9525D24B98002D2186 /* PilicanView */ = {
 			isa = PBXGroup;
 			children = (
+				72C5E51A2632708900FEABA1 /* CardScanner */,
 				55AA1FDD262814EA004C8F67 /* TaxiView */,
 				72112839262020100055A83A /* YandexMapViewModel */,
 				72FB0803261DA6D600F04395 /* UIView+Extension */,
@@ -4750,6 +4964,10 @@
 				A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */,
 				A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */,
 				A4BBC72125D6402D006AF382 /* QrCodeTextField.swift */,
+				72340C4E262FC439000569D6 /* CardNumberTextField.swift */,
+				72340C52262FC491000569D6 /* CVVTextField.swift */,
+				72340C55262FC6E9000569D6 /* DateTextField.swift */,
+				72340C58262FC710000569D6 /* NameTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -5110,10 +5328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72340C74262FCC00000569D6 /* BindCardModel.swift in Sources */,
 				A468EA9125EE3D790071FAA6 /* IdentificatorPayControl.swift in Sources */,
 				A483E27425D40ABE006D2DAF /* NotificationTokenService.swift in Sources */,
 				A47CA1EB25E36E8000EB091C /* AdditionalMenuTransitioningDelegate.swift in Sources */,
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
+				72340C53262FC491000569D6 /* CVVTextField.swift in Sources */,
 				55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */,
 				721127E726200EDA0055A83A /* MapStatus.swift in Sources */,
 				7201595C262CC91A0083C758 /* DeliveryLocationMapViewModel.swift in Sources */,
@@ -5125,6 +5345,7 @@
 				55A5CD392600A8BB004AA13C /* MyQRViewController.swift in Sources */,
 				A483E27325D40ABE006D2DAF /* Requestable.swift in Sources */,
 				A475CCB925EF41AD00C596FB /* DateFormatting.swift in Sources */,
+				72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				72FB0848261DC93700F04395 /* SearchItem.swift in Sources */,
 				556543B5261DA3F9009A4E62 /* OrderTypeCoordinatorModuleFactory.swift in Sources */,
@@ -5181,6 +5402,7 @@
 				A43BC83925DFC36000D45225 /* TababbleCoordinator.swift in Sources */,
 				A47CA1E725E36E8000EB091C /* CardSegue.swift in Sources */,
 				A40A53C125D2596E00BBFDFA /* TextField.swift in Sources */,
+				72340C59262FC710000569D6 /* NameTextField.swift in Sources */,
 				A483E27825D40ABE006D2DAF /* PilicanRequestAdapter.swift in Sources */,
 				A4BBC6DF25D6390B006AF382 /* BackContainerViewController.swift in Sources */,
 				A4EFD4CE2612F89100694D18 /* DeliveryButtonsView.swift in Sources */,
@@ -5200,8 +5422,10 @@
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
 				724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */,
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
+				72FC29B426311CC40042745F /* MoyaAddCardApiTarget.swift in Sources */,
 				A40B94ED25DE21AA00E507FB /* HomeTabBarModule.swift in Sources */,
 				558679DD25F0D87800A5A94B /* ProblemViewController.swift in Sources */,
+				72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */,
 				A40B950625DE23CC00E507FB /* HomeTabBarViewController.swift in Sources */,
 				A4BBC6CC25D612C8006AF382 /* CameraModule.swift in Sources */,
 				5FD2F058262417FB0012110C /* NotificationListView.swift in Sources */,
@@ -5259,6 +5483,7 @@
 				5526DADB2603824000536589 /* PayDetailModule.swift in Sources */,
 				A4B9A12625F0A18600F0A3D6 /* CashBackListViewController.swift in Sources */,
 				55253191262942E700888DEE /* FavoriteStatus.swift in Sources */,
+				72340C61262FC7B2000569D6 /* AddCardView.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
 				55AE8978261B302100D82489 /* PinCodeResponse.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
@@ -5310,6 +5535,7 @@
 				7211284E26202B490055A83A /* RetailListMapModule.swift in Sources */,
 				552531DC262ACF4B00888DEE /* OrderHistoryTarget.swift in Sources */,
 				552531BA2629BF9200888DEE /* DeliveryMenu.swift in Sources */,
+				72FC29C226312A720042745F /* MyCardsViewModel.swift in Sources */,
 				55F4EEFB260C644300EBEA9D /* ScanRetailResponse.swift in Sources */,
 				A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */,
 				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
@@ -5330,10 +5556,12 @@
 				A483E29B25D40ABE006D2DAF /* ImageSlideshow.swift in Sources */,
 				724FC5AD262419BE00C1DED3 /* AnimationParameters.swift in Sources */,
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
+				72340C5D262FC739000569D6 /* AddCardModule.swift in Sources */,
 				5FF910C92625748300E1EF00 /* PillikanInfoViewModel.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
+				72340C4F262FC439000569D6 /* CardNumberTextField.swift in Sources */,
 				556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */,
 				72FB0801261DA57900F04395 /* SearchViewController.swift in Sources */,
 				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
@@ -5383,8 +5611,10 @@
 				A4D7641E25DA40E1009A6651 /* BaseButton.swift in Sources */,
 				A4EFD4E2261320D200694D18 /* SegmentControl.swift in Sources */,
 				A468EA8225EDFC5C0071FAA6 /* SocialNetwork.swift in Sources */,
+				72FC29C626312CA60042745F /* CardList.swift in Sources */,
 				558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */,
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
+				72C5E4BE263261E500FEABA1 /* AddCardStatusModule.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A4EFD4DF261320C200694D18 /* SegmentItem.swift in Sources */,
 				722A33DB2625B093003FB38A /* MakeOrderCommentView.swift in Sources */,
@@ -5409,9 +5639,11 @@
 				72112846262027C70055A83A /* RetailListMapView.swift in Sources */,
 				A47CA1AF25E36DA200EB091C /* BaseCoordinator.swift in Sources */,
 				A437A09725ECBBAD00910A2D /* RetailDetailCoordinator.swift in Sources */,
+				72340C79262FD2FD000569D6 /* AddCardApiService.swift in Sources */,
 				A475CCC525EF424400C596FB /* UserDefaultStorage.swift in Sources */,
 				A4057DCA2611E2C60062BB5B /* DeliveryRetailListViewModel.swift in Sources */,
 				552531E5262AD0F600888DEE /* OrderHistoryResponse.swift in Sources */,
+				72FC29BE263121EC0042745F /* Post3dsWebViewController.swift in Sources */,
 				A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */,
 				72015960262CD7BD0083C758 /* DeliveryLocation.swift in Sources */,
 				55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */,
@@ -5462,6 +5694,7 @@
 				A468EA9625EE45F60071FAA6 /* DeliveryView.swift in Sources */,
 				A47CA1E825E36E8000EB091C /* Router+Transitions.swift in Sources */,
 				A4BBC6E625D639AB006AF382 /* UIView+Extension.swift in Sources */,
+				72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */,
 				722A33D126257147003FB38A /* DeliveryItemView.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
 				55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */,
@@ -5473,7 +5706,9 @@
 				5FF910BE26254C4C00E1EF00 /* PillikanInfoModule.swift in Sources */,
 				55DB7D9326312B0B0086B562 /* OrderSuccessModule.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
+				72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
+				72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
 				A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */,
 				724FC60C26244FB000C1DED3 /* OrderType.swift in Sources */,
@@ -5482,6 +5717,7 @@
 				55173251261D6BAE0031623B /* OrderTypeView.swift in Sources */,
 				55DB7DA02631381D0086B562 /* OrderErrorModule.swift in Sources */,
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
+				72340C67262FC971000569D6 /* AddCardViewModel.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
 				5555237425EF907A00537D3F /* User.swift in Sources */,
 				5FF910E02625B80600E1EF00 /* PillikanPayView.swift in Sources */,
@@ -5517,6 +5753,7 @@
 				5568FED225ECB74E003AA72F /* AccountCollectionViewController.swift in Sources */,
 				A40B94CE25DD974C00E507FB /* HomeTabBar.swift in Sources */,
 				55F4EEF0260C3ACC00EBEA9D /* QRPaymentModule.swift in Sources */,
+				72340C56262FC6E9000569D6 /* DateTextField.swift in Sources */,
 				A40B95E525DE331600E507FB /* HomeViewController.swift in Sources */,
 				55C401F325F2380E00145996 /* Claim.swift in Sources */,
 				721127EB26200F050055A83A /* MapPoint.swift in Sources */,
@@ -5527,6 +5764,7 @@
 				A483E29625D40ABE006D2DAF /* LoggerConfigurator.swift in Sources */,
 				556CF6D6260221A7007B8FB9 /* PayHistoryViewController.swift in Sources */,
 				55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */,
+				72FC29B126311BB10042745F /* MoyaApiService.swift in Sources */,
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
 				55312292262EC37400D33A1E /* BalanceViewModel.swift in Sources */,
@@ -5569,6 +5807,7 @@
 				A4FAAD1A25E761A700A55CB8 /* ProfileMenuModuleFactory.swift in Sources */,
 				72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */,
 				722A33CA262568FC003FB38A /* MakeOrderViewController.swift in Sources */,
+				72C5E4B62632583D00FEABA1 /* CardRemoveResult.swift in Sources */,
 				721127F2262012AF0055A83A /* MapTransitionViewModel.swift in Sources */,
 				7211284A2620297C0055A83A /* RetailListMapViewController.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,
@@ -5578,6 +5817,7 @@
 				A4FAACF425E75C6700A55CB8 /* ProfileMenuViewController.swift in Sources */,
 				A475CCB425EF418500C596FB /* HelperProtocols.swift in Sources */,
 				A48CCFF025DB7EDD0010829F /* CameraView.swift in Sources */,
+				72FC29BB263121930042745F /* Post3dsWebViewModule.swift in Sources */,
 				A4EFD3AC2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift in Sources */,
 				A4B9A0FE25F092E500F0A3D6 /* CashBackListHeaderView.swift in Sources */,
 				A475CCD725EF972000C596FB /* RetaiImages.swift in Sources */,
@@ -5702,7 +5942,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5710,7 +5950,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5783,7 +6023,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5791,7 +6031,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -5925,7 +6165,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5933,7 +6173,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -5950,7 +6190,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5958,7 +6198,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = pilican.Pilican;
+				PRODUCT_BUNDLE_IDENTIFIER = pillican.Pilican;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

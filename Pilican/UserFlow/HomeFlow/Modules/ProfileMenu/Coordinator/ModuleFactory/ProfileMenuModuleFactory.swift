@@ -10,7 +10,9 @@ final class ProfileMenuModuleFactory {
     }
     
     func makeMyCards() -> MyCardsModule {
-        return MyCardsViewController()
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = MyCardsViewModel(apiService: apiService)
+        return MyCardsViewController(viewModel: viewModel)
     }
 
     func makeMyQR() -> MyQRModule {
