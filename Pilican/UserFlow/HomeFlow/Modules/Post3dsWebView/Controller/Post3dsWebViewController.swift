@@ -39,6 +39,7 @@ final class Post3dsWebViewController: UIViewController, Post3dsWebViewModule, WK
         var urlRequest = URLRequest(url: url)
         
         urlRequest.httpMethod = "POST"
+        // swiftlint:disable line_length
         let requestBody = String.init(format: "MD=%@&PaReq=%@&TermUrl=%@", "\(bindCardModel.mD ?? 0)", bindCardModel.paReq ?? "","https://demo.cloudpayments.ru/WebFormPost/GetWebViewData").replacingOccurrences(of: "+", with: "%2B")
         urlRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField:"Content-Type")
         urlRequest.httpBody = requestBody.data(using: .utf8,allowLossyConversion: false)

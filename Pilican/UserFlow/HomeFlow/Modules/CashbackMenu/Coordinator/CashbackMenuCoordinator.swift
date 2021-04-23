@@ -41,6 +41,9 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
 
     private func showMyCards() {
         var module = moduleFactory.makeMyCards()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         module.addCard = { [weak self] cardName in
             self?.showAddCard(cardName: cardName)
         }
@@ -56,6 +59,9 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         module.dissmissBalanceModule = { [weak self] in
             self?.router.dismissModule()
         }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
     
@@ -63,6 +69,9 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         var module = moduleFactory.makePayHistory()
         module.onSelectPayHistory = { [weak self] payments in
             self?.showPayDetail(payments: payments)
+        }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
         }
         router.push(module)
     }

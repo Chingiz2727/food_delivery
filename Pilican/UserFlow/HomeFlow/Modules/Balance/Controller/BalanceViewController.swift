@@ -8,6 +8,7 @@ import RxSwift
 import UIKit
 
 class BalanceViewController: ViewController, ViewHolder, BalanceModule {
+    var closeButton: CloseButton?
     var dissmissBalanceModule: DissmissBalanceModule?
     
     typealias RootViewType = BalanceView
@@ -59,5 +60,9 @@ class BalanceViewController: ViewController, ViewHolder, BalanceModule {
 
         result.connect()
             .disposed(by: disposeBag)
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

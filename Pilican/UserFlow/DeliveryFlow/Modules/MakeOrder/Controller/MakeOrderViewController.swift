@@ -2,6 +2,7 @@ import RxSwift
 import YandexMapsMobile
 import CoreLocation
 import UIKit
+// swiftlint:disable function_body_length
 
 class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     var orderError: OrderError?
@@ -46,7 +47,6 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         configureMap()
         viewModel.orderType = orderType.title == "Доставка Pillikan" ? 1 : 2
     }
-
     private func bindViewModel() {
         let output = viewModel.transform(
             input: .init(
@@ -71,7 +71,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                     self.orderError?()
                 }
             }).disposed(by: disposeBag)
-        
+
         order.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)
@@ -126,7 +126,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         viewModel.dishList.wishDishList
             .bind(to: rootView.tableView.rx.items(BasketItemViewCell.self)) { _, model, cell  in
                 cell.setup(product: model)
-                cell.addProduct = { product in
+                cell.addProduct = { [unowned self] product in
                     self.changeDishList(action: .addToDish(product!))
                 }
                 cell.removeProduct = { product in

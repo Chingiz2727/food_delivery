@@ -136,6 +136,7 @@ final class MyCardsViewController: ViewController, ViewHolder, MyCardsModule {
     }
     
     private func showAddCardAlert() {
+        // swiftlint:disable line_length
         let alert = UIAlertController(title: "Привязка карты", message: "Для подтверждения банковской карты будет списана и начислена на ваш баланс сумма от 10 до 50 тенге! Введите название карты:", preferredStyle: .alert)
         alert.addTextField { [unowned self] textField in
             textField.placeholder = "Наименование карты"

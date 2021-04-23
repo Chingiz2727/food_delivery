@@ -44,6 +44,19 @@ public extension UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    func showBasketAlert(onhandler: @escaping () -> Void) {
+        let controller = UIAlertController(title: "", message: "Вы хотите очистить корзину?", preferredStyle: .alert)
+        let clearAction = UIAlertAction(title: "Очистить", style: .destructive, handler:  { _ in
+            onhandler()
+        })
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default) { (cancel) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        controller.addAction(clearAction)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
     func showConfirmAlert(
         message alertMessage: String?,
         style: UIAlertController.Style = .actionSheet,
@@ -56,12 +69,12 @@ public extension UIViewController {
             preferredStyle: style
         )
         alertControler.addAction(UIAlertAction(
-            title: "Подтвердить",
+            title: "Отмена",
             style: .destructive,
             handler: { _ in result(true) }
         ))
         alertControler.addAction(UIAlertAction(
-            title: "Подтвердить",
+            title: "Отмена",
             style: .cancel,
             handler: { _ in result(false) }
         ))

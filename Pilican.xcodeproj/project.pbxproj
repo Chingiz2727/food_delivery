@@ -140,6 +140,9 @@
 		55DB7D9C263137720086B562 /* OrderErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7D9B263137720086B562 /* OrderErrorView.swift */; };
 		55DB7DA02631381D0086B562 /* OrderErrorModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7D9F2631381D0086B562 /* OrderErrorModule.swift */; };
 		55DB7DA42631383D0086B562 /* OrderErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DA32631383D0086B562 /* OrderErrorViewController.swift */; };
+		55DB7DC426319BDF0086B562 /* AlcoholView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DC326319BDF0086B562 /* AlcoholView.swift */; };
+		55DB7DC926319F560086B562 /* AlcoholModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DC826319F560086B562 /* AlcoholModule.swift */; };
+		55DB7DCC26319F950086B562 /* AlcoholViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DCB26319F950086B562 /* AlcoholViewController.swift */; };
 		55F4EEF0260C3ACC00EBEA9D /* QRPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */; };
 		55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */; };
 		55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */; };
@@ -685,6 +688,9 @@
 		55DB7D9B263137720086B562 /* OrderErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderErrorView.swift; sourceTree = "<group>"; };
 		55DB7D9F2631381D0086B562 /* OrderErrorModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderErrorModule.swift; sourceTree = "<group>"; };
 		55DB7DA32631383D0086B562 /* OrderErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderErrorViewController.swift; sourceTree = "<group>"; };
+		55DB7DC326319BDF0086B562 /* AlcoholView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholView.swift; sourceTree = "<group>"; };
+		55DB7DC826319F560086B562 /* AlcoholModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholModule.swift; sourceTree = "<group>"; };
+		55DB7DCB26319F950086B562 /* AlcoholViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholViewController.swift; sourceTree = "<group>"; };
 		55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentModule.swift; sourceTree = "<group>"; };
 		55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewController.swift; sourceTree = "<group>"; };
 		55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -2313,6 +2319,40 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		55DB7DC126319BCA0086B562 /* Alcohol */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7DCE2631A0520086B562 /* Controller */,
+				55DB7DC726319F4A0086B562 /* Module */,
+				55DB7DC226319BD30086B562 /* View */,
+			);
+			path = Alcohol;
+			sourceTree = "<group>";
+		};
+		55DB7DC226319BD30086B562 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7DC326319BDF0086B562 /* AlcoholView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55DB7DC726319F4A0086B562 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7DC826319F560086B562 /* AlcoholModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		55DB7DCE2631A0520086B562 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				55DB7DCB26319F950086B562 /* AlcoholViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		55F4EEEE260C3ABA00EBEA9D /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -3435,6 +3475,7 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55DB7DC126319BCA0086B562 /* Alcohol */,
 				55DB7D99263137090086B562 /* OrderError */,
 				55DB7D8B263128D60086B562 /* OrderSuccess */,
 				722A33C0262568AA003FB38A /* MakeOrder */,
@@ -5377,6 +5418,7 @@
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
 				556CF6DA26022401007B8FB9 /* PayHistoryTarget.swift in Sources */,
 				5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */,
+				55DB7DC926319F560086B562 /* AlcoholModule.swift in Sources */,
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
 				724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */,
 				A483E26525D40ABE006D2DAF /* LoadingSequence.swift in Sources */,
@@ -5465,6 +5507,7 @@
 				A47CA1E425E36E8000EB091C /* DropdownTransitioningDelegate.swift in Sources */,
 				55A7C080260B693E0037D567 /* PriceView.swift in Sources */,
 				A483E26625D40ABE006D2DAF /* LoadingSequence+Rx.swift in Sources */,
+				55DB7DCC26319F950086B562 /* AlcoholViewController.swift in Sources */,
 				5526DADF2603825E00536589 /* PayDetailViewController.swift in Sources */,
 				55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */,
 				55A7C083260B6C4F0037D567 /* PaymentChoiceView.swift in Sources */,
@@ -5703,6 +5746,7 @@
 				722A34902626EAC6003FB38A /* PayValueView.swift in Sources */,
 				558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */,
 				559AFDC02625ADB400048CE1 /* AboutOrderView.swift in Sources */,
+				55DB7DC426319BDF0086B562 /* AlcoholView.swift in Sources */,
 				A47CA1B525E36DC700EB091C /* Coordinator.swift in Sources */,
 				A43BC83D25DFC81500D45225 /* HomeTabBarCoordinatorFactory.swift in Sources */,
 				728434CF261D7FDA00E21209 /* ProductCategory.swift in Sources */,
