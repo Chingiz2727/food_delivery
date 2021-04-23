@@ -43,6 +43,7 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         var module = moduleFactory.makeMyCards()
         module.closeButton = { [weak self] in
             self?.router.popModule()
+        }
         module.addCard = { [weak self] cardName in
             self?.showAddCard(cardName: cardName)
         }
