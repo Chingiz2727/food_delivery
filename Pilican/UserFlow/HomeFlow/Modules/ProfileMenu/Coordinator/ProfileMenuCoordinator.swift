@@ -41,7 +41,10 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
 
     private func showBonus() {
-        let module = moduleFactory.makeBonus()
+        var module = moduleFactory.makeBonus()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
@@ -64,6 +67,9 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
             case .youtube:
                 self?.handleYoutube()
             }
+        }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
         }
         router.push(module)
     }

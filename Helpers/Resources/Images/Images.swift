@@ -100,6 +100,7 @@ enum Images: String {
     case deliveryMenu
     case orderSuccess
     case orderError
+    case attentionAlcohol
 }
 
 extension Images {

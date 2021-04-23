@@ -8,7 +8,9 @@
 import UIKit
 import RxSwift
 
-final class PayHistoryViewController: UIViewController, ViewHolder, PayHistoryModule {
+final class PayHistoryViewController: ViewController, ViewHolder, PayHistoryModule {
+    var closeButton: CloseButton?
+    
     var onSelectPayHistory: OnSelectPayHistory?
     
     typealias RootViewType = PayHistoryView
@@ -70,5 +72,9 @@ final class PayHistoryViewController: UIViewController, ViewHolder, PayHistoryMo
             .bind { [unowned self] payHistory in
                 self.onSelectPayHistory?(payHistory)
             }.disposed(by: disposeBag)
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

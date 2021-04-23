@@ -2,6 +2,8 @@ import RxSwift
 import UIKit
 
 class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProductsModule, ViewHolder {
+    var alcohol: Alcohol?
+    
     var favoriteButtonTapped: FavoriteButtonTapped?
     
     typealias RootViewType = DeliveryRetailProductsView
@@ -12,6 +14,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     private let disposeBag = DisposeBag()
     private let sourceDelegate: DeliveryRetailTableViewDataSourceDelegate
     private var isFavorite = false
+    private var alertIsShown = false
 
     init(viewModel: DeliveryRetailProductViewModel) {
         self.viewModel = viewModel
@@ -32,20 +35,21 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         rootView.setRetail(retail: viewModel.retailInfo)
         bindViewModel()
         bindView()
+        alertIsShown = false
     }
-    
+
     private func bindViewModel() {
         let output = viewModel.transform(input: .init(viewDidLoad: .just(()), favoriteButtonTapped: rootView.stickyHeaderView.favouriteButton.rx.tap.asObservable()))
         
         let favorite = output.favoriteButtonTapped.publish()
-        
+
         favorite.errors
             .bind(to: rx.error)
             .disposed(by: disposeBag)
         
         favorite.connect()
             .disposed(by: disposeBag)
-        
+
         let productList = output.productsList.publish()
         productList.loading
             .bind(to: ProgressView.instance.rx.loading)
@@ -68,9 +72,15 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
         productList.connect()
             .disposed(by: disposeBag)
-        
+
         viewModel.dishList.wishDishList
             .subscribe(onNext: { [unowned self] product in
+                product.forEach { (product) in
+                    if product.age_access == 1 && self.alertIsShown == false {
+                        self.alcohol?()
+                        self.alertIsShown = true
+                    }
+                }
                 self.rootView.setProductToPay(product: product)
             })
             .disposed(by: disposeBag)
@@ -112,7 +122,6 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
         rootView.stickyHeaderView.favouriteButton.rx.tap
             .subscribe(onNext: { [unowned self] _ in
-                //isFavorite = viewModel.retailInfo.status == 1 ? true : false
                 rootView.stickyHeaderView.favouriteButton.setImage(isFavorite ? Images.fillStar.image : Images.emptyStar.image, for: .normal)
                 isFavorite = !isFavorite
             }).disposed(by: disposeBag)

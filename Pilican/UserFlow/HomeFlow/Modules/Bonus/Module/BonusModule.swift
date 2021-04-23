@@ -8,5 +8,6 @@
 import Foundation
 
 protocol BonusModule: Presentable {
-    
+    typealias CloseButton = () -> Void
+    var closeButton: CloseButton? { get set }
 }
