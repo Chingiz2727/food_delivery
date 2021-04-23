@@ -32,8 +32,8 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
                 self?.showGuide()
             case .about:
                 self?.showAbout()
-            default:
-                return
+            case .main:
+                self?.router.popToRootModule()
             }
             self?.router.dismissModule()
         }

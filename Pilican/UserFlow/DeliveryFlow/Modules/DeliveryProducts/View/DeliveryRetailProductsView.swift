@@ -53,7 +53,6 @@ final class DeliveryRetailProductsView: UIView {
     private func setupInitialLayout() {
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            
             make.bottom.equalTo(safeAreaLayoutGuide)
             make.top.leading.trailing.equalToSuperview()
         }
@@ -73,7 +72,7 @@ final class DeliveryRetailProductsView: UIView {
         }
 
         calculateView.snp.makeConstraints { $0.height.equalTo(45) }
-        
+
         stickyHeaderrHeightConstraint?.activate()
     }
 

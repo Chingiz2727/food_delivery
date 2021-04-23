@@ -13,7 +13,7 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
     private let moduleFactory: DeliveryMenuModuleFactory
     
     override init(router: Router, container: DependencyContainer) {
-        moduleFactory = DeliveryMenuModuleFactory(container: container)
+        moduleFactory = DeliveryMenuModuleFactory(container: container, router: router)
         super.init(router: router, container: container)
     }
     
@@ -22,7 +22,7 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
     }
     
     private func presentMenu() {
-        var module = moduleFactory.makeDeliveryMenu()
+        var module = moduleFactory.makedDeliveryMenu()
         module.deliveryMenuDidSelect = { [weak self] menu in
             switch menu {
             case .orderHistory:
@@ -43,12 +43,92 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
     }
 
     private func showFavorites() {
-        let module = moduleFactory.makeFavorites()
+        var module = moduleFactory.makeFavorites()
+        module.onRetailDidSelect = { [weak self] retail in
+            self?.showDeliveryProduct(retail: retail)
+        }
         router.push(module)
     }
     
     private func showMyCards() {
         let module = moduleFactory.makeMyCards()
         router.push(module)
+    }
+    
+    private func showDeliveryProduct(retail: DeliveryRetail) {
+        var module = moduleFactory.deliveryProduct(retail: retail)
+        module.onMakeOrdedDidTap = { [weak self] in
+            self?.showBasket()
+        }
+        module.alcohol = { [weak self] in
+            self?.showAlcohol()
+        }
+        router.push(module)
+    }
+
+    private func showBasket() {
+        var module = moduleFactory.makeBasket()
+        module.onDeliveryChoose = { [weak self] orderType in
+            self?.showMakeOrder(orderType: orderType)
+        }
+        router.push(module)
+    }
+
+    private func showMakeOrder(orderType: OrderType) {
+        var module = moduleFactory.makeMakeOrder(orderType: orderType)
+        module.onMapShowDidSelect = { [weak self] in
+            self?.makeMapSearch(addressSelected: { address in
+                module.putAddress?(address)
+            })
+        }
+        module.emptyDishList = { [weak self] in
+            self?.router.popModule()
+        }
+        module.orderSuccess = { [weak self] order in
+            self?.showOrderSuccess(order: order)
+        }
+        module.orderError = { [weak self] in
+            self?.showOrderError()
+        }
+        router.push(module)
+    }
+
+    private func showAlcohol() {
+        var module = moduleFactory.makeAlcohol()
+        module.acceptButtonTapped = { [weak self] in
+            self?.router.dismissModule()
+        }
+        router.presentCard(module, isDraggable: true, isDismissOnDimEnabled: true, isCloseable: true)
+    }
+
+    private func showOrderError() {
+        var module = moduleFactory.makeOrderError()
+        module.repeatMakeOrder = { [weak self] in
+            self?.router.popModule()
+        }
+        router.push(module)
+    }
+
+    private func showOrderSuccess(order: OrderResponse) {
+        var module = moduleFactory.makeOrderSuccess(order: order)
+        module.toMain = { [weak self] in
+            self?.router.popToRootModule()
+        }
+        router.push(module)
+    }
+
+    func makeMapSearch(addressSelected: @escaping ((DeliveryLocation) -> Void)) {
+        var module = container.resolve(DeliveryLocationModule.self)!
+        module.onlocationDidSelect = { [weak self] location in
+            self?.router.popModule()
+            addressSelected(location)
+        }
+        router.push(module)
+    }
+
+    private func showDeliveryMenu() {
+        let coordinator = moduleFactory.makeDeliveryMenu()
+        coordinator.start()
+        addDependency(coordinator)
     }
 }

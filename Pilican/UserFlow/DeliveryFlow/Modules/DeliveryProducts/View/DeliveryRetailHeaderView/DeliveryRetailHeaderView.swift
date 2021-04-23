@@ -20,14 +20,14 @@ final class DeliveryRetailHeaderView: UIView {
         label.text = "Zhekas doner House"
         return label
     }()
-    
+
     private let companyAdressLabel: UILabel = {
         let label = UILabel()
         label.text = "Макатаева 198/1"
         label.font = .medium12
         return label
     }()
-    
+
     private let workTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "Режим работы \n10:00 - 23:00"
@@ -35,13 +35,13 @@ final class DeliveryRetailHeaderView: UIView {
         label.numberOfLines = 2
         return label
     }()
-    
+
     let favouriteButton: UIButton = {
         let button = UIButton()
         button.setImage(Images.emptyStar.image, for: .normal)
         return button
     }()
-    
+
     private lazy var labelStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [companyNameLabel, companyAdressLabel])
         stackView.distribution = .fill
@@ -141,7 +141,6 @@ final class DeliveryRetailHeaderView: UIView {
         ratingLabel.text = "\(retail.rating ?? 0)"
         ratingView.rating = retail.rating ?? 0
         productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
-        favouriteButton.setImage(retail.status == 1 ? Images.fillStar.image : Images.emptyStar.image, for: .normal)
     }
 
     private func setupInitialLayout() {

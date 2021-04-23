@@ -113,16 +113,25 @@ final class HomeCoordinator: BaseCoordinator {
             case .pillikanPay: self?.showNotificationPillikanPay()
             }
         }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
     private func showNotificationPillikanInfo() {
-        let module = coordinatorFactory.pillikanInfoNotifications()
+        var module = coordinatorFactory.pillikanInfoNotifications()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 
     private func showNotificationPillikanPay() {
-        let module = coordinatorFactory.pillikanPayNotifications()
+        var module = coordinatorFactory.pillikanPayNotifications()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 }

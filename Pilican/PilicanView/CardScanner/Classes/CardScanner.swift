@@ -215,7 +215,7 @@ public class CardScanner: UIViewController {
         buttonComplete?.layer.cornerRadius = 10
         buttonComplete?.layer.masksToBounds = true
         buttonComplete?.addTarget(self, action: #selector(scanCompleted), for: .touchUpInside)
-        
+
         let manuallyButtonX = viewX - 20
         let manuallyButtonY = UIScreen.main.bounds.height - 110
         addManually = UIButton(frame: CGRect(x: manuallyButtonX, y: manuallyButtonY, width: 50, height: 20))
@@ -230,7 +230,7 @@ public class CardScanner: UIViewController {
         addManually?.setTitleColor(.primary, for: .normal)
         addManually?.backgroundColor = .clear
         addManually?.addTarget(self, action: #selector(writeManually), for: .touchUpInside)
-        
+
 
         view.backgroundColor = .black
     }
@@ -263,7 +263,7 @@ public class CardScanner: UIViewController {
     private func stop() {
         captureSession.stopRunning()
     }
-    
+
     @objc func writeManually() {
         stop()
         dismiss(animated: true, completion: nil)

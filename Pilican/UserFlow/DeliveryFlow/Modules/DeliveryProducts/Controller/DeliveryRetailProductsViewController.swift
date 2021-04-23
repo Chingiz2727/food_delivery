@@ -5,14 +5,15 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     var alcohol: Alcohol?
     
     var favoriteButtonTapped: FavoriteButtonTapped?
-    
+
     typealias RootViewType = DeliveryRetailProductsView
     
     var onMakeOrdedDidTap: Callback?
-    
+
     private let viewModel: DeliveryRetailProductViewModel
     private let disposeBag = DisposeBag()
     private let sourceDelegate: DeliveryRetailTableViewDataSourceDelegate
+    private let cache = DiskCache<String, [DeliveryRetail]>()
     private var isFavorite = false
     private var alertIsShown = false
 
@@ -36,17 +37,38 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         bindViewModel()
         bindView()
         alertIsShown = false
+        let favorites = getFavorites()
+        favorites?.forEach { retail in
+            if retail.id == viewModel.retailInfo.id {
+                isFavorite = true
+                rootView.stickyHeaderView.favouriteButton.setImage(Images.fillStar.image, for: .normal)
+            }
+        }
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: .just(()), favoriteButtonTapped: rootView.stickyHeaderView.favouriteButton.rx.tap.asObservable()))
-        
+        let output = viewModel.transform(input: .init(viewDidLoad: .just(()), favoriteButtonTapped: rootView.stickyHeaderView.favouriteButton.rx.tap.asObservable(), loadFavorites: .just(())))
+
+        let favorites = output.favorites.publish()
+
+        favorites.element
+            .subscribe(onNext: { [unowned self] retail in
+                self.saveFavorites(favorites: retail.items)
+            }).disposed(by: disposeBag)
+
+        favorites.errors
+            .bind(to: rx.error)
+            .disposed(by: disposeBag)
+
+        favorites.connect()
+            .disposed(by: disposeBag)
+
         let favorite = output.favoriteButtonTapped.publish()
 
         favorite.errors
             .bind(to: rx.error)
             .disposed(by: disposeBag)
-        
+
         favorite.connect()
             .disposed(by: disposeBag)
 
@@ -125,5 +147,14 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 rootView.stickyHeaderView.favouriteButton.setImage(isFavorite ? Images.fillStar.image : Images.emptyStar.image, for: .normal)
                 isFavorite = !isFavorite
             }).disposed(by: disposeBag)
+    }
+
+    private func saveFavorites(favorites: [DeliveryRetail]) {
+        try? cache.saveToDisk(name: "favorites", value: favorites)
+    }
+
+    private func getFavorites() -> [DeliveryRetail]? {
+        let favorites: [DeliveryRetail]? = try? cache.readFromDisk(name: "favorites")
+        return favorites
     }
 }

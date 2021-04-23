@@ -1,7 +1,9 @@
 import UIKit
 import RxSwift
 
-final class NotificationListController: UIViewController, ViewHolder, NotificationListModule {
+final class NotificationListController: ViewController, ViewHolder, NotificationListModule {
+    var closeButton: CloseButton?
+    
     typealias RootViewType = NotificationListView
     
     var notificationsListDidSelect: NotificationsListDidSelect?
@@ -28,6 +30,10 @@ final class NotificationListController: UIViewController, ViewHolder, Notificati
             .bind { [unowned self] notificationsItem in
                 self.notificationsListDidSelect?(notificationsItem)
             }.disposed(by: disposeBag)
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
     
 }

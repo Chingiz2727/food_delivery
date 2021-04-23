@@ -107,7 +107,7 @@ class CameraViewController: UIViewController, CameraModule {
         result.errors
             .bind(to: rx.error)
             .disposed(by: disposeBag)
-        
+
         result.connect()
             .disposed(by: disposeBag)
     }
