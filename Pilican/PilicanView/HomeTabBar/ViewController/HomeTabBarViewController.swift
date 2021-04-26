@@ -41,7 +41,6 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
         self.viewControllers = viewControllers
     }
 
-    
     private func setupInitialLayout() {
         setValue(homeTabBar, forKey: "tabBar")
         view.addSubview(tabView)

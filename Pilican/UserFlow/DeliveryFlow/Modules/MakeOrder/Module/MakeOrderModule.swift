@@ -3,6 +3,8 @@ protocol MakeOrderModule: Presentable {
     typealias EmptyDishList = () -> Void
     typealias OrderSuccess = (OrderResponse) -> Void
     typealias OrderError = () -> Void
+    typealias PutAddress = (DeliveryLocation) -> Void
+    var putAddress: PutAddress? { get set }
     var orderSuccess: OrderSuccess? { get set }
     var emptyDishList: EmptyDishList? { get set }
     var orderError: OrderError? { get set }

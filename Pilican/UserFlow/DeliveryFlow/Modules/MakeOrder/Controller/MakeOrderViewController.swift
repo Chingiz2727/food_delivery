@@ -5,6 +5,8 @@ import UIKit
 // swiftlint:disable function_body_length
 
 class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
+    var putAddress: PutAddress?
+    
     var orderError: OrderError?
     var orderSuccess: OrderSuccess?
     var emptyDishList: EmptyDishList?
@@ -85,7 +87,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 
         let adressList = output.savedLocationList
         adressList.subscribe(onNext: { [unowned self] locations in
-            self.showAdressList(adressList: locations)
+            if !locations.isEmpty {
+                self.showAdressList(adressList: locations)
+            }
         })
         .disposed(by: disposeBag)
 
@@ -180,6 +184,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             .subscribe(onNext: { [unowned self] text in
                 descriptionSubject.onNext(text ?? "")
             }).disposed(by: disposeBag)
+
+        putAddress = { [unowned self] address in
+            self.rootView.addressView.adressLabel.text = address.name
+            self.currentLocation.onNext(address)
+        }
     }
 
     func changeDishList(action: DishListAction) {

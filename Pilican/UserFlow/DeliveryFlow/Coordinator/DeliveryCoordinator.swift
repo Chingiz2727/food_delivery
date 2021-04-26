@@ -49,7 +49,9 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
     private func showMakeOrder(orderType: OrderType) {
         var module = coordinatorFactory.makeMakeOrder(orderType: orderType)
         module.onMapShowDidSelect = { [weak self] in
-            self?.makeMapSearch()
+            self?.makeMapSearch(addressSelected: { address in
+                module.putAddress?(address)
+            })
         }
         module.emptyDishList = { [weak self] in
             self?.router.popModule()
@@ -87,11 +89,11 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         router.push(module)
     }
 
-    func makeMapSearch() {
+    func makeMapSearch(addressSelected: @escaping ((DeliveryLocation) -> Void)) {
         var module = container.resolve(DeliveryLocationModule.self)!
         module.onlocationDidSelect = { [weak self] location in
-            print(location)
             self?.router.popModule()
+            addressSelected(location)
         }
         router.push(module)
     }

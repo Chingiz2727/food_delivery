@@ -48,7 +48,7 @@ final class DishList {
         wishDishList.onNext(products)
         return product
     }
-    
+
     private func removeFromDish(product: Product) -> Product {
         var product = product
         product.shoppingCount = product.shoppingCount == nil ? 1 : product.shoppingCount
@@ -80,5 +80,5 @@ final class DishList {
             }
         }
         return listCategory
-     }
+    }
 }
