@@ -15,7 +15,7 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
     override func start() {
         showDeliveryRetailList()
     }
-    
+
     private func showDeliveryRetailList() {
         var module = coordinatorFactory.delivery()
         module.onRetailDidSelect = { [weak self] retail in
@@ -26,15 +26,18 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         }
         router.setRootModule(module)
     }
-    
+
     private func showDeliveryProduct(retail: DeliveryRetail) {
         var module = coordinatorFactory.deliveryProduct(retail: retail)
         module.onMakeOrdedDidTap = { [weak self] in
             self?.showBasket()
         }
+        module.alcohol = { [weak self] in
+            self?.showAlcohol()
+        }
         router.push(module)
     }
-    
+
     private func showBasket() {
         var module = coordinatorFactory.makeBasket()
         module.onDeliveryChoose = { [weak self] orderType in
@@ -42,7 +45,7 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         }
         router.push(module)
     }
-    
+
     private func showMakeOrder(orderType: OrderType) {
         var module = coordinatorFactory.makeMakeOrder(orderType: orderType)
         module.onMapShowDidSelect = { [weak self] in
@@ -58,6 +61,14 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
             self?.showOrderError()
         }
         router.push(module)
+    }
+
+    private func showAlcohol() {
+        var module = coordinatorFactory.makeAlcohol()
+        module.acceptButtonTapped = { [weak self] in
+            self?.router.dismissModule()
+        }
+        router.presentCard(module, isDraggable: true, isDismissOnDimEnabled: true, isCloseable: true)
     }
 
     private func showOrderError() {

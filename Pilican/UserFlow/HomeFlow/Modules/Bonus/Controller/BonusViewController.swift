@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 
 class BonusViewController: ViewController, ViewHolder, BonusModule {
+    var closeButton: CloseButton?
     typealias RootViewType = BonusView
 
     private let disposeBag = DisposeBag()
@@ -77,5 +78,9 @@ class BonusViewController: ViewController, ViewHolder, BonusModule {
         DispatchQueue.main.async {
             self.present(shareActivityController, animated: true, completion: nil)
         }
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

@@ -12,10 +12,11 @@ final class DeliveryCoordinatorModuleFactory {
     func delivery() -> DeliveryRetailListModule {
         let apiSevice = container.resolve(ApiService.self)!
         let viewModel = DeliveryRetailListViewModel(apiService: apiSevice)
-        let controller = DeliveryRetailListViewController(viewModel: viewModel)
+        let dishList = container.resolve(DishList.self)!
+        let controller = DeliveryRetailListViewController(viewModel: viewModel, dishList: dishList)
         return controller
     }
-    
+
     func deliveryProduct(retail: DeliveryRetail) -> DeliveryRetailProductsModule {
         let apiSevice = container.resolve(ApiService.self)!
         let dishList = container.resolve(DishList.self)!
@@ -46,8 +47,12 @@ final class DeliveryCoordinatorModuleFactory {
     func makeOrderSuccess(order: OrderResponse) -> OrderSuccessModule {
         return OrderSuccessViewController(order: order)
     }
-    
+
     func makeOrderError() -> OrderErrorModule {
         return OrderErrorViewController()
+    }
+
+    func makeAlcohol() -> AlcoholModule {
+        return AlcoholViewController()
     }
 }

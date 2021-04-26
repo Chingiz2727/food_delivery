@@ -100,8 +100,9 @@ public class CardScanner: UIViewController {
 
     private func addCameraInput() {
         guard let device = device else { return }
-        let cameraInput = try! AVCaptureDeviceInput(device: device)
-        captureSession.addInput(cameraInput)
+        if let cameraInput = try? AVCaptureDeviceInput(device: device) {
+            captureSession.addInput(cameraInput)
+        }
     }
 
     private func addPreviewLayer() {
@@ -307,7 +308,7 @@ public class CardScanner: UIViewController {
         let stillImageRequestHandler = VNImageRequestHandler(ciImage: croppedImage, options: [:])
         try? stillImageRequestHandler.perform([request])
 
-        guard let texts = request.results as? [VNRecognizedTextObservation], texts.count > 0 else {
+        guard let texts = request.results as? [VNRecognizedTextObservation], !texts.isEmpty else {
             // no text detected
             return
         }

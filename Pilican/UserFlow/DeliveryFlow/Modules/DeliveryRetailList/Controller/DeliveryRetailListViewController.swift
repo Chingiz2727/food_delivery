@@ -10,9 +10,11 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
 
     private let viewModel: DeliveryRetailListViewModel
     private let disposeBag = DisposeBag()
+    private let dishList: DishList
 
-    init(viewModel: DeliveryRetailListViewModel) {
+    init(viewModel: DeliveryRetailListViewModel, dishList: DishList) {
         self.viewModel = viewModel
+        self.dishList = dishList
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,7 +35,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             target: self,
             action: #selector(showMenu))
     }
-    
+
     @objc private func showMenu() {
         deliveryMenuDidSelect?()
     }
@@ -46,7 +48,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
         let adapter = viewModel.adapter
         adapter.connect(to: rootView.tableView)
         adapter.start()
-        
+
         retailList.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)
@@ -64,6 +66,13 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
         rootView.tableView.rx.itemSelected
             .withLatestFrom(retailList.element) { $1[$0.row] }
             .bind { [unowned self] retail in
+                if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                    showBasketAlert {
+                        self.dishList.products = []
+                        self.dishList.wishDishList.onNext([])
+                        self.onRetailDidSelect?(retail)
+                    }
+                }
                 if retail.isWork == 1 {
                     self.onRetailDidSelect?(retail)
                 }

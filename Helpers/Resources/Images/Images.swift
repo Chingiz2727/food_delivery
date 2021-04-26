@@ -103,6 +103,7 @@ enum Images: String {
     case quit
     case orderSuccess
     case orderError
+    case attentionAlcohol
     case scanIcon
 }
 

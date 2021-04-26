@@ -9,4 +9,6 @@ import Foundation
 protocol PayHistoryModule: Presentable {
     typealias OnSelectPayHistory = (Payments) -> Void
     var onSelectPayHistory: OnSelectPayHistory? { get set }
+    typealias CloseButton = () -> Void
+    var closeButton: CloseButton? { get set }
 }

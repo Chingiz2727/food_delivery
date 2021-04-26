@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 
 class AboutViewController: ViewController, ViewHolder, AboutModule {
+    var closeButton: CloseButton?
+    
     var aboutDidSelect: AboutDidSelect?
     
     typealias RootViewType = AboutView
@@ -55,5 +57,9 @@ class AboutViewController: ViewController, ViewHolder, AboutModule {
             .subscribe(onNext: { [unowned self] in
                 self.aboutDidSelect?(.rate)
             }).disposed(by: disposeBag)
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }
