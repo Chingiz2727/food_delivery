@@ -272,6 +272,10 @@
 		72D21980263653F7008FE635 /* PassCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2197F263653F7008FE635 /* PassCodeView.swift */; };
 		72D2198326365405008FE635 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2198226365405008FE635 /* PinView.swift */; };
 		72D2198626365413008FE635 /* DPOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2198526365413008FE635 /* DPOTPView.swift */; };
+		72D219AE2636632A008FE635 /* LogoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219AD2636632A008FE635 /* LogoutCoordinator.swift */; };
+		72D219B3263666C2008FE635 /* DeliveryLogoutStateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219B2263666C2008FE635 /* DeliveryLogoutStateObserver.swift */; };
+		72D219B7263667F5008FE635 /* DeliveryLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219B6263667F5008FE635 /* DeliveryLogoutViewController.swift */; };
+		72D219BB26366805008FE635 /* DeliveryLogoutModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219BA26366805008FE635 /* DeliveryLogoutModule.swift */; };
 		72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */; };
 		72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */; };
 		72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07DF261DA4BD00F04395 /* SearchContainerModule.swift */; };
@@ -835,6 +839,10 @@
 		72D2197F263653F7008FE635 /* PassCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCodeView.swift; sourceTree = "<group>"; };
 		72D2198226365405008FE635 /* PinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
 		72D2198526365413008FE635 /* DPOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPOTPView.swift; sourceTree = "<group>"; };
+		72D219AD2636632A008FE635 /* LogoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutCoordinator.swift; sourceTree = "<group>"; };
+		72D219B2263666C2008FE635 /* DeliveryLogoutStateObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLogoutStateObserver.swift; sourceTree = "<group>"; };
+		72D219B6263667F5008FE635 /* DeliveryLogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLogoutViewController.swift; sourceTree = "<group>"; };
+		72D219BA26366805008FE635 /* DeliveryLogoutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLogoutModule.swift; sourceTree = "<group>"; };
 		72FABA13261D5E4900EC7EB9 /* ProductCalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCalculateView.swift; sourceTree = "<group>"; };
 		72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarController.swift; sourceTree = "<group>"; };
 		72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -3314,9 +3322,29 @@
 			path = PassCodeView;
 			sourceTree = "<group>";
 		};
+		72D219AC2636631E008FE635 /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				72D219B5263667DF008FE635 /* Module */,
+				72D219AD2636632A008FE635 /* LogoutCoordinator.swift */,
+				72D219B2263666C2008FE635 /* DeliveryLogoutStateObserver.swift */,
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
+		72D219B5263667DF008FE635 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72D219B6263667F5008FE635 /* DeliveryLogoutViewController.swift */,
+				72D219BA26366805008FE635 /* DeliveryLogoutModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		72FABA18261D6D6600EC7EB9 /* DeliveryTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				72D219AC2636631E008FE635 /* Logout */,
 				72FABA1E261D6F6400EC7EB9 /* Coordinator */,
 				72FABA1D261D6F5700EC7EB9 /* Controller */,
 			);
@@ -5478,6 +5506,7 @@
 				A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */,
 				552531D8262ACE6C00888DEE /* OrderHistoryViewController.swift in Sources */,
 				72FB07F4261DA52A00F04395 /* SearchPresentTransitioning.swift in Sources */,
+				72D219AE2636632A008FE635 /* LogoutCoordinator.swift in Sources */,
 				A468EB5425EE522A0071FAA6 /* ShowMapViewUIControl.swift in Sources */,
 				722A346C2626A3C1003FB38A /* AdressChoiceView.swift in Sources */,
 				556CF6CE26021CF6007B8FB9 /* PayHistoryTableViewCell.swift in Sources */,
@@ -5573,6 +5602,7 @@
 				A4057DBC2611D8F00062BB5B /* DeliveryRetailListModule.swift in Sources */,
 				72D2196226365325008FE635 /* CreatePinModule.swift in Sources */,
 				724FC5A6262419BE00C1DED3 /* DrawerView.swift in Sources */,
+				72D219BB26366805008FE635 /* DeliveryLogoutModule.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				A4057DAF2611C5780062BB5B /* AppSessionManager.swift in Sources */,
 				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
@@ -5665,6 +5695,7 @@
 				72FC29C226312A720042745F /* MyCardsViewModel.swift in Sources */,
 				55F4EEFB260C644300EBEA9D /* ScanRetailResponse.swift in Sources */,
 				A475CCBD25EF41D500C596FB /* PropertyFormatter.swift in Sources */,
+				72D219B3263666C2008FE635 /* DeliveryLogoutStateObserver.swift in Sources */,
 				A47CA1BC25E36DF600EB091C /* DeepLinkAction.swift in Sources */,
 				A4BBC6EC25D63CD6006AF382 /* BackButtonContainerView.swift in Sources */,
 				55A5CCF626006353004AA13C /* ChangePasswordViewController.swift in Sources */,
@@ -5733,6 +5764,7 @@
 				55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */,
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
 				728434CC261D7FC800E21209 /* Product.swift in Sources */,
+				72D219B7263667F5008FE635 /* DeliveryLogoutViewController.swift in Sources */,
 				728434E4261D805900E21209 /* DeliveryRetailProductTableViewCell.swift in Sources */,
 				A4D7641E25DA40E1009A6651 /* BaseButton.swift in Sources */,
 				A4EFD4E2261320D200694D18 /* SegmentControl.swift in Sources */,
@@ -6074,7 +6106,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6155,7 +6187,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6297,7 +6329,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6322,7 +6354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				DEVELOPMENT_TEAM = KGL7D9XAQ6;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
