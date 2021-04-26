@@ -41,4 +41,12 @@ final class DeliveryTabBarCoordinatorFactory {
         let coordinator = RetailListMapCoordinator(router: Router(rootController: rootController), container: container)
         return (coordinator, rootController)
     }
+    
+    func makeLogout() -> (coordinator: LogoutCoordinatorOutput, module: Presentable) {
+        let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
+        rootController.tabBarItem.image = Images.HomePillikanSelected.image?.withRenderingMode(.alwaysOriginal)
+        rootController.tabBarItem.selectedImage = Images.HomePillikanSelected.image?.withRenderingMode(.alwaysOriginal)
+        let coordinator = LogoutCoordinator(router: Router(rootController: rootController), container: container)
+        return (coordinator, rootController)
+    }
 }

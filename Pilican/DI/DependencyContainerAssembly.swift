@@ -70,6 +70,10 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(AuthStateObserver.self) { _ in
             AuthStateObserver(userSession: container.resolve(UserInfoStorage.self)!, appSession: container.resolve(UserSessionStorage.self)!)
         }.inObjectScope(.container)
+        
+        container.register(DeliveryLogoutStateObserver.self) { _ in
+            DeliveryLogoutStateObserver()
+        }.inObjectScope(.container)
         container.register(PropertyFormatter.self) { resolver in
             PropertyFormatter(appLanguage: resolver.resolve(AppLanguage.self)!)
         }.inObjectScope(.container)

@@ -29,6 +29,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         setupBasketFlow()
         setupSearchFlow()
         setupMapFlow()
+        setupLogoutFLow()
     }
 
     private func setupBasketFlow() {
@@ -57,6 +58,18 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
 
     private func setupMapFlow() {
         let (coordinator, rootController) = coordinatorFactory.makeMap()
+        coordinator.start()
+        addDependency(coordinator)
+        guard let controller = rootController.toPresent() else {
+            return
+        }
+        tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
+    }
+    
+    private func setupLogoutFLow() {
+        let (coordinator, rootController) = coordinatorFactory.makeLogout()
+        coordinator.logoutAction = { [weak self] in
+        }
         coordinator.start()
         addDependency(coordinator)
         guard let controller = rootController.toPresent() else {

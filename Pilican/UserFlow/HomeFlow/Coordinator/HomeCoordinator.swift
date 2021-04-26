@@ -36,7 +36,8 @@ final class HomeCoordinator: BaseCoordinator {
         tabBarController.notifyMenuTap = { [weak self] in
             self?.showNotificationList()
         }
-
+        let logoutFlow = container.resolve(DeliveryLogoutStateObserver.self)!
+        logoutFlow.setCoordinator(self)
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
         router.setRootModule(tabBarController, isNavigationBarHidden: false)

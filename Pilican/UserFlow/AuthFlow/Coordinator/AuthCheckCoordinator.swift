@@ -5,8 +5,9 @@ protocol AuthCheckCoordinator: BaseCoordinator {}
 extension AuthCheckCoordinator {
     func checkAuth(onAuth: (() -> Void)?) {
         let apiservice = container.resolve(AuthenticationService.self)!
-
+        
         let session = container.resolve(UserSessionStorage.self)!
+        
         guard session.accessToken == nil else {
             startPinCheck(onAuth: onAuth)
             return
