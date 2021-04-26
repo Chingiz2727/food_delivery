@@ -37,7 +37,6 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     public var sessionStorage: UserSessionStorage
     private let infoStorage: UserInfoStorage
     private var logoutListeners = [LogoutListener]()
-    private let cache = DiskCache<String, Any>()
     
     init(
         apiService: ApiService,
