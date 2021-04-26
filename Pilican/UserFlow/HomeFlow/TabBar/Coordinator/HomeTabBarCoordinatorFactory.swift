@@ -32,7 +32,7 @@ final class HomeTabBarCoordinatorFactory {
     func makeDeliveryTabBar() -> Coordinator {
         return DeliveryTabBarCoordinator(router: router, container: container)
     }
-    
+
     func makeNotificationList() -> NotificationListModule {
         return NotificationListController()
     }

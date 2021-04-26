@@ -1,7 +1,8 @@
 import UIKit
 import RxSwift
 
-final class PillikanPayViewController: UIViewController, ViewHolder, PillikanPayModule {
+final class PillikanPayViewController: ViewController, ViewHolder, PillikanPayModule {
+    var closeButton: CloseButton?
     
     typealias RootViewType = PillikanPayView
     
@@ -53,4 +54,7 @@ final class PillikanPayViewController: UIViewController, ViewHolder, PillikanPay
             .disposed(by: disposeBag)
     }
     
+    override func customBackButtonDidTap() {
+        closeButton?()
+    }
 }

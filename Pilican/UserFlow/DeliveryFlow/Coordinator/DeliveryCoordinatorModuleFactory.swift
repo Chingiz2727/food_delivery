@@ -43,7 +43,7 @@ final class DeliveryCoordinatorModuleFactory {
     func makeDeliveryMenu() -> DeliveryMenuCoordinator {
         return DeliveryMenuCoordinatorImpl(router: router, container: container)
     }
-    
+
     func makeOrderSuccess(order: OrderResponse) -> OrderSuccessModule {
         return OrderSuccessViewController(order: order)
     }

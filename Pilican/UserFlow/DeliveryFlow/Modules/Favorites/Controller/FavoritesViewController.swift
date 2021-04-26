@@ -48,7 +48,7 @@ class FavoritesViewController: ViewController, ViewHolder, FavoritesModule {
             .disposed(by: disposeBag)
 
         favorites.element
-            .bind(to: rootView.tableView.rx.items(DeliveryRetailListTableViewCell.self)) { _, model, cell in
+            .bind(to: rootView.tableView.rx.items(DeliveryRetailListTableViewCell.self)) { [unowned self] _, model, cell in
                 cell.setRetail(retail: model)
             }.disposed(by: disposeBag)
 

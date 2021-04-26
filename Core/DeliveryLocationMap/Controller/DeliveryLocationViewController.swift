@@ -5,7 +5,6 @@ import UIKit
 
 class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, ViewHolder {
     typealias RootViewType = DeliveryLocationMapView
-    
     var onlocationDidSelect: OnLocationDidSelect?
     private let deliveryLocationObject: PublishSubject<DeliveryLocation> = .init()
     private let viewModel: DeliveryLocationMapViewModel

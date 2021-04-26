@@ -64,6 +64,8 @@ final class DeliveryLocationMapView: UIView {
     private func configureView() {
         textField.clearButtonMode = .always
         currentLocationPin.image = Images.placeholder.image
+        saveButton.setTitleColor(.pilicanWhite, for: .normal)
+        saveButton.setTitle("Сохранить", for: .normal)
         tableView.registerClassForCell(UITableViewCell.self)
         tableView.tableHeaderView = nil
         tableView.tableFooterView = nil

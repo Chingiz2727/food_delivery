@@ -16,14 +16,14 @@ class FavoritesViewModel: ViewModel {
         )
         .result()
     }
-    
+
     private let apiService: ApiService
     private let disposeBag = DisposeBag()
 
     init(apiService: ApiService) {
         self.apiService = apiService
     }
-    
+
     struct Input {
         let loadFavorites: Observable<Void>
     }

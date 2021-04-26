@@ -1,7 +1,9 @@
 import UIKit
 import RxSwift
 
-final class PillikanInfoNotificationsViewController: UIViewController, ViewHolder, PillikanInfoModule {
+final class PillikanInfoNotificationsViewController: ViewController, ViewHolder, PillikanInfoModule {
+    var closeButton: CloseButton?
+    
     typealias RootViewType = PillikanInfoNotificationsView
     
     private let viewModel: PillikanInfoViewModel
@@ -49,5 +51,9 @@ final class PillikanInfoNotificationsViewController: UIViewController, ViewHolde
         
         notificationList.connect()
             .disposed(by: disposeBag)
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }
