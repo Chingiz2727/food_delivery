@@ -109,7 +109,6 @@
 		55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */; };
 		55A5CD522600CD73004AA13C /* MyCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */; };
 		55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */; };
-		55A762CD261C598E00480BAC /* AuthStateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A762CC261C598D00480BAC /* AuthStateObserver.swift */; };
 		55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C06F260B0E250037D567 /* CameraTarget.swift */; };
 		55A7C076260B38720037D567 /* QRPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C075260B38720037D567 /* QRPaymentView.swift */; };
 		55A7C079260B58AA0037D567 /* CalculatePayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7C078260B58AA0037D567 /* CalculatePayView.swift */; };
@@ -258,6 +257,18 @@
 		72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */; };
 		72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */; };
 		72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E51D2632708900FEABA1 /* CardScanner.swift */; };
+		72D219482636523E008FE635 /* PinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219472636523E008FE635 /* PinCoordinator.swift */; };
+		72D2194B26365250008FE635 /* PinModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2194A26365250008FE635 /* PinModuleFactory.swift */; };
+		72D2195C263652D5008FE635 /* AuthStateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2195B263652D5008FE635 /* AuthStateObserver.swift */; };
+		72D2196226365325008FE635 /* CreatePinModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2196126365325008FE635 /* CreatePinModule.swift */; };
+		72D2196626365342008FE635 /* CreatePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2196526365342008FE635 /* CreatePinViewController.swift */; };
+		72D2196C2636535D008FE635 /* CreatePinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2196B2636535D008FE635 /* CreatePinView.swift */; };
+		72D219712636537F008FE635 /* PinCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219702636537F008FE635 /* PinCheckView.swift */; };
+		72D21977263653AC008FE635 /* PinCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D21976263653AC008FE635 /* PinCheckViewController.swift */; };
+		72D2197C263653C5008FE635 /* PinCheckModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2197B263653C5008FE635 /* PinCheckModule.swift */; };
+		72D21980263653F7008FE635 /* PassCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2197F263653F7008FE635 /* PassCodeView.swift */; };
+		72D2198326365405008FE635 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2198226365405008FE635 /* PinView.swift */; };
+		72D2198626365413008FE635 /* DPOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2198526365413008FE635 /* DPOTPView.swift */; };
 		72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */; };
 		72FABA20261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */; };
 		72FB07E0261DA4BD00F04395 /* SearchContainerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB07DF261DA4BD00F04395 /* SearchContainerModule.swift */; };
@@ -654,7 +665,6 @@
 		55A5CD4D2600C5A9004AA13C /* MyCardsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsModule.swift; sourceTree = "<group>"; };
 		55A5CD512600CD73004AA13C /* MyCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsTableViewCell.swift; sourceTree = "<group>"; };
 		55A5CD552600D64D004AA13C /* MyCardsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsFooterView.swift; sourceTree = "<group>"; };
-		55A762CC261C598D00480BAC /* AuthStateObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthStateObserver.swift; path = "../../../cert-ios/Core/AuthStateObserver/AuthStateObserver.swift"; sourceTree = "<group>"; };
 		55A7C06F260B0E250037D567 /* CameraTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTarget.swift; sourceTree = "<group>"; };
 		55A7C075260B38720037D567 /* QRPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentView.swift; sourceTree = "<group>"; };
 		55A7C078260B58AA0037D567 /* CalculatePayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePayView.swift; sourceTree = "<group>"; };
@@ -807,6 +817,18 @@
 		72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusView.swift; sourceTree = "<group>"; };
 		72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusViewController.swift; sourceTree = "<group>"; };
 		72C5E51D2632708900FEABA1 /* CardScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanner.swift; sourceTree = "<group>"; };
+		72D219472636523E008FE635 /* PinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCoordinator.swift; sourceTree = "<group>"; };
+		72D2194A26365250008FE635 /* PinModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinModuleFactory.swift; sourceTree = "<group>"; };
+		72D2195B263652D5008FE635 /* AuthStateObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStateObserver.swift; sourceTree = "<group>"; };
+		72D2196126365325008FE635 /* CreatePinModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinModule.swift; sourceTree = "<group>"; };
+		72D2196526365342008FE635 /* CreatePinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinViewController.swift; sourceTree = "<group>"; };
+		72D2196B2636535D008FE635 /* CreatePinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePinView.swift; sourceTree = "<group>"; };
+		72D219702636537F008FE635 /* PinCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCheckView.swift; sourceTree = "<group>"; };
+		72D21976263653AC008FE635 /* PinCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCheckViewController.swift; sourceTree = "<group>"; };
+		72D2197B263653C5008FE635 /* PinCheckModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCheckModule.swift; sourceTree = "<group>"; };
+		72D2197F263653F7008FE635 /* PassCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassCodeView.swift; sourceTree = "<group>"; };
+		72D2198226365405008FE635 /* PinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
+		72D2198526365413008FE635 /* DPOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPOTPView.swift; sourceTree = "<group>"; };
 		72FABA13261D5E4900EC7EB9 /* ProductCalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCalculateView.swift; sourceTree = "<group>"; };
 		72FABA19261D6DFD00EC7EB9 /* DeliveryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarController.swift; sourceTree = "<group>"; };
 		72FABA1F261D6F9F00EC7EB9 /* DeliveryTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -2051,14 +2073,6 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
-		55A762CB261C588E00480BAC /* AuthStateObserver */ = {
-			isa = PBXGroup;
-			children = (
-				55A762CC261C598D00480BAC /* AuthStateObserver.swift */,
-			);
-			path = AuthStateObserver;
-			sourceTree = "<group>";
-		};
 		55A7C06E260B0E010037D567 /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -3155,6 +3169,111 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		72D2194626365222008FE635 /* PinFlow */ = {
+			isa = PBXGroup;
+			children = (
+				72D2196E26365370008FE635 /* CheckPin */,
+				72D2195F2636530C008FE635 /* CreatePin */,
+				72D2195E263652FE008FE635 /* Coordinator */,
+			);
+			path = PinFlow;
+			sourceTree = "<group>";
+		};
+		72D21958263652CC008FE635 /* AuthStateObserver */ = {
+			isa = PBXGroup;
+			children = (
+				72D2195B263652D5008FE635 /* AuthStateObserver.swift */,
+			);
+			path = AuthStateObserver;
+			sourceTree = "<group>";
+		};
+		72D2195E263652FE008FE635 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				72D219472636523E008FE635 /* PinCoordinator.swift */,
+				72D2194A26365250008FE635 /* PinModuleFactory.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		72D2195F2636530C008FE635 /* CreatePin */ = {
+			isa = PBXGroup;
+			children = (
+				72D2196926365351008FE635 /* View */,
+				72D219642636532F008FE635 /* Controller */,
+				72D2196026365318008FE635 /* Module */,
+			);
+			path = CreatePin;
+			sourceTree = "<group>";
+		};
+		72D2196026365318008FE635 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72D2196126365325008FE635 /* CreatePinModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72D219642636532F008FE635 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72D2196526365342008FE635 /* CreatePinViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72D2196926365351008FE635 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72D2196B2636535D008FE635 /* CreatePinView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72D2196E26365370008FE635 /* CheckPin */ = {
+			isa = PBXGroup;
+			children = (
+				72D2197A263653B7008FE635 /* Module */,
+				72D219752636539C008FE635 /* Controller */,
+				72D2197326365386008FE635 /* View */,
+			);
+			path = CheckPin;
+			sourceTree = "<group>";
+		};
+		72D2197326365386008FE635 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72D219702636537F008FE635 /* PinCheckView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72D219752636539C008FE635 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72D21976263653AC008FE635 /* PinCheckViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72D2197A263653B7008FE635 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				72D2197B263653C5008FE635 /* PinCheckModule.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		72D2197E263653E7008FE635 /* PassCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				72D2197F263653F7008FE635 /* PassCodeView.swift */,
+				72D2198526365413008FE635 /* DPOTPView.swift */,
+				72D2198226365405008FE635 /* PinView.swift */,
+			);
+			path = PassCodeView;
+			sourceTree = "<group>";
+		};
 		72FABA18261D6D6600EC7EB9 /* DeliveryTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -3608,6 +3727,7 @@
 		A40B951425DE266000E507FB /* UserFlow */ = {
 			isa = PBXGroup;
 			children = (
+				72D2194626365222008FE635 /* PinFlow */,
 				72FABA18261D6D6600EC7EB9 /* DeliveryTabBar */,
 				A4057DB62611D6350062BB5B /* DeliveryFlow */,
 				A40B951525DE266700E507FB /* HomeFlow */,
@@ -4305,35 +4425,35 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				7201594C262CC6CC0083C758 /* DeliveryLocationMap */,
-				55AA1FE4262838FA004C8F67 /* Control */,
-				55A762CB261C588E00480BAC /* AuthStateObserver */,
-				724FC58E262419BD00C1DED3 /* UltraDrawerView */,
-				721127F42620141A0055A83A /* UserLocation */,
-				721127E526200CEB0055A83A /* MapManager */,
-				72FB0820261DB3EF00F04395 /* BarButtonContainerModule */,
-				72FB07EA261DA4EE00F04395 /* SearchController */,
-				72FB07DE261DA4B200F04395 /* SearchContainerModule */,
+				72D21958263652CC008FE635 /* AuthStateObserver */,
 				A483E21925D40ABD006D2DAF /* AccessCode */,
 				A4E5815725D540E700EDC053 /* AppEnviroment */,
 				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
 				A4BBC6DD25D638F2006AF382 /* BackContainerModule */,
+				72FB0820261DB3EF00F04395 /* BarButtonContainerModule */,
 				A4057DA52611C5350062BB5B /* BiometricService */,
 				5555236425EF66E400537D3F /* Cache */,
+				55AA1FE4262838FA004C8F67 /* Control */,
 				A47CA19C25E36D3200EB091C /* Coordinator */,
+				7201594C262CC6CC0083C758 /* DeliveryLocationMap */,
 				A483E25325D40ABE006D2DAF /* ImageSlideShow */,
 				A483E24525D40ABE006D2DAF /* InputValidatable */,
 				A4057DA02611C5170062BB5B /* KeyChainStorage */,
 				A4B9A3B125F104DC00F0A3D6 /* LoadingIndicatorView */,
 				A483E24E25D40ABE006D2DAF /* Logger */,
+				721127E526200CEB0055A83A /* MapManager */,
 				A4BBC6D925D638C6006AF382 /* NavigationBarConfigurable */,
 				A483E22525D40ABD006D2DAF /* Networking */,
 				A483E23B25D40ABE006D2DAF /* Pagination */,
 				A483E21125D40ABD006D2DAF /* Rx+Extension */,
+				72FB07DE261DA4B200F04395 /* SearchContainerModule */,
+				72FB07EA261DA4EE00F04395 /* SearchController */,
 				A483E22325D40ABD006D2DAF /* TokenKeyChain */,
 				A4E581E625D543B000EDC053 /* UIView+Extension */,
+				724FC58E262419BD00C1DED3 /* UltraDrawerView */,
 				A475CCC325EF422F00C596FB /* UserDefaultStore */,
 				A4057D932611C49A0062BB5B /* UserInfoStorage */,
+				721127F42620141A0055A83A /* UserLocation */,
 				A4057D9B2611C5010062BB5B /* UserSessionStorage */,
 				A483E24925D40ABE006D2DAF /* View */,
 				A48CD00A25DBC9D20010829F /* ViewController */,
@@ -4895,6 +5015,7 @@
 		A4DD3E9525D24B98002D2186 /* PilicanView */ = {
 			isa = PBXGroup;
 			children = (
+				72D2197E263653E7008FE635 /* PassCodeView */,
 				72C5E51A2632708900FEABA1 /* CardScanner */,
 				55AA1FDD262814EA004C8F67 /* TaxiView */,
 				72112839262020100055A83A /* YandexMapViewModel */,
@@ -5294,6 +5415,7 @@
 				A40B950B25DE243300E507FB /* TabBarModule.swift in Sources */,
 				72340C53262FC491000569D6 /* CVVTextField.swift in Sources */,
 				55ADCEAA25E65DCB003D3F3A /* AcceptPermissionViewController.swift in Sources */,
+				72D2196C2636535D008FE635 /* CreatePinView.swift in Sources */,
 				721127E726200EDA0055A83A /* MapStatus.swift in Sources */,
 				7201595C262CC91A0083C758 /* DeliveryLocationMapViewModel.swift in Sources */,
 				55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */,
@@ -5332,6 +5454,7 @@
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */,
 				724FC5AA262419BE00C1DED3 /* CGPoint+Utils.swift in Sources */,
+				72D2195C263652D5008FE635 /* AuthStateObserver.swift in Sources */,
 				A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */,
 				5578855D25FF673100B3A798 /* ChangePinViewController.swift in Sources */,
 				A4B310EB25D10C370003BA0B /* AuthViewController.swift in Sources */,
@@ -5375,6 +5498,7 @@
 				72FB0844261DC92100F04395 /* SearchList.swift in Sources */,
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
+				72D21977263653AC008FE635 /* PinCheckViewController.swift in Sources */,
 				556CF6DA26022401007B8FB9 /* PayHistoryTarget.swift in Sources */,
 				5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */,
 				A4B3144025D150180003BA0B /* AppCoordinatorFactory.swift in Sources */,
@@ -5405,6 +5529,7 @@
 				A40B95EE25DE3A9600E507FB /* CategoryView.swift in Sources */,
 				5FF910CF26258F9600E1EF00 /* NotificationResponse.swift in Sources */,
 				A4057DBC2611D8F00062BB5B /* DeliveryRetailListModule.swift in Sources */,
+				72D2196226365325008FE635 /* CreatePinModule.swift in Sources */,
 				724FC5A6262419BE00C1DED3 /* DrawerView.swift in Sources */,
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				A4057DAF2611C5780062BB5B /* AppSessionManager.swift in Sources */,
@@ -5433,6 +5558,7 @@
 				A40B95F525DE659E00E507FB /* SetSizedHeaderView.swift in Sources */,
 				724FC5BB262419BE00C1DED3 /* ScrollDrawerViewContent.swift in Sources */,
 				556CF6DE260225AA007B8FB9 /* PayHistoryViewModel.swift in Sources */,
+				72D2197C263653C5008FE635 /* PinCheckModule.swift in Sources */,
 				A40B951025DE244D00E507FB /* TabBarController.swift in Sources */,
 				724FC5B0262419BE00C1DED3 /* DampingTimingParameters.swift in Sources */,
 				5525318D262941DD00888DEE /* FavoritesTarget.swift in Sources */,
@@ -5489,6 +5615,7 @@
 				A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */,
 				A48CCFE325DACBFA0010829F /* setAnchorPoint.swift in Sources */,
 				A4DD3DCE25D24398002D2186 /* Apis.swift in Sources */,
+				72D2194B26365250008FE635 /* PinModuleFactory.swift in Sources */,
 				7211284E26202B490055A83A /* RetailListMapModule.swift in Sources */,
 				552531DC262ACF4B00888DEE /* OrderHistoryTarget.swift in Sources */,
 				552531BA2629BF9200888DEE /* DeliveryMenu.swift in Sources */,
@@ -5539,7 +5666,6 @@
 				A4B3144525D150900003BA0B /* AuthCoordinator.swift in Sources */,
 				A4BBC6D625D63664006AF382 /* Images.swift in Sources */,
 				552531BF2629ECD300888DEE /* DeliveryMenuModuleFactory.swift in Sources */,
-				55A762CD261C598E00480BAC /* AuthStateObserver.swift in Sources */,
 				A4E581FE25D552AB00EDC053 /* CameraUsagePermission.swift in Sources */,
 				A40B95FF25DE6D1300E507FB /* HomeApiService.swift in Sources */,
 				724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */,
@@ -5591,6 +5717,7 @@
 				72FABA1A261D6DFD00EC7EB9 /* DeliveryTabBarController.swift in Sources */,
 				55DB7D9726312B290086B562 /* OrderSuccessViewController.swift in Sources */,
 				A4FAAD1125E75D0B00A55CB8 /* ProfileMenuModule.swift in Sources */,
+				72D219482636523E008FE635 /* PinCoordinator.swift in Sources */,
 				558679C225F0D4E400A5A94B /* UITextField+Extension.swift in Sources */,
 				A47CA1EC25E36E8000EB091C /* AdditionalMenuPresentationController.swift in Sources */,
 				72112846262027C70055A83A /* RetailListMapView.swift in Sources */,
@@ -5619,6 +5746,7 @@
 				55A7C070260B0E250037D567 /* CameraTarget.swift in Sources */,
 				556543E4261DC698009A4E62 /* RateMealView.swift in Sources */,
 				A4379FD425ECAF3000910A2D /* RetailDetailModule.swift in Sources */,
+				72D2198326365405008FE635 /* PinView.swift in Sources */,
 				72FB07FE261DA56400F04395 /* SearchView.swift in Sources */,
 				728434C2261D7F8400E21209 /* DeliveryRetailProductsViewController.swift in Sources */,
 				A48CD00F25DBD37A0010829F /* RegistrationStatus.swift in Sources */,
@@ -5660,10 +5788,12 @@
 				55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */,
 				556543DA261DC5DD009A4E62 /* RateDeliveryModule.swift in Sources */,
 				557AA0DC262FE664008FF4AF /* OrderResponse.swift in Sources */,
+				72D2198626365413008FE635 /* DPOTPView.swift in Sources */,
 				5FF910BE26254C4C00E1EF00 /* PillikanInfoModule.swift in Sources */,
 				55DB7D9326312B0B0086B562 /* OrderSuccessModule.swift in Sources */,
 				A4B9A0F925F090F200F0A3D6 /* CashBackListView.swift in Sources */,
 				72340C6B262FC9F7000569D6 /* AddCardViewController.swift in Sources */,
+				72D21980263653F7008FE635 /* PassCodeView.swift in Sources */,
 				A483E28F25D40ABE006D2DAF /* ViewModel.swift in Sources */,
 				72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */,
 				A483E27A25D40ABE006D2DAF /* PilicanRequestRetrier.swift in Sources */,
@@ -5675,6 +5805,7 @@
 				55DB7DA02631381D0086B562 /* OrderErrorModule.swift in Sources */,
 				A4FD7DA625DCDD10000DD49D /* Token.swift in Sources */,
 				72340C67262FC971000569D6 /* AddCardViewModel.swift in Sources */,
+				72D219712636537F008FE635 /* PinCheckView.swift in Sources */,
 				A4D7642225DA472E009A6651 /* RegistrationViewModel.swift in Sources */,
 				5555237425EF907A00537D3F /* User.swift in Sources */,
 				5FF910E02625B80600E1EF00 /* PillikanPayView.swift in Sources */,
@@ -5766,6 +5897,7 @@
 				72C5E4B62632583D00FEABA1 /* CardRemoveResult.swift in Sources */,
 				721127F2262012AF0055A83A /* MapTransitionViewModel.swift in Sources */,
 				7211284A2620297C0055A83A /* RetailListMapViewController.swift in Sources */,
+				72D2196626365342008FE635 /* CreatePinViewController.swift in Sources */,
 				A483E28725D40ABE006D2DAF /* IdPaginationManager.swift in Sources */,
 				A4BBC6F425D63D56006AF382 /* BackPressHandler.swift in Sources */,
 				A475CCC125EF421600C596FB /* AppLanguage.swift in Sources */,
