@@ -8,7 +8,7 @@ final class DeliveryLogoutViewController: UIViewController, DeliveryLogoutModule
         self.deliveryLogout = deliveryLogout
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }
@@ -17,5 +17,4 @@ final class DeliveryLogoutViewController: UIViewController, DeliveryLogoutModule
         super.viewDidLoad()
         deliveryLogout.forceLogout()
     }
-
 }

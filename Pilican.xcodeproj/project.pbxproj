@@ -37,6 +37,7 @@
 		55312292262EC37400D33A1E /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55312291262EC37400D33A1E /* BalanceViewModel.swift */; };
 		55312297262EC3A400D33A1E /* BalanceTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55312296262EC3A400D33A1E /* BalanceTarget.swift */; };
 		5531229C262ECE2400D33A1E /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5531229B262ECE2400D33A1E /* BalanceResponse.swift */; };
+		553C49922636AD72004777AE /* OrderItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553C49912636AD72004777AE /* OrderItemsView.swift */; };
 		55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */; };
 		55454B2D260DA30500404238 /* QRPaymentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B2C260DA30500404238 /* QRPaymentTarget.swift */; };
 		55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */; };
@@ -600,6 +601,7 @@
 		55312291262EC37400D33A1E /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
 		55312296262EC3A400D33A1E /* BalanceTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTarget.swift; sourceTree = "<group>"; };
 		5531229B262ECE2400D33A1E /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
+		553C49912636AD72004777AE /* OrderItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemsView.swift; sourceTree = "<group>"; };
 		55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewModel.swift; sourceTree = "<group>"; };
 		55454B2C260DA30500404238 /* QRPaymentTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentTarget.swift; sourceTree = "<group>"; };
 		55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayByQRPartnerResponse.swift; sourceTree = "<group>"; };
@@ -1334,6 +1336,7 @@
 			isa = PBXGroup;
 			children = (
 				552531CE262AC96100888DEE /* OrderHistoryTableViewCell.swift */,
+				553C49912636AD72004777AE /* OrderItemsView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -5841,6 +5844,7 @@
 				72015959262CC7B60083C758 /* DeliveryLocationMapView.swift in Sources */,
 				55AD645925E52F2800034459 /* WorkStatus.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
+				553C49922636AD72004777AE /* OrderItemsView.swift in Sources */,
 				A47CA1B825E36DD400EB091C /* Presentable.swift in Sources */,
 				A4B3143925D14D400003BA0B /* AppCoordinator.swift in Sources */,
 				722A33C6262568E3003FB38A /* MakeOrderModule.swift in Sources */,

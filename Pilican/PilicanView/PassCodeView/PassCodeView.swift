@@ -88,7 +88,7 @@ extension PassCodeView {
 
 extension PassCodeView: UIKeyInput {
     var hasText: Bool {
-        code.count > 0
+        !code.isEmpty
     }
     
     func insertText(_ text: String) {

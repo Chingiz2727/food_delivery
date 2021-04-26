@@ -41,7 +41,7 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
         let output = viewModel.transform(input: .init(loadOrderHistory: .just(())))
 
         let orderHistory = output.payHistory.publish()
-        
+
         let adapter = viewModel.adapter
         adapter.connect(to: rootView.tableView)
         adapter.start()

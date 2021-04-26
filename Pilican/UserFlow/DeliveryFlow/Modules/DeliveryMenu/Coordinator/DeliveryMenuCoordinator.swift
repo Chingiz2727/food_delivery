@@ -20,7 +20,7 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
     override func start() {
         presentMenu()
     }
-    
+
     private func presentMenu() {
         var module = moduleFactory.makedDeliveryMenu()
         module.deliveryMenuDidSelect = { [weak self] menu in
@@ -36,10 +36,17 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showOrderHistory() {
-        let module = moduleFactory.makeOrderHistory()
+        var module = moduleFactory.makeOrderHistory()
+        module.onSelectOrderHistory = { [weak self] order in
+            self?.showMore()
+        }
         router.push(module)
+    }
+    
+    private func showMore() {
+        
     }
 
     private func showFavorites() {
@@ -49,12 +56,12 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         }
         router.push(module)
     }
-    
+
     private func showMyCards() {
         let module = moduleFactory.makeMyCards()
         router.push(module)
     }
-    
+
     private func showDeliveryProduct(retail: DeliveryRetail) {
         var module = moduleFactory.deliveryProduct(retail: retail)
         module.onMakeOrdedDidTap = { [weak self] in
