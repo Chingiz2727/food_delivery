@@ -106,6 +106,13 @@ enum Images: String {
     case attentionAlcohol
     case scanIcon
     case HomePillikanSelected
+    case cooking
+    case delivered
+    case orderAccepted
+    case orderCooking
+    case orderDelivered
+    case orderSent
+    case sent
 }
 
 extension Images {
