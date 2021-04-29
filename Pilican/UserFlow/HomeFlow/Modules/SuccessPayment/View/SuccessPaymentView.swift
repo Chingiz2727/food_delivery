@@ -9,7 +9,7 @@ import UIKit
 import Lottie
 
 class SuccessPaymentView: UIView {
-
+    let scrollView = UIScrollView()
     let retailView = RetailDetailHeaderView()
 
     let contentImageView: UIImageView = {
@@ -60,6 +60,8 @@ class SuccessPaymentView: UIView {
         setupInitialLayouts()
         configureView()
         setAnimation()
+        scrollView.alwaysBounceVertical = true
+        scrollView.bounces = false
     }
 
     required init?(coder: NSCoder) {
@@ -67,7 +69,7 @@ class SuccessPaymentView: UIView {
     }
 
     func setData(price: String, cashback: String) {
-        paymentPriceLabel.text = "\(price) kzt."
+        paymentPriceLabel.text = "\(price) тг"
         paymentCashbackLabel.text = "кэшбэк +\(cashback)"
     }
 
@@ -79,48 +81,52 @@ class SuccessPaymentView: UIView {
     }
 
     private func setupInitialLayouts() {
-        addSubview(contentImageView)
-        contentImageView.snp.makeConstraints { (make) in
-            make.left.top.bottom.right.equalToSuperview()
+        addSubview(scrollView)
+        scrollView.snp.makeConstraints { $0.edges.width.height.equalToSuperview()
         }
 
-        addSubview(checkedSuccesView)
+        scrollView.addSubview(contentImageView)
+        contentImageView.snp.makeConstraints { (make) in
+            make.edges.width.height.equalToSuperview()
+        }
+
+        scrollView.addSubview(checkedSuccesView)
         checkedSuccesView.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(80)
+            make.top.equalToSuperview().inset(20)
             make.size.equalTo(200)
             make.centerX.equalToSuperview()
         }
 
-        addSubview(paymentStatusLabel)
+        scrollView.addSubview(paymentStatusLabel)
         paymentStatusLabel.snp.makeConstraints { (make) in
             make.top.equalTo(checkedSuccesView.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
         }
 
-        addSubview(paymentPriceLabel)
+        scrollView.addSubview(paymentPriceLabel)
         paymentPriceLabel.snp.makeConstraints { (make) in
             make.top.equalTo(paymentStatusLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
 
-        addSubview(paymentCashbackLabel)
+        scrollView.addSubview(paymentCashbackLabel)
         paymentCashbackLabel.snp.makeConstraints { (make) in
             make.top.equalTo(paymentPriceLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
 
-        addSubview(retailView)
-        retailView.snp.makeConstraints { (make) in
-            make.top.equalTo(paymentCashbackLabel.snp.bottom).offset(100)
-            make.left.right.equalToSuperview().inset(16)
-            make.height.equalTo(100)
+        scrollView.addSubview(nextButton)
+        nextButton.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(15)
+            make.bottom.equalToSuperview().inset(30)
+            make.height.equalTo(40)
         }
 
-        addSubview(nextButton)
-        nextButton.snp.makeConstraints { (make) in
-            make.top.equalTo(retailView.snp.bottom).offset(50)
-            make.left.right.equalToSuperview().inset(15)
-            make.height.equalTo(40)
+        scrollView.addSubview(retailView)
+        retailView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(16)
+            make.bottom.equalTo(nextButton.snp.top).offset(-20)
+            make.height.equalTo(100)
         }
     }
 

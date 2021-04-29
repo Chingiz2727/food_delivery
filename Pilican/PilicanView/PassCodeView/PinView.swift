@@ -14,11 +14,11 @@ final class PinView: UIView {
         super.init(frame: frame)
         setupInitialLayout()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         layer.cornerRadius = 16
         layer.borderColor = UIColor.primary.cgColor

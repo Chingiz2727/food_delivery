@@ -8,8 +8,8 @@
 import Foundation
 
 struct ScanRetailResponse: Codable {
-    let orderId: Int
+    var orderId: Int
     let fullName: String
-    let type: Int
+    var type: Int
     let retail: Retail
 }

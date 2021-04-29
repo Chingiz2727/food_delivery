@@ -9,7 +9,7 @@ class BonusChoiceView: UIView {
         label.text = "Потратить бонусы"
         return label
     }()
-    
+
     private let payChoiceTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Мои бонусы"
@@ -27,14 +27,14 @@ class BonusChoiceView: UIView {
         label.textAlignment = .left
         return label
     }()
-    
+
     private let bonusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.image = Images.tenge.image
         return imageView
     }()
-    
+
     let choiceSwitch: UISwitch = {
         let choiceSwitch = UISwitch()
         choiceSwitch.isOn = false

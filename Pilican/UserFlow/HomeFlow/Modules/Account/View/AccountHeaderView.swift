@@ -8,7 +8,7 @@
 import UIKit
 
 class AccountHeaderView: UIView {
-    
+
     private let accountImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Images.accountImage.image
@@ -17,7 +17,7 @@ class AccountHeaderView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
     private let accountNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Иванов Иван"
@@ -42,7 +42,7 @@ class AccountHeaderView: UIView {
         button.clipsToBounds = true
         return button
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()

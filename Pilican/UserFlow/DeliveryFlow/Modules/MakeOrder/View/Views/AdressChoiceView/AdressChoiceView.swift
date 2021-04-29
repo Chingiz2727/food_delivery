@@ -1,7 +1,7 @@
 import UIKit
 
 final class AdresssChoiceView: UIView {
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .semibold20

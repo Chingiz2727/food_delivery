@@ -59,7 +59,7 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
 
     private let closedView = UIView()
     private let closedLabel = UILabel()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
@@ -137,5 +137,3 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
         selectionStyle = .none
     }
 }
-
-

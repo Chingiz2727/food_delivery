@@ -129,7 +129,7 @@ public protocol DPOTPViewDelegate {
     }
     
     func initialization() {
-        if arrTextFields.count != 0 { return }
+        if !arrTextFields.isEmpty { return }
         
         let sizeTextField = (self.bounds.width/CGFloat(count)) - (spacing)
         
@@ -180,7 +180,7 @@ public protocol DPOTPViewDelegate {
                 textField.attributedPlaceholder = NSAttributedString(string: placeholder[i - 1],
                 attributes: [NSAttributedString.Key.foregroundColor: placeholderTextColor])
             }
-            
+            // swiftlint:disable line_length
             textField.frame = CGRect(x:(CGFloat(i-1) * sizeTextField) + (CGFloat(i) * spacing/2) + (CGFloat(i-1) * spacing/2)  , y: (self.bounds.height - sizeTextField)/2 , width: sizeTextField, height: sizeTextField)
             
             arrTextFields.append(textField)
@@ -205,7 +205,7 @@ public protocol DPOTPViewDelegate {
     open override func becomeFirstResponder() -> Bool {
         if isCursorHidden {
             for i in 0 ..< arrTextFields.count {
-                if arrTextFields[i].text?.count == 0 {
+                if ((arrTextFields[i].text?.isEmpty) != nil) {
                     _ = arrTextFields[i].becomeFirstResponder()
                     break
                 } else if (arrTextFields.count - 1) == i {
@@ -250,7 +250,7 @@ extension DPOTPView : UITextFieldDelegate , OTPBackTextFieldDelegate {
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string.trimmingCharacters(in: CharacterSet.whitespaces).count != 0 {
+        if !string.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty {
             textField.text = string
             if textField.tag < count*1000 {
                 let next = textField.superview?.viewWithTag((textField.tag/1000 + 1)*1000)
@@ -258,7 +258,7 @@ extension DPOTPView : UITextFieldDelegate , OTPBackTextFieldDelegate {
             } else if textField.tag == count*1000 && dismissOnLastEntry {
                 textField.resignFirstResponder()
             }
-        } else if string.count == 0 { // is backspace
+        } else if string.isEmpty { // is backspace
             textField.text = ""
         }
         dpOTPViewDelegate?.dpOTPViewAddText(text ?? "", at: textField.tag/1000 - 1)

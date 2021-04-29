@@ -24,9 +24,11 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     private var epayAmount = 0
     private var price = 0
     private var cashback = 0
+    private let userInfo: UserInfoStorage
 
-    init(viewModel: QRPaymentViewModel) {
+    init(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage) {
         self.viewModel = viewModel
+        self.userInfo = userInfo
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -46,8 +48,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
 
     private func bindView() {
         rootView.retailView.setRetail(retail: viewModel.info.retail)
-        let user: User? = try? cache.readFromDisk(name: "userInfo")
-        guard let balance = user?.balance else { return }
+        guard let balance = userInfo.balance else { return }
         rootView.paymentChoiceView.setData(cashback: String(balance))
         rootView.commentView.setData(img: viewModel.info.retail.imgLogo ?? "")
         Observable.combineLatest(
@@ -69,14 +70,30 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
                                             payTapped: rootView.payButton.rx.tap.asObservable(),
                                             amount: priceSubject,
                                             epayAmount: epayAmountSubject,
-                                            comment: rootView.commentView.commentTextField.rx.text.asObservable()))
+                                            comment: rootView.commentView.commentTextField.rx.text.asObservable(),
+                                            loadInfo: .just(())))
+        
+        let scan = output.scanRetailResponse.publish()
+        
+        scan.errors
+            .bind(to: rx.error)
+            .disposed(by: disposeBag)
+        
+        scan.element
+            .subscribe(onNext: { [unowned self] scan in
+                viewModel.info.orderId = scan.orderId
+                viewModel.info.type = scan.type
+            }).disposed(by: disposeBag)
+        
+        scan.connect()
+            .disposed(by: disposeBag)
 
         let result = output.payByQRPartnerResponse.publish()
 
         result.element
             .subscribe(onNext: { [unowned self] result in
                 if result.status == 200 {
-                    try? self.cache.saveToDisk(name: "userInfo", value: result.user)
+                    userInfo.balance = result.user.balance
                     openSuccessPayment?(viewModel.info.retail, price, cashback)
                 }
             }).disposed(by: disposeBag)
@@ -102,14 +119,13 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
 
     private func calculateCashback(isOn: Bool, amount: String?) -> (String, String, String) {
         var myBonus = 0
-        let user: User? = try? cache.readFromDisk(name: "userInfo")
-        if let balance = user?.balance {
+        if let balance = userInfo.balance {
             myBonus = balance
         }
         guard let intAmount = Int(amount ?? "0") else { return ("0", "0", "0") }
         let payAmount = isOn ? intAmount - myBonus : intAmount
         let totalAmount = payAmount < 0 ? 0 : payAmount
-        let cashBack = (totalAmount * viewModel.info.retail.cashBack / 100)
+        let cashBack = (totalAmount * (viewModel.info.retail.cashBack ?? 1) / 100)
         cashback = cashBack
         let amountByBonus = intAmount - myBonus < 0 ? 0 : intAmount - myBonus
         let spendBonusAmount = myBonus > intAmount ? intAmount : myBonus

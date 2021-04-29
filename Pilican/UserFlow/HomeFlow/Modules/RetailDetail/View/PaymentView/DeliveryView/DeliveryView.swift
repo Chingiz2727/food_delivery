@@ -1,6 +1,6 @@
 import UIKit
 
-final class DeliveryView: UIView {
+final class DeliveryView: UIControl {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
@@ -68,7 +68,7 @@ final class DeliveryView: UIView {
     required init?(coder: NSCoder) {
         nil
     }
-    
+
     func setData(retail: Retail) {
         discountLabel.text = "\(retail.dlvCashBack)"
     }

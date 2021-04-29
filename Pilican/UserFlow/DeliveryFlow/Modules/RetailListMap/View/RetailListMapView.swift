@@ -9,7 +9,7 @@ final class RetailListMapView: UIView {
         let button = UIButton()
         return button
     }()
-    
+
     let listButton: PrimaryButton = {
         let button = PrimaryButton()
         button.setTitle("Назад к списку", for: .normal)
@@ -34,7 +34,7 @@ final class RetailListMapView: UIView {
         mapView.snp.makeConstraints { make in
             make.edges.equalTo(safeAreaLayoutGuide)
         }
-        
+
         listButton.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(safeAreaLayoutGuide).inset(20)
             make.height.equalTo(50)

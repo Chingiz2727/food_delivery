@@ -1,6 +1,6 @@
 import UIKit
 
-final class IdentificatorView: UIView {
+final class IdentificatorView: UIControl {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack

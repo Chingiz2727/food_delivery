@@ -11,7 +11,7 @@ final class DeliveryItemView: UIView {
         return imageView
     }()
 
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = .heading2
@@ -19,7 +19,7 @@ final class DeliveryItemView: UIView {
         return label
     }()
 
-    private let descriptionLabel: UILabel = {
+    let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .medium12
         label.numberOfLines = 0
