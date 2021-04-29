@@ -1,0 +1,1 @@
+protocol OrderStatusModule: Presentable {}
