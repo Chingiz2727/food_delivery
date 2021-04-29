@@ -24,6 +24,9 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         module.deliveryMenuDidSelect = { [weak self] in
             self?.showDeliveryMenu()
         }
+        module.onSelectToStatus = { [weak self] order in
+            self?.showOrderStatus(order: order)
+        }
         router.setRootModule(module)
     }
 
@@ -35,6 +38,7 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         module.alcohol = { [weak self] in
             self?.showAlcohol()
         }
+        
         router.push(module)
     }
 
@@ -102,5 +106,10 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         let coordinator = coordinatorFactory.makeDeliveryMenu()
         coordinator.start()
         addDependency(coordinator)
+    }
+    
+    private func showOrderStatus(order: DeliveryOrderResponse) {
+        let module = coordinatorFactory.makeOrderStatus(order: order)
+        router.push(module)
     }
 }
