@@ -55,7 +55,7 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
                 let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"
                 v.setup(imgUrl: imgUrl)
                 self.overlayViews.append(v)
-                let dataFor = [v : order] as! [UIView : DeliveryOrderResponse]
+                let dataFor = [v : order] as [UIView : DeliveryOrderResponse]
                 self.deliveryDetailsVCData.append(dataFor)
             }
             self.setupOverlays()

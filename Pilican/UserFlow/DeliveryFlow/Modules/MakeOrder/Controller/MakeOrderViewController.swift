@@ -172,13 +172,6 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                         self.totalSum.onNext(totalSum + rate.rate)
                         self.fullAmountSubject.onNext(totalSum + rate.rate)
                     }
-                let totalSum = amount.reduce(0,+)
-                self.foodAmountSubject.onNext(totalSum)
-                if totalSum < 2000 {
-                    self.addAmountSubject.onNext(600)
-                    self.totalSum.onNext(totalSum + 600 + rate.rate)
-                    self.rootView.setupAmount(totalSum: totalSum + 600, delivery: rate.rate)
-                    self.fullAmountSubject.onNext(totalSum + rate.rate + 600)
                 } else {
                     self.totalSum.onNext(totalSum)
                     self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
