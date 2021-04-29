@@ -47,7 +47,7 @@ final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
         }
         router.push(module)
     }
-    
+
     private func showMakeOrder(orderType: OrderType) {
         var module = moduleFactory.makeMakeOrder(orderType: orderType)
         module.onMapShowDidSelect = { [weak self] in
@@ -58,7 +58,7 @@ final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
         }
         router.push(module)
     }
-    
+
     func makeMapSearch() {
         var module = container.resolve(DeliveryLocationModule.self)!
         module.onlocationDidSelect = { [weak self] location in

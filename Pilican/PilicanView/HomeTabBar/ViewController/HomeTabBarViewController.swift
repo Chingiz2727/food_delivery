@@ -67,7 +67,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
             .disposed(by: disposeBag)
         tabView.setData(profile: userInfoStorage.fullName ?? "", balance: String(userInfoStorage.balance ?? 0))
     }
-    
+
     @objc private func showNotifyMenu() {
         self.notifyMenuTap?()
     }

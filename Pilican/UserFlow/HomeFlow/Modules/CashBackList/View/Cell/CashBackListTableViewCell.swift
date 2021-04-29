@@ -84,7 +84,7 @@ final class CashBackListTableViewCell: UITableViewCell {
     }
 
     private func setupWorkStatusView(retail: Retail) {
-        if let status = WorkStatus(rawValue: retail.payIsWork) {
+        if let status = WorkStatus(rawValue: retail.payIsWork ?? 1) {
         workStatusView.setTitle(title: status.title)
         workStatusView.configureView(backColor: status.backColor, textColor: status.textColor)
         }

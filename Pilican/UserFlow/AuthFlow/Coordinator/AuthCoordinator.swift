@@ -76,7 +76,15 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
         module.closeButton = { [weak self] in
             self?.router.popModule()
         }
+        module.howItWorkTapped = { [weak self] in
+            self?.showHowItWork()
+        }
         router.push(module)
+    }
+
+    private func showHowItWork() {
+        let module = moduleFactory.makeHowItWork()
+        router.presentCard(module)
     }
 
     private func showAcceptPermission() {

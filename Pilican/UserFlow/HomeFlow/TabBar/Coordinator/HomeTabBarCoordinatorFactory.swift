@@ -22,7 +22,8 @@ final class HomeTabBarCoordinatorFactory {
     }
 
     func makePayPartner(viewModel: QRPaymentViewModel) -> QRPaymentModule {
-        return QRPaymentViewController(viewModel: viewModel)
+        let userInfo = container.resolve(UserInfoStorage.self)!
+        return QRPaymentViewController(viewModel: viewModel, userInfo: userInfo)
     }
 
     func makeSuccessPayment(retail: Retail, price: Int, cashback: Int) -> SuccessPaymentModule {
@@ -47,5 +48,9 @@ final class HomeTabBarCoordinatorFactory {
         let apiService = container.resolve(ApiService.self)!
         let viewModel = PillikanPayViewModel(apiService: apiService)
         return PillikanPayViewController(viewModel: viewModel)
+    }
+    
+    func makeHowItWork() -> HowItWorkModule {
+        return  HowItWorkViewController()
     }
 }

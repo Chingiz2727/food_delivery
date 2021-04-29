@@ -45,9 +45,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         super.viewDidLoad()
         searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
         bindViewModel()
-        bindView()
         configureMap()
         viewModel.orderType = orderType.title == "Доставка Pillikan" ? 1 : 2
+        bindView()
     }
     private func bindViewModel() {
         let output = viewModel.transform(
@@ -69,6 +69,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             .subscribe(onNext: { [unowned self] res in
                 if res.status == 200 {
                     self.orderSuccess?(res)
+                    viewModel.dishList.products = []
                 } else {
                     self.orderError?()
                 }
@@ -96,7 +97,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         let distance = output.deliveryDistance
 
         distance.subscribe(onNext: { [unowned self] distance in
-            self.rootView.deliveryView.setup(subTitle: "Расстояние доставки \(distance / 1000) км")
+            if orderType.title == "Доставка Pillikan" {
+                self.rootView.deliveryView.setup(subTitle: "Расстояние доставки \(distance / 1000) км")
+            }
             self.distance.onNext(distance)
         })
         .disposed(by: disposeBag)
@@ -104,7 +107,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         let currentLocation = output.currentLocationName
 
         currentLocation.subscribe(onNext: { [unowned self] location in
-            self.rootView.locationView.setup(subTitle: location.name)
+            if orderType.title == "Доставка Pillikan" {
+                self.rootView.locationView.setup(subTitle: location.name)
+            } else {
+                self.rootView.locationView.setup(subTitle: viewModel.dishList.retail?.address ?? "")
+            }
         })
         .disposed(by: disposeBag)
 
@@ -123,7 +130,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             .disposed(by: disposeBag)
 
         currentLocation.subscribe(onNext: { [unowned self] location in
-            self.rootView.addressView.setupAdressName(adress: location.name)
+            if orderType.title == "Доставка Pillikan" {
+                self.rootView.addressView.setupAdressName(adress: location.name)
+            } else {
+                self.rootView.addressView.setupAdressName(adress: viewModel.dishList.retail?.address ?? "")
+            }
         })
         .disposed(by: disposeBag)
 
@@ -145,25 +156,32 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                     emptyDishList?()
                 }
                 let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
-                let totalSum = amount.reduce(0,+)
-                self.foodAmountSubject.onNext(totalSum)
-                if totalSum < 2000 {
-                    self.addAmountSubject.onNext(600)
-                    self.totalSum.onNext(totalSum + 600 + rate.rate)
-                    self.rootView.setupAmount(totalSum: totalSum + 600, delivery: rate.rate)
-                    self.fullAmountSubject.onNext(totalSum + rate.rate + 600)
+                self.foodAmountSubject.onNext(amount.first ?? 0)
+                let totalSum = amount.reduce(0, +)
+                if orderType.title == "Доставка Pillikan" {
+                    if totalSum < 2000 {
+                        self.addAmountSubject.onNext(600)
+                        self.totalSum.onNext(totalSum)
+                        self.deliveryAmountSubject.onNext(rate.rate)
+                        self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate, orderType: orderType)
+                        self.fullAmountSubject.onNext(totalSum + rate.rate + 600)
+                    } else {
+                        self.addAmountSubject.onNext(0)
+                        self.deliveryAmountSubject.onNext(rate.rate)
+                        self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate, orderType: orderType)
+                        self.totalSum.onNext(totalSum + rate.rate)
+                        self.fullAmountSubject.onNext(totalSum + rate.rate)
+                    }
                 } else {
-                    self.addAmountSubject.onNext(0)
-                    self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate)
-                    self.totalSum.onNext(totalSum + rate.rate)
-                    self.fullAmountSubject.onNext(totalSum + rate.rate)
+                    self.totalSum.onNext(totalSum)
+                    self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                    self.rootView.payAmountView.clearExtraCost()
+                    self.fullAmountSubject.onNext(totalSum)
                 }
-                self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate)
-                self.deliveryAmountSubject.onNext(rate.rate)
             })
             .disposed(by: disposeBag)
 
-        totalSum.subscribe(onNext: { [unowned self] sum in
+        fullAmountSubject.subscribe(onNext: { [unowned self] sum in
             let bonusSpend = self.viewModel.userInfo.balance ?? 0 > sum ? sum : self.viewModel.userInfo.balance ?? 0
             let sumSpend = self.viewModel.userInfo.balance ?? 0 > sum ? 0 : self.viewModel.userInfo.balance ?? 0 - sum
             self.rootView.bonusChoiceView.setupBonus(bonus: Double(bonusSpend))
@@ -189,6 +207,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             self.rootView.addressView.adressLabel.text = address.name
             self.currentLocation.onNext(address)
         }
+
+        rootView.payAmountView.payButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                print("ka")
+            }).disposed(by: disposeBag)
     }
 
     func changeDishList(action: DishListAction) {
@@ -199,7 +222,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         rootView.setupUserInfo(storage: viewModel.userInfo)
         rootView.tableView.rowHeight = 100
         rootView.tableView.estimatedRowHeight = 100
-        rootView.setOrderType(orderType: orderType)
+        rootView.setOrderType(orderType: orderType, address: viewModel.dishList.retail?.address ?? "")
         if let coordinate = locationManager.location?.coordinate {
             currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: ""))
         }

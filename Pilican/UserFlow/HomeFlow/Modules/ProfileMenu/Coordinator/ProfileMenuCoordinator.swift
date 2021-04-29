@@ -33,11 +33,15 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
             case .about:
                 self?.showAbout()
             case .main:
-                self?.router.popToRootModule()
+                self?.showMain()
             }
             self?.router.dismissModule()
         }
         router.presentActionSheet(module, interactive: true)
+    }
+    
+    private func showMain() {
+        self.router.popModule()
     }
 
     private func showBonus() {

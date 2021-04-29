@@ -64,7 +64,7 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         }
         router.push(module)
     }
-    
+
     private func showPayHistory() {
         var module = moduleFactory.makePayHistory()
         module.onSelectPayHistory = { [weak self] payments in
@@ -80,7 +80,7 @@ final class CashbackMenuCoordinatorImpl: BaseCoordinator, CashbackMenuCoordinato
         let module = moduleFactory.makePayDetail(payments: payments)
         router.presentCard(module)
     }
-    
+
     private func showAddCard(cardName: String) {
         var module = moduleFactory.makeAddCard(cardName: cardName)
         module.sendToWebController = { [weak self] model, html in

@@ -1,7 +1,7 @@
 import UIKit
 
 final class AddCardStatusView: UIView {
-    
+
     let exitButton = PrimaryButton()
 
     private let imageView: UIImageView = {
@@ -18,12 +18,12 @@ final class AddCardStatusView: UIView {
         label.textColor = .pilicanBlack
         return label
     }()
-    
+
     private lazy var stackView = UIStackView(
         views: [imageView, titleLabel, exitButton],
         axis: .vertical,
         spacing: 20)
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()

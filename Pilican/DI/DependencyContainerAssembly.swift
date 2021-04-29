@@ -70,24 +70,24 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(AuthStateObserver.self) { _ in
             AuthStateObserver(userSession: container.resolve(UserInfoStorage.self)!, appSession: container.resolve(UserSessionStorage.self)!)
         }.inObjectScope(.container)
-        
+
         container.register(DeliveryLogoutStateObserver.self) { _ in
             DeliveryLogoutStateObserver()
         }.inObjectScope(.container)
         container.register(PropertyFormatter.self) { resolver in
             PropertyFormatter(appLanguage: resolver.resolve(AppLanguage.self)!)
         }.inObjectScope(.container)
-        
+
         container.register(DishList.self) { resolver in
             DishList()
         }.inObjectScope(.container)
-        
+
         container.register(CameraModule.self) { _ in
             let session = container.resolve(AVCaptureSession.self)!
             let device = container.resolve(AVCaptureDevice.self)!
             let layer = container.resolve(AVCaptureVideoPreviewLayer.self)!
             let cameraUsagePermission = container.resolve(CameraUsagePermission.self)!
-            let authTokenService = container.resolve(AuthTokenService.self)!
+            let userSession = container.resolve(UserSessionStorage.self)!
             let apiService = container.resolve(ApiService.self)!
             let viewModel = CameraViewModel(apiService: apiService)
             let controller = CameraViewController(
@@ -95,7 +95,7 @@ public final class DependencyContainerAssembly: Assembly {
                 avCaptureDevice: device,
                 avCapturePreviewLayer: layer,
                 cameraUsagePermession: cameraUsagePermission,
-                authTokenService: authTokenService,
+                userSession: userSession,
                 viewModel: viewModel)
             return controller
         }

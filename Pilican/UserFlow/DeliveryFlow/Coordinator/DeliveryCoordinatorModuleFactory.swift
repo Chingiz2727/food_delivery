@@ -3,12 +3,12 @@ import UIKit
 final class DeliveryCoordinatorModuleFactory {
     private let container: DependencyContainer
     private let router: Router
-    
+
     init(container: DependencyContainer, router: Router) {
         self.container = container
         self.router = router
     }
-    
+
     func delivery() -> DeliveryRetailListModule {
         let apiSevice = container.resolve(ApiService.self)!
         let viewModel = DeliveryRetailListViewModel(apiService: apiSevice)
@@ -24,13 +24,13 @@ final class DeliveryCoordinatorModuleFactory {
         let controller = DeliveryRetailProductsViewController(viewModel: viewModel)
         return controller
     }
-    
+
     func makeBasket() -> OrderTypeModule {
         let dishList = container.resolve(DishList.self)!
         let controller = OrderTypeViewController(dishList: dishList, mapManager: container.resolve(MapManager.self)!)
         return controller
     }
-    
+
     func makeMakeOrder(orderType: OrderType) -> MakeOrderModule {
         let dishList = container.resolve(DishList.self)!
         let userInfo = container.resolve(UserInfoStorage.self)!

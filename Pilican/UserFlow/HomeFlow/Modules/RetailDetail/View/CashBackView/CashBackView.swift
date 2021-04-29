@@ -83,7 +83,7 @@ final class CashBackView: UIView {
 
     func setData(retail: Retail) {
         costLabel.text = "\(retail.avgAmount ?? "1") тг\ncредний чек"
-        cashBackLabel.text = "\(calculateCashback(cashback: retail.cashBack, avgAmount: retail.avgAmount ?? "1")) тг\nкэшбэк"
+        cashBackLabel.text = "\(calculateCashback(cashback: retail.cashBack ?? 1, avgAmount: retail.avgAmount ?? "1")) тг\nкэшбэк"
     }
 
     private func calculateCashback(cashback: Int, avgAmount: String) -> Int {

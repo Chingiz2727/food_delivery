@@ -17,13 +17,15 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
 
     private let disposeBag = DisposeBag()
     private let viewModel: ChangePinViewModel
+    private let userSession: UserSessionStorage
 
     override func loadView() {
         view = ChangePinView()
     }
     
-    init(viewModel: ChangePinViewModel) {
+    init(viewModel: ChangePinViewModel, userSession: UserSessionStorage) {
         self.viewModel = viewModel
+        self.userSession = userSession
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -63,6 +65,7 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
 
     private func showAlert() {
         self.showSuccessAlert { [unowned self] in
+            userSession.pin = rootView.newPinContainer.textField.text
             self.saveTapped?()
         }
     }

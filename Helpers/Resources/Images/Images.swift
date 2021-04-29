@@ -106,6 +106,9 @@ enum Images: String {
     case attentionAlcohol
     case scanIcon
     case HomePillikanSelected
+    case firstItem
+    case secondItem
+    case thirdItem
     case cooking
     case delivered
     case orderAccepted

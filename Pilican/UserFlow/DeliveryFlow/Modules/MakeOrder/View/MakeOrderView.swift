@@ -27,7 +27,7 @@ final class MakeOrderView: UIView {
         axis: .vertical,
         distribution: .fillProportionally,
         spacing: 10)
-    
+
     private let basketTitle: UILabel = {
         let label = UILabel()
         label.font = .heading1
@@ -110,26 +110,37 @@ final class MakeOrderView: UIView {
         heightConstraint?.activate()
     }
 
-    func setupAmount(totalSum: Int, delivery: Int) {
+    func setupAmount(totalSum: Int, delivery: Int, orderType: OrderType) {
         if totalSum < 2000 {
             payAmountView.setupExtraCost()
+            if orderType ==  .takeAway {
+                payAmountView.setupFullCost(cost: totalSum + delivery)
+            } else {
+                payAmountView.setupFullCost(cost: totalSum + delivery + 600)
+            }
         } else {
             payAmountView.clearExtraCost()
+            payAmountView.setupFullCost(cost: totalSum + delivery)
         }
         payAmountView.setupDeliveryCost(cost: "\(delivery) тг")
         payAmountView.setupOrderCost(cost: "\(totalSum) тг")
-        payAmountView.setupFullCost(cost: totalSum + delivery)
     }
 
-    func setOrderType(orderType: OrderType) {
+    func setOrderType(orderType: OrderType, address: String) {
         if orderType == .takeAway {
             maskEscapeView.isHidden = true
+            deliveryView.setup(title: "Предзаказ Pillikan")
+            deliveryView.setup(subTitle: "Самовывоз")
+            locationView.setup(title: "Адрес ресторана")
+            locationView.isUserInteractionEnabled = false
+            addressView.isUserInteractionEnabled = false
+            addressView.titleLabel.text = "Адрес ресторана"
         }
     }
     private func configureView() {
         deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.pillikanDelivery.image)
         locationView.setup(title: "Адрес доставки", subTitle: "", image: Images.LocationSelected.image)
-        maskEscapeView.setup(title: "Бесконтакная доставка", subTitle: "Пожалуйста, оставьте заказ возле двери/входа", image: Images.contactlessDellivery.image)
+        maskEscapeView.setup(title: "Бесконтактная доставка", subTitle: "Пожалуйста, оставьте заказ возле двери/входа", image: Images.contactlessDellivery.image)
         maskEscapeView.uiControl.isHidden = true
         maskEscapeView.switchControl.isHidden = false
         backgroundColor =  .background

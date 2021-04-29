@@ -1,5 +1,6 @@
-struct DeliveryRetail: Codable {
-    let id, cashBack, isWork: Int
+struct DeliveryRetail: Codable, RetailAdapter {
+    var id: Int
+    let cashBack, isWork: Int
     let longitude, latitude: Double
     let dlvCashBack, pillikanDelivery: Int
     let logo, address: String

@@ -65,7 +65,18 @@ final class HomeCoordinator: BaseCoordinator {
         module.closeButton = { [weak self] in
             self?.router.popModule()
         }
+        module.howItWorkTapped = { [weak self] in
+            self?.showHowItWork()
+        }
+        module.retailTapped = { [weak self] retail in
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+        }
         router.push(module)
+    }
+
+    private func showHowItWork() {
+        let module = coordinatorFactory.makeHowItWork()
+        router.presentCard(module)
     }
 
     private func showProfileMenu() {

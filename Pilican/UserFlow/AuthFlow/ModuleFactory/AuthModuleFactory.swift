@@ -33,4 +33,8 @@ final class AuthModuleFactory {
         let viewController = AcceptPermissionViewController()
         return viewController
     }
+    
+    func makeHowItWork() -> HowItWorkModule {
+        return HowItWorkViewController()
+    }
 }
