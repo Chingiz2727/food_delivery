@@ -23,7 +23,6 @@ final class DeliveryRetailListViewModel: ViewModel {
 
     struct Output {
         let retailList: Observable<LoadingSequence<[DeliveryRetail]>>
-        let activeOrders: Observable<LoadingSequence<ActiveOrders>>
     }
 
     func transform(input: Input) -> Output {
@@ -32,13 +31,7 @@ final class DeliveryRetailListViewModel: ViewModel {
                 self.manager.resetData()
             })
             .disposed(by: disposeBag)
-        let activeOrders = input.loadRetailList
-            .flatMap { [unowned self] in
-                return self.apiService.makeRequest(to: MakeOrderTarget.getActiveOrders)
-                    .result(ActiveOrders.self)
-                    .asLoadingSequence()
-            }.share()
-        
-        return .init(retailList: manager.contentUpdate.asLoadingSequence(), activeOrders: activeOrders)
+
+        return .init(retailList: manager.contentUpdate.asLoadingSequence())
     }
 }

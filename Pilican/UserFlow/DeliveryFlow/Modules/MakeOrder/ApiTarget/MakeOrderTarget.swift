@@ -4,9 +4,7 @@ enum MakeOrderTarget: ApiTarget {
     case deliveryDistance(km: Double)
     // swiftlint:disable line_length
     case makeOrder(addAmount: Int, address: String, contactless: Int, deliveryAmount: Int, description: String, foodAmount: Int, fullAmount: Int, latitude: Double, longitude: Double, orderItems: [Product], retailId: Int, type: Int, useCashback: Bool, utensils: Int, cardId: Int)
-    case getFindOrderById(id: Int)
-    case getActiveOrders
-    
+
     var version: ApiVersion {
         return .custom("")
     }
@@ -17,10 +15,6 @@ enum MakeOrderTarget: ApiTarget {
             return "rates/delivery"
         case .makeOrder:
             return "a/cb/delivery/orders/create"
-        case .getFindOrderById:
-            return "a/cb/delivery/orders"
-        case .getActiveOrders:
-            return "a/cb/delivery/orders/active"
         }
     }
     
@@ -34,10 +28,6 @@ enum MakeOrderTarget: ApiTarget {
             return .get
         case .makeOrder:
             return .post
-        case .getFindOrderById:
-            return .get
-        case .getActiveOrders:
-            return .get
         }
     }
     
@@ -71,10 +61,6 @@ enum MakeOrderTarget: ApiTarget {
                 "utensils": utensils,
                 "cardId": cardId
             ]
-        case .getFindOrderById(let id):
-            return ["id": id]
-        case .getActiveOrders:
-            return nil
         }
     }
     

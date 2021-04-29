@@ -7,11 +7,11 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     typealias RootViewType = DeliveryRetailListView
 
     var onRetailDidSelect: OnRetailDidSelect?
-    var onSelectToStatus: OnSelectStatus?
+
     private let viewModel: DeliveryRetailListViewModel
     private let disposeBag = DisposeBag()
     private let dishList: DishList
-    
+
     init(viewModel: DeliveryRetailListViewModel, dishList: DishList) {
         self.viewModel = viewModel
         self.dishList = dishList
@@ -80,15 +80,6 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             .disposed(by: disposeBag)
 
         retailList.connect()
-            .disposed(by: disposeBag)
-        
-        let activeOrder = output.activeOrders.publish()
-        
-        activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
-            print(myOrders.count)
-        })
-        .disposed(by: disposeBag)
-        activeOrder.connect()
             .disposed(by: disposeBag)
     }
 }

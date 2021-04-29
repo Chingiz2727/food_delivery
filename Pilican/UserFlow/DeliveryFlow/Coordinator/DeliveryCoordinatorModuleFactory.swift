@@ -55,10 +55,4 @@ final class DeliveryCoordinatorModuleFactory {
     func makeAlcohol() -> AlcoholModule {
         return AlcoholViewController()
     }
-    
-    func makeOrderStatus(order: DeliveryOrderResponse) -> OrderStatusModule {
-        let apiService = container.resolve(ApiService.self)!
-        let viewModel = OrderStatusViewModel(apiService: apiService, orderResponse: order)
-        return OrderStatusViewController(viewModel: viewModel)
-    }
 }

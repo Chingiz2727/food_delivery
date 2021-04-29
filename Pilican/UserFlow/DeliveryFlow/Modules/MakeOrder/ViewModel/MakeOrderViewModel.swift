@@ -13,7 +13,7 @@ final class MakeOrderViewModel: ViewModel {
     private let disposeBag = DisposeBag()
     private let utensils = 0
     private let cardId = 32
-    
+
     let mapManager: MapManager<YandexMapViewModel>
     var orderType: Int = 0
     let location: PublishSubject<DeliveryLocation> = .init()
@@ -71,7 +71,7 @@ final class MakeOrderViewModel: ViewModel {
         }.asLoadingSequence()
 
         let orderResponse = input.makeOrderTapped
-            .withLatestFrom(Observable<Any>.combineLatest(input.addAmount, input.description, input.fullAmount, location, input.foodAmount, input.deliveryAmount, input.useCashback))
+            .withLatestFrom(Observable<Any>.combineLatest(input.addAmount, input.description, input.fullAmount, input.userLocation, input.foodAmount, input.deliveryAmount, input.useCashback))
             .flatMap { [unowned self] addAmount, description, fullAmount, userLocation, foodAmount, deliveryAmount, useCashback in
                 apiService.makeRequest(
                     to: MakeOrderTarget.makeOrder(
@@ -92,12 +92,7 @@ final class MakeOrderViewModel: ViewModel {
                         cardId: cardId))
                     .result(OrderResponse.self).asLoadingSequence()
             }.share()
-        input.userLocation
-            .subscribe(onNext: { [unowned self] locations in
-                self.searchByLocation(mapPoint: locations.point)
-            })
-            .disposed(by: disposeBag)
-        
+
         return .init(
             savedLocationList: savedLocations,
             deliveryDistance: distance,

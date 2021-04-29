@@ -12,9 +12,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
     private let coordinatorFactory: DeliveryTabBarCoordinatorFactory
     
     override init(router: Router, container: DependencyContainer) {
-        
-        let viewmModel = DeliveryTabBarViewModel(apiService: container.resolve(ApiService.self)!)
-        tabBarController = DeliveryTabBarController(viewModel: viewmModel)
+        tabBarController = DeliveryTabBarController()
         coordinatorFactory = DeliveryTabBarCoordinatorFactory(container: container)
         super.init(router: router, container: container)
     }
@@ -23,11 +21,6 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         setupAllFlows()
         let viewController = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewController)
-        tabBarController.selectRetail = { [weak self] retail in
-            if let retail = retail {
-                self?.showStatus(response: retail)
-            }
-        }
         router.setRootModule(tabBarController, isNavigationBarHidden: true)
     }
     
@@ -75,18 +68,13 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
     
     private func setupLogoutFLow() {
         let (coordinator, rootController) = coordinatorFactory.makeLogout()
+        coordinator.logoutAction = { [weak self] in
+        }
         coordinator.start()
         addDependency(coordinator)
         guard let controller = rootController.toPresent() else {
             return
         }
         tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
-    }
-    
-    private func showStatus(response: DeliveryOrderResponse) {
-        let apiService = container.resolve(ApiService.self)!
-        let viewModel = OrderStatusViewModel(apiService: apiService, orderResponse: response)
-        let status = OrderStatusViewController(viewModel: viewModel)
-        router.push(status)
     }
 }
