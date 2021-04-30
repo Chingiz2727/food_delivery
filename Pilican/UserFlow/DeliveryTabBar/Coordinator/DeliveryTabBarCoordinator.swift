@@ -72,7 +72,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         }
         tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
     }
-    
+
     private func setupLogoutFLow() {
         let (coordinator, rootController) = coordinatorFactory.makeLogout()
         coordinator.start()

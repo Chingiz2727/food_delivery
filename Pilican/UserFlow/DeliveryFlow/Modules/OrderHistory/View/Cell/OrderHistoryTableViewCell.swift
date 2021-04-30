@@ -4,7 +4,7 @@
 //
 //  Created by kairzhan on 4/17/21.
 //
-
+import RxSwift
 import UIKit
 
 final class OrderHistoryTableViewCell: UITableViewCell {
@@ -25,14 +25,14 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         label.font = UIFont.semibold16
         return label
     }()
-    
+
     private let orderDateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanGray
         label.font = UIFont.medium8
         return label
     }()
-    
+
     private let retailNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
@@ -47,7 +47,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         label.text = "Сумма заказа:"
         return label
     }()
-    
+
     private let orderAmountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
@@ -170,12 +170,12 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        
+
         let dateFromInputString = dateFormatter.date(from: date_string)
 
         dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
 
-        if (dateFromInputString != nil) {
+        if dateFromInputString != nil {
            return dateFormatter.string(from: dateFromInputString!)
         } else {
             return "Сегодня"

@@ -9,7 +9,7 @@ final class PinCheckView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
+
     let passCodeView: DPOTPView = {
         let codeView = DPOTPView()
         codeView.count = 4
@@ -27,14 +27,14 @@ final class PinCheckView: UIView {
         _ = codeView.becomeFirstResponder()
         return codeView
     }()
-    
+
     let resetButton: UIButton = {
         let button = UIButton()
         button.setTitle("Восстановить пин", for: .normal)
         button.setTitleColor(.primary, for: .normal)
         return button
     }()
-    
+
     let sendButton = PrimaryButton()
     
     override init(frame: CGRect) {
@@ -42,7 +42,7 @@ final class PinCheckView: UIView {
         setupInitialLayout()
         configureView()
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }
@@ -64,7 +64,7 @@ final class PinCheckView: UIView {
             make.top.equalTo(titleLabel.snp.bottom).offset(50)
             make.height.equalTo(50)
         }
-        
+
         resetButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(passCodeView.snp.bottom).offset(10)
@@ -76,10 +76,10 @@ final class PinCheckView: UIView {
             make.height.equalTo(50)
         }
     }
-    
+
     private func configureView() {
         backgroundColor = .background
-        titleLabel.text = "Сбросить пин"
+        titleLabel.text = "Введите пин"
         sendButton.setTitle("Войти", for: .normal)
     }
 }
