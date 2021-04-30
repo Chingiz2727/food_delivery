@@ -1,6 +1,6 @@
 enum SearchApiTarget: ApiTarget {
     case searchByTag(tag: String)
-    
+
     var version: ApiVersion {
         return .custom("")
     }
@@ -25,10 +25,8 @@ enum SearchApiTarget: ApiTarget {
             return [:]
         }
     }
-    
+
     var stubData: Any {
         return [:]
     }
-    
-    
 }

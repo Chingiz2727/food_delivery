@@ -30,7 +30,8 @@ final class ProfileMenuModuleFactory {
     func makeChangePin() -> ChangePinModule {
         let apiService = container.resolve(ApiService.self)!
         let viewModel = ChangePinViewModel(apiservice: apiService)
-        return ChangePinViewController(viewModel: viewModel)
+        let userSession = container.resolve(UserSessionStorage.self)!
+        return ChangePinViewController(viewModel: viewModel, userSession: userSession)
     }
 
     func makeAbout() -> AboutModule {

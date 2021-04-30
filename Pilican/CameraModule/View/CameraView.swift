@@ -9,11 +9,15 @@ final class CameraView: UIView {
     private let titleLabel = UILabel()
     private let rectangleImageView = UIImageView()
     let contentView = UIView()
+    let tableView = UITableView()
+    var drawerView: DrawerView!
+    let searchView = SearchHeaderView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
         configureView()
+        setupDrawerView()
     }
 
     required init?(coder: NSCoder) {
@@ -69,6 +73,7 @@ final class CameraView: UIView {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(30)
         }
+        tableView.registerClassForCell(CashBackListTableViewCell.self)
     }
 
     private func configureView() {
@@ -82,5 +87,21 @@ final class CameraView: UIView {
         titleLabel.textAlignment = .center
         contentView.backgroundColor = .clear
         backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+    }
+
+    private func setupDrawerView() {
+        drawerView = DrawerView(scrollView: tableView, delegate: nil, headerView: searchView)
+        drawerView.availableStates = [.top, .middle, .bottom]
+        drawerView.middlePosition = .fromBottom(300)
+        drawerView.cornerRadius = 16
+        drawerView.containerView.backgroundColor = .white
+        drawerView.animationParameters = .spring(mass: 1, stiffness: 200, dampingRatio: 0.5)
+        drawerView.animationParameters = .spring(.default)
+        drawerView.setState(.bottom, animated: true)
+        addSubview(drawerView)
+        drawerView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        drawerView.setState(.dismissed, animated: true)
+        drawerView.isHidden = true
+        drawerView.headerView.setHeightConstraint(70)
     }
 }

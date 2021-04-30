@@ -8,18 +8,20 @@
 import RxSwift
 
 final class QRPaymentViewModel: ViewModel {
-    
+
     struct Input {
         let payTapped: Observable<Void>
         let amount: Observable<Double>
         let epayAmount: Observable<Double>
         let comment: Observable<String?>
+        let loadInfo: Observable<Void>
     }
 
     struct Output {
         let payByQRPartnerResponse: Observable<LoadingSequence<PayByQRPartnerResponse>>
+        let scanRetailResponse: Observable<LoadingSequence<ScanRetailResponse>>
     }
-    let info: ScanRetailResponse
+    var info: ScanRetailResponse
     private let userSessionStorage: UserSessionStorage
     private let apiService: ApiService
 
@@ -31,7 +33,7 @@ final class QRPaymentViewModel: ViewModel {
 
     func transform(input: Input) -> Output {
         let payResponse = input.payTapped
-            .withLatestFrom(Observable.combineLatest(input.amount,input.epayAmount,input.comment))
+            .withLatestFrom(Observable.combineLatest(input.amount, input.epayAmount, input.comment))
             .flatMap { [unowned self] amount, epay, comment -> Observable<PayByQRPartnerResponse> in
                 let orderId = self.info.orderId
                 let createdAt = String(NSDate().timeIntervalSince1970).split(separator: ".")[0]
@@ -46,7 +48,21 @@ final class QRPaymentViewModel: ViewModel {
                                                 epayAmount: Double(epay),
                                                 comment: comment ?? ""))
                     .result(PayByQRPartnerResponse.self)
+            }.asLoadingSequence().share()
+        
+        let scanRetailResponse = input.loadInfo
+            .flatMap { [unowned self] _ -> Observable<ScanRetailResponse> in
+                let createdAt = String(NSDate().timeIntervalSince1970).split(separator: ".")[0]
+                let token = self.userSessionStorage.accessToken
+                let substring = ((token! as NSString).substring(with: NSMakeRange(11, 21)) as NSString).substring(with:  NSMakeRange(0, 10))
+                let sig = ((substring + String(createdAt) + String(info.retail.id ?? 1)).toBase64()).md5()
+                return self.apiService.makeRequest(to: CameraTarget.retailScan(
+                                                    retailId: info.retail.id ?? 1,
+                                                    createdAt: String(createdAt),
+                                        sig: sig))
+                    .result(ScanRetailResponse.self)
             }.asLoadingSequence()
-        return .init(payByQRPartnerResponse: payResponse)
+        
+        return .init(payByQRPartnerResponse: payResponse, scanRetailResponse: scanRetailResponse)
     }
 }

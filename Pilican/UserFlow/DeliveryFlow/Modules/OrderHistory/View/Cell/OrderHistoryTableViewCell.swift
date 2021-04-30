@@ -8,6 +8,9 @@ import RxSwift
 import UIKit
 
 final class OrderHistoryTableViewCell: UITableViewCell {
+    
+    var onTryTap : ((Int) -> Void)?
+    
     private let orderNumberTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
@@ -20,7 +23,6 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .pilicanBlack
         label.font = UIFont.semibold16
-        label.text = "2143"
         return label
     }()
 
@@ -28,7 +30,6 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .pilicanGray
         label.font = UIFont.medium8
-        label.text = "10.11.2019 10:23"
         return label
     }()
 
@@ -36,7 +37,6 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .pilicanBlack
         label.font = UIFont.medium12
-        label.text = "Hali Gali"
         return label
     }()
 
@@ -52,7 +52,6 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .pilicanBlack
         label.font = UIFont.medium12
-        label.text = "3848 тг"
         return label
     }()
 
@@ -64,38 +63,71 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         return label
     }()
 
-    private let overallTitleLabel: UILabel = {
+    private let totalTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Всего"
-        label.font = .semibold14
         label.textColor = .pilicanBlack
+        label.font = UIFont.semibold16
+        label.text = "Всего"
         return label
     }()
-
-    private let overallValueLabel: UILabel = {
+    
+    private let totalAmountLabel: UILabel = {
         let label = UILabel()
-        label.text = "2222 kzt"
-        label.font = .semibold16
         label.textColor = .primary
+        label.font = UIFont.semibold20
         return label
     }()
-
-    private let repeatOrderButton: PrimaryButton = {
+    
+    let retryButton: PrimaryButton = {
         let button = PrimaryButton()
-        button.setTitle("Заказать еще раз", for: .normal)
-        button.setTitleColor(.pilicanWhite, for: .normal)
-        button.layer.cornerRadius = 10
         return button
     }()
-
-    private let dataView = UIView()
-    private let bottomView = UIView()
-
-    private lazy var stackView = UIStackView(
-        views: [dataView, bottomView],
+    
+    
+    private lazy var amountStackView = UIStackView(
+        views: [totalTitleLabel,totalAmountLabel],
         axis: .vertical,
-        spacing: 5)
-
+        distribution: .fill,
+        spacing: 1)
+    
+    private lazy var retryStackView = UIStackView(
+        views: [amountStackView, UIView(), retryButton],
+        axis: .horizontal,
+        distribution: .fillProportionally,
+        spacing: 20)
+    
+    private let dataView = UIView()
+    
+    private lazy var infoStackView = UIStackView(
+        views: [orderNumberTitleLabel, UIView(), orderNumberLabel],
+        axis: .horizontal,
+        spacing: 20)
+    
+    private lazy var moreStackView = UIStackView(
+        views: [orderAmountTitleLabel,orderAmountLabel, UIView(), moreLabel],
+        axis: .horizontal,
+        spacing: 2)
+    
+    private lazy var fullStackView = UIStackView(
+        views: [infoStackView,retailNameLabel, productStackView, moreStackView, retryStackView],
+        axis: .vertical,
+        distribution: .fill,
+        spacing: 4)
+    
+    private lazy var productStackView = UIStackView(
+        views: [],
+        axis: .vertical,
+        distribution: .fill,
+        spacing: 3)
+    
+    var isExpanded = false {
+        didSet {
+            productStackView.isHidden = !isExpanded
+            retryStackView.isHidden = !isExpanded
+            moreStackView.isHidden = isExpanded
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayouts()
@@ -111,11 +143,30 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         orderDateLabel.text = getFormatedDate(date_string: data.createdAt)
         retailNameLabel.text = data.retailName
         orderAmountLabel.text = "\(data.foodAmount ?? 0) тг"
-        
-        overallValueLabel.text = "\(data.foodAmount ?? 0) тг"
+        if let data = data.orderItems {
+            setupProduct(items: data)
+        }
+        retryButton.tag = data.status ?? 2
+        let title = (data.status ?? 2) == 2 ? "Посмотреть статус" : "Заказать еще раз"
+        retryButton.setTitle(title, for: .normal)
+        totalAmountLabel.text = "\(data.fullAmount ?? 0) тг"
     }
 
-    fileprivate func getFormatedDate(date_string: String) -> String {
+    @objc private func retryTap(sender: UIButton) {
+        self.onTryTap?(sender.tag)
+    }
+    
+    private func setupProduct(items: [OrderItems]) {
+        if productStackView.arrangedSubviews.count == 0 {
+            items.forEach { [unowned self] item in
+                let valueView = NameValueView()
+                valueView.setup(name: item.dish?.name ?? "", value: "\(item.quantity ?? 0)х")
+                self.productStackView.addArrangedSubview(valueView)
+            }
+        }
+    }
+    
+    private func getFormatedDate(date_string: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -132,84 +183,25 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     }
 
     private func setupInitialLayouts() {
-        addSubview(stackView)
-        stackView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.left.right.equalToSuperview().inset(15)
-            make.bottom.equalToSuperview().inset(25)
-        }
-
-        dataView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.height.equalTo(90)
-            make.left.right.equalToSuperview().inset(10)
-        }
-
-        dataView.addSubview(orderNumberTitleLabel)
-        orderNumberTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().inset(10)
-        }
-
-        dataView.addSubview(orderNumberLabel)
-        orderNumberLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(orderNumberTitleLabel.snp.top)
-            make.left.equalTo(orderNumberTitleLabel.snp.right).offset(3)
-        }
-
-        dataView.addSubview(orderDateLabel)
-        orderDateLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(orderNumberTitleLabel.snp.top)
-            make.right.equalToSuperview().inset(10)
-        }
-
-        dataView.addSubview(retailNameLabel)
-        retailNameLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(orderNumberTitleLabel.snp.bottom).offset(8)
-        }
-
-        dataView.addSubview(orderAmountTitleLabel)
-        orderAmountTitleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(retailNameLabel.snp.bottom).offset(8)
-        }
-
-        dataView.addSubview(orderAmountLabel)
-        orderAmountLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(orderAmountTitleLabel.snp.top)
-            make.left.equalTo(orderAmountTitleLabel.snp.right).offset(3)
-        }
-
-        dataView.addSubview(moreLabel)
-        moreLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(orderAmountTitleLabel.snp.top)
-            make.right.equalToSuperview().inset(10)
-        }
-
-        bottomView.snp.makeConstraints { (make) in
+        addSubview(dataView)
+        dataView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
+        dataView.addSubview(fullStackView)
+        fullStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
+        retryButton.snp.makeConstraints { make in
             make.height.equalTo(40)
+            make.width.equalTo(180)
         }
-
-        bottomView.addSubview(overallValueLabel)
-        overallValueLabel.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().inset(10)
-        }
-
-        bottomView.addSubview(repeatOrderButton)
-        repeatOrderButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.height.equalTo(33)
-            make.width.equalTo(160)
-            make.right.equalToSuperview().inset(10)
-        }
+        retryButton.addTarget(self, action: #selector(retryTap(sender:)), for: .touchUpInside)
+        retryButton.isUserInteractionEnabled = true
+        retryButton.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        print(selected)
-    }
-
+    
     private func configureView() {
         stackView.backgroundColor = .pilicanWhite
         selectionStyle = .none
-        stackView.layer.cornerRadius = 8
-        backgroundColor = .background
+        backgroundColor = .clear
+        dataView.layer.cornerRadius = 8
+        productStackView.isHidden = true
+        retryStackView.isHidden = true
     }
 }

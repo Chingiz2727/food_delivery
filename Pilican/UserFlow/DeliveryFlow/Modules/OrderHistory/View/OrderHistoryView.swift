@@ -32,5 +32,6 @@ class OrderHistoryView: UIView {
         tableView.backgroundColor = .background
         backgroundColor = .background
         tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
     }
 }

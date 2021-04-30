@@ -7,11 +7,11 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     typealias RootViewType = DeliveryRetailListView
 
     var onRetailDidSelect: OnRetailDidSelect?
-
+    var onSelectToStatus: OnSelectStatus?
     private let viewModel: DeliveryRetailListViewModel
     private let disposeBag = DisposeBag()
     private let dishList: DishList
-
+    
     init(viewModel: DeliveryRetailListViewModel, dishList: DishList) {
         self.viewModel = viewModel
         self.dishList = dishList

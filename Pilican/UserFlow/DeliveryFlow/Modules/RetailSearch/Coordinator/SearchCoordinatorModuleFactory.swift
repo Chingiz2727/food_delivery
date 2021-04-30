@@ -1,10 +1,10 @@
 final class SearchCoordinatorFactory {
     private let container: DependencyContainer
-    
+
     init(container: DependencyContainer) {
         self.container = container
     }
-    
+
     func showSearchModule() -> RetailSearchModule {
         return RetailSearchViewController()
     }
@@ -28,7 +28,7 @@ final class SearchCoordinatorFactory {
         let controller = OrderTypeViewController(dishList: dishList, mapManager: container.resolve(MapManager.self)!)
         return controller
     }
-    
+
     func makeMakeOrder(orderType: OrderType) -> MakeOrderModule {
         let dishList = container.resolve(DishList.self)!
         let userInfo = container.resolve(UserInfoStorage.self)!

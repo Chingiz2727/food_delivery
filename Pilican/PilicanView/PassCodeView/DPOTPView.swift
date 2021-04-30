@@ -130,7 +130,7 @@ public protocol DPOTPViewDelegate {
 
     func initialization() {
         if !arrTextFields.isEmpty { return }
-
+        
         let sizeTextField = (self.bounds.width/CGFloat(count)) - (spacing)
 
         for i in 1 ... count {

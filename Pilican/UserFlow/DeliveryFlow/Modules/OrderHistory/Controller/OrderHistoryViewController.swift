@@ -15,9 +15,11 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
 
     private let viewModel: OrderHistoryViewModel
     private let disposeBag = DisposeBag()
-    
-    init(viewModel: OrderHistoryViewModel) {
+    private let dishList: DishList
+
+    init(viewModel: OrderHistoryViewModel, dishList: DishList) {
         self.viewModel = viewModel
+        self.dishList = dishList
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -36,7 +38,7 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
 
     private func bindView() {
         rootView.tableView.registerClassForCell(OrderHistoryTableViewCell.self)
-        rootView.tableView.separatorInset = .init(top: 0, left: 0, bottom: 10, right: 0)
+        rootView.tableView.estimatedRowHeight = UITableView.automaticDimension
 
         let output = viewModel.transform(input: .init(loadOrderHistory: .just(())))
 
@@ -55,17 +57,37 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
             .disposed(by: disposeBag)
 
         orderHistory.element
-            .bind(to: rootView.tableView.rx.items(OrderHistoryTableViewCell.self)) { _, model, cell in
+            .bind(to: rootView.tableView.rx.items(OrderHistoryTableViewCell.self)) { row, model, cell in
                 cell.setData(data: model)
+                
+                cell.onTryTap = { [unowned self] tag in
+                    if tag != 2 {
+                        if model.retailId ?? 0 != self.dishList.retail?.id && !dishList.products.isEmpty {
+                            self.showBasketAlert {
+                                self.dishList.products = []
+                                self.dishList.wishDishList.onNext([])
+                                self.onSelectOrderHistory?(model, tag)
+                            }
+                        } else {
+                            self.onSelectOrderHistory?(model, tag)
+                        }
+                    } else {
+                        self.onSelectOrderHistory?(model, tag)
+                    }
+                }
+                cell.contentView.isUserInteractionEnabled = false
             }.disposed(by: disposeBag)
 
         orderHistory.connect()
             .disposed(by: disposeBag)
-
+        
         rootView.tableView.rx.itemSelected
-            .withLatestFrom(orderHistory.element) { $1[$0.row] }
-            .bind { [unowned self] orderHistory in
-                self.onSelectOrderHistory?(orderHistory)
-            }.disposed(by: disposeBag)
+          .subscribe(onNext: { [weak self] indexPath in
+            let cell = self?.rootView.tableView.cellForRow(at: indexPath) as? OrderHistoryTableViewCell
+            cell?.isExpanded = !cell!.isExpanded
+            self?.rootView.tableView.beginUpdates()
+            self?.rootView.tableView.endUpdates()
+          })
+            .disposed(by: disposeBag)
     }
 }

@@ -33,11 +33,15 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
             case .about:
                 self?.showAbout()
             case .main:
-                self?.router.popToRootModule()
+                self?.showMain()
             }
             self?.router.dismissModule()
         }
         router.presentActionSheet(module, interactive: true)
+    }
+    
+    private func showMain() {
+        self.router.popModule()
     }
 
     private func showBonus() {
@@ -108,12 +112,11 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
 
     private func showMyCards() {
-        var module = moduleFactory.makeMyCards()
-        module.closeButton = { [weak self] in
-            self?.router.popModule()
-        }
-        router.push(module)
+        let coordinator = MyCardCoordinator(router: router, container: container)
+        coordinator.start()
+        addDependency(coordinator)
     }
+  
 
     private func showMyQR() {
         var module = moduleFactory.makeMyQR()

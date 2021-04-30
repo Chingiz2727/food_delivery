@@ -49,7 +49,7 @@ final class MyCardsView: UIView {
 
     private func setupInitialLayout() {
         addSubview(scrollView)
-        scrollView.snp.makeConstraints { $0.edges.width.height.equalToSuperview() }
+        scrollView.snp.makeConstraints { $0.edges.width.height.equalTo(safeAreaLayoutGuide) }
         scrollView.addSubview(stackView)
         stackView.snp.makeConstraints { $0.edges.equalTo(self) }
         tableView.snp.makeConstraints { make in

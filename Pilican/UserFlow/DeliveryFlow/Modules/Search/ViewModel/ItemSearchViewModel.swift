@@ -2,7 +2,7 @@ import RxSwift
 import UIKit
 
 final class ItemSearchViewMoodel: ViewModel {
-    
+
     private let apiService: ApiService
     
     init(apiService: ApiService) {

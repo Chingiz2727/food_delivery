@@ -27,7 +27,6 @@ final class PayAmountView: UIView {
     }()
     
     let payButton = PrimaryButton()
-    
     let orderCost = PayValueView()
     let deliveryCost = PayValueView()
     let extraPayment = PayValueView()

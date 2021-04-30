@@ -60,7 +60,7 @@ class AboutOrderView: UIView {
     func setupData(retail: Retail, workCalender: WorkCalendar) {
         retailNameLabel.text = retail.name
         retailAddressLabel.text = retail.address
-        workTimeView.setupData(workDay: retail.workDays, workCalendar: workCalender)
+        workTimeView.setupData(workDay: retail.workDays ?? [], workCalendar: workCalender)
         aboutDeliveryView.setupData()
         contactsView.setupData(retail: retail)
     }
