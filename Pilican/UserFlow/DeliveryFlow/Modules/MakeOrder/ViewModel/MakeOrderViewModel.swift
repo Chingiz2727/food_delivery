@@ -43,7 +43,7 @@ final class MakeOrderViewModel: ViewModel {
         let deliveryDistance: Observable<Double>
         let currentLocationName: Observable<DeliveryLocation>
         let deliveryRate: Observable<LoadingSequence<DeliveryRate>>
-        let orderResponse: Observable<LoadingSequence<DeliveryOrderResponse>>
+        let orderResponse: Observable<LoadingSequence<OrderResponse>>
     }
 
     func transform(input: Input) -> Output {
@@ -90,14 +90,14 @@ final class MakeOrderViewModel: ViewModel {
                         useCashback: useCashback,
                         utensils: utensils,
                         cardId: cardId))
-                    .result(DeliveryOrderResponse.self).asLoadingSequence()
+                    .result(OrderResponse.self).asLoadingSequence()
             }.share()
         input.userLocation
             .subscribe(onNext: { [unowned self] locations in
                 self.searchByLocation(mapPoint: locations.point)
             })
             .disposed(by: disposeBag)
-        
+
         return .init(
             savedLocationList: savedLocations,
             deliveryDistance: distance,

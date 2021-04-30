@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class RateMealView: UIView {
     let skipButton: UIButton = {
@@ -85,14 +86,38 @@ class RateMealView: UIView {
         button.setTitleColor(.primary, for: .normal)
         return button
     }()
+    
+    let selectedTag = PublishSubject<Int>()
+    private let disposeBag = DisposeBag()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayouts()
+        configureView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupData(order: DeliveryOrderResponse) {
+        orderInfoLabel.text = "\(order.retailName ?? ""). \(order.address ?? ""). \(getFormatedDate(date_string: order.createdAt ?? ""))"
+    }
+    
+    private func getFormatedDate(date_string: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+
+        let dateFromInputString = dateFormatter.date(from: date_string)
+
+        dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+
+        if dateFromInputString != nil {
+           return dateFormatter.string(from: dateFromInputString!)
+        } else {
+            return "Сегодня"
+        }
     }
 
     private func setupInitialLayouts() {
@@ -164,6 +189,22 @@ class RateMealView: UIView {
         nextButton.snp.makeConstraints { (make) in
             make.top.equalTo(uglyView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
+        }
+    }
+    
+    private func configureView() {
+        uglyView.tag = 1
+        badView.tag = 2
+        middleView.tag = 3
+        goodView.tag = 4
+        coolView.tag = 5
+        let controls = [uglyView, badView, middleView, goodView, coolView]
+        
+        controls.forEach { control in
+            control.rx.controlEvent(.touchUpInside)
+                .subscribe(onNext: { [unowned self] in
+                    self.selectedTag.onNext(control.tag)
+                }).disposed(by: disposeBag)
         }
     }
 }

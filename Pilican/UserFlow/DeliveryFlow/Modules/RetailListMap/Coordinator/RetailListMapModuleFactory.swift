@@ -52,8 +52,8 @@ final class RetailListMapModuleFactory {
         return DeliveryMenuCoordinatorImpl(router: router, container: container)
     }
     
-    func makeOrderSuccess(order: DeliveryOrderResponse) -> OrderSuccessModule {
-        return OrderSuccessViewController(order: order)
+    func makeOrderSuccess(orderId: Int) -> OrderSuccessModule {
+        return OrderSuccessViewController(orderId: orderId)
     }
     
     func makeOrderError() -> OrderErrorModule {

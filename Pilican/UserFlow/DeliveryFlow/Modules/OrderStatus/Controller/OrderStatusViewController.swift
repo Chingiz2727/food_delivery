@@ -2,6 +2,8 @@ import RxSwift
 import UIKit
 
 class OrderStatusViewController: UIViewController, ViewHolder, OrderStatusModule {
+    var orderSend: OrderSend?
+    
     typealias RootViewType = OrderStatusView
     
     private let viewModel: OrderStatusViewModel
@@ -28,17 +30,20 @@ class OrderStatusViewController: UIViewController, ViewHolder, OrderStatusModule
     private func bindViewModel() {
         let output = viewModel.transform(input: .init(loadView: .just(())))
         let status = output.status.publish()
-        
+
         status.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)
-        
+
         status.element
             .subscribe(onNext: { [unowned self] status in
                 self.rootView.setData(response: status.order)
+                if status.order.status == 6 {
+                    orderSend?(status.order)
+                }
             })
             .disposed(by: disposeBag)
-        
+
         status.connect()
             .disposed(by: disposeBag)
     }

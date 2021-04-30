@@ -44,8 +44,8 @@ final class DeliveryCoordinatorModuleFactory {
         return DeliveryMenuCoordinatorImpl(router: router, container: container)
     }
 
-    func makeOrderSuccess(order: DeliveryOrderResponse) -> OrderSuccessModule {
-        return OrderSuccessViewController(order: order)
+    func makeOrderSuccess(orderId: Int) -> OrderSuccessModule {
+        return OrderSuccessViewController(orderId: orderId)
     }
 
     func makeOrderError() -> OrderErrorModule {
@@ -56,9 +56,9 @@ final class DeliveryCoordinatorModuleFactory {
         return AlcoholViewController()
     }
 
-    func makeOrderStatus(order: DeliveryOrderResponse) -> OrderStatusModule {
+    func makeOrderStatus(orderId: Int) -> OrderStatusModule {
         let apiService = container.resolve(ApiService.self)!
-        let viewModel = OrderStatusViewModel(apiService: apiService, orderResponse: order)
+        let viewModel = OrderStatusViewModel(apiService: apiService, orderId: orderId)
         return OrderStatusViewController(viewModel: viewModel)
     }
 }

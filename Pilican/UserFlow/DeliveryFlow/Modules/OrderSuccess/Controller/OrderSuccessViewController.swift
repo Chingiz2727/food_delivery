@@ -15,17 +15,17 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
     typealias RootViewType = OrderSuccessView
 
     private let disposeBag = DisposeBag()
-    private let order: DeliveryOrderResponse
+    private let orderId: Int
 
     override func loadView() {
         view = OrderSuccessView()
     }
     
-    init(order: DeliveryOrderResponse) {
-        self.order = order
+    init(orderId: Int) {
+        self.orderId = orderId
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -40,10 +40,10 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
             .subscribe(onNext: { [unowned self] in
                 self.toMain?()
             }).disposed(by: disposeBag)
-        
+
         rootView.obserOrderButton.rx.tap
             .subscribe(onNext: { [unowned self] in
-                self.toOrderStatus?(order)
+                self.toOrderStatus?(orderId)
             }).disposed(by: disposeBag)
     }
 }

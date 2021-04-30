@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		01842F6297D537FBB0CFACB5 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */; };
 		55173251261D6BAE0031623B /* OrderTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55173250261D6BAE0031623B /* OrderTypeView.swift */; };
+		5523EDEE263BD81800719596 /* CreateOrderRatings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523EDED263BD81800719596 /* CreateOrderRatings.swift */; };
+		5523EE12263BDBA100719596 /* CreateOrderRatingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523EE11263BDBA100719596 /* CreateOrderRatingsViewModel.swift */; };
+		5523EE16263C003500719596 /* RateMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523EE15263C003500719596 /* RateMealViewModel.swift */; };
 		5525317D26293B6E00888DEE /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525317C26293B6E00888DEE /* FavoritesView.swift */; };
 		5525318126293E4500888DEE /* FavoritesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525318026293E4500888DEE /* FavoritesModule.swift */; };
 		5525318626293E9B00888DEE /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525318526293E9B00888DEE /* FavoritesViewController.swift */; };
@@ -50,7 +53,6 @@
 		555643432637F66A00B56670 /* RetailMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555643422637F66A00B56670 /* RetailMapView.swift */; };
 		555643482637F6F800B56670 /* RetailMapModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555643472637F6F800B56670 /* RetailMapModule.swift */; };
 		5556434D2637F71700B56670 /* RetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5556434C2637F71700B56670 /* RetailMapViewController.swift */; };
-		5561DF08261EBFF700B05321 /* RateDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561DF07261EBFF700B05321 /* RateDelivery.swift */; };
 		55654397261D72CF009A4E62 /* OrderTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55654396261D72CF009A4E62 /* OrderTypeTableViewCell.swift */; };
 		556543A6261D7B16009A4E62 /* OrderTypeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A5261D7B16009A4E62 /* OrderTypeModule.swift */; };
 		556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556543A9261D7B33009A4E62 /* OrderTypeViewController.swift */; };
@@ -599,6 +601,9 @@
 		124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
 		206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
 		55173250261D6BAE0031623B /* OrderTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeView.swift; sourceTree = "<group>"; };
+		5523EDED263BD81800719596 /* CreateOrderRatings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderRatings.swift; sourceTree = "<group>"; };
+		5523EE11263BDBA100719596 /* CreateOrderRatingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderRatingsViewModel.swift; sourceTree = "<group>"; };
+		5523EE15263C003500719596 /* RateMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMealViewModel.swift; sourceTree = "<group>"; };
 		5525317C26293B6E00888DEE /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		5525318026293E4500888DEE /* FavoritesModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModule.swift; sourceTree = "<group>"; };
 		5525318526293E9B00888DEE /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -640,7 +645,6 @@
 		555643422637F66A00B56670 /* RetailMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailMapView.swift; sourceTree = "<group>"; };
 		555643472637F6F800B56670 /* RetailMapModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailMapModule.swift; sourceTree = "<group>"; };
 		5556434C2637F71700B56670 /* RetailMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailMapViewController.swift; sourceTree = "<group>"; };
-		5561DF07261EBFF700B05321 /* RateDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateDelivery.swift; sourceTree = "<group>"; };
 		55654396261D72CF009A4E62 /* OrderTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeTableViewCell.swift; sourceTree = "<group>"; };
 		556543A5261D7B16009A4E62 /* OrderTypeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeModule.swift; sourceTree = "<group>"; };
 		556543A9261D7B33009A4E62 /* OrderTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeViewController.swift; sourceTree = "<group>"; };
@@ -1240,6 +1244,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5523EDEC263BD7EF00719596 /* ApiTarget */ = {
+			isa = PBXGroup;
+			children = (
+				5523EDED263BD81800719596 /* CreateOrderRatings.swift */,
+			);
+			path = ApiTarget;
+			sourceTree = "<group>";
+		};
+		5523EDF0263BD95D00719596 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5523EE11263BDBA100719596 /* CreateOrderRatingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5523EE14263C000800719596 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5523EE15263C003500719596 /* RateMealViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5525317A26293B4700888DEE /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -1616,14 +1644,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5561DF06261EBFEB00B05321 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5561DF07261EBFF700B05321 /* RateDelivery.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		556543A3261D7AFE009A4E62 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1652,7 +1672,8 @@
 		556543D2261DB7A5009A4E62 /* RateDelivery */ = {
 			isa = PBXGroup;
 			children = (
-				5561DF06261EBFEB00B05321 /* Model */,
+				5523EDF0263BD95D00719596 /* ViewModel */,
+				5523EDEC263BD7EF00719596 /* ApiTarget */,
 				556543DC261DC5EC009A4E62 /* Controller */,
 				556543D8261DC5D0009A4E62 /* Module */,
 				556543D3261DB7AE009A4E62 /* View */,
@@ -1688,6 +1709,7 @@
 		556543E1261DC688009A4E62 /* RateMeal */ = {
 			isa = PBXGroup;
 			children = (
+				5523EE14263C000800719596 /* ViewModel */,
 				556543EB261DC6F2009A4E62 /* Controller */,
 				556543E6261DC6C7009A4E62 /* Module */,
 				556543E2261DC68F009A4E62 /* View */,
@@ -5772,6 +5794,7 @@
 				7211283B262020660055A83A /* YandexMapViewModel.swift in Sources */,
 				55DB7D8E263128EC0086B562 /* OrderSuccessView.swift in Sources */,
 				5584E82125EDFC2500025251 /* AccountQR.swift in Sources */,
+				5523EDEE263BD81800719596 /* CreateOrderRatings.swift in Sources */,
 				A483E27D25D40ABE006D2DAF /* OAuthToken.swift in Sources */,
 				55FCC6FC25F89E22000DED49 /* BonusModule.swift in Sources */,
 				5556433A2637C06E00B56670 /* RetailDetail.swift in Sources */,
@@ -5843,7 +5866,6 @@
 				A483E28C25D40ABE006D2DAF /* PaginationManager.swift in Sources */,
 				A40B961125DE766E00E507FB /* RetailList.swift in Sources */,
 				556543ED261DC700009A4E62 /* RateMealViewController.swift in Sources */,
-				5561DF08261EBFF700B05321 /* RateDelivery.swift in Sources */,
 				728434D2261D7FEE00E21209 /* ProductList.swift in Sources */,
 				72FB07FB261DA55500F04395 /* SearchBar.swift in Sources */,
 				55ADCEB025E65E93003D3F3A /* AcceptPermissionView.swift in Sources */,
@@ -6126,6 +6148,7 @@
 				72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */,
 				722A33D126257147003FB38A /* DeliveryItemView.swift in Sources */,
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
+				5523EE12263BDBA100719596 /* CreateOrderRatingsViewModel.swift in Sources */,
 				55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
 				721127EF262012980055A83A /* UserlocationViewModel.swift in Sources */,
@@ -6168,6 +6191,7 @@
 				A483E2A025D40ABE006D2DAF /* InputSource.swift in Sources */,
 				A483E2A125D40ABE006D2DAF /* PageIndicator.swift in Sources */,
 				A483E28525D40ABE006D2DAF /* PaginationAdapter.swift in Sources */,
+				5523EE16263C003500719596 /* RateMealViewModel.swift in Sources */,
 				A4057D952611C4D80062BB5B /* UserInfoStorage.swift in Sources */,
 				72FB081A261DAC0B00F04395 /* SearchCoordinator.swift in Sources */,
 				72112C61263815B8001F95E3 /* OrderStatusProductView.swift in Sources */,

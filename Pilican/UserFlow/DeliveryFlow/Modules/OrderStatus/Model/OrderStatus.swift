@@ -5,6 +5,7 @@ enum OrderStatus: Int, CaseIterable {
     case onPreparing = 3
     case onDelivery = 4
     case finished = 5
+    case received = 6
     
     var title: String {
         switch self {
@@ -16,6 +17,8 @@ enum OrderStatus: Int, CaseIterable {
             return "Заказ отправлен"
         case .finished:
             return "На доставке"
+        case .received:
+            return ""
         }
     }
     
@@ -29,6 +32,8 @@ enum OrderStatus: Int, CaseIterable {
             return Images.orderSent.image
         case .finished:
             return Images.orderDelivered.image
+        case .received:
+            return UIImage()
         }
     }
     
@@ -42,6 +47,8 @@ enum OrderStatus: Int, CaseIterable {
             return Images.sent.image
         case .finished:
             return Images.delivered.image
+        case .received:
+            return UIImage()
         }
     }
 }

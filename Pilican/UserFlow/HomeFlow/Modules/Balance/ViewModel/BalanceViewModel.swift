@@ -13,19 +13,19 @@ final class BalanceViewModel: ViewModel {
         let replenishTapped: Observable<Void>
         let amount: Observable<String?>
     }
-    
+
     struct Output {
         let result: Observable<LoadingSequence<BalanceResponse>>
     }
     
     private let userSessionStorage: UserSessionStorage
     private let apiService: ApiService
-    
+
     init(apiService: ApiService, userSessionStorage: UserSessionStorage) {
         self.apiService = apiService
         self.userSessionStorage = userSessionStorage
     }
-    
+
     func transform(input: Input) -> Output {
         let result = input.replenishTapped
             .withLatestFrom(input.amount)

@@ -93,8 +93,8 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
         module.emptyDishList = { [weak self] in
             self?.router.popModule()
         }
-        module.orderSuccess = { [weak self] order in
-            self?.showOrderSuccess(order: order)
+        module.orderSuccess = { [weak self] orderId in
+            self?.showOrderSuccess(orderId: orderId)
         }
         module.orderError = { [weak self] in
             self?.showOrderError()
@@ -118,8 +118,8 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
         router.push(module)
     }
 
-    private func showOrderSuccess(order: DeliveryOrderResponse) {
-        var module = moduleFactory.makeOrderSuccess(order: order)
+    private func showOrderSuccess(orderId: Int) {
+        var module = moduleFactory.makeOrderSuccess(orderId: orderId)
         module.toMain = { [weak self] in
             self?.router.popToRootModule()
         }

@@ -42,8 +42,8 @@ final class OrderingCoordinator: BaseCoordinator {
         module.emptyDishList = { [weak self] in
             self?.router.popModule()
         }
-        module.orderSuccess = { [weak self] order in
-            self?.showOrderSuccess(order: order)
+        module.orderSuccess = { [weak self] orderId in
+            self?.showOrderSuccess(orderId: orderId)
         }
         module.orderError = { [weak self] in
             self?.showOrderError()
@@ -67,10 +67,13 @@ final class OrderingCoordinator: BaseCoordinator {
         router.push(module)
     }
 
-    private func showOrderSuccess(order: OrderResponse) {
-        var module = coordinatorFactory.makeOrderSuccess(order: order)
+    private func showOrderSuccess(orderId: Int) {
+        var module = coordinatorFactory.makeOrderSuccess(orderId: orderId)
         module.toMain = { [weak self] in
             self?.router.popToRootModule()
+        }
+        module.toOrderStatus =  { [weak self] orderId in
+            self?.showOrderStatus(orderId: orderId)
         }
         router.push(module)
     }
@@ -83,9 +86,30 @@ final class OrderingCoordinator: BaseCoordinator {
         }
         router.push(module)
     }
-    
-    private func showOrderStatus(order: DeliveryOrderResponse) {
-        let module = coordinatorFactory.makeOrderStatus(order: order)
+
+    private func showOrderStatus(orderId: Int) {
+        var module = coordinatorFactory.makeOrderStatus(orderId: orderId)
+        module.orderSend = { [weak self] order in
+            self?.showRateDelivery(order: order)
+        }
         router.push(module)
+    }
+
+    private func showRateDelivery(order: DeliveryOrderResponse) {
+        var module = coordinatorFactory.makeRateDelivery(order: order)
+        module.rateDeliveryTapped = { [weak self] order in
+            self?.router.dismissModule()
+            self?.showRateMeal(order: order)
+        }
+        router.present(module)
+    }
+
+    private func showRateMeal(order: DeliveryOrderResponse) {
+        var module = coordinatorFactory.makeRateMeal(order: order)
+        module.rateMealTapped = { [weak self] in
+            self?.router.dismissModule()
+            self?.router.popToRootModule()
+        }
+        router.present(module)
     }
 }

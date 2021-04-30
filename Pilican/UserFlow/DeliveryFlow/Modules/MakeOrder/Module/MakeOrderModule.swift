@@ -1,7 +1,7 @@
 protocol MakeOrderModule: Presentable {
     var onMapShowDidSelect: Callback? { get set }
     typealias EmptyDishList = () -> Void
-    typealias OrderSuccess = (DeliveryOrderResponse) -> Void
+    typealias OrderSuccess = (Int) -> Void
     typealias OrderError = () -> Void
     typealias PutAddress = (DeliveryLocation) -> Void
     var putAddress: PutAddress? { get set }

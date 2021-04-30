@@ -157,7 +157,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     }
     
     private func setupProduct(items: [OrderItems]) {
-        if productStackView.arrangedSubviews.count == 0 {
+        if productStackView.arrangedSubviews.isEmpty {
             items.forEach { [unowned self] item in
                 let valueView = NameValueView()
                 valueView.setup(name: item.dish?.name ?? "", value: "\(item.quantity ?? 0)х")
@@ -165,7 +165,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
     private func getFormatedDate(date_string: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru")

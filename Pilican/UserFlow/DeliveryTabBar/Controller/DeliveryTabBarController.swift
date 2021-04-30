@@ -14,7 +14,7 @@ protocol DeliveryTabBarItemCoordinator: BaseCoordinator {
 }
 
 protocol DeliveryTabBarPresentable {
-    typealias SelectRetail = (DeliveryOrderResponse?) -> Void
+    typealias SelectRetail = (Int?) -> Void
     var selectRetail: SelectRetail? { get set }
     func setViewControllers(_ viewControllers: [UIViewController])
     func changeSelectedTabBarItem(_ tabBarItem: DeliveryTabBarItem, completion: Callback?)
@@ -117,7 +117,7 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
         if let firstHitView = overlayViews.first(where: { $0.bounds.contains(gesture.location(in: $0)) }) {
             deliveryDetailsVCData.forEach { (dictionary) in
                 if let dataFor = dictionary[firstHitView] {
-                    self.selectRetail?(dataFor)
+                    self.selectRetail?(dataFor?.id)
                 }
             }
         }
