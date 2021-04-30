@@ -48,8 +48,8 @@ final class RetailDetailModuleFactory {
         return controller
     }
     
-    func makeOrderSuccess(order: OrderResponse) -> OrderSuccessModule {
-        return OrderSuccessViewController(order: order)
+    func makeOrderSuccess(orderId: Int) -> OrderSuccessModule {
+        return OrderSuccessViewController(orderId: orderId)
     }
 
     func makeOrderError() -> OrderErrorModule {

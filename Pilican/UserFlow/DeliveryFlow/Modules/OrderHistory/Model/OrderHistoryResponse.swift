@@ -48,7 +48,7 @@ public struct DeliveryOrderResponse: Codable, RetailAdapter {
     var address: String? = ""
     var contactless: Int? = 00000
     var cookingDeadline: String?
-    var createdAt: String
+    var createdAt: String?
     var updatedAt: String? = ""
     var status: Int?
     var deliveryAmount: Int? = 00000

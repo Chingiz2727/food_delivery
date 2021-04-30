@@ -25,7 +25,7 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         tabBarController.setViewControllers(viewController)
         tabBarController.selectRetail = { [weak self] retail in
             if let retail = retail {
-                self?.showStatus(response: retail)
+                self?.showStatus(orderId: retail)
             }
         }
         router.setRootModule(tabBarController, isNavigationBarHidden: true)
@@ -83,9 +83,9 @@ final class DeliveryTabBarCoordinator: BaseCoordinator {
         tabRootContainers.append(.init(viewController: controller, coordinator: coordinator))
     }
     
-    private func showStatus(response: DeliveryOrderResponse) {
+    private func showStatus(orderId: Int) {
         let apiService = container.resolve(ApiService.self)!
-        let viewModel = OrderStatusViewModel(apiService: apiService, orderResponse: response)
+        let viewModel = OrderStatusViewModel(apiService: apiService, orderId: orderId)
         let status = OrderStatusViewController(viewModel: viewModel)
         router.push(status)
     }

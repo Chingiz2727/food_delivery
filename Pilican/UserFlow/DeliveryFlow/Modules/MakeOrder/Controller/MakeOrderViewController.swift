@@ -36,7 +36,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     required init?(coder: NSCoder) {
         nil
     }
-    
+
     override func loadView() {
         view = MakeOrderView()
     }
@@ -68,8 +68,8 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         order.element
             .subscribe(onNext: { [unowned self] res in
                 if res.status == 200 {
-                    self.orderSuccess?(res)
                     viewModel.dishList.products = []
+                    self.orderSuccess?(res.order?.id ?? 0)
                 } else {
                     self.orderError?()
                 }

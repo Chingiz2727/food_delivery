@@ -1,15 +1,14 @@
 import RxSwift
 
-
 final class OrderStatusViewModel: ViewModel {
     
-    let orderResponse: DeliveryOrderResponse
+    let orderId: Int
     private let apiService: ApiService
     private let disposeBag = DisposeBag()
     
-    init(apiService: ApiService, orderResponse: DeliveryOrderResponse) {
+    init(apiService: ApiService, orderId: Int) {
         self.apiService = apiService
-        self.orderResponse = orderResponse
+        self.orderId = orderId
     }
     
     struct Input {
@@ -23,7 +22,7 @@ final class OrderStatusViewModel: ViewModel {
     func transform(input: Input) -> Output {
         let status = input.loadView
             .flatMap { [unowned self] in
-                return self.apiService.makeRequest(to: MakeOrderTarget.getFindOrderById(id: self.orderResponse.id ?? 0))
+                return self.apiService.makeRequest(to: MakeOrderTarget.getFindOrderById(id: self.orderId))
                     .result(ProductDeliveryStatus.self)
                     .asLoadingSequence()
             }

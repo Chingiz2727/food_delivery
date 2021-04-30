@@ -8,5 +8,7 @@
 import Foundation
 protocol OrderSuccessModule: Presentable {
     typealias ToMain = () -> Void
+    typealias ToOrderStatus = (Int) -> Void
+    var toOrderStatus: ToOrderStatus? { get set }
     var toMain: ToMain? { get set }
 }

@@ -45,7 +45,7 @@ class BalanceViewController: ViewController, ViewHolder, BalanceModule {
             input: .init(
                 replenishTapped: rootView.replishmentButton.rx.tap.asObservable(),
                 amount: rootView.enterBalanceTextField.rx.text.asObservable()))
-        
+    
         let result = output.result.publish()
 
         result.element
@@ -61,7 +61,7 @@ class BalanceViewController: ViewController, ViewHolder, BalanceModule {
         result.connect()
             .disposed(by: disposeBag)
     }
-    
+
     override func customBackButtonDidTap() {
         closeButton?()
     }

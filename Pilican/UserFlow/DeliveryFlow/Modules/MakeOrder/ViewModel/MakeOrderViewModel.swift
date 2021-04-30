@@ -97,7 +97,7 @@ final class MakeOrderViewModel: ViewModel {
                 self.searchByLocation(mapPoint: locations.point)
             })
             .disposed(by: disposeBag)
-        
+
         return .init(
             savedLocationList: savedLocations,
             deliveryDistance: distance,

@@ -83,13 +83,13 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         return button
     }()
     
-    
+
     private lazy var amountStackView = UIStackView(
         views: [totalTitleLabel,totalAmountLabel],
         axis: .vertical,
         distribution: .fill,
         spacing: 1)
-    
+
     private lazy var retryStackView = UIStackView(
         views: [amountStackView, UIView(), retryButton],
         axis: .horizontal,
@@ -97,12 +97,12 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         spacing: 20)
     
     private let dataView = UIView()
-    
+
     private lazy var infoStackView = UIStackView(
         views: [orderNumberTitleLabel, UIView(), orderNumberLabel],
         axis: .horizontal,
         spacing: 20)
-    
+
     private lazy var moreStackView = UIStackView(
         views: [orderAmountTitleLabel,orderAmountLabel, UIView(), moreLabel],
         axis: .horizontal,
@@ -127,7 +127,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
             moreStackView.isHidden = isExpanded
         }
     }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayouts()
@@ -140,7 +140,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
 
     func setData(data: DeliveryOrderResponse) {
         orderNumberLabel.text = "\(data.id ?? 0)"
-        orderDateLabel.text = getFormatedDate(date_string: data.createdAt)
+        orderDateLabel.text = getFormatedDate(date_string: data.createdAt ?? "")
         retailNameLabel.text = data.retailName
         orderAmountLabel.text = "\(data.foodAmount ?? 0) тг"
         if let data = data.orderItems {
@@ -155,9 +155,9 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     @objc private func retryTap(sender: UIButton) {
         self.onTryTap?(sender.tag)
     }
-    
+
     private func setupProduct(items: [OrderItems]) {
-        if productStackView.arrangedSubviews.count == 0 {
+        if productStackView.arrangedSubviews.isEmpty {
             items.forEach { [unowned self] item in
                 let valueView = NameValueView()
                 valueView.setup(name: item.dish?.name ?? "", value: "\(item.quantity ?? 0)х")
@@ -165,7 +165,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
     private func getFormatedDate(date_string: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru")
@@ -195,7 +195,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         retryButton.isUserInteractionEnabled = true
         retryButton.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
-    
+
     private func configureView() {
         dataView.backgroundColor = .pilicanWhite
         selectionStyle = .none

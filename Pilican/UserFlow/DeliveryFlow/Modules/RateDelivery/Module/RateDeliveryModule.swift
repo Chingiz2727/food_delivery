@@ -7,6 +7,6 @@
 
 import Foundation
 protocol RateDeliveryModule: Presentable {
-    typealias RateDeliveryTapped = (RateDelivery) -> Void
+    typealias RateDeliveryTapped = (DeliveryOrderResponse) -> Void
     var rateDeliveryTapped: RateDeliveryTapped? { get set }
 }
