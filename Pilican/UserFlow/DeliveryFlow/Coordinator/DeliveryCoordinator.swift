@@ -38,7 +38,6 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         module.alcohol = { [weak self] in
             self?.showAlcohol()
         }
-        
         router.push(module)
     }
 
@@ -85,10 +84,13 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         router.push(module)
     }
 
-    private func showOrderSuccess(order: OrderResponse) {
+    private func showOrderSuccess(order: DeliveryOrderResponse) {
         var module = coordinatorFactory.makeOrderSuccess(order: order)
         module.toMain = { [weak self] in
             self?.router.popToRootModule()
+        }
+        module.toOrderStatus = { [weak self] order in
+            self?.showOrderStatus(order: order)
         }
         router.push(module)
     }
@@ -107,7 +109,7 @@ final class DeliveryCoordinator: BaseCoordinator, DeliveryCoordinatorOutput {
         coordinator.start()
         addDependency(coordinator)
     }
-    
+
     private func showOrderStatus(order: DeliveryOrderResponse) {
         let module = coordinatorFactory.makeOrderStatus(order: order)
         router.push(module)

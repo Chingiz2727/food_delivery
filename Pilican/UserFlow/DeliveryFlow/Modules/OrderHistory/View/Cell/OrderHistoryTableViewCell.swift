@@ -79,7 +79,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
 
     func setData(data: DeliveryOrderResponse) {
         orderNumberLabel.text = "\(data.id ?? 0)"
-        orderDateLabel.text = getFormatedDate(date_string: data.createdAt)
+        orderDateLabel.text = getFormatedDate(date_string: data.createdAt ?? "")
         retailNameLabel.text = data.retailName
         orderAmountLabel.text = "\(data.foodAmount ?? 0)"
     }

@@ -9,18 +9,19 @@ import UIKit
 import RxSwift
 
 class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule {
+    var toOrderStatus: ToOrderStatus?
     var toMain: ToMain?
     
     typealias RootViewType = OrderSuccessView
 
     private let disposeBag = DisposeBag()
-    private let order: OrderResponse
+    private let order: DeliveryOrderResponse
 
     override func loadView() {
         view = OrderSuccessView()
     }
     
-    init(order: OrderResponse) {
+    init(order: DeliveryOrderResponse) {
         self.order = order
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,6 +39,11 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
         rootView.toMainButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.toMain?()
+            }).disposed(by: disposeBag)
+        
+        rootView.obserOrderButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.toOrderStatus?(order)
             }).disposed(by: disposeBag)
     }
 }

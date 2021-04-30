@@ -1,6 +1,5 @@
 import RxSwift
 
-
 final class OrderStatusViewModel: ViewModel {
     
     let orderResponse: DeliveryOrderResponse

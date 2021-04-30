@@ -109,7 +109,7 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         router.push(module)
     }
 
-    private func showOrderSuccess(order: OrderResponse) {
+    private func showOrderSuccess(order: DeliveryOrderResponse) {
         var module = moduleFactory.makeOrderSuccess(order: order)
         module.toMain = { [weak self] in
             self?.router.popToRootModule()

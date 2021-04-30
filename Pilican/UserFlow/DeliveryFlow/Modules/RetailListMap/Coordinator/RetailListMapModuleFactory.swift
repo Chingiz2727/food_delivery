@@ -52,7 +52,7 @@ final class RetailListMapModuleFactory {
         return DeliveryMenuCoordinatorImpl(router: router, container: container)
     }
     
-    func makeOrderSuccess(order: OrderResponse) -> OrderSuccessModule {
+    func makeOrderSuccess(order: DeliveryOrderResponse) -> OrderSuccessModule {
         return OrderSuccessViewController(order: order)
     }
     
