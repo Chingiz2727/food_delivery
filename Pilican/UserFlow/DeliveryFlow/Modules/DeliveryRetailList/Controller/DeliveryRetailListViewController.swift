@@ -81,14 +81,5 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
 
         retailList.connect()
             .disposed(by: disposeBag)
-        
-        let activeOrder = output.activeOrders.publish()
-        
-        activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
-            print(myOrders.count)
-        })
-        .disposed(by: disposeBag)
-        activeOrder.connect()
-            .disposed(by: disposeBag)
     }
 }

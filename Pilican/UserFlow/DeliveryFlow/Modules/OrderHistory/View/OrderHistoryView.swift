@@ -31,5 +31,7 @@ class OrderHistoryView: UIView {
     private func configureView() {
         tableView.backgroundColor = .background
         backgroundColor = .background
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
     }
 }

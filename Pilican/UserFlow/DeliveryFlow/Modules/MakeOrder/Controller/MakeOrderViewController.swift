@@ -156,8 +156,8 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                     emptyDishList?()
                 }
                 let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
-                self.foodAmountSubject.onNext(amount.first ?? 0)
                 let totalSum = amount.reduce(0, +)
+                self.foodAmountSubject.onNext(totalSum)
                 if orderType.title == "Доставка Pillikan" {
                     if totalSum < 2000 {
                         self.addAmountSubject.onNext(600)

@@ -35,7 +35,7 @@ final class DeliveryMenuModuleFactory {
     func makeOrderHistory() -> OrderHistoryModule {
         let apiService = container.resolve(ApiService.self)!
         let viewModel = OrderHistoryViewModel(apiService: apiService)
-        return OrderHistoryViewController(viewModel: viewModel)
+        return OrderHistoryViewController(viewModel: viewModel, dishList: container.resolve(DishList.self)!)
     }
     
     func delivery() -> DeliveryRetailListModule {

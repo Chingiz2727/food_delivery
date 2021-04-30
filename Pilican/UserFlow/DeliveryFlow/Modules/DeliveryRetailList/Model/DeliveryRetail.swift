@@ -1,4 +1,28 @@
 struct DeliveryRetail: Codable, RetailAdapter {
+    var retailId: Int? {
+        id
+    }
+    
+    var retailName: String? {
+        name
+    }
+    
+    var retailImgUrl: String? {
+        imgLogo
+    }
+    
+    var retailRating: Double? {
+        rating
+    }
+    
+    var retailStatus: Int? {
+        status
+    }
+    
+    var retailAdress: String? {
+        address
+    }
+    
     var id: Int
     let cashBack, isWork: Int
     let longitude, latitude: Double
