@@ -58,7 +58,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             .disposed(by: disposeBag)
 
         retailList.element
-            .bind(to: rootView.tableView.rx.items(DeliveryRetailListTableViewCell.self)) { _, model, cell in
+            .bind(to: rootView.tableView.rx.items(DeliveryRetailListTableViewCell.self)) { type, model, cell in
                 cell.setRetail(retail: model)
             }
             .disposed(by: disposeBag)

@@ -17,7 +17,7 @@ final class WorkCalendar {
 
     private func getCurrentDayNumber() -> Int {
         let currentDate = calendar.date(byAdding: .day, value: 0, to: Date())!
-        let number = dateFormatter.string(from: currentDate, type: .shortDay) ?? ""
+        let number = dateFormatter.string(from: currentDate, type: .weekNumber) ?? ""
         return Int(number) ?? 1
     }
 }

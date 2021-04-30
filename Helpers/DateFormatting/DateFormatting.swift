@@ -14,6 +14,7 @@ public enum DateFormattingType: String, Identifiable {
     case shortMonth
     case shortDay
     case birthday
+    case weekNumber
     // Используется только для того, чтобы кастомизировать `relativeDefault`
     case notRelative
 }
@@ -55,6 +56,8 @@ extension PropertyFormatter: DateFormatting {
             dateFormatter.dateFormat = "hh:mm"
         case .dayWithMonth:
             dateFormatter.dateFormat = "dd.MM"
+        case .weekNumber:
+            dateFormatter.dateFormat = "e"
         case .fullMonthWithYear:
             dateFormatter.dateFormat = "MMMM yyyy"
         case .fullDate:

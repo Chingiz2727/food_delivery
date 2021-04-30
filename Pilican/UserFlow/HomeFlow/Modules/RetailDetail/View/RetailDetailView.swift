@@ -58,7 +58,7 @@ final class RetailDetailView: UIView {
     func setData(retail: Retail, workCalendar: WorkCalendar) {
         headerView.setRetail(retail: retail)
         socialLinkView.setup(links: retail.networkList)
-        workView.setupData(workDay: retail.workDays ?? [], workCalendar: workCalendar)
+        workView.setupData(workDay: retail.workDays, workCalendar: workCalendar)
         retailDescriptionView.setupData(retail: retail)
         deliveryView.setData(retail: retail)
         identificatorView.setData(retail: retail)
