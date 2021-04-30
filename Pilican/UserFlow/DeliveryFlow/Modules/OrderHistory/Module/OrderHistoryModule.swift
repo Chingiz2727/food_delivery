@@ -7,6 +7,6 @@
 
 import Foundation
 protocol OrderHistoryModule: Presentable {
-    typealias OnSelectOrderHistory = (DeliveryOrderResponse) -> Void
+    typealias OnSelectOrderHistory = (DeliveryOrderResponse, Int) -> Void
     var onSelectOrderHistory: OnSelectOrderHistory? { get set }
 }

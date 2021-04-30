@@ -112,12 +112,11 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
 
     private func showMyCards() {
-        var module = moduleFactory.makeMyCards()
-        module.closeButton = { [weak self] in
-            self?.router.popModule()
-        }
-        router.push(module)
+        let coordinator = MyCardCoordinator(router: router, container: container)
+        coordinator.start()
+        addDependency(coordinator)
     }
+  
 
     private func showMyQR() {
         var module = moduleFactory.makeMyQR()
