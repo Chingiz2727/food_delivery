@@ -34,6 +34,32 @@ class RetailCollectionViewCell: UICollectionViewCell {
         label.textColor = .primary
         return label
     }()
+    
+    let dontWorkLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Временно не работает"
+        label.font = .semibold24
+        label.textAlignment = .center
+        label.backgroundColor = .retailStatus
+        label.layer.zPosition = 1
+        label.isHidden = true
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 10
+        return label
+    }()
+
+    let closedLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Заведение закрыто"
+        label.font = .semibold24
+        label.layer.zPosition = 1
+        label.textAlignment = .center
+        label.backgroundColor = .retailStatus
+        label.isHidden = true
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 10
+        return label
+    }()
 
     private let workStatusView = LabelBackgroundView()
 
@@ -79,16 +105,39 @@ class RetailCollectionViewCell: UICollectionViewCell {
         setupWorkStatusView(retail: retail)
         guard let imgUrl = retail.imgLogo else { return }
         companyImageView.kf.setImage(with: URL(string: imgUrl))
+        if retail.status == 2 {
+            dontWorkLabel.isHidden = false
+            isUserInteractionEnabled = false
+        } else {
+            dontWorkLabel.isHidden = true
+            isUserInteractionEnabled = true
+        }
+        if retail.isWork == 0 {
+            closedLabel.isHidden = false
+            isUserInteractionEnabled = false
+        } else {
+            closedLabel.isHidden = true
+            isUserInteractionEnabled = true
+        }
     }
 
     private func setupWorkStatusView(retail: Retail) {
-        if let status = WorkStatus(rawValue: retail.payIsWork ?? 1) {
+        if let status = WorkStatus(rawValue: retail.isWork ) {
         workStatusView.setTitle(title: status.title)
         workStatusView.configureView(backColor: status.backColor, textColor: status.textColor)
         }
     }
 
     private func setupInitialLayout() {
+        addSubview(dontWorkLabel)
+        dontWorkLabel.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+
+        addSubview(closedLabel)
+        closedLabel.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         addSubview(horizontalStackView)
         addSubview(companyImageView)
         companyImageView.snp.makeConstraints { make in

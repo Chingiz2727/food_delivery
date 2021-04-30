@@ -8,6 +8,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .heading2
         label.textColor = .pilicanBlack
+        label.numberOfLines = 0
         return label
     }()
     private let deliveryLine = UIView()
@@ -53,6 +54,19 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    let emptyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Нет в наличии"
+        label.textAlignment = .center
+        label.font = .semibold24
+        label.backgroundColor = .retailStatus
+        label.isHidden = true
+        label.layer.masksToBounds = true
+        label.layer.zPosition = 1
+        label.layer.cornerRadius = 5
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
@@ -66,19 +80,30 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
+
+
     func setData(product: Product) {
         nameLabel.text = product.name
         descriptionLabel.text = product.composition
         buttonsLabel.setDish(companyDish: product)
         priceLabel.text = "\(product.price)"
         deliveryLine.isHidden = product.shoppingCount ?? 0 == 0
-        
+
         productImage.kf.setImage(with: URL(string: product.imgLogo ?? "")!)
+        if product.status == 1 {
+            self.emptyLabel.isHidden = false
+            self.isUserInteractionEnabled = false
+        } else {
+            self.emptyLabel.isHidden = true
+            self.isUserInteractionEnabled = true
+        }
     }
-    
+
     private func setupInitialLayout() {
+        backView.addSubview(emptyLabel)
+        emptyLabel.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         contentView.addSubview(backView)
         backView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
         backView.addSubview(stackView)
@@ -88,7 +113,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
             make.leading.top.bottom.equalToSuperview()
             make.width.equalTo(5)
         }
-        
+
         stackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(10)
             make.leading.equalTo(deliveryLine.snp.trailing).offset(10)
@@ -100,12 +125,12 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
             make.size.equalTo(100)
             make.top.bottom.equalToSuperview().inset(10)
         }
-        
+
         deliveryLine.backgroundColor = .primary
         deliveryLine.isHidden = true
         selectionStyle = .none
     }
-    
+
     private func configureView() {
         backgroundColor = .background
         backView.layer.cornerRadius = 10

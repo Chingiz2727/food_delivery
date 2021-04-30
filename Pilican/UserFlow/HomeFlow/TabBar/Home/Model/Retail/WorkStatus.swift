@@ -8,8 +8,8 @@
 import UIKit
 
 enum WorkStatus: Int {
-    case open
-    case closed
+    case open = 1
+    case closed = 0
 
     var title: String {
         switch self {
