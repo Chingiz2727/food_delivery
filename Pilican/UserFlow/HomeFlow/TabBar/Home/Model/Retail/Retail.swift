@@ -1,4 +1,28 @@
-struct Retail: Codable {
+struct Retail: Codable, RetailAdapter {
+    var retailId: Int? {
+        id
+    }
+    
+    var retailName: String? {
+        name
+    }
+    
+    var retailImgUrl: String? {
+        imgLogo
+    }
+    
+    var retailRating: Double? {
+        rating
+    }
+    
+    var retailStatus: Int? {
+        status
+    }
+    
+    var retailAdress: String? {
+        address
+    }
+    
     let id: Int
     let name: String
     let address: String

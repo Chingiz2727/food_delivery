@@ -20,7 +20,7 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
     override func start() {
         presentMenu()
     }
-    
+
     private func presentMenu() {
         var module = moduleFactory.makedDeliveryMenu()
         module.deliveryMenuDidSelect = { [weak self] menu in
@@ -36,10 +36,21 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showOrderHistory() {
-        let module = moduleFactory.makeOrderHistory()
+        var module = moduleFactory.makeOrderHistory()
+        module.onSelectOrderHistory = { [weak self] response, tag in
+            
+            let retail = DeliveryRetail(id: response.retailId ?? 0, cashBack: 0, isWork: 0, longitude: response.longitude ?? 0, latitude: response.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: response.retailLogo ?? "", address: response.address ?? "", workDays: [], payIsWork: 0, name: response.retailName ?? "", status: response.status ?? 0, rating: response.retailRating ?? 0)
+            if tag != 2 {
+                self?.showDeliveryProduct(retail: retail)
+            }
+        }
         router.push(module)
+    }
+    
+    private func showMore() {
+        
     }
 
     private func showFavorites() {
@@ -49,12 +60,13 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         }
         router.push(module)
     }
-    
+
     private func showMyCards() {
-        let module = moduleFactory.makeMyCards()
-        router.push(module)
+        let coordinator = MyCardCoordinator(router: router, container: container)
+        coordinator.start()
+        addDependency(coordinator)
     }
-    
+
     private func showDeliveryProduct(retail: DeliveryRetail) {
         var module = moduleFactory.deliveryProduct(retail: retail)
         module.onMakeOrdedDidTap = { [weak self] in

@@ -24,7 +24,7 @@ public protocol DPOTPViewDelegate {
     
     /** Placeholder */
     @IBInspectable open dynamic var placeholder: String = ""
-    
+
     /** Placeholder text color for the textField */
     @IBInspectable open dynamic var placeholderTextColor: UIColor = UIColor.gray
     
@@ -39,37 +39,37 @@ public protocol DPOTPViewDelegate {
     
     /** Background color for the filled textField */
     @IBInspectable open dynamic var backGroundColorFilledTextField: UIColor?
-    
+
     /** Border color for the TextField */
     @IBInspectable open dynamic var borderColorTextField: UIColor?
     
     /** Border color for the TextField */
     @IBInspectable open dynamic var selectedBorderColorTextField: UIColor?
-    
+
     /** Border width for the TextField */
     @IBInspectable open dynamic var borderWidthTextField: CGFloat = 0.0
-    
+
     /** Border width for the TextField */
     @IBInspectable open dynamic var selectedBorderWidthTextField: CGFloat = 0.0
-    
+
     /** Corner radius for the TextField */
     @IBInspectable open dynamic var cornerRadiusTextField: CGFloat = 0.0
-    
+
     /** Tint/cursor color for the TextField */
     @IBInspectable open dynamic var tintColorTextField: UIColor = UIColor.systemBlue
     
     /** Shadow Radius for the TextField */
     @IBInspectable open dynamic var shadowRadiusTextField: CGFloat = 0.0
-    
+
     /** Shadow Opacity for the TextField */
     @IBInspectable open dynamic var shadowOpacityTextField: Float = 0.0
-    
+
     /** Shadow Offset Size for the TextField */
     @IBInspectable open dynamic var shadowOffsetSizeTextField: CGSize = .zero
-    
+
     /** Shadow color for the TextField */
     @IBInspectable open dynamic var shadowColorTextField: UIColor?
-    
+
     /** Dismiss keyboard with enter last character*/
     @IBInspectable open dynamic var dismissOnLastEntry: Bool = false
     
@@ -78,16 +78,16 @@ public protocol DPOTPViewDelegate {
     
     /** Hide cursor*/
     @IBInspectable open dynamic var isCursorHidden: Bool = false
-    
+
     /** Dark keyboard*/
     @IBInspectable open dynamic var isDarkKeyboard: Bool = false
     
     open dynamic var textEdgeInsets : UIEdgeInsets?
     open dynamic var editingTextEdgeInsets : UIEdgeInsets?
-    
+
     open dynamic var dpOTPViewDelegate : DPOTPViewDelegate?
     open dynamic var keyboardType:UIKeyboardType = UIKeyboardType.asciiCapableNumberPad
-    
+
     open dynamic var text : String? {
         get {
             var str = ""
@@ -104,35 +104,35 @@ public protocol DPOTPViewDelegate {
             }
         }
     }
-    
+
     fileprivate var arrTextFields : [OTPBackTextField] = []
     /** Override coder init, for IB/XIB compatibility */
     #if !TARGET_INTERFACE_BUILDER
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     /** Override common init, for manual allocation */
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     open override func layoutSubviews() {
         super.layoutSubviews()
         self.initialization()
     }
     #endif
-    
+
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         initialization()
     }
-    
+
     func initialization() {
         if !arrTextFields.isEmpty { return }
         
         let sizeTextField = (self.bounds.width/CGFloat(count)) - (spacing)
-        
+
         for i in 1 ... count {
             let textField = OTPBackTextField()
             textField.delegate = self
@@ -168,21 +168,21 @@ public protocol DPOTPViewDelegate {
             }
             textField.layer.shadowOpacity = shadowOpacityTextField
             textField.layer.shadowOffset = shadowOffsetSizeTextField
-            
+
             textField.textColor = textColorTextField
             textField.textAlignment = .center
             textField.keyboardType = keyboardType
             if #available(iOS 12.0, *) {
                 textField.textContentType = .oneTimeCode
             }
-            
+
             if placeholder.count > i - 1 {
                 textField.attributedPlaceholder = NSAttributedString(string: placeholder[i - 1],
                 attributes: [NSAttributedString.Key.foregroundColor: placeholderTextColor])
             }
             // swiftlint:disable line_length
             textField.frame = CGRect(x:(CGFloat(i-1) * sizeTextField) + (CGFloat(i) * spacing/2) + (CGFloat(i-1) * spacing/2)  , y: (self.bounds.height - sizeTextField)/2 , width: sizeTextField, height: sizeTextField)
-            
+
             arrTextFields.append(textField)
             self.addSubview(textField)
             if isCursorHidden {
@@ -194,14 +194,14 @@ public protocol DPOTPViewDelegate {
             }
         }
     }
-    
+
 //    // Only override draw() if you perform custom drawing.
 //    // An empty implementation adversely affects performance during animation.
 //    override func draw(_ rect: CGRect) {
 //
 //        super.draw(rect)
 //    }
-    
+
     open override func becomeFirstResponder() -> Bool {
         if isCursorHidden {
             for i in 0 ..< arrTextFields.count {
@@ -219,7 +219,7 @@ public protocol DPOTPViewDelegate {
         dpOTPViewDelegate?.dpOTPViewBecomeFirstResponder()
         return super.becomeFirstResponder()
     }
-    
+
     open override func resignFirstResponder() -> Bool {
         arrTextFields.forEach { (textField) in
             _ = textField.resignFirstResponder()
@@ -227,11 +227,11 @@ public protocol DPOTPViewDelegate {
         dpOTPViewDelegate?.dpOTPViewResignFirstResponder()
         return super.resignFirstResponder()
     }
-    
+
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         _ = self.becomeFirstResponder()
     }
-    
+
     func validate() -> Bool {
         var isValid = true
         arrTextFields.forEach { (textField) in
@@ -244,11 +244,11 @@ public protocol DPOTPViewDelegate {
 }
 
 extension DPOTPView : UITextFieldDelegate , OTPBackTextFieldDelegate {
-    
+
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         dpOTPViewDelegate?.dpOTPViewChangePositionAt(textField.tag/1000 - 1)
     }
-    
+
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if !string.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty {
             textField.text = string
@@ -264,7 +264,7 @@ extension DPOTPView : UITextFieldDelegate , OTPBackTextFieldDelegate {
         dpOTPViewDelegate?.dpOTPViewAddText(text ?? "", at: textField.tag/1000 - 1)
         return false
     }
-    
+
     func textFieldDidDelete(_ textField: UITextField) {
         if textField.tag > 1000 , let next = textField.superview?.viewWithTag((textField.tag/1000 - 1)*1000) as? UITextField {
             next.text = ""
@@ -280,7 +280,7 @@ protocol OTPBackTextFieldDelegate {
 
 
 fileprivate class OTPBackTextField: UITextField {
-    
+
     var OTPBackDelegate : OTPBackTextFieldDelegate?
     weak var dpOTPView : DPOTPView!
     override var text: String? {
@@ -292,12 +292,12 @@ fileprivate class OTPBackTextField: UITextField {
             }
         }
     }
-    
+
     override func deleteBackward() {
         super.deleteBackward()
         OTPBackDelegate?.textFieldDidDelete(self)
     }
-    
+
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
 //        if action == #selector(UIResponderStandardEditActions.copy(_:)) ||
 //            action == #selector(UIResponderStandardEditActions.cut(_:)) ||
@@ -310,17 +310,17 @@ fileprivate class OTPBackTextField: UITextField {
 //        return super.canPerformAction(action, withSender: sender)
         return false
     }
-    
+
     override func becomeFirstResponder() -> Bool {
         addSelectedBorderColor()
         return super.becomeFirstResponder()
     }
-    
+
     override func resignFirstResponder() -> Bool {
         addUnselectedBorderColor()
         return super.resignFirstResponder()
     }
-    
+
     fileprivate func addSelectedBorderColor() {
         if let selectedBorderColor = dpOTPView.selectedBorderColorTextField {
             if dpOTPView.isBottomLineTextField {
@@ -338,7 +338,7 @@ fileprivate class OTPBackTextField: UITextField {
             }
         }
     }
-    
+
     fileprivate func addUnselectedBorderColor() {
         if let unselectedBorderColor = dpOTPView.borderColorTextField {
             if dpOTPView.isBottomLineTextField {
@@ -356,7 +356,7 @@ fileprivate class OTPBackTextField: UITextField {
             }
         }
     }
-    
+
     fileprivate func addBottomLine(_ color : UIColor , width : CGFloat) {
         let border = CALayer()
         border.name = "bottomBorderLayer"
@@ -365,15 +365,15 @@ fileprivate class OTPBackTextField: UITextField {
         border.frame = CGRect(x: 0, y: self.frame.width - width ,width : self.frame.width ,height: width)
         self.layer.addSublayer(border)
     }
-    
+
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: dpOTPView.textEdgeInsets ?? UIEdgeInsets.zero)
     }
-    
+
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: dpOTPView.editingTextEdgeInsets ?? UIEdgeInsets.zero)
     }
-    
+
     fileprivate func removePreviouslyAddedLayer(name : String) {
         if self.layer.sublayers?.count ?? 0 > 0 {
             self.layer.sublayers?.forEach {
@@ -385,20 +385,19 @@ fileprivate class OTPBackTextField: UITextField {
     }
 }
 
-
 fileprivate extension String {
     subscript(_ i: Int) -> String {
         let idx1 = index(startIndex, offsetBy: i)
         let idx2 = index(idx1, offsetBy: 1)
         return String(self[idx1..<idx2])
     }
-    
+
     subscript (r: Range<Int>) -> String {
         let start = index(startIndex, offsetBy: r.lowerBound)
         let end = index(startIndex, offsetBy: r.upperBound)
         return String(self[start ..< end])
     }
-    
+
     subscript (r: CountableClosedRange<Int>) -> String {
         let startIndex =  self.index(self.startIndex, offsetBy: r.lowerBound)
         let endIndex = self.index(startIndex, offsetBy: r.upperBound - r.lowerBound)

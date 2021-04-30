@@ -1,4 +1,3 @@
-
 public final class DeliveryLogoutStateObserver {
     private weak var coordinator: BaseCoordinator?
     
@@ -16,4 +15,3 @@ public final class DeliveryLogoutStateObserver {
         coordinator?.start()
     }
 }
-

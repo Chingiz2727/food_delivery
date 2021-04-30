@@ -27,7 +27,23 @@ struct ConfirmedOrder: Codable {
     var hasPrevious: Bool?
 }
 
-public struct DeliveryOrderResponse: Codable {
+public struct DeliveryOrderResponse: Codable, RetailAdapter {
+    var retailImgUrl: String? {
+        retailLogo
+    }
+    
+    var retailRating: Double? {
+        0
+    }
+    
+    var retailStatus: Int? {
+        status
+    }
+    
+    var retailAdress: String? {
+        address
+    }
+    
     var id: Int? = 0
     var address: String? = ""
     var contactless: Int? = 00000
