@@ -44,11 +44,39 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
             let retail = DeliveryRetail(id: response.retailId ?? 0, cashBack: 0, isWork: 0, longitude: response.longitude ?? 0, latitude: response.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: response.retailLogo ?? "", address: response.address ?? "", workDays: [], payIsWork: 0, name: response.retailName ?? "", status: response.status ?? 0, rating: response.retailRating ?? 0)
             if tag != 2 {
                 self?.showDeliveryProduct(retail: retail)
+            } else {
+                self?.showOrderStatus(orderId: response.id ?? 0)
             }
         }
         router.push(module)
     }
+
+    private func showOrderStatus(orderId: Int) {
+        var module = moduleFactory.makeOrderStatus(orderId: orderId)
+        module.orderSend = { [weak self] order in
+            self?.showRateDelivery(order: order)
+        }
+        router.push(module)
+    }
     
+    private func showRateDelivery(order: DeliveryOrderResponse) {
+        var module = moduleFactory.makeRateDelivery(order: order)
+        module.rateDeliveryTapped = { [weak self] order in
+            self?.router.dismissModule()
+            self?.showRateMeal(order: order)
+        }
+        router.present(module)
+    }
+
+    private func showRateMeal(order: DeliveryOrderResponse) {
+        var module = moduleFactory.makeRateMeal(order: order)
+        module.rateMealTapped = { [weak self] in
+            self?.router.dismissModule()
+            self?.router.popToRootModule()
+        }
+        router.present(module)
+    }
+
     private func showMore() {
         
     }
