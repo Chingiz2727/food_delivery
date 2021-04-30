@@ -197,7 +197,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     }
     
     private func configureView() {
-        stackView.backgroundColor = .pilicanWhite
+        dataView.backgroundColor = .pilicanWhite
         selectionStyle = .none
         backgroundColor = .clear
         dataView.layer.cornerRadius = 8
