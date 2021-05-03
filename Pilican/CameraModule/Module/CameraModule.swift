@@ -13,4 +13,5 @@ protocol CameraModule: Presentable {
     var closeButton: CloseButton? { get set }
     var howItWorkTapped: HowItWorkTapped? { get set }
     var retailTapped: RetailTapped? { get set }
+    var retailIdTapped: RetailTapped? { get set }
 }

@@ -88,7 +88,7 @@ final class MakeOrderViewModel: ViewModel {
                         retailId: dishList.retail?.id ?? 0,
                         type: orderType,
                         useCashback: useCashback,
-                        utensils: utensils,
+                        utensils: dishList.utensils,
                         cardId: cardId))
                     .result(OrderResponse.self).asLoadingSequence()
             }.share()

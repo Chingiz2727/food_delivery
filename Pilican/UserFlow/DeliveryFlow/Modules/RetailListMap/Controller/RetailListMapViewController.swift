@@ -80,6 +80,11 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
                 self.rootView.drawerView.setState(.middle, animated: true)
             })
             .disposed(by: disposeBag)
+
+        rootView.currentLocationButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.moveToMyLocation()
+            }).disposed(by: disposeBag)
     }
     private func configureView() {
         secondManager.delegate = self
@@ -95,6 +100,13 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
         mapManager.showCurrentLocation(in: rootView.mapView)
         let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 13)
         mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: latitude, longitude: longitude), transitionViewModel: viewModel)
+    }
+
+    private func moveToMyLocation() {
+        if let coordinate = secondManager.location?.coordinate {
+            let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 13)
+            mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), transitionViewModel: viewModel)
+        }
     }
 }
 

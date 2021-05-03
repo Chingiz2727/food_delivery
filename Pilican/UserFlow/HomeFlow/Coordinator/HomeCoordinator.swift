@@ -71,6 +71,9 @@ final class HomeCoordinator: BaseCoordinator {
         module.retailTapped = { [weak self] retail in
             self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
         }
+        module.retailIdTapped = { [weak self] retail in
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+        }
         router.push(module)
     }
 

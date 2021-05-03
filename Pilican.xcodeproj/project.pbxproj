@@ -150,6 +150,7 @@
 		55DB7DC426319BDF0086B562 /* AlcoholView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DC326319BDF0086B562 /* AlcoholView.swift */; };
 		55DB7DC926319F560086B562 /* AlcoholModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DC826319F560086B562 /* AlcoholModule.swift */; };
 		55DB7DCC26319F950086B562 /* AlcoholViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB7DCB26319F950086B562 /* AlcoholViewController.swift */; };
+		55DFF43B26400AEB000C1C33 /* ProductsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DFF43A26400AEB000C1C33 /* ProductsHeaderView.swift */; };
 		55E757AC2638EFD000B7FEB5 /* HowItWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E757AB2638EFD000B7FEB5 /* HowItWorkView.swift */; };
 		55E757B02638F12200B7FEB5 /* HowItWorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E757AF2638F12200B7FEB5 /* HowItWorkItem.swift */; };
 		55E757B42638F7DC00B7FEB5 /* HowItWorkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E757B32638F7DC00B7FEB5 /* HowItWorkModule.swift */; };
@@ -742,6 +743,7 @@
 		55DB7DC326319BDF0086B562 /* AlcoholView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholView.swift; sourceTree = "<group>"; };
 		55DB7DC826319F560086B562 /* AlcoholModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholModule.swift; sourceTree = "<group>"; };
 		55DB7DCB26319F950086B562 /* AlcoholViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholViewController.swift; sourceTree = "<group>"; };
+		55DFF43A26400AEB000C1C33 /* ProductsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsHeaderView.swift; sourceTree = "<group>"; };
 		55E757AB2638EFD000B7FEB5 /* HowItWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorkView.swift; sourceTree = "<group>"; };
 		55E757AF2638F12200B7FEB5 /* HowItWorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorkItem.swift; sourceTree = "<group>"; };
 		55E757B32638F7DC00B7FEB5 /* HowItWorkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorkModule.swift; sourceTree = "<group>"; };
@@ -3383,6 +3385,7 @@
 			isa = PBXGroup;
 			children = (
 				728434E3261D805900E21209 /* DeliveryRetailProductTableViewCell.swift */,
+				55DFF43A26400AEB000C1C33 /* ProductsHeaderView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -6139,6 +6142,7 @@
 				A483E29925D40ABE006D2DAF /* ImageSlideshowItem.swift in Sources */,
 				55FCC70E25F8E31C000DED49 /* AboutModule.swift in Sources */,
 				A4057D9D2611C5080062BB5B /* UserSessionStorage.swift in Sources */,
+				55DFF43B26400AEB000C1C33 /* ProductsHeaderView.swift in Sources */,
 				5FF910BB26254BDD00E1EF00 /* PillikanInfoNotificationsViewController.swift in Sources */,
 				A475CCD025EF647400C596FB /* RetailDescriptionView.swift in Sources */,
 				724FC5A9262419BE00C1DED3 /* WeakCollection.swift in Sources */,
@@ -6406,7 +6410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6487,7 +6491,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6629,7 +6633,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6654,7 +6658,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KGL7D9XAQ6;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

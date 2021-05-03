@@ -49,7 +49,7 @@ final class DeliveryRetailProductsView: UIView {
         calculateView.isHidden = product.isEmpty
         calculateView.setupProductToCalculate(product: product)
     }
-    
+
     private func setupInitialLayout() {
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
@@ -80,6 +80,7 @@ final class DeliveryRetailProductsView: UIView {
         backgroundColor = .background
         tableView.separatorStyle = .none
         tableView.bounces = true
+        tableView.tableHeaderView = ProductsHeaderView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
         segmentControl.backgroundColor = .background
         stackView.backgroundColor = .background
         calculateView.isHidden = true

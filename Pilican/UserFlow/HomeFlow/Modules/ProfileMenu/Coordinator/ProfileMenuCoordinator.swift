@@ -39,7 +39,7 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         }
         router.presentActionSheet(module, interactive: true)
     }
-    
+
     private func showMain() {
         self.router.popModule()
     }

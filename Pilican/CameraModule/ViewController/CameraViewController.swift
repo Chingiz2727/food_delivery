@@ -4,6 +4,7 @@ import AVFoundation
 import UIKit
 
 class CameraViewController: UIViewController, CameraModule {
+    var retailIdTapped: RetailTapped?
     var howItWorkTapped: HowItWorkTapped?
     var closeButton: CloseButton?
     var busScanned: BusScanned?
@@ -92,7 +93,10 @@ class CameraViewController: UIViewController, CameraModule {
                 break
             }
         }
-
+        let adapter = viewModel.adapter
+        adapter.connect(to: cameraView.tableView)
+        adapter.start()
+        
        let output = viewModel.transform(input: CameraViewModel.Input(
                                 loadInfo: scanSubject,
                                 createdAt: createdAtSubject,
@@ -102,26 +106,7 @@ class CameraViewController: UIViewController, CameraModule {
                                             retailIdentifier: cameraView.searchView.searchBar.rx.text.asObservable(),
                                             searchButtonTap: cameraView.searchView.searchButton.rx.tap.asObservable()))
 
-        let retail = output.retailIden.publish()
-
-        retail.errors
-            .bind(to: rx.error)
-            .disposed(by: disposeBag)
-
-        retail.element
-            .map { [$0] }
-            .bind(to: cameraView.tableView.rx.items(CashBackListTableViewCell.self)) { _, model, cell in
-                cell.setRetail(retail: model)
-            }.disposed(by: disposeBag)
-
-        retail.connect()
-            .disposed(by: disposeBag)
-
         let retailList = output.retailList.publish()
-
-        let adapter = viewModel.adapter
-        adapter.connect(to: cameraView.tableView)
-        adapter.start()
 
         retailList.loading
             .bind(to: ProgressView.instance.rx.loading)
@@ -132,11 +117,6 @@ class CameraViewController: UIViewController, CameraModule {
             .disposed(by: disposeBag)
 
         retailList.element
-            .do(onNext: { [unowned self] retails in
-                retails.forEach { retail in
-                }
-                self.cameraView.drawerView.isHidden = retails.isEmpty
-            })
             .bind(to: cameraView.tableView.rx.items(CashBackListTableViewCell.self)) { _, model, cell in
                 cell.setRetail(retail: model)
             }.disposed(by: disposeBag)
@@ -173,6 +153,10 @@ class CameraViewController: UIViewController, CameraModule {
             .bind { [unowned self] retail in
                 self.retailTapped?(retail)
             }.disposed(by: disposeBag)
+
+        cameraView.searchView.searchButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+            }).disposed(by: disposeBag)
     }
 
     private func qrScanned(qr: String) {
