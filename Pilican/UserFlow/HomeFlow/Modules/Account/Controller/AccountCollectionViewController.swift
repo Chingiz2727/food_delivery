@@ -68,6 +68,14 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
     }
 
     private func bindViewModel() {
+        userInfoStorage.updateInfo
+            .subscribe(onNext: { [unowned self] in
+                self.updateProfile()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func updateProfile() {
         let name = userInfoStorage.fullName
         let phone = userInfoStorage.mobilePhoneNumber
         rootView.accountHeaderView.setData(name: name ?? "", phone: phone ?? "")

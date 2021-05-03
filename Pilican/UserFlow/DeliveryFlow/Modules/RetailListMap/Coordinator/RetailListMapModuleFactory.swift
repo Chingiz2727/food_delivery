@@ -53,7 +53,9 @@ final class RetailListMapModuleFactory {
     }
     
     func makeOrderSuccess(orderId: Int) -> OrderSuccessModule {
-        return OrderSuccessViewController(orderId: orderId)
+        let updater = container.resolve(UserInfoUpdater.self)!
+
+        return OrderSuccessViewController(orderId: orderId, updater: updater)
     }
     
     func makeOrderError() -> OrderErrorModule {

@@ -11,7 +11,7 @@ final class HomeCoordinatorModuleFactory {
 
     func makeHome() -> HomeModule {
         let apiService = container.resolve(ApiService.self)!
-        let viewModel = HomeViewModel(apiService: apiService)
+        let viewModel = HomeViewModel(apiService: apiService, appSession: container.resolve(AppSessionManager.self)!)
         return HomeViewController(viewModel: viewModel)
     }
 

@@ -65,7 +65,11 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
                 self.accountTap?()
             })
             .disposed(by: disposeBag)
-        tabView.setData(profile: userInfoStorage.fullName ?? "", balance: String(userInfoStorage.balance ?? 0))
+        
+        userInfoStorage.updateInfo
+            .subscribe(onNext: { [unowned self] in
+                self.tabView.setData(profile: userInfoStorage.fullName ?? "", balance: String(userInfoStorage.balance ?? 0))
+            }).disposed(by: disposeBag)
     }
 
     @objc private func showNotifyMenu() {

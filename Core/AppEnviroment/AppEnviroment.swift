@@ -19,6 +19,13 @@ public enum AppEnviroment {
         return baseURL
     }()
     
+    public static let googleServiceFileName: String = {
+        guard let fileName = AppEnviroment.infoDictionary["GOOGLE_SERVICE_FILE_NAME"] as? String else {
+            fatalError("googleServiceFileName not found")
+        }
+        return fileName
+    }()
+    
     private static let infoDictionary: [String: Any] = {
         guard let infoDictionary = Bundle.main.infoDictionary else {
             fatalError("Info.plist file not found")

@@ -7,7 +7,7 @@ extension AuthCheckCoordinator {
         let apiservice = container.resolve(AuthenticationService.self)!
         
         let session = container.resolve(UserSessionStorage.self)!
-        
+        print("access_token",session.accessToken)
         guard session.accessToken == nil else {
             startPinCheck(onAuth: onAuth)
             return

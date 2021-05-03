@@ -1,4 +1,9 @@
+import RxSwift
+
 public final class UserInfoStorage {
+    
+    public var updateInfo: BehaviorSubject<Void> = .init(value: ())
+    
     @UserDefaultsEntry("firstName", defaultValue: nil)
     public var fullName: String?
 

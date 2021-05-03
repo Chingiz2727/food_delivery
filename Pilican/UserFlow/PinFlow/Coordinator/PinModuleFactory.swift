@@ -9,7 +9,8 @@ final class PinModuleFactory {
     
     func makeCreatePin() -> CreatePinModule {
         let userSession = container.resolve(UserSessionStorage.self)!
-        return CreatePinViewController(userSession: userSession)
+        let pushManager = container.resolve(PushNotificationManager.self)!
+        return CreatePinViewController(userSession: userSession, pushManager: pushManager)
     }
     
     func makePinCheck() -> PinCheckModule {
