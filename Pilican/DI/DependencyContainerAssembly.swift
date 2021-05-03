@@ -81,7 +81,9 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(Calendar.self) { _ in
             Calendar.current
         }
-        
+        container.register(FavouritesManager.self) { _ in
+            return FavouritesManager(apiService: container.resolve(ApiService.self)!, userInfoStorage: container.resolve(UserInfoStorage.self)!)
+        }
         container.register(UserInfoUpdater.self) { _ in
             return UserInfoUpdaterImpl(
                 apiService: container.resolve(ApiService.self)!,

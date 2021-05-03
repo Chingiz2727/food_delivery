@@ -207,11 +207,6 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             self.rootView.addressView.adressLabel.text = address.name
             self.currentLocation.onNext(address)
         }
-
-        rootView.payAmountView.payButton.rx.tap
-            .subscribe(onNext: { [unowned self] in
-                print("ka")
-            }).disposed(by: disposeBag)
     }
 
     func changeDishList(action: DishListAction) {
@@ -251,6 +246,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 
 extension MakeOrderViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        guard let coordinate = manager.location else { return }
+        self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude), name: ""))
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard let coordinate = manager.location else { return }
         self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude), name: ""))
     }

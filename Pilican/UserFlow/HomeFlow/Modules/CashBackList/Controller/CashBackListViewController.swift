@@ -11,9 +11,11 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
     private let disposeBag = DisposeBag()
     private let dataSource = CashBackListDataSource()
     private let itemSubject = BehaviorSubject<Int>(value: 1)
-
-    init(viewModel: CashBackListViewModel) {
+    private let favouriteManager: FavouritesManager
+    
+    init(viewModel: CashBackListViewModel, favouriteManager: FavouritesManager) {
         self.viewModel = viewModel
+        self.favouriteManager = favouriteManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -36,6 +38,7 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
         rootView.tableView.setSizedFooterView(rootView.footerView)
         rootView.tableView.registerClassForCell(CashBackListTableViewCell.self)
         rootView.tableView.separatorStyle = .none
+        favouriteManager.getFavouriteIds()
     }
 
     private func bindViewModel() {

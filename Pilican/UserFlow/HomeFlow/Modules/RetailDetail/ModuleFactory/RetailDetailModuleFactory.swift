@@ -29,7 +29,7 @@ final class RetailDetailModuleFactory {
         let apiSevice = container.resolve(ApiService.self)!
         let dishList = container.resolve(DishList.self)!
         let viewModel = DeliveryRetailProductViewModel(apiService: apiSevice, retailInfo: retail, dishList: dishList)
-        let controller = DeliveryRetailProductsViewController(viewModel: viewModel)
+        let controller = DeliveryRetailProductsViewController(viewModel: viewModel, favouriteManager: container.resolve(FavouritesManager.self)!)
         return controller
     }
     

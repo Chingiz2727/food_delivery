@@ -232,6 +232,7 @@
 		72446584263FA50800C50802 /* FirebasePushNotificationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446583263FA50800C50802 /* FirebasePushNotificationEngine.swift */; };
 		72446588263FAE9B00C50802 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72446587263FAE9B00C50802 /* GoogleService-Info.plist */; };
 		724465BE263FBD7F00C50802 /* UserInfoUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724465BD263FBD7F00C50802 /* UserInfoUpdater.swift */; };
+		724465CC2640101000C50802 /* FavouritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724465CB2640101000C50802 /* FavouritesManager.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
 		724FC5872624148000C1DED3 /* RetailListMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */; };
 		724FC58B2624172800C1DED3 /* MapRetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC58A2624172800C1DED3 /* MapRetail.swift */; };
@@ -831,6 +832,7 @@
 		72446587263FAE9B00C50802 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7244658A263FB91400C50802 /* Pilican.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pilican.entitlements; sourceTree = "<group>"; };
 		724465BD263FBD7F00C50802 /* UserInfoUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdater.swift; sourceTree = "<group>"; };
+		724465CB2640101000C50802 /* FavouritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesManager.swift; sourceTree = "<group>"; };
 		724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapTarget.swift; sourceTree = "<group>"; };
 		724FC5862624148000C1DED3 /* RetailListMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailListMapViewModel.swift; sourceTree = "<group>"; };
 		724FC58A2624172800C1DED3 /* MapRetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRetail.swift; sourceTree = "<group>"; };
@@ -3181,6 +3183,14 @@
 			path = UserInfoUploader;
 			sourceTree = "<group>";
 		};
+		724465CA26400FF900C50802 /* FavouritesManager */ = {
+			isa = PBXGroup;
+			children = (
+				724465CB2640101000C50802 /* FavouritesManager.swift */,
+			);
+			path = FavouritesManager;
+			sourceTree = "<group>";
+		};
 		724FC5802624132C00C1DED3 /* ApiTarget */ = {
 			isa = PBXGroup;
 			children = (
@@ -3914,23 +3924,23 @@
 		A4057DB72611D7E70062BB5B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				72112C5A2638154B001F95E3 /* OrderStatus */,
-				55DB7DC126319BCA0086B562 /* Alcohol */,
-				55DB7D99263137090086B562 /* OrderError */,
-				55DB7D8B263128D60086B562 /* OrderSuccess */,
-				722A33C0262568AA003FB38A /* MakeOrder */,
-				552531C4262AC83000888DEE /* OrderHistory */,
-				552531AB2629BEAA00888DEE /* DeliveryMenu */,
-				5525317A26293B4700888DEE /* Favorites */,
 				559AFDBD2625AD7900048CE1 /* AboutOrder */,
-				72112840262027850055A83A /* RetailListMap */,
-				556543E1261DC688009A4E62 /* RateMeal */,
-				556543D2261DB7A5009A4E62 /* RateDelivery */,
-				72FB082E261DBE6700F04395 /* Search */,
-				72FB07DD261DA3C600F04395 /* RetailSearch */,
+				55DB7DC126319BCA0086B562 /* Alcohol */,
+				552531AB2629BEAA00888DEE /* DeliveryMenu */,
 				728434B8261D7F2700E21209 /* DeliveryProducts */,
-				5517324E261D6B970031623B /* OrderType */,
 				A4057DB82611D8870062BB5B /* DeliveryRetailList */,
+				5525317A26293B4700888DEE /* Favorites */,
+				722A33C0262568AA003FB38A /* MakeOrder */,
+				55DB7D99263137090086B562 /* OrderError */,
+				552531C4262AC83000888DEE /* OrderHistory */,
+				72112C5A2638154B001F95E3 /* OrderStatus */,
+				55DB7D8B263128D60086B562 /* OrderSuccess */,
+				5517324E261D6B970031623B /* OrderType */,
+				556543D2261DB7A5009A4E62 /* RateDelivery */,
+				556543E1261DC688009A4E62 /* RateMeal */,
+				72112840262027850055A83A /* RetailListMap */,
+				72FB07DD261DA3C600F04395 /* RetailSearch */,
+				72FB082E261DBE6700F04395 /* Search */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -4791,12 +4801,11 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				724465BC263FBD6E00C50802 /* UserInfoUploader */,
-				7244657C263FA4C000C50802 /* PushNotificationManager */,
-				72D21958263652CC008FE635 /* AuthStateObserver */,
+				724465CA26400FF900C50802 /* FavouritesManager */,
 				A483E21925D40ABD006D2DAF /* AccessCode */,
 				A4E5815725D540E700EDC053 /* AppEnviroment */,
 				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
+				72D21958263652CC008FE635 /* AuthStateObserver */,
 				A4BBC6DD25D638F2006AF382 /* BackContainerModule */,
 				72FB0820261DB3EF00F04395 /* BarButtonContainerModule */,
 				A4057DA52611C5350062BB5B /* BiometricService */,
@@ -4813,6 +4822,7 @@
 				A4BBC6D925D638C6006AF382 /* NavigationBarConfigurable */,
 				A483E22525D40ABD006D2DAF /* Networking */,
 				A483E23B25D40ABE006D2DAF /* Pagination */,
+				7244657C263FA4C000C50802 /* PushNotificationManager */,
 				A483E21125D40ABD006D2DAF /* Rx+Extension */,
 				72FB07DE261DA4B200F04395 /* SearchContainerModule */,
 				72FB07EA261DA4EE00F04395 /* SearchController */,
@@ -4821,6 +4831,7 @@
 				724FC58E262419BD00C1DED3 /* UltraDrawerView */,
 				A475CCC325EF422F00C596FB /* UserDefaultStore */,
 				A4057D932611C49A0062BB5B /* UserInfoStorage */,
+				724465BC263FBD6E00C50802 /* UserInfoUploader */,
 				721127F42620141A0055A83A /* UserLocation */,
 				A4057D9B2611C5010062BB5B /* UserSessionStorage */,
 				A483E24925D40ABE006D2DAF /* View */,
@@ -6187,6 +6198,7 @@
 				A47CA1CD25E36E4D00EB091C /* Router.swift in Sources */,
 				5523EE12263BDBA100719596 /* CreateOrderRatingsViewModel.swift in Sources */,
 				55A5CCF12600632A004AA13C /* ChangePasswordModule.swift in Sources */,
+				724465CC2640101000C50802 /* FavouritesManager.swift in Sources */,
 				A40B951A25DE269900E507FB /* HomeCoordinator.swift in Sources */,
 				721127EF262012980055A83A /* UserlocationViewModel.swift in Sources */,
 				55D26C7525FA04E5005A36BD /* EditAccountView.swift in Sources */,
