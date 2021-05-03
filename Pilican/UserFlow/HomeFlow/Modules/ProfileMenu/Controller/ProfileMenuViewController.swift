@@ -29,6 +29,9 @@ final class ProfileMenuViewController: UIViewController, ViewHolder, ProfileMenu
         rootView.tableView.rx.itemSelected
             .withLatestFrom(Observable.just(HomeProfileMenu.allCases)) { $1[$0.row] }
             .bind { [unowned self] item in
+                if item == .main {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
                 self.menuDidSelect?(item)
             }.disposed(by: disposeBag)
     }

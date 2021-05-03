@@ -2,8 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Используя Face ID, Вы сможете быстро войти в приложение</string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
+	<key>FirebaseMessagingAutoInitEnabled</key>
+	<false/>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>GOOGLE_SERVICE_FILE_NAME</key>
+	<string>$(GOOGLE_SERVICE_FILE_NAME)</string>
 	<key>BASE_URL</key>
 	<string>$(BASE_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -21,7 +27,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>CLOUD_ID</key>
 	<string>$(CLOUD_ID)</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -73,6 +79,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Please Accept to use your camera</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Используя Face ID, Вы сможете быстро войти в приложение</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Нам необходим доступ к локации для определения ближайших партнеров</string>
 	<key>NSLocationUsageDescription</key>

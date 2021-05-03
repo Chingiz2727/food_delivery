@@ -135,6 +135,11 @@ final class DeliveryRetailHeaderView: UIView {
         nil
     }
 
+    func setFavouriteButton(favourite: Bool) {
+        let image = favourite == true ? Images.fillStar.image : Images.emptyStar.image
+        favouriteButton.setImage(image, for: .normal)
+    }
+    
     func setData(retail: DeliveryRetail) {
         companyNameLabel.text = retail.name
         companyAdressLabel.text = retail.address

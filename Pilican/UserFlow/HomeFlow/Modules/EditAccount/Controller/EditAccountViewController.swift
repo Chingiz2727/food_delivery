@@ -53,16 +53,17 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
     }
 
     private func bindViewModel() {
+        let genderType = userInfoStorage.gender ?? true ? Gender.init(id: 1, gender: "Мужчина") : Gender.init(id: 0, gender: "Женщина")
         let output = viewModel.transform(
             input: .init(
                 saveTapped: rootView.saveButton.rx.tap.asObservable(),
-                username: rootView.loginContainer.textField.rx.text.asObservable().debug(),
-                fullname: rootView.usernameContainer.textField.rx.text.asObservable().debug(),
-                city: cityPickerDelegate.selectedCity.asObservable().debug(),
-                gender: genderPickerDelegate.selectedGender.asObservable().debug(),
-                birthday: rootView.birthdayContainer.textField.rx.text.asObservable().debug(),
-                loadCity: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in }.debug(),
-                loadGender: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in }.debug()))
+                username: Observable.merge(rootView.loginContainer.textField.rx.text.asObservable(), .just(userInfoStorage.mobilePhoneNumber)),
+                fullname: Observable.merge(rootView.usernameContainer.textField.rx.text.asObservable(), .just(userInfoStorage.fullName)),
+                city: Observable.merge(cityPickerDelegate.selectedCity.asObservable(), .just(City(id: userInfoStorage.cityId ?? 0, name: userInfoStorage.city ?? "" ))),
+                gender: Observable.merge(genderPickerDelegate.selectedGender.asObservable(), .just(genderType)),
+                birthday: Observable.merge( rootView.birthdayContainer.textField.rx.text.asObservable(), .just(userInfoStorage.birthday)),
+                loadCity: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in },
+                loadGender: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in }))
 
         let city = output.getCity.publish()
 
@@ -127,6 +128,7 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
             userInfoStorage.city = rootView.cityContainer.textField.text
             userInfoStorage.gender = rootView.genderContainer.textField.text == "Мужчина" ? true : false
             userInfoStorage.birthday = rootView.birthdayContainer.textField.text
+            userInfoStorage.updateInfo.onNext(())
             self.saveTapped?()
         }
     }

@@ -11,7 +11,7 @@ final class HomeCoordinatorModuleFactory {
 
     func makeHome() -> HomeModule {
         let apiService = container.resolve(ApiService.self)!
-        let viewModel = HomeViewModel(apiService: apiService)
+        let viewModel = HomeViewModel(apiService: apiService, appSession: container.resolve(AppSessionManager.self)!)
         return HomeViewController(viewModel: viewModel)
     }
 
@@ -22,7 +22,7 @@ final class HomeCoordinatorModuleFactory {
     func makeCashbackList() -> CashBackListModule {
         let apiService = container.resolve(ApiService.self)!
         let viewModel = CashBackListViewModel(apiService: apiService)
-        return CashBackListViewController(viewModel: viewModel)
+        return CashBackListViewController(viewModel: viewModel, favouriteManager: container.resolve(FavouritesManager.self)!)
     }
     
     func makeHowItWork() -> HowItWorkModule {

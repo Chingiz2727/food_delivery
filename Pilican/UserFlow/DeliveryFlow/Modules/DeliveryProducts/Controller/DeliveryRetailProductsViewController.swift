@@ -16,9 +16,11 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     private let cache = DiskCache<String, [DeliveryRetail]>()
     private var isFavorite = false
     private var alertIsShown = false
+    private let favouriteManager: FavouritesManager
 
-    init(viewModel: DeliveryRetailProductViewModel) {
+    init(viewModel: DeliveryRetailProductViewModel, favouriteManager: FavouritesManager) {
         self.viewModel = viewModel
+        self.favouriteManager = favouriteManager
         self.sourceDelegate = DeliveryRetailTableViewDataSourceDelegate(dishList: viewModel.dishList)
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,40 +39,22 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         bindViewModel()
         bindView()
         alertIsShown = false
-        let favorites = getFavorites()
-        favorites?.forEach { retail in
-            if retail.id == viewModel.retailInfo.id {
-                isFavorite = true
-                rootView.stickyHeaderView.favouriteButton.setImage(Images.fillStar.image, for: .normal)
-            }
-        }
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: .just(()), favoriteButtonTapped: rootView.stickyHeaderView.favouriteButton.rx.tap.asObservable(), loadFavorites: .just(())))
-
-        let favorites = output.favorites.publish()
-
-        favorites.element
-            .subscribe(onNext: { [unowned self] retail in
-                self.saveFavorites(favorites: retail.items)
-            }).disposed(by: disposeBag)
-
-        favorites.errors
-            .bind(to: rx.error)
+        let output = viewModel.transform(input: .init(viewDidLoad: .just(())))
+        
+        rootView.stickyHeaderView.favouriteButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.favouriteManager.saveToFavourite(id: self.viewModel.dishList.retail?.id ?? 0) { [unowned self] in
+                    let isfav = self.favouriteManager.getIsFavourite(id: self.viewModel.dishList.retail?.id ?? 0)
+                    self.rootView.stickyHeaderView.setFavouriteButton(favourite: isfav)
+                }
+            })
             .disposed(by: disposeBag)
-
-        favorites.connect()
-            .disposed(by: disposeBag)
-
-        let favorite = output.favoriteButtonTapped.publish()
-
-        favorite.errors
-            .bind(to: rx.error)
-            .disposed(by: disposeBag)
-
-        favorite.connect()
-            .disposed(by: disposeBag)
+        
+        let isfav = self.favouriteManager.getIsFavourite(id: self.viewModel.dishList.retail?.id ?? 0)
+        self.rootView.stickyHeaderView.setFavouriteButton(favourite: isfav)
 
         let productList = output.productsList.publish()
         productList.loading
@@ -147,14 +131,5 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 rootView.stickyHeaderView.favouriteButton.setImage(isFavorite ? Images.fillStar.image : Images.emptyStar.image, for: .normal)
                 isFavorite = !isFavorite
             }).disposed(by: disposeBag)
-    }
-
-    private func saveFavorites(favorites: [DeliveryRetail]) {
-        try? cache.saveToDisk(name: "favorites", value: favorites)
-    }
-
-    private func getFavorites() -> [DeliveryRetail]? {
-        let favorites: [DeliveryRetail]? = try? cache.readFromDisk(name: "favorites")
-        return favorites
     }
 }

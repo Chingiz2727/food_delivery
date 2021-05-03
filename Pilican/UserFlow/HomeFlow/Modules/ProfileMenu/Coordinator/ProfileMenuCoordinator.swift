@@ -1,6 +1,7 @@
 protocol ProfileMenuCoordinator: BaseCoordinator {
     var onLogoutDidTap: Callback? { get set }
 }
+
 import UIKit
 final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator {
     var onLogoutDidTap: Callback?
@@ -41,7 +42,7 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     }
     
     private func showMain() {
-        self.router.popModule()
+        self.onLogoutDidTap?()
     }
 
     private func showBonus() {

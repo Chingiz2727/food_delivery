@@ -92,6 +92,7 @@ final class MakeOrderViewModel: ViewModel {
                         cardId: cardId))
                     .result(OrderResponse.self).asLoadingSequence()
             }.share()
+        
         input.userLocation
             .subscribe(onNext: { [unowned self] locations in
                 self.searchByLocation(mapPoint: locations.point)

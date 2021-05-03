@@ -1,7 +1,10 @@
 import UIKit
 import Swinject
 import Kingfisher
+import Firebase
 import IQKeyboardManagerSwift
+import UserNotifications
+import Messages
 import YandexMapsMobile
 
 @main
@@ -19,8 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupKeyboardManager()
         setupNavigationBar()
         setupKingfisher()
+        setupFirebase()
         LoggerConfigurator.configure()
         YMKMapKit.setApiKey("7b4d5f85-da95-462c-a67c-61a2f218cc13")
+//        configureApp(application)
         return true
     }
 
@@ -71,6 +76,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func getMB(_ value: Int) -> Int {
         return value * 1024 * 1024
     }
+    
+    private func configureFirebase() {
+        let options = FirebaseOptions(
+            googleAppID: "1:965585821604:ios:b11b7d21d3c60d15c36b31", gcmSenderID: "965585821604")
+        options.bundleID = "com.wezom.Pillikan"
+        options.apiKey = "AIzaSyBFSa125L3_r3K5BBDh1Frp-wvN3zFT0X0"
+        options.clientID = "965585821604-3sge2e3qkercm96magfkepdvv7aakr17.apps.googleusercontent.com"
+        FirebaseApp.configure(options: options)
+    }
+    
+    private func setupFirebase() {
+        FirebaseApp.configure()
+        registerForPushNotifications()
+    }
+    
+    private func registerForPushNotifications() {
+        let manager = assembler.resolver.resolve(PushNotificationManager.self)
+        manager?.register()
+    }
 }
 
 private enum Constants {
@@ -81,3 +105,4 @@ private enum Constants {
         :
     ]
 }
+

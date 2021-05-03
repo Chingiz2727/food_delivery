@@ -1,4 +1,9 @@
+import RxSwift
+
 public final class UserInfoStorage {
+    
+    public var updateInfo: BehaviorSubject<Void> = .init(value: ())
+    
     @UserDefaultsEntry("firstName", defaultValue: nil)
     public var fullName: String?
 
@@ -30,6 +35,8 @@ public final class UserInfoStorage {
     public var isCard: Int?
     @UserDefaultsEntry("deliveryLocation", defaultValue: [])
     public var location: [DeliveryLocation]
+    @UserDefaultsEntry("favouriteIds", defaultValue: [])
+    public var favouriteIds: [Int]
     
     public init() {}
 
@@ -46,5 +53,6 @@ public final class UserInfoStorage {
         gender = false
         isCard = 0
         location = []
+        favouriteIds = []
     }
 }

@@ -22,6 +22,7 @@ final class AppCoordinator: BaseCoordinator {
 
     private func startHomeFlow() {
         let coordinator = appCoordinatorFactory.homeCoordinator()
+        container.resolve(PushNotificationManager.self)?.setCoordinatorToEngine(coordinator: self)
         coordinator.start()
         addDependency(coordinator)
     }
