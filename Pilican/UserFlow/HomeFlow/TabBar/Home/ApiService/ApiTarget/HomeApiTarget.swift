@@ -5,7 +5,7 @@ enum HomeApiTarget: ApiTarget {
     case fetchBalance(limit: Int)
     case fullPaginatedRetailList(pageNumber: Int, cityId: Int?, size: Int, categoryId: Int?, name: String)
     case findRetailById(id: Int)
-
+    case fireBaseToken(token: String)
     var version: ApiVersion {
         .custom("")
     }
@@ -22,6 +22,8 @@ enum HomeApiTarget: ApiTarget {
             return "a/slider/list"
         case .findRetailById:
             return "a/cb/retail/find"
+        case .fireBaseToken:
+            return "user/f-token"
         }
     }
 
@@ -31,6 +33,15 @@ enum HomeApiTarget: ApiTarget {
             return .get
         default:
             return .post
+        }
+    }
+
+    var headers: [String : String]? {
+        switch self {
+        case .fireBaseToken:
+            return ["clientId": "bW9iaWxl"]
+        default:
+            return [:]
         }
     }
 
@@ -55,6 +66,8 @@ enum HomeApiTarget: ApiTarget {
                 "pageNumber": pageNumber,
                 "size": size
             ]
+        case .fireBaseToken(let token):
+            return ["fireBaseToken": token]
         }
     }
 

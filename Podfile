@@ -21,6 +21,8 @@ target 'Pilican' do
   pod 'SwiftMessages', '8.0.3'
   pod 'lottie-ios', '3.1.2'
   pod 'TagListView', '~> 1.0'
+  pod 'Firebase/Analytics', '7.0.0'
+  pod 'Firebase/Messaging', '7.0.0'
   pod 'YandexMapsMobile', ’4.0.0-full’
   pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "master"
   pod 'Moya', '~> 13.0.0'

@@ -16,13 +16,15 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
 
     private let disposeBag = DisposeBag()
     private let orderId: Int
-
+    private let updater: UserInfoUpdater
+    
     override func loadView() {
         view = OrderSuccessView()
     }
     
-    init(orderId: Int) {
+    init(orderId: Int, updater: UserInfoUpdater) {
         self.orderId = orderId
+        self.updater = updater
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -45,5 +47,6 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
             .subscribe(onNext: { [unowned self] in
                 self.toOrderStatus?(orderId)
             }).disposed(by: disposeBag)
+        updater.updateUserBalance()
     }
 }

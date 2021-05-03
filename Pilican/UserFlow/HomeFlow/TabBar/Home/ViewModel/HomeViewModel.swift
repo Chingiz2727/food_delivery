@@ -13,9 +13,9 @@ final class HomeViewModel: ViewModel {
     }
 
     private let apiService: HomeApiService
-
-    init(apiService: ApiService) {
-        self.apiService = HomeApiServiceImpl(apiService: apiService)
+    
+    init(apiService: ApiService, appSession: AppSessionManager) {
+        self.apiService = HomeApiServiceImpl(apiService: apiService, appSession: appSession)
     }
 
     func transform(input: Input) -> Output {
@@ -28,7 +28,14 @@ final class HomeViewModel: ViewModel {
             .flatMap { [unowned self] in
                 return apiService.fetchNewCompaniesList()
             }.share()
+        
 
+        let token = apiService.sendFiretoken().publish()
+            token
+            .subscribe(onNext: { _ in })
+            .disposed(by: disposeBag)
+        token.connect()
+            .disposed(by: disposeBag)
         return .init(retailList: retailList, slider: slider)
     }
 }

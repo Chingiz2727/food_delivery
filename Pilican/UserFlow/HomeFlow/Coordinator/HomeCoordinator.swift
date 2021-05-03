@@ -29,6 +29,7 @@ final class HomeCoordinator: BaseCoordinator {
             self?.showProfileMenu()
         }
 
+        
         tabBarController.bonusTap = { [weak self] in
             self?.showCashbackMenu()
         }
@@ -84,6 +85,9 @@ final class HomeCoordinator: BaseCoordinator {
 
     private func showProfileMenu() {
         let coordinator = coordinatorFactory.makeProfileMenu()
+        coordinator.onLogoutDidTap = { [weak self] in
+            coordinator.router.popToRootModule()
+        }
         coordinator.start()
         addDependency(coordinator)
     }

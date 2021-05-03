@@ -7,9 +7,11 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
     var onCodeValidate: Callback?
     private let disposeeBag = DisposeBag()
     private let userSession: UserSessionStorage
+    private let pushManager: PushNotificationManager
 
-    init(userSession: UserSessionStorage) {
+    init(userSession: UserSessionStorage, pushManager: PushNotificationManager) {
         self.userSession = userSession
+        self.pushManager = pushManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -23,6 +25,7 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pushManager.requestNotificationAuth()
         bindView()
     }
     

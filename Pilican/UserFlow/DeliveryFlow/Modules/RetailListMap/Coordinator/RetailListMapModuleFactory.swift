@@ -29,7 +29,7 @@ final class RetailListMapModuleFactory {
         let apiSevice = container.resolve(ApiService.self)!
         let dishList = container.resolve(DishList.self)!
         let viewModel = DeliveryRetailProductViewModel(apiService: apiSevice, retailInfo: retail, dishList: dishList)
-        let controller = DeliveryRetailProductsViewController(viewModel: viewModel)
+        let controller = DeliveryRetailProductsViewController(viewModel: viewModel, favouriteManager: container.resolve(FavouritesManager.self)!)
         return controller
     }
     
@@ -53,7 +53,9 @@ final class RetailListMapModuleFactory {
     }
     
     func makeOrderSuccess(orderId: Int) -> OrderSuccessModule {
-        return OrderSuccessViewController(orderId: orderId)
+        let updater = container.resolve(UserInfoUpdater.self)!
+
+        return OrderSuccessViewController(orderId: orderId, updater: updater)
     }
     
     func makeOrderError() -> OrderErrorModule {
