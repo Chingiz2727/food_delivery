@@ -22,6 +22,7 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
         cell.buttonsLabel.addToDish = { [unowned self] product in
             self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .addToDish(product))
             cell.setData(product: product)
+            
         }
         
         cell.buttonsLabel.removeFromDish = { [unowned self] product in

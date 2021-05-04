@@ -97,3 +97,8 @@ struct Retail: Codable, RetailAdapter {
         return options
     }
 }
+
+struct FindByIdResponse: Codable {
+    let status: Int
+    let retail: Retail
+}

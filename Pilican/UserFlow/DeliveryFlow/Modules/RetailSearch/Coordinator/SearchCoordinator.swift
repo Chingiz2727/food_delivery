@@ -4,7 +4,7 @@ protocol SearchCoordinatorOutput: DeliveryTabBarItemCoordinator { }
 
 final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
     var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
-    
+
     private let moduleFactory: SearchCoordinatorFactory
     
     override init(router: Router, container: DependencyContainer) {

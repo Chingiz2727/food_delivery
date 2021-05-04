@@ -7,6 +7,7 @@ final class RetailListMapView: UIView {
     var drawerView: DrawerView!
     let currentLocationButton: UIButton = {
         let button = UIButton()
+        button.setBackgroundImage(Images.loc.image, for: .normal)
         return button
     }()
 
@@ -40,13 +41,13 @@ final class RetailListMapView: UIView {
             make.height.equalTo(50)
         }
         currentLocationButton.snp.makeConstraints { make in
-            make.bottom.equalTo(listButton.snp.bottom).offset(30)
-            make.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(50)
+            make.left.equalToSuperview().inset(20)
+            make.bottom.equalTo(listButton.snp.top).offset(-30)
+            make.size.equalTo(30)
         }
         tableView.registerClassForCell(DeliveryRetailListTableViewCell.self)
     }
-    
+
     private func setupDrawerView() {
         drawerView = DrawerView(scrollView: tableView, delegate: nil, headerView: UIView())
         drawerView.availableStates = [.top, .middle, .bottom]

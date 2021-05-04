@@ -30,10 +30,17 @@ public final class SocialLinksView: UIView {
             make.top.bottom.equalToSuperview().inset(5)
         }
     }
+    var buttons: [UIButton: SocialNetwork] = [:]
 
     func setup(links: [SocialNetwork]) {
-        var buttons: [UIButton] = []
         links.enumerated().forEach { network in
+            let button = UIButton()
+            button.tag = network.offset
+            button.addTarget(self, action: #selector(didTap(sender:)), for: .touchUpInside)
+            button.setImage(network.element.image, for: .normal)
+            button.snp.makeConstraints { $0.size.equalTo(30) }
+            buttons[button] = network.element
+
             switch network.element {
             case
                 let .facebook(item),
@@ -45,22 +52,57 @@ public final class SocialLinksView: UIView {
                 let .whatsappUrl(item),
                 let .youtube(item):
                 if item != "" {
-                    let button = UIButton()
-                    button.tag = network.offset
-                    button.addTarget(self, action: #selector(didTap(sender:)), for: .touchUpInside)
-                    button.setImage(network.element.image, for: .normal)
-                    button.snp.makeConstraints { $0.size.equalTo(30) }
-                    buttons.append(button)
+
                 }
             }
         }
         buttons.forEach {
-            socialLinksStack.addArrangedSubview($0)
+            socialLinksStack.addArrangedSubview($0.key)
         }
         socialLinksStack.addArrangedSubview(UIView())
     }
 
-    @objc fileprivate func didTap(sender: UIButton) { }
+    @objc fileprivate func didTap(sender: UIButton) {
+        let action = buttons[sender]
+        switch action {
+        case .instagram(let item):
+            handleInstagram(url: item)
+        case .phone(let item):
+            handlePhone(phoneNumber: item)
+        case .webUrl(let item):
+            handleWeb(url: item)
+        case .whatsappUrl(let item):
+            handleWA(waNumber: item)
+        default:
+            return
+        }
+    }
+
+    private func handleInstagram(url: String) {
+        let instagramUrl = URL(string: url)
+        UIApplication.shared.canOpenURL(instagramUrl!)
+        UIApplication.shared.open(instagramUrl!, options: [:], completionHandler: nil)
+    }
+
+    private func handlePhone(phoneNumber: String) {
+        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+            UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+        }
+    }
+
+    private func handleWA(waNumber: String) {
+        let whatsappURL = URL(string: waNumber)
+        if UIApplication.shared.canOpenURL(whatsappURL!) {
+            UIApplication.shared.open(whatsappURL!, options: [:], completionHandler: nil)
+        }
+    }
+
+    private func handleWeb(url: String) {
+        guard let url = URL(string: url), !url.absoluteString.isEmpty else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
 }
 
 extension Reactive where Base: SocialLinksView {

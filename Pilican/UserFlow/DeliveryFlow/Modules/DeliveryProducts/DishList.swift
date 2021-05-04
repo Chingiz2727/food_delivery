@@ -6,6 +6,8 @@ enum DishListAction {
 }
 
 final class DishList {
+    
+    var utensils = 0
 
     var retail: DeliveryRetail?
     
@@ -67,7 +69,7 @@ final class DishList {
         wishDishList.onNext(products)
         return product
     }
-    
+
     func checkForContainProductOnDish(listCategory: [ProductCategory]) -> [ProductCategory] {
         var listCategory = listCategory
         listCategory.enumerated().forEach { section, category in

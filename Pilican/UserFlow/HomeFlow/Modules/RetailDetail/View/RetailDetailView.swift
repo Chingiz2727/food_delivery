@@ -5,7 +5,7 @@ final class RetailDetailView: UIView {
     private let emptyView = UIView()
     private let sliderView = ImageSlideshow()
     private let headerView = RetailDetailHeaderView()
-    private let socialLinkView = SocialLinksView()
+    let socialLinkView = SocialLinksView()
     let deliveryView = DeliveryView()
     let identificatorView = IdentificatorView()
     let showMap = ShowMapViewUIControl()

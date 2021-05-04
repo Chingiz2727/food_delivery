@@ -27,9 +27,9 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         image.clipsToBounds = true
         return image
     }()
-    
+
     let buttonsLabel = DeliveryButtonsView()
-    
+
     private let  priceLabel: UILabel = {
         let label = UILabel()
         label.font = .medium16
@@ -66,21 +66,20 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         label.layer.cornerRadius = 5
         return label
     }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
         configureView()
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 
     func setData(product: Product) {
         nameLabel.text = product.name

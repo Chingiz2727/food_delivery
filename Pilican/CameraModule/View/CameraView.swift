@@ -101,7 +101,7 @@ final class CameraView: UIView {
         addSubview(drawerView)
         drawerView.snp.makeConstraints { $0.edges.equalToSuperview() }
         drawerView.setState(.dismissed, animated: true)
-        drawerView.isHidden = true
+        drawerView.isHidden = false
         drawerView.headerView.setHeightConstraint(70)
     }
 }

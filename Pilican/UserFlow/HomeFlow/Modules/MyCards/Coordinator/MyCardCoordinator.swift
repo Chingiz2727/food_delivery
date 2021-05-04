@@ -45,7 +45,7 @@ final class MyCardCoordinator: BaseCoordinator {
         }
         router.present(module)
     }
-    
+
     private func showCardStatus(status: Status) {
         var module = moduleFactory.showCardStatus(status: status)
         module.onReturnDidTap = { [unowned self] in

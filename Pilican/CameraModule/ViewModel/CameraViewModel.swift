@@ -21,7 +21,8 @@ final class CameraViewModel: ViewModel {
     private let apiService: ApiService
     private let disposeBag = DisposeBag()
     private var categoryId: Int = 1
-
+    var retail: PublishSubject<[Retail]> = .init()
+    
     init(apiService: ApiService) {
         self.apiService = apiService
         self.categoryId = 1
@@ -40,7 +41,6 @@ final class CameraViewModel: ViewModel {
     struct Output {
         let scanRetailResponse: Observable<LoadingSequence<ScanRetailResponse>>
         let retailList: Observable<LoadingSequence<[Retail]>>
-        let retailIden: Observable<LoadingSequence<Retail>>
     }
 
     func transform(input: Input) -> Output {
@@ -53,18 +53,30 @@ final class CameraViewModel: ViewModel {
                                         sig: sig))
                     .result(ScanRetailResponse.self)
             }.asLoadingSequence()
+        
         input.loadRetails
             .subscribe(onNext: { [unowned self] in
                 self.manager.resetData()
             })
             .disposed(by: disposeBag)
+        
         let retailIden = input.searchButtonTap
             .withLatestFrom(input.retailIdentifier)
             .flatMap { [unowned self] retailIdentifier in
                 apiService.makeRequest(to: HomeApiTarget.findRetailById(id: Int(retailIdentifier ?? "") ?? 0))
-                    .result(Retail.self)
+                    .result(FindByIdResponse.self)
                     .asLoadingSequence()
-            }.share()
-        return .init(scanRetailResponse: scanRetailResponse, retailList: self.manager.contentUpdate.asLoadingSequence().share(), retailIden: retailIden)
+            }
+            .element
+            .subscribe(onNext: { [unowned self] id in
+                self.retail.onNext([id.retail])
+            })
+            .disposed(by: disposeBag)
+        
+        manager.contentUpdate.subscribe(onNext: { [unowned self] retail in
+            self.retail.onNext(retail)
+        }).disposed(by: disposeBag)
+        
+        return .init(scanRetailResponse: scanRetailResponse, retailList: retail.asLoadingSequence())
     }
 }

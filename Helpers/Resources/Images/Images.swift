@@ -116,6 +116,7 @@ enum Images: String {
     case orderDelivered
     case orderSent
     case sent
+    case loc
 }
 
 extension Images {
