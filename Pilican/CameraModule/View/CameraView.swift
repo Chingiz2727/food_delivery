@@ -78,6 +78,7 @@ final class CameraView: UIView {
 
     private func configureView() {
         titleLabel.text = "Наведите камеру на QR-Code"
+        titleLabel.textColor = .pilicanWhite
         howItWorkButton.setTitle("Как это работает?", for: .normal)
         identificatorButton.setTitle("ИДЕНТИФИКАТОР", for: .normal)
         closeButton.setImage(Images.close.image, for: .normal)

@@ -33,6 +33,7 @@ final class BasketItemViewCell: UITableViewCell {
 
     private let countLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         return label
     }()
 
@@ -116,6 +117,10 @@ final class BasketItemViewCell: UITableViewCell {
             make.trailing.equalToSuperview().inset(10)
             make.height.equalTo(40)
             make.top.bottom.equalToSuperview().inset(18)
+        }
+
+        countLabel.snp.makeConstraints { (make) in
+            make.width.equalTo(20)
         }
 
         [minusButton, plusButton].forEach { button in
