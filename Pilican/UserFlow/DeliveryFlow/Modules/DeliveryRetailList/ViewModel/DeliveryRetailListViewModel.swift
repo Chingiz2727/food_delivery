@@ -19,11 +19,13 @@ final class DeliveryRetailListViewModel: ViewModel {
     
     struct Input {
         let loadRetailList: Observable<Void>
+        let loadSlider: Observable<Void>
     }
 
     struct Output {
         let retailList: Observable<LoadingSequence<[DeliveryRetail]>>
         let activeOrders: Observable<LoadingSequence<ActiveOrders>>
+        let sliders: Observable<LoadingSequence<Sliders>>
     }
 
     func transform(input: Input) -> Output {
@@ -39,6 +41,13 @@ final class DeliveryRetailListViewModel: ViewModel {
                     .asLoadingSequence()
             }.share()
         
-        return .init(retailList: manager.contentUpdate.asLoadingSequence(), activeOrders: activeOrders)
+        let sliders = input.loadSlider
+            .flatMap { [unowned self] in
+                return apiService.makeRequest(to: HomeApiTarget.slider(type: 1))
+                    .result(Sliders.self)
+                    .asLoadingSequence()
+            }
+        
+        return .init(retailList: manager.contentUpdate.asLoadingSequence(), activeOrders: activeOrders, sliders: sliders)
     }
 }
