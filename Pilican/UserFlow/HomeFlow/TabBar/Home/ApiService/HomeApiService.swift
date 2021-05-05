@@ -17,7 +17,7 @@ final class HomeApiServiceImpl: HomeApiService {
     }
 
     func fetchSliders() -> Observable<LoadingSequence<Sliders>> {
-        let sliders = apiService.makeRequest(to: HomeApiTarget.slider)
+        let sliders = apiService.makeRequest(to: HomeApiTarget.slider(type: 0))
             .result(Sliders.self)
             .asLoadingSequence()
         return sliders
@@ -29,7 +29,7 @@ final class HomeApiServiceImpl: HomeApiService {
             .asLoadingSequence()
         return companyList
     }
-    
+
     func sendFiretoken() -> Observable<LoadingSequence<Data>> {
         return apiService.makeRequest(to: HomeApiTarget.fireBaseToken(token: appSession.pushNotificationToken ?? ""))
             .run()

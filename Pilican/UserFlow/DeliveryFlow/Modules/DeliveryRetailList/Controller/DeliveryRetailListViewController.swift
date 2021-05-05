@@ -41,7 +41,17 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(loadRetailList: .just(())))
+        let output = viewModel.transform(input: .init(loadRetailList: .just(()), loadSlider: .just(())))
+
+        let slider = output.sliders.publish()
+        
+        slider.subscribe(onNext: { [unowned self] sliders in
+            guard let sliderList = sliders.result?.element else { return }
+            self.rootView.header.setupSlider(sliders: sliderList.sliders)
+        }).disposed(by: disposeBag)
+        
+        slider.connect()
+            .disposed(by: disposeBag)
 
         let retailList = output.retailList.publish()
 
