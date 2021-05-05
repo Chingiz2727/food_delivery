@@ -79,6 +79,12 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(AVCaptureSession.self) { _ in
             return AVCaptureSession()
         }
+        container.register(WorkCalendar.self) { _ in
+            return WorkCalendar(
+                dateFormatter: container.resolve(PropertyFormatter.self)!,
+                calendar: container.resolve(Calendar.self)!
+            )
+        }
         container.register(Calendar.self) { _ in
             Calendar.current
         }

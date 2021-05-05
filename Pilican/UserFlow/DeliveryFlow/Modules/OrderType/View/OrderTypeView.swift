@@ -52,6 +52,7 @@ class OrderTypeView: UIView {
         tableView.bounces = false
         emptyTitleLabel.text = "Ваша корзина пуста"
         emptyTitleLabel.isHidden = true
+        backgroundColor = .white
     }
     
 }

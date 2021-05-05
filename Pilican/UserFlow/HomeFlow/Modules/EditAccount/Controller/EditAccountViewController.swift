@@ -122,15 +122,18 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
     }
 
     private func showAlert() {
-        self.showSuccessAlert { [unowned self] in
-            userInfoStorage.mobilePhoneNumber = rootView.loginContainer.textField.text
-            userInfoStorage.fullName = rootView.usernameContainer.textField.text
-            userInfoStorage.city = rootView.cityContainer.textField.text
-            userInfoStorage.gender = rootView.genderContainer.textField.text == "Мужчина" ? true : false
-            userInfoStorage.birthday = rootView.birthdayContainer.textField.text
-            userInfoStorage.updateInfo.onNext(())
+        let alert = UIAlertController(title: nil, message: "Данные успешно сохранились", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .default) { [unowned self] _ in
+            self.userInfoStorage.mobilePhoneNumber = rootView.loginContainer.textField.text
+            self.userInfoStorage.fullName = rootView.usernameContainer.textField.text
+            self.userInfoStorage.city = rootView.cityContainer.textField.text
+            self.userInfoStorage.gender = rootView.genderContainer.textField.text == "Мужчина" ? true : false
+            self.userInfoStorage.birthday = rootView.birthdayContainer.textField.text
+            self.userInfoStorage.updateInfo.onNext(())
             self.saveTapped?()
         }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 
     override func customBackButtonDidTap() {

@@ -18,6 +18,10 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
 
     override func start() {
         showDetail()
+        onFlowDidFinish = { [weak self] in
+            self?.router.popToRootModule()
+        }
+        removeDependency(self)
     }
     
     private func showDetail() {

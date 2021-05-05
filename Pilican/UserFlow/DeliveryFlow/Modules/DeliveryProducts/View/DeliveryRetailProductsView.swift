@@ -12,6 +12,8 @@ final class DeliveryRetailProductsView: UIView {
     private var stickyHeaderrHeightConstraint: Constraint?
     let calculateView = ProductCalculateView()
     let stickyHeaderView = DeliveryRetailHeaderView()
+    var headerHeightConstraint: NSLayoutConstraint!
+    var tableHeightConstraint: NSLayoutConstraint!
 
     private lazy var stackView = UIStackView(
         views: [stickyHeaderView, segmentControl, tableView, calculateView],
@@ -29,8 +31,11 @@ final class DeliveryRetailProductsView: UIView {
         nil
     }
 
-    func setRetail(retail: DeliveryRetail) {
-        stickyHeaderView.setData(retail: retail)
+    func setRetail(retail: DeliveryRetail, calendar: WorkCalendar) {
+        let currentTime = retail.workDays.filter { $0.day == calendar.currenDayNumber }.first
+        let time = (currentTime?.timeStart ?? "") + " - " + (currentTime?.timeEnd ?? "")
+        
+        stickyHeaderView.setData(retail: retail, workTime: time)
     }
 
     func setTitles(titles: [String]) {
@@ -38,7 +43,9 @@ final class DeliveryRetailProductsView: UIView {
     }
 
     func setupHeader(point: CGFloat) {
-        self.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
+        headerHeightConstraint.constant = 300 - point
+        stickyHeaderView.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
+//        self.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
     }
 
     func scrollSegmentToSection(section: Int) {
@@ -52,28 +59,51 @@ final class DeliveryRetailProductsView: UIView {
 
     private func setupInitialLayout() {
         addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide)
-            make.top.leading.trailing.equalToSuperview()
-        }
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate(
+            [
+                stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+                stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                stackView.topAnchor.constraint(equalTo: topAnchor)
+            ]
+        )
 
-        stickyHeaderView.snp.makeConstraints { make in
-            stickyHeaderrHeightConstraint = make.height.equalTo(300).constraint
-        }
+        stickyHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                stickyHeaderView.widthAnchor.constraint(equalTo: widthAnchor)
+            ]
+        )
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                tableView.widthAnchor.constraint(equalTo: widthAnchor),
+            ]
+        )
+        
+        segmentControl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                segmentControl.heightAnchor.constraint(equalToConstant: 60),
+                segmentControl.widthAnchor.constraint(equalTo: widthAnchor)
+            ]
+        )
 
-        tableView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            tableViewHeightConstraint = make.height.equalTo(400).constraint
-        }
-
-        segmentControl.snp.makeConstraints { make in
-            make.height.equalTo(60)
-            make.width.equalToSuperview()
-        }
-
-        calculateView.snp.makeConstraints { $0.height.equalTo(45) }
-
-        stickyHeaderrHeightConstraint?.activate()
+        calculateView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [
+                calculateView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+                calculateView.heightAnchor.constraint(equalToConstant: 45)
+            ]
+        )
+        
+        tableHeightConstraint = tableView.heightAnchor.constraint(equalToConstant: 400)
+        tableHeightConstraint?.isActive = true
+        headerHeightConstraint = stickyHeaderView.heightAnchor.constraint(equalToConstant: 300)
+        headerHeightConstraint.isActive = true
     }
 
     private func configureView() {
@@ -86,11 +116,18 @@ final class DeliveryRetailProductsView: UIView {
         calculateView.isHidden = true
         tableView.registerClassForCell(DeliveryRetailProductTableViewCell.self)
     }
+
+    func hideHeaderView(contentY: CGFloat) {
+//        UIView.animate(withDuration: 1.6, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: .curveEaseIn) {
+//            self.stickyHeaderView.isHidden = 300 - contentY < 0
+//        }
+    }
 }
 
 extension DeliveryRetailProductsView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentY = scrollView.contentOffset.y
+//        self.hideHeaderView(contentY: 300 - contentY)
         self.stickyHeaderrHeightConstraint?.update(offset: 300 - contentY)
     }
 }

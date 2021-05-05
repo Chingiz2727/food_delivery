@@ -114,6 +114,7 @@ public final class AuthenticationServiceImpl: AuthenticationService {
     }
     
     public func updateToken(with newToken: Token?) {
+        token = newToken?.accessToken
         sessionStorage.accessToken = newToken?.accessToken
         sessionStorage.refreshToken = newToken?.refreshToken
     }

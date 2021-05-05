@@ -60,5 +60,6 @@ final class HomeTabView: UIView {
         balanceInfoView.configureView(backColor: .cashbackOrange, icon: Images.cashback.image)
         balanceInfoView.isUserInteractionEnabled = true
         userInfoView.isUserInteractionEnabled = true
+        backgroundColor = .white
     }
 }

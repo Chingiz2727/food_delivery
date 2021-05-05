@@ -11,9 +11,11 @@ final class AuthViewController: ViewController, AuthModule, ViewHolder {
 
     private let viewModel: AuthViewModel
     private let disposeBag = DisposeBag()
-
-    init(viewModel: AuthViewModel) {
+    private let sessionStorage: UserSessionStorage
+    
+    init(viewModel: AuthViewModel, sessionStorage: UserSessionStorage) {
         self.viewModel = viewModel
+        self.sessionStorage = sessionStorage
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -55,7 +57,8 @@ final class AuthViewController: ViewController, AuthModule, ViewHolder {
 
         result.element
             .subscribe(onNext: { [unowned self] result in
-                
+                self.sessionStorage.accessToken = result.token.accessToken
+                self.sessionStorage.refreshToken = result.token.refreshToken
                 self.authButtonTapped?()
             })
             .disposed(by: disposeBag)

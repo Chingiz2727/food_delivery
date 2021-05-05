@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNavigationBar()
         setupKingfisher()
         setupFirebase()
+        #if DEBUG
         LoggerConfigurator.configure()
+        #endif
         YMKMapKit.setApiKey("7b4d5f85-da95-462c-a67c-61a2f218cc13")
 //        configureApp(application)
         return true
@@ -32,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        window?.backgroundColor = .white
         window?.rootViewController = CoordinatorNavigationController(
             backBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal),
             closeBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal)

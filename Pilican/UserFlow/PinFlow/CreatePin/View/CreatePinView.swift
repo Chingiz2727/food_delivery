@@ -106,6 +106,7 @@ final class CreatePinView: UIView {
     }
     
     private func configureView() {
+        backgroundColor = .white
         sendButton.setTitle("Создать PIN", for: .normal)
         sendButton.setTitleColor(.white, for: .normal)
         titleLabel.text = "Создайте пин код"

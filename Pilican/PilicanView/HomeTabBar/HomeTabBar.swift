@@ -4,6 +4,7 @@ import UIKit
 final class HomeTabBar: UITabBar {
 
     private var shapeLayer: CALayer?
+    let tabView = HomeTabView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -12,6 +13,8 @@ final class HomeTabBar: UITabBar {
     }
 
     override func draw(_ rect: CGRect) {
+        addSubview(tabView)
+        tabView.snp.makeConstraints { $0.edges.equalToSuperview() }
         addShape()
     }
 

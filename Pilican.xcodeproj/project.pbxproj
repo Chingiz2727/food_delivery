@@ -4149,12 +4149,10 @@
 		A40B951725DE267600E507FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				55E757A92638EFB800B7FEB5 /* HowItWork */,
-				555643402637F04800B56670 /* RetailMap */,
-				72C5E4B82632616300FEABA1 /* AddCardStatus */,
 				55FCC70225F8D483000DED49 /* About */,
 				5568FECC25ECB276003AA72F /* Account */,
 				72340C4D262FC393000569D6 /* AddCard */,
+				72C5E4B82632616300FEABA1 /* AddCardStatus */,
 				556CF6B82602024D007B8FB9 /* Balance */,
 				55FCC6F125F88731000DED49 /* Bonus */,
 				A4B9A0F325F08F2C00F0A3D6 /* CashBackList */,
@@ -4162,6 +4160,7 @@
 				55A5CCE926006100004AA13C /* ChangePassword */,
 				5578855625FF637500B3A798 /* ChangePin */,
 				55D26C7225FA04CB005A36BD /* EditAccount */,
+				55E757A92638EFB800B7FEB5 /* HowItWork */,
 				55A5CD412600BC5D004AA13C /* MyCards */,
 				55A5CD2C2600A410004AA13C /* MyQR */,
 				5FD2F04B26240B870012110C /* NotificationList */,
@@ -4174,6 +4173,7 @@
 				A4FAACEF25E75C2500A55CB8 /* ProfileMenu */,
 				55A7C073260B385D0037D567 /* QRPayment */,
 				A4379FD125ECAF1700910A2D /* RetailDetail */,
+				555643402637F04800B56670 /* RetailMap */,
 				5528385C2611C2DC00511608 /* SuccessPayment */,
 			);
 			path = Modules;
@@ -4820,7 +4820,6 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				724465CA26400FF900C50802 /* FavouritesManager */,
 				A483E21925D40ABD006D2DAF /* AccessCode */,
 				A4E5815725D540E700EDC053 /* AppEnviroment */,
 				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
@@ -4832,6 +4831,7 @@
 				55AA1FE4262838FA004C8F67 /* Control */,
 				A47CA19C25E36D3200EB091C /* Coordinator */,
 				7201594C262CC6CC0083C758 /* DeliveryLocationMap */,
+				724465CA26400FF900C50802 /* FavouritesManager */,
 				A483E25325D40ABE006D2DAF /* ImageSlideShow */,
 				A483E24525D40ABE006D2DAF /* InputValidatable */,
 				A4057DA02611C5170062BB5B /* KeyChainStorage */,
@@ -6489,7 +6489,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.1;
+				MARKETING_VERSION = 3.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
@@ -6572,7 +6572,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.1;
+				MARKETING_VERSION = 3.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
@@ -6716,7 +6716,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.1;
+				MARKETING_VERSION = 3.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";
@@ -6743,7 +6743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.1;
+				MARKETING_VERSION = 3.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Core/UltraDrawerView/Pilican-Bridging-Header.h";

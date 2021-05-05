@@ -1,5 +1,6 @@
 import Cosmos
 import Kingfisher
+import SnapKit
 import UIKit
 
 final class DeliveryRetailHeaderView: UIView {
@@ -7,6 +8,8 @@ final class DeliveryRetailHeaderView: UIView {
     private let favButtonHeight: CGFloat = 30
     private let imageHeight: CGFloat = 20
     private let deliveryImageSize: CGFloat = 30
+    var stickyHeaderrHeightConstraint: Constraint?
+    var stickyHeaderRatingImageConstraint: Constraint?
 
     private let productImageView: UIImageView = {
         let image = UIImageView()
@@ -17,21 +20,20 @@ final class DeliveryRetailHeaderView: UIView {
     private let companyNameLabel: UILabel = {
         let label = UILabel()
         label.font = .semibold16
-        label.text = "Zhekas doner House"
+        label.numberOfLines = 0
         return label
     }()
 
     private let companyAdressLabel: UILabel = {
         let label = UILabel()
-        label.text = "Макатаева 198/1"
-        label.font = .medium12
+        label.font = .semibold14
         return label
     }()
 
     private let workTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Режим работы \n10:00 - 23:00"
-        label.font = .medium12
+        label.font = .book12
+        label.textAlignment = .center
         label.numberOfLines = 2
         return label
     }()
@@ -51,11 +53,10 @@ final class DeliveryRetailHeaderView: UIView {
     }()
 
     private lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [labelStackView, workTimeLabel, UIView(), favouriteButton])
+        let stackView = UIStackView(arrangedSubviews: [labelStackView, UIView(), workTimeLabel, UIView(), favouriteButton])
         stackView.spacing = 10
         stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.alignment = .top
+        stackView.distribution = .fillProportionally
         return stackView
     }()
 
@@ -140,13 +141,15 @@ final class DeliveryRetailHeaderView: UIView {
         let image = favourite == true ? Images.fillStar.image : Images.emptyStar.image
         favouriteButton.setImage(image, for: .normal)
     }
-
-    func setData(retail: DeliveryRetail) {
+    
+    func setData(retail: DeliveryRetail, workTime: String) {
         companyNameLabel.text = retail.name
         companyAdressLabel.text = retail.address
         ratingLabel.text = "\(retail.rating ?? 0)"
         ratingView.rating = retail.rating ?? 0
+        workTimeLabel.text = workTime
         productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
+        
     }
 
     private func setupInitialLayout() {
@@ -166,6 +169,7 @@ final class DeliveryRetailHeaderView: UIView {
         }
 
         favouriteButton.setContentHuggingPriority(.required, for: .horizontal)
+        favouriteButton.snp.makeConstraints { $0.width.equalTo(30) }
         backgroundColor = .background
     }
 }

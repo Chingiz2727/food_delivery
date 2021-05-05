@@ -137,10 +137,7 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
 
     private func showChangePin() {
         var module = moduleFactory.makeChangePin()
-        module.saveTapped = { [weak self] in
-            self?.router.popModule()
-        }
-        module.closeButton = { [weak self] in
+        module.onCodeValidate = { [weak self] in
             self?.router.popModule()
         }
         router.push(module)

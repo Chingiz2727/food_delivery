@@ -8,7 +8,7 @@ final class HomeCoordinator: BaseCoordinator {
     private let coordinatorFactory: HomeTabBarCoordinatorFactory
     private var tabRootContainers: [TabableRootControllerAndCoordinatorContainer] = []
     private var tabBarController: HomeTabBarModule
-
+    var tapPop: Callback?
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         let userInfoStorage = container.resolve(UserInfoStorage.self)!
@@ -49,11 +49,13 @@ final class HomeCoordinator: BaseCoordinator {
         homeCoordinator.start()
         addDependency(homeCoordinator)
         guard let controller = rootController.toPresent() else { return }
-
+        tapPop = {
+            homeCoordinator.onPopTap?()
+        }
         homeCoordinator.onDeliveryTab = { [weak self] in
             self?.startDeliveryFlow()
         }
-
+        
         tabRootContainers.append(.init(viewController: controller, coordinator: homeCoordinator))
     }
 
@@ -86,7 +88,7 @@ final class HomeCoordinator: BaseCoordinator {
     private func showProfileMenu() {
         let coordinator = coordinatorFactory.makeProfileMenu()
         coordinator.onLogoutDidTap = { [weak self] in
-            coordinator.router.popToRootModule()
+            self?.tapPop?()
         }
         coordinator.start()
         addDependency(coordinator)

@@ -39,11 +39,9 @@ final class MyCardCoordinator: BaseCoordinator {
     private func show3dsWebView(cardModel: BindCardModel, htmlString: String) {
         var module = moduleFactory.make3dsWeb(cardModel: cardModel, htmlString: htmlString)
         module.onCardAddTryed = { [weak self] status in
-            self?.router.dismissModule(animated: true, completion: {
-                self?.showCardStatus(status: status)
-            })
+            self?.showCardStatus(status: status)
         }
-        router.present(module)
+        router.push(module)
     }
 
     private func showCardStatus(status: Status) {

@@ -19,15 +19,15 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
     private let currentLocation = PublishSubject<DeliveryLocation>()
-    private let distance = PublishSubject<Double>()
+    private let distance: BehaviorSubject<Double> = .init(value: 0)
     private let locationManager = CLLocationManager()
-    private let totalSum = PublishSubject<Int>()
-    private let addAmountSubject = PublishSubject<Int>()
-    private let descriptionSubject = PublishSubject<String>()
-    private let fullAmountSubject = PublishSubject<Int>()
-    private let foodAmountSubject = PublishSubject<Int>()
-    private let deliveryAmountSubject = PublishSubject<Int>()
-    private let useCashbackSubject = PublishSubject<Bool>()
+    private let totalSum: BehaviorSubject<Int> = .init(value: 0)
+    private let addAmountSubject: BehaviorSubject<Int> = .init(value: 0)
+    private let descriptionSubject: BehaviorSubject<String> = .init(value: "")
+    private let fullAmountSubject: BehaviorSubject<Int> = .init(value: 0)
+    private let foodAmountSubject: BehaviorSubject<Int> = .init(value: 0)
+    private let deliveryAmountSubject: BehaviorSubject<Int> = .init(value: 0)
+    private let useCashbackSubject: BehaviorSubject<Bool> = .init(value: false)
     init(viewModel: MakeOrderViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -206,6 +206,37 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         putAddress = { [unowned self] address in
             self.rootView.addressView.adressLabel.text = address.name
             self.currentLocation.onNext(address)
+        }
+        
+        if orderType == .takeAway {
+            viewModel.dishList.wishDishList
+                .subscribe(onNext: { [unowned self] products in
+                    if products.isEmpty {
+                        emptyDishList?()
+                    }
+                    let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
+                    let totalSum = amount.reduce(0, +)
+                    self.foodAmountSubject.onNext(totalSum)
+                    if orderType.title == "Доставка Pillikan" {
+                        if totalSum < 2000 {
+                            self.addAmountSubject.onNext(0)
+                            self.totalSum.onNext(totalSum)
+                            self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                        } else {
+                            self.addAmountSubject.onNext(0)
+                            self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                            self.totalSum.onNext(totalSum)
+                            self.fullAmountSubject.onNext(totalSum)
+                        }
+                    } else {
+                        self.totalSum.onNext(totalSum)
+                        self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                        self.rootView.payAmountView.clearExtraCost()
+                        self.fullAmountSubject.onNext(totalSum)
+                    }
+                })
+                .disposed(by: disposeBag)
+            self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: viewModel.dishList.retail?.latitude ?? 0, longitude: viewModel.dishList.retail?.longitude ?? 0), name: viewModel.dishList.retail?.address ?? ""))
         }
     }
 

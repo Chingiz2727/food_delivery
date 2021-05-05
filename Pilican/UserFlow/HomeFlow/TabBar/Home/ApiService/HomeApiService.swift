@@ -5,6 +5,7 @@ protocol HomeApiService {
     func fetchSliders() -> Observable<LoadingSequence<Sliders>>
     func fetchNewCompaniesList() -> Observable<LoadingSequence<RetailList>>
     func sendFiretoken() -> Observable<LoadingSequence<Data>>
+    func searchRetailList(name: String) -> Observable<LoadingSequence<RetailList>>
 }
 
 final class HomeApiServiceImpl: HomeApiService {
@@ -34,5 +35,12 @@ final class HomeApiServiceImpl: HomeApiService {
         return apiService.makeRequest(to: HomeApiTarget.fireBaseToken(token: appSession.pushNotificationToken ?? ""))
             .run()
             .asLoadingSequence()
+    }
+    
+    func searchRetailList(name: String) -> Observable<LoadingSequence<RetailList>> {
+        let retailList = apiService.makeRequest(to: HomeApiTarget.fullPaginatedRetailList(pageNumber: 0, cityId: nil, size: 20, categoryId: nil, name: name))
+            .result(RetailList.self)
+            .asLoadingSequence()
+        return retailList
     }
 }

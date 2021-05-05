@@ -10,7 +10,7 @@ final class AuthModuleFactory {
     func makeAuthUserName() -> AuthModule {
         let authService = container.resolve(AuthenticationService.self)!
         let viewModel = AuthViewModel(authService: authService)
-        let viewController = AuthViewController(viewModel: viewModel)
+        let viewController = AuthViewController(viewModel: viewModel, sessionStorage: container.resolve(UserSessionStorage.self)!)
         return viewController
     }
 
@@ -18,14 +18,14 @@ final class AuthModuleFactory {
         let authService = container.resolve(AuthenticationService.self)!
 
         let viewModel = AuthBySmsViewModel(authService: authService)
-        let viewController = AuthBySmsViewController(viewModel: viewModel)
+        let viewController = AuthBySmsViewController(viewModel: viewModel, sessionStorage: container.resolve(UserSessionStorage.self)!)
         return viewController
     }
 
     func makeRegistration() -> RegisterModule {
         let authService = container.resolve(AuthenticationService.self)!
         let viewModel = RegistrationViewModel(authService: authService)
-        let viewControllerr = RegisterViewController(viewModel: viewModel)
+        let viewControllerr = RegisterViewController(viewModel: viewModel, sessionStorage: container.resolve(UserSessionStorage.self)!)
         return viewControllerr
     }
 
