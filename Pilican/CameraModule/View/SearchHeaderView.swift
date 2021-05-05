@@ -38,7 +38,7 @@ class SearchHeaderView: UITableViewHeaderFooterView {
             make.width.equalTo(100)
             make.height.equalTo(36)
         }
-        
+
         addSubview(searchBar)
         searchBar.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(10)

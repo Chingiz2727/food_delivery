@@ -44,6 +44,7 @@
 		55454B29260D9AFE00404238 /* QRPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */; };
 		55454B2D260DA30500404238 /* QRPaymentTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B2C260DA30500404238 /* QRPaymentTarget.swift */; };
 		55454B32260DA6E700404238 /* PayByQRPartnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */; };
+		5553234726427AEF00FDABCD /* DeliveryRetailListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5553234626427AEF00FDABCD /* DeliveryRetailListHeaderView.swift */; };
 		5555236625EF672300537D3F /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236525EF672300537D3F /* DiskCache.swift */; };
 		5555236A25EF674B00537D3F /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236925EF674B00537D3F /* InMemoryCache.swift */; };
 		5555236E25EF8FBA00537D3F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555236D25EF8FBA00537D3F /* Profile.swift */; };
@@ -645,6 +646,7 @@
 		55454B28260D9AFE00404238 /* QRPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewModel.swift; sourceTree = "<group>"; };
 		55454B2C260DA30500404238 /* QRPaymentTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentTarget.swift; sourceTree = "<group>"; };
 		55454B31260DA6E700404238 /* PayByQRPartnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayByQRPartnerResponse.swift; sourceTree = "<group>"; };
+		5553234626427AEF00FDABCD /* DeliveryRetailListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailListHeaderView.swift; sourceTree = "<group>"; };
 		5555236525EF672300537D3F /* DiskCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		5555236925EF674B00537D3F /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		5555236D25EF8FBA00537D3F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -5532,6 +5534,7 @@
 			isa = PBXGroup;
 			children = (
 				A4EFD3AB2612DA8700694D18 /* DeliveryRetailListTableViewCell.swift */,
+				5553234626427AEF00FDABCD /* DeliveryRetailListHeaderView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -6376,6 +6379,7 @@
 				72FB0808261DA71600F04395 /* UIView+DeepCopy.swift in Sources */,
 				A4D7641A25DA40B7009A6651 /* PrimaryButton.swift in Sources */,
 				A47CA1AB25E36D9000EB091C /* CloseableViewController.swift in Sources */,
+				5553234726427AEF00FDABCD /* DeliveryRetailListHeaderView.swift in Sources */,
 				A4BBC72225D6402D006AF382 /* QrCodeTextField.swift in Sources */,
 				A483E27225D40ABE006D2DAF /* ConfigService.swift in Sources */,
 				A483E28A25D40ABE006D2DAF /* Pagination.swift in Sources */,

@@ -1,6 +1,6 @@
 enum HomeApiTarget: ApiTarget {
 
-    case slider
+    case slider(type: Int)
     case retailList(pageNumber: Int, size: Int)
     case fetchBalance(limit: Int)
     case fullPaginatedRetailList(pageNumber: Int, cityId: Int?, size: Int, categoryId: Int?, name: String)
@@ -47,8 +47,8 @@ enum HomeApiTarget: ApiTarget {
 
     var parameters: [String: Any]? {
         switch self {
-        case .slider:
-            return ["type": 0]
+        case .slider(let type):
+            return ["type": type]
         case .findRetailById(let id):
             return ["id": id]
         case let.fetchBalance(limit):
