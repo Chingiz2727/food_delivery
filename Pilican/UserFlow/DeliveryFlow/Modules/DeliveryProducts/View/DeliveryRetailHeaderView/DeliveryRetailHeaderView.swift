@@ -57,7 +57,7 @@ final class DeliveryRetailHeaderView: UIView {
         stackView.distribution = .equalSpacing
         return stackView
     }()
-    
+
     private let ratingLabel: UILabel = {
         let label = UILabel()
         label.font = .medium12
@@ -65,7 +65,7 @@ final class DeliveryRetailHeaderView: UIView {
         label.text = "4.0"
         return label
     }()
-    
+
     private let ratingView: CosmosView = {
         let view = CosmosView()
         view.rating = 4
@@ -139,7 +139,7 @@ final class DeliveryRetailHeaderView: UIView {
         let image = favourite == true ? Images.fillStar.image : Images.emptyStar.image
         favouriteButton.setImage(image, for: .normal)
     }
-    
+
     func setData(retail: DeliveryRetail) {
         companyNameLabel.text = retail.name
         companyAdressLabel.text = retail.address

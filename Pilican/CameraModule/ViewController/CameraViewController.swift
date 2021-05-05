@@ -96,7 +96,7 @@ class CameraViewController: UIViewController, CameraModule {
         let adapter = viewModel.adapter
         adapter.connect(to: cameraView.tableView)
         adapter.start()
-        
+
        let output = viewModel.transform(input: CameraViewModel.Input(
                                 loadInfo: scanSubject,
                                 createdAt: createdAtSubject,

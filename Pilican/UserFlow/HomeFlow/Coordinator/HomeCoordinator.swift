@@ -1,7 +1,7 @@
 import Swinject
 
 final class HomeCoordinator: BaseCoordinator {
-    
+
     func goToHomeWithDeeplink(action: DeepLinkAction) {
     }
 
@@ -29,7 +29,7 @@ final class HomeCoordinator: BaseCoordinator {
             self?.showProfileMenu()
         }
 
-        
+
         tabBarController.bonusTap = { [weak self] in
             self?.showCashbackMenu()
         }

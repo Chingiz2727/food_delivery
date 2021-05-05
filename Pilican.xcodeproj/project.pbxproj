@@ -100,6 +100,8 @@
 		558679E125F0D95800A5A94B /* ProblemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679E025F0D95800A5A94B /* ProblemModule.swift */; };
 		558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */; };
 		558679F225F107F500A5A94B /* ProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558679F125F107F500A5A94B /* ProblemViewModel.swift */; };
+		5597459B2641476F003804D0 /* SearchTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5597459A2641476F003804D0 /* SearchTagsView.swift */; };
+		559745ED2641688C003804D0 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559745EC2641688C003804D0 /* Tags.swift */; };
 		559AFDC02625ADB400048CE1 /* AboutOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDBF2625ADB400048CE1 /* AboutOrderView.swift */; };
 		559AFDC32625B51F00048CE1 /* AboutDeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDC22625B51F00048CE1 /* AboutDeliveryView.swift */; };
 		559AFDC62625C27A00048CE1 /* AboutContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559AFDC52625C27A00048CE1 /* AboutContactsView.swift */; };
@@ -699,6 +701,8 @@
 		558679E025F0D95800A5A94B /* ProblemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemModule.swift; sourceTree = "<group>"; };
 		558679EA25F0FCDB00A5A94B /* ProblemTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemTarget.swift; sourceTree = "<group>"; };
 		558679F125F107F500A5A94B /* ProblemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewModel.swift; sourceTree = "<group>"; };
+		5597459A2641476F003804D0 /* SearchTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagsView.swift; sourceTree = "<group>"; };
+		559745EC2641688C003804D0 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		559AFDBF2625ADB400048CE1 /* AboutOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutOrderView.swift; sourceTree = "<group>"; };
 		559AFDC22625B51F00048CE1 /* AboutDeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDeliveryView.swift; sourceTree = "<group>"; };
 		559AFDC52625C27A00048CE1 /* AboutContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutContactsView.swift; sourceTree = "<group>"; };
@@ -2059,6 +2063,14 @@
 				558679F125F107F500A5A94B /* ProblemViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5597459926414738003804D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5597459A2641476F003804D0 /* SearchTagsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		559AFDBD2625AD7900048CE1 /* AboutOrder */ = {
@@ -3777,6 +3789,7 @@
 		72FB082E261DBE6700F04395 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				5597459926414738003804D0 /* View */,
 				72FB0837261DBF7D00F04395 /* Model */,
 				72FB0836261DBF6300F04395 /* Module */,
 				72FB0835261DBF5700F04395 /* ViewModel */,
@@ -3815,6 +3828,7 @@
 			children = (
 				72FB0843261DC92100F04395 /* SearchList.swift */,
 				72FB0847261DC93700F04395 /* SearchItem.swift */,
+				559745EC2641688C003804D0 /* Tags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -6071,6 +6085,7 @@
 				A4A9DE0225E6228B00A711CA /* AuthCheckCoordinator.swift in Sources */,
 				A40B95F125DE647500E507FB /* HomeView.swift in Sources */,
 				55A7C07C260B604A0037D567 /* CommentForPartnerView.swift in Sources */,
+				559745ED2641688C003804D0 /* Tags.swift in Sources */,
 				A4BBC6DB25D638DF006AF382 /* NavigationBarConfigurable.swift in Sources */,
 				722A33BB26255483003FB38A /* OrderTypeHeaderView.swift in Sources */,
 				5525318126293E4500888DEE /* FavoritesModule.swift in Sources */,
@@ -6289,6 +6304,7 @@
 				A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */,
 				72FB082A261DB50500F04395 /* RetailSearchView.swift in Sources */,
 				7284347E261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift in Sources */,
+				5597459B2641476F003804D0 /* SearchTagsView.swift in Sources */,
 				A483E27025D40ABE006D2DAF /* AuthTokenService.swift in Sources */,
 				A483E29325D40ABE006D2DAF /* Logger.swift in Sources */,
 				55A5CCFB26006CBA004AA13C /* ChangePasswordViewModel.swift in Sources */,
