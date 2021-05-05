@@ -30,6 +30,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        title = "Главная"
         bindViewModel()
         navigationController?.navigationBar.isHidden = true
     }

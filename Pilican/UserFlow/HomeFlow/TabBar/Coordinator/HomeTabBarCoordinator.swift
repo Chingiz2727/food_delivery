@@ -9,6 +9,7 @@ struct TabableRootControllerAndCoordinatorContainer {
 public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
     func goToHomeWithDeeplink(action: DeepLinkAction)
     var onDeliveryTab: Callback? { get set }
+    var onPopTap: Callback? { get set }
 }
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
@@ -16,6 +17,7 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
 
     private let moduleFactory: HomeCoordinatorModuleFactory
     var onDeliveryTab: Callback?
+    var onPopTap: Callback?
     
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = HomeCoordinatorModuleFactory(container: container, router: router)
@@ -61,7 +63,11 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         let coordinator = moduleFactory.makeRetailDetailCoordinator(retail: retail)
         coordinator.onFlowDidFinish = { [weak self] in
             self?.removeDependency(coordinator)
-            self?.router.popModule()
+            self?.router.popToRootModule()
+        }
+        
+        onPopTap =  {
+            coordinator.onFlowDidFinish?()
         }
         coordinator.start()
         addDependency(coordinator)
