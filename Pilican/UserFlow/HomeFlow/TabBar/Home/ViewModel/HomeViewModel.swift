@@ -5,11 +5,13 @@ final class HomeViewModel: ViewModel {
 
     struct Input {
         let viewDidLoad: Observable<Void>
+        let searchText: Observable<String>
     }
 
     struct Output {
         let retailList: Observable<LoadingSequence<RetailList>>
         let slider: Observable<LoadingSequence<Sliders>>
+        let searchRetailList: Observable<LoadingSequence<RetailList>>
     }
 
     private let apiService: HomeApiService
@@ -36,6 +38,12 @@ final class HomeViewModel: ViewModel {
             .disposed(by: disposeBag)
         token.connect()
             .disposed(by: disposeBag)
-        return .init(retailList: retailList, slider: slider)
+        
+        let searchRetailList = input.searchText
+            .flatMap { [unowned self] text in
+                return apiService.searchRetailList(name: text)
+            }.share()
+        
+        return .init(retailList: retailList, slider: slider, searchRetailList: searchRetailList)
     }
 }

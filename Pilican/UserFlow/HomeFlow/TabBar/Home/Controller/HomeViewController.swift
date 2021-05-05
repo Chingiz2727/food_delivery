@@ -37,11 +37,12 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     private func bindView() {
         rootView.collectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.collectionView.registerClassForHeaderView(HomeCollectionViewHeaderView.self)
+        rootView.searchCollectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.layout.headerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 270)
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()))))
+        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(())), searchText: rootView.searchBar.rx.text.unwrap()))
 
         let slider = output.slider.publish()
         let retailList = output.retailList.publish()
@@ -73,6 +74,33 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
         retailList.connect()
             .disposed(by: disposeBag)
 
+        let retailSearchList = output.searchRetailList.publish()
+        
+        retailSearchList.element.map { $0.retailList }
+            .bind(to: rootView.searchCollectionView.rx.items(RetailCollectionViewCell.self)) { _, model, cell  in
+                cell.setRetail(retail: model)
+            }
+            .disposed(by: disposeBag)
+        
+        retailSearchList.connect()
+            .disposed(by: disposeBag)
+        
+        rootView.searchBar.rx.text.unwrap()
+            .subscribe(onNext: { [unowned self] text in
+                self.rootView.searchCollectionView.isHidden = text.isEmpty
+                self.rootView.searchViewBack.isHidden = text.isEmpty
+            })
+            .disposed(by: disposeBag)
+        
+        rootView.searchCollectionView.rx.itemSelected
+            .withLatestFrom(retailSearchList.element) { $1.retailList[$0.row] }
+            .bind { [unowned self] retail in
+                self.selectRetail?(retail)
+                self.rootView.searchCollectionView.isHidden = true
+                self.rootView.searchViewBack.isHidden = true
+            }
+            .disposed(by: disposeBag)
+        
         rootView.collectionView.rx.itemSelected
             .withLatestFrom(retailList.element) { $1.retailList[$0.row] }
             .bind { [unowned self] retail in
