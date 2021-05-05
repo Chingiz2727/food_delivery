@@ -12,7 +12,7 @@ final class DeliveryRetailProductsView: UIView {
     private var stickyHeaderrHeightConstraint: Constraint?
     let calculateView = ProductCalculateView()
     let stickyHeaderView = DeliveryRetailHeaderView()
-    
+
     private lazy var stackView = UIStackView(
         views: [stickyHeaderView, segmentControl, tableView, calculateView],
         axis: .vertical,
@@ -32,7 +32,7 @@ final class DeliveryRetailProductsView: UIView {
     func setRetail(retail: DeliveryRetail) {
         stickyHeaderView.setData(retail: retail)
     }
-    
+
     func setTitles(titles: [String]) {
         segmentControl.set(titles: titles)
     }

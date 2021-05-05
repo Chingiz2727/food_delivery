@@ -6,12 +6,12 @@ final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
     var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
 
     private let moduleFactory: SearchCoordinatorFactory
-    
+
     override init(router: Router, container: DependencyContainer) {
         moduleFactory = SearchCoordinatorFactory(container: container)
         super.init(router: router, container: container)
     }
-    
+
     override func start() {
         showSearchItem()
     }
@@ -23,7 +23,7 @@ final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
         }
         router.setRootModule(module)
     }
-    
+
     private func showSearchItem() {
         var module = moduleFactory.showSearchItemModule()
         module.onDeliveryRetailCompanyDidSelect = { [weak self] retail in
@@ -31,7 +31,7 @@ final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
         }
         router.setRootModule(module)
     }
-    
+
     private func showDeliveryProduct(retail: DeliveryRetail) {
         let coordinator = OrderingCoordinator(router: router, container: container)
         coordinator.retail = retail

@@ -58,7 +58,7 @@ final class DeliveryRetailHeaderView: UIView {
         stackView.alignment = .top
         return stackView
     }()
-    
+
     private let ratingLabel: UILabel = {
         let label = UILabel()
         label.font = .medium12
@@ -66,7 +66,7 @@ final class DeliveryRetailHeaderView: UIView {
         label.text = "4.0"
         return label
     }()
-    
+
     private let ratingView: CosmosView = {
         let view = CosmosView()
         view.rating = 4

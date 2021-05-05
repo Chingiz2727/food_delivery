@@ -6,9 +6,11 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
 
     private let viewModel: ItemSearchViewMoodel
     private let disposeBag = DisposeBag()
-
-    init(viewModel: ItemSearchViewMoodel) {
+    private let searchText: PublishSubject<String> = .init()
+    private let dishList: DishList
+    init(viewModel: ItemSearchViewMoodel, dishList: DishList) {
         self.viewModel = viewModel
+        self.dishList = dishList
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -23,7 +25,7 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(text: rootView.searchBar.rx.text.unwrap()))
+        let output = viewModel.transform(input: .init(text: searchText, loadTags: .just(())))
         let retailList = output.retailList.publish()
 
         retailList.element
@@ -37,15 +39,53 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)
 
-        Observable.combineLatest(retailList.element, rootView.tableView.rx.itemSelected)
-            .subscribe(onNext: { [unowned self] model, path in
-                self.onDeliveryRetailCompanyDidSelect?(model.retails.content[path.row])
-            })
-            .disposed(by: disposeBag)
-
+        rootView.tableView.rx.itemSelected
+            .withLatestFrom(retailList.element) { $1.retails.content[$0.row] }
+            .bind { [unowned self] retail in
+                if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                    showBasketAlert {
+                        self.dishList.products = []
+                        self.dishList.wishDishList.onNext([])
+                        self.onDeliveryRetailCompanyDidSelect?(retail)
+                    }
+                }
+                if retail.isWork == 1 {
+                    self.onDeliveryRetailCompanyDidSelect?(retail)
+                }
+            }.disposed(by: disposeBag)
+        
         retailList.connect()
             .disposed(by: disposeBag)
 
+        let tags = output.tags.publish()
+
+        tags.loading
+            .bind(to: ProgressView.instance.rx.loading)
+            .disposed(by: disposeBag)
+
+        tags.element
+            .subscribe(onNext: { [unowned self] tag in
+                self.rootView.searchTagsView.setTags(tags: tag.retailTags)
+            }).disposed(by: disposeBag)
+
+        tags.errors
+            .bind(to: rx.error)
+            .disposed(by: disposeBag)
+
+        tags.connect()
+            .disposed(by: disposeBag)
+
+        rootView.searchTagsView.selectedTag
+            .subscribe(onNext: { [unowned self] tag in
+                self.rootView.searchBar.text = tag
+                self.searchText.onNext(tag)
+            }).disposed(by: disposeBag)
+
+        rootView.searchBar.rx.text.unwrap()
+            .subscribe(onNext: { [unowned self] text in
+                self.searchText.onNext(text)
+            })
+            .disposed(by: disposeBag)
         rootView.tableView.isHidden = false
     }
 }
