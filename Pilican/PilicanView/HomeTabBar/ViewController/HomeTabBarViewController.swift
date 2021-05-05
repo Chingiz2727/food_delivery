@@ -8,7 +8,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
     var bonusTap: Callback?
     var notifyMenuTap: Callback?
-    private let homeTabBar = HomeTabBar()
+    let homeTabBar = HomeTabBar()
     private let tabView = HomeTabView()
     private let userInfoStorage: UserInfoStorage
     private let disposeBag = DisposeBag()
@@ -43,24 +43,24 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
     private func setupInitialLayout() {
         setValue(homeTabBar, forKey: "tabBar")
-        view.addSubview(tabView)
-        tabView.snp.makeConstraints { $0.edges.equalTo(homeTabBar) }
+//        view.addSubview(tabView)
+//        tabView.snp.makeConstraints { $0.edges.equalTo(homeTabBar) }
     }
 
     private func bindView() {
-        tabView.qrScanButton.rx.tap
+        homeTabBar.tabView.qrScanButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.qrCodeTap?()
             })
             .disposed(by: disposeBag)
 
-        tabView.balanceInfoView.control.rx.controlEvent(.touchUpInside)
+        homeTabBar.tabView.balanceInfoView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.bonusTap?()
             })
             .disposed(by: disposeBag)
 
-        tabView.userInfoView.control.rx.controlEvent(.touchUpInside)
+        homeTabBar.tabView.userInfoView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.accountTap?()
             })
@@ -68,7 +68,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
         
         userInfoStorage.updateInfo
             .subscribe(onNext: { [unowned self] in
-                self.tabView.setData(profile: userInfoStorage.fullName ?? "", balance: String(userInfoStorage.balance ?? 0))
+                self.homeTabBar.tabView.setData(profile: userInfoStorage.fullName ?? "", balance: String(userInfoStorage.balance ?? 0))
             }).disposed(by: disposeBag)
     }
 

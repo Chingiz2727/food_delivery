@@ -10,7 +10,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     private let viewModel: HomeViewModel
     private let dataSource: HomeCollectionViewDataSource
     private let slider = BehaviorSubject<[Slider]>(value: [])
-    private let selectedCategory = PublishSubject<HomeCategoryMenu>()
+    private let selectedCategory = PublishSubject<Int>()
     private let disposeBag = DisposeBag()
 
     init(viewModel: HomeViewModel) {
@@ -81,7 +81,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
             .disposed(by: disposeBag)
 
         selectedCategory.subscribe(onNext: { [unowned self] category in
-            self.selectMenu?(category)
+            self.selectMenu?(HomeCategoryMenu(rawValue: category)!)
         })
         .disposed(by: disposeBag)
     }

@@ -35,7 +35,7 @@ final class PinCoordinator: BaseCoordinator, PinCoordinatorOutput {
         module.onResetTapp = { [weak self] in
             self?.authState.forceLogout()
         }
-        router.push(module)
+        router.setRootModule(module)
     }
 
     private func showPinCreate() {
@@ -44,6 +44,6 @@ final class PinCoordinator: BaseCoordinator, PinCoordinatorOutput {
             self?.router.dismissModule()
             self?.onCompletion?(true)
         }
-        router.push(module)
+        router.setRootModule(module)
     }
 }

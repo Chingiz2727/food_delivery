@@ -13,7 +13,10 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
 
     private let carouselView = ImageSlideshow()
     private(set) var disposeBag = DisposeBag()
-
+    var showTag: ((Int)->Void)?
+    
+    var didSelectTag: [UIControl: Int] = [:]
+    
     private lazy var categoryStack = UIStackView(
         views: [cashBackCategory, busCategory, deliveryCategory, taxiCategory],
         axis: .horizontal,
@@ -103,7 +106,9 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
         controls.forEach { control in
             control.control.rx.controlEvent(.touchUpInside)
                 .subscribe(onNext: { [unowned self] in
-                    self.selectedTag.onNext(control.control.tag)
+//                    self.selectedTag.onNext(control.control.tag)
+                    print(control.control.tag)
+                    self.showTag?(control.control.tag)
                 }).disposed(by: disposeBag)
         }
     }

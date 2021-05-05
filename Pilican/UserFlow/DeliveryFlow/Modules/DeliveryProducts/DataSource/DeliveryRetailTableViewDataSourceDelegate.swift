@@ -45,13 +45,15 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
 
 extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cell = tableView.cellForRow(at: indexPath) as! DeliveryRetailProductTableViewCell
+        
         let action = UIContextualAction(
             style: .normal,
             title: "") { [unowned self] _, _, completionHandler in
             let product = self.productCategory[indexPath.section].dishes[indexPath.row]
             let changedProduct = self.dishList.changeDishList(dishAction: .addToDish(product))
             self.productCategory[indexPath.section].dishes[indexPath.row] = changedProduct
-            tableView.reloadItemsAtIndexPaths([indexPath], animationStyle: .middle)
+            cell.setData(product: changedProduct)
             completionHandler(true)
         }
         action.backgroundColor = .primary
@@ -60,13 +62,15 @@ extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cell = tableView.cellForRow(at: indexPath) as! DeliveryRetailProductTableViewCell
+
         let action = UIContextualAction(
-            style: .destructive,
+            style: .normal,
             title: "") { [unowned self] _, _, completionHandler in
             let product = self.productCategory[indexPath.section].dishes[indexPath.row]
             let changedProduct = self.dishList.changeDishList(dishAction: .removeFromDish(product))
             self.productCategory[indexPath.section].dishes[indexPath.row] = changedProduct
-            tableView.reloadItemsAtIndexPaths([indexPath], animationStyle: .middle)
+            cell.setData(product: changedProduct)
             completionHandler(true)
         }
         

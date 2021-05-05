@@ -49,10 +49,14 @@ class AddCardViewController: ViewController, AddCardModule, ViewHolder {
             if model.needConfirmation == true {
                 ProgressView.instance.show(.loading, animated: true)
                 MoyaApiService.shared.pass3DSecure(url: model.acsUrl!, model: model, token: self.viewModel.sessionStorage.accessToken ?? "") { (html, error) in
-                    if let html = html {
-                        self.sendToWebController?(model,html)
+                    if let error = error {
+                        self.showErrorInAlert(text: error.localizedDescription)
                     } else {
-                        self.showCardStatus?(.failure)
+                        if let html = html {
+                            self.sendToWebController?(model,html)
+                        } else {
+                            self.showCardStatus?(.failure)
+                        }
                     }
                     ProgressView.instance.hide()
                 }

@@ -89,15 +89,18 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
             
             view.addSubview(v)
             
-            v.frame = .init(x: 0,
-                            y: 0,
+            v.frame = .init(x: 30,
+                            y: 30,
                             width: 70,
                             height: 70)
             
             v.layer.borderWidth = 0.5
             v.layer.borderColor = UIColor.primary.cgColor
             
-            v.snp.makeConstraints { $0.size.equalTo(70) }
+            v.snp.makeConstraints { make in
+                make.size.equalTo(70)
+                make.top.leading.equalToSuperview().inset(10)
+            }
             
             v.layer.cornerRadius = 10.2
             v.isUserInteractionEnabled = true

@@ -49,6 +49,8 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
     
     private func showErrorAlert(error: PinCodeError) {
         showSimpleAlert(title: "Ошибка", message: error.rawValue)
+        rootView.passCodeView.text = nil
+        rootView.repeatCodeView.text = nil
     }
 }
 

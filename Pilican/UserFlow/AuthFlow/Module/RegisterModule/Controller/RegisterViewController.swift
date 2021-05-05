@@ -15,9 +15,11 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
     private let disposeBag = DisposeBag()
     private var registerStatus: BehaviorSubject<RegistrationStatus> = .init(value: .getSMS)
     private let viewModel: RegistrationViewModel
-
-    init(viewModel: RegistrationViewModel) {
+    private let sessionStorage: UserSessionStorage
+    
+    init(viewModel: RegistrationViewModel, sessionStorage: UserSessionStorage) {
         self.viewModel = viewModel
+        self.sessionStorage = sessionStorage
         self.cityPickerDelegate = CityPickerViewDelegate()
         self.cityPickerDataSource = CityPickerViewDataSource()
         super.init(nibName: nil, bundle: nil)
@@ -65,7 +67,9 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
         let result = output.token.publish()
 
         result.element
-            .subscribe(onNext: { [unowned self] _ in
+            .subscribe(onNext: { [unowned self] result in
+                self.sessionStorage.accessToken = result.token.accessToken
+                self.sessionStorage.refreshToken = result.token.refreshToken
                 self.registerTapped?()
             })
             .disposed(by: disposeBag)

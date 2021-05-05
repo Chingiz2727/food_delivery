@@ -34,6 +34,7 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
                 if self.rootView.passCodeView.text == self.userSession.pin {
                     self.onPinSatisfy?()
                 } else {
+                    self.rootView.passCodeView.text = nil
                     self.showSimpleAlert(title: "Ошибка", message: "Неверный пинкод")
                 }
             })

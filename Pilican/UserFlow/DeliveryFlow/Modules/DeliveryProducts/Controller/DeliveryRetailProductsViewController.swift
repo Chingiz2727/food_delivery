@@ -17,9 +17,10 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     private var isFavorite = false
     private var alertIsShown = false
     private let favouriteManager: FavouritesManager
-
-    init(viewModel: DeliveryRetailProductViewModel, favouriteManager: FavouritesManager) {
+    private let workCalendar: WorkCalendar
+    init(viewModel: DeliveryRetailProductViewModel, favouriteManager: FavouritesManager, workCalendar: WorkCalendar) {
         self.viewModel = viewModel
+        self.workCalendar = workCalendar
         self.favouriteManager = favouriteManager
         self.sourceDelegate = DeliveryRetailTableViewDataSourceDelegate(dishList: viewModel.dishList)
         super.init(nibName: nil, bundle: nil)
@@ -35,7 +36,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        rootView.setRetail(retail: viewModel.retailInfo)
+        rootView.setRetail(retail: viewModel.retailInfo, calendar: workCalendar)
         bindViewModel()
         bindView()
         alertIsShown = false

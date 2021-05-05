@@ -172,9 +172,6 @@ public protocol DPOTPViewDelegate {
             textField.textColor = textColorTextField
             textField.textAlignment = .center
             textField.keyboardType = keyboardType
-            if #available(iOS 12.0, *) {
-                textField.textContentType = .oneTimeCode
-            }
 
             if placeholder.count > i - 1 {
                 textField.attributedPlaceholder = NSAttributedString(string: placeholder[i - 1],

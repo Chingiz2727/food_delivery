@@ -101,7 +101,7 @@ class RetailCollectionViewCell: UICollectionViewCell {
         adressLabel.text = retail.address
         discountView.setTitle(title: "\(retail.cashBack) %")
         discountView.configureView(backColor: .primary, textColor: .pilicanWhite)
-        companyTypeLabel.text = retail.name
+        companyTypeLabel.text = retail.description
         setupWorkStatusView(retail: retail)
         guard let imgUrl = retail.imgLogo else { return }
         companyImageView.kf.setImage(with: URL(string: imgUrl))

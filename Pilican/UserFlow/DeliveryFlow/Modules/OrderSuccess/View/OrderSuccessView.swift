@@ -79,6 +79,8 @@ class OrderSuccessView: UIView {
             make.left.right.equalToSuperview().inset(45)
             make.height.equalTo(40)
         }
+        
+        backgroundColor = .white
     }
 
     required init?(coder: NSCoder) {

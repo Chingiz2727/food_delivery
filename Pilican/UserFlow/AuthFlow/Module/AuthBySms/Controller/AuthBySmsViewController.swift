@@ -9,9 +9,11 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
 
     private let viewModel: AuthBySmsViewModel
     private let disposeBag = DisposeBag()
-
-    init(viewModel: AuthBySmsViewModel) {
+    let sessionStorage: UserSessionStorage
+    
+    init(viewModel: AuthBySmsViewModel, sessionStorage: UserSessionStorage) {
         self.viewModel = viewModel
+        self.sessionStorage = sessionStorage
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -63,7 +65,9 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
         let signInResult = output.loginTapped.publish()
 
         signInResult.element
-            .subscribe(onNext: { [unowned self] _ in
+            .subscribe(onNext: { [unowned self] result in
+                self.sessionStorage.accessToken = result.token.accessToken
+                self.sessionStorage.refreshToken = result.token.refreshToken
                 self.onAuthDidFinish?()
             })
             .disposed(by: disposeBag)
