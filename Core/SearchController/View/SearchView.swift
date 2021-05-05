@@ -1,6 +1,10 @@
 import UIKit
+import SnapKit
+import RxSwift
 
 public class SearchView: UIView {
+    
+    let scrollView = UIScrollView()
     
     public let searchBar: SearchBar = {
         let searchBar = SearchBar()
@@ -25,6 +29,14 @@ public class SearchView: UIView {
         return effectView
     }()
     
+    let searchTagsView = SearchTagsView()
+    
+    lazy var stackView = UIStackView(
+        views: [searchBar, searchTagsView, tableView],
+        axis: .vertical,
+        distribution: .fill,
+        spacing: 0)
+    
     public let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -33,11 +45,19 @@ public class SearchView: UIView {
         tableView.keyboardDismissMode = .onDrag
         return tableView
     }()
+    private var contentSizeObserver: NSKeyValueObservation?
+    private var heightConstraint: Constraint?
         
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
         configureView()
+        contentSizeObserver = tableView.observe(
+            \.contentSize,
+            options: [.initial, .new]
+        ) { [weak self] tableView, _ in
+            self?.heightConstraint?.update(offset: max(100, tableView.contentSize.height))
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -52,28 +72,30 @@ public class SearchView: UIView {
     }
     
     private func setupInitialLayout() {
-        addSubview(searchBar)
-        searchBar.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview().inset(4)
+        addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
-        
-        addSubview(backgroundImageView)
-        backgroundImageView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(4)
-            make.leading.trailing.equalToSuperview()
+
+        scrollView.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
+            make.edges.width.equalToSuperview()
         }
-        
-        backgroundImageView.addSubview(blurEffectView)
-        
-        addSubview(tableView)
+
+        searchTagsView.snp.makeConstraints { (make) in
+            make.height.equalTo(220)
+        }
+
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(backgroundImageView.snp.top)
-            make.leading.trailing.bottom.equalToSuperview()
+            heightConstraint = make.height.equalTo(100).constraint
         }
+
+        heightConstraint?.activate()
     }
     
     private func configureView() {
         backgroundColor = .background
+        tableView.separatorStyle = .none
+        tableView.bounces = false
     }
 }

@@ -12,7 +12,8 @@ final class SearchCoordinatorFactory {
     func showSearchItemModule() -> ItemSearchModule {
         let serivce = container.resolve(ApiService.self)!
         let viewModel = ItemSearchViewMoodel(apiService: serivce)
-        return ItemSearchViewController(viewModel: viewModel)
+        let dishList = container.resolve(DishList.self)!
+        return ItemSearchViewController(viewModel: viewModel, dishList: dishList)
     }
     
     func deliveryProduct(retail: DeliveryRetail) -> DeliveryRetailProductsModule {

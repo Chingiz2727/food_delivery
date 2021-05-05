@@ -44,7 +44,7 @@ final class OrderProgressView: UIView {
         }
         progressLabel.attributedText = attributedText
     }
-    
+
     private func setupInitialLayout() {
         addSubview(progressCircle)
         addSubview(progressLine)
@@ -56,7 +56,7 @@ final class OrderProgressView: UIView {
             make.size.equalTo(20)
             make.leading.equalToSuperview().inset(15)
         }
-        
+
         progressLine.snp.makeConstraints { make in
             make.top.equalTo(progressCircle.snp.bottom)
             make.centerX.equalTo(progressCircle)

@@ -4,6 +4,7 @@ import AVFoundation
 typealias DependencyContainer = Resolver
 
 public final class DependencyContainerAssembly: Assembly {
+    // swiftlint:disable function_body_length
     public func assemble(container: Container) {
         container.register(AppLanguage.self) { _ in
             AppLanguage.default

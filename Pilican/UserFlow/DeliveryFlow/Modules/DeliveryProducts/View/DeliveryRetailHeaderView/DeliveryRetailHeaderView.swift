@@ -59,7 +59,7 @@ final class DeliveryRetailHeaderView: UIView {
         stackView.distribution = .fillProportionally
         return stackView
     }()
-    
+
     private let ratingLabel: UILabel = {
         let label = UILabel()
         label.font = .medium12
@@ -67,7 +67,7 @@ final class DeliveryRetailHeaderView: UIView {
         label.text = "4.0"
         return label
     }()
-    
+
     private let ratingView: CosmosView = {
         let view = CosmosView()
         view.rating = 4
@@ -118,7 +118,7 @@ final class DeliveryRetailHeaderView: UIView {
     }()
 
     lazy var fullStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [productImageView,infoStackView, bottomStack])
+        let stackView = UIStackView(arrangedSubviews: [productImageView, infoStackView, bottomStack])
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.distribution = .fill

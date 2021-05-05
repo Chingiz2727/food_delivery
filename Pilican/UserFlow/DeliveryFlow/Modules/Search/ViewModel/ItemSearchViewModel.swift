@@ -4,17 +4,19 @@ import UIKit
 final class ItemSearchViewMoodel: ViewModel {
 
     private let apiService: ApiService
-    
+
     init(apiService: ApiService) {
         self.apiService = apiService
     }
     
     struct Input {
         let text: Observable<String>
+        let loadTags: Observable<Void>
     }
     
     struct Output {
         let retailList: Observable<LoadingSequence<SearchList>>
+        let tags: Observable<LoadingSequence<Tags>>
     }
     
     func transform(input: Input) -> Output {
@@ -24,7 +26,11 @@ final class ItemSearchViewMoodel: ViewModel {
                     .result(SearchList.self)
             }.share()
             .asLoadingSequence()
-            
-        return .init(retailList: retailList)
+        let tags = input.loadTags
+            .flatMap { [unowned self] in
+                return self.apiService.makeRequest(to:SearchApiTarget.getTags)
+                    .result(Tags.self)
+            }.share().asLoadingSequence()
+        return .init(retailList: retailList, tags: tags)
     }
 }

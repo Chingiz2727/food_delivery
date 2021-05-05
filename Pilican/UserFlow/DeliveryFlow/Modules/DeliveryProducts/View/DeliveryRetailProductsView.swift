@@ -37,7 +37,7 @@ final class DeliveryRetailProductsView: UIView {
         
         stickyHeaderView.setData(retail: retail, workTime: time)
     }
-    
+
     func setTitles(titles: [String]) {
         segmentControl.set(titles: titles)
     }

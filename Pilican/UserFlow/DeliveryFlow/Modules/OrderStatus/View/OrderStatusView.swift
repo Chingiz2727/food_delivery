@@ -87,8 +87,8 @@ final class OrderStatusView: UIView {
         scrollView.snp.makeConstraints { $0.edges.equalToSuperview() }
         scrollView.addSubview(fullStackView)
         fullStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(self).inset(10)
-            make.top.bottom.equalToSuperview().inset(10)
+            make.leading.trailing.equalTo(self).inset(20)
+            make.top.bottom.equalToSuperview().inset(20)
         }
         
         [onFetchingStatus, onPreparingStatus, onDeliveryStatus, finishedStatus].forEach { view in
