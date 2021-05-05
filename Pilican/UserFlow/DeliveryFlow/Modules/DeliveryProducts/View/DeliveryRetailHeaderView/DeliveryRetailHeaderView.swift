@@ -31,7 +31,7 @@ final class DeliveryRetailHeaderView: UIView {
     private let workTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "Режим работы \n10:00 - 23:00"
-        label.font = .regular2
+        label.font = .medium12
         label.numberOfLines = 2
         return label
     }()
@@ -55,6 +55,7 @@ final class DeliveryRetailHeaderView: UIView {
         stackView.spacing = 10
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
+        stackView.alignment = .top
         return stackView
     }()
     
@@ -116,7 +117,7 @@ final class DeliveryRetailHeaderView: UIView {
     }()
 
     lazy var fullStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [productImageView,infoStackView, bottomStack])
+        let stackView = UIStackView(arrangedSubviews: [productImageView, infoStackView, bottomStack])
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.distribution = .fill
@@ -139,7 +140,7 @@ final class DeliveryRetailHeaderView: UIView {
         let image = favourite == true ? Images.fillStar.image : Images.emptyStar.image
         favouriteButton.setImage(image, for: .normal)
     }
-    
+
     func setData(retail: DeliveryRetail) {
         companyNameLabel.text = retail.name
         companyAdressLabel.text = retail.address

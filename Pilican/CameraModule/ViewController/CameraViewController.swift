@@ -96,7 +96,7 @@ class CameraViewController: UIViewController, CameraModule {
         let adapter = viewModel.adapter
         adapter.connect(to: cameraView.tableView)
         adapter.start()
-        
+
        let output = viewModel.transform(input: CameraViewModel.Input(
                                 loadInfo: scanSubject,
                                 createdAt: createdAtSubject,
@@ -107,10 +107,6 @@ class CameraViewController: UIViewController, CameraModule {
                                             searchButtonTap: cameraView.searchView.searchButton.rx.tap.asObservable()))
 
         let retailList = output.retailList.publish()
-
-        retailList.loading
-            .bind(to: ProgressView.instance.rx.loading)
-            .disposed(by: disposeBag)
 
         retailList.errors
             .bind(to: rx.error)
@@ -182,6 +178,12 @@ class CameraViewController: UIViewController, CameraModule {
     }
 
     private func setupCamera() {
+        switch cameraActionType {
+        case .readPromoCode:
+            self.cameraView.drawerView.isHidden = true
+        default:
+            self.cameraView.drawerView.isHidden = false
+        }
         addCameraSession()
         addCameraOutput()
         addPreviewLayer()
