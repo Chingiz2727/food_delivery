@@ -11,6 +11,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     private let viewModel: DeliveryRetailListViewModel
     private let disposeBag = DisposeBag()
     private let dishList: DishList
+    private let searchText: PublishSubject<String> = .init()
     
     init(viewModel: DeliveryRetailListViewModel, dishList: DishList) {
         self.viewModel = viewModel
@@ -41,7 +42,9 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(loadRetailList: .just(()), loadSlider: .just(())))
+        let output = viewModel.transform(input: .init(loadRetailList: .just(()), loadSlider: .just(()), text: rootView.searchBar.rx.text.unwrap()))
+        
+        let searchRetails = output.searchRetails.publish()
 
         let slider = output.sliders.publish()
         
@@ -90,6 +93,23 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             .disposed(by: disposeBag)
 
         retailList.connect()
+            .disposed(by: disposeBag)
+        
+        searchRetails.element
+            .map { $0.retails.content }
+            .bind(to: rootView.tableView.rx.items(DeliveryRetailListTableViewCell.self)) { _, model, cell in
+                cell.setRetail(retail: model)
+            }.disposed(by: disposeBag)
+        
+        searchRetails.loading
+            .bind(to: ProgressView.instance.rx.loading)
+            .disposed(by: disposeBag)
+        
+        searchRetails.errors
+            .bind(to: rx.error)
+            .disposed(by: disposeBag)
+        
+        searchRetails.connect()
             .disposed(by: disposeBag)
     }
 }

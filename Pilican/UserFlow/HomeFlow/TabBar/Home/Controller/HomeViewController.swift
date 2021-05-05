@@ -51,6 +51,10 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
             self.slider.onNext(sliderList.sliders)
         })
         .disposed(by: disposeBag)
+        
+        slider.loading
+            .bind(to: ProgressView.instance.rx.loading)
+            .disposed(by: disposeBag)
 
         slider.connect()
             .disposed(by: disposeBag)

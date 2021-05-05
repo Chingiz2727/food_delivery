@@ -22,7 +22,7 @@ final class ItemSearchViewMoodel: ViewModel {
     func transform(input: Input) -> Output {
         let retailList = input.text
             .flatMap { [unowned self] text in
-                return self.apiService.makeRequest(to: SearchApiTarget.searchByTag(tag: text ?? ""))
+                return self.apiService.makeRequest(to: SearchApiTarget.searchByTag(tag: text))
                     .result(SearchList.self)
             }.share()
             .asLoadingSequence()

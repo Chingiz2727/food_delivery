@@ -20,12 +20,14 @@ final class DeliveryRetailListViewModel: ViewModel {
     struct Input {
         let loadRetailList: Observable<Void>
         let loadSlider: Observable<Void>
+        let text: Observable<String>
     }
 
     struct Output {
         let retailList: Observable<LoadingSequence<[DeliveryRetail]>>
         let activeOrders: Observable<LoadingSequence<ActiveOrders>>
         let sliders: Observable<LoadingSequence<Sliders>>
+        let searchRetails: Observable<LoadingSequence<SearchList>>
     }
 
     func transform(input: Input) -> Output {
@@ -48,6 +50,12 @@ final class DeliveryRetailListViewModel: ViewModel {
                     .asLoadingSequence()
             }
         
-        return .init(retailList: manager.contentUpdate.asLoadingSequence(), activeOrders: activeOrders, sliders: sliders)
+        let searchRetails = input.text
+            .flatMap { [unowned self] text in
+                return self.apiService.makeRequest(to: SearchApiTarget.searchByTag(tag: text))
+                    .result(SearchList.self)
+            }.share().asLoadingSequence()
+        
+        return .init(retailList: manager.contentUpdate.asLoadingSequence(), activeOrders: activeOrders, sliders: sliders, searchRetails: searchRetails)
     }
 }
