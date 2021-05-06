@@ -86,10 +86,10 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
                 cell.setRetail(retail: model)
             }
             .disposed(by: disposeBag)
-        
+
         retailSearchList.connect()
             .disposed(by: disposeBag)
-        
+
         rootView.searchBar.rx.text.unwrap()
             .subscribe(onNext: { [unowned self] text in
                 self.rootView.searchCollectionView.isHidden = text.isEmpty

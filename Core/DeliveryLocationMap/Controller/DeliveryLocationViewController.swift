@@ -26,12 +26,15 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
     ]
     
     private let locationManager = CLLocationManager()
+    private let secondManager = CLLocationManager()
+    private let mapManager: MapManager<YandexMapViewModel>
     override func loadView() {
         view = DeliveryLocationMapView()
     }
     
-    init(viewModel: DeliveryLocationMapViewModel) {
+    init(viewModel: DeliveryLocationMapViewModel, mapManager: MapManager<YandexMapViewModel>) {
         self.viewModel = viewModel
+        self.mapManager = mapManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -94,6 +97,18 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
                 self.selectLocationAtList(location: location)
             })
             .disposed(by: disposeBag)
+        
+        rootView.currentLocationButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.moveToMyLocation()
+            }).disposed(by: disposeBag)
+    }
+    
+    private func moveToMyLocation() {
+        if let coordinate = secondManager.location?.coordinate {
+            let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 13)
+            mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), transitionViewModel: viewModel)
+        }
     }
     
     private func selectLocationAtList(location: DeliveryLocation) {

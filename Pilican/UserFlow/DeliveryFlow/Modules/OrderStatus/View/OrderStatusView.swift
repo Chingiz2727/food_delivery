@@ -44,11 +44,11 @@ final class OrderStatusView: UIView {
             setupOrderItems(items: items)
         }
         productTitle.setup(name: "Заказано из", value: response.retailName ?? "")
-        productAmountValueView.setup(name: "Сумма заказа", value: "\(response.foodAmount ?? 0) тг")
-        deliveryValueView.setup(name: "Доставка", value: "\(response.deliveryAmount ?? 0) тг")
-        extraValueView.setup(name: "Минимальная", value: "\(response.addAmount ?? 0) тг")
+        productAmountValueView.setup(name: "Сумма заказа", value: "\(response.foodAmount ?? 0) 〒")
+        deliveryValueView.setup(name: "Доставка", value: "\(response.deliveryAmount ?? 0) 〒")
+        extraValueView.setup(name: "Минимальная", value: "\(response.addAmount ?? 0) 〒")
         let full = (response.foodAmount ?? 0) + (response.deliveryAmount ?? 0) + (response.addAmount ?? 0)
-        totalValueView.setup(name: "Общая сумма", value: "\(full ?? 0) тг")
+        totalValueView.setup(name: "Общая сумма", value: "\(full ?? 0) 〒")
     }
     
     private func setStatus(status: OrderStatus) {

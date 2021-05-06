@@ -136,6 +136,7 @@ class AboutView: UIView {
     }
 
     private func setupInitialLayouts() {
+        backgroundColor = .background
         addSubview(mainStackView)
         mainStackView.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(20)

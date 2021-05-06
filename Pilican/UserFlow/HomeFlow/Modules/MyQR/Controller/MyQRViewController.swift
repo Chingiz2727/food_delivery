@@ -12,22 +12,31 @@ class MyQRViewController: ViewController, ViewHolder, MyQRModule {
     var closeButton: CloseButton?
     
     typealias RootViewType = MyQRView
-    
+
     private let cache = DiskCache<String, Any>()
+    private let userInfo: UserInfoStorage
 
     override func loadView() {
         view = MyQRView()
     }
+    
+    init(userInfo: UserInfoStorage) {
+        self.userInfo = userInfo
+        super.init(nibName: nil, bundle: nil)
+    }
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
     }
 
     private func bindView() {
-        let user: User? = try? cache.readFromDisk(name: "userInfo")
-        let phone = user?.username ?? ""
-        rootView.setData(phone: phone, image: generateQRCode(from: phone))
+        let phone = userInfo.mobilePhoneNumber
+        rootView.setData(phone: phone ?? "", image: generateQRCode(from: phone ?? ""))
     }
 
     private func generateQRCode(from string: String) -> UIImage? {
@@ -41,7 +50,7 @@ class MyQRViewController: ViewController, ViewHolder, MyQRModule {
         }
         return nil
     }
-    
+
     override func customBackButtonDidTap() {
         closeButton?()
     }

@@ -16,7 +16,8 @@ final class ProfileMenuModuleFactory {
     }
 
     func makeMyQR() -> MyQRModule {
-        return MyQRViewController()
+        let userInfo = container.resolve(UserInfoStorage.self)!
+        return MyQRViewController(userInfo: userInfo)
     }
 
     func makeChangePassword() -> ChangePasswordModule {
@@ -57,6 +58,7 @@ final class ProfileMenuModuleFactory {
     }
 
     func makeBonus() -> BonusModule {
-        return BonusViewController()
+        let userInfo = container.resolve(UserInfoStorage.self)!
+        return BonusViewController(userInfo: userInfo)
     }
 }

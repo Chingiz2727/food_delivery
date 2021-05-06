@@ -142,14 +142,14 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         orderNumberLabel.text = "\(data.id ?? 0)"
         orderDateLabel.text = getFormatedDate(date_string: data.createdAt ?? "")
         retailNameLabel.text = data.retailName
-        orderAmountLabel.text = "\(data.foodAmount ?? 0) тг"
+        orderAmountLabel.text = "\(data.foodAmount ?? 0) 〒"
         if let data = data.orderItems {
             setupProduct(items: data)
         }
         retryButton.tag = data.status ?? 2
         let title = (data.status ?? 2) == 2 ? "Посмотреть статус" : "Заказать еще раз"
         retryButton.setTitle(title, for: .normal)
-        totalAmountLabel.text = "\(data.fullAmount ?? 0) тг"
+        totalAmountLabel.text = "\(data.fullAmount ?? 0) 〒"
     }
 
     @objc private func retryTap(sender: UIButton) {

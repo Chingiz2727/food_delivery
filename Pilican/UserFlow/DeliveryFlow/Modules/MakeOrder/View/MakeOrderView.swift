@@ -10,7 +10,7 @@ final class MakeOrderView: UIView {
     let maskEscapeView = DeliveryItemView()
     private var contentSizeObserver: NSKeyValueObservation?
     private var heightConstraint: Constraint?
-    
+
     private let deliveryTitle: UILabel = {
         let label = UILabel()
         label.font = .heading1
@@ -122,8 +122,8 @@ final class MakeOrderView: UIView {
             payAmountView.clearExtraCost()
             payAmountView.setupFullCost(cost: totalSum + delivery)
         }
-        payAmountView.setupDeliveryCost(cost: "\(delivery) тг")
-        payAmountView.setupOrderCost(cost: "\(totalSum) тг")
+        payAmountView.setupDeliveryCost(cost: "\(delivery) 〒")
+        payAmountView.setupOrderCost(cost: "\(totalSum) 〒")
     }
 
     func setOrderType(orderType: OrderType, address: String) {

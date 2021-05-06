@@ -35,7 +35,7 @@ final class CameraView: UIView {
         contentView.addSubview(rectangleImageView)
         contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(30)
+            make.top.leading.trailing.equalToSuperview().inset(100)
         }
 
         rectangleImageView.snp.makeConstraints { make in
@@ -77,7 +77,7 @@ final class CameraView: UIView {
     }
 
     private func configureView() {
-        titleLabel.text = "Наведите камеру на QR-Code"
+        titleLabel.text = "Наведите камеру на QR"
         titleLabel.textColor = .pilicanWhite
         howItWorkButton.setTitle("Как это работает?", for: .normal)
         identificatorButton.setTitle("ИДЕНТИФИКАТОР", for: .normal)

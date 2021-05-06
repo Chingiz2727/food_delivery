@@ -14,7 +14,17 @@ class BonusViewController: ViewController, ViewHolder, BonusModule {
 
     private let disposeBag = DisposeBag()
     private let cache = DiskCache<String, Any>()
-
+    private let userInfo: UserInfoStorage
+    
+    init(userInfo: UserInfoStorage) {
+        self.userInfo = userInfo
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = BonusView()
     }
@@ -25,8 +35,7 @@ class BonusViewController: ViewController, ViewHolder, BonusModule {
     }
 
     private func bindView() {
-        let user: User? = try? cache.readFromDisk(name: "userInfo")
-        let promoCode = user?.promoCode
+        let promoCode = userInfo.promoCode
         rootView.setData(promo: promoCode ?? "", image: generateQRCode(from: promoCode ?? "")!)
         rootView.copyButton.rx.tap
             .subscribe(onNext: { [unowned self] in

@@ -3,6 +3,8 @@ import LocalAuthentication
 import UIKit
 
 class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
+    var closeButton: CloseButton?
+    
     typealias RootViewType = CreatePinView
     var onCodeValidate: Callback?
     private let disposeeBag = DisposeBag()
@@ -42,15 +44,21 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
                 } else {
                     self.userSession.pin = self.rootView.passCodeView.text
                     self.userSession.isBiometricAuthBeingUsed = true
-                    self.onCodeValidate?()
+                    self.showSuccessAlert {
+                        self.onCodeValidate?()
+                    }
                 }
             }).disposed(by: disposeeBag)
     }
-    
+
     private func showErrorAlert(error: PinCodeError) {
         showSimpleAlert(title: "Ошибка", message: error.rawValue)
         rootView.passCodeView.text = nil
         rootView.repeatCodeView.text = nil
+    }
+
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }
 

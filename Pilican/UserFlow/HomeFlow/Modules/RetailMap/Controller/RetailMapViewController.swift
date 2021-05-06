@@ -4,14 +4,17 @@
 //
 //  Created by kairzhan on 4/27/21.
 //
-
+import RxSwift
 import UIKit
+import CoreLocation
 
 class RetailMapViewController: ViewController, ViewHolder, RetailMapModule {
     typealias RootViewType = RetailMapView
     
     private let mapManager: MapManager<YandexMapViewModel>
     private let retail: Retail
+    private let disposeBag = DisposeBag()
+    private let secondManager = CLLocationManager()
     
     override func loadView() {
         view = RetailMapView()
@@ -34,7 +37,17 @@ class RetailMapViewController: ViewController, ViewHolder, RetailMapModule {
     }
 
     private func bindView() {
-        
+        rootView.currentLocationButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.moveToMyLocation()
+            }).disposed(by: disposeBag)
+    }
+    
+    private func moveToMyLocation() {
+        if let coordinate = secondManager.location?.coordinate {
+            let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 13)
+            mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), transitionViewModel: viewModel)
+        }
     }
     
     private func configureMap() {

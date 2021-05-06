@@ -45,7 +45,7 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
 
 extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let cell = tableView.cellForRow(at: indexPath) as! DeliveryRetailProductTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as? DeliveryRetailProductTableViewCell
         
         let action = UIContextualAction(
             style: .normal,
@@ -53,7 +53,7 @@ extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
             let product = self.productCategory[indexPath.section].dishes[indexPath.row]
             let changedProduct = self.dishList.changeDishList(dishAction: .addToDish(product))
             self.productCategory[indexPath.section].dishes[indexPath.row] = changedProduct
-            cell.setData(product: changedProduct)
+            cell?.setData(product: changedProduct)
             completionHandler(true)
         }
         action.backgroundColor = .primary
@@ -62,7 +62,7 @@ extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let cell = tableView.cellForRow(at: indexPath) as! DeliveryRetailProductTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as? DeliveryRetailProductTableViewCell
 
         let action = UIContextualAction(
             style: .normal,
@@ -70,7 +70,7 @@ extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
             let product = self.productCategory[indexPath.section].dishes[indexPath.row]
             let changedProduct = self.dishList.changeDishList(dishAction: .removeFromDish(product))
             self.productCategory[indexPath.section].dishes[indexPath.row] = changedProduct
-            cell.setData(product: changedProduct)
+            cell?.setData(product: changedProduct)
             completionHandler(true)
         }
         

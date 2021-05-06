@@ -45,6 +45,16 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         bindView()
         bindViewModel()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
 
     private func bindView() {
         rootView.retailView.setRetail(retail: viewModel.info.retail)

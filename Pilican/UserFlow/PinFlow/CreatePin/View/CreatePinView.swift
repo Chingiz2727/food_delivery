@@ -19,7 +19,7 @@ final class CreatePinView: UIView {
         label.text = "Вы будете использовать это код для входа"
         return label
     }()
-    
+
     let passCodeView: DPOTPView = {
         let codeView = DPOTPView()
         codeView.count = 4
@@ -77,7 +77,7 @@ final class CreatePinView: UIView {
             make.top.equalTo(safeAreaLayoutGuide).inset(23)
             make.leading.trailing.equalToSuperview().inset(20)
         }
-        
+    
         subTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(23)
             make.leading.trailing.equalToSuperview().inset(20)
@@ -87,7 +87,6 @@ final class CreatePinView: UIView {
             make.top.equalTo(subTitleLabel.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
             make.width.equalTo(245)
-            
             make.height.equalTo(52)
         }
 
@@ -104,7 +103,7 @@ final class CreatePinView: UIView {
             make.bottom.equalTo(safeAreaLayoutGuide).inset(20)
         }
     }
-    
+
     private func configureView() {
         backgroundColor = .white
         sendButton.setTitle("Создать PIN", for: .normal)

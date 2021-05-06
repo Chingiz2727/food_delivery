@@ -39,6 +39,7 @@ struct Retail: Codable, RetailAdapter {
     let instagram: String?
     let webUrl: String?
     let isWork: Int
+    let pillikanDelivery: Int
     let vk: String?
     let phone: String?
     let workDays: [WorkDay]

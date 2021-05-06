@@ -69,7 +69,7 @@ class SuccessPaymentView: UIView {
     }
 
     func setData(price: String, cashback: String) {
-        paymentPriceLabel.text = "\(price) тг"
+        paymentPriceLabel.text = "\(price) 〒"
         paymentCashbackLabel.text = "кэшбэк +\(cashback)"
     }
 

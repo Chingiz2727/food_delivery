@@ -64,7 +64,7 @@ public final class DependencyContainerAssembly: Assembly {
         }
         container.register(DeliveryLocationModule.self) { _ in
             let viewModel = DeliveryLocationMapViewModel(mapManager: container.resolve(MapManager.self)!, userInfoStorage: container.resolve(UserInfoStorage.self)!)
-            return DeliveryLocationViewController(viewModel: viewModel)
+            return DeliveryLocationViewController(viewModel: viewModel, mapManager: container.resolve(MapManager.self)!)
         }.inObjectScope(.container)
         
         container.register(AVMediaType.self) { _ in

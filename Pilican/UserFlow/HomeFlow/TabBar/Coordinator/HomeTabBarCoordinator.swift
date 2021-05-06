@@ -87,11 +87,35 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
 
     private func showCamera() {
         var module = container.resolve(CameraModule.self)!
+        module.cameraActionType = .makePayment
+        module.paymentMaked = { [weak self] info in
+            self?.showPaymentPartner(info: info)
+        }
         module.closeButton = { [weak self] in
             self?.router.popModule()
         }
         module.howItWorkTapped = { [weak self] in
             self?.showHowItWork()
+        }
+        router.push(module)
+    }
+
+    private func showPaymentPartner(info: ScanRetailResponse) {
+        let apiService = container.resolve(ApiService.self)!
+        let userSessionStorage = container.resolve(UserSessionStorage.self)!
+
+        let viewModel = QRPaymentViewModel(apiService: apiService, info: info, userSessionStorage: userSessionStorage)
+        var module = moduleFactory.makePayPartner(viewModel: viewModel)
+        module.openSuccessPayment = { [weak self] retail, price, cashback in
+            self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)
+        }
+        router.push(module)
+    }
+    
+    private func showSuccessPayment(retail: Retail, price: Int, cashback: Int) {
+        var module = moduleFactory.makeSuccessPayment(retail: retail, price: price, cashback: cashback)
+        module.nextTapped = { [weak self] in
+            self?.router.popToRootModule()
         }
         router.push(module)
     }

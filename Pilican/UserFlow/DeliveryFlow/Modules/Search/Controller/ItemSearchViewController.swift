@@ -42,15 +42,16 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
         rootView.tableView.rx.itemSelected
             .withLatestFrom(retailList.element) { $1.retails.content[$0.row] }
             .bind { [unowned self] retail in
-                if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
-                    showBasketAlert {
-                        self.dishList.products = []
-                        self.dishList.wishDishList.onNext([])
+                if retail.isWork == 1 {
+                    if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                        showBasketAlert {
+                            self.dishList.products = []
+                            self.dishList.wishDishList.onNext([])
+                            self.onDeliveryRetailCompanyDidSelect?(retail)
+                        }
+                    } else {
                         self.onDeliveryRetailCompanyDidSelect?(retail)
                     }
-                }
-                if retail.isWork == 1 {
-                    self.onDeliveryRetailCompanyDidSelect?(retail)
                 }
             }.disposed(by: disposeBag)
         

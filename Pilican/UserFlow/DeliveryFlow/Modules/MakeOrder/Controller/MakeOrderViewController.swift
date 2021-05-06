@@ -182,8 +182,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             .disposed(by: disposeBag)
 
         fullAmountSubject.subscribe(onNext: { [unowned self] sum in
-            let bonusSpend = self.viewModel.userInfo.balance ?? 0 > sum ? sum : self.viewModel.userInfo.balance ?? 0
-            let sumSpend = self.viewModel.userInfo.balance ?? 0 > sum ? 0 : self.viewModel.userInfo.balance ?? 0 - sum
+            guard let bonus = self.viewModel.userInfo.balance else { return }
+            let bonusSpend = bonus > sum ? sum : self.viewModel.userInfo.balance ?? 0
+            let sumSpend = bonus > sum ? 0 : sum - bonus
             self.rootView.bonusChoiceView.setupBonus(bonus: Double(bonusSpend))
             self.rootView.bonusChoiceView.setupSpendedMoney(money: Double(sumSpend))
         })
@@ -207,7 +208,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             self.rootView.addressView.adressLabel.text = address.name
             self.currentLocation.onNext(address)
         }
-        
+
         if orderType == .takeAway {
             viewModel.dishList.wishDishList
                 .subscribe(onNext: { [unowned self] products in
@@ -236,6 +237,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                     }
                 })
                 .disposed(by: disposeBag)
+            // swiftlint:disable line_length
             self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: viewModel.dishList.retail?.latitude ?? 0, longitude: viewModel.dishList.retail?.longitude ?? 0), name: viewModel.dishList.retail?.address ?? ""))
         }
     }
@@ -280,7 +282,7 @@ extension MakeOrderViewController: CLLocationManagerDelegate {
         guard let coordinate = manager.location else { return }
         self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude), name: ""))
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard let coordinate = manager.location else { return }
         self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude), name: ""))

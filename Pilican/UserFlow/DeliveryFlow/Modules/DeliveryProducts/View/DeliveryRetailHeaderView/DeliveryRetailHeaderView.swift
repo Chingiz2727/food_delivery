@@ -19,20 +19,21 @@ final class DeliveryRetailHeaderView: UIView {
 
     private let companyNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .semibold16
+        label.font = .semibold14
         label.numberOfLines = 0
         return label
     }()
 
     private let companyAdressLabel: UILabel = {
         let label = UILabel()
-        label.font = .semibold14
+        label.font = .book12
+        label.numberOfLines = 0
         return label
     }()
 
     private let workTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = .book12
+        label.font = .book10
         label.textAlignment = .center
         label.numberOfLines = 2
         return label
@@ -53,10 +54,10 @@ final class DeliveryRetailHeaderView: UIView {
     }()
 
     private lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [labelStackView, UIView(), workTimeLabel, UIView(), favouriteButton])
-        stackView.spacing = 10
+        let stackView = UIStackView(arrangedSubviews: [labelStackView, workTimeLabel, favouriteButton])
+        stackView.spacing = 5
         stackView.axis = .horizontal
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         return stackView
     }()
 
@@ -141,13 +142,13 @@ final class DeliveryRetailHeaderView: UIView {
         let image = favourite == true ? Images.fillStar.image : Images.emptyStar.image
         favouriteButton.setImage(image, for: .normal)
     }
-    
+
     func setData(retail: DeliveryRetail, workTime: String) {
         companyNameLabel.text = retail.name
         companyAdressLabel.text = retail.address
         ratingLabel.text = "\(retail.rating ?? 0)"
         ratingView.rating = retail.rating ?? 0
-        workTimeLabel.text = workTime
+        workTimeLabel.text = "Режим работы \n\(workTime)"
         productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
         
     }

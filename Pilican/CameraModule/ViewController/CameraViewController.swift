@@ -57,6 +57,16 @@ class CameraViewController: UIViewController, CameraModule {
         navigationController?.navigationBar.isHidden = true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+
     private func bindViewModel() {
         cameraUsagePermission.checkStatus()
         cameraUsagePermission.isAccesGranted
@@ -88,6 +98,8 @@ class CameraViewController: UIViewController, CameraModule {
             case .readPromoCode:
                 self.promoCodeScanned?(qr)
             case .makePayment:
+                self.qrScanned(qr: qr)
+            case .bus:
                 self.qrScanned(qr: qr)
             default:
                 break
@@ -122,6 +134,7 @@ class CameraViewController: UIViewController, CameraModule {
 
         cameraView.identificatorButton.rx.tap
             .subscribe(onNext: { [unowned self] in
+                self.cameraView.drawerView.isHidden = false
                 self.cameraView.drawerView.setState(.middle, animated: true)
             }).disposed(by: disposeBag)
 
@@ -152,12 +165,20 @@ class CameraViewController: UIViewController, CameraModule {
 
         cameraView.searchView.searchButton.rx.tap
             .subscribe(onNext: { [unowned self] in
+                self.cameraView.drawerView.setState(.middle, animated: true)
+                view.endEditing(true)
             }).disposed(by: disposeBag)
+
+        self.cameraView.drawerView.isHidden = true
     }
 
     private func qrScanned(qr: String) {
         switch cameraActionType {
         case .makePayment:
+            if let retailId = Int(qr) {
+                createQrOrder(retailId: retailId)
+            }
+        case .bus:
             if let retailId = Int(qr) {
                 createQrOrder(retailId: retailId)
             }

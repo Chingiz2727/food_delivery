@@ -48,7 +48,7 @@ class AboutDeliveryView: UIView {
 
     let distanceValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "1600 тг"
+        label.text = "1600 〒"
         label.font = .book16
         label.textColor = .pilicanGray
         return label
