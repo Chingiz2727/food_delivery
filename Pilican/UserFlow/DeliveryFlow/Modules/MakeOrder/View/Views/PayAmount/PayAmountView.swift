@@ -70,11 +70,11 @@ final class PayAmountView: UIView {
         extraPayment.isHidden = false
         extraPayment.setup(title: "Доплата до минимальной суммы заказа")
         extraPayment.setup(detail: "Минимальная сумма заказа - 2000 тенге. За заказы меньше этой сумма взимается дополнительная комиссия.")
-        extraPayment.setup(price: "600 тг")
+        extraPayment.setup(price: "600 〒")
     }
 
     func setupFullCost(cost: Int) {
-        costLabel.text = "\(cost) тг"
+        costLabel.text = "\(cost) 〒"
     }
     func clearExtraCost() {
         extraPayment.isHidden = true

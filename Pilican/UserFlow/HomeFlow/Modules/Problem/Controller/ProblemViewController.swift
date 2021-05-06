@@ -45,8 +45,12 @@ class ProblemViewController: ViewController, ViewHolder, ProblemModule {
         let result = output.claims.publish()
 
         result.element
-            .subscribe(onNext: { [unowned self] _ in
-                self.dissmissProblem?()
+            .subscribe(onNext: { [unowned self] res in
+                if res.status == 200 {
+                    self.showOkAlert {
+                        self.dissmissProblem?()
+                    }
+                }
             })
             .disposed(by: disposeBag)
 

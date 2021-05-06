@@ -37,7 +37,7 @@ final class PayHistoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .pilicanBlack
         label.font = UIFont.semibold14
-        label.text = "1 200 тг"
+        label.text = "1 200 〒"
         return label
     }()
 

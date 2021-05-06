@@ -44,6 +44,14 @@ public extension UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    func showOkAlert(handler: @escaping () -> Void) {
+        let controller = UIAlertController(title: "", message: "Ваш ответ принят!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .default) { (alert) in
+            controller.dismiss(animated: true, completion: handler)}
+        controller.addAction(action)
+        present(controller, animated: true, completion: nil)
+    }
+    
     func showRateAlert(handler: @escaping () -> Void) {
         let controller = UIAlertController(title: "", message: "Спасибо за ваш отзыв!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Закрыть", style: .default) { (alert) in

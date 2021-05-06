@@ -40,7 +40,7 @@ final class ProductCalculateView: UIView {
     func setupProductToCalculate(product: [Product]) {
         let amount = product.map { $0.price * ($0.shoppingCount ?? 0)}
         let totalSum = amount.reduce(0,+)
-        priceLabel.text = "\(totalSum) Тг"
+        priceLabel.text = "\(totalSum) 〒"
     }
 
     private func setupInitialLayout() {

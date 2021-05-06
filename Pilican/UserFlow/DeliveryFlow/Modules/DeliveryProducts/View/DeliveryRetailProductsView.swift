@@ -43,8 +43,21 @@ final class DeliveryRetailProductsView: UIView {
     }
 
     func setupHeader(point: CGFloat) {
-        headerHeightConstraint.constant = 300 - point
-        stickyHeaderView.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
+        print(point)
+        if point > 510 {
+            UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseIn) { [weak self] in
+//                self?.headerHeightConstraint.constant = 0
+                self?.stickyHeaderView.isHidden = true
+//                self?.stickyHeaderView.stickyHeaderrHeightConstraint?.update(inset: 0)
+            }
+        } else {
+            UIView.animate(withDuration: 0.5, delay: 0.3, options: .showHideTransitionViews) { [weak self] in
+//                self?.headerHeightConstraint.constant = 310
+                self?.stickyHeaderView.isHidden = false
+//                self?.stickyHeaderrHeightConstraint?.update(inset: 310)
+            }
+        }
+//        stickyHeaderView.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
 //        self.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
     }
 
@@ -102,7 +115,7 @@ final class DeliveryRetailProductsView: UIView {
         
         tableHeightConstraint = tableView.heightAnchor.constraint(equalToConstant: 400)
         tableHeightConstraint?.isActive = true
-        headerHeightConstraint = stickyHeaderView.heightAnchor.constraint(equalToConstant: 300)
+        headerHeightConstraint = stickyHeaderView.heightAnchor.constraint(equalToConstant: 310)
         headerHeightConstraint.isActive = true
     }
 
@@ -128,6 +141,7 @@ extension DeliveryRetailProductsView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentY = scrollView.contentOffset.y
 //        self.hideHeaderView(contentY: 300 - contentY)
+        
         self.stickyHeaderrHeightConstraint?.update(offset: 300 - contentY)
     }
 }

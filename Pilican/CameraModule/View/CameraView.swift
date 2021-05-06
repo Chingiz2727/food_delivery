@@ -35,7 +35,7 @@ final class CameraView: UIView {
         contentView.addSubview(rectangleImageView)
         contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(30)
+            make.top.leading.trailing.equalToSuperview().inset(100)
         }
 
         rectangleImageView.snp.makeConstraints { make in
@@ -71,13 +71,14 @@ final class CameraView: UIView {
         closeButton.snp.makeConstraints { make in
             make.size.equalTo(25)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(30)
+            make.top.equalToSuperview().inset(30)
         }
         tableView.registerClassForCell(CashBackListTableViewCell.self)
     }
 
     private func configureView() {
-        titleLabel.text = "Наведите камеру на QR-Code"
+        titleLabel.text = "Наведите камеру на QR"
+        titleLabel.numberOfLines = 0
         titleLabel.textColor = .pilicanWhite
         howItWorkButton.setTitle("Как это работает?", for: .normal)
         identificatorButton.setTitle("ИДЕНТИФИКАТОР", for: .normal)

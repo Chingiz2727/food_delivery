@@ -110,6 +110,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
         rootView.tableView.rx.willDisplayCell.asObservable()
             .subscribe(onNext: { [unowned self] _, indexPath in
+//                self.rootView.setupHeader(point: indexPath.section)
                 self.rootView.scrollSegmentToSection(section: indexPath.section)
             })
             .disposed(by: disposeBag)

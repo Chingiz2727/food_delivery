@@ -12,7 +12,7 @@ final class CashBackView: UIView {
         let label = UILabel()
         label.textColor = .pilicanWhite
         label.font = .description1
-        label.text = "5000 тг\ncредний чек:"
+        label.text = "5000 〒\ncредний чек:"
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         label.textAlignment = .left
@@ -23,7 +23,7 @@ final class CashBackView: UIView {
         let label = UILabel()
         label.textColor = .pilicanWhite
         label.font = .description1
-        label.text = "1000 тг\nкэшбэк"
+        label.text = "1000 〒\nкэшбэк"
         label.numberOfLines = 2
         label.textAlignment = .right
         label.adjustsFontSizeToFitWidth = true
@@ -82,8 +82,8 @@ final class CashBackView: UIView {
     }
 
     func setData(retail: Retail) {
-        costLabel.text = "\(retail.avgAmount ?? "1") тг\ncредний чек"
-        cashBackLabel.text = "\(calculateCashback(cashback: retail.cashBack ?? 1, avgAmount: retail.avgAmount ?? "1")) тг\nкэшбэк"
+        costLabel.text = "\(retail.avgAmount ?? "1") 〒\ncредний чек"
+        cashBackLabel.text = "\(calculateCashback(cashback: retail.cashBack ?? 1, avgAmount: retail.avgAmount ?? "1")) 〒\nкэшбэк"
     }
 
     private func calculateCashback(cashback: Int, avgAmount: String) -> Int {

@@ -84,7 +84,7 @@ final class BasketItemViewCell: UITableViewCell {
             productImageView.kf.setImage(with: URL(string: product.imgLogo ?? ""))
         }
         nameLabel.text = product.name
-        priceLabel.text = "\(product.price) тг"
+        priceLabel.text = "\(product.price) 〒"
         countLabel.text = "\(product.shoppingCount ?? 0)"
     }
 

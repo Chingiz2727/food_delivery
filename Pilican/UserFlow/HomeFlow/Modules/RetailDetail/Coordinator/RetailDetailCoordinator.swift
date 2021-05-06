@@ -150,7 +150,6 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
         module.dissmissProblem = { [weak self] in
             self?.router.dismissModule()
         }
-
-        router.presentActionSheet(module, interactive: true)
+        router.presentCard(module)
     }
 }

@@ -51,8 +51,8 @@ public final class SocialLinksView: UIView {
                 let .webUrl(item),
                 let .whatsappUrl(item),
                 let .youtube(item):
-                if item != "" {
-
+                if item == "" {
+                    button.isHidden = true
                 }
             }
         }

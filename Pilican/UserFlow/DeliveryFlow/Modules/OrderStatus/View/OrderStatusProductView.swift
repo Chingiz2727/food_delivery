@@ -41,20 +41,20 @@ final class OrderStatusProductView: UIView {
         super.init(frame: frame)
         setupInitialLayout()
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }
-    
+
     func setup(with product: OrderItems?) {
-        priceLabel.text = "\(product?.amount ?? 0) тг"
+        priceLabel.text = "\(product?.amount ?? 0) 〒"
         titleLabel.text = product?.dish?.name ?? ""
         countLabel.text = "x\(product?.quantity ?? 0)"
         if let url = product?.dish?.img {
             imageView.kf.setImage(with: URL(string: "https://st.pillikan.kz/delivery/\(url)"))
         }
     }
-    
+
     private func setupInitialLayout() {
         addSubview(imageView)
         addSubview(stackView)
@@ -64,13 +64,13 @@ final class OrderStatusProductView: UIView {
             make.centerY.equalToSuperview()
             make.size.equalTo(60)
         }
-        
+
         stackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(10)
             make.leading.equalTo(imageView.snp.trailing).offset(15)
             make.trailing.equalTo(countLabel.snp.leading).offset(-15)
         }
-        
+
         countLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(5)

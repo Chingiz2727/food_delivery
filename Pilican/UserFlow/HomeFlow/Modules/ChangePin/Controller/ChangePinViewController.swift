@@ -12,7 +12,6 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
     var closeButton: CloseButton?
     
     var saveTapped: SaveTapped?
-    
     typealias RootViewType = ChangePinView
 
     private let disposeBag = DisposeBag()
@@ -22,7 +21,7 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
     override func loadView() {
         view = ChangePinView()
     }
-    
+
     init(viewModel: ChangePinViewModel, userSession: UserSessionStorage) {
         self.viewModel = viewModel
         self.userSession = userSession

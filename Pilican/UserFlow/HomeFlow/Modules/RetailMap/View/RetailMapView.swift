@@ -10,6 +10,11 @@ import YandexMapsMobile
 
 class RetailMapView: UIView {
     let mapView = YMKMapView()
+    let currentLocationButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(Images.loc.image, for: .normal)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +29,13 @@ class RetailMapView: UIView {
         addSubview(mapView)
         mapView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+        }
+        
+        addSubview(currentLocationButton)
+        currentLocationButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(20)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(30)
+            make.size.equalTo(30)
         }
     }
 }

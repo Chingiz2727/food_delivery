@@ -49,19 +49,19 @@ final class HomeView: UIView {
         
         searchCollectionView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(5)
-            make.leading.trailing.equalTo(searchBar)
+            make.leading.trailing.equalToSuperview()
             heightConstraint = make.height.equalTo(0).constraint
         }
-        
+
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(10)
             make.leading.trailing.equalToSuperview().inset(10)
             make.height.equalTo(50)
         }
-        
+
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(10)
         }
         searchViewBack.snp.makeConstraints { $0.edges.equalToSuperview() }
@@ -81,7 +81,7 @@ final class HomeView: UIView {
     }
     private func configureView() {
         collectionView.backgroundColor = .grayBackground
-        searchCollectionView.backgroundColor = .grayBackground
+        searchCollectionView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         backgroundColor = .grayBackground
         searchBar.layer.cornerRadius = 10
     }

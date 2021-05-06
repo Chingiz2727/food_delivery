@@ -47,14 +47,17 @@ final class RetailDetailViewController: ViewController, ViewHolder, RetailDetail
         rootView.deliveryView.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 print("del")
-                if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
-                    showBasketAlert {
-                        self.dishList.products = []
-                        self.dishList.wishDishList.onNext([])
+                if retail.isWork == 1 {
+                    if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                        showBasketAlert {
+                            self.dishList.products = []
+                            self.dishList.wishDishList.onNext([])
+                            self.retailDetailTapped?(.delivery)
+                        }
+                    } else {
                         self.retailDetailTapped?(.delivery)
                     }
                 }
-                self.retailDetailTapped?(.delivery)
             }).disposed(by: disposeBag)
         rootView.showMap.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in

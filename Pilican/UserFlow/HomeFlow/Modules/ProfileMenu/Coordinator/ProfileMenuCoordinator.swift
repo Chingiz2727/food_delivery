@@ -117,7 +117,6 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
         coordinator.start()
         addDependency(coordinator)
     }
-  
 
     private func showMyQR() {
         var module = moduleFactory.makeMyQR()
@@ -138,6 +137,9 @@ final class ProfileMenuCoordinatorImpl: BaseCoordinator, ProfileMenuCoordinator 
     private func showChangePin() {
         var module = moduleFactory.makeChangePin()
         module.onCodeValidate = { [weak self] in
+            self?.router.popModule()
+        }
+        module.closeButton = { [weak self] in
             self?.router.popModule()
         }
         router.push(module)

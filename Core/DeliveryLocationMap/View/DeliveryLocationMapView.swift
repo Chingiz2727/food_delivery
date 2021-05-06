@@ -54,6 +54,13 @@ final class DeliveryLocationMapView: UIView {
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(40)
         }
+        
+        currentLocationButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(20)
+            make.bottom.equalTo(saveButton.snp.top).offset(-30)
+            make.size.equalTo(30)
+        }
+        
         currentLocationPin.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(40)
@@ -67,6 +74,7 @@ final class DeliveryLocationMapView: UIView {
         saveButton.setTitleColor(.pilicanWhite, for: .normal)
         saveButton.setTitle("Сохранить", for: .normal)
         tableView.registerClassForCell(UITableViewCell.self)
+        currentLocationButton.setBackgroundImage(Images.loc.image, for: .normal)
         tableView.tableHeaderView = nil
         tableView.tableFooterView = nil
         tableView.isHidden = true

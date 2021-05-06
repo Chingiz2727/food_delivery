@@ -62,7 +62,7 @@ final class RetailDetailView: UIView {
         retailDescriptionView.setupData(retail: retail)
         deliveryView.setData(retail: retail)
         identificatorView.setData(retail: retail)
-        deliveryView.isHidden = retail.delivery == 0
+        deliveryView.isHidden = retail.pillikanDelivery == 0
         if retail.avgAmount == "" {
             cashBackView.isHidden = true
         } else {
@@ -89,7 +89,7 @@ final class RetailDetailView: UIView {
             make.bottom.equalToSuperview().inset(20)
             make.leading.trailing.width.equalTo(self).inset(8)
         }
-        
+
         emptyView.snp.makeConstraints { $0.height.equalTo(40) }
         stackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
         headerView.snp.makeConstraints { $0.height.equalTo(90) }

@@ -1,9 +1,9 @@
 import UIKit
 
 class AddCardView: UIView {
-    
+
     let scrollView = UIScrollView()
-    
+
     lazy var scancardTextField: CardNumberTextField = {
         let tf = CardNumberTextField()
         tf.placeholder = "0000 0000 0000 0000"
@@ -18,7 +18,7 @@ class AddCardView: UIView {
         tf.setRightPaddingPoints(12)
         return tf
     }()
-    
+
     lazy var imageView: UIImageView = {
         let iv  = UIImageView()
         iv.image = UIImage(named: "cardLogo")?.withRenderingMode(.alwaysOriginal)
@@ -34,7 +34,7 @@ class AddCardView: UIView {
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
-    
+
     lazy var userNameTitle: UILabel = {
         let l = UILabel()
         l.text = "Имя на карте"
@@ -46,7 +46,7 @@ class AddCardView: UIView {
     }()
     
     lazy var userNameCardTextField: NameTextField = {
-        let tf  = NameTextField()
+        let tf = NameTextField()
         tf.placeholder = "Имя Фамилия"
         tf.textAlignment = .left
         tf.textColor = .pilicanBlack
@@ -58,7 +58,7 @@ class AddCardView: UIView {
         tf.setLeftPaddingPoints(12)
         return tf
     }()
-    
+
     lazy var dateTitle: UILabel = {
         let l = UILabel()
         l.text = "Срок действие"
@@ -67,7 +67,7 @@ class AddCardView: UIView {
         l.textColor = .black
         return l
     }()
-    
+
     lazy var dateTextField: DateTextField = {
         let tf = DateTextField()
         tf.placeholder = "ММ / YYYY"
@@ -82,7 +82,7 @@ class AddCardView: UIView {
         tf.setRightPaddingPoints(12)
         return tf
     }()
-    
+
     lazy var cvcTitle: UILabel = {
         let l = UILabel()
         l.text = "CVV / CVC"
@@ -92,7 +92,7 @@ class AddCardView: UIView {
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
-    
+
     lazy var cvcTextField: CVVTextField = {
         let tf                 = CVVTextField()
         tf.placeholder         = "CVC"
@@ -109,7 +109,7 @@ class AddCardView: UIView {
         //        tf.constrainWidth(constant: 150)
         return tf
     }()
-    
+
     lazy var correctLabel: UILabel = {
         let l = UILabel()
         l.text = "Проверьте правильно ли введены данные"
@@ -118,7 +118,7 @@ class AddCardView: UIView {
         l.font = .medium12
         return l
     }()
-    
+
     lazy var addCardButton: PrimaryButton = {
         let b = PrimaryButton()
         b.setTitle("Добавить карту", for: .normal)
@@ -130,7 +130,7 @@ class AddCardView: UIView {
         b.layer.cornerRadius = 16
         return b
     }()
-    
+
     lazy var infoLabel: UILabel = {
         let l = UILabel()
         let attributedText = NSMutableAttributedString(string: "Безопасность транзакций\n гарантирует ", attributes: [NSAttributedString.Key.font : UIFont.medium16])
@@ -142,79 +142,82 @@ class AddCardView: UIView {
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
-    
+
     lazy var cloudPayLogo: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "logoCloudPay")?.withRenderingMode(.alwaysOriginal)
         iv.contentMode = .scaleAspectFit
         return iv
     }()
-    
+
     let view = UIView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
+        configureView()
         scrollView.alwaysBounceVertical = true
         scrollView.bounces = true
     }
     
+    private func configureView() {
+        backgroundColor = .background
+    }
+
     private func setupInitialLayout() {
         addSubview(scrollView)
         scrollView.snp.makeConstraints { $0.edges.width.height.equalToSuperview() }
-        
+
         let timeStackView = UIStackView(
             views: [dateTitle, dateTextField],
             axis: .vertical,
             distribution: .fillProportionally,
             spacing: 5)
-        
+
         let cvvStacView = UIStackView(
             views: [cvcTitle, cvcTextField],
             axis: .vertical,
             distribution: .fillProportionally,
             spacing: 5)
-        
+
         let horizontalStackView = UIStackView(
             views: [timeStackView, cvvStacView],
             axis: .horizontal,
             distribution: .fillEqually,
             spacing: 40)
-        
+
         let fullStackView = UIStackView(
             views: [imageView, cardNumberTitle, scancardTextField, userNameTitle, userNameCardTextField, horizontalStackView , addCardButton, infoLabel, cloudPayLogo, UIView()],
             axis: .vertical,
             distribution: .fill,
             spacing: 15)
-        
+
         scrollView.addSubview(fullStackView)
         fullStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(10)
             make.leading.trailing.equalTo(self).inset(20)
         }
-        
+
         [scancardTextField, userNameCardTextField, cvcTextField, dateTextField, addCardButton].forEach { [unowned self] view in
             self.makeHeight(view: view, size: 60)
         }
-        
+
         imageView.snp.makeConstraints { make in
             make.height.equalTo(147)
             make.centerX.equalToSuperview()
             make.width.equalTo(185)
         }
-        
+
         cloudPayLogo.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
     }
-    
+
     func makeHeight(view: UIView, size: CGFloat) {
         view.snp.makeConstraints { $0.height.equalTo(size) }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-

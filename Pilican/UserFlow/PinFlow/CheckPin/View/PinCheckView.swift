@@ -1,4 +1,5 @@
 import UIKit
+import SVPinView
 
 final class PinCheckView: UIView {
     private let titleLabel: UILabel = {
@@ -10,21 +11,25 @@ final class PinCheckView: UIView {
         return label
     }()
 
-    let passCodeView: DPOTPView = {
-        let codeView = DPOTPView()
-        codeView.count = 4
-        codeView.spacing = 10
-        codeView.fontTextField = .semibold20
-        codeView.dismissOnLastEntry = true
-        codeView.isSecureTextEntry = true
-        codeView.borderWidthTextField = 0.5
-        codeView.cornerRadiusTextField = 16
-        codeView.isCursorHidden = true
-        codeView.backGroundColorTextField = .primary
-        codeView.borderColorTextField = .white
-        codeView.selectedBorderColorTextField = .white
-        codeView.textColorTextField = .white
-        _ = codeView.becomeFirstResponder()
+    let passCodeView: SVPinView = {
+        let codeView = SVPinView()
+        codeView.pinLength = 4
+        codeView.interSpace = 20
+        codeView.font = .semibold20
+        codeView.shouldSecureText = true
+        codeView.allowsWhitespaces = false
+        codeView.borderLineThickness = 0
+        codeView.fieldCornerRadius = 16
+        codeView.shouldDismissKeyboardOnEmptyFirstField = false
+        codeView.fieldBackgroundColor = .primary
+        codeView.activeFieldBackgroundColor = .white
+        codeView.deleteButtonAction = .deleteCurrentAndMoveToPrevious
+        codeView.activeFieldCornerRadius = 16
+        codeView.activeBorderLineColor = .primary
+        codeView.becomeFirstResponderAtIndex = 0
+        codeView.keyboardAppearance = .light
+        codeView.secureCharacter = "\u{25CF}"
+        codeView.textColor = .white
         return codeView
     }()
 

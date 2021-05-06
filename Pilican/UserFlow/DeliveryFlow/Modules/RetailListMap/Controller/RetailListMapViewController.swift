@@ -13,12 +13,14 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
     private let locationManager: CLLocationManager
     private let secondManager = CLLocationManager()
     private let disposeBag = DisposeBag()
+    private let dishList: DishList
     private let userLocationStatusSubject: PublishSubject<UserLocationStatus> = .init()
 
-    init(mapManager: MapManager<YandexMapViewModel>, locationManager: CLLocationManager, viewModel: RetailListMapViewModel) {
+    init(mapManager: MapManager<YandexMapViewModel>, locationManager: CLLocationManager, viewModel: RetailListMapViewModel, dishList: DishList) {
         self.mapManager = mapManager
         self.locationManager = locationManager
         self.viewModel = viewModel
+        self.dishList = dishList
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -71,7 +73,17 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
         Observable.combineLatest(retaillist.element, rootView.tableView.rx.itemSelected)
             .subscribe(onNext: { [unowned self] mapRetail, indexPath in
                 let retail = mapRetail.retails[indexPath.row]
-                self.onDeliveryRetailSelect?(retail)
+                if retail.isWork == 1 {
+                    if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                        showBasketAlert {
+                            self.dishList.products = []
+                            self.dishList.wishDishList.onNext([])
+                            self.onDeliveryRetailSelect?(retail)
+                        }
+                    } else {
+                        self.onDeliveryRetailSelect?(retail)
+                    }
+                }
             })
             .disposed(by: disposeBag)
 
