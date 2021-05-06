@@ -210,6 +210,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         }
 
         if orderType == .takeAway {
+            rootView.setupTakeAway()
             viewModel.dishList.wishDishList
                 .subscribe(onNext: { [unowned self] products in
                     if products.isEmpty {

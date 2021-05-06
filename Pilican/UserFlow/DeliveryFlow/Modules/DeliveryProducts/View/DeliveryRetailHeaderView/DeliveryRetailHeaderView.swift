@@ -65,7 +65,6 @@ final class DeliveryRetailHeaderView: UIView {
         let label = UILabel()
         label.font = .medium12
         label.textColor = .pilicanBlack
-        label.text = "4.0"
         return label
     }()
 
@@ -104,7 +103,7 @@ final class DeliveryRetailHeaderView: UIView {
 
     private lazy var ratingStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [ratingView, ratingLabel])
-        stackView.spacing = 2
+        stackView.spacing = 10
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         return stackView
@@ -150,18 +149,15 @@ final class DeliveryRetailHeaderView: UIView {
         ratingView.rating = retail.rating ?? 0
         workTimeLabel.text = "Режим работы \n\(workTime)"
         productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
-        
     }
 
     private func setupInitialLayout() {
         addSubview(fullStackView)
         fullStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(10)
         }
 
         ratingView.snp.makeConstraints { make in
-            make.height.equalTo(imageHeight)
-            make.width.equalTo(80)
         }
 
         productImageView.snp.makeConstraints { make in
@@ -170,7 +166,6 @@ final class DeliveryRetailHeaderView: UIView {
         }
 
         favouriteButton.setContentHuggingPriority(.required, for: .horizontal)
-        favouriteButton.snp.makeConstraints { $0.width.equalTo(30) }
         backgroundColor = .background
     }
 }

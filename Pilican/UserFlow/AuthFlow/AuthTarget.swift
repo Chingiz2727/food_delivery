@@ -91,7 +91,7 @@ enum AuthTarget: ApiTarget {
 
     var headers: [String: String]? {
         switch self {
-        case .loginUser, .register, .verifySmsCode, .changePassword, .updateProfile, .changePin:
+        case .loginUser, .register, .verifySmsCode, .updateProfile, .changePin:
             return
                 [
                     "clientId": "bW9iaWxl"

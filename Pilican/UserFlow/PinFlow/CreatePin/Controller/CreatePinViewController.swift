@@ -34,29 +34,34 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
     private func bindView() {
         rootView.sendButton.rx.tap
             .subscribe(onNext: { [unowned self] in
-                let isEqual = self.rootView.passCodeView.text == self.rootView.repeatCodeView.text
-                let isValid = self.rootView.passCodeView.validate() || self.rootView.passCodeView.validate()
+                let isEqual = self.rootView.passCodeView.getPin() == self.rootView.repeatCodeView.getPin()
+                let isValid = self.rootView.passCodeView.getPin().count == 4 || self.rootView.passCodeView.getPin().count == 4
                 if isEqual == false {
                     self.showErrorAlert(error: .notEqual)
                 }
                 else if isValid == false {
                     self.showErrorAlert(error: .notValid)
                 } else {
-                    self.userSession.pin = self.rootView.passCodeView.text
+                    self.userSession.pin = self.rootView.passCodeView.getPin()
                     self.userSession.isBiometricAuthBeingUsed = true
                     self.showSuccessAlert {
                         self.onCodeValidate?()
                     }
                 }
             }).disposed(by: disposeeBag)
+        
+        rootView.passCodeView.didFinishCallback = { [unowned self] pin in
+            self.rootView.repeatCodeView.becomeFirstResponderAtIndex = 0
+        }
+        
     }
 
     private func showErrorAlert(error: PinCodeError) {
         showSimpleAlert(title: "Ошибка", message: error.rawValue)
-        rootView.passCodeView.text = nil
-        rootView.repeatCodeView.text = nil
+        rootView.passCodeView.clearPin()
+        rootView.repeatCodeView.clearPin()
     }
-
+    
     override func customBackButtonDidTap() {
         closeButton?()
     }

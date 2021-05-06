@@ -117,6 +117,7 @@ final class AuthBySmsView: UIView {
         backgroundColor = .background
         phoneContainer.title = " Логин "
         passwordContainer.title = " Код "
+        passwordContainer.textField.textContentType = .oneTimeCode
         signInButton.backgroundColor = .primary
         signInButton.layer.cornerRadius = 20
         getSmsButton.backgroundColor = .primary

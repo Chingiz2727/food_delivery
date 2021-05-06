@@ -110,6 +110,7 @@ PODS:
   - RxSwift (5.0.1)
   - SDK-iOS (1.0.0)
   - SnapKit (5.0.1)
+  - SVPinView (1.0.11)
   - SwiftLint (0.39.2)
   - SwiftMessages (8.0.3):
     - SwiftMessages/App (= 8.0.3)
@@ -137,6 +138,7 @@ DEPENDENCIES:
   - RxSwift (= 5.0.1)
   - SDK-iOS (from `https://github.com/cloudpayments/SDK-iOS`, branch `master`)
   - SnapKit (~> 5.0.0)
+  - SVPinView (~> 1.0)
   - SwiftLint (= 0.39.2)
   - SwiftMessages (= 8.0.3)
   - Swinject (= 2.7.1)
@@ -175,6 +177,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - SVPinView
     - SwiftLint
     - SwiftMessages
     - Swinject
@@ -223,6 +226,7 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SDK-iOS: 3d1bb56c31abedf01c122daff14324472ed393e6
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVPinView: 9b538d0ba68cdb092afe4f0f67ec84cbed079466
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
@@ -231,6 +235,6 @@ SPEC CHECKSUMS:
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
   YandexMapsMobile: 0f3d8c92fad685dc33d07f83eed4eb0166089743
 
-PODFILE CHECKSUM: c2f0a2aabc47f42c66fd6ea44bdc6008e22a2d8d
+PODFILE CHECKSUM: 300826c89bff6d4139be4a6c4d55da613d8362f4
 
 COCOAPODS: 1.10.1

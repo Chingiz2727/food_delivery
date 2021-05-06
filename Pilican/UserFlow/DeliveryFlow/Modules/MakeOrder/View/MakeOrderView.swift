@@ -126,6 +126,11 @@ final class MakeOrderView: UIView {
         payAmountView.setupOrderCost(cost: "\(totalSum) 〒")
     }
 
+    func setupTakeAway() {
+        locationView.isHidden = true
+        payAmountView.deliveryCost.isHidden = true
+    }
+    
     func setOrderType(orderType: OrderType, address: String) {
         if orderType == .takeAway {
             maskEscapeView.isHidden = true
@@ -137,6 +142,7 @@ final class MakeOrderView: UIView {
             addressView.titleLabel.text = "Адрес ресторана"
         }
     }
+    
     private func configureView() {
         deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.pillikanDelivery.image)
         locationView.setup(title: "Адрес доставки", subTitle: "", image: Images.LocationSelected.image)

@@ -1,3 +1,4 @@
+import SVPinView
 import UIKit
 
 final class CreatePinView: UIView {
@@ -16,42 +17,60 @@ final class CreatePinView: UIView {
         label.textColor = .gray
         label.font = .medium14
         label.textAlignment = .center
-        label.text = "Вы будете использовать это код для входа"
+        label.text = "Вы будете использовать этоn пин код для входа"
         return label
     }()
 
-    let passCodeView: DPOTPView = {
-        let codeView = DPOTPView()
-        codeView.count = 4
-        codeView.spacing = 10
-        codeView.fontTextField = .semibold24
-        codeView.dismissOnLastEntry = true
-        codeView.isSecureTextEntry = true
-        codeView.borderWidthTextField = 0.5
-        codeView.cornerRadiusTextField = 16
-        codeView.isCursorHidden = true
-        codeView.backGroundColorTextField = .primary
-        codeView.borderColorTextField = .white
-        codeView.selectedBorderColorTextField = .white
-        codeView.textColorTextField = .white
-        _ = codeView.becomeFirstResponder()
+    private let repeatitleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = .medium14
+        label.textAlignment = .center
+        label.text = "Повторите пин код"
+        return label
+    }()
+    let passCodeView: SVPinView = {
+        let codeView = SVPinView()
+        codeView.pinLength = 4
+        codeView.interSpace = 20
+        codeView.font = .semibold20
+        codeView.shouldSecureText = true
+        codeView.allowsWhitespaces = false
+        codeView.borderLineThickness = 0
+        codeView.fieldCornerRadius = 16
+        codeView.shouldDismissKeyboardOnEmptyFirstField = true
+        codeView.pinInputAccessoryView = UIView()
+        codeView.fieldBackgroundColor = .primary
+        codeView.activeFieldBackgroundColor = .white
+        codeView.deleteButtonAction = .deleteCurrentAndMoveToPrevious
+        codeView.activeFieldCornerRadius = 16
+        codeView.activeBorderLineColor = .primary
+        codeView.becomeFirstResponderAtIndex = 0
+        codeView.keyboardAppearance = .light
+        codeView.secureCharacter = "\u{25CF}"
+        codeView.textColor = .white
         return codeView
     }()
     
-    let repeatCodeView: DPOTPView = {
-        let codeView = DPOTPView()
-        codeView.count = 4
-        codeView.spacing = 10
-        codeView.fontTextField = .semibold20
-        codeView.dismissOnLastEntry = true
-        codeView.isSecureTextEntry = true
-        codeView.borderWidthTextField = 0.5
-        codeView.cornerRadiusTextField = 16
-        codeView.isCursorHidden = true
-        codeView.backGroundColorTextField = .primary
-        codeView.borderColorTextField = .white
-        codeView.selectedBorderColorTextField = .white
-        codeView.textColorTextField = .white
+    let repeatCodeView: SVPinView = {
+        let codeView = SVPinView()
+        codeView.pinLength = 4
+        codeView.interSpace = 20
+        codeView.font = .semibold20
+        codeView.shouldSecureText = true
+        codeView.allowsWhitespaces = false
+        codeView.borderLineThickness = 0
+        codeView.fieldCornerRadius = 16
+        codeView.shouldDismissKeyboardOnEmptyFirstField = false
+        codeView.fieldBackgroundColor = .primary
+        codeView.activeFieldBackgroundColor = .white
+        codeView.deleteButtonAction = .deleteCurrentAndMoveToPrevious
+        codeView.activeFieldCornerRadius = 16
+        codeView.activeBorderLineColor = .primary
+        
+        codeView.keyboardAppearance = .light
+        codeView.secureCharacter = "\u{25CF}"
+        codeView.textColor = .white
         return codeView
     }()
 
@@ -73,6 +92,7 @@ final class CreatePinView: UIView {
         addSubview(sendButton)
         addSubview(passCodeView)
         addSubview(repeatCodeView)
+        addSubview(repeatitleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(23)
             make.leading.trailing.equalToSuperview().inset(20)
@@ -90,8 +110,13 @@ final class CreatePinView: UIView {
             make.height.equalTo(52)
         }
 
+        repeatitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(passCodeView.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
+        
         repeatCodeView.snp.makeConstraints { make in
-            make.top.equalTo(passCodeView.snp.bottom).offset(11)
+            make.top.equalTo(repeatitleLabel.snp.bottom).offset(11)
             make.width.equalTo(245)
             make.centerX.equalToSuperview()
             make.height.equalTo(52)
@@ -109,6 +134,5 @@ final class CreatePinView: UIView {
         sendButton.setTitle("Создать PIN", for: .normal)
         sendButton.setTitleColor(.white, for: .normal)
         titleLabel.text = "Создайте пин код"
-        subTitleLabel.text = "Пин код"
     }
 }

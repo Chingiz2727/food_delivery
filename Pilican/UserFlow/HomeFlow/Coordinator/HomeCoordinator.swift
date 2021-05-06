@@ -52,6 +52,9 @@ final class HomeCoordinator: BaseCoordinator {
         tapPop = {
             homeCoordinator.onPopTap?()
         }
+        tapPop = { [weak self] in
+            homeCoordinator.router.popToRootModule()
+        }
         homeCoordinator.onDeliveryTab = { [weak self] in
             self?.startDeliveryFlow()
         }

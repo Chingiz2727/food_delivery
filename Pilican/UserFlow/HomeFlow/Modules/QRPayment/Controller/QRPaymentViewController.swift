@@ -48,7 +48,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {

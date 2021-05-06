@@ -65,6 +65,7 @@ class CameraViewController: UIViewController, CameraModule {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
     }
 
     private func bindViewModel() {

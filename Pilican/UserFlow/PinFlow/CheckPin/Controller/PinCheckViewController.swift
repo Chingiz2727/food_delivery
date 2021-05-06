@@ -31,10 +31,10 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
     private func bindView() {
         rootView.sendButton.rx.tap
             .subscribe(onNext: { [unowned self] in
-                if self.rootView.passCodeView.text == self.userSession.pin {
+                if self.rootView.passCodeView.getPin() == self.userSession.pin {
                     self.onPinSatisfy?()
                 } else {
-                    self.rootView.passCodeView.text = nil
+                    self.rootView.passCodeView.clearPin()
                     self.showSimpleAlert(title: "Ошибка", message: "Неверный пинкод")
                 }
             })
@@ -59,6 +59,15 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
                 self.onResetTapp?()
             })
             .disposed(by: disposeBag)
+        
+        rootView.passCodeView.didFinishCallback = { [unowned self] pin in
+            if pin == self.userSession.pin {
+                self.onPinSatisfy?()
+            } else {
+                self.rootView.passCodeView.clearPin()
+                self.showSimpleAlert(title: "Ошибка", message: "Неверный пинкод")
+            }
+        }
     }
     
     private func getAuthenticationReason() -> String {

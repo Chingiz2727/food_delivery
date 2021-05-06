@@ -69,6 +69,9 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         onPopTap =  {
             coordinator.onFlowDidFinish?()
         }
+        onPopTap = {
+            coordinator.router.popToRootModule()
+        }
         coordinator.start()
         addDependency(coordinator)
     }
@@ -78,6 +81,7 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         module.onSelectRetail = { [weak self] retail in
             self?.startRetailDetailCoordinator(retail: retail)
         }
+        
         router.push(module)
     }
 
