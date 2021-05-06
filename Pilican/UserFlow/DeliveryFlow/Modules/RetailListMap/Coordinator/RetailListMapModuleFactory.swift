@@ -14,7 +14,8 @@ final class RetailListMapModuleFactory {
         let locationManager = container.resolve(CLLocationManager.self)!
         let apiService = container.resolve(ApiService.self)!
         let viewModel = RetailListMapViewModel(apiService: apiService)
-        return RetailListMapViewController(mapManager: container.resolve(MapManager.self)!, locationManager: locationManager, viewModel: viewModel)
+        let dishList = container.resolve(DishList.self)!
+        return RetailListMapViewController(mapManager: container.resolve(MapManager.self)!, locationManager: locationManager, viewModel: viewModel, dishList: dishList)
     }
     
     func delivery() -> DeliveryRetailListModule {

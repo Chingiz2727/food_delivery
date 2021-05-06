@@ -51,7 +51,7 @@ final class DeliveryRetailListView: UIView {
 
         addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom)
+            make.top.equalTo(searchBar.snp.bottom).offset(1)
             make.left.right.bottom.equalToSuperview()
         }
 

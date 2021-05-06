@@ -3,7 +3,7 @@ import UIKit
 
 final class DeliveryRetailListViewController: UIViewController, DeliveryRetailListModule, ViewHolder {
     var deliveryMenuDidSelect: DeliveryMenuDidSelect?
-    
+
     typealias RootViewType = DeliveryRetailListView
 
     var onRetailDidSelect: OnRetailDidSelect?
@@ -12,13 +12,13 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     private let disposeBag = DisposeBag()
     private let dishList: DishList
     private let searchText: PublishSubject<String> = .init()
-    
+
     init(viewModel: DeliveryRetailListViewModel, dishList: DishList) {
         self.viewModel = viewModel
         self.dishList = dishList
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }
