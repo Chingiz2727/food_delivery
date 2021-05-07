@@ -23,11 +23,13 @@ final class BasketItemViewCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = .semibold16
         return label
     }()
 
     private let priceLabel: UILabel = {
         let label = UILabel()
+        label.font = .semibold16
         return label
     }()
 
@@ -109,7 +111,7 @@ final class BasketItemViewCell: UITableViewCell {
         textStackView.snp.makeConstraints { make in
             make.leading.equalTo(productImageView.snp.trailing).offset(10)
             make.top.bottom.equalToSuperview().inset(18)
-            make.trailing.equalTo(buttonStackView.snp.leading).offset(10)
+            make.trailing.equalToSuperview().inset(86)
         }
 
         buttonStackView.snp.makeConstraints { make in

@@ -8,7 +8,7 @@
 import UIKit
 
 class BonusView: UIView {
-    
+
     let bonusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -28,7 +28,7 @@ class BonusView: UIView {
     let bonusTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.semibold20
-        label.text = "\"Pillikan\" дарит бонусные баллы \nВам и Вашим друзьям"
+        label.text = "\"Pillikan\" дарит бонусы \nВам и Вашим друзьям"
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center

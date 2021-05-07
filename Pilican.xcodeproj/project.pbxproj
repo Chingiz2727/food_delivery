@@ -159,6 +159,7 @@
 		55E757B42638F7DC00B7FEB5 /* HowItWorkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E757B32638F7DC00B7FEB5 /* HowItWorkModule.swift */; };
 		55E757B92638F80400B7FEB5 /* HowItWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E757B82638F80400B7FEB5 /* HowItWorkViewController.swift */; };
 		55E7580D26397F3100B7FEB5 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7580C26397F3100B7FEB5 /* SearchHeaderView.swift */; };
+		55E7D16826458EDE006A0B23 /* HomeCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7D16726458EDE006A0B23 /* HomeCollectionFooterView.swift */; };
 		55F4EEF0260C3ACC00EBEA9D /* QRPaymentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */; };
 		55F4EEF4260C3AF400EBEA9D /* QRPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */; };
 		55F4EEF8260C62A600EBEA9D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */; };
@@ -761,6 +762,7 @@
 		55E757B32638F7DC00B7FEB5 /* HowItWorkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorkModule.swift; sourceTree = "<group>"; };
 		55E757B82638F80400B7FEB5 /* HowItWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorkViewController.swift; sourceTree = "<group>"; };
 		55E7580C26397F3100B7FEB5 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
+		55E7D16726458EDE006A0B23 /* HomeCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionFooterView.swift; sourceTree = "<group>"; };
 		55F4EEEF260C3ACC00EBEA9D /* QRPaymentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentModule.swift; sourceTree = "<group>"; };
 		55F4EEF3260C3AF400EBEA9D /* QRPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPaymentViewController.swift; sourceTree = "<group>"; };
 		55F4EEF7260C62A600EBEA9D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -4664,6 +4666,7 @@
 			isa = PBXGroup;
 			children = (
 				A47CA04925E1495200EB091C /* RetailCollectionViewCell.swift */,
+				55E7D16726458EDE006A0B23 /* HomeCollectionFooterView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -5964,6 +5967,7 @@
 				A47CA10D25E1588F00EB091C /* LabelBackgroundView.swift in Sources */,
 				555643432637F66A00B56670 /* RetailMapView.swift in Sources */,
 				55A5CD452600C2AF004AA13C /* MyCardsView.swift in Sources */,
+				55E7D16826458EDE006A0B23 /* HomeCollectionFooterView.swift in Sources */,
 				5FD2F05426240C0C0012110C /* NotificationListController.swift in Sources */,
 				A4AE13C525F87AE0006468A1 /* ProblemView.swift in Sources */,
 				7292A092263B26D40098E03B /* MyCardCoordinator.swift in Sources */,

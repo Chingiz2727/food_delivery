@@ -96,7 +96,7 @@ final class AuthBySmsView: UIView {
         }
 
         authStackView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
+            make.top.equalTo(welcomeStackView.snp.bottom).offset(170)
             make.leading.trailing.equalToSuperview().inset(30)
         }
 

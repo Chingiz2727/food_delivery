@@ -64,14 +64,14 @@ final class CameraView: UIView {
 
         identificatorButton.snp.makeConstraints { make in
             make.top.equalTo(howItWorkButton.snp.bottom).offset(30)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview().inset(64)
             make.height.equalTo(40)
         }
 
         closeButton.snp.makeConstraints { make in
             make.size.equalTo(25)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(30)
+            make.top.equalTo(identificatorButton.snp.bottom).offset(32)
         }
         tableView.registerClassForCell(CashBackListTableViewCell.self)
     }
@@ -82,6 +82,9 @@ final class CameraView: UIView {
         titleLabel.textColor = .pilicanWhite
         howItWorkButton.setTitle("Как это работает?", for: .normal)
         identificatorButton.setTitle("ИДЕНТИФИКАТОР", for: .normal)
+        identificatorButton.layer.cornerRadius = 22
+        identificatorButton.backgroundColor = .pilicanWhite
+        identificatorButton.setTitleColor(.primary, for: .normal)
         closeButton.setImage(Images.close.image, for: .normal)
         flashLightButton.setImage(Images.flash.image, for: .normal)
         rotateCameraButton.setImage(Images.rotate.image, for: .normal)
@@ -105,5 +108,6 @@ final class CameraView: UIView {
         drawerView.setState(.dismissed, animated: true)
         drawerView.isHidden = false
         drawerView.headerView.setHeightConstraint(70)
+        tableView.separatorStyle = .none
     }
 }

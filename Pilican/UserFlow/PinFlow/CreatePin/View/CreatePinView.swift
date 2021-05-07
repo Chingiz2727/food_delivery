@@ -17,7 +17,7 @@ final class CreatePinView: UIView {
         label.textColor = .gray
         label.font = .medium14
         label.textAlignment = .center
-        label.text = "Вы будете использовать этоn пин код для входа"
+        label.text = "Вы будете использовать этот пин код для входа"
         return label
     }()
 

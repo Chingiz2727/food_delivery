@@ -4,7 +4,7 @@ final class LabelBackgroundView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = .description3
+        label.font = .medium13
         label.textAlignment = .center
         return label
     }()

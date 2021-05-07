@@ -14,14 +14,14 @@ final class DeliveryItemView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .heading2
+        label.font = .semibold16
         label.textAlignment = .left
         return label
     }()
 
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .medium12
+        label.font = .book14
         label.numberOfLines = 0
         label.textAlignment = .left
         return label

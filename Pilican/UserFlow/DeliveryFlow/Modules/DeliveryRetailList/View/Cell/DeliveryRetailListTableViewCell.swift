@@ -50,7 +50,7 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
 
     let closedLabel: UILabel = {
         let label = UILabel()
-        label.text = "Заведение закрыто"
+        label.text = "Закрыто"
         label.font = .semibold24
         label.layer.zPosition = 1
         label.textAlignment = .center
@@ -66,7 +66,7 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
     private let discountView = LabelBackgroundView()
 
     private lazy var companyInfoVerticalStack = UIStackView(
-        views: [companyNameLabel, adressLabel],
+        views: [UIView(), UIView(), companyNameLabel, adressLabel, UIView()],
         axis: .vertical,
         spacing: 6
     )

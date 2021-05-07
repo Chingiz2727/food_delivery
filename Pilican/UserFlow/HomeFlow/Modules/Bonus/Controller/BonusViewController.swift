@@ -74,13 +74,13 @@ class BonusViewController: ViewController, ViewHolder, BonusModule {
 
     private func handleMoreButton() {
         // swiftlint:disable line_length
-        let alert = UIAlertController(title: "", message: "Поделись с друзьями уникальной cсылкой или покажи QR код при регистрации. Если ваш друг привяжет карту любого банка к \"Pillikan\" и совершит первую покупку на сумму 500 KZT, вы и ваш друг получите по 500 бонусных баллов", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "", message: "Поделись с друзьями уникальной cсылкой или покажи QR код при регистрации. Если ваш друг привяжет карту любого банка к \"Pillikan\" и совершит первую покупку на сумму 500 KZT, вы и ваш друг получите по 500 бонусов", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
     private func handleSharePromo(promo: String) {
-        let shareText = "Привет! Скачай крутое приложение Pillikan чтоб удобно и выгодно оплачивать свои покупки, доставку еды и получать бонусы до 20% в более 1000 любимых заведении и магазинов. Введи мой промо код -\(promo) при регистрации приложении \"Pillikan\", привяжи банковскую карту и получи 500 бонусных баллов с первой покупки. Ссылка для скачивания: https://pillikan.kz/site/get-app"
+        let shareText = "Привет! Скачай крутое приложение Pillikan чтоб удобно и выгодно оплачивать свои покупки, доставку еды и получать бонусы до 20% в более 1000 любимых заведении и магазинов. Введи мой промо код -\(promo) при регистрации приложении \"Pillikan\", привяжи банковскую карту и получи 500 бонусов с первой покупки. Ссылка для скачивания: https://pillikan.kz/site/get-app"
 
         let shareActivityController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
 

@@ -22,5 +22,5 @@ extension UIColor {
     static let reciep = UIColor(red: 0.545, green: 0.765, blue: 0.29, alpha: 1)
     static let profile = UIColor(red: 0.012, green: 0.663, blue: 0.957, alpha: 1)
     static let howItWork = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.8)
-    static let retailStatus = UIColor.white.withAlphaComponent(0.6)
+    static let retailStatus = UIColor.white.withAlphaComponent(0.9)
 }

@@ -14,7 +14,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     private let orderNumberTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = UIFont.semibold16
+        label.font = UIFont.semibold18
         label.text = "Номер заказа:"
         return label
     }()
@@ -36,14 +36,14 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     private let retailNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = UIFont.medium12
+        label.font = UIFont.medium14
         return label
     }()
 
     private let orderAmountTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = UIFont.medium12
+        label.font = UIFont.medium14
         label.text = "Сумма заказа:"
         return label
     }()
@@ -51,14 +51,14 @@ final class OrderHistoryTableViewCell: UITableViewCell {
     private let orderAmountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = UIFont.medium12
+        label.font = UIFont.medium14
         return label
     }()
 
     private let moreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .primary
-        label.font = UIFont.medium12
+        label.font = UIFont.semibold14
         label.text = "Подробнее"
         return label
     }()
@@ -70,7 +70,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         label.text = "Всего"
         return label
     }()
-    
+
     private let totalAmountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .primary
@@ -83,7 +83,6 @@ final class OrderHistoryTableViewCell: UITableViewCell {
         return button
     }()
     
-
     private lazy var amountStackView = UIStackView(
         views: [totalTitleLabel,totalAmountLabel],
         axis: .vertical,

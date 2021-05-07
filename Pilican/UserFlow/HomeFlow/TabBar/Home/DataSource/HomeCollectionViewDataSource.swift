@@ -14,6 +14,8 @@ final class HomeCollectionViewDataSource: RxCollectionViewSectionedReloadDataSou
         }, configureSupplementaryView: { _, collectionview, _, index in
             let disposeBag = DisposeBag()
             let header: HomeCollectionViewHeaderView = collectionview.dequeueReusableHeaderView(for: index)
+            let footer: HomeCollectionFooterView = collectionview.dequeueReusableFooterView(for: index)
+            footer.setHeightConstraint(100)
             slider.subscribe(onNext: { sliders in
                 header.setupSlider(sliders: sliders)
             }).disposed(by: disposeBag)

@@ -46,7 +46,7 @@ final class HomeView: UIView {
         addSubview(searchViewBack)
         addSubview(searchBar)
         addSubview(searchCollectionView)
-        
+
         searchCollectionView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(5)
             make.leading.trailing.equalToSuperview()
@@ -64,6 +64,7 @@ final class HomeView: UIView {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(10)
         }
+
         searchViewBack.snp.makeConstraints { $0.edges.equalToSuperview() }
         searchViewBack.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         searchViewBack.isHidden = true

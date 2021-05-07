@@ -20,7 +20,7 @@ final class CategoryView: UIView, Control {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .description3
+        label.font = .medium10
         label.numberOfLines = 1
         label.isUserInteractionEnabled = true
         label.textAlignment = .center

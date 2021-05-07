@@ -43,13 +43,8 @@ final class CashBackListHeaderView: UIView {
         addSubview(mapImageView)
         addSubview(categoryStack)
 
-        mapImageView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(137)
-        }
-
         categoryStack.snp.makeConstraints { make in
-            make.top.equalTo(mapImageView.snp.bottom).offset(17)
+            make.top.equalToSuperview().inset(15)
             make.leading.trailing.equalToSuperview().inset(15)
             make.height.equalTo(75)
             make.bottom.equalToSuperview().inset(15)

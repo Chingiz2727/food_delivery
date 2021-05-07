@@ -28,7 +28,7 @@ final class MakeOrderCommentView: UIView {
     
     private func setupInitialLayout() {
         addSubview(stackView)
-        commentTitleView.snp.makeConstraints { $0.height.equalTo(50) }
+        commentTitleView.snp.makeConstraints { $0.height.equalTo(40) }
         textField.snp.makeConstraints { $0.height.equalTo(50) }
         stackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
         commentTitleView.control.rx.controlEvent(.touchUpInside)

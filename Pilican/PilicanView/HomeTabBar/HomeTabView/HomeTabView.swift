@@ -24,8 +24,8 @@ final class HomeTabView: UIView {
     }
 
     func setData(profile: String, balance: String) {
-        userInfoView.configureTitle(title: profile, titleTextColor: .profile, font: UIFont.medium10)
-        balanceInfoView.configureTitle(title: balance, titleTextColor: .primary, font: UIFont.medium10)
+        userInfoView.configureTitle(title: profile, titleTextColor: .profile, font: UIFont.medium12)
+        balanceInfoView.configureTitle(title: balance, titleTextColor: .primary, font: UIFont.medium12)
     }
 
     private func setupInitialLayout() {

@@ -14,7 +14,7 @@ class CalculatePayView: UIView {
     private let caluculateTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Будет списано:"
-        label.font = .book10
+        label.font = .book12
         label.textColor = .pilicanGray
         label.textAlignment = .center
         return label
@@ -47,7 +47,7 @@ class CalculatePayView: UIView {
     private let fromCardTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "с карты"
-        label.font = .book8
+        label.font = .book10
         label.textColor = .pilicanLightGray
         label.textAlignment = .center
         return label
@@ -55,8 +55,8 @@ class CalculatePayView: UIView {
 
     private let fromCashbackTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "балл"
-        label.font = .book8
+        label.text = "с бонусов"
+        label.font = .book10
         label.textColor = .pilicanLightGray
         label.textAlignment = .center
         return label

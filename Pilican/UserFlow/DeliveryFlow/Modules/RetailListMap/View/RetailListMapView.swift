@@ -41,7 +41,7 @@ final class RetailListMapView: UIView {
             make.height.equalTo(50)
         }
         currentLocationButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(20)
+            make.right.equalToSuperview().inset(20)
             make.bottom.equalTo(listButton.snp.top).offset(-30)
             make.size.equalTo(30)
         }

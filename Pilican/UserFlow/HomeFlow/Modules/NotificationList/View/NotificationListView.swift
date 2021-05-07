@@ -17,7 +17,6 @@ final class NotificationListView: UIView {
     func setupInitialLayouts() {
         addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
-        
     }
     
     func configureView() {

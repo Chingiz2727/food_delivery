@@ -25,6 +25,7 @@ final class RetailDetailView: UIView {
 
     private lazy var stackView = UIStackView(
         views: [
+            sliderView,
             headerView,
             socialLinkView,
             deliveryPayStackView,
@@ -59,6 +60,12 @@ final class RetailDetailView: UIView {
         headerView.setRetail(retail: retail)
         socialLinkView.setup(links: retail.networkList)
         workView.setupData(workDay: retail.workDays, workCalendar: workCalendar)
+        var slideImages: [ImageSource] = []
+        guard let images = retail.images else { return }
+        for i in images {
+            slideImages.append(ImageSource(image: UIImage(named: i.imgUrl ?? "") ?? UIImage()))
+        }
+        sliderView.setImageInputs(slideImages)
         retailDescriptionView.setupData(retail: retail)
         deliveryView.setData(retail: retail)
         identificatorView.setData(retail: retail)
@@ -80,12 +87,11 @@ final class RetailDetailView: UIView {
         scrollView.addSubview(stackView)
 
         sliderView.snp.makeConstraints { make in
-            make.top.leading.width.trailing.equalToSuperview()
             make.height.equalTo(286)
         }
 
         stackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(241)
+            make.top.equalToSuperview()
             make.bottom.equalToSuperview().inset(20)
             make.leading.trailing.width.equalTo(self).inset(8)
         }
@@ -94,7 +100,7 @@ final class RetailDetailView: UIView {
         stackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
         headerView.snp.makeConstraints { $0.height.equalTo(90) }
         socialLinkView.snp.makeConstraints { $0.height.equalTo(50) }
-        deliveryPayStackView.snp.makeConstraints { $0.height.equalTo(50) }
+        deliveryPayStackView.snp.makeConstraints { $0.height.equalTo(54) }
         showMap.snp.makeConstraints { $0.height.equalTo(50) }
         cashBackView.snp.makeConstraints { $0.height.equalTo(60) }
         faqButton.snp.makeConstraints { $0.height.equalTo(40) }
@@ -105,5 +111,7 @@ final class RetailDetailView: UIView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         backgroundColor = .background
+        deliveryView.layer.cornerRadius = 10
+        identificatorView.layer.cornerRadius = 10
     }
 }

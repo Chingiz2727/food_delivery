@@ -33,7 +33,7 @@ class RetailMapView: UIView {
         
         addSubview(currentLocationButton)
         currentLocationButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(20)
+            make.right.equalToSuperview().inset(20)
             make.bottom.equalTo(safeAreaLayoutGuide).inset(30)
             make.size.equalTo(30)
         }

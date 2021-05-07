@@ -22,7 +22,7 @@ final class ProfileMenuViewController: UIViewController, ViewHolder, ProfileMenu
                 cell.textLabel?.text = model.rawValue
                 cell.textLabel?.textAlignment = .center
                 cell.selectionStyle = .none
-                cell.textLabel?.font = .description1
+                cell.textLabel?.font = .book18
             }
             .disposed(by: disposeBag)
 

@@ -29,6 +29,12 @@ class QRPaymentView: UIView {
         button.layer.addShadow()
         return button
     }()
+    
+    private lazy var stackView = UIStackView(
+        views:  [paymentChoiceView, calculatePayView],
+        axis: .vertical,
+        distribution: .equalSpacing,
+        spacing: 5)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,21 +59,15 @@ class QRPaymentView: UIView {
             make.left.right.equalToSuperview().inset(15)
         }
 
-        addSubview(paymentChoiceView)
-        paymentChoiceView.snp.makeConstraints { (make) in
+        addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
             make.top.equalTo(priceView.snp.bottom).offset(15)
-            make.left.right.equalToSuperview().inset(15)
-        }
-
-        addSubview(calculatePayView)
-        calculatePayView.snp.makeConstraints { (make) in
-            make.top.equalTo(paymentChoiceView.snp.bottom).offset(10)
             make.left.right.equalToSuperview().inset(15)
         }
 
         addSubview(commentView)
         commentView.snp.makeConstraints { (make) in
-            make.top.equalTo(calculatePayView.snp.bottom).offset(15)
+            make.top.equalTo(stackView.snp.bottom).offset(15)
             make.left.right.equalToSuperview().inset(15)
         }
 

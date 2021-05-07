@@ -9,34 +9,34 @@ final class OrderStatusProductView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .semibold20
         return label
     }()
-    
+
     private let countLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .right
         label.font = .medium16
         return label
     }()
-    
+
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.font = .medium16
         return label
     }()
-    
+
     private lazy var stackView = UIStackView(
-        views: [titleLabel, priceLabel],
+        views: [titleLabel, priceLabel, UIView()],
         axis: .vertical,
         distribution: .fill,
         spacing: 5)
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
@@ -60,7 +60,7 @@ final class OrderStatusProductView: UIView {
         addSubview(stackView)
         addSubview(countLabel)
         imageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(5)
+            make.leading.equalToSuperview().inset(14)
             make.centerY.equalToSuperview()
             make.size.equalTo(60)
         }
@@ -73,7 +73,8 @@ final class OrderStatusProductView: UIView {
 
         countLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(5)
+            make.trailing.equalToSuperview().inset(14)
         }
+        layer.cornerRadius = 12
     }
 }

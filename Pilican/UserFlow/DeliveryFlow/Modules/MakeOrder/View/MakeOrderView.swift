@@ -30,9 +30,9 @@ final class MakeOrderView: UIView {
 
     private let basketTitle: UILabel = {
         let label = UILabel()
-        label.font = .heading1
+        label.font = .semibold24
         label.textAlignment = .left
-        label.text = "Корзина"
+        label.text = "Ваш заказ"
         return label
     }()
 
@@ -130,19 +130,20 @@ final class MakeOrderView: UIView {
         locationView.isHidden = true
         payAmountView.deliveryCost.isHidden = true
     }
-    
+
     func setOrderType(orderType: OrderType, address: String) {
         if orderType == .takeAway {
             maskEscapeView.isHidden = true
-            deliveryView.setup(title: "Предзаказ Pillikan")
-            deliveryView.setup(subTitle: "Самовывоз")
+            deliveryView.setup(title: "Заберу навынос")
+            deliveryView.setup(subTitle: "Заберу заказ самостоятельно")
             locationView.setup(title: "Адрес ресторана")
             locationView.isUserInteractionEnabled = false
             addressView.isUserInteractionEnabled = false
             addressView.titleLabel.text = "Адрес ресторана"
+            deliveryView.setup(image: Images.man.image)
         }
     }
-    
+
     private func configureView() {
         deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.pillikanDelivery.image)
         locationView.setup(title: "Адрес доставки", subTitle: "", image: Images.LocationSelected.image)

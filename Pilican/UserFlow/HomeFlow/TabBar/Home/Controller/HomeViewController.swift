@@ -38,6 +38,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     private func bindView() {
         rootView.collectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.collectionView.registerClassForHeaderView(HomeCollectionViewHeaderView.self)
+        rootView.collectionView.registerClassForFooterView(HomeCollectionFooterView.self)
         rootView.searchCollectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.layout.headerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 270)
     }
