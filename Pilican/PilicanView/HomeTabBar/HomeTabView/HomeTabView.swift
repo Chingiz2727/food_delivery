@@ -4,14 +4,7 @@ final class HomeTabView: UIView {
     let userInfoView = TabImageInfoView()
     let balanceInfoView = TabImageInfoView()
 
-    let qrScanButton: UIButton = {
-        let button = UIButton()
-        button.setImage(Images.mainqr.image, for: .normal)
-        button.layer.cornerRadius = 35
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+    let qrScanButton = QRButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +24,7 @@ final class HomeTabView: UIView {
     private func setupInitialLayout() {
         addSubview(userInfoView)
         addSubview(balanceInfoView)
-        addSubview(qrScanButton)
+//        addSubview(qrScanButton)
 
         userInfoView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -47,12 +40,12 @@ final class HomeTabView: UIView {
             make.width.equalTo(105)
         }
 
-        qrScanButton.snp.makeConstraints { make in
-            make.centerY.equalTo(self.snp.top)
-            make.centerX.equalToSuperview()
-            make.size.equalTo(70)
-            
-        }
+//        qrScanButton.snp.makeConstraints { make in
+//            make.centerY.equalTo(self.snp.top)
+//            make.centerX.equalToSuperview()
+//            make.size.equalTo(70)
+//            
+//        }
     }
 
     private func configureView() {

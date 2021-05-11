@@ -40,7 +40,7 @@ public struct ApiServicesAssemblyImpl: ApiServicesAssembly {
         let sessionManager = resolver.resolve(SessionManager.self)!
         let configService = resolver.resolve(ConfigService.self)!
         
-        return ApiRequest(url: URL(string: target.mainUrl!)!, target: target, manager: sessionManager)
+        return ApiRequest(url: URL(string: target.mainUrl!)!, target: target, manager: sessionManager, logout: container.resolve(AuthStateObserver.self)!)
       }
     }
     .inObjectScope(.transient)

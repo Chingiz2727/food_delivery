@@ -232,6 +232,11 @@
 		72340C6F262FCB8D000569D6 /* AddCardApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */; };
 		72340C74262FCC00000569D6 /* BindCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C73262FCC00000569D6 /* BindCardModel.swift */; };
 		72340C79262FD2FD000569D6 /* AddCardApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72340C78262FD2FD000569D6 /* AddCardApiService.swift */; };
+		7239212B264A3ACB0050BA37 /* QRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239212A264A3ACB0050BA37 /* QRButton.swift */; };
+		7239212D264A417D0050BA37 /* InformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239212C264A417D0050BA37 /* InformationCardView.swift */; };
+		7239212F264A43B00050BA37 /* UIView+InformationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239212E264A43B00050BA37 /* UIView+InformationCardView.swift */; };
+		72392131264A44900050BA37 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72392130264A44900050BA37 /* ErrorView.swift */; };
+		72392133264A44DD0050BA37 /* UIView+ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72392132264A44DD0050BA37 /* UIView+ErrorView.swift */; };
 		7244657E263FA4DD00C50802 /* PushNotificationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7244657D263FA4DD00C50802 /* PushNotificationEngine.swift */; };
 		72446581263FA4EE00C50802 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446580263FA4EE00C50802 /* PushNotificationManager.swift */; };
 		72446584263FA50800C50802 /* FirebasePushNotificationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446583263FA50800C50802 /* FirebasePushNotificationEngine.swift */; };
@@ -837,6 +842,11 @@
 		72340C6E262FCB8D000569D6 /* AddCardApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiTarget.swift; sourceTree = "<group>"; };
 		72340C73262FCC00000569D6 /* BindCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindCardModel.swift; sourceTree = "<group>"; };
 		72340C78262FD2FD000569D6 /* AddCardApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardApiService.swift; sourceTree = "<group>"; };
+		7239212A264A3ACB0050BA37 /* QRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRButton.swift; sourceTree = "<group>"; };
+		7239212C264A417D0050BA37 /* InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCardView.swift; sourceTree = "<group>"; };
+		7239212E264A43B00050BA37 /* UIView+InformationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+InformationCardView.swift"; sourceTree = "<group>"; };
+		72392130264A44900050BA37 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		72392132264A44DD0050BA37 /* UIView+ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ErrorView.swift"; sourceTree = "<group>"; };
 		7244657D263FA4DD00C50802 /* PushNotificationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationEngine.swift; sourceTree = "<group>"; };
 		72446580263FA4EE00C50802 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		72446583263FA50800C50802 /* FirebasePushNotificationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePushNotificationEngine.swift; sourceTree = "<group>"; };
@@ -3185,6 +3195,14 @@
 			path = ApiService;
 			sourceTree = "<group>";
 		};
+		72392129264A3AC20050BA37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7239212A264A3ACB0050BA37 /* QRButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7244657C263FA4C000C50802 /* PushNotificationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -4078,6 +4096,7 @@
 		A40B94CC25DD973500E507FB /* HomeTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				72392129264A3AC20050BA37 /* View */,
 				A40B950425DE23B800E507FB /* ViewController */,
 				A40B94EB25DE219200E507FB /* HomeTabBarModule */,
 				A4FD7DB225DD37F9000DD49D /* HomeTabView */,
@@ -5481,12 +5500,16 @@
 			isa = PBXGroup;
 			children = (
 				A4E581E725D543C400EDC053 /* UIViewController+Alert.swift */,
+				7239212E264A43B00050BA37 /* UIView+InformationCardView.swift */,
+				7239212C264A417D0050BA37 /* InformationCardView.swift */,
 				A4E581EB25D5482E00EDC053 /* ProgressView.swift */,
 				A4BBC6E525D639AB006AF382 /* UIView+Extension.swift */,
 				A4BBC6F625D63DF4006AF382 /* UIStackView+Init.swift */,
 				A4BBC70125D63ED8006AF382 /* UiViewController+Keyboard.swift */,
 				A40B95F725DE65EF00E507FB /* UITableView+Reuse.swift */,
 				A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */,
+				72392130264A44900050BA37 /* ErrorView.swift */,
+				72392132264A44DD0050BA37 /* UIView+ErrorView.swift */,
 			);
 			path = "UIView+Extension";
 			sourceTree = "<group>";
@@ -5849,6 +5872,7 @@
 				72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */,
 				A47CA1E525E36E8000EB091C /* DropdownPresentationController.swift in Sources */,
 				72FB0848261DC93700F04395 /* SearchItem.swift in Sources */,
+				7239212F264A43B00050BA37 /* UIView+InformationCardView.swift in Sources */,
 				556543B5261DA3F9009A4E62 /* OrderTypeCoordinatorModuleFactory.swift in Sources */,
 				5FF910D92625B58C00E1EF00 /* PillikanPayViewController.swift in Sources */,
 				A4BBC6F725D63DF4006AF382 /* UIStackView+Init.swift in Sources */,
@@ -6133,6 +6157,7 @@
 				5FD2F05026240BB80012110C /* NotificationListModule.swift in Sources */,
 				7201596F262E95EA0083C758 /* DeliveryRate.swift in Sources */,
 				A468EB5925EE5BC00071FAA6 /* CashBackView.swift in Sources */,
+				72392131264A44900050BA37 /* ErrorView.swift in Sources */,
 				55A5CD4E2600C5A9004AA13C /* MyCardsModule.swift in Sources */,
 				A40B960D25DE75A900E507FB /* RetailCategory.swift in Sources */,
 				728434CC261D7FC800E21209 /* Product.swift in Sources */,
@@ -6145,6 +6170,7 @@
 				558679EB25F0FCDB00A5A94B /* ProblemTarget.swift in Sources */,
 				A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */,
 				72C5E4BE263261E500FEABA1 /* AddCardStatusModule.swift in Sources */,
+				72392133264A44DD0050BA37 /* UIView+ErrorView.swift in Sources */,
 				A47CA1ED25E36E8000EB091C /* StoriesPresentAnimationController.swift in Sources */,
 				A4EFD4DF261320C200694D18 /* SegmentItem.swift in Sources */,
 				722A33DB2625B093003FB38A /* MakeOrderCommentView.swift in Sources */,
@@ -6213,6 +6239,7 @@
 				A483E26425D40ABE006D2DAF /* UIScrollView+ReachedBottom.swift in Sources */,
 				556CF6BB2602025B007B8FB9 /* BalanceView.swift in Sources */,
 				72015959262CC7B60083C758 /* DeliveryLocationMapView.swift in Sources */,
+				7239212B264A3ACB0050BA37 /* QRButton.swift in Sources */,
 				55AD645925E52F2800034459 /* WorkStatus.swift in Sources */,
 				A48CCFEA25DACFC20010829F /* UIView+Constraint.swift in Sources */,
 				553C49922636AD72004777AE /* OrderItemsView.swift in Sources */,
@@ -6409,6 +6436,7 @@
 				72446584263FA50800C50802 /* FirebasePushNotificationEngine.swift in Sources */,
 				A483E26925D40ABE006D2DAF /* AccessCodeService.swift in Sources */,
 				724FC5B7262419BE00C1DED3 /* Notifier.swift in Sources */,
+				7239212D264A417D0050BA37 /* InformationCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6497,7 +6525,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6580,7 +6608,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6724,7 +6752,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6751,7 +6779,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

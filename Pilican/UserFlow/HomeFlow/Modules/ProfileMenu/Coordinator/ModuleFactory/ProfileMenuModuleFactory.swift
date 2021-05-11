@@ -31,7 +31,7 @@ final class ProfileMenuModuleFactory {
     func makeChangePin() -> CreatePinModule {
         let userSession = container.resolve(UserSessionStorage.self)!
         let pushManager = container.resolve(PushNotificationManager.self)!
-        return CreatePinViewController(userSession: userSession, pushManager: pushManager)
+        return CreatePinViewController(userSession: userSession, pushManager: pushManager, pinType: .changePin)
     }
 
     func makeAbout() -> AboutModule {

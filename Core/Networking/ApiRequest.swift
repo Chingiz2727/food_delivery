@@ -6,8 +6,8 @@ import Foundation
 public struct ApiRequest: ApiRequestable {
     
     private let request: Alamofire.DataRequest
-    
-    public init(url: URL, target: ApiTarget, manager: SessionManager) {
+    private let logout: AuthStateObserver
+    public init(url: URL, target: ApiTarget, manager: SessionManager, logout: AuthStateObserver) {
         let requestUrl = url
             .appendingPathComponent(target.servicePath)
             .appendingPathComponent(target.version.stringValue)
@@ -30,6 +30,7 @@ public struct ApiRequest: ApiRequestable {
             )
             #endif
         }
+        self.logout = logout
     }
     
     public func cancel() {
@@ -48,14 +49,20 @@ public struct ApiRequest: ApiRequestable {
         request.resume()
         return request
             .validate { _, response, data in
-                print(response)
+                print(response.statusCode)
+
                 guard let data = data else { return .failure(ApiResponseError.badServerResponse) }
                 if 200..<300 ~= response.statusCode { return .success }
                 
                 guard let apiError = try? JSONDecoder().decode(ApiError.self, from: data) else {
+                    if response.statusCode == 401 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            logout.forceLogout()
+                        }
+                    }
                     return .failure(ApiResponseError.badServerResponse)
                 }
-            
+                print(apiError)
                 guard case let .exception(exception) = apiError else { return .failure(apiError) }
                 
                 var errorDescription = exception.error.message

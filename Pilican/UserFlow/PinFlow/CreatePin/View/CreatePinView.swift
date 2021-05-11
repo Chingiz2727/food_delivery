@@ -45,7 +45,6 @@ final class CreatePinView: UIView {
         codeView.deleteButtonAction = .deleteCurrentAndMoveToPrevious
         codeView.activeFieldCornerRadius = 16
         codeView.activeBorderLineColor = .primary
-        codeView.becomeFirstResponderAtIndex = 0
         codeView.keyboardAppearance = .light
         codeView.secureCharacter = "\u{25CF}"
         codeView.textColor = .white

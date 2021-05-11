@@ -12,10 +12,12 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
     private let pushManager: PushNotificationManager
     private let firstPassSubject: PublishSubject<String> = .init()
     private let secondPassSubject: PublishSubject<String> = .init()
-
-    init(userSession: UserSessionStorage, pushManager: PushNotificationManager) {
+    private let pinType: ChangePinType
+    
+    init(userSession: UserSessionStorage, pushManager: PushNotificationManager, pinType: ChangePinType = .setPin) {
         self.userSession = userSession
         self.pushManager = pushManager
+        self.pinType = pinType
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -29,6 +31,9 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if pinType == .setPin {
+            self.rootView.passCodeView.becomeFirstResponderAtIndex = 0
+        }
         pushManager.requestNotificationAuth()
         bindView()
     }
@@ -96,4 +101,9 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
 private enum PinCodeError: String {
     case notValid = "Введите корректный пин"
     case notEqual = "Пин не совпадают"
+}
+
+enum ChangePinType {
+    case changePin
+    case setPin
 }

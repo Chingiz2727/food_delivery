@@ -43,7 +43,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(())), searchText: rootView.searchBar.rx.text.unwrap()))
+        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()), rootView.rx.retryAction), searchText: rootView.searchBar.rx.text.unwrap()))
 
         let slider = output.slider.publish()
         let retailList = output.retailList.publish()
@@ -68,12 +68,13 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
             .bind(to: rootView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
+        
         retailList.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)
 
         retailList.errors
-            .bind(to: rx.error)
+            .bind(to: rootView.rx.error)
             .disposed(by: disposeBag)
 
         retailList.connect()

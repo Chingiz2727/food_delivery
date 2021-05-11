@@ -43,7 +43,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: .just(())))
+        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()), rootView.rx.retryAction)))
         
         rootView.stickyHeaderView.favouriteButton.rx.tap
             .subscribe(onNext: { [unowned self] in
@@ -74,7 +74,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
             .disposed(by: disposeBag)
 
         productList.errors
-            .bind(to: rx.error)
+            .bind(to: rootView.rx.error)
             .disposed(by: disposeBag)
 
         productList.connect()
@@ -113,7 +113,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         rootView.tableView.rx.willDisplayCell.asObservable()
             .subscribe(onNext: { [unowned self] _, indexPath in
 //                self.rootView.setupHeader(point: indexPath.section)
-                if indexPath.section > 2 {
+                if self.rootView.tableView.numberOfSections > 2 {
                     self.rootView.scrollSegmentToSection(section: indexPath.section)
                 }
             })
