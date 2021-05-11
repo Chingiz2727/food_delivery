@@ -7,7 +7,7 @@ public class CardSegue: SwiftMessagesSegue {
         keyboardTrackingView = KeyboardTrackingView()
         dimMode = .gray(interactive: isDismissOnDimEnabled)
         interactiveHide = isDraggable
-        configure(layout: .bottomCard)
+        configure(layout: .centered)
         messageView.configureNoDropShadow()
 	}
 }

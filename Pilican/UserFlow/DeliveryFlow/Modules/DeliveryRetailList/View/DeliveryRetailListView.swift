@@ -12,8 +12,6 @@ final class DeliveryRetailListView: UIView {
 
     let tableView = UITableView()
     let searchTableView = UITableView()
-    private var cardViews: [RetailCardView] = []
-    lazy var panGesture = UIPanGestureRecognizer()
     let header = DeliveryRetailListHeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 170))
     let searchViewBack = UIView()
     private var contentSizeObserver: NSKeyValueObservation?

@@ -23,7 +23,7 @@ final class CashBackListTableViewCell: UITableViewCell {
     private let adressLabel: UILabel = {
         let label = UILabel()
         label.font = .medium13
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         label.textColor = .pilicanLightGray
         return label
     }()
@@ -43,12 +43,14 @@ final class CashBackListTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.backgroundColor = .retailStatus
         label.layer.zPosition = 1
-        label.isHidden = true
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 10
         return label
     }()
 
+    private let dontWorkView = UIView()
+    private let closedView = UIView()
+    
     let closedLabel: UILabel = {
         let label = UILabel()
         label.text = "Закрыто"
@@ -65,6 +67,7 @@ final class CashBackListTableViewCell: UITableViewCell {
     private let workStatusView = LabelBackgroundView()
 
     private let discountView = LabelBackgroundView()
+    private let separatorView = UIView()
 
     private lazy var companyInfoVerticalStack = UIStackView(
         views: [UIView(), UIView(), companyNameLabel, adressLabel, UIView()],
@@ -78,12 +81,12 @@ final class CashBackListTableViewCell: UITableViewCell {
         spacing: 10)
 
     private lazy var horizontalStackView = UIStackView(
-        views: [companyInfoVerticalStack, UIView(), priceVerticalStack],
+        views: [companyInfoVerticalStack, UIView()],
         axis: .horizontal,
+        distribution: .fill,
         spacing: 8)
 
     private let dataView = UIView()
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
@@ -93,10 +96,17 @@ final class CashBackListTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         dataView.layer.cornerRadius = 10
+        if discountView.layer.sublayers == nil {
+            let primaryGradient: CAGradientLayer = .primaryGradient
+            primaryGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            discountView.layer.insertSublayer(primaryGradient, at: 0)
+        }
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setupInitialLayout()
+        configureView()
     }
 
     func setRetail(retail: Retail) {
@@ -132,11 +142,6 @@ final class CashBackListTableViewCell: UITableViewCell {
     }
 
     private func setupInitialLayout() {
-        dataView.addSubview(dontWorkLabel)
-        dontWorkLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-
         dataView.addSubview(closedLabel)
         closedLabel.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -150,19 +155,26 @@ final class CashBackListTableViewCell: UITableViewCell {
 
         dataView.addSubview(horizontalStackView)
         dataView.addSubview(companyImageView)
-
+        dataView.addSubview(discountView)
+        dataView.addSubview(workStatusView)
+        
+        discountView.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(10)
+        }
+        
+        workStatusView.snp.makeConstraints { make in
+            make.bottom.trailing.equalToSuperview().inset(10)
+        }
+        
         companyImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(10)
         }
-
-        companyNameLabel.snp.makeConstraints { (make) in
-            make.width.equalTo(210)
-        }
-
+        
+        separatorView.snp.makeConstraints { $0.width.equalTo(20) }
         horizontalStackView.snp.makeConstraints { make in
             make.leading.equalTo(companyImageView.snp.trailing).offset(10)
-            make.trailing.equalToSuperview().inset(10)
+            make.trailing.equalTo(workStatusView.snp.leading).offset(-10)
             make.top.bottom.equalToSuperview().inset(10)
         }
 

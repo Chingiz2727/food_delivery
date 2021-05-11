@@ -104,20 +104,24 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
         rootView.tableView.rx.contentOffset
             .subscribe(onNext: { [unowned self] offset in
-                self.rootView.setupHeader(point: offset.y)
+                if self.rootView.tableView.numberOfSections > 2 {
+                    self.rootView.setupHeader(point: offset.y)
+                }
             })
             .disposed(by: disposeBag)
 
         rootView.tableView.rx.willDisplayCell.asObservable()
             .subscribe(onNext: { [unowned self] _, indexPath in
 //                self.rootView.setupHeader(point: indexPath.section)
-                self.rootView.scrollSegmentToSection(section: indexPath.section)
+                if indexPath.section > 2 {
+                    self.rootView.scrollSegmentToSection(section: indexPath.section)
+                }
             })
             .disposed(by: disposeBag)
 
         rootView.segmentControl.rx.selectedIndex
             .subscribe(onNext: { [unowned self] section in
-                if self.rootView.tableView.numberOfSections != 0 {
+                if self.rootView.tableView.numberOfSections > 2 {
                     self.rootView.tableView.scrollToRow(at: .init(row: 0, section: section), at: .top, animated: true)
                 }
             })

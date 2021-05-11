@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 final class CameraView: UIView {
     let rotateCameraButton = UIButton()
@@ -10,6 +11,7 @@ final class CameraView: UIView {
     private let rectangleImageView = UIImageView()
     let contentView = UIView()
     let tableView = UITableView()
+    
     var drawerView: DrawerView!
     let searchView = SearchHeaderView()
 
@@ -26,6 +28,7 @@ final class CameraView: UIView {
 
     private func setupInitialLayout() {
         addSubview(contentView)
+        
         contentView.addSubview(rotateCameraButton)
         contentView.addSubview(flashLightButton)
         contentView.addSubview(identificatorButton)
@@ -102,6 +105,7 @@ final class CameraView: UIView {
         drawerView.containerView.backgroundColor = .white
         drawerView.animationParameters = .spring(mass: 1, stiffness: 200, dampingRatio: 0.5)
         drawerView.animationParameters = .spring(.default)
+        drawerView.keyboardDistanceFromTextField = 100
         drawerView.setState(.bottom, animated: true)
         addSubview(drawerView)
         drawerView.snp.makeConstraints { $0.edges.equalToSuperview() }

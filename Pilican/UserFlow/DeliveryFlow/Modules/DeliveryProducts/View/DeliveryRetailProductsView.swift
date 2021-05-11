@@ -44,21 +44,17 @@ final class DeliveryRetailProductsView: UIView {
 
     func setupHeader(point: CGFloat) {
         print(point)
-        if point > 510 {
-            UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseIn) { [weak self] in
-//                self?.headerHeightConstraint.constant = 0
-                self?.stickyHeaderView.isHidden = true
-//                self?.stickyHeaderView.stickyHeaderrHeightConstraint?.update(inset: 0)
+        if point > 310 {
+            UIView.animate(withDuration: 0.5, delay: 0.3, options: .transitionCurlUp) { [weak self] in
+//                self?.stickyHeaderView.isHidden = true
+                self?.headerHeightConstraint.constant = 0
             }
         } else {
-            UIView.animate(withDuration: 0.5, delay: 0.3, options: .showHideTransitionViews) { [weak self] in
-//                self?.headerHeightConstraint.constant = 310
-                self?.stickyHeaderView.isHidden = false
-//                self?.stickyHeaderrHeightConstraint?.update(inset: 310)
+            UIView.animate(withDuration: 0.5, delay: 0.3, options: .transitionCurlDown) { [weak self] in
+//                self?.stickyHeaderView.isHidden = false
+                self?.headerHeightConstraint.constant = 310
             }
         }
-//        stickyHeaderView.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
-//        self.stickyHeaderrHeightConstraint?.update(offset: 300 - point)
     }
 
     func scrollSegmentToSection(section: Int) {

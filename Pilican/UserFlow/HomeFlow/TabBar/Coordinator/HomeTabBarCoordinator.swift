@@ -10,12 +10,14 @@ public protocol HomeTabBarCoordinatorOutput: BaseCoordinator {
     func goToHomeWithDeeplink(action: DeepLinkAction)
     var onDeliveryTab: Callback? { get set }
     var onPopTap: Callback? { get set }
+    var onBusCameraTap: Callback? { get set }
 }
 
 final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput, TababbleCoordinator {
     var onTabBarItemNeedsToBeChanged: ((DeliveryTabBarItem) -> Void)?
 
     private let moduleFactory: HomeCoordinatorModuleFactory
+    var onBusCameraTap: Callback?
     var onDeliveryTab: Callback?
     var onPopTap: Callback?
     
@@ -44,12 +46,14 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
             case .delivery:
                 self?.showDelivery()
             case .bus:
-                self?.showCamera()
+//                self?.showCamera()
+                self?.onBusCameraTap?()
             case .volunteer:
                 self?.showAlert()
             }
         }
-        router.setRootModule(module)
+        
+        router.setRootModule(module, isNavigationBarHidden: true)
     }
 
     private func showAlert() {
@@ -89,6 +93,27 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         self.onDeliveryTab?()
     }
 
+    private func showBusCamera() {
+        var module = container.resolve(CameraModule.self)!
+        module.cameraActionType = .makePayment
+        module.paymentMaked = { [weak self] info in
+            self?.showPaymentPartner(info: info)
+        }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
+        module.howItWorkTapped = { [weak self] in
+            self?.showHowItWork()
+        }
+        module.retailTapped = { [weak self] retail in
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+        }
+        module.retailIdTapped = { [weak self] retail in
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+        }
+        router.push(module)
+    }
+    
     private func showCamera() {
         var module = container.resolve(CameraModule.self)!
         module.cameraActionType = .makePayment

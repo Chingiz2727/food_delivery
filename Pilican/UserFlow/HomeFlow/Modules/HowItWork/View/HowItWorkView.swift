@@ -36,7 +36,7 @@ class HowItWorkView: UIView {
         addSubview(dataView)
         dataView.snp.makeConstraints { (make) in
             make.width.equalTo(330)
-            make.height.equalToSuperview()
+            make.height.equalTo(400)
             make.centerX.centerY.equalToSuperview()
         }
         
@@ -68,6 +68,7 @@ class HowItWorkView: UIView {
     private func configureView() {
         dataView.backgroundColor = .howItWork
         dataView.layer.cornerRadius = 10
+        backgroundColor = .clear
         firstItem.configureItem(image: Images.firstItem.image, title: "- Сканируй QR код 'Pillikan' в любимых заведениях")
         secondItem.configureItem(image: Images.secondItem.image, title: "- Привяжи карту любого банка и оплачивай покупки с кэшбэком да 20%")
         thirdItem.configureItem(image: Images.thirdItem.image, title: "- Трать накопленные бонусы у любого партнера 'Pillikan'")

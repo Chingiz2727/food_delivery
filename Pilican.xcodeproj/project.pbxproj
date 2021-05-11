@@ -291,6 +291,7 @@
 		728434E9261D807300E21209 /* DeliveryRetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */; };
 		728434ED261D808400E21209 /* DeliveryRetailProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */; };
 		728434F2261D80AA00E21209 /* DeliveryRetailProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */; };
+		728F7F3426484F7E008C5DC3 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F7F3326484F7E008C5DC3 /* GradientView.swift */; };
 		7292A092263B26D40098E03B /* MyCardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7292A091263B26D40098E03B /* MyCardCoordinator.swift */; };
 		7292A096263B27CD0098E03B /* MyCardModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7292A095263B27CD0098E03B /* MyCardModuleFactory.swift */; };
 		72C5E4B62632583D00FEABA1 /* CardRemoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */; };
@@ -899,6 +900,7 @@
 		728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailHeaderView.swift; sourceTree = "<group>"; };
 		728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductsView.swift; sourceTree = "<group>"; };
 		728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductViewModel.swift; sourceTree = "<group>"; };
+		728F7F3326484F7E008C5DC3 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7292A091263B26D40098E03B /* MyCardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardCoordinator.swift; sourceTree = "<group>"; };
 		7292A095263B27CD0098E03B /* MyCardModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardModuleFactory.swift; sourceTree = "<group>"; };
 		72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRemoveResult.swift; sourceTree = "<group>"; };
@@ -3468,6 +3470,14 @@
 			path = DeliveryRetailProductViewModel;
 			sourceTree = "<group>";
 		};
+		728F7F3226484F70008C5DC3 /* GradientView */ = {
+			isa = PBXGroup;
+			children = (
+				728F7F3326484F7E008C5DC3 /* GradientView.swift */,
+			);
+			path = GradientView;
+			sourceTree = "<group>";
+		};
 		7292A090263B26BF0098E03B /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -4823,6 +4833,7 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				728F7F3226484F70008C5DC3 /* GradientView */,
 				A483E21925D40ABD006D2DAF /* AccessCode */,
 				A4E5815725D540E700EDC053 /* AppEnviroment */,
 				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
@@ -5992,6 +6003,7 @@
 				55253191262942E700888DEE /* FavoriteStatus.swift in Sources */,
 				72340C61262FC7B2000569D6 /* AddCardView.swift in Sources */,
 				A4D7644D25DA7F11009A6651 /* CityPickerViewDelegate.swift in Sources */,
+				728F7F3426484F7E008C5DC3 /* GradientView.swift in Sources */,
 				55AE8978261B302100D82489 /* PinCodeResponse.swift in Sources */,
 				A40B95E225DE32FD00E507FB /* HomeModule.swift in Sources */,
 				A475CC2325EF3ED700C596FB /* Extentsion+BoolToInt.swift in Sources */,
@@ -6485,7 +6497,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6568,7 +6580,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6712,7 +6724,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6739,7 +6751,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

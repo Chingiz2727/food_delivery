@@ -139,5 +139,25 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
 
         searchRetails.connect()
             .disposed(by: disposeBag)
+        
+        rootView.header.retailSliderId
+            .withLatestFrom(retailList.element) { id, retails in
+                    return retails.filter { $0.id == id }
+                }.subscribe(onNext: { [unowned self] retails in
+                    if let retail = retails.first {
+                        if retail.isWork == 1 {
+                            if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                                showBasketAlert {
+                                    self.dishList.products = []
+                                    self.dishList.wishDishList.onNext([])
+                                    self.onRetailDidSelect?(retail)
+                                }
+                            } else {
+                                self.onRetailDidSelect?(retail)
+                            }
+                        }
+                    }
+                })
+                .disposed(by: disposeBag)
     }
 }

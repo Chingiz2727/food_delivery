@@ -9,7 +9,7 @@ import UIKit
 
 class HomeCollectionFooterView: UICollectionReusableView {
     let button = PrimaryButton()
-    
+    var tapAction: Callback?
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayouts()
@@ -17,18 +17,25 @@ class HomeCollectionFooterView: UICollectionReusableView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setupInitialLayouts()
+        configureView()
+        button.isUserInteractionEnabled = true
     }
     
     private func setupInitialLayouts() {
         addSubview(button)
         button.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(10)
             make.left.right.equalToSuperview().inset(40)
             make.height.equalTo(40)
         }
+        button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
     }
     
+    @objc private func buttonTap() {
+        tapAction?()
+    }
     private func configureView() {
         button.setTitle("Посмотреть полный список", for: .normal)
     }

@@ -77,7 +77,7 @@ class RetailCollectionViewCell: UICollectionViewCell {
         spacing: 10)
 
     private lazy var horizontalStackView = UIStackView(
-        views: [companyInfoVerticalStack, UIView(), priceVerticalStack],
+        views: [companyInfoVerticalStack, UIView()],
         axis: .horizontal,
         spacing: 8)
 
@@ -90,6 +90,11 @@ class RetailCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 10
+        if discountView.layer.sublayers == nil {
+            let primaryGradient: CAGradientLayer = .primaryGradient
+            primaryGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            discountView.layer.insertSublayer(primaryGradient, at: 0)
+        }
     }
 
     required init?(coder: NSCoder) {
@@ -140,15 +145,25 @@ class RetailCollectionViewCell: UICollectionViewCell {
         }
         addSubview(horizontalStackView)
         addSubview(companyImageView)
+        addSubview(discountView)
+        addSubview(workStatusView)
         companyImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(10)
         }
 
+        discountView.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(10)
+        }
+        
+        workStatusView.snp.makeConstraints { make in
+            make.bottom.trailing.equalToSuperview().inset(10)
+//            make.width.equalTo(80)
+        }
         horizontalStackView.snp.makeConstraints { make in
             make.leading.equalTo(companyImageView.snp.trailing).offset(10)
-            make.trailing.equalToSuperview().inset(10)
             make.top.bottom.equalToSuperview().inset(10)
+            make.trailing.equalTo(workStatusView.snp.leading).offset(-10)
         }
 
         companyImageView.snp.makeConstraints { $0.size.equalTo(54) }

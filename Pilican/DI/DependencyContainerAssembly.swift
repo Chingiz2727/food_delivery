@@ -133,6 +133,7 @@ public final class DependencyContainerAssembly: Assembly {
                 cameraUsagePermession: cameraUsagePermission,
                 userSession: userSession,
                 viewModel: viewModel)
+            controller.navigationController?.navigationBar.isHidden = true
             return controller
         }
         container.register(DeepLinkActionFactory.self) { _ in

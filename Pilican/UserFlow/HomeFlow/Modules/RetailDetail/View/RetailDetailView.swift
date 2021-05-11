@@ -60,12 +60,6 @@ final class RetailDetailView: UIView {
         headerView.setRetail(retail: retail)
         socialLinkView.setup(links: retail.networkList)
         workView.setupData(workDay: retail.workDays, workCalendar: workCalendar)
-        var slideImages: [ImageSource] = []
-        guard let images = retail.images else { return }
-        for i in images {
-            slideImages.append(ImageSource(image: UIImage(named: i.imgUrl ?? "") ?? UIImage()))
-        }
-        sliderView.setImageInputs(slideImages)
         retailDescriptionView.setupData(retail: retail)
         deliveryView.setData(retail: retail)
         identificatorView.setData(retail: retail)
@@ -75,6 +69,11 @@ final class RetailDetailView: UIView {
         } else {
             cashBackView.setData(retail: retail)
         }
+        guard let images = retail.images else { return }
+        let imgSource = images.compactMap { KingfisherSource(urlString: $0.imgUrl ?? "")}
+        
+        sliderView.setImageInputs(imgSource)
+        
     }
 
     private func setupInitialLayout() {

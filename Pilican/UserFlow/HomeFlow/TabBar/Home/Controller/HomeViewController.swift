@@ -30,9 +30,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
-        title = "Главная"
         bindViewModel()
-        navigationController?.navigationBar.isHidden = true
     }
 
     private func bindView() {
@@ -41,6 +39,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
         rootView.collectionView.registerClassForFooterView(HomeCollectionFooterView.self)
         rootView.searchCollectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.layout.headerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 270)
+        rootView.layout.footerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 70)
     }
 
     private func bindViewModel() {

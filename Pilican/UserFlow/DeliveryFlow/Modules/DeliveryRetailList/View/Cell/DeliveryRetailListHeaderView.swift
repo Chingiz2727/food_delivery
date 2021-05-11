@@ -10,10 +10,10 @@ import RxSwift
 import Kingfisher
 
 final class DeliveryRetailListHeaderView: UITableViewHeaderFooterView {
-    
+    var retailSliderId: PublishSubject<Int> = .init()
     private let carouselView = ImageSlideshow()
     private let disposeBag = DisposeBag()
-    
+    private var currentSliders: [Slider] = []
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -31,9 +31,11 @@ final class DeliveryRetailListHeaderView: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         setupInitialLayout()
         configureView()
+        
     }
     
     func setupSlider(sliders: [Slider]) {
+        currentSliders = sliders
         carouselView.setImageInputs( sliders.map { KingfisherSource(url: URL(string: $0.imgLogo )!) })
     }
 
@@ -48,9 +50,17 @@ final class DeliveryRetailListHeaderView: UITableViewHeaderFooterView {
         carouselView.snp.makeConstraints { make in
             make.height.equalTo(130)
         }
+        carouselView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(printSelectedIndex))
+        carouselView.addGestureRecognizer(gesture)
 }
+    @objc private func printSelectedIndex() {
+        let retailId = currentSliders[carouselView.currentPage].retailId
+        self.retailSliderId.onNext(retailId)
+    }
 
     private func configureView() {
+        
         carouselView.circular = true
         carouselView.slideshowInterval = 3
         carouselView.contentScaleMode = .scaleAspectFill
