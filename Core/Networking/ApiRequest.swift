@@ -55,11 +55,6 @@ public struct ApiRequest: ApiRequestable {
                 if 200..<300 ~= response.statusCode { return .success }
                 
                 guard let apiError = try? JSONDecoder().decode(ApiError.self, from: data) else {
-                    if response.statusCode == 401 {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            logout.forceLogout()
-                        }
-                    }
                     return .failure(ApiResponseError.badServerResponse)
                 }
                 print(apiError)
