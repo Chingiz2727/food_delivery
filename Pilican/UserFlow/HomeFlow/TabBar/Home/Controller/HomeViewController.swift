@@ -30,20 +30,20 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
-        title = "Главная"
         bindViewModel()
-        navigationController?.navigationBar.isHidden = true
     }
 
     private func bindView() {
         rootView.collectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.collectionView.registerClassForHeaderView(HomeCollectionViewHeaderView.self)
+        rootView.collectionView.registerClassForFooterView(HomeCollectionFooterView.self)
         rootView.searchCollectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.layout.headerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 270)
+        rootView.layout.footerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 70)
     }
 
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(())), searchText: rootView.searchBar.rx.text.unwrap()))
+        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()), rootView.rx.retryAction), searchText: rootView.searchBar.rx.text.unwrap()))
 
         let slider = output.slider.publish()
         let retailList = output.retailList.publish()
@@ -68,12 +68,13 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
             .bind(to: rootView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
+        
         retailList.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)
 
         retailList.errors
-            .bind(to: rx.error)
+            .bind(to: rootView.rx.error)
             .disposed(by: disposeBag)
 
         retailList.connect()

@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.shadowImage = UIImage()
         navigationBar.titleTextAttributes = Constants.titleTextAttributes
         navigationBar.tintColor = .pilicanBlack
-        navigationBar.barTintColor = .background
+        navigationBar.barTintColor = .pilicanWhite
     }
 
     private func getMB(_ value: Int) -> Int {

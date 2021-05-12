@@ -18,10 +18,12 @@ class FavoritesViewController: ViewController, ViewHolder, FavoritesModule {
     }
 
     private let viewModel: FavoritesViewModel
+    private let dishList: DishList
     private let disposeBag = DisposeBag()
 
-    init(viewModel: FavoritesViewModel) {
+    init(viewModel: FavoritesViewModel, dishList: DishList) {
         self.viewModel = viewModel
+        self.dishList = dishList
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -55,6 +57,17 @@ class FavoritesViewController: ViewController, ViewHolder, FavoritesModule {
         rootView.tableView.rx.itemSelected
             .withLatestFrom(favorites.element) { $1[$0.row] }
             .bind { [unowned self] retail in
+                    if retail.isWork == 1 {
+                        if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                            showBasketAlert {
+                                self.dishList.products = []
+                                self.dishList.wishDishList.onNext([])
+                                self.onRetailDidSelect?(retail)
+                            }
+                        } else {
+                            self.onRetailDidSelect?(retail)
+                        }
+                    }
                 self.onRetailDidSelect?(retail)
             }.disposed(by: disposeBag)
 

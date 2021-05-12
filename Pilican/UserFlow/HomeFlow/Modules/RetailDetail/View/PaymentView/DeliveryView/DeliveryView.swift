@@ -4,7 +4,7 @@ final class DeliveryView: UIControl {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = .description2
+        label.font = .medium12
         label.text = "Здесь есть онлайн"
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .left
@@ -14,7 +14,7 @@ final class DeliveryView: UIControl {
     private let discountTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = .description3
+        label.font = .light12
         label.textAlignment = .left
         label.text = "Доставка"
         return label
@@ -23,7 +23,7 @@ final class DeliveryView: UIControl {
     private let discountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanWhite
-        label.font = .description2
+        label.font = .medium13
         label.textAlignment = .center
         label.text = "15%"
         return label
@@ -32,9 +32,9 @@ final class DeliveryView: UIControl {
     private let cashbackLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanWhite
-        label.font = .description3
+        label.font = .medium13
         label.textAlignment = .center
-        label.text = "кэшбек"
+        label.text = "кэшбэк"
         return label
     }()
 
@@ -70,7 +70,7 @@ final class DeliveryView: UIControl {
     }
 
     func setData(retail: Retail) {
-        discountLabel.text = "\(retail.dlvCashBack)"
+        discountLabel.text = "\(retail.dlvCashBack) %"
     }
 
     private func setupInitialLayout() {

@@ -4,7 +4,7 @@ final class IdentificatorView: UIControl {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = .description3
+        label.font = .light12
         label.textAlignment = .left
         label.text = "Идентификатор для оплаты"
         return label
@@ -13,7 +13,7 @@ final class IdentificatorView: UIControl {
     private let identificatorLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanBlack
-        label.font = .description2
+        label.font = .medium12
         label.textAlignment = .left
         label.text = "312"
         return label

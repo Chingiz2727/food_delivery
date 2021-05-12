@@ -2,7 +2,7 @@ import Cosmos
 import UIKit
 
 final class RetailDetailHeaderView: UIView {
-    
+
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -22,7 +22,7 @@ final class RetailDetailHeaderView: UIView {
 
     private let companyAdressLabel: UILabel = {
         let label = UILabel()
-        label.font = .description2
+        label.font = .medium13
         label.numberOfLines = 1
         label.textColor = .pilicanLightGray
         return label
@@ -83,7 +83,7 @@ final class RetailDetailHeaderView: UIView {
     }
 
     private func setupWorkStatusView(retail: Retail) {
-        if let status = WorkStatus(rawValue: retail.payIsWork ?? 1) {
+        if let status = WorkStatus(rawValue: retail.payIsWork) {
         workStatusView.setTitle(title: status.title)
         workStatusView.configureView(backColor: status.backColor, textColor: status.textColor)
         }
@@ -102,6 +102,7 @@ final class RetailDetailHeaderView: UIView {
             make.trailing.equalToSuperview().inset(10)
             make.top.bottom.equalToSuperview().inset(10)
         }
+        
         logoImageView.snp.makeConstraints { $0.size.equalTo(54) }
         let primaryGradient: CAGradientLayer = .primaryGradient
         primaryGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)

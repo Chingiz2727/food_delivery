@@ -23,7 +23,7 @@ final class DeliveryMenuModuleFactory {
     func makeFavorites() -> FavoritesModule {
         let apiService = container.resolve(ApiService.self)!
         let viewModel = FavoritesViewModel(apiService: apiService)
-        return FavoritesViewController(viewModel: viewModel)
+        return FavoritesViewController(viewModel: viewModel, dishList: container.resolve(DishList.self)!)
     }
     
     func makeMyCards() -> MyCardsModule {

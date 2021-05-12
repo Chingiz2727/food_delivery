@@ -28,6 +28,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     private let foodAmountSubject: BehaviorSubject<Int> = .init(value: 0)
     private let deliveryAmountSubject: BehaviorSubject<Int> = .init(value: 0)
     private let useCashbackSubject: BehaviorSubject<Bool> = .init(value: false)
+    
     init(viewModel: MakeOrderViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -193,7 +194,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         rootView.bonusChoiceView.choiceSwitch.rx.isOn.map { !$0 }
             .bind(to: rootView.bonusChoiceView.fullPayBonusStackView.rx.isHidden)
             .disposed(by: disposeBag)
-        useCashbackSubject.onNext(true)
+        rootView.bonusChoiceView.choiceSwitch.rx.isOn.bind(to: useCashbackSubject).disposed(by: disposeBag)
         rootView.addressView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.onMapShowDidSelect?()

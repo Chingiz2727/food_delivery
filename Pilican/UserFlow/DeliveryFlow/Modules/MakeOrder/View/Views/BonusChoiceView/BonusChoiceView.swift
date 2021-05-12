@@ -47,12 +47,6 @@ class BonusChoiceView: UIView {
         axis: .vertical,
         spacing: 2)
 
-    private lazy var horizontalStackView = UIStackView(
-        views: [bonusImageView, UIView(), textStackView, UIView(), UIView(), choiceSwitch],
-        axis: .horizontal,
-        distribution: .equalSpacing,
-        spacing: 10)
-
     private let bonusDecreaseTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -85,7 +79,7 @@ class BonusChoiceView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .medium12
-        label.text = "балл"
+        label.text = "бонус"
         return label
     }()
 
@@ -149,10 +143,22 @@ class BonusChoiceView: UIView {
             make.left.bottom.right.equalToSuperview().inset(10)
         }
 
-        containerView.addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { make in
+        containerView.addSubview(bonusImageView)
+        bonusImageView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview().inset(4)
-            make.leading.trailing.equalToSuperview().inset(10)
+            make.left.equalToSuperview().inset(10)
+        }
+
+        containerView.addSubview(textStackView)
+        textStackView.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview().inset(4)
+            make.left.equalTo(bonusImageView.snp.right).inset(-10)
+        }
+
+        containerView.addSubview(choiceSwitch)
+        choiceSwitch.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview().inset(4)
+            make.right.equalToSuperview().inset(10)
         }
     }
 

@@ -11,8 +11,8 @@ class PriceView: UIView {
     
     private let containerView = UIView()
     
-    let priceTextField: UITextField = {
-        let textField = UITextField()
+    let priceTextField: LimitedLengthField = {
+        let textField = LimitedLengthField()
         textField.placeholder = "Введите сумму оплаты"
         textField.font = .medium16
         textField.keyboardType = .numberPad
@@ -70,7 +70,7 @@ class PriceView: UIView {
             make.top.equalToSuperview().inset(10)
             make.right.equalToSuperview().inset(16)
             make.height.equalTo(37)
-            make.width.equalTo(47)
+            make.width.equalTo(64)
         }
 
         cashbackView.addSubview(cashbackValueLabel)
@@ -92,5 +92,16 @@ class PriceView: UIView {
 
         cashbackView.backgroundColor = .primary
         cashbackView.layer.cornerRadius = 6
+    }
+}
+
+class LimitedLengthField: UITextField {
+    var maxLength: Int = 7
+    override func willMove(toSuperview newSuperview: UIView?) {
+        addTarget(self, action: #selector(editingChanged), for: .editingChanged)
+        editingChanged()
+    }
+    @objc func editingChanged() {
+        text = String(text!.prefix(maxLength))
     }
 }

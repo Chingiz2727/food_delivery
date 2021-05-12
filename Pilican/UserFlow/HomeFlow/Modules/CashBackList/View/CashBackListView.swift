@@ -21,7 +21,7 @@ final class CashBackListView: UIView {
         addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.bottom.equalTo(safeAreaLayoutGuide).inset(10)
+            make.top.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
 

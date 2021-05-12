@@ -43,7 +43,10 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
 
     private func bindViewModel() {
         rootView.searchTableView.registerClassForCell(DeliveryRetailListTableViewCell.self)
-        let output = viewModel.transform(input: .init(loadRetailList: .just(()), loadSlider: .just(()), text: rootView.searchBar.rx.text.unwrap()))
+        let output = viewModel.transform(input: .init(
+                                            loadRetailList: Observable.merge(.just(()), rootView.rx.retryAction),
+                                            loadSlider: Observable.merge(.just(()), rootView.rx.retryAction),
+                                            text: rootView.searchBar.rx.text.unwrap()))
         
         let searchRetails = output.searchRetails.publish()
 
@@ -51,6 +54,10 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
 
         slider.loading
             .bind(to: ProgressView.instance.rx.loading)
+            .disposed(by: disposeBag)
+        
+        slider.errors
+            .bind(to: rootView.rx.error)
             .disposed(by: disposeBag)
         
         slider.subscribe(onNext: { [unowned self] sliders in
@@ -72,7 +79,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             .disposed(by: disposeBag)
 
         retailList.errors
-            .bind(to: rx.error)
+            .bind(to: rootView.rx.error)
             .disposed(by: disposeBag)
 
         retailList.element
@@ -134,10 +141,30 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             .disposed(by: disposeBag)
 
         searchRetails.errors
-            .bind(to: rx.error)
+            .bind(to: rootView.rx.error)
             .disposed(by: disposeBag)
 
         searchRetails.connect()
             .disposed(by: disposeBag)
+        
+        rootView.header.retailSliderId
+            .withLatestFrom(retailList.element) { id, retails in
+                    return retails.filter { $0.id == id }
+                }.subscribe(onNext: { [unowned self] retails in
+                    if let retail = retails.first {
+                        if retail.isWork == 1 {
+                            if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+                                showBasketAlert {
+                                    self.dishList.products = []
+                                    self.dishList.wishDishList.onNext([])
+                                    self.onRetailDidSelect?(retail)
+                                }
+                            } else {
+                                self.onRetailDidSelect?(retail)
+                            }
+                        }
+                    }
+                })
+                .disposed(by: disposeBag)
     }
 }

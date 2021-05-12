@@ -13,7 +13,7 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
 
     private let carouselView = ImageSlideshow()
     private(set) var disposeBag = DisposeBag()
-    var showTag: ((Int)->Void)?
+    var showTag: ((Int) -> Void)?
     
     var didSelectTag: [UIControl: Int] = [:]
     

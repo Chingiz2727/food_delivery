@@ -21,7 +21,7 @@ final class PayHistoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .pilicanBlack
         label.font = UIFont.book10
-        label.text = "С карты - 1 100тг, с балла 130 балл"
+        label.text = "С карты - 1 100тг, 130 бонусов"
         return label
     }()
 

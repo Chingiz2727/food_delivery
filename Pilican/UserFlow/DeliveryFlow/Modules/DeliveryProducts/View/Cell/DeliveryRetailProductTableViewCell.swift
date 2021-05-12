@@ -3,7 +3,7 @@ import UIKit
 
 class DeliveryRetailProductTableViewCell: UITableViewCell {
     private let backView = UIView()
-    
+
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .heading2
@@ -14,12 +14,12 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
     private let deliveryLine = UIView()
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .medium12
-        label.textColor = .pilicanBlack
+        label.font = .book14
+        label.textColor = .pilicanGray
         label.numberOfLines = 0
         return label
     }()
-    
+
     private let productImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
@@ -45,7 +45,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         stackView.spacing = 5
         return stackView
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel, UIView(), priceStackView])
         stackView.distribution = .fill
@@ -85,7 +85,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         nameLabel.text = product.name
         descriptionLabel.text = product.composition
         buttonsLabel.setDish(companyDish: product)
-        priceLabel.text = "\(product.price)"
+        priceLabel.text = "\(product.price) 〒"
         deliveryLine.isHidden = product.shoppingCount ?? 0 == 0
 
         productImage.kf.setImage(with: URL(string: product.imgLogo ?? "")!)

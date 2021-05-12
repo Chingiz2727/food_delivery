@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 
 final class CameraView: UIView {
     let rotateCameraButton = UIButton()
@@ -10,6 +11,7 @@ final class CameraView: UIView {
     private let rectangleImageView = UIImageView()
     let contentView = UIView()
     let tableView = UITableView()
+    
     var drawerView: DrawerView!
     let searchView = SearchHeaderView()
 
@@ -26,6 +28,7 @@ final class CameraView: UIView {
 
     private func setupInitialLayout() {
         addSubview(contentView)
+        
         contentView.addSubview(rotateCameraButton)
         contentView.addSubview(flashLightButton)
         contentView.addSubview(identificatorButton)
@@ -64,14 +67,14 @@ final class CameraView: UIView {
 
         identificatorButton.snp.makeConstraints { make in
             make.top.equalTo(howItWorkButton.snp.bottom).offset(30)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview().inset(64)
             make.height.equalTo(40)
         }
 
         closeButton.snp.makeConstraints { make in
             make.size.equalTo(25)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(30)
+            make.top.equalTo(identificatorButton.snp.bottom).offset(32)
         }
         tableView.registerClassForCell(CashBackListTableViewCell.self)
     }
@@ -82,6 +85,9 @@ final class CameraView: UIView {
         titleLabel.textColor = .pilicanWhite
         howItWorkButton.setTitle("Как это работает?", for: .normal)
         identificatorButton.setTitle("ИДЕНТИФИКАТОР", for: .normal)
+        identificatorButton.layer.cornerRadius = 22
+        identificatorButton.backgroundColor = .pilicanWhite
+        identificatorButton.setTitleColor(.primary, for: .normal)
         closeButton.setImage(Images.close.image, for: .normal)
         flashLightButton.setImage(Images.flash.image, for: .normal)
         rotateCameraButton.setImage(Images.rotate.image, for: .normal)
@@ -99,11 +105,13 @@ final class CameraView: UIView {
         drawerView.containerView.backgroundColor = .white
         drawerView.animationParameters = .spring(mass: 1, stiffness: 200, dampingRatio: 0.5)
         drawerView.animationParameters = .spring(.default)
+        drawerView.keyboardDistanceFromTextField = 100
         drawerView.setState(.bottom, animated: true)
         addSubview(drawerView)
         drawerView.snp.makeConstraints { $0.edges.equalToSuperview() }
         drawerView.setState(.dismissed, animated: true)
         drawerView.isHidden = false
         drawerView.headerView.setHeightConstraint(70)
+        tableView.separatorStyle = .none
     }
 }

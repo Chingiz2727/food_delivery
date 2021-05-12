@@ -9,11 +9,12 @@ final class HomeCoordinator: BaseCoordinator {
     private var tabRootContainers: [TabableRootControllerAndCoordinatorContainer] = []
     private var tabBarController: HomeTabBarModule
     var tapPop: Callback?
+    var cameraCalllBack: Callback?
+    
     override init(router: Router, container: DependencyContainer) {
         coordinatorFactory = HomeTabBarCoordinatorFactory(container: container, router: router)
         let userInfoStorage = container.resolve(UserInfoStorage.self)!
         let controller = HomeTabBarViewController(userInfoStorage: userInfoStorage)
-        controller.navigationController?.navigationBar.isHidden = true
         tabBarController = controller
         super.init(router: router, container: container)
     }
@@ -37,6 +38,7 @@ final class HomeCoordinator: BaseCoordinator {
         tabBarController.notifyMenuTap = { [weak self] in
             self?.showNotificationList()
         }
+        
         let logoutFlow = container.resolve(DeliveryLogoutStateObserver.self)!
         logoutFlow.setCoordinator(self)
         let viewControllers = tabRootContainers.map { $0.viewController }
@@ -54,6 +56,10 @@ final class HomeCoordinator: BaseCoordinator {
         }
         tapPop = { [weak self] in
             homeCoordinator.router.popToRootModule()
+        }
+        
+        homeCoordinator.onBusCameraTap = { [weak self] in
+            self?.showCamera()
         }
         homeCoordinator.onDeliveryTab = { [weak self] in
             self?.startDeliveryFlow()
@@ -111,6 +117,9 @@ final class HomeCoordinator: BaseCoordinator {
         var module = coordinatorFactory.makePayPartner(viewModel: viewModel)
         module.openSuccessPayment = { [weak self] retail, price, cashback in
             self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)
+        }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
         }
         router.push(module)
     }

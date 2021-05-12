@@ -4,28 +4,30 @@ final class PayAmountView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .heading2
+        label.font = .semibold20
         label.textAlignment = .left
-        label.text = "Цены в kzt, вкл. налоги"
+        label.text = "Сумма к оплате"
         return label
     }()
 
     private let totalLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .heading2
+        label.font = .semibold18
         label.textAlignment = .left
-        label.text = "Всего"
+        label.text = "Итого"
         return label
     }()
-    
+
+    let dividerLine = UIView()
+
     let costLabel: UILabel = {
         let label = UILabel()
         label.textColor = .primary
         label.textAlignment = .left
         return label
     }()
-    
+
     let payButton = PrimaryButton()
     let orderCost = PayValueView()
     let deliveryCost = PayValueView()
@@ -33,18 +35,18 @@ final class PayAmountView: UIView {
 
     private lazy var stackView = UIStackView(
         views: [totalLabel, costLabel],
-        axis: .vertical,
+        axis: .horizontal,
         spacing: 10)
 
     private lazy var horizontalStackView = UIStackView(
         views: [stackView, UIView(), payButton],
-        axis: .horizontal,
-        spacing: 30)
+        axis: .vertical,
+        distribution: .fillEqually)
 
     private lazy var fullInfoStackView = UIStackView(
-        views: [titleLabel, orderCost, deliveryCost, extraPayment, horizontalStackView],
+        views: [titleLabel, orderCost, deliveryCost, extraPayment, UIView(), dividerLine, UIView(), stackView, UIView(), payButton],
         axis: .vertical,
-        spacing: 3)
+        spacing: 6)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,15 +84,25 @@ final class PayAmountView: UIView {
 
     private func setupInitialLayout() {
         addSubview(fullInfoStackView)
-        fullInfoStackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
+        fullInfoStackView.snp.makeConstraints { (make) in
+            make.top.left.bottom.right.equalToSuperview().inset(10)
+        }
+        dividerLine.snp.makeConstraints { (make) in
+            make.height.equalTo(1)
+            make.left.right.equalToSuperview().inset(6)
+        }
         payButton.snp.makeConstraints { make in
-            make.width.equalTo(160)
+            make.left.right.equalToSuperview().inset(6)
+            make.height.equalTo(54)
         }
         backgroundColor = .white
     }
 
     private func configureView() {
-        payButton.setTitle("Оформить заказ", for: .normal)
+        payButton.setTitle("Оплатить заказ", for: .normal)
+        payButton.titleLabel?.font = .semibold18
         layer.cornerRadius = 10
+        payButton.layer.cornerRadius = 12
+        dividerLine.backgroundColor = .pilicanGray
     }
 }

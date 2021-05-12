@@ -12,8 +12,8 @@ final class IdentificatorPayControl: UIControl {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .pilicanWhite
-        label.font = .description2
-        label.text = "СДЕЛАТЬ ОПЛАТУ"
+        label.font = .medium13
+        label.text = "Сделать оплату"
         label.adjustsFontSizeToFitWidth = true
         return label
     }()

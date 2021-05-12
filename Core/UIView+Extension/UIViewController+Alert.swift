@@ -45,7 +45,7 @@ public extension UIViewController {
     }
     
     func showOkAlert(handler: @escaping () -> Void) {
-        let controller = UIAlertController(title: "", message: "Ваш ответ принят!", preferredStyle: .alert)
+        let controller = UIAlertController(title: "", message: "Благодарим вас за обращение.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Закрыть", style: .default) { (alert) in
             controller.dismiss(animated: true, completion: handler)}
         controller.addAction(action)

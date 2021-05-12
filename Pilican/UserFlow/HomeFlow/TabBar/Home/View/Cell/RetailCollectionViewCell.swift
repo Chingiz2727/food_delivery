@@ -21,7 +21,7 @@ class RetailCollectionViewCell: UICollectionViewCell {
 
     private let adressLabel: UILabel = {
         let label = UILabel()
-        label.font = .description2
+        label.font = .medium13
         label.numberOfLines = 1
         label.textColor = .pilicanLightGray
         return label
@@ -50,7 +50,7 @@ class RetailCollectionViewCell: UICollectionViewCell {
 
     let closedLabel: UILabel = {
         let label = UILabel()
-        label.text = "Заведение закрыто"
+        label.text = "Закрыто"
         label.font = .semibold24
         label.layer.zPosition = 1
         label.textAlignment = .center
@@ -66,7 +66,7 @@ class RetailCollectionViewCell: UICollectionViewCell {
     private let discountView = LabelBackgroundView()
 
     private lazy var companyInfoVerticalStack = UIStackView(
-        views: [companyNameLabel, adressLabel, companyTypeLabel],
+        views: [UIView(), UIView(), companyNameLabel, adressLabel, UIView()],
         axis: .vertical,
         spacing: 6
     )
@@ -74,10 +74,10 @@ class RetailCollectionViewCell: UICollectionViewCell {
     private lazy var priceVerticalStack = UIStackView(
         views: [discountView, UIView(), workStatusView],
         axis: .vertical,
-        spacing: 15)
+        spacing: 10)
 
     private lazy var horizontalStackView = UIStackView(
-        views: [companyInfoVerticalStack, UIView(), priceVerticalStack],
+        views: [companyInfoVerticalStack, UIView()],
         axis: .horizontal,
         spacing: 8)
 
@@ -90,6 +90,11 @@ class RetailCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 10
+        if discountView.layer.sublayers == nil {
+            let primaryGradient: CAGradientLayer = .primaryGradient
+            primaryGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+            discountView.layer.insertSublayer(primaryGradient, at: 0)
+        }
     }
 
     required init?(coder: NSCoder) {
@@ -140,16 +145,27 @@ class RetailCollectionViewCell: UICollectionViewCell {
         }
         addSubview(horizontalStackView)
         addSubview(companyImageView)
+        addSubview(discountView)
+        addSubview(workStatusView)
         companyImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(10)
         }
 
+        discountView.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(10)
+        }
+        
+        workStatusView.snp.makeConstraints { make in
+            make.bottom.trailing.equalToSuperview().inset(10)
+//            make.width.equalTo(80)
+        }
         horizontalStackView.snp.makeConstraints { make in
             make.leading.equalTo(companyImageView.snp.trailing).offset(10)
-            make.trailing.equalToSuperview().inset(10)
             make.top.bottom.equalToSuperview().inset(10)
+            make.trailing.equalTo(workStatusView.snp.leading).offset(-10)
         }
+
         companyImageView.snp.makeConstraints { $0.size.equalTo(54) }
         let primaryGradient: CAGradientLayer = .primaryGradient
         primaryGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)

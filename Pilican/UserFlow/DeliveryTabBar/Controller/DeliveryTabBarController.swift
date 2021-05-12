@@ -50,6 +50,7 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
         
         activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
             overlayViews.removeAll()
+            myOrders.map { $0.contactless}
             myOrders.forEach { order in
                 let v = RetailCardView()
                 let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"
@@ -89,15 +90,13 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
 
             view.addSubview(v)
 
-            v.frame = .init(x: 0,
-                            y: 0,
+            v.frame = .init(x: 10,
+                            y: 100,
                             width: 70,
                             height: 70)
 
             v.layer.borderWidth = 0.5
             v.layer.borderColor = UIColor.primary.cgColor
-
-            v.snp.makeConstraints { $0.size.equalTo(70) }
 
             v.layer.cornerRadius = 10.2
             v.isUserInteractionEnabled = true

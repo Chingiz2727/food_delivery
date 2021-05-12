@@ -4,7 +4,7 @@ import SnapKit
 import UIKit
 
 final class DeliveryRetailHeaderView: UIView {
-    
+
     private let favButtonHeight: CGFloat = 30
     private let imageHeight: CGFloat = 20
     private let deliveryImageSize: CGFloat = 30
@@ -19,22 +19,22 @@ final class DeliveryRetailHeaderView: UIView {
 
     private let companyNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .semibold14
+        label.font = .semibold16
         label.numberOfLines = 0
         return label
     }()
 
     private let companyAdressLabel: UILabel = {
         let label = UILabel()
-        label.font = .book12
+        label.font = .book14
         label.numberOfLines = 0
         return label
     }()
 
     private let workTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = .book10
-        label.textAlignment = .center
+        label.font = .book12
+        label.textAlignment = .left
         label.numberOfLines = 2
         return label
     }()
@@ -55,7 +55,7 @@ final class DeliveryRetailHeaderView: UIView {
 
     private lazy var infoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [labelStackView, workTimeLabel, favouriteButton])
-        stackView.spacing = 5
+        stackView.spacing = 1
         stackView.axis = .horizontal
         stackView.distribution = .fill
         return stackView
@@ -80,7 +80,7 @@ final class DeliveryRetailHeaderView: UIView {
 
     private let deliveryImage: UIImageView = {
         let image = UIImageView()
-        image.image = Images.delivery.image
+        image.image = Images.deliver.image
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -89,13 +89,13 @@ final class DeliveryRetailHeaderView: UIView {
         let label = UILabel()
         label.text = "Доставка \n30-60 мин"
         label.numberOfLines = 0
-        label.font = .description3
+        label.font = .book10
         return label
     }()
 
     private lazy var deliveryStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [deliveryImage, deliveryTitle])
-        stackView.spacing = 2
+        stackView.spacing = 4
         stackView.axis = .horizontal
         stackView.distribution = .fill
         return stackView

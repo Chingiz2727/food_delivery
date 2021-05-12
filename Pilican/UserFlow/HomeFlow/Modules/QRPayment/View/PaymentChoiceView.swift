@@ -11,7 +11,7 @@ class PaymentChoiceView: UIView {
     
     private let payChoiceTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Потратить Баллы"
+        label.text = "Потратить бонусы"
         label.font = .book16
         label.textColor = .pilicanGray
         label.textAlignment = .center
@@ -45,7 +45,7 @@ class PaymentChoiceView: UIView {
         // swiftlint:disable line_length
         attributedText.append(NSAttributedString(string: " \(cashback)", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.primary, NSMutableAttributedString.Key.font: UIFont.semibold16]))
 
-        attributedText.append(NSAttributedString(string: " баллов", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.pilicanBlack]))
+        attributedText.append(NSAttributedString(string: " бонусов", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.pilicanBlack]))
         payChoiceCashbackLabel.attributedText = attributedText
     }
 

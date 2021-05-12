@@ -9,6 +9,8 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
     var bonusTap: Callback?
     var notifyMenuTap: Callback?
     let homeTabBar = HomeTabBar()
+    let qrScanButton = QRButton()
+
     private let tabView = HomeTabView()
     private let userInfoStorage: UserInfoStorage
     private let disposeBag = DisposeBag()
@@ -43,12 +45,21 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
     private func setupInitialLayout() {
         setValue(homeTabBar, forKey: "tabBar")
+        view.addSubview(qrScanButton)
+        qrScanButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(homeTabBar.snp.top)
+            make.size.equalTo(70)
+
+        }
+        
 //        view.addSubview(tabView)
 //        tabView.snp.makeConstraints { $0.edges.equalTo(homeTabBar) }
     }
 
     private func bindView() {
-        homeTabBar.tabView.qrScanButton.rx.tap
+
+        qrScanButton.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.qrCodeTap?()
             })

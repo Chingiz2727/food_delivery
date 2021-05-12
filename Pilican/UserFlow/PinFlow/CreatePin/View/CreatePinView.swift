@@ -17,7 +17,7 @@ final class CreatePinView: UIView {
         label.textColor = .gray
         label.font = .medium14
         label.textAlignment = .center
-        label.text = "Вы будете использовать этоn пин код для входа"
+        label.text = "Вы будете использовать этот пин код для входа"
         return label
     }()
 
@@ -45,7 +45,6 @@ final class CreatePinView: UIView {
         codeView.deleteButtonAction = .deleteCurrentAndMoveToPrevious
         codeView.activeFieldCornerRadius = 16
         codeView.activeBorderLineColor = .primary
-        codeView.becomeFirstResponderAtIndex = 0
         codeView.keyboardAppearance = .light
         codeView.secureCharacter = "\u{25CF}"
         codeView.textColor = .white

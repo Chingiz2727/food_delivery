@@ -8,6 +8,14 @@ extension CAGradientLayer {
         layer.endPoint = CGPoint(x: 0, y: 1)
         return layer
     }()
+    
+    static let closedGradient: CAGradientLayer = {
+        let layer = CAGradientLayer()
+        layer.colors = [UIColor.primary.withAlphaComponent(1), UIColor.white.withAlphaComponent(0)]
+        layer.startPoint = CGPoint(x: 1, y: 0)
+        layer.endPoint = CGPoint(x: 0, y: 1)
+        return layer
+    }()
 
     static let greenGradient: CAGradientLayer = {
         let layer = CAGradientLayer()

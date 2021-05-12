@@ -3,7 +3,7 @@ import UIKit
 final class ShowMapViewUIControl: UIControl {
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .heading2
+        label.font = .semibold16
         label.text = "Показать адрес на карте"
         return label
     }()

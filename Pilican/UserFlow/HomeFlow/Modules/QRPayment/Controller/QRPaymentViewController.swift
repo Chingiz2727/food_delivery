@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 
 class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
+    var closeButton: CloseButton?
+    
     var openSuccessPayment: OpenSuccesPayment?
     
     typealias RootViewType = QRPaymentView
@@ -142,5 +144,9 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         epayAmount = amountByBonus
         epayAmountSubject.onNext(Double(epayAmount))
         return (String(cashBack), String(amountByBonus), String(spendBonusAmount))
+    }
+    
+    override func customBackButtonDidTap() {
+        closeButton?()
     }
 }

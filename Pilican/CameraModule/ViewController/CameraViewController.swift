@@ -54,17 +54,20 @@ class CameraViewController: UIViewController, CameraModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
-        navigationController?.navigationBar.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+        tabBarController?.navigationController?.navigationBar.isHidden = true
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
+        tabBarController?.navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.isHidden = false
     }
 
@@ -206,6 +209,7 @@ class CameraViewController: UIViewController, CameraModule {
         default:
             self.cameraView.drawerView.isHidden = false
         }
+        
         addCameraSession()
         addCameraOutput()
         addPreviewLayer()

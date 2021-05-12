@@ -5,7 +5,7 @@ final class MakeOrderCommentTitleView: UIView {
     
     private let subTitle: UILabel = {
         let label = UILabel()
-        label.font = .medium12
+        label.font = .book14
         label.textColor = .black
         label.text = "(Особые запросы, аллергия и т.д.)"
         return label
@@ -13,7 +13,7 @@ final class MakeOrderCommentTitleView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .semibold20
+        label.font = .semibold16
         label.textColor = .black
         label.text = "Комментарий для ресторана"
         return label
@@ -22,10 +22,10 @@ final class MakeOrderCommentTitleView: UIView {
     private let commentImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = Images.comment.image
+        imageView.image = Images.commentss.image
         return imageView
     }()
-    
+
     private lazy var textStackView = UIStackView(
         views: [titleLabel, subTitle],
         axis: .vertical,
@@ -34,13 +34,14 @@ final class MakeOrderCommentTitleView: UIView {
     private lazy var stackView = UIStackView(
         views: [commentImageView, textStackView],
         axis: .horizontal,
+        distribution: .fillProportionally,
         spacing: 10)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
     }
-    
+
     required init?(coder: NSCoder) {
         nil
     }

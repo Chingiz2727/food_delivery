@@ -5,20 +5,19 @@ final class OrderProgressView: UIView {
     private let progressLine = UIView()
     private let progressImg = UIImageView()
     private let progressLabel = UILabel()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
         configureView()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupInitialLayout()
         configureView()
     }
-    
+
     func setupStatus(status: OrderStatus, passStatus: OrderPassStatus) {
         let attributedText = NSMutableAttributedString(
             string: "Статус: ",

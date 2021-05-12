@@ -11,7 +11,7 @@ final class CashBackView: UIView {
     private let costLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanWhite
-        label.font = .description1
+        label.font = .medium13
         label.text = "5000 〒\ncредний чек:"
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
@@ -22,7 +22,7 @@ final class CashBackView: UIView {
     private let cashBackLabel: UILabel = {
         let label = UILabel()
         label.textColor = .pilicanWhite
-        label.font = .description1
+        label.font = .medium13
         label.text = "1000 〒\nкэшбэк"
         label.numberOfLines = 2
         label.textAlignment = .right
