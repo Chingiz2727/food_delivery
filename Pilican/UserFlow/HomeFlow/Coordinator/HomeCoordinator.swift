@@ -39,6 +39,10 @@ final class HomeCoordinator: BaseCoordinator {
             self?.showNotificationList()
         }
         
+        tabBarController.backTap = { [weak self] in
+            self?.router.popModule()
+        }
+        
         let logoutFlow = container.resolve(DeliveryLogoutStateObserver.self)!
         logoutFlow.setCoordinator(self)
         let viewControllers = tabRootContainers.map { $0.viewController }

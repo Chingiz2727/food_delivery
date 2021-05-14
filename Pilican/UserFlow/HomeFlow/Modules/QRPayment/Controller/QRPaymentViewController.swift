@@ -46,6 +46,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         super.viewDidLoad()
         bindView()
         bindViewModel()
+        title = "Оплата"
     }
     
     override func viewWillAppear(_ animated: Bool) {

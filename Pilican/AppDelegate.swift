@@ -36,8 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
         window?.rootViewController = CoordinatorNavigationController(
-            backBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal),
-            closeBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal)
+            backBarButtonImage: nil, closeBarButtonImage: Images.back_black.image?.withRenderingMode(.alwaysOriginal)
         )
     }
 

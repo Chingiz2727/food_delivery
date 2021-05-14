@@ -28,7 +28,7 @@ class AddCardViewController: ViewController, AddCardModule, ViewHolder {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Добавить карту"
+        title = "Добавление карты"
         bindViewModel()
         binvdView()
     }

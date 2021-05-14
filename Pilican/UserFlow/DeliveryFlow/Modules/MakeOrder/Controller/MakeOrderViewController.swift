@@ -156,7 +156,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                 if products.isEmpty {
                     emptyDishList?()
                 }
-                let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
+                let amount = products.map { $0.price * ($0.shoppingCount ?? 0) }
                 let totalSum = amount.reduce(0, +)
                 self.foodAmountSubject.onNext(totalSum)
                 if orderType.title == "Доставка Pillikan" {
@@ -217,7 +217,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                     if products.isEmpty {
                         emptyDishList?()
                     }
-                    let amount = products.map { $0.price * ($0.shoppingCount ?? 0)}
+                    let amount = products.map { $0.price * ($0.shoppingCount ?? 0) }
                     let totalSum = amount.reduce(0, +)
                     self.foodAmountSubject.onNext(totalSum)
                     if orderType.title == "Доставка Pillikan" {
@@ -245,7 +245,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     }
 
     func changeDishList(action: DishListAction) {
-       _ = viewModel.dishList.changeDishList(dishAction: action)
+        _ = viewModel.dishList.changeDishList(dishAction: action)
     }
 
     private func bindView() {

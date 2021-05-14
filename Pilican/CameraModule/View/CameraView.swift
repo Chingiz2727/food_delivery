@@ -43,7 +43,7 @@ final class CameraView: UIView {
 
         rectangleImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(300)
+            make.size.equalTo(250)
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
         }
 

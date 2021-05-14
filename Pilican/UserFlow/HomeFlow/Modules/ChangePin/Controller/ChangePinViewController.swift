@@ -35,6 +35,7 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        title = "Сменить PIN код"
     }
 
     private func bindViewModel() {

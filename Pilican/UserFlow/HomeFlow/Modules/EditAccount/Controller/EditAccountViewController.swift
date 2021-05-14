@@ -50,6 +50,7 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
         setupCityPickerView()
         setupGenderPickerView()
         bindViewModel()
+        title = "Изменить профиль"
     }
 
     private func bindViewModel() {

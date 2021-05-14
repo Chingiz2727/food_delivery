@@ -38,6 +38,7 @@ final class MyCardsViewController: ViewController, ViewHolder, MyCardsModule {
         super.viewDidLoad()
         bindViewModel()
         bindView()
+        title = "Мои карты"
     }
     
     private func bindViewModel() {

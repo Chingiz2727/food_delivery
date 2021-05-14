@@ -31,8 +31,17 @@ final class RetailDetailViewController: ViewController, ViewHolder, RetailDetail
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        title = retail.name
     }
 
+    override func customBackButtonDidTap() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    override func customCloseButtonDidTap() {
+        
+    }
+    
     private func bindView() {
         rootView.setData(retail: retail, workCalendar: workCalendar)
         rootView.faqButton.rx.tap

@@ -68,7 +68,6 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
             .bind(to: rootView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
-        
         retailList.loading
             .bind(to: ProgressView.instance.rx.loading)
             .disposed(by: disposeBag)

@@ -36,6 +36,7 @@ class ChangePasswordViewController: ViewController, ViewHolder, ChangePasswordMo
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        title = "Сменить пароль"
     }
 
     private func bindViewModel() {

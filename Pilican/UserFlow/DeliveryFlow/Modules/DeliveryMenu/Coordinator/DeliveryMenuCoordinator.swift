@@ -41,12 +41,15 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         var module = moduleFactory.makeOrderHistory()
         module.onSelectOrderHistory = { [weak self] response, tag in
             // swiftlint:disable line_length
-            let retail = DeliveryRetail(id: response.retailId ?? 0, cashBack: 0, isWork: 0, longitude: response.longitude ?? 0, latitude: response.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: response.retailLogo ?? "", address: response.address ?? "", workDays: [], payIsWork: 0, name: response.retailName ?? "", status: response.status ?? 0, rating: response.retailRating ?? 0)
-            if tag != 2 {
-                self?.showDeliveryProduct(retail: retail)
-            } else {
+//            let retail = DeliveryRetail(id: response.retailId ?? 0, cashBack: 0, isWork: 0, longitude: response.longitude ?? 0, latitude: response.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: response.retailLogo ?? "", address: response.address ?? "", workDays: [], payIsWork: 0, name: response.retailName ?? "", status: response.status ?? 0, rating: response.retailRating ?? 0)
+           // if tag != 2 {
+                //self?.showDeliveryProduct(retail: retail)
+//            } else {
                 self?.showOrderStatus(orderId: response.id ?? 0)
-            }
+           // }
+        }
+        module.selectedOrderHistory = { [weak self] dishList, orderType in
+            self?.showRepeatOrder(dishList: dishList, orderType: orderType)
         }
         router.push(module)
     }
@@ -58,7 +61,7 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         }
         router.push(module)
     }
-    
+
     private func showRateDelivery(order: DeliveryOrderResponse) {
         var module = moduleFactory.makeRateDelivery(order: order)
         module.rateDeliveryTapped = { [weak self] order in
@@ -78,7 +81,6 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
     }
 
     private func showMore() {
-        
     }
 
     private func showFavorites() {
@@ -110,6 +112,25 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
         var module = moduleFactory.makeBasket()
         module.onDeliveryChoose = { [weak self] orderType in
             self?.showMakeOrder(orderType: orderType)
+        }
+        router.push(module)
+    }
+
+    private func showRepeatOrder(dishList: DishList, orderType: OrderType) {
+        var module = moduleFactory.makeRepeatOrder(dishList: dishList, orderType: orderType)
+        module.onMapShowDidSelect = { [weak self] in
+            self?.makeMapSearch(addressSelected: { address in
+                module.putAddress?(address)
+            })
+        }
+        module.emptyDishList = { [weak self] in
+            self?.router.popModule()
+        }
+        module.orderSuccess = { [weak self] orderId in
+            self?.showOrderSuccess(orderId: orderId)
+        }
+        module.orderError = { [weak self] in
+            self?.showOrderError()
         }
         router.push(module)
     }

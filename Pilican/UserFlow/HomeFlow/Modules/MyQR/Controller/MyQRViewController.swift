@@ -32,6 +32,7 @@ class MyQRViewController: ViewController, ViewHolder, MyQRModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        title = "Мой QR"
     }
 
     private func bindView() {

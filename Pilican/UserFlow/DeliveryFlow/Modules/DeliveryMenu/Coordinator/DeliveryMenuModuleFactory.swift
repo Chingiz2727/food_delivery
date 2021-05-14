@@ -59,9 +59,17 @@ final class DeliveryMenuModuleFactory {
         let controller = OrderTypeViewController(dishList: dishList, mapManager: container.resolve(MapManager.self)!)
         return controller
     }
-    
+
     func makeMakeOrder(orderType: OrderType) -> MakeOrderModule {
         let dishList = container.resolve(DishList.self)!
+        let userInfo = container.resolve(UserInfoStorage.self)!
+        let viewModel = MakeOrderViewModel(dishList: dishList, userInfo: userInfo, mapManager: container.resolve(MapManager.self)!, apiService: container.resolve(ApiService.self)!)
+        let controller = MakeOrderViewController(viewModel: viewModel)
+        controller.orderType = orderType
+        return controller
+    }
+
+    func makeRepeatOrder(dishList: DishList, orderType: OrderType) -> MakeOrderModule {
         let userInfo = container.resolve(UserInfoStorage.self)!
         let viewModel = MakeOrderViewModel(dishList: dishList, userInfo: userInfo, mapManager: container.resolve(MapManager.self)!, apiService: container.resolve(ApiService.self)!)
         let controller = MakeOrderViewController(viewModel: viewModel)

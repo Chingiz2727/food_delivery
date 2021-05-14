@@ -25,6 +25,7 @@ final class PillikanInfoNotificationsViewController: ViewController, ViewHolder,
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        title = "Pillikan Info"
     }
     
     private func bindViewModel() {
