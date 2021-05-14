@@ -39,7 +39,7 @@ class SearchTagsView: UIView, TagListViewDelegate {
     private func setupTagList() {
         tagListView.delegate = self
         tagListView.textFont = .book12
-        tagListView.alignment = .left
+        tagListView.alignment = .center
         tagListView.cornerRadius = 12
 
         tagListView.paddingY = 10

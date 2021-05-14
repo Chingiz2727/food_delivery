@@ -44,7 +44,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
     private func bindViewModel() {
         let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()), rootView.rx.retryAction)))
-        
+
         rootView.stickyHeaderView.favouriteButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.favouriteManager.saveToFavourite(id: self.viewModel.dishList.retail?.id ?? 0) { [unowned self] in
@@ -53,7 +53,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 }
             })
             .disposed(by: disposeBag)
-        
+
         let isfav = self.favouriteManager.getIsFavourite(id: self.viewModel.dishList.retail?.id ?? 0)
         self.rootView.stickyHeaderView.setFavouriteButton(favourite: isfav)
 
@@ -93,6 +93,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
             .disposed(by: disposeBag)
 
         rootView.setProductToPay(product: viewModel.dishList.products)
+        
     }
 
     private func bindView() {

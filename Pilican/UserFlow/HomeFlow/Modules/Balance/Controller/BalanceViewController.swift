@@ -34,6 +34,7 @@ class BalanceViewController: ViewController, ViewHolder, BalanceModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        title = "Пополнение"
     }
 
     private func bindView() {

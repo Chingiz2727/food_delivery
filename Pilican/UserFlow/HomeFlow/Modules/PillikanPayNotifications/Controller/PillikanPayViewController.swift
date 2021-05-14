@@ -25,6 +25,7 @@ final class PillikanPayViewController: ViewController, ViewHolder, PillikanPayMo
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        title = "Pillikan Pay"
     }
     
     private func bindViewModel() {

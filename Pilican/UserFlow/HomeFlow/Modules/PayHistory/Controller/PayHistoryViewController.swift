@@ -35,6 +35,7 @@ final class PayHistoryViewController: ViewController, ViewHolder, PayHistoryModu
         super.viewDidLoad()
         bindView()
         bindViewModel()
+        title = "История оплаты"
     }
 
     private func bindView() {

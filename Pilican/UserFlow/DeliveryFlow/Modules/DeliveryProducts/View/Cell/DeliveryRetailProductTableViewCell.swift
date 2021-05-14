@@ -122,7 +122,6 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().inset(10)
             make.centerY.equalToSuperview()
             make.size.equalTo(100)
-            make.top.bottom.equalToSuperview().inset(10)
         }
 
         deliveryLine.backgroundColor = .primary

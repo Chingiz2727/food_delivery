@@ -12,6 +12,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     private let disposeBag = DisposeBag()
     private let dishList: DishList
     private let searchText: PublishSubject<String> = .init()
+    private var sliderId = 0
 
     init(viewModel: DeliveryRetailListViewModel, dishList: DishList) {
         self.viewModel = viewModel
@@ -149,7 +150,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
         
         rootView.header.retailSliderId
             .withLatestFrom(retailList.element) { id, retails in
-                    return retails.filter { $0.id == id }
+                    return retails.filter { $0.id != 0 }
                 }.subscribe(onNext: { [unowned self] retails in
                     if let retail = retails.first {
                         if retail.isWork == 1 {
@@ -157,10 +158,12 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
                                 showBasketAlert {
                                     self.dishList.products = []
                                     self.dishList.wishDishList.onNext([])
-                                    self.onRetailDidSelect?(retail)
+                                    // swiftlint:disable line_length
+                                    self.onRetailDidSelect?(DeliveryRetail(id: retail.id, cashBack: 0, isWork: 0, longitude: 0, latitude: 0, dlvCashBack: 0, pillikanDelivery: 0, logo: "", address: "", workDays: [], payIsWork: 0, name: "", status: 0, rating: 0))
                                 }
                             } else {
-                                self.onRetailDidSelect?(retail)
+                                // swiftlint:disable line_length
+                                self.onRetailDidSelect?(DeliveryRetail(id: retail.id, cashBack: 0, isWork: 0, longitude: 0, latitude: 0, dlvCashBack: 0, pillikanDelivery: 0, logo: "", address: "", workDays: [], payIsWork: 0, name: "", status: 0, rating: 0))
                             }
                         }
                     }

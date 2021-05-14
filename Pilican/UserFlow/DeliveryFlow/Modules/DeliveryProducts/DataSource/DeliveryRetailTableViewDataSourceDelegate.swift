@@ -3,15 +3,19 @@ import UIKit
 final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewDataSource {
     var productCategory: [ProductCategory] = []
     private let dishList: DishList
+    var selectedCellIndexPath: NSIndexPath?
+    let selectedCellHeight: CGFloat = 250
+    let unselectedCellHeight: CGFloat = 140
+    var expanded = false
 
     init(dishList: DishList) {
         self.dishList = dishList
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return productCategory.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productCategory[section].dishes.count
     }
@@ -22,22 +26,43 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
         cell.buttonsLabel.addToDish = { [unowned self] product in
             self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .addToDish(product))
             cell.setData(product: product)
-            
         }
-        
+
         cell.buttonsLabel.removeFromDish = { [unowned self] product in
             self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .removeFromDish(product))
             cell.setData(product: product)
         }
-        
+
         cell.setData(product: product)
         return cell
     }
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedCellIndexPath != nil && selectedCellIndexPath as? IndexPath == indexPath {
+                selectedCellIndexPath = nil
+            } else {
+                selectedCellIndexPath = indexPath as NSIndexPath
+            }
+
+            tableView.beginUpdates()
+            tableView.endUpdates()
+
+            if selectedCellIndexPath != nil {
+                tableView.scrollToRow(at: indexPath, at: .none, animated: true)
+            }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if selectedCellIndexPath as? IndexPath == indexPath {
+            return selectedCellHeight
+        }
+        return unselectedCellHeight
+    }
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return productCategory[indexPath.section].dishes[indexPath.row].status == 2
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return productCategory[section].name
     }
@@ -46,7 +71,7 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
 extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let cell = tableView.cellForRow(at: indexPath) as? DeliveryRetailProductTableViewCell
-        
+
         let action = UIContextualAction(
             style: .normal,
             title: "") { [unowned self] _, _, completionHandler in
@@ -73,10 +98,8 @@ extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
             cell?.setData(product: changedProduct)
             completionHandler(true)
         }
-        
         action.backgroundColor = .red
         action.image = Images.decline.image?.withRenderingMode(.alwaysOriginal)
-        
         return UISwipeActionsConfiguration(actions: [action])
     }
 }

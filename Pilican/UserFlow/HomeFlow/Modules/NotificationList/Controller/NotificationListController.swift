@@ -16,6 +16,7 @@ final class NotificationListController: ViewController, ViewHolder, Notification
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        title = "Сообщения"
     }
     
     func bindView() {
