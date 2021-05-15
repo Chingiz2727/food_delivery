@@ -46,11 +46,14 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
             case .delivery:
                 self?.showDelivery()
             case .bus:
-//                self?.showCamera()
                 self?.onBusCameraTap?()
             case .volunteer:
                 self?.showAlert()
             }
+        }
+        
+        module.showMyQr = { [weak self] in
+            self?.showMyQr()
         }
         
         router.setRootModule(module, isNavigationBarHidden: true)
@@ -155,5 +158,10 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     private func showHowItWork() {
         let module = moduleFactory.makeHowItWork()
         router.presentCard(module)
+    }
+    
+    private func showMyQr() {
+        let module = moduleFactory.makeMyQR()
+        router.push(module)
     }
 }

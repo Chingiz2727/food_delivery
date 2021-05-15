@@ -13,3 +13,11 @@ struct Slider: Codable {
         return "https://st.pillikan.kz/slider/\(image)"
     }
 }
+
+enum SliderType: String {
+    case delivery = "Доставка"
+    case infoDelivery = "Инфо доставка"
+    case friend = "Пригласи друга"
+    case cashback = "Кэшбэк"
+    case deliverySecond = "Доставка куда угодно"
+}

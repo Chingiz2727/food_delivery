@@ -13,7 +13,12 @@ final class AppCoordinator: BaseCoordinator {
         self.authService = authService
         super.init(router: router, container: container)
     }
-
+    
+    override func performDeepLinkActionAfterStart(_ action: DeepLinkAction) {
+        print("open by notification")
+        NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
+    }
+    
     override func start() {
         checkAuth { [weak self] in
             self?.startHomeFlow()
@@ -29,3 +34,10 @@ final class AppCoordinator: BaseCoordinator {
 }
 
 extension AppCoordinator: AuthCheckCoordinator {}
+
+
+public enum NotificationsString: String {
+    case openNotifications
+    case handleBadge
+    case removeBadge
+}

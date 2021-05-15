@@ -304,6 +304,7 @@
 		72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */; };
 		72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */; };
 		72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E51D2632708900FEABA1 /* CardScanner.swift */; };
+		72C922AA264E5E7A000BB0CE /* UIBar+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C922A9264E5E7A000BB0CE /* UIBar+Badge.swift */; };
 		72D219482636523E008FE635 /* PinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219472636523E008FE635 /* PinCoordinator.swift */; };
 		72D2194B26365250008FE635 /* PinModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2194A26365250008FE635 /* PinModuleFactory.swift */; };
 		72D2195C263652D5008FE635 /* AuthStateObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2195B263652D5008FE635 /* AuthStateObserver.swift */; };
@@ -918,6 +919,7 @@
 		72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusView.swift; sourceTree = "<group>"; };
 		72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusViewController.swift; sourceTree = "<group>"; };
 		72C5E51D2632708900FEABA1 /* CardScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanner.swift; sourceTree = "<group>"; };
+		72C922A9264E5E7A000BB0CE /* UIBar+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBar+Badge.swift"; sourceTree = "<group>"; };
 		72D219472636523E008FE635 /* PinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCoordinator.swift; sourceTree = "<group>"; };
 		72D2194A26365250008FE635 /* PinModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinModuleFactory.swift; sourceTree = "<group>"; };
 		72D2195B263652D5008FE635 /* AuthStateObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStateObserver.swift; sourceTree = "<group>"; };
@@ -3772,6 +3774,7 @@
 				72FB0804261DA6EB00F04395 /* UIView+Screenshot.swift */,
 				72FB080A261DA73D00F04395 /* UIView+NavigationItem.swift */,
 				72FB0807261DA71600F04395 /* UIView+DeepCopy.swift */,
+				72C922A9264E5E7A000BB0CE /* UIBar+Badge.swift */,
 			);
 			path = "UIView+Extension";
 			sourceTree = "<group>";
@@ -5116,11 +5119,11 @@
 			children = (
 				72446587263FAE9B00C50802 /* GoogleService-Info.plist */,
 				A483E21025D40AB4006D2DAF /* Core */,
+				F4A48B6650245955DD4DC49B /* Frameworks */,
 				A4DD3DC625D24359002D2186 /* Helpers */,
 				A4B310E525D10C370003BA0B /* Pilican */,
-				A4B310E425D10C370003BA0B /* Products */,
 				8176B9877CE758347B33479A /* Pods */,
-				F4A48B6650245955DD4DC49B /* Frameworks */,
+				A4B310E425D10C370003BA0B /* Products */,
 				728434B0261D7E6000E21209 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -5949,6 +5952,7 @@
 				A483E28625D40ABE006D2DAF /* IdPagination.swift in Sources */,
 				A4402CB225DBEF000004D1FC /* AuthBySmsViewController.swift in Sources */,
 				72D21977263653AC008FE635 /* PinCheckViewController.swift in Sources */,
+				72C922AA264E5E7A000BB0CE /* UIBar+Badge.swift in Sources */,
 				556CF6DA26022401007B8FB9 /* PayHistoryTarget.swift in Sources */,
 				5584E83425EE380100025251 /* CashbackMenuCoordinator.swift in Sources */,
 				55DB7DC926319F560086B562 /* AlcoholModule.swift in Sources */,

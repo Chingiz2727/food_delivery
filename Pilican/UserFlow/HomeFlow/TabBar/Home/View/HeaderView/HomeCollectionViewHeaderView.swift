@@ -11,10 +11,11 @@ private enum Constants {
 
 final class HomeCollectionViewHeaderView: UICollectionReusableView {
 
-    private let carouselView = ImageSlideshow()
+    let carouselView = ImageSlideshow()
+    private var slider: [Slider] = []
     private(set) var disposeBag = DisposeBag()
     var showTag: ((Int) -> Void)?
-    
+    var selectedSlider: ((Slider) -> Void)?
     var didSelectTag: [UIControl: Int] = [:]
     
     private lazy var categoryStack = UIStackView(
@@ -55,6 +56,7 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
     }
 
     func setupSlider(sliders: [Slider]) {
+        self.slider = sliders
         carouselView.setImageInputs( sliders.map { KingfisherSource(url: URL(string: $0.imgLogo )!) })
     }
 
@@ -91,6 +93,7 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
             backColor: .green,
             titleColor: .pilicanWhite
         )
+        
         deliveryCategory.configureView(
             title: Constants.deliveryTitle,
             image: Images.scooter.image,
@@ -111,6 +114,10 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
                     self.showTag?(control.control.tag)
                 }).disposed(by: disposeBag)
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapSlider))
+        carouselView.isUserInteractionEnabled = true
+        carouselView.addGestureRecognizer(tapGesture)
     }
 
     private func setupGradient() {
@@ -123,5 +130,9 @@ final class HomeCollectionViewHeaderView: UICollectionReusableView {
         let deliveryBackGradient: CAGradientLayer = .redGradient
         deliveryBackGradient.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         deliveryCategory.layer.insertSublayer(deliveryBackGradient, at: 0)
+    }
+    
+    @objc private func tapSlider() {
+        selectedSlider?(slider[carouselView.currentPage])
     }
 }

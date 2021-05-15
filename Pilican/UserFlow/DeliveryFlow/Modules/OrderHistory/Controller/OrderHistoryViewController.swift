@@ -18,7 +18,7 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
     private let viewModel: OrderHistoryViewModel
     private let disposeBag = DisposeBag()
     private let dishList: DishList
-
+    
     init(viewModel: OrderHistoryViewModel, dishList: DishList) {
         self.viewModel = viewModel
         self.dishList = dishList
@@ -97,5 +97,31 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
             self?.rootView.tableView.endUpdates()
           })
             .disposed(by: disposeBag)
+    }
+    
+    private func goToTryOrder(order: DeliveryOrderResponse) {
+        print(order)
+        guard let items = order.orderItems else { return }
+        let products: [Product] = items.map { orderItem in
+            let product = Product(status: orderItem.dish?.status ?? 0, img: orderItem.dish?.img ?? "", id: orderItem.dish?.id ?? 0, price: orderItem.dish?.price ?? 0, composition: orderItem.dish?.composition ?? "", age_access: orderItem.dish?.age_access ?? 0, name: orderItem.dish?.name ?? "", shoppingCount: orderItem.dish?.shoppingCount ?? 0)
+            return product
+        }
+        
+        dishList.retail = DeliveryRetail(
+            id: order.retailId ?? 0,
+            cashBack: 0,
+            isWork: 0,
+            longitude: order.longitude ?? 0,
+            latitude: order.latitude ?? 0,
+            dlvCashBack: 0,
+            pillikanDelivery: 0,
+            logo: order.retailLogo ?? "",
+            address: order.address ?? "",
+            workDays: [],
+            payIsWork: 0,
+            name: order.retailName ?? "",
+            status: order.status ?? 0,
+            rating: order.retailRating ?? 0)
+        dishList.wishDishList.onNext(products)
     }
 }

@@ -5,7 +5,7 @@ import RxDataSources
 final class HomeCollectionViewDataSource: RxCollectionViewSectionedReloadDataSource<RetailSection> {
 
     private let slider: BehaviorSubject<[Slider]>
-    init(slider: BehaviorSubject<[Slider]>, categoryMenu: PublishSubject<Int>) {
+    init(slider: BehaviorSubject<[Slider]>, categoryMenu: PublishSubject<Int>, selectedSlider: PublishSubject<Slider>) {
         self.slider = slider
         super.init(configureCell: { _, collectionview, index, model  in
             let cell: RetailCollectionViewCell = collectionview.dequeueReusableCell(for: index)
@@ -18,6 +18,10 @@ final class HomeCollectionViewDataSource: RxCollectionViewSectionedReloadDataSou
             slider.subscribe(onNext: { sliders in
                 header.setupSlider(sliders: sliders)
             }).disposed(by: disposeBag)
+            
+            header.selectedSlider = { slider in
+                selectedSlider.onNext(slider)
+            }
             header.showTag = { tag in
                 categoryMenu.onNext(tag)
             }

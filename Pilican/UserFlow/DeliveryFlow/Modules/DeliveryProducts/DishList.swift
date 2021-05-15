@@ -70,6 +70,10 @@ final class DishList {
         return product
     }
 
+    func appendToDishList(products: [Product]) {
+        wishDishList.onNext(products)
+    }
+    
     func checkForContainProductOnDish(listCategory: [ProductCategory]) -> [ProductCategory] {
         var listCategory = listCategory
         listCategory.enumerated().forEach { section, category in
