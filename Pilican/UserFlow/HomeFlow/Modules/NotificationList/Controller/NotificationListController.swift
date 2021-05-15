@@ -15,6 +15,8 @@ final class NotificationListController: ViewController, ViewHolder, Notification
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.post(name: NSNotification.Name.init(NotificationsString.removeBadge.rawValue), object: nil, userInfo: nil)
+        UIApplication.shared.applicationIconBadgeNumber = 0
         bindView()
     }
     

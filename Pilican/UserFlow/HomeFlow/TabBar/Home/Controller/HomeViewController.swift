@@ -7,14 +7,16 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
 
     var selectRetail: SelectRetail?
     var selectMenu: SelectMenu?
+    var showMyQr: Callback?
     private let viewModel: HomeViewModel
     private let dataSource: HomeCollectionViewDataSource
     private let slider = BehaviorSubject<[Slider]>(value: [])
     private let selectedCategory = PublishSubject<Int>()
+    private let selectedSlider: PublishSubject<Slider> = .init()
     private let disposeBag = DisposeBag()
 
     init(viewModel: HomeViewModel) {
-        dataSource = HomeCollectionViewDataSource(slider: slider, categoryMenu: selectedCategory)
+        dataSource = HomeCollectionViewDataSource(slider: slider, categoryMenu: selectedCategory, selectedSlider: selectedSlider)
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +34,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
         bindView()
         bindViewModel()
     }
-
+    
     private func bindView() {
         rootView.collectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.collectionView.registerClassForHeaderView(HomeCollectionViewHeaderView.self)
@@ -118,5 +120,23 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
             self.selectMenu?(HomeCategoryMenu(rawValue: category)!)
         })
         .disposed(by: disposeBag)
+        
+        selectedSlider
+            .subscribe(onNext: { [weak self] slider in
+                print(slider)
+                let type = SliderType(rawValue: slider.title)
+                switch type {
+                case .delivery, .infoDelivery, .deliverySecond:
+                    self?.selectMenu?(.delivery)
+                case .cashback:
+                    self?.selectMenu?(.cashBack)
+                case .friend:
+                    self?.showMyQr?()
+                case .none:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
     }
+
 }

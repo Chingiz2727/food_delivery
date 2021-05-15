@@ -4,4 +4,5 @@ protocol HomeModule: Presentable {
 
     var selectMenu: SelectMenu? { get set }
     var selectRetail: SelectRetail? { get set }
+    var showMyQr: Callback? { get set }
 }

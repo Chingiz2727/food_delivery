@@ -12,6 +12,7 @@ open class ViewController: UIViewController, CoordinatorNavigationControllerDele
         super.viewDidAppear(animated)
         setupCoordinatorNavigationController()
     }
+    
     private func setupCoordinatorNavigationController() {
         guard let navigationController = navigationController as? CoordinatorNavigationController else { return }
         navigationController.coordinatorNavigationDelegate = self

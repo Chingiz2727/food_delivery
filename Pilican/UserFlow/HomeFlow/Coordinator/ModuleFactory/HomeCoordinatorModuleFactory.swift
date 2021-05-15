@@ -37,4 +37,9 @@ final class HomeCoordinatorModuleFactory {
     func makeSuccessPayment(retail: Retail, price: Int, cashback: Int) -> SuccessPaymentModule {
         return SuccessPaymentViewController(retail: retail, price: price, cashback: cashback)
     }
+    
+    func makeMyQR() -> MyQRModule {
+        let userInfo = container.resolve(UserInfoStorage.self)!
+        return MyQRViewController(userInfo: userInfo)
+    }
 }

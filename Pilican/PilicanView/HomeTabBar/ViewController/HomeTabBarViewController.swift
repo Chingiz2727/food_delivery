@@ -32,17 +32,38 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
         super.viewDidLoad()
         setupInitialLayout()
         bindView()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: Images.alarm.image?.withRenderingMode(.alwaysOriginal),
-            style: .done,
-            target: self,
-            action: #selector(showNotifyMenu))
+        NotificationCenter.default.addObserver(self, selector: #selector(changeBadge), name: NSNotification.Name(NotificationsString.handleBadge.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBadge), name: NSNotification.Name(NotificationsString.removeBadge.rawValue), object: nil)
+        let badgeNumber = UIApplication.shared.applicationIconBadgeNumber
+        if badgeNumber > 0 {
+            changeBadge()
+        } else {
+            removeBadge()
+        }
     }
 
     override func setViewControllers(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
     }
 
+    @objc private func changeBadge() {
+        let rightBar = UIBarButtonItem(
+            image: Images.notifyAlarm.image?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(showNotifyMenu))
+        navigationItem.rightBarButtonItem = rightBar
+    }
+    
+    @objc private func removeBadge() {
+        let rightBar = UIBarButtonItem(
+            image: Images.alarm.image?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(showNotifyMenu))
+        navigationItem.rightBarButtonItem = rightBar
+    }
+    
     private func setupInitialLayout() {
         setValue(homeTabBar, forKey: "tabBar")
         view.addSubview(qrScanButton)
@@ -52,9 +73,6 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
             make.size.equalTo(70)
 
         }
-        
-//        view.addSubview(tabView)
-//        tabView.snp.makeConstraints { $0.edges.equalTo(homeTabBar) }
     }
 
     private func bindView() {

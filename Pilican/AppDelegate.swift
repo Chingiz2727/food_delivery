@@ -3,7 +3,6 @@ import Swinject
 import Kingfisher
 import Firebase
 import IQKeyboardManagerSwift
-import UserNotifications
 import Messages
 import YandexMapsMobile
 
@@ -12,13 +11,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let assembler = Assembler([DependencyContainerAssembly()])
     private var appCoordinator: AppCoordinator?
+    private var deepLinkActionFactory: DeepLinkActionFactory?
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         setupWindow()
-        makeCoordinator(application: application)
         setupKeyboardManager()
         setupNavigationBar()
         setupKingfisher()
@@ -27,7 +26,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LoggerConfigurator.configure()
         #endif
         YMKMapKit.setApiKey("7b4d5f85-da95-462c-a67c-61a2f218cc13")
-//        configureApp(application)
+        
+        guard let rootController = application.windows.first?.rootViewController as? CoordinatorNavigationController else {
+            fatalError("rootViewController must be CoordinatorNavigationController")
+        }
+        appCoordinator = AppCoordinator(router: Router(rootController: rootController), container: assembler.resolver)
+        deepLinkActionFactory = assembler.resolver.resolve(DeepLinkActionFactory.self)
+        assembler.resolver.resolve(PushNotificationManager.self)?.setCoordinatorToEngine(coordinator: appCoordinator!)
+        assembler.resolver.resolve(AuthStateObserver.self)!.setCoordinator(appCoordinator)
+        if let pushNotificationInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any],
+           let deepLinkAction = deepLinkActionFactory?.getNotificationDeepLinkAction(from: pushNotificationInfo) {
+            appCoordinator?.start(with: deepLinkAction)
+        } else {
+            appCoordinator?.start()
+        }
         return true
     }
 
@@ -35,20 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
-        window?.rootViewController = CoordinatorNavigationController(
-            backBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal),
-            closeBarButtonImage: Images.close.image?.withRenderingMode(.alwaysOriginal)
-        )
-    }
-
-    func makeCoordinator(application: UIApplication) {
-        guard let rootController = application.windows.first?.rootViewController as? CoordinatorNavigationController else {
-            fatalError("rootViewController must be CoordinatorNavigationController")
-        }
-
-        appCoordinator = AppCoordinator(router: Router(rootController: rootController), container: assembler.resolver)
-        assembler.resolver.resolve(AuthStateObserver.self)!.setCoordinator(appCoordinator)
-        appCoordinator?.start()
+        window?.rootViewController = CoordinatorNavigationController(backBarButtonImage: nil)
     }
 
     private func setupKeyboardManager() {
@@ -73,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.shadowImage = UIImage()
         navigationBar.titleTextAttributes = Constants.titleTextAttributes
         navigationBar.tintColor = .pilicanBlack
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for:UIBarMetrics.default)
         navigationBar.barTintColor = .pilicanWhite
     }
 
