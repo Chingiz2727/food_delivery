@@ -47,7 +47,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
-        window?.rootViewController = CoordinatorNavigationController(backBarButtonImage: nil)
+        window?.rootViewController = CoordinatorNavigationController(
+            backBarButtonImage: nil, closeBarButtonImage: Images.back_black.image?.withRenderingMode(.alwaysOriginal)
+        )
+    }
+
+    func makeCoordinator(application: UIApplication) {
+        guard let rootController = application.windows.first?.rootViewController as? CoordinatorNavigationController else {
+            fatalError("rootViewController must be CoordinatorNavigationController")
+        }
+
+        appCoordinator = AppCoordinator(router: Router(rootController: rootController), container: assembler.resolver)
+        assembler.resolver.resolve(AuthStateObserver.self)!.setCoordinator(appCoordinator)
+        appCoordinator?.start()
     }
 
     private func setupKeyboardManager() {

@@ -28,6 +28,7 @@ class AccountViewController: ViewController, AccountModule, ViewHolder {
         super.viewDidLoad()
         bindView()
         bindViewModel()
+        title = "Аккаунт"
     }
 
     private func bindView() {

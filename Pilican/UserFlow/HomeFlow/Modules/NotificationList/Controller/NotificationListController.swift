@@ -18,6 +18,7 @@ final class NotificationListController: ViewController, ViewHolder, Notification
         NotificationCenter.default.post(name: NSNotification.Name.init(NotificationsString.removeBadge.rawValue), object: nil, userInfo: nil)
         UIApplication.shared.applicationIconBadgeNumber = 0
         bindView()
+        title = "Сообщения"
     }
     
     func bindView() {

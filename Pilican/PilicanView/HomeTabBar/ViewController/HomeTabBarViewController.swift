@@ -2,6 +2,8 @@ import RxSwift
 import UIKit
 
 final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
+    var backTap: Callback?
+    
     var accountTap: Callback?
 
     var qrCodeTap: Callback?
@@ -71,7 +73,6 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
             make.centerX.equalToSuperview()
             make.centerY.equalTo(homeTabBar.snp.top)
             make.size.equalTo(70)
-
         }
     }
 
@@ -103,5 +104,10 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
     @objc private func showNotifyMenu() {
         self.notifyMenuTap?()
+    }
+    
+    @objc private func handleBack() {
+//        navigationController?.popViewController(animated: true)
+        self.backTap?()
     }
 }

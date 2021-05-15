@@ -32,4 +32,5 @@ final class ProfileMenuViewController: UIViewController, ViewHolder, ProfileMenu
                 self.menuDidSelect?(item)
             }.disposed(by: disposeBag)
     }
+    
 }

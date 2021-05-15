@@ -32,6 +32,7 @@ class BonusViewController: ViewController, ViewHolder, BonusModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        title = "Еще бонусы"
     }
 
     private func bindView() {

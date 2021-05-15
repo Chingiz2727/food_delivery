@@ -20,8 +20,12 @@ enum Images: String {
     case facebook
     case vk
     case callCenter
+    case back_black
+    case back_orange
+    case back_white
     case youtube
     case web
+    case backs
     case telegram
     case whatsapp
     case payButton

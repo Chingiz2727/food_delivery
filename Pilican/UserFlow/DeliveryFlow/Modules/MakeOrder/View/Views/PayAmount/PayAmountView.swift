@@ -88,7 +88,7 @@ final class PayAmountView: UIView {
             make.top.left.bottom.right.equalToSuperview().inset(10)
         }
         dividerLine.snp.makeConstraints { (make) in
-            make.height.equalTo(1)
+            make.height.equalTo(1.5)
             make.left.right.equalToSuperview().inset(6)
         }
         payButton.snp.makeConstraints { make in
@@ -103,6 +103,6 @@ final class PayAmountView: UIView {
         payButton.titleLabel?.font = .semibold18
         layer.cornerRadius = 10
         payButton.layer.cornerRadius = 12
-        dividerLine.backgroundColor = .pilicanGray
+        dividerLine.backgroundColor = .pilicanLightGray
     }
 }

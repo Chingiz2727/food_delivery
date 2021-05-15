@@ -45,7 +45,7 @@ class RetailMapViewController: ViewController, ViewHolder, RetailMapModule {
     
     private func moveToMyLocation() {
         if let coordinate = secondManager.location?.coordinate {
-            let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 13)
+            let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 15)
             mapManager.moveTo(in: rootView.mapView, point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), transitionViewModel: viewModel)
         }
     }

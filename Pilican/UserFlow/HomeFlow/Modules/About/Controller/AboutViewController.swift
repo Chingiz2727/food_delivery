@@ -25,6 +25,7 @@ class AboutViewController: ViewController, ViewHolder, AboutModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        title = "О нас"
     }
 
     private func bindViewModel() {
