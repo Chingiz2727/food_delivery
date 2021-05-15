@@ -48,7 +48,6 @@ open class CoordinatorNavigationController: UINavigationController {
                                                                           style: .done,
                                                                           target: self,
                                                                           action: #selector(backButtonDidTap))
-        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: closeBarButtonImage, style: .done, target: self, action: #selector(backButtonDidTap))
     }
 
     func enableSwipeBack() {

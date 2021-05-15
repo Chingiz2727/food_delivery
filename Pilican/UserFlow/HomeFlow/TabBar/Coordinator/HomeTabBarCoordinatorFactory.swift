@@ -8,7 +8,7 @@ final class HomeTabBarCoordinatorFactory {
     }
 
     func makeHome() -> (coordinator: HomeTabBarCoordinatorOutput & TababbleCoordinator, module: Presentable) {
-        let rootController = CoordinatorNavigationController(backBarButtonImage: Images.alarm.image, closeBarButtonImage: Images.back_black.image)
+        let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
         let coordinator = HomeTabBarCoordinator(router: Router(rootController: rootController), container: container)
         return (coordinator, rootController)
     }

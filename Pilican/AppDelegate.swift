@@ -47,9 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
-        window?.rootViewController = CoordinatorNavigationController(
-            backBarButtonImage: nil, closeBarButtonImage: Images.back_black.image?.withRenderingMode(.alwaysOriginal)
-        )
+        window?.rootViewController = CoordinatorNavigationController(backBarButtonImage: nil)
     }
 
     func makeCoordinator(application: UIApplication) {
