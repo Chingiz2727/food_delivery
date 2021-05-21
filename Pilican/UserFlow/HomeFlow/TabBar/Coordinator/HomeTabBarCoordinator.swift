@@ -56,7 +56,7 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
             self?.showMyQr()
         }
         
-        router.setRootModule(module, isNavigationBarHidden: true)
+        router.setRootModule(module, isNavigationBarHidden: false)
     }
 
     private func showAlert() {

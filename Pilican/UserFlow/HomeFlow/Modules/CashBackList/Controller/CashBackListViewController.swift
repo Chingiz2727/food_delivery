@@ -31,6 +31,8 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
         super.viewDidLoad()
         bindView()
         bindViewModel()
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
 
     private func bindView() {

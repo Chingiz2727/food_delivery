@@ -29,6 +29,8 @@ class AddCardViewController: ViewController, AddCardModule, ViewHolder {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Добавление карты"
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
         bindViewModel()
         binvdView()
     }

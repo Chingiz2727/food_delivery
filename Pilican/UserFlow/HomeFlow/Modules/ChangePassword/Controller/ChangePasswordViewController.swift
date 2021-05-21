@@ -36,6 +36,8 @@ class ChangePasswordViewController: ViewController, ViewHolder, ChangePasswordMo
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
         title = "Сменить пароль"
     }
 

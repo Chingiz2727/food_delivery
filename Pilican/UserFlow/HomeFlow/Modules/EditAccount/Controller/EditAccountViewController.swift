@@ -51,6 +51,8 @@ class EditAccountViewController: ViewController, ViewHolder, EditAccountModule {
         setupGenderPickerView()
         bindViewModel()
         title = "Изменить профиль"
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
 
     private func bindViewModel() {

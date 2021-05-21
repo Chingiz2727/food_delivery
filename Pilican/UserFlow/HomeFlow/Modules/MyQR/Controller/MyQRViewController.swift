@@ -33,6 +33,8 @@ class MyQRViewController: ViewController, ViewHolder, MyQRModule {
         super.viewDidLoad()
         bindView()
         title = "Мой QR"
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
 
     private func bindView() {

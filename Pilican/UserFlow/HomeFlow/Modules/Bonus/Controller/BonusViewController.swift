@@ -32,6 +32,8 @@ class BonusViewController: ViewController, ViewHolder, BonusModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
         title = "Еще бонусы"
     }
 

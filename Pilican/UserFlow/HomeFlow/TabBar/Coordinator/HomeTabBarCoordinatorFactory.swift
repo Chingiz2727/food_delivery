@@ -1,24 +1,25 @@
 final class HomeTabBarCoordinatorFactory {
     private let container: DependencyContainer
     private let router: Router
-
+    let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
+    let coordinator: HomeTabBarCoordinator
+    
     init(container: DependencyContainer, router: Router) {
         self.container = container
         self.router = router
+        coordinator = HomeTabBarCoordinator(router: Router(rootController: rootController), container: container)
     }
 
     func makeHome() -> (coordinator: HomeTabBarCoordinatorOutput & TababbleCoordinator, module: Presentable) {
-        let rootController = CoordinatorNavigationController(backBarButtonImage: nil)
-        let coordinator = HomeTabBarCoordinator(router: Router(rootController: rootController), container: container)
         return (coordinator, rootController)
     }
 
     func makeProfileMenu() -> ProfileMenuCoordinator {
-        return ProfileMenuCoordinatorImpl(router: router, container: container)
+        return ProfileMenuCoordinatorImpl(router: Router(rootController: rootController), container: container)
     }
 
     func makeCashbbackMenu() -> CashbackMenuCoordinator {
-        return CashbackMenuCoordinatorImpl(router: router, container: container)
+        return CashbackMenuCoordinatorImpl(router: Router(rootController: rootController), container: container)
     }
 
     func makePayPartner(viewModel: QRPaymentViewModel) -> QRPaymentModule {
