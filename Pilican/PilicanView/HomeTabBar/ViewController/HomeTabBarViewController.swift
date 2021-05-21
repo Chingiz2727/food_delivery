@@ -34,38 +34,12 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
         super.viewDidLoad()
         setupInitialLayout()
         bindView()
-        NotificationCenter.default.addObserver(self, selector: #selector(changeBadge), name: NSNotification.Name(NotificationsString.handleBadge.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(removeBadge), name: NSNotification.Name(NotificationsString.removeBadge.rawValue), object: nil)
-        let badgeNumber = UIApplication.shared.applicationIconBadgeNumber
-        if badgeNumber > 0 {
-            changeBadge()
-        } else {
-            removeBadge()
-        }
     }
 
     override func setViewControllers(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
     }
 
-    @objc private func changeBadge() {
-        let rightBar = UIBarButtonItem(
-            image: Images.notifyAlarm.image?.withRenderingMode(.alwaysOriginal),
-            style: .done,
-            target: self,
-            action: #selector(showNotifyMenu))
-        navigationItem.rightBarButtonItem = rightBar
-    }
-    
-    @objc private func removeBadge() {
-        let rightBar = UIBarButtonItem(
-            image: Images.alarm.image?.withRenderingMode(.alwaysOriginal),
-            style: .done,
-            target: self,
-            action: #selector(showNotifyMenu))
-        navigationItem.rightBarButtonItem = rightBar
-    }
-    
     private func setupInitialLayout() {
         setValue(homeTabBar, forKey: "tabBar")
         view.addSubview(qrScanButton)
@@ -74,6 +48,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
             make.centerY.equalTo(homeTabBar.snp.top)
             make.size.equalTo(70)
         }
+        navigationController?.navigationBar.isHidden = true
     }
 
     private func bindView() {
@@ -102,12 +77,45 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
             }).disposed(by: disposeBag)
     }
 
-    @objc private func showNotifyMenu() {
-        self.notifyMenuTap?()
-    }
     
     @objc private func handleBack() {
 //        navigationController?.popViewController(animated: true)
         self.backTap?()
+    }
+}
+
+
+extension UIViewController {
+    public func addCustomizedNotifyBar() {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeBadge), name: NSNotification.Name(NotificationsString.handleBadge.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBadge), name: NSNotification.Name(NotificationsString.removeBadge.rawValue), object: nil)
+        let badgeNumber = UIApplication.shared.applicationIconBadgeNumber
+        if badgeNumber > 0 {
+            changeBadge()
+        } else {
+            removeBadge()
+        }
+    }
+    
+    @objc private func changeBadge() {
+        let rightBar = UIBarButtonItem(
+            image: Images.notifyAlarm.image?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(showNotifyMenu))
+        navigationItem.rightBarButtonItem = rightBar
+    }
+    
+    @objc private func removeBadge() {
+        let rightBar = UIBarButtonItem(
+            image: Images.alarm.image?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(showNotifyMenu))
+        navigationItem.rightBarButtonItem = rightBar
+    }
+    
+    @objc func showNotifyMenu() {
+        NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
     }
 }

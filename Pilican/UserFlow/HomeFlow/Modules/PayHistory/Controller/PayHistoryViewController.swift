@@ -36,6 +36,8 @@ final class PayHistoryViewController: ViewController, ViewHolder, PayHistoryModu
         bindView()
         bindViewModel()
         title = "История оплаты"
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
 
     private func bindView() {

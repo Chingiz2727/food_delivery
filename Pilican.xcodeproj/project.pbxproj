@@ -193,6 +193,7 @@
 		72015960262CD7BD0083C758 /* DeliveryLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201595F262CD7BD0083C758 /* DeliveryLocation.swift */; };
 		7201596A262E907B0083C758 /* MakeOrderTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72015969262E907B0083C758 /* MakeOrderTarget.swift */; };
 		7201596F262E95EA0083C758 /* DeliveryRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201596E262E95EA0083C758 /* DeliveryRate.swift */; };
+		720BA2F526564DDB00E2AA92 /* ShymkentArea.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 720BA2F426564DDB00E2AA92 /* ShymkentArea.geojson */; };
 		721127E726200EDA0055A83A /* MapStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127E626200EDA0055A83A /* MapStatus.swift */; };
 		721127EB26200F050055A83A /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127EA26200F050055A83A /* MapPoint.swift */; };
 		721127EF262012980055A83A /* UserlocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721127EE262012980055A83A /* UserlocationViewModel.swift */; };
@@ -804,6 +805,7 @@
 		7201595F262CD7BD0083C758 /* DeliveryLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocation.swift; sourceTree = "<group>"; };
 		72015969262E907B0083C758 /* MakeOrderTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderTarget.swift; sourceTree = "<group>"; };
 		7201596E262E95EA0083C758 /* DeliveryRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRate.swift; sourceTree = "<group>"; };
+		720BA2F426564DDB00E2AA92 /* ShymkentArea.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShymkentArea.geojson; sourceTree = "<group>"; };
 		721127E626200EDA0055A83A /* MapStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatus.swift; sourceTree = "<group>"; };
 		721127EA26200F050055A83A /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		721127EE262012980055A83A /* UserlocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserlocationViewModel.swift; sourceTree = "<group>"; };
@@ -2833,6 +2835,7 @@
 				72015956262CC79A0083C758 /* ViewModel */,
 				72015952262CC7280083C758 /* Controller */,
 				7201594D262CC6DC0083C758 /* Module */,
+				720BA2F426564DDB00E2AA92 /* ShymkentArea.geojson */,
 			);
 			path = DeliveryLocationMap;
 			sourceTree = "<group>";
@@ -5761,6 +5764,7 @@
 				A4EFD3B42612E19700694D18 /* success-animation.json in Resources */,
 				72446588263FAE9B00C50802 /* GoogleService-Info.plist in Resources */,
 				A4B9A3AF25F1045500F0A3D6 /* Loader.json in Resources */,
+				720BA2F526564DDB00E2AA92 /* ShymkentArea.geojson in Resources */,
 				A4D7644125DA748C009A6651 /* city.json in Resources */,
 				A40A547925D26FA100BBFDFA /* Whitney-Book.ttf in Resources */,
 				A40A548325D26FAE00BBFDFA /* Whitney-MediumItalic.ttf in Resources */,
@@ -6529,7 +6533,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6612,7 +6616,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6756,7 +6760,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6783,7 +6787,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

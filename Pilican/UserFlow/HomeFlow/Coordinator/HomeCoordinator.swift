@@ -47,7 +47,8 @@ final class HomeCoordinator: BaseCoordinator {
         logoutFlow.setCoordinator(self)
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
-        router.setRootModule(tabBarController, isNavigationBarHidden: false)
+        router.setRootModule(tabBarController, isNavigationBarHidden: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(showNotificationList), name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
     }
 
     private func makeTabBar() {
@@ -55,9 +56,11 @@ final class HomeCoordinator: BaseCoordinator {
         homeCoordinator.start()
         addDependency(homeCoordinator)
         guard let controller = rootController.toPresent() else { return }
+        
         tapPop = {
             homeCoordinator.onPopTap?()
         }
+        
         tapPop = { [weak self] in
             homeCoordinator.router.popToRootModule()
         }
@@ -142,7 +145,7 @@ final class HomeCoordinator: BaseCoordinator {
         addDependency(coordinator)
     }
 
-    private func showNotificationList() {
+    @objc private func showNotificationList() {
         var module = coordinatorFactory.makeNotificationList()
         module.notificationsListDidSelect = { [weak self] item in
             switch item {

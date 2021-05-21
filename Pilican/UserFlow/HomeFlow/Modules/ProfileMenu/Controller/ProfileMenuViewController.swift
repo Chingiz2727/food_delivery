@@ -14,6 +14,8 @@ final class ProfileMenuViewController: UIViewController, ViewHolder, ProfileMenu
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
 
     private func bindView() {

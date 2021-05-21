@@ -33,6 +33,8 @@ class RetailMapViewController: ViewController, ViewHolder, RetailMapModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
         configureMap()
     }
 

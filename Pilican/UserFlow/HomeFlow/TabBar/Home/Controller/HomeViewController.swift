@@ -42,6 +42,7 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
         rootView.searchCollectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.layout.headerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 270)
         rootView.layout.footerReferenceSize = .init(width: rootView.collectionView.frame.width, height: 70)
+        addCustomizedNotifyBar()
     }
 
     private func bindViewModel() {

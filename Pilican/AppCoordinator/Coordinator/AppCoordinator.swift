@@ -15,7 +15,6 @@ final class AppCoordinator: BaseCoordinator {
     }
     
     override func performDeepLinkActionAfterStart(_ action: DeepLinkAction) {
-        print("open by notification")
         NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
     }
     
@@ -40,4 +39,5 @@ public enum NotificationsString: String {
     case openNotifications
     case handleBadge
     case removeBadge
+    case openNotify
 }

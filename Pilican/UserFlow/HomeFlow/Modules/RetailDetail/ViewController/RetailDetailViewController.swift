@@ -32,6 +32,8 @@ final class RetailDetailViewController: ViewController, ViewHolder, RetailDetail
         super.viewDidLoad()
         bindView()
         title = retail.name
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
 
     override func customBackButtonDidTap() {

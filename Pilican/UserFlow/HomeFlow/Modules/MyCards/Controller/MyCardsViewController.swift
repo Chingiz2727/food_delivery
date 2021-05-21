@@ -39,6 +39,8 @@ final class MyCardsViewController: ViewController, ViewHolder, MyCardsModule {
         bindViewModel()
         bindView()
         title = "Мои карты"
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
     
     private func bindViewModel() {

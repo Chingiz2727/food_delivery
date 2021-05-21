@@ -25,6 +25,8 @@ class AboutViewController: ViewController, ViewHolder, AboutModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
         title = "О нас"
     }
 

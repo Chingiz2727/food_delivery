@@ -35,6 +35,8 @@ class BalanceViewController: ViewController, ViewHolder, BalanceModule {
         super.viewDidLoad()
         bindView()
         title = "Пополнение"
+        navigationController?.navigationBar.isHidden = false
+        addCustomizedNotifyBar()
     }
 
     private func bindView() {
