@@ -158,7 +158,6 @@ class RetailCollectionViewCell: UICollectionViewCell {
         
         workStatusView.snp.makeConstraints { make in
             make.bottom.trailing.equalToSuperview().inset(10)
-//            make.width.equalTo(80)
         }
         horizontalStackView.snp.makeConstraints { make in
             make.leading.equalTo(companyImageView.snp.trailing).offset(10)

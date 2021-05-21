@@ -36,7 +36,7 @@ final class HomeCoordinator: BaseCoordinator {
         }
 
         tabBarController.notifyMenuTap = { [weak self] in
-            self?.showNotificationList()
+//            self?.showNotificationList()
         }
         
         tabBarController.backTap = { [weak self] in

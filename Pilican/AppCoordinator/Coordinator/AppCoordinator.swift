@@ -15,7 +15,7 @@ final class AppCoordinator: BaseCoordinator {
     }
     
     override func performDeepLinkActionAfterStart(_ action: DeepLinkAction) {
-        NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
+//        NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
     }
     
     override func start() {
