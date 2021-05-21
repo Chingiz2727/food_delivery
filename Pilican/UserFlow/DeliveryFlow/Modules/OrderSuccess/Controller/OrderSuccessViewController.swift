@@ -13,7 +13,7 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
     var toMain: ToMain?
     
     typealias RootViewType = OrderSuccessView
-
+    private let userInfo: UserInfoStorage
     private let disposeBag = DisposeBag()
     private let orderId: Int
     private let updater: UserInfoUpdater
@@ -25,6 +25,7 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
     init(orderId: Int, updater: UserInfoUpdater) {
         self.orderId = orderId
         self.updater = updater
+        self.userInfo = assembler.resolver.resolve(UserInfoStorage.self)!
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -38,6 +39,7 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
     }
 
     private func bindView() {
+        userInfo.updateInfo.onNext(())
         rootView.toMainButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.toMain?()

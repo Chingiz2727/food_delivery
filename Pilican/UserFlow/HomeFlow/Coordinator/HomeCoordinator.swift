@@ -48,9 +48,11 @@ final class HomeCoordinator: BaseCoordinator {
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
         router.setRootModule(tabBarController, isNavigationBarHidden: true)
-        NotificationCenter.default.addObserver(self, selector: #selector(showNotificationList), name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showListNotify), name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
     }
 
+    
     private func makeTabBar() {
         let (homeCoordinator, rootController) = coordinatorFactory.makeHome()
         homeCoordinator.start()
@@ -145,7 +147,11 @@ final class HomeCoordinator: BaseCoordinator {
         addDependency(coordinator)
     }
 
-    @objc private func showNotificationList() {
+    @objc func showListNotify() {
+        showNotificationList()
+    }
+    
+    private func showNotificationList() {
         var module = coordinatorFactory.makeNotificationList()
         module.notificationsListDidSelect = { [weak self] item in
             switch item {

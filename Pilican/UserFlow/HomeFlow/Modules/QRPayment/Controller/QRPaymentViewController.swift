@@ -114,7 +114,11 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         result.errors
             .bind(to: rx.error)
             .disposed(by: disposeBag)
-
+        
+        result.loading
+            .bind(to: ProgressView.instance.rx.loading)
+            .disposed(by: disposeBag)
+        
         result.connect()
             .disposed(by: disposeBag)
     }
@@ -135,14 +139,21 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         if let balance = userInfo.balance {
             myBonus = balance
         }
+        
         guard let intAmount = Int(amount ?? "0") else { return ("0", "0", "0") }
         let payAmount = isOn ? intAmount - myBonus : intAmount
         let totalAmount = payAmount < 0 ? 0 : payAmount
         let cashBack = (totalAmount * (viewModel.info.retail.cashBack ?? 1) / 100)
         cashback = cashBack
-        let amountByBonus = intAmount - myBonus < 0 ? 0 : intAmount - myBonus
+        var amountByBonus: Int = 0
+        if isOn {
+            amountByBonus = payAmount - myBonus < 0 ? 0 : payAmount - myBonus
+        } else {
+            amountByBonus = intAmount
+        }
         let spendBonusAmount = myBonus > intAmount ? intAmount : myBonus
         epayAmount = amountByBonus
+
         epayAmountSubject.onNext(Double(epayAmount))
         return (String(cashBack), String(amountByBonus), String(spendBonusAmount))
     }

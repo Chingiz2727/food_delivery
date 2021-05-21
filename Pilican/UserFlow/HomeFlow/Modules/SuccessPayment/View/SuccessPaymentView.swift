@@ -118,7 +118,7 @@ class SuccessPaymentView: UIView {
         scrollView.addSubview(nextButton)
         nextButton.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(15)
-            make.bottom.equalToSuperview().inset(30)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(50)
             make.height.equalTo(40)
         }
 
@@ -128,6 +128,7 @@ class SuccessPaymentView: UIView {
             make.bottom.equalTo(nextButton.snp.top).offset(-20)
             make.height.equalTo(100)
         }
+        backgroundColor = .white
     }
 
     private func configureView() {

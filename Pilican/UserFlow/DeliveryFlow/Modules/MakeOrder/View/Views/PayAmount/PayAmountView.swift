@@ -103,6 +103,6 @@ final class PayAmountView: UIView {
         payButton.titleLabel?.font = .semibold18
         layer.cornerRadius = 10
         payButton.layer.cornerRadius = 12
-        dividerLine.backgroundColor = .pilicanLightGray
+        dividerLine.backgroundColor = .pilicanLightGray.withAlphaComponent(0.5)
     }
 }

@@ -16,6 +16,7 @@ class RateDeliveryViewController: ViewController, ViewHolder, RateDeliveryModule
     private let disposeBag = DisposeBag()
     private let order: DeliveryOrderResponse
     private let viewModel: CreateOrderRatingsViewModel
+    private let userInfo: UserInfoStorage
     override func loadView() {
         view = RateDeliveryView()
     }
@@ -23,6 +24,7 @@ class RateDeliveryViewController: ViewController, ViewHolder, RateDeliveryModule
     init(order: DeliveryOrderResponse, viewModel: CreateOrderRatingsViewModel) {
         self.order = order
         self.viewModel = viewModel
+        userInfo = assembler.resolver.resolve(UserInfoStorage.self)!
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -57,6 +59,7 @@ class RateDeliveryViewController: ViewController, ViewHolder, RateDeliveryModule
         rootView.skipButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.rateDeliveryTapped?(order)
+                self.userInfo.updateInfo.onNext(())
             }).disposed(by: disposeBag)
 
         rootView.nextButton.rx.tap

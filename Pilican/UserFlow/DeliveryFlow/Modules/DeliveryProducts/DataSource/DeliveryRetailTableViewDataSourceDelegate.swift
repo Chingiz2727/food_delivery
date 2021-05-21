@@ -4,18 +4,17 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
     var productCategory: [ProductCategory] = []
     private let dishList: DishList
     var selectedCellIndexPath: NSIndexPath?
-    let selectedCellHeight: CGFloat = 250
+    let selectedCellHeight: CGFloat = 300
     let unselectedCellHeight: CGFloat = 140
-    var expanded = false
-
+    
     init(dishList: DishList) {
         self.dishList = dishList
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return productCategory.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productCategory[section].dishes.count
     }
@@ -27,33 +26,35 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
             self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .addToDish(product))
             cell.setData(product: product)
         }
-
+        
         cell.buttonsLabel.removeFromDish = { [unowned self] product in
             self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .removeFromDish(product))
             cell.setData(product: product)
         }
-
+        cell.setSelected(selected: product.isExpanded ?? false)
         cell.setData(product: product)
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectedCellIndexPath != nil && selectedCellIndexPath as? IndexPath == indexPath {
-                selectedCellIndexPath = nil
-            } else {
-                selectedCellIndexPath = indexPath as NSIndexPath
-            }
+        let cell: DeliveryRetailProductTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let expanded = productCategory[indexPath.section].dishes[indexPath.row].isExpanded
 
-            tableView.beginUpdates()
-            tableView.endUpdates()
-
-            if selectedCellIndexPath != nil {
-                tableView.scrollToRow(at: indexPath, at: .none, animated: true)
-            }
+        if expanded == true {
+            cell.setSelected(selected: false)
+            productCategory[indexPath.section].dishes[indexPath.row].isExpanded = false
+        } else {
+            cell.setSelected(selected: true)
+            productCategory[indexPath.section].dishes[indexPath.row].isExpanded = true
+        }
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if selectedCellIndexPath as? IndexPath == indexPath {
+        let expanded = productCategory[indexPath.section].dishes[indexPath.row].isExpanded
+        if expanded == true {
             return selectedCellHeight
         }
         return unselectedCellHeight
@@ -63,8 +64,23 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
         return productCategory[indexPath.section].dishes[indexPath.row].status == 2
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return productCategory[section].name
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        let label = UILabel()
+        view.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().inset(10)
+        }
+        view.backgroundColor = #colorLiteral(red: 0.8549019608, green: 0.8549019608, blue: 0.8549019608, alpha: 1)
+        label.font = .semibold20
+        label.textColor = .black
+        label.text = productCategory[section].name
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
     }
 }
 
@@ -88,7 +104,7 @@ extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let cell = tableView.cellForRow(at: indexPath) as? DeliveryRetailProductTableViewCell
-
+        
         let action = UIContextualAction(
             style: .normal,
             title: "") { [unowned self] _, _, completionHandler in

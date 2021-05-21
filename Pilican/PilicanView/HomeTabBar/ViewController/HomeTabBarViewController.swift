@@ -11,7 +11,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
     var bonusTap: Callback?
     var notifyMenuTap: Callback?
     let homeTabBar = HomeTabBar()
-    let qrScanButton = QRButton()
+    static let qrScanButton = QRButton()
 
     private let tabView = HomeTabView()
     private let userInfoStorage: UserInfoStorage
@@ -42,8 +42,8 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
     private func setupInitialLayout() {
         setValue(homeTabBar, forKey: "tabBar")
-        view.addSubview(qrScanButton)
-        qrScanButton.snp.makeConstraints { make in
+        view.addSubview(HomeTabBarViewController.qrScanButton)
+        HomeTabBarViewController.qrScanButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalTo(homeTabBar.snp.top)
             make.size.equalTo(70)
@@ -53,7 +53,7 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
 
     private func bindView() {
 
-        qrScanButton.control.rx.controlEvent(.touchUpInside)
+        HomeTabBarViewController.qrScanButton.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.qrCodeTap?()
             })

@@ -28,7 +28,7 @@ final class CameraView: UIView {
 
     private func setupInitialLayout() {
         addSubview(contentView)
-        
+        contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
         contentView.addSubview(rotateCameraButton)
         contentView.addSubview(flashLightButton)
         contentView.addSubview(identificatorButton)
@@ -38,12 +38,12 @@ final class CameraView: UIView {
         contentView.addSubview(rectangleImageView)
         contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(100)
+            make.top.leading.trailing.equalToSuperview().inset(40)
         }
 
         rectangleImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.size.equalTo(250)
+            make.size.equalTo(220)
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
         }
 

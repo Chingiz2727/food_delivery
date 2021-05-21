@@ -80,7 +80,8 @@ final class RetailDetailView: UIView {
         addSubview(scrollView)
 
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(40)
         }
         scrollView.addSubview(sliderView)
         scrollView.addSubview(stackView)
@@ -106,7 +107,7 @@ final class RetailDetailView: UIView {
     }
 
     private func configureView() {
-        scrollView.bounces = true
+        scrollView.bounces = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         backgroundColor = .background

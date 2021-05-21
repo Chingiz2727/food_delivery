@@ -50,6 +50,23 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         viewModel.orderType = orderType.title == "Доставка Pillikan" ? 1 : 2
         bindView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = true
+            HomeTabBarViewController.qrScanButton.isHidden = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = false
+            HomeTabBarViewController.qrScanButton.isHidden = false
+        }
+    }
+    
     private func bindViewModel() {
         let output = viewModel.transform(
             input: .init(

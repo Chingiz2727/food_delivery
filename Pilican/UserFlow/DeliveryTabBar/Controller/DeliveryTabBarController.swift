@@ -28,9 +28,10 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     lazy var panGesture = UIPanGestureRecognizer()
     lazy var singleTap = UITapGestureRecognizer()
     var deliveryDetailsVCData = [[UIView: DeliveryOrderResponse?]]()
-
+    let userRepo: UserInfoStorage
     init(viewModel: DeliveryTabBarViewModel) {
         self.viewModel = viewModel
+        userRepo = assembler.resolver.resolve(UserInfoStorage.self)!
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -44,13 +45,13 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     }
     
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: .just(())))
+        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()), userRepo.updateInfo.asObservable())))
         
         let activeOrder = output.activeOrders.publish()
         
         activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
             overlayViews.removeAll()
-            myOrders.map { $0.contactless}
+            self.deliveryDetailsVCData.removeAll()
             myOrders.forEach { order in
                 let v = RetailCardView()
                 let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"

@@ -32,6 +32,21 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
         bindViewModel()
         setupMap()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = true
+            HomeTabBarViewController.qrScanButton.isHidden = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = false
+            HomeTabBarViewController.qrScanButton.isHidden = false
+        }
+    }
     
     private func bindViewModel() {
         dishList.wishDishList

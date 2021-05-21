@@ -12,6 +12,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         return label
     }()
     private let deliveryLine = UIView()
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .book14
@@ -23,13 +24,13 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
     private let productImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
-        image.layer.cornerRadius = 50
+        image.layer.cornerRadius = 8
         image.clipsToBounds = true
         return image
     }()
 
     let buttonsLabel = DeliveryButtonsView()
-
+    var product: Product?
     private let  priceLabel: UILabel = {
         let label = UILabel()
         label.font = .medium16
@@ -45,6 +46,13 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         stackView.spacing = 5
         return stackView
     }()
+    
+    private let secondImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        return image
+    }()
 
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel, UIView(), priceStackView])
@@ -53,6 +61,15 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         stackView.spacing = 3
         return stackView
     }()
+    
+    
+    private lazy var horizontalStack = UIStackView(views: [stackView, UIView(), productImage], axis: .horizontal, distribution: .fill, spacing: 10)
+    
+    private lazy var verticalStack = UIStackView(
+        views: [secondImage,horizontalStack],
+        axis: .vertical,
+        distribution: .fill,
+        spacing: 5)
     
     let emptyLabel: UILabel = {
         let label = UILabel()
@@ -81,7 +98,14 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func setSelected(selected: Bool) {
+        secondImage.isHidden = !selected
+        productImage.isHidden = selected
+        
+    }
+    
     func setData(product: Product) {
+        self.product = product
         nameLabel.text = product.name
         descriptionLabel.text = product.composition
         buttonsLabel.setDish(companyDish: product)
@@ -89,6 +113,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         deliveryLine.isHidden = product.shoppingCount ?? 0 == 0
 
         productImage.kf.setImage(with: URL(string: product.imgLogo ?? "")!)
+        secondImage.kf.setImage(with: URL(string: product.imgLogo ?? "")!)
         if product.status == 1 {
             self.emptyLabel.isHidden = false
             self.isUserInteractionEnabled = false
@@ -105,25 +130,12 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         }
         contentView.addSubview(backView)
         backView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
-        backView.addSubview(stackView)
-        backView.addSubview(productImage)
-        backView.addSubview(deliveryLine)
-        deliveryLine.snp.makeConstraints { make in
-            make.leading.top.bottom.equalToSuperview()
-            make.width.equalTo(5)
-        }
-
-        stackView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(10)
-            make.leading.equalTo(deliveryLine.snp.trailing).offset(10)
-            make.trailing.equalTo(productImage.snp.leading).offset(-10)
-        }
+        backView.addSubview(verticalStack)
+        verticalStack.snp.makeConstraints { $0.edges.equalToSuperview().inset(3) }
         productImage.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(10)
-            make.centerY.equalToSuperview()
             make.size.equalTo(100)
         }
-
+        secondImage.isHidden = true
         deliveryLine.backgroundColor = .primary
         deliveryLine.isHidden = true
         selectionStyle = .none
@@ -134,4 +146,5 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
         backView.layer.cornerRadius = 10
         backView.backgroundColor = .white
     }
+
 }

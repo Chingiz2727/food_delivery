@@ -43,7 +43,13 @@ public extension UIViewController {
         controller.addAction(action)
         present(controller, animated: true, completion: nil)
     }
-    
+    func showSuccessMessageAlert(message: String ,handler: @escaping () -> Void) {
+        let controller = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .default) { (alert) in
+            controller.dismiss(animated: true, completion: handler)}
+        controller.addAction(action)
+        present(controller, animated: true, completion: nil)
+    }
     func showOkAlert(handler: @escaping () -> Void) {
         let controller = UIAlertController(title: "", message: "Благодарим вас за обращение.", preferredStyle: .alert)
         let action = UIAlertAction(title: "Закрыть", style: .default) { (alert) in

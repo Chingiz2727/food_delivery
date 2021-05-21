@@ -40,8 +40,26 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         bindViewModel()
         bindView()
         alertIsShown = false
+        rootView.tableView.rowHeight = UITableView.automaticDimension
+        rootView.tableView.estimatedRowHeight = 140
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = true
+            HomeTabBarViewController.qrScanButton.isHidden = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = false
+            HomeTabBarViewController.qrScanButton.isHidden = false
+        }
+    }
+    
     private func bindViewModel() {
         let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()), rootView.rx.retryAction)))
 

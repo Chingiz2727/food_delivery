@@ -5,11 +5,11 @@ import Firebase
 import IQKeyboardManagerSwift
 import Messages
 import YandexMapsMobile
+public let assembler = Assembler([DependencyContainerAssembly()])
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let assembler = Assembler([DependencyContainerAssembly()])
     private var appCoordinator: AppCoordinator?
     private var deepLinkActionFactory: DeepLinkActionFactory?
 

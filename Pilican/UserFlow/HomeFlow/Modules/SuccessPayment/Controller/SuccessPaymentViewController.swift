@@ -40,12 +40,10 @@ class SuccessPaymentViewController: ViewController, ViewHolder, SuccessPaymentMo
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.isHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = false
     }
 
     private func bindView() {
@@ -53,7 +51,8 @@ class SuccessPaymentViewController: ViewController, ViewHolder, SuccessPaymentMo
         rootView.setData(price: String(price), cashback: String(cashback))
         rootView.nextButton.rx.tap
             .subscribe(onNext: { [unowned self] in
-                self.nextTapped?()
+//                self.nextTapped?()
+                self.navigationController?.popToRootViewController(animated: true)
             }).disposed(by: disposeBag)
     }
 }
