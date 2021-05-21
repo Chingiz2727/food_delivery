@@ -22,7 +22,7 @@ final class PayValueView: UIView {
     let costLabel: UILabel = {
         let label = UILabel()
         label.textColor = .primary
-        label.textAlignment = .left
+        label.textAlignment = .right
         return label
     }()
 
@@ -34,8 +34,8 @@ final class PayValueView: UIView {
     private lazy var horizontalStackView = UIStackView(
         views: [stackView, UIView(), costLabel],
         axis: .horizontal,
-        distribution: .fill,
-        alignment: .top,
+        distribution: .fillProportionally,
+        alignment: .center,
         spacing: 10)
 
     override init(frame: CGRect) {
@@ -60,7 +60,17 @@ final class PayValueView: UIView {
     }
 
     private func setupInitialLayout() {
-        addSubview(horizontalStackView)
-        horizontalStackView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        addSubview(stackView)
+        addSubview(costLabel)
+        stackView.snp.makeConstraints { make in
+            make.top.bottom.leading.equalToSuperview()
+            make.trailing.equalTo(costLabel.snp.leading).offset(-40)
+        }
+        
+        costLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.width.equalTo(100)
+            make.trailing.equalToSuperview()
+        }
     }
 }

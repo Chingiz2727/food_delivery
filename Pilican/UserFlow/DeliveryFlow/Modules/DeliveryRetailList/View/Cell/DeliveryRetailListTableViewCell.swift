@@ -77,7 +77,7 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
         spacing: 15)
 
     private lazy var horizontalStackView = UIStackView(
-        views: [companyInfoVerticalStack, UIView(), priceVerticalStack],
+        views: [companyInfoVerticalStack, UIView()],
         axis: .horizontal,
         spacing: 8)
 
@@ -149,7 +149,17 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
 
         dataView.addSubview(horizontalStackView)
         dataView.addSubview(companyImageView)
-
+        dataView.addSubview(discountView)
+        dataView.addSubview(workStatusView)
+        
+        discountView.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(10)
+        }
+        
+        workStatusView.snp.makeConstraints { make in
+            make.bottom.trailing.equalToSuperview().inset(10)
+        }
+        
         companyImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(10)
@@ -157,8 +167,8 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
 
         horizontalStackView.snp.makeConstraints { make in
             make.leading.equalTo(companyImageView.snp.trailing).offset(10)
-            make.trailing.equalToSuperview().inset(10)
             make.top.bottom.equalToSuperview().inset(10)
+            make.trailing.equalTo(workStatusView.snp.leading).offset(-10)
         }
 
         companyImageView.snp.makeConstraints { $0.size.equalTo(54) }
