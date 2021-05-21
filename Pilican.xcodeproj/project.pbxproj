@@ -85,6 +85,7 @@
 		5578855D25FF673100B3A798 /* ChangePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578855C25FF673100B3A798 /* ChangePinViewController.swift */; };
 		5578856125FF67E900B3A798 /* ChangePinModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578856025FF67E900B3A798 /* ChangePinModule.swift */; };
 		557AA0DC262FE664008FF4AF /* OrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557AA0DB262FE663008FF4AF /* OrderResponse.swift */; };
+		5582A4D92657623F00E477E4 /* DeliveryLocationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582A4D82657623F00E477E4 /* DeliveryLocationPoint.swift */; };
 		5584E81325EDF2A300025251 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81225EDF2A300025251 /* AccountHeaderView.swift */; };
 		5584E81725EDF34100025251 /* AccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81625EDF34100025251 /* AccountCard.swift */; };
 		5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E81A25EDFBD200025251 /* AccountKey.swift */; };
@@ -696,6 +697,7 @@
 		5578855C25FF673100B3A798 /* ChangePinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinViewController.swift; sourceTree = "<group>"; };
 		5578856025FF67E900B3A798 /* ChangePinModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePinModule.swift; sourceTree = "<group>"; };
 		557AA0DB262FE663008FF4AF /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
+		5582A4D82657623F00E477E4 /* DeliveryLocationPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationPoint.swift; sourceTree = "<group>"; };
 		5584E81225EDF2A300025251 /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
 		5584E81625EDF34100025251 /* AccountCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCard.swift; sourceTree = "<group>"; };
 		5584E81A25EDFBD200025251 /* AccountKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountKey.swift; sourceTree = "<group>"; };
@@ -2876,6 +2878,7 @@
 			isa = PBXGroup;
 			children = (
 				7201595F262CD7BD0083C758 /* DeliveryLocation.swift */,
+				5582A4D82657623F00E477E4 /* DeliveryLocationPoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -6320,6 +6323,7 @@
 				552531CB262AC92600888DEE /* OrderHistoryView.swift in Sources */,
 				A475CCD425EF7E9F00C596FB /* RetailItemsView.swift in Sources */,
 				55BEF35925FB235300205BBD /* EditAccountViewModel.swift in Sources */,
+				5582A4D92657623F00E477E4 /* DeliveryLocationPoint.swift in Sources */,
 				7211285226202B760055A83A /* RetailListMapCoordinator.swift in Sources */,
 				A483E28D25D40ABE006D2DAF /* PaginationState.swift in Sources */,
 				722A34902626EAC6003FB38A /* PayValueView.swift in Sources */,
