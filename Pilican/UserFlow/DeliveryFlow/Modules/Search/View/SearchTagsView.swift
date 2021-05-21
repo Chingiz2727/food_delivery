@@ -29,7 +29,9 @@ class SearchTagsView: UIView, TagListViewDelegate {
     }
 
     func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        sender.tagViews.forEach { $0.isSelected = false }
         selectedTag.onNext(tagView.titleLabel?.text ?? "")
+        tagView.isSelected = !tagView.isSelected
     }
 
     required init?(coder: NSCoder) {
@@ -56,8 +58,8 @@ class SearchTagsView: UIView, TagListViewDelegate {
         tagListView.tagBackgroundColor = .pilicanWhite
         tagListView.textColor = .pilicanGray
         tagListView.borderColor = .pilicanLightGray
-        tagListView.selectedTextColor = .primary
-        tagListView.tagSelectedBackgroundColor = .pilicanWhite
+        tagListView.selectedTextColor = .pilicanWhite
+        tagListView.tagSelectedBackgroundColor = .primary
         tagListView.selectedBorderColor = .primary
     }
 

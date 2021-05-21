@@ -11,12 +11,8 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
     private let viewModel: DeliveryLocationMapViewModel
     private let disposeBag = DisposeBag()
     private let userLocationStatusSubject: PublishSubject<UserLocationStatus> = .init()
-    let points = [
-        YMKPoint(latitude: 42.271008, longitude: 69.558747),
-        YMKPoint(latitude: 42.382227, longitude: 69.491084),
-        YMKPoint(latitude: 42.410608, longitude: 69.636103),
-        YMKPoint(latitude: 42.311006, longitude: 69.660448)
-    ]
+    
+    let points = LocationArea().location
     
     let lines = [
         CLLocationCoordinate2D(latitude: 42.271008, longitude: 69.558747),
@@ -133,8 +129,8 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
     
     
     private func deliveryZone() {
-
-        let addPolygon = YMKPolygon(outerRing: YMKLinearRing(points: points), innerRings: [])
+        let newPoint: [YMKPoint] = points.map { YMKPoint(latitude: $0.longitude, longitude: $0.latitude) }
+        let addPolygon = YMKPolygon(outerRing: YMKLinearRing(points: newPoint), innerRings: [])
         
         let mapObjects = rootView.mapView.mapWindow.map.mapObjects.addPolygon(with: addPolygon)
         
