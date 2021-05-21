@@ -104,8 +104,11 @@ final class DeliveryRetailProductsView: UIView {
         calculateView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
             [
-                calculateView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-                calculateView.heightAnchor.constraint(equalToConstant: 45)
+                calculateView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+                calculateView.heightAnchor.constraint(equalToConstant: 50),
+                calculateView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+                calculateView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+
             ]
         )
         
@@ -113,6 +116,8 @@ final class DeliveryRetailProductsView: UIView {
         tableHeightConstraint?.isActive = true
         headerHeightConstraint = stickyHeaderView.heightAnchor.constraint(equalToConstant: 310)
         headerHeightConstraint.isActive = true
+        calculateView.layer.cornerRadius = 5
+        calculateView.layer.addShadow()
     }
 
     private func configureView() {

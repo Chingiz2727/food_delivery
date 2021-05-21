@@ -32,7 +32,7 @@ class AddCardStatusViewController: UIViewController, AddCardStatusModule, ViewHo
             .subscribe(onNext: { [unowned self] in
                 switch self.status {
                 case .failure:
-                    self.onReturnDidTap?()
+                    self.onCloseDidTap?()
                 case .succes:
                     self.onCloseDidTap?()
                 }

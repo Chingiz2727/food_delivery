@@ -46,7 +46,7 @@ final class ProductCalculateView: UIView {
     private func setupInitialLayout() {
         addSubview(stackView)
         addSubview(control)
-        stackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(5) }
+        stackView.snp.makeConstraints { $0.edges.equalToSuperview().inset(7) }
         control.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     

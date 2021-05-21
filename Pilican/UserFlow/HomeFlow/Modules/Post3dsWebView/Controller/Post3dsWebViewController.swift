@@ -26,12 +26,28 @@ final class Post3dsWebViewController: UIViewController, Post3dsWebViewModule, WK
     //MARK:- View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(webView)
+        addWebView()
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.accessibilityNavigationStyle = .combined
+        webView.frame = view.bounds
         makeRequest()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = true
+            HomeTabBarViewController.qrScanButton.isHidden = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let tabbar = tabBarController as? HomeTabBarViewController {
+            tabbar.tabBar.isHidden = false
+            HomeTabBarViewController.qrScanButton.isHidden = false
+        }
     }
     
     private func makeRequest() {
