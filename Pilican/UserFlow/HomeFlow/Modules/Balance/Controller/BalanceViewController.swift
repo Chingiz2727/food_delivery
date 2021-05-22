@@ -47,16 +47,23 @@ class BalanceViewController: ViewController, ViewHolder, BalanceModule {
         let output = viewModel.transform(
             input: .init(
                 replenishTapped: rootView.replishmentButton.rx.tap.asObservable(),
-                amount: rootView.enterBalanceTextField.rx.text.asObservable()))
+                amount: rootView.enterBalanceTextField.rx.text.unwrap().asObservable()))
     
         let result = output.result.publish()
 
         result.element
             .subscribe(onNext: { [unowned self] result in
-                userInfoStorage.balance = result.user.balance
-                self.dissmissBalanceModule?()
+                self.userInfoStorage.balance = result.user.balance
+                self.userInfoStorage.updateInfo.onNext(())
+                self.showSuccessMessageAlert(message: "Вы успешно пополнили баланс на сумму \(rootView.enterBalanceTextField.text ?? "0")") {
+                    self.navigationController?.popViewController(animated: true)
+                    self.dissmissBalanceModule?()
+                }
             }).disposed(by: disposeBag)
 
+        result.loading
+            .bind(to: ProgressView.instance.rx.loading)
+            .disposed(by: disposeBag)
         result.errors
             .bind(to: rx.error)
             .disposed(by: disposeBag)

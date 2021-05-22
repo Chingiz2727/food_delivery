@@ -7,6 +7,6 @@
 
 enum HomeCashbackMenu: String, CaseIterable {
     case myCards = "Мои карты"
-    case balanceReplishment = "Пополнение Pillican баланса"
+    case balanceReplishment = "Пополнение Pillikan баланса"
     case historyOfPay = "История оплаты"
 }

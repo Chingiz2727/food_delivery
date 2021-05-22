@@ -39,5 +39,4 @@ enum BalanceTarget: ApiTarget {
     var stubData: Any {
         return [:]
     }
-    
 }

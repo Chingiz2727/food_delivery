@@ -3,6 +3,7 @@ import Moya
 enum MoyaAddCardApiTarget {
     case need3DSecure(url: String, model: BindCardModel, token: String)
     case post3ds(transactionId: String, threeDsCallbackId: String, paRes: String, token: String)
+    case replenishBalance(sig: String, amount: Float, createdAt: String)
 }
 
 extension MoyaAddCardApiTarget: TargetType {
@@ -14,6 +15,8 @@ extension MoyaAddCardApiTarget: TargetType {
         case .post3ds:
             guard let url = URL(string: "https://api.cloudpayments.ru/") else { fatalError("baseURL could not be configured.") }
             return url
+        case .replenishBalance:
+            return URL(string: AppEnviroment.baseURL)!
         }
     }
     var path: String {
@@ -22,12 +25,14 @@ extension MoyaAddCardApiTarget: TargetType {
             return ""
         case .post3ds:
             return "payments/ThreeDSCallback"
+        case .replenishBalance:
+            return "a/cb/purchase/replenish"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .need3DSecure, .post3ds:
+        case .need3DSecure, .post3ds, .replenishBalance:
             return .post
         }
     }
@@ -55,6 +60,10 @@ extension MoyaAddCardApiTarget: TargetType {
                 taskValue["MD"] = mdParamsString
                 taskValue["PaRes"] = paRes
             }
+        case .replenishBalance(let sig,let amount,let createdAt):
+            taskValue["sig"] = sig
+            taskValue["amount"] = amount
+            taskValue["createdAt"] = createdAt
         }
         return .requestParameters(parameters: taskValue, encoding: JSONEncoding.default)
     }
@@ -65,6 +74,11 @@ extension MoyaAddCardApiTarget: TargetType {
         case .need3DSecure(_, _ ,let token), .post3ds(_, _ ,_ , let token):
             httpHeaders["Content-Type"] = "application/json; charset=utf-8"
             httpHeaders["authorization"] = "Bearer \(token)"
+        case .replenishBalance:
+            let users = assembler.resolver.resolve(UserSessionStorage.self)!
+            httpHeaders["appver"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            httpHeaders["authorization"] = "Bearer " + users.accessToken!
+            httpHeaders["Content-Type"] = "application/json"
         }
         return httpHeaders
     }

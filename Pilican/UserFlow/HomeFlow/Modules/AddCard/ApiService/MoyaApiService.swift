@@ -40,6 +40,16 @@ final class MoyaApiService {
 //            response.response
         }
     }
+    
+    func replenishBalance(sig: String,
+                          createdAt: String,
+                          amount: Float,
+                          completion: @escaping (_ code: OAuthResponse?, _ error: ErrorResponse?) -> ()) {
+        let createOrder = MoyaAddCardApiTarget.replenishBalance(sig: sig, amount: amount, createdAt: createdAt)
+        cardService.request(createOrder) { result in
+            print(result)
+        }
+    }
 }
 
 enum Status: String {
