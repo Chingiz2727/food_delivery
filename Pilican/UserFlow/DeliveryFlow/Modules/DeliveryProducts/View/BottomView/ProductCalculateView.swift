@@ -40,6 +40,11 @@ final class ProductCalculateView: UIView {
     func setupProductToCalculate(product: [Product]) {
         let amount = product.map { $0.price * ($0.shoppingCount ?? 0)}
         let totalSum = amount.reduce(0,+)
+        if totalSum > 0 {
+            isHidden = false
+        } else {
+            isHidden = true
+        }
         priceLabel.text = "\(totalSum) 〒"
     }
 

@@ -42,6 +42,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         alertIsShown = false
         rootView.tableView.rowHeight = UITableView.automaticDimension
         rootView.tableView.estimatedRowHeight = 140
+        viewModel.dishList.products = []
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -111,7 +112,6 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
             .disposed(by: disposeBag)
 
         rootView.setProductToPay(product: viewModel.dishList.products)
-        
     }
 
     private func bindView() {
