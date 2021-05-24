@@ -39,16 +39,23 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
 
     private func showOrderHistory() {
         var module = moduleFactory.makeOrderHistory()
-        module.onSelectOrderHistory = { [weak self] response, tag in
-            // swiftlint:disable line_length
-            let retail = DeliveryRetail(id: response.retailId ?? 0, cashBack: 0, isWork: 0, longitude: response.longitude ?? 0, latitude: response.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: response.retailLogo ?? "", address: response.address ?? "", workDays: [], payIsWork: 0, name: response.retailName ?? "", status: response.status ?? 0, rating: response.retailRating ?? 0)
-            if tag != 2 {
-                self?.showDeliveryProduct(retail: retail)
+//        module.onSelectOrderHistory = { [weak self] response, tag in
+//            // swiftlint:disable line_length
+//            let retail = DeliveryRetail(id: response.retailId ?? 0, cashBack: 0, isWork: 0, longitude: response.longitude ?? 0, latitude: response.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: response.retailLogo ?? "", address: response.address ?? "", workDays: [], payIsWork: 0, name: response.retailName ?? "", status: response.status ?? 0, rating: response.retailRating ?? 0)
+//            if tag != 2 {
+//                self?.showDeliveryProduct(retail: retail, dishList: r)
+//            } else {
+//                self?.showOrderStatus(orderId: response.id ?? 0)
+//            }
+//        }
+        module.selectedOrderHistory = { [weak self] dishList, type in
+            let retail = DeliveryRetail(id: dishList.retail?.retailId ?? 0, cashBack: 0, isWork: 0, longitude: dishList.retail?.longitude ?? 0, latitude: dishList.retail?.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: dishList.retail?.imgLogo ?? "", address: dishList.retail?.address ?? "", workDays: [], payIsWork: 0, name: dishList.retail?.retailName ?? "", status: dishList.retail?.status ?? 0, rating: dishList.retail?.retailRating ?? 0)
+            if type == .delivery {
+                self?.showDeliveryProduct(retail: dishList.retail ?? retail)
             } else {
-                self?.showOrderStatus(orderId: response.id ?? 0)
+                self?.showOrderStatus(orderId: dishList.retail?.id ?? 0)
             }
         }
-        
         router.push(module)
     }
 

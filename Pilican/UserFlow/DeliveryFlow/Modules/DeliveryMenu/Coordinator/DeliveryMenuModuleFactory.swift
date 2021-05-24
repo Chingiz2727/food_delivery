@@ -25,7 +25,7 @@ final class DeliveryMenuModuleFactory {
         let viewModel = FavoritesViewModel(apiService: apiService)
         return FavoritesViewController(viewModel: viewModel, dishList: container.resolve(DishList.self)!)
     }
-    
+
     func makeMyCards() -> MyCardsModule {
         let apiService = container.resolve(ApiService.self)!
         let myCardViewModel = MyCardsViewModel(apiService: apiService)
@@ -37,7 +37,7 @@ final class DeliveryMenuModuleFactory {
         let viewModel = OrderHistoryViewModel(apiService: apiService)
         return OrderHistoryViewController(viewModel: viewModel, dishList: container.resolve(DishList.self)!)
     }
-    
+
     func delivery() -> DeliveryRetailListModule {
         let apiSevice = container.resolve(ApiService.self)!
         let viewModel = DeliveryRetailListViewModel(apiService: apiSevice)
@@ -48,8 +48,8 @@ final class DeliveryMenuModuleFactory {
 
     func deliveryProduct(retail: DeliveryRetail) -> DeliveryRetailProductsModule {
         let apiSevice = container.resolve(ApiService.self)!
-        let dishList = container.resolve(DishList.self)!
-        let viewModel = DeliveryRetailProductViewModel(apiService: apiSevice, retailInfo: retail, dishList: dishList)
+        let dish = container.resolve(DishList.self)!
+        let viewModel = DeliveryRetailProductViewModel(apiService: apiSevice, retailInfo: retail, dishList: dish)
         let controller = DeliveryRetailProductsViewController(viewModel: viewModel, favouriteManager: container.resolve(FavouritesManager.self)!, workCalendar: container.resolve(WorkCalendar.self)!)
         return controller
     }
