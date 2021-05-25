@@ -109,6 +109,7 @@ class CameraViewController: UIViewController, CameraModule {
                 break
             }
         }
+    
         let adapter = viewModel.adapter
         adapter.connect(to: cameraView.tableView)
         adapter.start()
@@ -150,7 +151,11 @@ class CameraViewController: UIViewController, CameraModule {
             }).disposed(by: disposeBag)
 
         result.errors
-            .bind(to: rx.error)
+            .subscribe(onNext: { [unowned self] error in
+                self.showErrorInAlert(error) {
+                    self.avCaptureSession.startRunning()
+                }
+            })
             .disposed(by: disposeBag)
 
         result.connect()

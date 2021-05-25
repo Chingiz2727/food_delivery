@@ -148,26 +148,26 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
         searchRetails.connect()
             .disposed(by: disposeBag)
         
-        rootView.header.retailSliderId
-            .withLatestFrom(retailList.element) { id, retails in
-                    return retails.filter { $0.id != 0 }
-                }.subscribe(onNext: { [unowned self] retails in
-                    if let retail = retails.first {
-                        if retail.isWork == 1 {
-                            if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
-                                showBasketAlert {
-                                    self.dishList.products = []
-                                    self.dishList.wishDishList.onNext([])
-                                    // swiftlint:disable line_length
-                                    self.onRetailDidSelect?(DeliveryRetail(id: retail.id, cashBack: 0, isWork: 0, longitude: 0, latitude: 0, dlvCashBack: 0, pillikanDelivery: 0, logo: "", address: "", workDays: [], payIsWork: 0, name: "", status: 0, rating: 0))
-                                }
-                            } else {
-                                // swiftlint:disable line_length
-                                self.onRetailDidSelect?(DeliveryRetail(id: retail.id, cashBack: 0, isWork: 0, longitude: 0, latitude: 0, dlvCashBack: 0, pillikanDelivery: 0, logo: "", address: "", workDays: [], payIsWork: 0, name: "", status: 0, rating: 0))
-                            }
-                        }
-                    }
-                })
-                .disposed(by: disposeBag)
+//        rootView.header.retailSliderId
+//            .withLatestFrom(retailList.element) { id, retails in
+//                    return retails.filter { $0.id != 0 }
+//                }.subscribe(onNext: { [unowned self] retails in
+//                    if let retail = retails.first {
+//                        if retail.isWork == 1 {
+//                            if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
+//                                showBasketAlert {
+//                                    self.dishList.products = []
+//                                    self.dishList.wishDishList.onNext([])
+//                                    // swiftlint:disable line_length
+//                                    self.onRetailDidSelect?(DeliveryRetail(id: retail.id, cashBack: 0, isWork: 0, longitude: 0, latitude: 0, dlvCashBack: 0, pillikanDelivery: 0, logo: "", address: "", workDays: [], payIsWork: 0, name: "", status: 0, rating: 0))
+//                                }
+//                            } else {
+//                                // swiftlint:disable line_length
+//                                self.onRetailDidSelect?(DeliveryRetail(id: retail.id, cashBack: 0, isWork: 0, longitude: 0, latitude: 0, dlvCashBack: 0, pillikanDelivery: 0, logo: "", address: "", workDays: [], payIsWork: 0, name: "", status: 0, rating: 0))
+//                            }
+//                        }
+//                    }
+//                })
+//                .disposed(by: disposeBag)
     }
 }

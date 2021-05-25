@@ -99,7 +99,7 @@ extension UIViewController {
     
     @objc private func changeBadge() {
         let rightBar = UIBarButtonItem(
-            image: Images.notifyAlarm.image?.withRenderingMode(.alwaysOriginal),
+            image: Images.newAlarm.image?.withRenderingMode(.alwaysOriginal),
             style: .done,
             target: self,
             action: #selector(showNotifyMenu))

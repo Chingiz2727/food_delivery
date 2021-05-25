@@ -50,7 +50,7 @@ final class HomeTabView: UIView {
 
     private func configureView() {
         userInfoView.configureView(backColor: #colorLiteral(red: 0.8823529412, green: 0.9607843137, blue: 0.9960784314, alpha: 1), icon: Images.avatar.image)
-        balanceInfoView.configureView(backColor: .cashbackOrange, icon: Images.cashback.image)
+        balanceInfoView.configureView(backColor: .cashbackOrange, icon: Images.newBonusPrimary.image)
         balanceInfoView.isUserInteractionEnabled = true
         userInfoView.isUserInteractionEnabled = true
         backgroundColor = .white

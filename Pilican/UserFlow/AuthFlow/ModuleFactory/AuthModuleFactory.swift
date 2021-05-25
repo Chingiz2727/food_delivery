@@ -34,7 +34,7 @@ final class AuthModuleFactory {
         return viewController
     }
     
-    func makeHowItWork() -> HowItWorkModule {
-        return HowItWorkViewController()
+    func makeHowItWork(workType: WorkType) -> HowItWorkModule {
+        return HowItWorkViewController(workType: workType)
     }
 }

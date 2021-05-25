@@ -13,6 +13,11 @@ final class NotificationListController: ViewController, ViewHolder, Notification
         view = NotificationListView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.post(name: NSNotification.Name.init(NotificationsString.removeBadge.rawValue), object: nil, userInfo: nil)

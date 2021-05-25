@@ -58,7 +58,7 @@ final class DeliveryLocationMapView: UIView {
         currentLocationButton.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(20)
             make.bottom.equalTo(saveButton.snp.top).offset(-30)
-            make.size.equalTo(30)
+            make.size.equalTo(40)
         }
         
         currentLocationPin.snp.makeConstraints { make in

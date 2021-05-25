@@ -111,7 +111,7 @@ final class MakeOrderView: UIView {
     }
 
     func setupAmount(totalSum: Int, delivery: Int, orderType: OrderType) {
-        if totalSum < 2000 {
+        if totalSum < 1500 {
             payAmountView.setupExtraCost()
             if orderType ==  .takeAway {
                 payAmountView.setupFullCost(cost: totalSum + delivery)

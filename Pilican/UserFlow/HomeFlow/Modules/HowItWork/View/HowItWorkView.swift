@@ -65,6 +65,18 @@ class HowItWorkView: UIView {
         }
     }
 
+    func configureType(type: WorkType) {
+        switch type {
+        case .pay:
+            firstItem.configureItem(image: Images.firstItem.image, title: "- Сканируй QR код 'Pillikan' в любимых заведениях")
+            secondItem.configureItem(image: Images.secondItem.image, title: "- Привяжи карту любого банка и оплачивай покупки с кэшбэком да 20%")
+            thirdItem.configureItem(image: Images.thirdItem.image, title: "- Трать накопленные бонусы у любого партнера 'Pillikan'")
+        case .bus:
+            firstItem.configureItem(image: Images.firstItem.image, title: "- сканируй QR код Pillikan в автобусе")
+            secondItem.configureItem(image: Images.secondItem.image, title: "- Выбери свой проездной тариф ")
+            thirdItem.configureItem(image: Images.thirdItem.image, title: "- Оплати проезд и покажи чек контроллеру")
+        }
+    }
     private func configureView() {
         dataView.backgroundColor = .howItWork
         dataView.layer.cornerRadius = 10

@@ -25,8 +25,8 @@ final class HomeCoordinatorModuleFactory {
         return CashBackListViewController(viewModel: viewModel, favouriteManager: container.resolve(FavouritesManager.self)!)
     }
     
-    func makeHowItWork() -> HowItWorkModule {
-        return HowItWorkViewController()
+    func makeHowItWork(workType: WorkType) -> HowItWorkModule {
+        return HowItWorkViewController(workType: workType)
     }
     
     func makePayPartner(viewModel: QRPaymentViewModel) -> QRPaymentModule {
@@ -41,5 +41,21 @@ final class HomeCoordinatorModuleFactory {
     func makeMyQR() -> BonusModule {
         let userInfo = container.resolve(UserInfoStorage.self)!
         return BonusViewController(userInfo: userInfo)
+    }
+    
+    func makeNotificationList() -> NotificationListModule {
+        return NotificationListController()
+    }
+    
+    func pillikanInfoNotifications() -> PillikanInfoModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = PillikanInfoViewModel(apiService: apiService)
+        return PillikanInfoNotificationsViewController(viewModel: viewModel)
+    }
+    
+    func pillikanPayNotifications() -> PillikanPayModule {
+        let apiService = container.resolve(ApiService.self)!
+        let viewModel = PillikanPayViewModel(apiService: apiService)
+        return PillikanPayViewController(viewModel: viewModel)
     }
 }

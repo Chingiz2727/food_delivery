@@ -47,12 +47,13 @@ final class CameraViewModel: ViewModel {
         let scanRetailResponse = input.loadInfo
             .withLatestFrom(Observable.combineLatest(input.createdAt, input.sig, input.retailId))
             .flatMap { [unowned self] createdAt, sig, retailId in
-                apiService.makeRequest(to: CameraTarget.retailScan(
+                self.apiService.makeRequest(to: CameraTarget.retailScan(
                                         retailId: retailId,
                                         createdAt: createdAt,
                                         sig: sig))
                     .result(ScanRetailResponse.self)
-            }.asLoadingSequence()
+                    .asLoadingSequence()
+            }.share()
         
         input.loadRetails
             .subscribe(onNext: { [unowned self] in
@@ -63,10 +64,10 @@ final class CameraViewModel: ViewModel {
         let retailIden = input.searchButtonTap
             .withLatestFrom(input.retailIdentifier)
             .flatMap { [unowned self] retailIdentifier in
-                apiService.makeRequest(to: HomeApiTarget.findRetailById(id: Int(retailIdentifier ?? "") ?? 0))
+                self.apiService.makeRequest(to: HomeApiTarget.findRetailById(id: Int(retailIdentifier ?? "") ?? 0))
                     .result(FindByIdResponse.self)
                     .asLoadingSequence()
-            }
+            }.share()
             .element
             .subscribe(onNext: { [unowned self] id in
                 self.retail.onNext([id.retail])

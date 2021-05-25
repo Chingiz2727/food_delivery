@@ -82,12 +82,14 @@ enum Images: String {
     case basketSelected
     case alarm
     case notifyAlarm
+    case newAlarm
     case pillikanInfo
     case pillikanPay
     case action
     case Location
     case LocationSelected
     case homeDelivery
+    case newBonusPrimary
     case homeDeliverySelected
     case mapIcon
     case minusDelivery

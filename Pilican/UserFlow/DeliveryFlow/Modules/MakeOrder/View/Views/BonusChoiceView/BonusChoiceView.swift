@@ -31,7 +31,7 @@ class BonusChoiceView: UIView {
     private let bonusImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = Images.tenge.image
+        imageView.image = Images.newBonusPrimary.image
         return imageView
     }()
 
@@ -145,7 +145,7 @@ class BonusChoiceView: UIView {
 
         containerView.addSubview(bonusImageView)
         bonusImageView.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview().inset(4)
+            make.top.bottom.equalToSuperview()
             make.left.equalToSuperview().inset(10)
         }
 

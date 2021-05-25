@@ -23,7 +23,7 @@ final class HomeCoordinator: BaseCoordinator {
         makeTabBar()
 
         tabBarController.qrCodeTap = { [weak self] in
-            self?.showCamera()
+            self?.showCamera(workType: .pay)
         }
 
         tabBarController.accountTap = { [weak self] in
@@ -48,8 +48,6 @@ final class HomeCoordinator: BaseCoordinator {
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
         router.setRootModule(tabBarController, isNavigationBarHidden: true)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showListNotify), name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
     }
 
     
@@ -68,7 +66,7 @@ final class HomeCoordinator: BaseCoordinator {
         }
         
         homeCoordinator.onBusCameraTap = { [weak self] in
-            self?.showCamera()
+            self?.showCamera(workType: .bus)
         }
         homeCoordinator.onDeliveryTab = { [weak self] in
             self?.startDeliveryFlow()
@@ -77,7 +75,7 @@ final class HomeCoordinator: BaseCoordinator {
         tabRootContainers.append(.init(viewController: controller, coordinator: homeCoordinator))
     }
 
-    private func showCamera() {
+    private func showCamera(workType: WorkType) {
         var module = container.resolve(CameraModule.self)!
         module.cameraActionType = .makePayment
         module.paymentMaked = { [weak self] info in
@@ -87,7 +85,7 @@ final class HomeCoordinator: BaseCoordinator {
             self?.router.popModule()
         }
         module.howItWorkTapped = { [weak self] in
-            self?.showHowItWork()
+            self?.showHowItWork(workType: workType)
         }
         module.retailTapped = { [weak self] retail in
             self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
@@ -98,8 +96,8 @@ final class HomeCoordinator: BaseCoordinator {
         router.push(module)
     }
 
-    private func showHowItWork() {
-        let module = coordinatorFactory.makeHowItWork()
+    private func showHowItWork(workType: WorkType) {
+        let module = coordinatorFactory.makeHowItWork(workType: workType)
         router.presentCard(module)
     }
 

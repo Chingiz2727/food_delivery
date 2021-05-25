@@ -32,7 +32,7 @@ class PriceView: UIView {
 
     private let cashbackTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "кэшбэк"
+        label.text = "Бонусы"
         label.font = .book9
         label.textColor = .pilicanWhite
         label.textAlignment = .center
@@ -62,7 +62,8 @@ class PriceView: UIView {
 
         containerView.addSubview(priceTextField)
         priceTextField.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview().inset(17)
+            make.top.leading.equalToSuperview().inset(17)
+            make.trailing.equalToSuperview()
         }
 
         containerView.addSubview(cashbackView)

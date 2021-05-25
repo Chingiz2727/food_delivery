@@ -51,7 +51,7 @@ final class HomeTabBarCoordinatorFactory {
         return PillikanPayViewController(viewModel: viewModel)
     }
     
-    func makeHowItWork() -> HowItWorkModule {
-        return  HowItWorkViewController()
+    func makeHowItWork(workType: WorkType) -> HowItWorkModule {
+        return  HowItWorkViewController(workType: workType)
     }
 }

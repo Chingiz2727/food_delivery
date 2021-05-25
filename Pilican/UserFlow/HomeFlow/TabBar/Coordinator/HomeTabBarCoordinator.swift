@@ -30,6 +30,8 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     }
 
     override func start() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showListNotify), name: NSNotification.Name(NotificationsString.openNotifications.rawValue), object: nil)
         showHome()
     }
 
@@ -156,12 +158,46 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     }
 
     private func showHowItWork() {
-        let module = moduleFactory.makeHowItWork()
+        let module = moduleFactory.makeHowItWork(workType: .pay)
         router.presentCard(module)
     }
     
     private func showMyQr() {
         let module = moduleFactory.makeMyQR()
+        router.push(module)
+    }
+    
+    @objc func showListNotify() {
+        showNotificationList()
+    }
+    
+    private func showNotificationList() {
+        var module = moduleFactory.makeNotificationList()
+        module.notificationsListDidSelect = { [weak self] item in
+            switch item {
+            case .pillikanInfo: self?.showNotificationPillikanInfo()
+            case .pillikanPay: self?.showNotificationPillikanPay()
+            }
+        }
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
+        router.push(module)
+    }
+
+    private func showNotificationPillikanInfo() {
+        var module = moduleFactory.pillikanInfoNotifications()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
+        router.push(module)
+    }
+
+    private func showNotificationPillikanPay() {
+        var module = moduleFactory.pillikanPayNotifications()
+        module.closeButton = { [weak self] in
+            self?.router.popModule()
+        }
         router.push(module)
     }
 }

@@ -40,11 +40,13 @@ final class RetailListMapView: UIView {
             make.leading.trailing.bottom.equalTo(safeAreaLayoutGuide).inset(20)
             make.height.equalTo(50)
         }
+
         currentLocationButton.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(20)
             make.bottom.equalTo(listButton.snp.top).offset(-30)
-            make.size.equalTo(30)
+            make.size.equalTo(40)
         }
+
         tableView.registerClassForCell(DeliveryRetailListTableViewCell.self)
     }
 
