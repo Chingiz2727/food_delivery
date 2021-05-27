@@ -144,6 +144,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
             make.top.bottom.leading.equalToSuperview()
             make.width.equalTo(5)
         }
+        deliveryLine.layer.cornerRadius = 3
         secondImage.snp.makeConstraints { $0.height.equalTo(140) }
         verticalStack.sizeToFit()
         secondImage.isHidden = true

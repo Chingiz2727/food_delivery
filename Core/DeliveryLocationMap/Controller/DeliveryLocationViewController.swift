@@ -64,7 +64,10 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
             self.rootView.textField.text = location.name
             self.deliveryLocationObject.onNext(location)
         }).disposed(by: disposeBag)
-        let deliveryPolygon = MKPolygon(coordinates: lines, count: 4)
+        let newPoint: [YMKPoint] = points.map { YMKPoint(latitude: $0.longitude, longitude: $0.latitude) }
+
+        let polygonCoordinates: [CLLocationCoordinate2D] = newPoint.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)}
+        let deliveryPolygon = MKPolygon(coordinates: polygonCoordinates, count: polygonCoordinates.count)
         
         rootView.saveButton.rx.tap
             .withLatestFrom(deliveryLocationObject)
