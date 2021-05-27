@@ -33,6 +33,7 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
         bindViewModel()
         navigationController?.navigationBar.isHidden = false
         addCustomizedNotifyBar()
+        title = "Pillikan QR"
     }
 
     private func bindView() {

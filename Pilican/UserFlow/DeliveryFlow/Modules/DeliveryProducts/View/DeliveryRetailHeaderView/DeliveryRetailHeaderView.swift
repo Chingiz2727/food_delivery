@@ -70,8 +70,7 @@ final class DeliveryRetailHeaderView: UIView {
 
     private let ratingView: CosmosView = {
         let view = CosmosView()
-        view.rating = 4
-        view.settings.fillMode = .half
+        view.settings.fillMode = .full
         view.settings.emptyImage = Images.emptyStar.image
         view.settings.filledImage = Images.filledStar.image
         view.isUserInteractionEnabled = false
@@ -142,11 +141,11 @@ final class DeliveryRetailHeaderView: UIView {
         favouriteButton.setImage(image, for: .normal)
     }
 
-    func setData(retail: DeliveryRetail, workTime: String) {
+    func setData(retail: DeliveryRetail, rating: Double, workTime: String) {
         companyNameLabel.text = retail.name
         companyAdressLabel.text = retail.address
-        ratingLabel.text = "\(retail.rating ?? 0)"
-        ratingView.rating = retail.rating ?? 0
+        ratingLabel.text = "\(rating)"
+        ratingView.rating = rating
         workTimeLabel.text = "Режим работы \n\(workTime)"
         productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
     }

@@ -27,10 +27,12 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     private var price = 0
     private var cashback = 0
     private let userInfo: UserInfoStorage
-
-    init(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage) {
+    private var textPrice: String?
+    
+    init(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage, textPrice: String?) {
         self.viewModel = viewModel
         self.userInfo = userInfo
+        self.textPrice = textPrice
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -46,6 +48,14 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         super.viewDidLoad()
         bindView()
         bindViewModel()
+        if let textPrice = textPrice {
+            rootView.priceView.priceTextField.text = textPrice
+            self.price = Int(textPrice)!
+            self.priceSubject.onNext(Double(textPrice)!)
+            let amount = self.calculateCashback(isOn: false, amount: textPrice)
+            rootView.priceView.setData(cashback: amount.0)
+            rootView.calculatePayView.setData(cardValue: amount.1, cashbackValue: amount.2)
+        }
         title = "Оплата"
     }
     

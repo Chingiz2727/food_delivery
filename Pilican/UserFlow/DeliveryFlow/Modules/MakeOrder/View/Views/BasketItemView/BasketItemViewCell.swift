@@ -82,9 +82,7 @@ final class BasketItemViewCell: UITableViewCell {
 
     func setup(product: Product) {
         self.product = product
-        if productImageView.image == nil {
-            productImageView.kf.setImage(with: URL(string: product.imgLogo ?? ""))
-        }
+        productImageView.kf.setImage(with: URL(string: product.imgLogo ?? ""))
         nameLabel.text = product.name
         priceLabel.text = "\(product.price) 〒"
         countLabel.text = "\(product.shoppingCount ?? 0)"

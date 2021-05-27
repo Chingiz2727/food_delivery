@@ -35,6 +35,16 @@ class HomeViewController: ViewController, HomeModule, ViewHolder {
         bindViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.hidesBackButton = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.hidesBackButton = false
+    }
+    
     private func bindView() {
         rootView.collectionView.registerClassForCell(RetailCollectionViewCell.self)
         rootView.collectionView.registerClassForHeaderView(HomeCollectionViewHeaderView.self)

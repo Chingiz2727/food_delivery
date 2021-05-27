@@ -17,8 +17,8 @@ final class RetailDetailModuleFactory {
         return viewController
     }
     
-    func makePayPartner(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage) -> QRPaymentModule {
-        return QRPaymentViewController(viewModel: viewModel, userInfo: userInfo)
+    func makePayPartner(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage, price: String?) -> QRPaymentModule {
+        return QRPaymentViewController(viewModel: viewModel, userInfo: userInfo, textPrice: price)
     }
     
     func makeSuccessPayment(retail: Retail, price: Int, cashback: Int) -> SuccessPaymentModule {

@@ -13,6 +13,7 @@ class CameraViewController: UIViewController, CameraModule {
     var cameraActionType: CameraAction?
     var retailTapped: RetailTapped?
 
+    private var price: String?
     private let scanSubject = PublishSubject<Void>()
     private let createdAtSubject = PublishSubject<String>()
     private let sigSubject = PublishSubject<String>()
@@ -102,9 +103,17 @@ class CameraViewController: UIViewController, CameraModule {
             case .readPromoCode:
                 self.promoCodeScanned?(qr)
             case .makePayment:
-                self.qrScanned(qr: qr)
+                let paymentQr = qr.components(separatedBy: "/")
+                print(paymentQr)
+                if paymentQr.count > 1 {
+                    let id = paymentQr.first!.replacingOccurrences(of: " ", with: "")
+                    let price = paymentQr.last!.replacingOccurrences(of: " ", with: "")
+                    self.qrScanned(qr: id, price: price)
+                } else {
+                    self.qrScanned(qr: qr, price: nil)
+                }
             case .bus:
-                self.qrScanned(qr: qr)
+                self.qrScanned(qr: qr, price: nil)
             default:
                 break
             }
@@ -147,7 +156,7 @@ class CameraViewController: UIViewController, CameraModule {
 
         result.element
             .subscribe(onNext: { [unowned self] info in
-                paymentMaked?(info)
+                self.paymentMaked?(info,price)
             }).disposed(by: disposeBag)
 
         result.errors
@@ -181,7 +190,8 @@ class CameraViewController: UIViewController, CameraModule {
         self.cameraView.drawerView.isHidden = true
     }
 
-    private func qrScanned(qr: String) {
+    private func qrScanned(qr: String, price: String?) {
+        self.price = price
         switch cameraActionType {
         case .makePayment:
             if let retailId = Int(qr) {

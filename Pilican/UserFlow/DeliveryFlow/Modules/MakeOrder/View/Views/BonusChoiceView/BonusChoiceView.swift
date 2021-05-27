@@ -120,7 +120,7 @@ class BonusChoiceView: UIView {
         // swiftlint:disable line_length
         attributedText.append(NSAttributedString(string: " \(cashback)", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.primary, NSMutableAttributedString.Key.font: UIFont.semibold16]))
 
-        attributedText.append(NSAttributedString(string: " Б.", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.pilicanBlack]))
+        attributedText.append(NSAttributedString(string: " Бонусов", attributes: [NSMutableAttributedString.Key.foregroundColor: UIColor.pilicanBlack]))
         payChoiceCashbackLabel.attributedText = attributedText
     }
 

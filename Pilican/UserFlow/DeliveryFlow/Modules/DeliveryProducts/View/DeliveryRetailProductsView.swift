@@ -31,11 +31,11 @@ final class DeliveryRetailProductsView: UIView {
         nil
     }
 
-    func setRetail(retail: DeliveryRetail, calendar: WorkCalendar) {
+    func setRetail(retail: DeliveryRetail, calendar: WorkCalendar, rating: Double) {
         let currentTime = retail.workDays.filter { $0.day == calendar.currenDayNumber }.first
         let time = (currentTime?.timeStart ?? "") + " - " + (currentTime?.timeEnd ?? "")
         
-        stickyHeaderView.setData(retail: retail, workTime: time)
+        stickyHeaderView.setData(retail: retail,rating: rating, workTime: time)
     }
 
     func setTitles(titles: [String]) {

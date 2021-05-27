@@ -68,7 +68,6 @@ class FavoritesViewController: ViewController, ViewHolder, FavoritesModule {
                             self.onRetailDidSelect?(retail)
                         }
                     }
-                self.onRetailDidSelect?(retail)
             }.disposed(by: disposeBag)
 
         favorites.connect()

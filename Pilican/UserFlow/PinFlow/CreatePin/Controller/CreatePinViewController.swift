@@ -97,10 +97,9 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
         } else {
             self.userSession.pin = self.rootView.passCodeView.getPin()
             self.userSession.isBiometricAuthBeingUsed = true
-            self.showSuccessMessageAlert(message: "Пин код успешно сохранен") {
+            self.showSuccessMessageAlert(message: "Пин код успешно сохранен") { [unowned self] in
                 self.onCodeValidate?()
             }
-            
         }
     }
     

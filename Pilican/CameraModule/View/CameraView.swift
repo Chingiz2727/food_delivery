@@ -38,7 +38,8 @@ final class CameraView: UIView {
         contentView.addSubview(rectangleImageView)
         contentView.snp.makeConstraints { $0.edges.equalToSuperview() }
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(40)
+            make.top.equalToSuperview().inset(90)
+            make.leading.trailing.equalToSuperview().inset(40)
         }
 
         rectangleImageView.snp.makeConstraints { make in
@@ -99,8 +100,8 @@ final class CameraView: UIView {
 
     private func setupDrawerView() {
         drawerView = DrawerView(scrollView: tableView, delegate: nil, headerView: searchView)
-        drawerView.availableStates = [.top, .middle, .bottom]
-        drawerView.middlePosition = .fromBottom(300)
+        drawerView.availableStates = [.top, .middle, .dismissed]
+        drawerView.middlePosition = .fromBottom(400)
         drawerView.cornerRadius = 16
         drawerView.containerView.backgroundColor = .white
         drawerView.animationParameters = .spring(mass: 1, stiffness: 200, dampingRatio: 0.5)

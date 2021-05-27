@@ -31,7 +31,6 @@ final class MakeOrderViewModel: ViewModel {
         let addAmount: Observable<Int>
         let description: Observable<String>
         let fullAmount: Observable<Int>
-        let userLocation: Observable<DeliveryLocation>
         let foodAmount: Observable<Int>
         let useCashback: Observable<Bool>
         let deliveryAmount: Observable<Int>
@@ -46,15 +45,19 @@ final class MakeOrderViewModel: ViewModel {
         let orderResponse: Observable<LoadingSequence<OrderResponse>>
     }
 
+    private let distance: PublishSubject<Double> = .init()
     func transform(input: Input) -> Output {
         searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
 
-        let distance = input.currentLocation
-            .flatMap { [unowned self] location -> Observable<Double> in
+        input.currentLocation
+            .subscribe(onNext: { [unowned self] location in
                 let firstPoint = MapPoint(latitude: self.dishList.retail?.latitude ?? 0, longitude: self.dishList.retail?.longitude ?? 0)
-                return .just(self.mapManager.getDistance(firstPoint: firstPoint, secondPoint: MapPoint(latitude: location.point.latitude, longitude: location.point.longitude)))
-            }
-
+                self.mapManager.getDistance(firstPoint: firstPoint, secondPoint: MapPoint(latitude: location.point.latitude, longitude: location.point.longitude)) { distance in
+                    self.distance.onNext(distance)
+                }
+            })
+            .disposed(by: disposeBag)
+        
         let savedLocations = input.showLocationList
             .flatMap { [unowned self] _ -> Observable<[DeliveryLocation]> in
                 return .just(getAddress())
@@ -66,7 +69,7 @@ final class MakeOrderViewModel: ViewModel {
             }).disposed(by: disposeBag)
 
         let deliveryRate = distance.flatMap { [unowned self] distance -> Observable<DeliveryRate> in
-            return self.apiService.makeRequest(to: MakeOrderTarget.deliveryDistance(km: distance / 1000))
+            return self.apiService.makeRequest(to: MakeOrderTarget.deliveryDistance(km: distance))
                 .result(DeliveryRate.self)
         }.asLoadingSequence()
 
@@ -93,7 +96,7 @@ final class MakeOrderViewModel: ViewModel {
                     .result(OrderResponse.self).asLoadingSequence()
             }.share()
         
-        input.userLocation
+        input.currentLocation
             .subscribe(onNext: { [unowned self] locations in
                 self.searchByLocation(mapPoint: locations.point)
             })

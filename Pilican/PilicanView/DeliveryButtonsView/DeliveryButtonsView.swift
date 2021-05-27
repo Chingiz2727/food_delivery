@@ -73,6 +73,9 @@ final class DeliveryButtonsView: UIView {
         nil
     }
 
+    override func layoutSubviews() {
+        layer.cornerRadius = 8
+    }
     func setDish(companyDish: Product) {
         currentDish = companyDish
     }

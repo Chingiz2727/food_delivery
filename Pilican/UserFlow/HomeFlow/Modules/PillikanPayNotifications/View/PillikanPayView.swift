@@ -23,7 +23,10 @@ final class PillikanPayView: UIView {
     private func configureView() {
         tableView.registerClassForCell(PillikanNotificationTableViewCell.self)
         tableView.separatorStyle = .none
-        tableView.tableFooterView = UIView()
+        let footer = UIView()
+        footer.backgroundColor = .grayBackground
+        tableView.tableFooterView = footer
+        tableView.backgroundColor = .grayBackground
         backgroundColor = .grayBackground
     }
     

@@ -21,7 +21,7 @@ final class SearchCoordinator: BaseCoordinator, SearchCoordinatorOutput {
         module.addSearch { [weak self] in
             self?.showSearchItem()
         }
-        router.setRootModule(module)
+        router.setRootModule(module, isNavigationBarHidden: false)
     }
 
     private func showSearchItem() {

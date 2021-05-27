@@ -10,7 +10,7 @@ final class RegistrationViewModel: ViewModel {
         let userName: Observable<String?>
         let promoCode: Observable<String?>
         let city: Observable<City>
-        let smsCode: Observable<String?>
+        let smsCode: Observable<String>
     }
 
     struct Output {
@@ -32,7 +32,7 @@ final class RegistrationViewModel: ViewModel {
                 authService.createUser(
                     phone: login,
                     fullName: name ?? "",
-                    password: smsCode ?? "",
+                    password: smsCode,
                     cityId: city.id,
                     promo: code ?? ""
                 )

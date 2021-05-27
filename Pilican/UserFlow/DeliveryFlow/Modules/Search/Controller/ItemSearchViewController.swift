@@ -20,6 +20,8 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Поиск"
         rootView.tableView.registerClassForCell(DeliveryRetailListTableViewCell.self)
         bindViewModel()
     }
@@ -84,6 +86,9 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
 
         rootView.searchBar.rx.text.unwrap()
             .subscribe(onNext: { [unowned self] text in
+                if text == "" {
+                    self.rootView.searchTagsView.clearAllTag()
+                }
                 self.searchText.onNext(text)
             })
             .disposed(by: disposeBag)

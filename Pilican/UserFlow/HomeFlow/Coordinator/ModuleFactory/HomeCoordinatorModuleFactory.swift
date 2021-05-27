@@ -29,9 +29,9 @@ final class HomeCoordinatorModuleFactory {
         return HowItWorkViewController(workType: workType)
     }
     
-    func makePayPartner(viewModel: QRPaymentViewModel) -> QRPaymentModule {
+    func makePayPartner(viewModel: QRPaymentViewModel, price: String?) -> QRPaymentModule {
         let userInfo = container.resolve(UserInfoStorage.self)!
-        return QRPaymentViewController(viewModel: viewModel, userInfo: userInfo)
+        return QRPaymentViewController(viewModel: viewModel, userInfo: userInfo, textPrice: price)
     }
 
     func makeSuccessPayment(retail: Retail, price: Int, cashback: Int) -> SuccessPaymentModule {

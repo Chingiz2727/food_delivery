@@ -39,7 +39,7 @@ final class AuthBySmsView: UIView {
     }()
 
     let phoneContainer = TextFieldContainer<PhoneNumberTextField>()
-    let passwordContainer = TextFieldContainer<PasswordTextField>()
+    let passwordContainer = TextFieldContainer<SmsCodeTextField>()
 
     private let welcomeLabel: UILabel = {
         let label = UILabel()
@@ -115,8 +115,8 @@ final class AuthBySmsView: UIView {
 
     private func configureView() {
         backgroundColor = .background
-        phoneContainer.title = " Логин "
-        passwordContainer.title = " Код "
+        phoneContainer.title = " Номер телефона "
+        passwordContainer.title = " СМС Код "
         passwordContainer.textField.textContentType = .oneTimeCode
         signInButton.backgroundColor = .primary
         signInButton.layer.cornerRadius = 20
@@ -125,7 +125,7 @@ final class AuthBySmsView: UIView {
         authStackView.setCustomSpacing(15, after: passwordContainer)
         registerButton.setTitleColor(.primary, for: .normal)
         welcomeLabel.text = "Вход по СМС"
-        welcomeDescriptionLabel.text = "Напишите логин чтобы получить смс"
+        welcomeDescriptionLabel.text = "Напишите номер телефона чтобы получить смс"
         passwordContainer.isHidden = true
         signInButton.isHidden = true
     }

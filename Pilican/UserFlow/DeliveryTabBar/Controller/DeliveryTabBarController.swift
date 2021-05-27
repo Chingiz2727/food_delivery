@@ -50,8 +50,6 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
         let activeOrder = output.activeOrders.publish()
         
         activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
-            overlayViews.removeAll()
-            self.deliveryDetailsVCData.removeAll()
             myOrders.forEach { order in
                 let v = RetailCardView()
                 let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"
@@ -63,6 +61,7 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
             self.setupOverlays()
         })
         .disposed(by: disposeBag)
+        
         activeOrder.connect()
             .disposed(by: disposeBag)
     }
@@ -87,6 +86,8 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     var appFullscreenBeginOffset: CGFloat = 0
 
     private func setupOverlays() {
+        overlayViews.removeAll()
+        deliveryDetailsVCData.removeAll()
         for v in overlayViews {
 
             view.addSubview(v)

@@ -83,7 +83,7 @@ final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     }
 
     private func showHowItWork() {
-        let module = moduleFactory.makeHowItWork(workType: .pay)
+        let module = moduleFactory.makeHowItWork(workType: .promo)
         router.presentCard(module)
     }
 

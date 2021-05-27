@@ -36,6 +36,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             style: .done,
             target: self,
             action: #selector(showMenu))
+        navigationItem.title = "Доставка"
     }
 
     @objc private func showMenu() {

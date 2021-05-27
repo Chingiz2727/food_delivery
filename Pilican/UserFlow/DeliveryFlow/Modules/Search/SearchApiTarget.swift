@@ -1,5 +1,6 @@
 enum SearchApiTarget: ApiTarget {
     case searchByTag(tag: String)
+    case all
     case getTags
 
     var version: ApiVersion {
@@ -12,6 +13,9 @@ enum SearchApiTarget: ApiTarget {
     
     var path: String {
         switch self {
+        case .all:
+            return "a/cb/retail/find/all"
+
         case .searchByTag:
             return "a/cb/retail/find/by-tag"
         case .getTags:
@@ -27,7 +31,7 @@ enum SearchApiTarget: ApiTarget {
         switch self {
         case .searchByTag(let tag):
             return ["tag": tag]
-        case .getTags:
+        case .getTags,.all:
             return [:]
         }
     }

@@ -15,6 +15,7 @@ final class PasswordTextField: TextField {
         secureButton.addTarget(self, action: #selector(toggleSecureEntry), for: .touchUpInside)
         textContentType = .password
         isSecureTextEntry = true
+        placeholder = "******"
     }
 
     required public init?(coder: NSCoder) {

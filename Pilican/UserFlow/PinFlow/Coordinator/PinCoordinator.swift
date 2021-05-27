@@ -41,7 +41,6 @@ final class PinCoordinator: BaseCoordinator, PinCoordinatorOutput {
     private func showPinCreate() {
         var module = moduleFactory.makeCreatePin()
         module.onCodeValidate = { [weak self] in
-            self?.router.dismissModule()
             self?.onCompletion?(true)
         }
         router.setRootModule(module)

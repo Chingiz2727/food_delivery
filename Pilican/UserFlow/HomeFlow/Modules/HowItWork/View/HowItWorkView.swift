@@ -75,6 +75,10 @@ class HowItWorkView: UIView {
             firstItem.configureItem(image: Images.firstItem.image, title: "- сканируй QR код Pillikan в автобусе")
             secondItem.configureItem(image: Images.secondItem.image, title: "- Выбери свой проездной тариф ")
             thirdItem.configureItem(image: Images.thirdItem.image, title: "- Оплати проезд и покажи чек контроллеру")
+        case .promo:
+            firstItem.configureItem(image: Images.firstItem.image, title: "- Сканируй QR код друга")
+            secondItem.configureItem(image: Images.secondItem.image, title: "Привяжи карту любого банка и соверши покупку на сумму 500  ₸ ")
+            thirdItem.configureItem(image: Images.thirdItem.image, title: "- Получите по 500 бонусов каждый")
         }
     }
     private func configureView() {

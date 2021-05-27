@@ -29,6 +29,7 @@ final class PhoneNumberTextField: TextField {
             )
             self?.isFilledSubject.onNext(isFilled)
         }
+        placeholder = "+7 (___) - (__) - (__)"
         keyboardType = .numberPad
     }
 

@@ -41,13 +41,19 @@ class SuccessPaymentView: UIView {
 
     let paymentCashbackLabel: UILabel = {
         let label = UILabel()
-        label.text = "23 cashback"
-        label.font = UIFont.semibold16
+        label.font = UIFont.semibold24
         label.textColor = .primary
         label.textAlignment = .center
         return label
     }()
 
+    let bonusImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = Images.newBonusPrimary.image
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     let nextButton: PrimaryButton = {
         let button = PrimaryButton()
         button.setTitle("Продолжить", for: .normal)
@@ -64,13 +70,21 @@ class SuccessPaymentView: UIView {
         scrollView.bounces = false
     }
 
+    private lazy var bonusStack = UIStackView(
+        views: [paymentCashbackLabel, bonusImageView],
+        axis: .horizontal,
+        distribution: .fill,
+        spacing: 5)
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     func setData(price: String, cashback: String) {
         paymentPriceLabel.text = "\(price) 〒"
-        paymentCashbackLabel.text = "кэшбэк +\(cashback)"
+        
+        paymentCashbackLabel.text = "+ \(cashback)"
+        paymentCashbackLabel.isHidden = cashback == "0"
     }
 
     private func setAnimation() {
@@ -108,13 +122,14 @@ class SuccessPaymentView: UIView {
             make.top.equalTo(paymentStatusLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
-
-        scrollView.addSubview(paymentCashbackLabel)
-        paymentCashbackLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(paymentPriceLabel.snp.bottom).offset(10)
+        
+        scrollView.addSubview(bonusStack)
+        
+        bonusStack.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+            make.top.equalTo(paymentPriceLabel.snp.bottom).offset(10)
         }
-
+        bonusImageView.snp.makeConstraints { $0.width.equalTo(15) }
         scrollView.addSubview(nextButton)
         nextButton.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(15)

@@ -29,23 +29,14 @@ final class HomeTabView: UIView {
         userInfoView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(18)
-            make.height.equalTo(31)
-            make.width.equalTo(105)
+            make.width.greaterThanOrEqualTo(70)
         }
 
         balanceInfoView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(18)
-            make.height.equalTo(31)
-            make.width.equalTo(105)
+            make.width.greaterThanOrEqualTo(70)
         }
-
-//        qrScanButton.snp.makeConstraints { make in
-//            make.centerY.equalTo(self.snp.top)
-//            make.centerX.equalToSuperview()
-//            make.size.equalTo(70)
-//            
-//        }
     }
 
     private func configureView() {

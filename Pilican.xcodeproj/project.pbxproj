@@ -272,6 +272,7 @@
 		724FC5BB262419BE00C1DED3 /* ScrollDrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5A5262419BE00C1DED3 /* ScrollDrawerViewContent.swift */; };
 		724FC5BF262419F600C1DED3 /* SVPrivateScrollDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5BE262419F600C1DED3 /* SVPrivateScrollDelegateProxy.m */; };
 		724FC60C26244FB000C1DED3 /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC60B26244FB000C1DED3 /* OrderType.swift */; };
+		72574B15265FEE9E004F4B93 /* TextField+Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72574B14265FEE9E004F4B93 /* TextField+Done.swift */; };
 		725C0A312639EA9800FC4C86 /* DeliveryTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725C0A302639EA9800FC4C86 /* DeliveryTabBarViewModel.swift */; };
 		725FE72D2638165A0070E475 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FE72C2638165A0070E475 /* OrderStatus.swift */; };
 		725FE76D263877610070E475 /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FE76C263877610070E475 /* OrderStatusView.swift */; };
@@ -282,6 +283,7 @@
 		725FE78326388CB80070E475 /* OrderStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FE78226388CB80070E475 /* OrderStatusViewModel.swift */; };
 		725FE786263893C50070E475 /* ProductDeliveryStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FE785263893C50070E475 /* ProductDeliveryStatus.swift */; };
 		725FE78A2638AB990070E475 /* NameValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725FE7892638AB990070E475 /* NameValueView.swift */; };
+		72744B72265F70C20035106C /* SmsCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72744B71265F70C20035106C /* SmsCodeTextField.swift */; };
 		7284347B261D748200E21209 /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284347A261D748100E21209 /* DeliveryCoordinator.swift */; };
 		7284347E261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7284347D261D74E400E21209 /* DeliveryCoordinatorModuleFactory.swift */; };
 		72843481261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72843480261D766800E21209 /* DeliveryTabBarCoordinatorFactory.swift */; };
@@ -887,6 +889,7 @@
 		724FC5BD262419F600C1DED3 /* Pilican-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pilican-Bridging-Header.h"; sourceTree = "<group>"; };
 		724FC5BE262419F600C1DED3 /* SVPrivateScrollDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPrivateScrollDelegateProxy.m; sourceTree = "<group>"; };
 		724FC60B26244FB000C1DED3 /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
+		72574B14265FEE9E004F4B93 /* TextField+Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TextField+Done.swift"; path = "../../../../../../TextField+Done.swift"; sourceTree = "<group>"; };
 		725C0A302639EA9800FC4C86 /* DeliveryTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTabBarViewModel.swift; sourceTree = "<group>"; };
 		725FE72C2638165A0070E475 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		725FE76C263877610070E475 /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
@@ -897,6 +900,7 @@
 		725FE78226388CB80070E475 /* OrderStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewModel.swift; sourceTree = "<group>"; };
 		725FE785263893C50070E475 /* ProductDeliveryStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDeliveryStatus.swift; sourceTree = "<group>"; };
 		725FE7892638AB990070E475 /* NameValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValueView.swift; sourceTree = "<group>"; };
+		72744B71265F70C20035106C /* SmsCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCodeTextField.swift; sourceTree = "<group>"; };
 		727686EC261AE2D700E441A8 /* DishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishList.swift; sourceTree = "<group>"; };
 		727686EF261B2DB700E441A8 /* DeliveryRetailTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailTableViewDataSource.swift; sourceTree = "<group>"; };
 		7284347A261D748100E21209 /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
@@ -2316,7 +2320,6 @@
 		55ADCEA425E65D48003D3F3A /* AcceptPermission */ = {
 			isa = PBXGroup;
 			children = (
-				55ADCEA825E65D79003D3F3A /* ViewModel */,
 				55ADCEA725E65D73003D3F3A /* View */,
 				55ADCEA625E65D6B003D3F3A /* Module */,
 				55ADCEA525E65D59003D3F3A /* Controller */,
@@ -2347,13 +2350,6 @@
 				55ADCEB225E6625E003D3F3A /* TermsofPolicyView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		55ADCEA825E65D79003D3F3A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		55AE8970261B144900D82489 /* ViewModel */ = {
@@ -3781,6 +3777,7 @@
 				72FB080A261DA73D00F04395 /* UIView+NavigationItem.swift */,
 				72FB0807261DA71600F04395 /* UIView+DeepCopy.swift */,
 				72C922A9264E5E7A000BB0CE /* UIBar+Badge.swift */,
+				72574B14265FEE9E004F4B93 /* TextField+Done.swift */,
 			);
 			path = "UIView+Extension";
 			sourceTree = "<group>";
@@ -4494,7 +4491,6 @@
 			isa = PBXGroup;
 			children = (
 				A4402CAA25DBEEB30004D1FC /* Controller */,
-				A4402CAD25DBEED60004D1FC /* Model */,
 				A4402CA925DBEEA20004D1FC /* Module */,
 				A4402CAB25DBEEB90004D1FC /* View */,
 				A4402CAC25DBEEC40004D1FC /* ViewModel */,
@@ -4532,13 +4528,6 @@
 				A4FD7DA125DCD109000DD49D /* AuthBySmsViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A4402CAD25DBEED60004D1FC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		A44F581C25E90F3F00F5A39B /* Model */ = {
@@ -4861,7 +4850,6 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				728F7F3226484F70008C5DC3 /* GradientView */,
 				A483E21925D40ABD006D2DAF /* AccessCode */,
 				A4E5815725D540E700EDC053 /* AppEnviroment */,
 				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
@@ -4874,6 +4862,7 @@
 				A47CA19C25E36D3200EB091C /* Coordinator */,
 				7201594C262CC6CC0083C758 /* DeliveryLocationMap */,
 				724465CA26400FF900C50802 /* FavouritesManager */,
+				728F7F3226484F70008C5DC3 /* GradientView */,
 				A483E25325D40ABE006D2DAF /* ImageSlideShow */,
 				A483E24525D40ABE006D2DAF /* InputValidatable */,
 				A4057DA02611C5170062BB5B /* KeyChainStorage */,
@@ -5488,6 +5477,7 @@
 				A40A53C025D2596E00BBFDFA /* TextField.swift */,
 				A40A53C325D25C0B00BBFDFA /* PhoneNumberTextField.swift */,
 				A40A53C625D25C4100BBFDFA /* PasswordTextField.swift */,
+				72744B71265F70C20035106C /* SmsCodeTextField.swift */,
 				A4BBC72125D6402D006AF382 /* QrCodeTextField.swift */,
 				72340C4E262FC439000569D6 /* CardNumberTextField.swift */,
 				72340C52262FC491000569D6 /* CVVTextField.swift */,
@@ -5920,6 +5910,7 @@
 				728434D5261D7FFF00E21209 /* ProductRetail.swift in Sources */,
 				A483E26225D40ABE006D2DAF /* UIViewController+Error.swift in Sources */,
 				722A3468262629B9003FB38A /* MakeOrderViewModel.swift in Sources */,
+				72744B72265F70C20035106C /* SmsCodeTextField.swift in Sources */,
 				55BEF36A25FB3E1000205BBD /* GenderPickerDataSource.swift in Sources */,
 				72015954262CC7370083C758 /* DeliveryLocationViewController.swift in Sources */,
 				A4B9A3B325F104EF00F0A3D6 /* LoadingIndicatorView.swift in Sources */,
@@ -6065,6 +6056,7 @@
 				A483E26625D40ABE006D2DAF /* LoadingSequence+Rx.swift in Sources */,
 				55DB7DCC26319F950086B562 /* AlcoholViewController.swift in Sources */,
 				5526DADF2603825E00536589 /* PayDetailViewController.swift in Sources */,
+				72574B15265FEE9E004F4B93 /* TextField+Done.swift in Sources */,
 				55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */,
 				55A7C083260B6C4F0037D567 /* PaymentChoiceView.swift in Sources */,
 				A483E29825D40ABE006D2DAF /* UIImageView+Tools.swift in Sources */,
@@ -6537,7 +6529,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6620,7 +6612,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6764,7 +6756,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6791,7 +6783,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

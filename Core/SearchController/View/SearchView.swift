@@ -10,8 +10,15 @@ public class SearchView: UIView {
         let searchBar = SearchBar()
         searchBar.backgroundColor = .pilicanWhite
         searchBar.placeholder = "Поиск..."
+        searchBar.returnKeyType = .done
+        searchBar.addDoneOnKeyboardWithTarget(nil, action: #selector(dismissKeyboard), titleText: "Поиск")
+        
         return searchBar
     }()
+    
+    @objc func dismissKeyboard() {
+        endEditing(true)
+    }
     
     public let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -74,7 +81,7 @@ public class SearchView: UIView {
     private func setupInitialLayout() {
         addSubview(scrollView)
         scrollView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(safeAreaLayoutGuide)
         }
 
         scrollView.addSubview(stackView)

@@ -30,6 +30,10 @@ final class HomeTabBarViewController: TabBarController, HomeTabBarModule {
         return true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialLayout()

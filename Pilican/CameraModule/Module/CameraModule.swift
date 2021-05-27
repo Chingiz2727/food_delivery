@@ -1,6 +1,6 @@
 protocol CameraModule: Presentable {
     typealias PromoCodeScanned = (String) -> Void
-    typealias PaymentMaked = (ScanRetailResponse) -> Void
+    typealias PaymentMaked = (ScanRetailResponse, String?) -> Void
     typealias BusScanned = (ScanRetailResponse) -> Void
     typealias CloseButton = () -> Void
     typealias HowItWorkTapped = () -> Void

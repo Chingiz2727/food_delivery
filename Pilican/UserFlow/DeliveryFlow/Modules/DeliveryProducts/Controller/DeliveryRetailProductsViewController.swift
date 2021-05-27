@@ -36,12 +36,12 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        rootView.setRetail(retail: viewModel.retailInfo, calendar: workCalendar)
         bindViewModel()
         bindView()
         alertIsShown = false
         rootView.tableView.rowHeight = UITableView.automaticDimension
         rootView.tableView.estimatedRowHeight = 140
+        navigationItem.title = viewModel.retailInfo.name
         viewModel.dishList.products = []
     }
 
@@ -82,9 +82,9 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
             .disposed(by: disposeBag)
 
         productList.element
-            .map { $0.retail.deliveryCategories }
-            .subscribe(onNext: { [unowned self] products in
-                let productCategory = self.viewModel.dishList.checkForContainProductOnDish(listCategory: products)
+            .subscribe(onNext: { [unowned self] retail in
+                self.rootView.setRetail(retail: self.viewModel.dishList.retail!, calendar: workCalendar, rating: retail.retail.rating)
+                let productCategory = self.viewModel.dishList.checkForContainProductOnDish(listCategory: retail.retail.deliveryCategories)
                 let categoriesTitle = productCategory.map { $0.name }
                 self.rootView.setTitles(titles: categoriesTitle)
                 self.sourceDelegate.productCategory = productCategory

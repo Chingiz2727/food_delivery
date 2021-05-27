@@ -5,7 +5,7 @@ final class RegisterView: UIView {
     let loginContainer = TextFieldContainer<PhoneNumberTextField>()
     let userNameContainer = TextFieldContainer<TextField>()
     let promoCodeContainer = TextFieldContainer<QrCodeTextField>()
-    let smsContainer = TextFieldContainer<TextField>()
+    let smsContainer = TextFieldContainer<SmsCodeTextField>()
     let cityContainer = TextFieldContainer<TextField>()
 
     let registerButton = PrimaryButton()
@@ -33,7 +33,7 @@ final class RegisterView: UIView {
     }()
 
     private lazy var textFieldContainerStack = UIStackView(
-        views: [loginContainer, userNameContainer, cityContainer, promoCodeContainer, smsContainer],
+        views: [loginContainer, userNameContainer, cityContainer, promoCodeContainer],
         axis: .vertical,
         distribution: .equalSpacing,
         spacing: 20)
@@ -44,11 +44,20 @@ final class RegisterView: UIView {
         distribution: .equalSpacing,
         spacing: 20)
 
+    private let promoDescription: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.book10
+        label.text = "Сканируй QR код друга и получи 500 бонусов"
+        label.textColor = .pilicanLightGray
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupInitialLayout()
         configureView()
     }
+    
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -68,24 +77,45 @@ final class RegisterView: UIView {
     }
 
     private func setupInitialLayout() {
-        addSubview(welcomeStackView)
-        addSubview(textFieldContainerStack)
-        addSubview(buttonContainerStack)
-
+        let scrollView = UIScrollView()
+        addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.top.leading.trailing.width.equalTo(self)
+            $0.bottom.equalToSuperview().inset(100)
+        }
+        
+        scrollView.addSubview(welcomeStackView)
+        scrollView.addSubview(textFieldContainerStack)
+        scrollView.addSubview(buttonContainerStack)
+        scrollView.addSubview(promoDescription)
+        scrollView.addSubview(smsContainer)
+        promoDescription.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(promoCodeContainer)
+            make.top.equalTo(promoCodeContainer.snp.bottom).offset(3)
+        }
+        
         welcomeStackView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalTo(self).inset(30)
+            make.top.equalToSuperview().inset(30)
         }
 
         textFieldContainerStack.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.centerY.equalToSuperview()
+            make.leading.trailing.equalTo(self).inset(30)
+            make.top.equalTo(welcomeStackView.snp.bottom).offset(50)
         }
 
-        buttonContainerStack.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(30)
+        smsContainer.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(self).inset(30)
             make.top.equalTo(textFieldContainerStack.snp.bottom).offset(30)
+            make.height.equalTo(40)
+        }
+        
+        buttonContainerStack.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(self).inset(30)
+            make.top.equalTo(smsContainer.snp.bottom).offset(30)
         }
 
+        
         buttonContainerStack.arrangedSubviews.forEach {
             $0.snp.makeConstraints { make in
                 make.height.equalTo(44)
@@ -97,13 +127,14 @@ final class RegisterView: UIView {
                 make.height.equalTo(40)
             }
         }
+        
     }
 
     private func configureView() {
-        loginContainer.title = " Логин "
+        loginContainer.title = " Номер телефона "
         userNameContainer.title = " Ф.И.О "
         cityContainer.title = " Город "
-        promoCodeContainer.title = " Промо "
+        promoCodeContainer.title = " Промо код (не обязательно) "
         smsContainer.title = " СМС Код "
         welcomeLabel.text = "Cоздать учетную запись"
         welcomeDescriptionLabel.text = "Зарегистрируйтесь, чтобы начать"
@@ -111,6 +142,7 @@ final class RegisterView: UIView {
         sendSmsButton.setTitle("Получить смс", for: .normal)
         registerButton.isHidden = true
         smsContainer.isHidden = true
+        sendSmsButton.isEnabled = false
         backgroundColor = .background
     }
 }

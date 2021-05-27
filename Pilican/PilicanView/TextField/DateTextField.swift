@@ -26,6 +26,7 @@ final class DateTextField: TextField {
             self?.textSubject.onNext(text)
             self?.isFilledSubject.onNext(isFilled)
         }
+        placeholder = "**/**"
         keyboardType = .numberPad
     }
 

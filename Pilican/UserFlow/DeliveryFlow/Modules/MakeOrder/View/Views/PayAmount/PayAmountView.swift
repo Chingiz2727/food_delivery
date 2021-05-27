@@ -71,7 +71,7 @@ final class PayAmountView: UIView {
     func setupExtraCost() {
         extraPayment.isHidden = false
         extraPayment.setup(title: "Доплата до минимальной суммы заказа")
-        extraPayment.setup(detail: "Минимальная сумма заказа - 2000 тенге. За заказы меньше этой сумма взимается дополнительная комиссия.")
+        extraPayment.setup(detail: "Минимальная сумма заказа - 1500 тенге. За заказы меньше этой сумма взимается дополнительная комиссия.")
         extraPayment.setup(price: "600 〒")
     }
 

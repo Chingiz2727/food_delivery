@@ -16,7 +16,7 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
     private var registerStatus: BehaviorSubject<RegistrationStatus> = .init(value: .getSMS)
     private let viewModel: RegistrationViewModel
     private let sessionStorage: UserSessionStorage
-    
+    private let sendSms = PublishSubject<Void>()
     init(viewModel: RegistrationViewModel, sessionStorage: UserSessionStorage) {
         self.viewModel = viewModel
         self.sessionStorage = sessionStorage
@@ -46,14 +46,14 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
 
     private func bindViewModel() {
         let input = RegistrationViewModel.Input(
-            registerTapped: rootView.registerButton.rx.tap.asObservable(),
+            registerTapped: Observable.merge(rootView.registerButton.rx.tap.asObservable(), sendSms.asObservable()),
             getSmsTapped: rootView.sendSmsButton.rx.tap.asObservable(),
             loadCity: rx.methodInvoked(#selector(viewWillAppear(_:))).map { _ in  },
             userLogin: rootView.loginContainer.textField.phoneText.asObservable(),
             userName: rootView.userNameContainer.textField.rx.text.asObservable(),
             promoCode: rootView.promoCodeContainer.textField.rx.text.asObservable(),
             city: cityPickerDelegate.selectedCity.asObservable(),
-            smsCode: rootView.smsContainer.textField.rx.text.asObservable()
+            smsCode: rootView.smsContainer.textField.codeText
         )
 
         let output = viewModel.transform(input: input)
@@ -90,6 +90,7 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
         city.subscribe(onNext: { [unowned self] city in
             self.cityPickerDataSource.city = city
             self.cityPickerDelegate.city = city
+            cityPickerDelegate.selectedCity.onNext(city.first!)
             self.pickerView.reloadAllComponents()
         })
         .disposed(by: disposeBag)
@@ -134,6 +135,20 @@ final class RegisterViewController: ViewController, ViewHolder, RegisterModule {
 
         getSms.errors
             .bind(to: rx.error)
+            .disposed(by: disposeBag)
+        
+        rootView.loginContainer.textField.isFilled
+            .subscribe(onNext: { [unowned self] filled in
+                self.rootView.sendSmsButton.isEnabled = filled
+            })
+            .disposed(by: disposeBag)
+        
+        rootView.smsContainer.textField.isFilled
+            .subscribe(onNext: { [unowned self] isFilled in
+                if isFilled {
+                    self.sendSms.onNext(())
+                }
+            })
             .disposed(by: disposeBag)
     }
 

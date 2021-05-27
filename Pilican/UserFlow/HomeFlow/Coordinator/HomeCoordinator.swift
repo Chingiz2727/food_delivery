@@ -78,8 +78,8 @@ final class HomeCoordinator: BaseCoordinator {
     private func showCamera(workType: WorkType) {
         var module = container.resolve(CameraModule.self)!
         module.cameraActionType = .makePayment
-        module.paymentMaked = { [weak self] info in
-            self?.showPaymentPartner(info: info)
+        module.paymentMaked = { [weak self] info, price in
+            self?.showPaymentPartner(info: info, price: price)
         }
         module.closeButton = { [weak self] in
             self?.router.popModule()
@@ -88,10 +88,10 @@ final class HomeCoordinator: BaseCoordinator {
             self?.showHowItWork(workType: workType)
         }
         module.retailTapped = { [weak self] retail in
-            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail), price: nil)
         }
         module.retailIdTapped = { [weak self] retail in
-            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail), price: nil)
         }
         router.push(module)
     }
@@ -116,12 +116,12 @@ final class HomeCoordinator: BaseCoordinator {
         addDependency(coordinator)
     }
 
-    private func showPaymentPartner(info: ScanRetailResponse) {
+    private func showPaymentPartner(info: ScanRetailResponse, price: String?) {
         let apiService = container.resolve(ApiService.self)!
         let userSessionStorage = container.resolve(UserSessionStorage.self)!
 
         let viewModel = QRPaymentViewModel(apiService: apiService, info: info, userSessionStorage: userSessionStorage)
-        var module = coordinatorFactory.makePayPartner(viewModel: viewModel)
+        var module = coordinatorFactory.makePayPartner(viewModel: viewModel, price: price)
         module.openSuccessPayment = { [weak self] retail, price, cashback in
             self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)
         }

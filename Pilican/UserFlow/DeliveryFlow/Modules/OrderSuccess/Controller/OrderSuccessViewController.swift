@@ -35,6 +35,7 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         bindView()
     }
 

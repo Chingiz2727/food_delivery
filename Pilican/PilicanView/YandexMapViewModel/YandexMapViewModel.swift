@@ -1,5 +1,6 @@
 import CoreLocation
 import YandexMapsMobile
+import MapKit
 
 final class YandexMapViewModel: NSObject, MapStatus {
     func getAddressName(long: Double, lat: Double) -> String {
@@ -12,7 +13,8 @@ final class YandexMapViewModel: NSObject, MapStatus {
     
     typealias MapView = YMKMapView
     var userLocationViewModel: MapUserLocationViewModel?
-    
+    var drivingSession: YMKDrivingSession?
+
     var onAnnotationDidTap: ((Any?) -> Void)?
     var onCameraPositionChanged: ((MapPoint?, Bool) -> Void)?
     
@@ -44,10 +46,52 @@ final class YandexMapViewModel: NSObject, MapStatus {
                               completionHandler: completionHandler)
     }
     
-    func getDistance(firstPoint: MapPoint, secondPoint: MapPoint) -> Double {
-        return YMKDistance(
-            YMKPoint(latitude: firstPoint.latitude, longitude: firstPoint.longitude),
-            YMKPoint(latitude: secondPoint.latitude, longitude: secondPoint.longitude)).rounded()
+    func getDistance(firstPoint: MapPoint, secondPoint: MapPoint, completion:@escaping(Double)->Void) {
+        let requestPoints: [YMKRequestPoint] = [
+            YMKRequestPoint(point: YMKPoint(latitude: firstPoint.latitude, longitude: firstPoint.longitude), type: .waypoint, pointContext: nil),
+            YMKRequestPoint(point: YMKPoint(latitude: secondPoint.latitude, longitude: secondPoint.longitude), type: .waypoint, pointContext: nil)
+        ]
+        print("firstPoint",firstPoint)
+        print("secondPoint",secondPoint)
+        let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in
+            if let routes = routesResponse {
+                if let distance  = routes.first?.geometry.points {
+                    
+                    let points: [CLLocationCoordinate2D] = distance.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)}
+                    let distance = self.getDistanceFromArray(coordinates: points)
+                    completion(distance)
+                }
+            } else {
+                completion(0)
+            }
+            
+        }
+        
+        let drivingRouter = YMKDirections.sharedInstance().createDrivingRouter()
+        drivingSession = drivingRouter.requestRoutes(
+            with: requestPoints,
+            drivingOptions: YMKDrivingDrivingOptions(),
+            vehicleOptions: YMKDrivingVehicleOptions(),
+            routeHandler: responseHandler)
+    }
+    
+    func getDistanceFromArray(coordinates: [CLLocationCoordinate2D]) -> Double {
+        var total: Double = 0.0
+        let locations: [CLLocationCoordinate2D] = coordinates
+
+        for i in 0..<coordinates.count - 1 {
+            let start = locations[i]
+            let end = locations[i + 1]
+            let distance = getDistanceCoordinate(from: start, to: end)
+            total += distance
+        }
+        return (total).rounded() / 1000
+    }
+    
+    func getDistanceCoordinate(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> CLLocationDistance {
+        let from = CLLocation(latitude: from.latitude, longitude: from.longitude)
+        let to = CLLocation(latitude: to.latitude, longitude: to.longitude)
+        return from.distance(from: to)
     }
     
     func createAnnotation(in view: YMKMapView, at point: MapPoint, image: UIImage?, associatedData: Any?) {
@@ -102,6 +146,7 @@ final class YandexMapViewModel: NSObject, MapStatus {
     func setupCameraListener(in view: YMKMapView) {
         view.mapWindow.map.addCameraListener(with: self)
     }
+    
 }
 
 extension YandexMapViewModel: YMKMapObjectTapListener {

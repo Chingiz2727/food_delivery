@@ -48,6 +48,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         bindViewModel()
         configureMap()
         viewModel.orderType = orderType.title == "Доставка Pillikan" ? 1 : 2
+        navigationItem.title = "Оформить заказ \(viewModel.dishList.retail?.name ?? "")"
         bindView()
     }
     
@@ -75,7 +76,6 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                 addAmount: addAmountSubject,
                 description: descriptionSubject,
                 fullAmount: fullAmountSubject,
-                userLocation: currentLocation,
                 foodAmount: foodAmountSubject,
                 useCashback: useCashbackSubject,
                 deliveryAmount: deliveryAmountSubject,
@@ -116,7 +116,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 
         distance.subscribe(onNext: { [unowned self] distance in
             if orderType.title == "Доставка Pillikan" {
-                self.rootView.deliveryView.setup(subTitle: "Расстояние доставки \(distance / 1000) км")
+                self.rootView.deliveryView.setup(subTitle: "Расстояние доставки \(distance) км")
             }
             self.distance.onNext(distance)
         })
@@ -294,6 +294,8 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         }
         present(alert, animated: true, completion: nil)
     }
+    
+    
 }
 
 extension MakeOrderViewController: CLLocationManagerDelegate {

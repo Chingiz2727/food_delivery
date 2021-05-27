@@ -26,7 +26,7 @@ final class OrderTypeCoordinator: BaseCoordinator, DeliveryTabBarItemCoordinator
         module.onDeliveryChoose = { [weak self] orderType in
             self?.showMakeOrder(orderType: orderType)
         }
-        router.setRootModule(module)
+        router.setRootModule(module, isNavigationBarHidden: false)
     }
     
     private func showMakeOrder(orderType: OrderType) {

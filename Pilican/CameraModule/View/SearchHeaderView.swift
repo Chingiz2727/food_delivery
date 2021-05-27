@@ -15,7 +15,7 @@ class SearchHeaderView: UITableViewHeaderFooterView {
         searchBar.keyboardType = .numberPad
         return searchBar
     }()
-    
+
     let searchButton: UIButton = {
         let button = UIButton()
         button.setTitle("Поиск", for: .normal)

@@ -41,8 +41,8 @@ open class MapManager<T: MapStatus> {
         engine.createAnnotation(in: view, at: point, image: image, associatedData: associatedData)
     }
     
-    func getDistance(firstPoint: MapPoint, secondPoint: MapPoint) -> Double {
-        engine.getDistance(firstPoint: firstPoint, secondPoint: secondPoint)
+    func getDistance(firstPoint: MapPoint, secondPoint: MapPoint, completion:@escaping(Double) -> Void) {
+        engine.getDistance(firstPoint: firstPoint, secondPoint: secondPoint, completion: completion)
     }
     
     func setupCameraListener(in view: T.MapView) {

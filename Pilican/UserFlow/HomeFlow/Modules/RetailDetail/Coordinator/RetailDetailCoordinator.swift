@@ -37,7 +37,7 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
         module.retailDetailTapped = { [unowned self] tap in
             switch tap {
             case .pay:
-                self.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 1, retail: self.retail))
+                self.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 1, retail: self.retail), price: nil)
             case .delivery:
                 // swiftlint:disable line_length
                 self.showDeliveryProduct(retail: .init(id: retail.id, cashBack: retail.cashBack, isWork: retail.isWork, longitude: retail.longitude, latitude: retail.latitude, dlvCashBack: retail.dlvCashBack, pillikanDelivery: retail.delivery, logo: retail.logo, address: retail.address, workDays: retail.workDays, payIsWork: retail.payIsWork, name: retail.name, status: retail.status, rating: retail.rating))
@@ -48,12 +48,12 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
         router.push(module)
     }
 
-    private func showPaymentPartner(info: ScanRetailResponse) {
+    private func showPaymentPartner(info: ScanRetailResponse, price: String?) {
         let apiService = container.resolve(ApiService.self)!
         let userSessionStorage = container.resolve(UserSessionStorage.self)!
         let userInfo = container.resolve(UserInfoStorage.self)!
         let viewModel = QRPaymentViewModel(apiService: apiService, info: info, userSessionStorage: userSessionStorage)
-        var module = moduleFactory.makePayPartner(viewModel: viewModel, userInfo: userInfo)
+        var module = moduleFactory.makePayPartner(viewModel: viewModel, userInfo: userInfo, price: price)
         module.openSuccessPayment = { [weak self] retail, price, cashback in
             self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)
         }

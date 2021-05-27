@@ -9,10 +9,16 @@ final class DishList {
     
     var utensils = 0
 
-    var retail: DeliveryRetail?
+    var retail: DeliveryRetail? {
+        didSet {
+            if let retail = retail {
+                retailSubject.onNext(retail)
+            }
+        }
+    }
     
     let productList: PublishSubject<[ProductCategory]> = .init()
-
+    let retailSubject = PublishSubject<DeliveryRetail>()
     let wishDishList: BehaviorSubject<[Product]> = .init(value: [])
 
     var products: [Product] = .init() {
@@ -53,7 +59,7 @@ final class DishList {
 
     private func removeFromDish(product: Product) -> Product {
         var product = product
-        product.shoppingCount = product.shoppingCount == nil ? 1 : product.shoppingCount
+        product.shoppingCount = product.shoppingCount == nil ? 0 : product.shoppingCount
         if products.contains(where: { $0.id == product.id }) {
             if let row = products.firstIndex(where: { $0.id == product.id }) {
                 guard let count = products[row].shoppingCount else { return product }

@@ -11,6 +11,6 @@ public protocol MapStatus: class {
     func moveTo(in view: MapView, point: MapPoint, transitionViewModel: MapTransitionViewModel, completionHandler: Callback?)
     func setRegion(in view: MapView, minPoint: MapPoint, maxPoint: MapPoint, transitionViewModel: MapTransitionViewModel, completionHandler: Callback?)
     func createAnnotation(in view: MapView, at point: MapPoint, image: UIImage?, associatedData: Any?)
-    func getDistance(firstPoint: MapPoint, secondPoint: MapPoint) -> Double
+    func getDistance(firstPoint: MapPoint, secondPoint: MapPoint, completion: @escaping(Double)->Void)
     func setupCameraListener(in view: MapView)
 }

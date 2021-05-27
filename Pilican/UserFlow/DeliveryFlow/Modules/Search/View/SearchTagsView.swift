@@ -22,6 +22,10 @@ class SearchTagsView: UIView, TagListViewDelegate {
         setupTagList()
     }
 
+    func clearAllTag() {
+        tagListView.tagViews.forEach { $0.isSelected = false }
+    }
+    
     func setTags(tags: [String]) {
         tags.forEach {
             self.tagListView.addTag($0)

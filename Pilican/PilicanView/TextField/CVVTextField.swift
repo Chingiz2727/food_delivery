@@ -26,6 +26,7 @@ final class CVVTextField: TextField {
             self?.textSubject.onNext(text)
             self?.isFilledSubject.onNext(isFilled)
         }
+        placeholder = "***"
         keyboardType = .numberPad
     }
 

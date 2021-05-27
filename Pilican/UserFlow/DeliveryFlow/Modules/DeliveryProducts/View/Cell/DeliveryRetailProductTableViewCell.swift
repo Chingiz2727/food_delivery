@@ -125,16 +125,27 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
 
     private func setupInitialLayout() {
         backView.addSubview(emptyLabel)
+        backView.addSubview(deliveryLine)
+
         emptyLabel.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         contentView.addSubview(backView)
         backView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
         backView.addSubview(verticalStack)
-        verticalStack.snp.makeConstraints { $0.edges.equalToSuperview().inset(3) }
+        verticalStack.snp.makeConstraints { make in
+            make.top.trailing.bottom.equalToSuperview().inset(5)
+            make.leading.equalTo(deliveryLine.snp.trailing).offset(4)
+        }
         productImage.snp.makeConstraints { make in
             make.size.equalTo(100)
         }
+        deliveryLine.snp.makeConstraints { make in
+            make.top.bottom.leading.equalToSuperview()
+            make.width.equalTo(5)
+        }
+        secondImage.snp.makeConstraints { $0.height.equalTo(140) }
+        verticalStack.sizeToFit()
         secondImage.isHidden = true
         deliveryLine.backgroundColor = .primary
         deliveryLine.isHidden = true

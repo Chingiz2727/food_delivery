@@ -102,16 +102,16 @@ final class MakeOrderView: UIView {
             make.top.leading.trailing.equalToSuperview()
         }
         bonusChoiceView.snp.makeConstraints { make in
-            make.top.equalTo(addressView.snp.bottom).offset(5)
+            make.top.equalTo(addressView.snp.bottom).offset(2)
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().inset(5)
+            make.bottom.equalToSuperview().inset(2)
         }
 
         heightConstraint?.activate()
     }
 
     func setupAmount(totalSum: Int, delivery: Int, orderType: OrderType) {
-        if totalSum < 1500 {
+        if totalSum < 1499 {
             payAmountView.setupExtraCost()
             if orderType ==  .takeAway {
                 payAmountView.setupFullCost(cost: totalSum + delivery)

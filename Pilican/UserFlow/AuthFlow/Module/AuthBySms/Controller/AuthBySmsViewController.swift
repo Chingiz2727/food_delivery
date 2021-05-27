@@ -10,7 +10,8 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
     private let viewModel: AuthBySmsViewModel
     private let disposeBag = DisposeBag()
     let sessionStorage: UserSessionStorage
-    
+    private let sendSms: PublishSubject<Void> = .init()
+    private var tryCount = 0
     init(viewModel: AuthBySmsViewModel, sessionStorage: UserSessionStorage) {
         self.viewModel = viewModel
         self.sessionStorage = sessionStorage
@@ -39,9 +40,9 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
         let output = viewModel.transform(
             input: .init(
                 getSmsTapped: rootView.getSmsButton.rx.tap.asObservable(),
-                authTapped: rootView.signInButton.rx.tap.asObservable(),
+                authTapped: Observable.merge(rootView.signInButton.rx.tap.asObservable(), sendSms),
                 userLogin: rootView.phoneContainer.textField.phoneText,
-                userSmsCode: rootView.passwordContainer.textField.rx.text.unwrap()))
+                userSmsCode: rootView.passwordContainer.textField.codeText))
 
         let result = output.getSmsTapped.publish()
 
@@ -80,8 +81,27 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
             .disposed(by: disposeBag)
 
         signInResult.errors
+            .do(onNext: { [unowned self] error in
+                self.tryCount = 0
+            })
             .bind(to: rx.error)
             .disposed(by: disposeBag)
+        
+        rootView.passwordContainer.textField.isFilled
+            .subscribe(onNext: { [unowned self] isFilled in
+                if isFilled {
+                    self.sendSms.onNext(())
+                }
+            })
+            .disposed(by: disposeBag)
+//        rootView.passwordContainer.textField.rx.text.unwrap().subscribe(onNext: { [unowned self] text in
+//            if text.count == 6 {
+//                if tryCount == 0 {
+//                    self.sendSms.onNext(())
+//                }
+//                self.tryCount += 1
+//            }
+//        }).disposed(by: disposeBag)
     }
 
     private func bindView() {

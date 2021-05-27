@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import RxSwift
 import SnapKit
 
 final class AcceptPermissionView: UIView {
     let termsView = TermsofPolicyView()
 
+    var isSelected: Bool = false
+    private let disposeBag = DisposeBag()
+    
     let checkButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.checkboxSelected.image, for: .normal)
+        button.setImage(Images.checkboxUnselected.image, for: .normal)
         return button
     }()
 
@@ -30,13 +34,13 @@ final class AcceptPermissionView: UIView {
         return button
     }()
 
-    let nextButton: UIButton = {
-        let button = UIButton(type: .system)
+    let nextButton: PrimaryButton = {
+        let button = PrimaryButton(type: .system)
         button.setTitle("Далее", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.book16
-        button.backgroundColor = .primary
         button.clipsToBounds = true
+        button.isEnabled = false
         button.layer.cornerRadius = 20
         return button
     }()
@@ -103,11 +107,24 @@ final class AcceptPermissionView: UIView {
         stackView.addArrangedSubview(checkButton)
         stackView.addArrangedSubview(politiсyAgreementButton)
         bottomContainer.backgroundColor = .white
+        checkButton.addTarget(self, action: #selector(switchCheck), for: .touchUpInside)
+        checkButton.setImage(Images.checkboxUnselected.image, for: .normal)
     }
 
+    @objc func switchCheck() {
+        isSelected = !isSelected
+        if isSelected {
+            self.checkButton.setImage(Images.checkboxSelected.image, for: .normal)
+        } else {
+            self.checkButton.setImage(Images.checkboxUnselected.image, for: .normal)
+        }
+        self.nextButton.isEnabled = isSelected
+    }
+    
     func updateConstraint() {
         bottomContainer.snp.makeConstraints { (make) in
             make.height.equalTo(0)
         }
     }
+    
 }

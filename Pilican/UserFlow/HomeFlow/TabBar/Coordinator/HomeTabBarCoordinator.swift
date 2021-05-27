@@ -101,8 +101,8 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     private func showBusCamera() {
         var module = container.resolve(CameraModule.self)!
         module.cameraActionType = .makePayment
-        module.paymentMaked = { [weak self] info in
-            self?.showPaymentPartner(info: info)
+        module.paymentMaked = { [weak self] info, price in
+            self?.showPaymentPartner(info: info, price: price)
         }
         module.closeButton = { [weak self] in
             self?.router.popModule()
@@ -111,10 +111,10 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
             self?.showHowItWork()
         }
         module.retailTapped = { [weak self] retail in
-            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail), price: nil)
         }
         module.retailIdTapped = { [weak self] retail in
-            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail))
+            self?.showPaymentPartner(info: .init(orderId: 0, fullName: "", type: 0, retail: retail), price: nil)
         }
         router.push(module)
     }
@@ -122,8 +122,8 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
     private func showCamera() {
         var module = container.resolve(CameraModule.self)!
         module.cameraActionType = .makePayment
-        module.paymentMaked = { [weak self] info in
-            self?.showPaymentPartner(info: info)
+        module.paymentMaked = { [weak self] info, price in
+            self?.showPaymentPartner(info: info, price: price)
         }
         module.closeButton = { [weak self] in
             self?.router.popModule()
@@ -134,12 +134,12 @@ final class HomeTabBarCoordinator: BaseCoordinator, HomeTabBarCoordinatorOutput,
         router.push(module)
     }
 
-    private func showPaymentPartner(info: ScanRetailResponse) {
+    private func showPaymentPartner(info: ScanRetailResponse, price: String?) {
         let apiService = container.resolve(ApiService.self)!
         let userSessionStorage = container.resolve(UserSessionStorage.self)!
 
         let viewModel = QRPaymentViewModel(apiService: apiService, info: info, userSessionStorage: userSessionStorage)
-        var module = moduleFactory.makePayPartner(viewModel: viewModel)
+        var module = moduleFactory.makePayPartner(viewModel: viewModel, price: price)
         module.openSuccessPayment = { [weak self] retail, price, cashback in
             self?.showSuccessPayment(retail: retail, price: price, cashback: cashback)
         }

@@ -104,7 +104,7 @@ final class AuthView: UIView {
 
     private func configureView() {
         backgroundColor = .background
-        phoneContainer.title = " Телефон "
+        phoneContainer.title = " Номер Телефона "
         passwordContainer.title = " Пароль "
         signInButton.backgroundColor = .primary
         authBySmsButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

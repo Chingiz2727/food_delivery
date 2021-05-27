@@ -20,7 +20,7 @@ final class RetailListMapCoordinator: BaseCoordinator, RetailListMapCoordinatorO
         module.onDeliveryRetailSelect = { [weak self] retail in
             self?.showDeliveryProduct(retail: retail)
         }
-        router.setRootModule(module)
+        router.setRootModule(module, isNavigationBarHidden: false)
     }
     
     private func showDeliveryRetailList() {

@@ -33,4 +33,5 @@ class HowItWorkViewController: ViewController, ViewHolder, HowItWorkModule {
 enum WorkType {
     case bus
     case pay
+    case promo
 }

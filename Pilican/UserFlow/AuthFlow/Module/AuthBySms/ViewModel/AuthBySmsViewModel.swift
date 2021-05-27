@@ -24,13 +24,13 @@ final class AuthBySmsViewModel: ViewModel {
             .withLatestFrom(input.userLogin)
             .flatMap { [unowned self] phone in
                 return authService.getAuthSmsCode(phone)
-            }
+            }.share()
 
         let login = input.authTapped
             .withLatestFrom(Observable.combineLatest(input.userLogin, input.userSmsCode))
             .flatMap { [unowned self] phone, code  in
                 return authService.verifySmsCode(phone, code: code)
-            }
+            }.share()
         return .init(getSmsTapped: getSms, loginTapped: login)
     }
 }
