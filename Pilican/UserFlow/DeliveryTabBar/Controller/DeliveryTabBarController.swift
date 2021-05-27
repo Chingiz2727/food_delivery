@@ -45,23 +45,25 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     }
     
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: Observable.merge(.just(()), userRepo.updateInfo.asObservable())))
+        let output = viewModel.transform(input: .init(viewDidLoad: userRepo.updateInfo))
         
         let activeOrder = output.activeOrders.publish()
         
         activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
-            myOrders.forEach { order in
-                let v = RetailCardView()
-                let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"
-                v.setup(imgUrl: imgUrl)
-                self.overlayViews.append(v)
-                let dataFor = [v: order] as [UIView : DeliveryOrderResponse]
-                self.deliveryDetailsVCData.append(dataFor)
-            }
-            self.setupOverlays()
+            self.overlayViews.removeAll()
+            self.overlayViews.forEach { $0.removeFromSuperview() }
+            self.deliveryDetailsVCData.removeAll()
+            self.setupOverlays(orderResponse: myOrders)
         })
         .disposed(by: disposeBag)
         
+        activeOrder.errors
+            .subscribe(onNext: { [unowned self] err in
+                self.overlayViews.removeAll()
+                self.overlayViews.forEach { $0.removeFromSuperview() }
+                self.deliveryDetailsVCData.removeAll()
+            })
+            .disposed(by: disposeBag)
         activeOrder.connect()
             .disposed(by: disposeBag)
     }
@@ -85,11 +87,14 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
 
     var appFullscreenBeginOffset: CGFloat = 0
 
-    private func setupOverlays() {
-        overlayViews.removeAll()
-        deliveryDetailsVCData.removeAll()
-        for v in overlayViews {
-
+    private func setupOverlays(orderResponse: [DeliveryOrderResponse]) {
+        for order in orderResponse {
+            let v = RetailCardView()
+            let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"
+            v.setup(imgUrl: imgUrl)
+            self.overlayViews.append(v)
+            let dataFor = [v: order] as [UIView : DeliveryOrderResponse]
+            self.deliveryDetailsVCData.append(dataFor)
             view.addSubview(v)
 
             v.frame = .init(x: 10,

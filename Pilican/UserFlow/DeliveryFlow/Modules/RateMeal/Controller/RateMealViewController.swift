@@ -16,6 +16,7 @@ class RateMealViewController: ViewController, ViewHolder, RateMealModule {
     private let disposeBag = DisposeBag()
     private let order: DeliveryOrderResponse
     private let viewModel: RateMealViewModel
+    private let userInfo: UserInfoStorage
 
     override func loadView() {
         view = RateMealView()
@@ -24,6 +25,7 @@ class RateMealViewController: ViewController, ViewHolder, RateMealModule {
     init(order: DeliveryOrderResponse, viewModel: RateMealViewModel) {
         self.order = order
         self.viewModel = viewModel
+        userInfo = assembler.resolver.resolve(UserInfoStorage.self)!
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,6 +48,7 @@ class RateMealViewController: ViewController, ViewHolder, RateMealModule {
         result.element
             .subscribe(onNext: { [unowned self] _ in
                 showRateAlert {
+                    self.userInfo.updateInfo.onNext(())
                     self.rateMealTapped?()
                 }
             }).disposed(by: disposeBag)

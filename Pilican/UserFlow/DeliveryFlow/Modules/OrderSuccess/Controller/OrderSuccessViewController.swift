@@ -43,11 +43,13 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
         userInfo.updateInfo.onNext(())
         rootView.toMainButton.rx.tap
             .subscribe(onNext: { [unowned self] in
+                self.userInfo.updateInfo.onNext(())
                 self.toMain?()
             }).disposed(by: disposeBag)
 
         rootView.obserOrderButton.rx.tap
             .subscribe(onNext: { [unowned self] in
+                self.userInfo.updateInfo.onNext(())
                 self.toOrderStatus?(orderId)
             }).disposed(by: disposeBag)
         updater.updateUserBalance()

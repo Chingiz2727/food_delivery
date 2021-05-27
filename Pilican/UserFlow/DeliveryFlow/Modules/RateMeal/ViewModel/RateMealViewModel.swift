@@ -34,7 +34,7 @@ final class RateMealViewModel: ViewModel {
                     to: CreateOrderRatings.createOrderRatings(
                         comment: "",
                         orderId: self.order.id ?? 0,
-                        type: 1,
+                        type: 2,
                         value: ratingValue))
                     .result(ResponseStatus.self)
             }.asLoadingSequence().share()
