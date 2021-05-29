@@ -1,3 +1,5 @@
+import CoreLocation
+
 final class OrderingCoordinator: BaseCoordinator {
     
     private let coordinatorFactory: OrderingModuleFactory
@@ -26,14 +28,14 @@ final class OrderingCoordinator: BaseCoordinator {
 
     private func showBasket() {
         var module = coordinatorFactory.makeBasket()
-        module.onDeliveryChoose = { [weak self] orderType in
-            self?.showMakeOrder(orderType: orderType)
+        module.onDeliveryChoose = { [weak self] orderType, userLocation in
+            self?.showMakeOrder(orderType: orderType, userLocation: userLocation)
         }
         router.push(module)
     }
 
-    private func showMakeOrder(orderType: OrderType) {
-        var module = coordinatorFactory.makeMakeOrder(orderType: orderType)
+    private func showMakeOrder(orderType: OrderType, userLocation: CLLocationCoordinate2D) {
+        var module = coordinatorFactory.makeMakeOrder(orderType: orderType, userLocation: userLocation)
         module.onMapShowDidSelect = { [weak self] in
             self?.makeMapSearch(addressSelected: { address in
                 module.putAddress?(address)

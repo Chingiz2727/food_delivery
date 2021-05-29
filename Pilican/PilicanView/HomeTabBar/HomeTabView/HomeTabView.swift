@@ -29,13 +29,13 @@ final class HomeTabView: UIView {
         userInfoView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(18)
-            make.width.greaterThanOrEqualTo(70)
+            make.width.equalTo(90)
         }
 
         balanceInfoView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(18)
-            make.width.greaterThanOrEqualTo(70)
+            make.width.equalTo(90)
         }
     }
 

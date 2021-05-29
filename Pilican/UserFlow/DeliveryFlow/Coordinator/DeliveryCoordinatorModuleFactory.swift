@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 final class DeliveryCoordinatorModuleFactory {
     private let container: DependencyContainer
@@ -31,11 +32,11 @@ final class DeliveryCoordinatorModuleFactory {
         return controller
     }
 
-    func makeMakeOrder(orderType: OrderType) -> MakeOrderModule {
+    func makeMakeOrder(orderType: OrderType, userLocation: CLLocationCoordinate2D) -> MakeOrderModule {
         let dishList = container.resolve(DishList.self)!
         let userInfo = container.resolve(UserInfoStorage.self)!
         let viewModel = MakeOrderViewModel(dishList: dishList, userInfo: userInfo, mapManager: container.resolve(MapManager.self)!, apiService: container.resolve(ApiService.self)!)
-        let controller = MakeOrderViewController(viewModel: viewModel)
+        let controller = MakeOrderViewController(viewModel: viewModel, userLocation: userLocation)
         controller.orderType = orderType
         return controller
     }

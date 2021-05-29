@@ -17,7 +17,7 @@ final class DishList {
         }
     }
     
-    let productList: PublishSubject<[ProductCategory]> = .init()
+//    let productList: BehaviorSubject<[ProductCategory]> = .init(value: [])
     let retailSubject = PublishSubject<DeliveryRetail>()
     let wishDishList: BehaviorSubject<[Product]> = .init(value: [])
 

@@ -12,9 +12,11 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
     private var dishList: DishList
     private let mapManager: MapManager<YandexMapViewModel>
     private let locationManager = CLLocationManager()
+    private var userCoordinate = PublishSubject<CLLocationCoordinate2D>()
     private let currentLocation = PublishSubject<DeliveryLocation>()
     private var userLatitude: Double = 0
     private var userLongitude: Double = 0
+    private var distance: Double = 0
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
     
@@ -34,11 +36,13 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         bindViewModel()
         setupMap()
         navigationItem.title = "Выберите доставку"
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dishList = assembler.resolver.resolve(DishList.self)!
@@ -46,13 +50,7 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
             tabbar.tabBar.isHidden = true
             HomeTabBarViewController.qrScanButton.isHidden = true
         }
-        locationManager.delegate = self
-        let retail = self.dishList.retail
-        self.mapManager.getDistance(firstPoint: MapPoint(latitude: locationManager.location?.coordinate.latitude ?? 0, longitude: locationManager.location?.coordinate.longitude ?? 0), secondPoint: MapPoint(latitude: retail?.latitude ?? 0, longitude: retail?.longitude ?? 0), completion: { [unowned self] distance in
-            self.rootView.headerView.descriptionLabel.text = "\(distance) км до \(String(describing: retail?.name ?? ""))"
-
-        })
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -71,12 +69,14 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
             .disposed(by: disposeBag)
         
         rootView.tableView.rx.itemSelected
-            .subscribe(onNext: { [unowned self] path in
-                if path.row != 2 {
-                    self.onDeliveryChoose?(self.orderCases[path.row])
+            .withLatestFrom(userCoordinate) { index, coordinate in
+                return (index.row, coordinate)
+            }.subscribe(onNext: { [unowned self] item in
+                if item.0 != 2 {
+                    self.onDeliveryChoose?(self.orderCases[item.0], item.1)
                 }
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
+            
         
         Observable.just(orderCases)
             .bind(to: rootView.tableView.rx.items(OrderTypeTableViewCell.self)) { _, model, cell in
@@ -84,19 +84,13 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
             }.disposed(by: disposeBag)
         
         if let coordinate = locationManager.location?.coordinate {
-            self.searchByLocation(mapPoint: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude))
-        }
-        
-        currentLocation.subscribe(onNext: { [unowned self] location in
+            self.userCoordinate.onNext(coordinate)
             let retail = self.dishList.retail
-            self.mapManager.getDistance(firstPoint: location.point, secondPoint: MapPoint(latitude: retail?.latitude ?? 0, longitude: retail?.longitude ?? 0), completion: { [unowned self] distance in
+            self.mapManager.getDistance(firstPoint: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), secondPoint: MapPoint(latitude: retail?.latitude ?? 0, longitude: retail?.longitude ?? 0), completion: { [unowned self] distance in
+                self.distance = distance
                 self.rootView.headerView.descriptionLabel.text = "\(distance) км до \(String(describing: retail?.name ?? ""))"
             })
-        })
-        .disposed(by: disposeBag)
-        
-        if let coordinate = locationManager.location?.coordinate {
-            searchByLocation(mapPoint: .init(latitude: coordinate.latitude, longitude: coordinate.longitude))
+            
         }
     }
     
@@ -107,27 +101,9 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
         let viewModel = MapTransitionViewModel(duration: 0.1, animationType: .smooth, zoom: 13)
         mapManager.moveTo(in: rootView.headerView.mapView, point: MapPoint(latitude: latitude, longitude: longitude), transitionViewModel: viewModel)
     }
-    
-    private func searchByLocation(mapPoint: MapPoint) {
-        let options = YMKSearchOptions()
-        options.geometry = true
-        // swiftlint:disable line_length
-        searchSession = searchManager?.submit(with: YMKPoint(latitude: mapPoint.latitude, longitude: mapPoint.longitude), zoom: 18, searchOptions: options, responseHandler: { [unowned self] (res, err) in
-            if let name = res?.collection.children[0].obj?.name, let coordinate = res?.collection.children[0].obj?.geometry[0].point {
-                let deliveryLocation = DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: name)
-                self.currentLocation.onNext(deliveryLocation)
-            }
-        })
-    }
 }
 extension OrderTypeViewController: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        guard let coordinate = manager.location else { return }
-        self.searchByLocation(mapPoint: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude))
-    }
-
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard let coordinate = manager.location else { return }
-        self.searchByLocation(mapPoint: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude))
     }
 }

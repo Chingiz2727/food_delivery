@@ -40,4 +40,5 @@ public enum NotificationsString: String {
     case handleBadge
     case removeBadge
     case openNotify
+    case reloadRetailsBadge
 }

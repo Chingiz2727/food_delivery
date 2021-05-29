@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.toolbarTintColor = .primary
-        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готова"
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
     }
 
     private func setupKingfisher() {

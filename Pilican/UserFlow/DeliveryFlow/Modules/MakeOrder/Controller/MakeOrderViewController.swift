@@ -14,12 +14,13 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     typealias RootViewType = MakeOrderView
     var onMapShowDidSelect: Callback?
     var orderType: OrderType!
+    private let userLocation: CLLocationCoordinate2D
     private let viewModel: MakeOrderViewModel
     private let disposeBag = DisposeBag()
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
     private let currentLocation = PublishSubject<DeliveryLocation>()
-    private let distance: BehaviorSubject<Double> = .init(value: 0)
+    private let distance: PublishSubject<Double> = .init()
     private let locationManager = CLLocationManager()
     private let totalSum: BehaviorSubject<Int> = .init(value: 0)
     private let addAmountSubject: BehaviorSubject<Int> = .init(value: 0)
@@ -29,8 +30,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     private let deliveryAmountSubject: BehaviorSubject<Int> = .init(value: 0)
     private let useCashbackSubject: BehaviorSubject<Bool> = .init(value: false)
     
-    init(viewModel: MakeOrderViewModel) {
+    init(viewModel: MakeOrderViewModel, userLocation: CLLocationCoordinate2D) {
         self.viewModel = viewModel
+        self.userLocation = userLocation
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -44,12 +46,15 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         searchManager = YMKSearch.sharedInstance().createSearchManager(with: .combined)
         bindViewModel()
         configureMap()
         viewModel.orderType = orderType.title == "Доставка Pillikan" ? 1 : 2
         navigationItem.title = "Оформить заказ \(viewModel.dishList.retail?.name ?? "")"
         bindView()
+        currentLocation.onNext(.init(point: .init(latitude: userLocation.latitude, longitude: userLocation.longitude), name: ""))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,7 +123,6 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             if orderType.title == "Доставка Pillikan" {
                 self.rootView.deliveryView.setup(subTitle: "Расстояние доставки \(distance) км")
             }
-            self.distance.onNext(distance)
         })
         .disposed(by: disposeBag)
 
@@ -177,7 +181,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                 let totalSum = amount.reduce(0, +)
                 self.foodAmountSubject.onNext(totalSum)
                 if orderType.title == "Доставка Pillikan" {
-                    if totalSum < 2000 {
+                    if totalSum < 1499 {
                         self.addAmountSubject.onNext(600)
                         self.totalSum.onNext(totalSum)
                         self.deliveryAmountSubject.onNext(rate.rate)
@@ -238,7 +242,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                     let totalSum = amount.reduce(0, +)
                     self.foodAmountSubject.onNext(totalSum)
                     if orderType.title == "Доставка Pillikan" {
-                        if totalSum < 2000 {
+                        if totalSum < 1499 {
                             self.addAmountSubject.onNext(0)
                             self.totalSum.onNext(totalSum)
                             self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
@@ -256,8 +260,6 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                     }
                 })
                 .disposed(by: disposeBag)
-            // swiftlint:disable line_length
-            self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: viewModel.dishList.retail?.latitude ?? 0, longitude: viewModel.dishList.retail?.longitude ?? 0), name: viewModel.dishList.retail?.address ?? ""))
         }
     }
 
@@ -270,9 +272,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         rootView.tableView.rowHeight = 100
         rootView.tableView.estimatedRowHeight = 100
         rootView.setOrderType(orderType: orderType, address: viewModel.dishList.retail?.address ?? "")
-        if let coordinate = locationManager.location?.coordinate {
-            currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: ""))
-        }
+//        if let coordinate = locationManager.location?.coordinate {
+//            currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: ""))
+//        }
     }
 
     private func configureMap() {
@@ -301,11 +303,9 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 extension MakeOrderViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         guard let coordinate = manager.location else { return }
-        self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude), name: ""))
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard let coordinate = manager.location else { return }
-        self.currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.coordinate.latitude, longitude: coordinate.coordinate.longitude), name: ""))
     }
 }

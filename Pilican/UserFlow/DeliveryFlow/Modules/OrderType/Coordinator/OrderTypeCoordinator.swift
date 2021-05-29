@@ -4,7 +4,7 @@
 //
 //  Created by kairzhan on 4/7/21.
 //
-
+import CoreLocation
 import Foundation
 
 final class OrderTypeCoordinator: BaseCoordinator, DeliveryTabBarItemCoordinator {
@@ -23,14 +23,14 @@ final class OrderTypeCoordinator: BaseCoordinator, DeliveryTabBarItemCoordinator
     
     private func showBasket() {
         var module = moduleFactory.makeBasket()
-        module.onDeliveryChoose = { [weak self] orderType in
-            self?.showMakeOrder(orderType: orderType)
+        module.onDeliveryChoose = { [weak self] orderType, userLocation in
+            self?.showMakeOrder(orderType: orderType, userLocation: userLocation)
         }
         router.setRootModule(module, isNavigationBarHidden: false)
     }
     
-    private func showMakeOrder(orderType: OrderType) {
-        var module = moduleFactory.makeMakeOrder(orderType: orderType)
+    private func showMakeOrder(orderType: OrderType, userLocation: CLLocationCoordinate2D) {
+        var module = moduleFactory.makeMakeOrder(orderType: orderType, userLocation: userLocation)
         module.onMapShowDidSelect = { [weak self] in
             self?.makeMapSearch()
         }

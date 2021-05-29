@@ -25,6 +25,7 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     private let viewModel: DeliveryTabBarViewModel
     private let disposeBag = DisposeBag()
     var selectRetail: SelectRetail?
+    let reloadSubject = BehaviorSubject<Void>.init(value: ())
     lazy var panGesture = UIPanGestureRecognizer()
     lazy var singleTap = UITapGestureRecognizer()
     var deliveryDetailsVCData = [[UIView: DeliveryOrderResponse?]]()
@@ -42,34 +43,31 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(NotificationsString.reloadRetailsBadge.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBadge), name: NSNotification.Name(NotificationsString.reloadRetailsBadge.rawValue), object: nil)
     }
     
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(viewDidLoad: userRepo.updateInfo))
-        
+        let output = viewModel.transform(input: .init(viewDidLoad: reloadSubject))
         let activeOrder = output.activeOrders.publish()
         
         activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
             self.overlayViews.removeAll()
-            self.overlayViews.forEach { $0.removeFromSuperview() }
             self.deliveryDetailsVCData.removeAll()
             self.setupOverlays(orderResponse: myOrders)
         })
         .disposed(by: disposeBag)
         
-        activeOrder.errors
-            .subscribe(onNext: { [unowned self] err in
-                self.overlayViews.removeAll()
-                self.overlayViews.forEach { $0.removeFromSuperview() }
-                self.deliveryDetailsVCData.removeAll()
-            })
-            .disposed(by: disposeBag)
         activeOrder.connect()
             .disposed(by: disposeBag)
     }
 
     func setViewControllers(_ viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
+    }
+    
+    @objc private func updateBadge() {
+        reloadSubject.onNext(())
     }
 
     func changeSelectedTabBarItem(_ tabBarItem: DeliveryTabBarItem, completion: Callback?) {
@@ -92,10 +90,12 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
             let v = RetailCardView()
             let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"
             v.setup(imgUrl: imgUrl)
-            self.overlayViews.append(v)
             let dataFor = [v: order] as [UIView : DeliveryOrderResponse]
             self.deliveryDetailsVCData.append(dataFor)
-            view.addSubview(v)
+            if !view.subviews.contains(v) {
+                view.addSubview(v)
+                self.overlayViews.append(v)
+            }
 
             v.frame = .init(x: 10,
                             y: 100,

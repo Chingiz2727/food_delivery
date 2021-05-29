@@ -125,7 +125,7 @@ final class DeliveryRetailListTableViewCell: UITableViewCell {
     }
 
     private func setupWorkStatusView(retail: DeliveryRetail) {
-        if let status = WorkStatus(rawValue: retail.payIsWork) {
+        if let status = WorkStatus(rawValue: retail.isWork) {
         workStatusView.setTitle(title: status.title)
         workStatusView.configureView(backColor: status.backColor, textColor: status.textColor)
         }

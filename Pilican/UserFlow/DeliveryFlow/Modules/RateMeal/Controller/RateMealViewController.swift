@@ -48,7 +48,7 @@ class RateMealViewController: ViewController, ViewHolder, RateMealModule {
         result.element
             .subscribe(onNext: { [unowned self] _ in
                 showRateAlert {
-                    self.userInfo.updateInfo.onNext(())
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NotificationsString.reloadRetailsBadge.rawValue), object: nil, userInfo: nil)
                     self.rateMealTapped?()
                 }
             }).disposed(by: disposeBag)

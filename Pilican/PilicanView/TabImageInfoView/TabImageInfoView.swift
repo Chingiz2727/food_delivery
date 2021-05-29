@@ -9,7 +9,7 @@ final class TabImageInfoView: UIView {
     private lazy var horizontalStackView = UIStackView(
         views: [leftView,iconImageView, titleLabel,rightView],
         axis: .horizontal,
-        distribution: .fill,
+        distribution: .fillProportionally,
         alignment: .center,
         spacing: 5)
 
@@ -45,7 +45,7 @@ final class TabImageInfoView: UIView {
         }
         addSubview(control)
         control.snp.makeConstraints { $0.edges.equalToSuperview() }
-        titleLabel.textAlignment = .left
+        titleLabel.textAlignment = .center
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.snp.makeConstraints { $0.width.equalTo(20) }
         leftView.snp.makeConstraints { $0.width.equalTo(2) }

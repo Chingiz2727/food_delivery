@@ -4,7 +4,7 @@
 //
 //  Created by kairzhan on 4/16/21.
 //
-
+import CoreLocation
 import Foundation
 
 protocol DeliveryMenuCoordinator: BaseCoordinator {}
@@ -48,12 +48,13 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
 //                self?.showOrderStatus(orderId: response.id ?? 0)
 //            }
 //        }
-        module.selectedOrderHistory = { [weak self] dishList, type in
-            let retail = DeliveryRetail(id: dishList.retail?.retailId ?? 0, cashBack: 0, isWork: 0, longitude: dishList.retail?.longitude ?? 0, latitude: dishList.retail?.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: dishList.retail?.imgLogo ?? "", address: dishList.retail?.address ?? "", workDays: [], payIsWork: 0, name: dishList.retail?.retailName ?? "", status: dishList.retail?.status ?? 0, rating: dishList.retail?.retailRating ?? 0)
-            if type == .delivery {
-                self?.showDeliveryProduct(retail: dishList.retail ?? retail)
-            } else {
-                self?.showOrderStatus(orderId: dishList.retail?.id ?? 0)
+        module.selectedOrderHistory = { [weak self] retail, type in
+            
+            if type == .delivery && retail.isWork == 1 {
+                self?.showDeliveryProduct(retail: retail)
+            }
+            if type != .delivery {
+                self?.showOrderStatus(orderId: retail.id)
             }
         }
         router.push(module)
@@ -115,33 +116,14 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
 
     private func showBasket() {
         var module = moduleFactory.makeBasket()
-        module.onDeliveryChoose = { [weak self] orderType in
-            self?.showMakeOrder(orderType: orderType)
+        module.onDeliveryChoose = { [weak self] orderType, userLocation in
+            self?.showMakeOrder(orderType: orderType, userLocation: userLocation)
         }
         router.push(module)
     }
 
-    private func showRepeatOrder(dishList: DishList, orderType: OrderType) {
-        var module = moduleFactory.makeRepeatOrder(dishList: dishList, orderType: orderType)
-        module.onMapShowDidSelect = { [weak self] in
-            self?.makeMapSearch(addressSelected: { address in
-                module.putAddress?(address)
-            })
-        }
-        module.emptyDishList = { [weak self] in
-            self?.router.popModule()
-        }
-        module.orderSuccess = { [weak self] orderId in
-            self?.showOrderSuccess(orderId: orderId)
-        }
-        module.orderError = { [weak self] in
-            self?.showOrderError()
-        }
-        router.push(module)
-    }
-
-    private func showMakeOrder(orderType: OrderType) {
-        var module = moduleFactory.makeMakeOrder(orderType: orderType)
+    private func showMakeOrder(orderType: OrderType, userLocation: CLLocationCoordinate2D) {
+        var module = moduleFactory.makeMakeOrder(orderType: orderType, userLocation: userLocation)
         module.onMapShowDidSelect = { [weak self] in
             self?.makeMapSearch(addressSelected: { address in
                 module.putAddress?(address)

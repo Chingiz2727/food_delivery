@@ -27,4 +27,5 @@ target 'Pilican' do
   pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "master"
   pod 'Moya', '~> 13.0.0'
   pod 'SVPinView', '~> 1.0'
+  pod 'YandexMobileMetrica', '3.15.1'
 end

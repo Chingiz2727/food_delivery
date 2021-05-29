@@ -1,4 +1,5 @@
 import Foundation
+import CoreLocation
 
 protocol RetailDetailCoordinatorOutput: BaseCoordinator {
     var onFlowDidFinish: Callback? { get set }
@@ -84,14 +85,14 @@ final class RetailDetailCoordinator: BaseCoordinator, RetailDetailCoordinatorOut
 
     private func showBasket() {
         var module = moduleFactory.makeBasket()
-        module.onDeliveryChoose = { [weak self] orderType in
-            self?.showMakeOrder(orderType: orderType)
+        module.onDeliveryChoose = { [weak self] orderType, userLocation in
+            self?.showMakeOrder(orderType: orderType, userLocation: userLocation)
         }
         router.push(module)
     }
 
-    private func showMakeOrder(orderType: OrderType) {
-        var module = moduleFactory.makeMakeOrder(orderType: orderType)
+    private func showMakeOrder(orderType: OrderType, userLocation: CLLocationCoordinate2D) {
+        var module = moduleFactory.makeMakeOrder(orderType: orderType, userLocation: userLocation)
         module.onMapShowDidSelect = { [weak self] in
             self?.makeMapSearch(addressSelected: { address in
                 module.putAddress?(address)

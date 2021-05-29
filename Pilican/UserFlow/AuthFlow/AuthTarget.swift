@@ -13,6 +13,14 @@ enum AuthTarget: ApiTarget {
 
     var servicePath: String { "" }
 
+    var mainUrl: String? {
+        switch self {
+        case .changePassword:
+            return "https://api.pillikan.kz"
+        default:
+            return AppEnviroment.baseURL
+        }
+    }
     var version: ApiVersion {
         .custom("")
     }

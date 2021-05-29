@@ -35,21 +35,18 @@ class OrderSuccessViewController: ViewController, ViewHolder, OrderSuccessModule
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         bindView()
     }
 
     private func bindView() {
-        userInfo.updateInfo.onNext(())
+        NotificationCenter.default.post(name: NSNotification.Name.init(NotificationsString.reloadRetailsBadge.rawValue), object: nil, userInfo: nil)
         rootView.toMainButton.rx.tap
             .subscribe(onNext: { [unowned self] in
-                self.userInfo.updateInfo.onNext(())
                 self.toMain?()
             }).disposed(by: disposeBag)
 
         rootView.obserOrderButton.rx.tap
             .subscribe(onNext: { [unowned self] in
-                self.userInfo.updateInfo.onNext(())
                 self.toOrderStatus?(orderId)
             }).disposed(by: disposeBag)
         updater.updateUserBalance()

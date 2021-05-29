@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import CoreLocation
 protocol OrderTypeModule: Presentable {
-    typealias OnDeliveryChoose = (OrderType) -> Void
+    typealias OnDeliveryChoose = (OrderType, CLLocationCoordinate2D) -> Void
     var onDeliveryChoose: OnDeliveryChoose? { get set }
 }

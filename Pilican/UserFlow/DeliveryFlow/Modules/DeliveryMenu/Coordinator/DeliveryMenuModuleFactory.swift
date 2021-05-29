@@ -4,7 +4,7 @@
 //
 //  Created by kairzhan on 4/16/21.
 //
-
+import CoreLocation
 import Foundation
 
 final class DeliveryMenuModuleFactory {
@@ -60,19 +60,11 @@ final class DeliveryMenuModuleFactory {
         return controller
     }
 
-    func makeMakeOrder(orderType: OrderType) -> MakeOrderModule {
+    func makeMakeOrder(orderType: OrderType, userLocation: CLLocationCoordinate2D) -> MakeOrderModule {
         let dishList = container.resolve(DishList.self)!
         let userInfo = container.resolve(UserInfoStorage.self)!
         let viewModel = MakeOrderViewModel(dishList: dishList, userInfo: userInfo, mapManager: container.resolve(MapManager.self)!, apiService: container.resolve(ApiService.self)!)
-        let controller = MakeOrderViewController(viewModel: viewModel)
-        controller.orderType = orderType
-        return controller
-    }
-
-    func makeRepeatOrder(dishList: DishList, orderType: OrderType) -> MakeOrderModule {
-        let userInfo = container.resolve(UserInfoStorage.self)!
-        let viewModel = MakeOrderViewModel(dishList: dishList, userInfo: userInfo, mapManager: container.resolve(MapManager.self)!, apiService: container.resolve(ApiService.self)!)
-        let controller = MakeOrderViewController(viewModel: viewModel)
+        let controller = MakeOrderViewController(viewModel: viewModel, userLocation: userLocation)
         controller.orderType = orderType
         return controller
     }

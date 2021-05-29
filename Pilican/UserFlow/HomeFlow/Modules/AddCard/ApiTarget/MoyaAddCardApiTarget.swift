@@ -4,6 +4,7 @@ enum MoyaAddCardApiTarget {
     case need3DSecure(url: String, model: BindCardModel, token: String)
     case post3ds(transactionId: String, threeDsCallbackId: String, paRes: String, token: String)
     case replenishBalance(sig: String, amount: Float, createdAt: String)
+    case changePassword(password: String, password1: String)
 }
 
 extension MoyaAddCardApiTarget: TargetType {
@@ -17,6 +18,8 @@ extension MoyaAddCardApiTarget: TargetType {
             return url
         case .replenishBalance:
             return URL(string: AppEnviroment.baseURL)!
+        case .changePassword:
+            return URL(string: "https://java.pillikan.org.kz")!
         }
     }
     var path: String {
@@ -27,12 +30,14 @@ extension MoyaAddCardApiTarget: TargetType {
             return "payments/ThreeDSCallback"
         case .replenishBalance:
             return "a/cb/purchase/replenish"
+        case .changePassword:
+            return "v1/profile/change-password"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .need3DSecure, .post3ds, .replenishBalance:
+        case .need3DSecure, .post3ds, .replenishBalance, .changePassword:
             return .post
         }
     }
@@ -64,18 +69,26 @@ extension MoyaAddCardApiTarget: TargetType {
             taskValue["sig"] = sig
             taskValue["amount"] = amount
             taskValue["createdAt"] = createdAt
+        case let.changePassword(password, password1):
+            taskValue["password"] = password
+            taskValue["passowrd2"] = password1
         }
         return .requestParameters(parameters: taskValue, encoding: JSONEncoding.default)
     }
     
     var headers: [String : String]? {
+        let users = assembler.resolver.resolve(UserSessionStorage.self)!
+
         var httpHeaders = [String: String]()
         switch self {
         case .need3DSecure(_, _ ,let token), .post3ds(_, _ ,_ , let token):
             httpHeaders["Content-Type"] = "application/json; charset=utf-8"
             httpHeaders["authorization"] = "Bearer \(token)"
         case .replenishBalance:
-            let users = assembler.resolver.resolve(UserSessionStorage.self)!
+            httpHeaders["appver"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            httpHeaders["authorization"] = "Bearer " + users.accessToken!
+            httpHeaders["Content-Type"] = "application/json"
+        case .changePassword:
             httpHeaders["appver"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
             httpHeaders["authorization"] = "Bearer " + users.accessToken!
             httpHeaders["Content-Type"] = "application/json"

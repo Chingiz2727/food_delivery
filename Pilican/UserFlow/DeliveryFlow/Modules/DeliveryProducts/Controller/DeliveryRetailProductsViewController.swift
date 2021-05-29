@@ -13,7 +13,6 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     private let viewModel: DeliveryRetailProductViewModel
     private let disposeBag = DisposeBag()
     private let sourceDelegate: DeliveryRetailTableViewDataSourceDelegate
-    private let cache = DiskCache<String, [DeliveryRetail]>()
     private var isFavorite = false
     private var alertIsShown = false
     private let favouriteManager: FavouritesManager

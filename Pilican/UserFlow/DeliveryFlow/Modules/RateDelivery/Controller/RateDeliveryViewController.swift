@@ -59,7 +59,8 @@ class RateDeliveryViewController: ViewController, ViewHolder, RateDeliveryModule
         rootView.skipButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.rateDeliveryTapped?(order)
-                self.userInfo.updateInfo.onNext(())
+                        NotificationCenter.default.post(name: NSNotification.Name.init(NotificationsString.reloadRetailsBadge.rawValue), object: nil, userInfo: nil)
+                
             }).disposed(by: disposeBag)
 
         rootView.nextButton.rx.tap

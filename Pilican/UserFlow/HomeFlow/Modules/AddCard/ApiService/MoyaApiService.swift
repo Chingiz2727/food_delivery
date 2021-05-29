@@ -50,6 +50,24 @@ final class MoyaApiService {
             print(result)
         }
     }
+    
+    func changePassword(
+                          password: String,
+                          password1: String,
+                          completion: @escaping (_ code: ResponseStatus?, _ error: ErrorResponse?) -> ()) {
+        let createOrder = MoyaAddCardApiTarget.changePassword(password: password, password1: password1)
+        cardService.request(createOrder) { result in
+            switch result {
+            case .failure(let error):
+                completion(nil,ErrorResponse.init(name: "Ошибка", message: error.localizedDescription, code: 404, status: 0))
+            case .success(let response):
+                if let e = try? JSONDecoder().decode(ResponseStatus.self, from: response.data) {
+                    completion(e, nil)
+                }
+            }
+            print(result)
+        }
+    }
 }
 
 enum Status: String {

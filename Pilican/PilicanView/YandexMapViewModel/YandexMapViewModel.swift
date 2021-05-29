@@ -51,15 +51,10 @@ final class YandexMapViewModel: NSObject, MapStatus {
             YMKRequestPoint(point: YMKPoint(latitude: firstPoint.latitude, longitude: firstPoint.longitude), type: .waypoint, pointContext: nil),
             YMKRequestPoint(point: YMKPoint(latitude: secondPoint.latitude, longitude: secondPoint.longitude), type: .waypoint, pointContext: nil)
         ]
-        print("firstPoint",firstPoint)
-        print("secondPoint",secondPoint)
         let responseHandler = {(routesResponse: [YMKDrivingRoute]?, error: Error?) -> Void in
             if let routes = routesResponse {
-                if let distance  = routes.first?.geometry.points {
-                    
-                    let points: [CLLocationCoordinate2D] = distance.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)}
-                    let distance = self.getDistanceFromArray(coordinates: points)
-                    completion(distance)
+                if let distance = routes.first?.metadata.weight.distance.value {
+                    completion(distance.rounded()/1000)
                 }
             } else {
                 completion(0)
@@ -125,6 +120,7 @@ final class YandexMapViewModel: NSObject, MapStatus {
                                        animationDuration: Float,
                                        completionHandler: Callback?) {
         let map = view.mapWindow.map
+        
         let box = YMKBoundingBox(southWest: .init(latitude: minPoint.latitude, longitude: minPoint.longitude),
                                  northEast: .init(latitude: maxPoint.latitude, longitude: maxPoint.longitude))
         var cameraPosition = map.cameraPosition(with: box)
@@ -174,28 +170,4 @@ extension YandexMapViewModel: YMKMapCameraListener {
     func onCameraPositionChanged(with map: YMKMap, cameraPosition: YMKCameraPosition, cameraUpdateReason: YMKCameraUpdateReason, finished: Bool) {
         onCameraPositionChanged?(MapPoint(latitude: cameraPosition.target.latitude, longitude: cameraPosition.target.longitude), finished)
     }
-}
-
-private enum Constants {
-    static let ShymkentPolyLine = YMKPolyline(
-        points: [
-            YMKPoint(latitude: 42.34517891311695, longitude: 69.50908088183532),
-            YMKPoint(latitude: 42.380313451969386, longitude: 69.52470206713805),
-            YMKPoint(latitude: 42.387921232511964, longitude: 69.55165290331969),
-            YMKPoint(latitude: 42.38373706729813, longitude: 69.58255195117125),
-            YMKPoint(latitude: 42.38373706729813, longitude: 69.60315131640563),
-            YMKPoint(latitude: 42.384624640798584, longitude: 69.62993049121032),
-            YMKPoint(latitude: 42.38849177888856, longitude: 42.38849177888856),
-            YMKPoint(latitude: 42.38563899514845, longitude: 69.66134452319274),
-            YMKPoint(latitude: 42.36198759693794, longitude: 69.73112487292418),
-            YMKPoint(latitude: 42.31424553666617, longitude: 69.67160129046569),
-            YMKPoint(latitude: 42.30912816615637, longitude: 69.65521835780272),
-            YMKPoint(latitude: 42.29943972549621, longitude: 69.64467191195617),
-            YMKPoint(latitude: 42.282090439438065, longitude: 69.67267417407164),
-            YMKPoint(latitude: 42.27237402217843, longitude: 69.61491012072692),
-            YMKPoint(latitude: 69.61491012072692, longitude: 69.57225226855407),
-            YMKPoint(latitude: 42.30729533227581, longitude: 69.55366992449889),
-            YMKPoint(latitude: 42.319418021668206, longitude: 69.53834914660582),
-        ]
-    )
 }
