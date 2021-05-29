@@ -28,7 +28,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     private var cashback = 0
     private let userInfo: UserInfoStorage
     private var textPrice: String?
-    
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
     init(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage, textPrice: String?) {
         self.viewModel = viewModel
         self.userInfo = userInfo
@@ -46,6 +46,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.log(.cafepay)
         bindView()
         bindViewModel()
         if let textPrice = textPrice {

@@ -19,7 +19,8 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
     private var distance: Double = 0
     private var searchManager: YMKSearchManager?
     private var searchSession: YMKSearchSession?
-    
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
+
     init(dishList: DishList, mapManager: MapManager<YandexMapViewModel>) {
         self.dishList = dishList
         self.mapManager = mapManager
@@ -40,6 +41,7 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         bindViewModel()
         setupMap()
+        analytics.log(.carttabbar)
         navigationItem.title = "Выберите доставку"
     }
     
@@ -74,6 +76,12 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
             }.subscribe(onNext: { [unowned self] item in
                 if item.0 != 2 {
                     self.onDeliveryChoose?(self.orderCases[item.0], item.1)
+                }
+                if item.0 == 0 {
+                    self.analytics.log(.paydelivery)
+                }
+                if item.0 == 1 {
+                    self.analytics.log(.paytakaway)
                 }
             }).disposed(by: disposeBag)
             

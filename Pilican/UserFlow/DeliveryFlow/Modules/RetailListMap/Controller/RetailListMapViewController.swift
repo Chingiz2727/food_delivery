@@ -15,6 +15,7 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
     private let disposeBag = DisposeBag()
     private let dishList: DishList
     private let userLocationStatusSubject: PublishSubject<UserLocationStatus> = .init()
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
 
     init(mapManager: MapManager<YandexMapViewModel>, locationManager: CLLocationManager, viewModel: RetailListMapViewModel, dishList: DishList) {
         self.mapManager = mapManager
@@ -38,6 +39,7 @@ class RetailListMapViewController: ViewController, ViewHolder, RetailListMapModu
         bindViewModel()
         configureView()
         setupMap()
+        analytics.log(.maptabbar)
     }
 
     private func bindViewModel() {

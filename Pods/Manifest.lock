@@ -120,6 +120,14 @@ PODS:
   - UltraDrawerView (0.5.0)
   - Willow (6.0.0)
   - YandexMapsMobile (4.0.0-full)
+  - YandexMobileMetrica (3.15.1):
+    - YandexMobileMetrica/Static (= 3.15.1)
+  - YandexMobileMetrica/Static (3.15.1):
+    - YandexMobileMetrica/Static/Core (= 3.15.1)
+    - YandexMobileMetrica/Static/Crashes (= 3.15.1)
+  - YandexMobileMetrica/Static/Core (3.15.1)
+  - YandexMobileMetrica/Static/Crashes (3.15.1):
+    - YandexMobileMetrica/Static/Core
 
 DEPENDENCIES:
   - Alamofire (= 4.8)
@@ -146,6 +154,7 @@ DEPENDENCIES:
   - UltraDrawerView (= 0.5.0)
   - Willow (~> 6.0)
   - YandexMapsMobile (= 4.0.0-full)
+  - YandexMobileMetrica (= 3.15.1)
 
 SPEC REPOS:
   trunk:
@@ -185,6 +194,7 @@ SPEC REPOS:
     - UltraDrawerView
     - Willow
     - YandexMapsMobile
+    - YandexMobileMetrica
 
 EXTERNAL SOURCES:
   SDK-iOS:
@@ -234,7 +244,8 @@ SPEC CHECKSUMS:
   UltraDrawerView: 50968b8838d22adf33d083a4d7a8e5293a74bec8
   Willow: 8efe9bd7bb99b06fe017566848492748b763a0ac
   YandexMapsMobile: 0f3d8c92fad685dc33d07f83eed4eb0166089743
+  YandexMobileMetrica: fb4b3c20a0c0237b03b34cc07b6d575332f43097
 
-PODFILE CHECKSUM: 300826c89bff6d4139be4a6c4d55da613d8362f4
+PODFILE CHECKSUM: 9167f2ffade9d75988872ce2adf17e4c1b9fad59
 
 COCOAPODS: 1.10.1

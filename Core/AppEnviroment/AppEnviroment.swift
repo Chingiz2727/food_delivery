@@ -46,4 +46,8 @@ public enum AppEnviroment {
         }
         return appVersion
     }()
+    
+    public static let yandexMetricKey: String = {
+        return "a1db6041-8ff4-4de9-b51d-f4721035ee67"
+    }()
 }

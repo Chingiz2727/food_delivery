@@ -5,6 +5,8 @@ import Firebase
 import IQKeyboardManagerSwift
 import Messages
 import YandexMapsMobile
+import YandexMobileMetrica
+
 public let assembler = Assembler([DependencyContainerAssembly()])
 
 @main
@@ -22,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupNavigationBar()
         setupKingfisher()
         setupFirebase()
+        setupYandexAnalitic()
         #if DEBUG
         LoggerConfigurator.configure()
         #endif
@@ -108,6 +111,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func registerForPushNotifications() {
         let manager = assembler.resolver.resolve(PushNotificationManager.self)
         manager?.register()
+    }
+    
+    private func setupYandexAnalitic() {
+        let configuration = YMMYandexMetricaConfiguration(apiKey: AppEnviroment.yandexMetricKey)
+        YMMYandexMetrica.activate(with: configuration!)
     }
 }
 

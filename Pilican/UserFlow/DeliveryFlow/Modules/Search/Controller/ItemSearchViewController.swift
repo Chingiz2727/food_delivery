@@ -8,6 +8,8 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
     private let disposeBag = DisposeBag()
     private let searchText: PublishSubject<String> = .init()
     private let dishList: DishList
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
+
     init(viewModel: ItemSearchViewMoodel, dishList: DishList) {
         self.viewModel = viewModel
         self.dishList = dishList
@@ -24,6 +26,7 @@ class ItemSearchViewController: SearchViewController, ItemSearchModule {
         navigationItem.title = "Поиск"
         rootView.tableView.registerClassForCell(DeliveryRetailListTableViewCell.self)
         bindViewModel()
+        analytics.log(.deliverysearch)
     }
 
     private func bindViewModel() {

@@ -8,6 +8,7 @@ enum DishListAction {
 final class DishList {
     
     var utensils = 0
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
 
     var retail: DeliveryRetail? {
         didSet {
@@ -51,6 +52,7 @@ final class DishList {
             }
         } else {
             product.shoppingCount = 1
+            analytics.log(.cartaddfood)
             products.append(product)
         }
         wishDishList.onNext(products)
@@ -65,6 +67,7 @@ final class DishList {
                 guard let count = products[row].shoppingCount else { return product }
                 if count == 1 {
                     products.remove(at: row)
+                    analytics.log(.deletefood)
                     product.shoppingCount! = 0
                 } else {
                     products[row].shoppingCount! -= 1

@@ -12,7 +12,7 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
     private let dataSource = CashBackListDataSource()
     private let itemSubject = BehaviorSubject<Int>(value: 1)
     private let favouriteManager: FavouritesManager
-    
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
     init(viewModel: CashBackListViewModel, favouriteManager: FavouritesManager) {
         self.viewModel = viewModel
         self.favouriteManager = favouriteManager
@@ -29,6 +29,7 @@ final class CashBackListViewController: ViewController, ViewHolder, CashBackList
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.log(.partners)
         bindView()
         bindViewModel()
         navigationController?.navigationBar.isHidden = false

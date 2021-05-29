@@ -13,7 +13,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
     private let dishList: DishList
     private let searchText: PublishSubject<String> = .init()
     private var sliderId = 0
-
+    private let analyticManager = assembler.resolver.resolve(PillicanAnalyticManager.self)!
     init(viewModel: DeliveryRetailListViewModel, dishList: DishList) {
         self.viewModel = viewModel
         self.dishList = dishList
@@ -37,6 +37,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
             target: self,
             action: #selector(showMenu))
         navigationItem.title = "Доставка"
+        analyticManager.log(.deliveryMain)
     }
 
     @objc private func showMenu() {
@@ -125,6 +126,7 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
         rootView.searchTableView.rx.itemSelected
             .withLatestFrom(searchRetails.element) { $1.retails.content[$0.row] }
             .bind { [unowned self] retail in
+                self.analyticManager.log(.deliverysearch)
                 if retail.isWork == 1 {
                     if retail.id != dishList.retail?.id && !dishList.products.isEmpty {
                         showBasketAlert {

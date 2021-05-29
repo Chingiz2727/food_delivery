@@ -29,7 +29,8 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     private let foodAmountSubject: BehaviorSubject<Int> = .init(value: 0)
     private let deliveryAmountSubject: BehaviorSubject<Int> = .init(value: 0)
     private let useCashbackSubject: BehaviorSubject<Bool> = .init(value: false)
-    
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
+
     init(viewModel: MakeOrderViewModel, userLocation: CLLocationCoordinate2D) {
         self.viewModel = viewModel
         self.userLocation = userLocation
@@ -55,6 +56,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         navigationItem.title = "Оформить заказ \(viewModel.dishList.retail?.name ?? "")"
         bindView()
         currentLocation.onNext(.init(point: .init(latitude: userLocation.latitude, longitude: userLocation.longitude), name: ""))
+        analytics.log(.deliverytabbar)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +94,8 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             .subscribe(onNext: { [unowned self] res in
                 if res.status == 200 {
                     viewModel.dishList.products = []
+                    self.analytics.log(.cartpay)
+
                     self.orderSuccess?(res.order?.id ?? 0)
                 } else {
                     self.orderError?()
@@ -130,6 +134,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
 
         currentLocation.subscribe(onNext: { [unowned self] location in
             if orderType.title == "Доставка Pillikan" {
+                self.analytics.log(.cartaddress)
                 self.rootView.locationView.setup(subTitle: location.name)
             } else {
                 self.rootView.locationView.setup(subTitle: viewModel.dishList.retail?.address ?? "")
@@ -164,9 +169,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             .bind(to: rootView.tableView.rx.items(BasketItemViewCell.self)) { _, model, cell  in
                 cell.setup(product: model)
                 cell.addProduct = { [unowned self] product in
+                    self.analytics.log(.cartaddfood)
                     self.changeDishList(action: .addToDish(product!))
                 }
                 cell.removeProduct = { product in
+                    self.analytics.log(.cartdeletefood)
                     self.changeDishList(action: .removeFromDish(product))
                 }
                 cell.contentView.isUserInteractionEnabled = false
@@ -215,6 +222,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         rootView.bonusChoiceView.choiceSwitch.rx.isOn.map { !$0 }
             .bind(to: rootView.bonusChoiceView.fullPayBonusStackView.rx.isHidden)
             .disposed(by: disposeBag)
+        
         rootView.bonusChoiceView.choiceSwitch.rx.isOn.bind(to: useCashbackSubject).disposed(by: disposeBag)
         rootView.addressView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
@@ -261,6 +269,12 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
                 })
                 .disposed(by: disposeBag)
         }
+        useCashbackSubject.subscribe(onNext: { [unowned self] isOn in
+            if isOn {
+                self.analytics.log(.cartbonus)
+            }
+        })
+        .disposed(by: disposeBag)
     }
 
     func changeDishList(action: DishListAction) {

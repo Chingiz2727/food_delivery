@@ -17,6 +17,8 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     private var alertIsShown = false
     private let favouriteManager: FavouritesManager
     private let workCalendar: WorkCalendar
+    private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
+
     init(viewModel: DeliveryRetailProductViewModel, favouriteManager: FavouritesManager, workCalendar: WorkCalendar) {
         self.viewModel = viewModel
         self.workCalendar = workCalendar
@@ -42,6 +44,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         rootView.tableView.estimatedRowHeight = 140
         navigationItem.title = viewModel.retailInfo.name
         viewModel.dishList.products = []
+        analytics.log(.deliverycafe)
     }
 
     override func viewWillAppear(_ animated: Bool) {
