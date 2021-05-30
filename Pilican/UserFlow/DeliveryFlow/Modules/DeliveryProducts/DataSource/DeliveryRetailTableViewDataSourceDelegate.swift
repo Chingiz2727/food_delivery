@@ -6,7 +6,7 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
     var selectedCellIndexPath: NSIndexPath?
     let selectedCellHeight: CGFloat = 300
     let unselectedCellHeight: CGFloat = 140
-    
+    private let analytic = assembler.resolver.resolve(PillicanAnalyticManager.self)!
     init(dishList: DishList) {
         self.dishList = dishList
     }
@@ -25,10 +25,12 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
         cell.buttonsLabel.addToDish = { [unowned self] product in
             self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .addToDish(product))
             cell.setData(product: product)
+            self.analytic.log(.cafefood)
         }
         
         cell.buttonsLabel.removeFromDish = { [unowned self] product in
             self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .removeFromDish(product))
+            self.analytic.log(.deletefood)
             cell.setData(product: product)
         }
         cell.setSelected(selected: product.isExpanded ?? false)

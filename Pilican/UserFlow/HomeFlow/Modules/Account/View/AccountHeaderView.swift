@@ -20,7 +20,6 @@ class AccountHeaderView: UIView {
 
     private let accountNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Иванов Иван"
         label.font = UIFont.semibold16
         label.textAlignment = .left
         label.textColor = .black
@@ -29,7 +28,6 @@ class AccountHeaderView: UIView {
 
     private let accountPhoneLabel: UILabel = {
         let label = UILabel()
-        label.text = "+ 7 700 000 000"
         label.textColor = .black
         label.textAlignment = .left
         label.font = UIFont.medium16
@@ -69,23 +67,24 @@ class AccountHeaderView: UIView {
         }
 
         addSubview(accountImageView)
+        addSubview(accountNameLabel)
+        addSubview(editAccountButton)
+        addSubview(accountPhoneLabel)
+        
         accountImageView.snp.makeConstraints { (make) in
             make.left.top.equalToSuperview().inset(14)
         }
 
-        addSubview(accountNameLabel)
         accountNameLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(accountImageView.snp.trailing).offset(14)
             make.top.equalToSuperview().inset(19)
         }
 
-        addSubview(accountPhoneLabel)
         accountPhoneLabel.snp.makeConstraints { (make) in
             make.left.equalTo(accountNameLabel.snp.left)
             make.top.equalTo(accountNameLabel.snp.bottom)
         }
 
-        addSubview(editAccountButton)
         editAccountButton.snp.makeConstraints { (make) in
             make.top.right.equalToSuperview().inset(30)
         }

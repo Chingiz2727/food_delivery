@@ -120,6 +120,10 @@ public final class DependencyContainerAssembly: Assembly {
         container.register(PillicanAnalyticManager.self) { _ in
             PillicanAnalyticManager(engine: YandexAnalyticsEngine())
         }.inObjectScope(.container)
+        container.register(PillicanCommerceManager.self, factory: { _ in
+            PillicanCommerceManager(engine: YandexCommerceEngine())
+        }).inObjectScope(.container)
+        
         container.register(CameraModule.self) { _ in
             let session = container.resolve(AVCaptureSession.self)!
             let device = container.resolve(AVCaptureDevice.self)!

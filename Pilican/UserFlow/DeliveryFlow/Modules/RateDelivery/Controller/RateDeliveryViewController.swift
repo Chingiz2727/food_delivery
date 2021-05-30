@@ -17,6 +17,7 @@ class RateDeliveryViewController: ViewController, ViewHolder, RateDeliveryModule
     private let order: DeliveryOrderResponse
     private let viewModel: CreateOrderRatingsViewModel
     private let userInfo: UserInfoStorage
+    private let analytic = assembler.resolver.resolve(PillicanAnalyticManager.self)!
     override func loadView() {
         view = RateDeliveryView()
     }
@@ -47,6 +48,7 @@ class RateDeliveryViewController: ViewController, ViewHolder, RateDeliveryModule
         result.element
             .subscribe(onNext: { [unowned self] _ in
                 self.rateDeliveryTapped?(self.order)
+                self.analytic.log(.ratedelivery)
             }).disposed(by: disposeBag)
 
         result.errors
@@ -66,6 +68,7 @@ class RateDeliveryViewController: ViewController, ViewHolder, RateDeliveryModule
         rootView.nextButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.rateDeliveryTapped?(order)
+                self.analytic.log(.skiprate)
             }).disposed(by: disposeBag)
 
         rootView.setupData(order: order)

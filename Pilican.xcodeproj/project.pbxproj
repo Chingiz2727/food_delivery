@@ -242,7 +242,6 @@
 		7244657E263FA4DD00C50802 /* PushNotificationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7244657D263FA4DD00C50802 /* PushNotificationEngine.swift */; };
 		72446581263FA4EE00C50802 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446580263FA4EE00C50802 /* PushNotificationManager.swift */; };
 		72446584263FA50800C50802 /* FirebasePushNotificationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446583263FA50800C50802 /* FirebasePushNotificationEngine.swift */; };
-		72446588263FAE9B00C50802 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72446587263FAE9B00C50802 /* GoogleService-Info.plist */; };
 		724465BE263FBD7F00C50802 /* UserInfoUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724465BD263FBD7F00C50802 /* UserInfoUpdater.swift */; };
 		724465CC2640101000C50802 /* FavouritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724465CB2640101000C50802 /* FavouritesManager.swift */; };
 		724FC5822624134E00C1DED3 /* RetailListMapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC5812624134E00C1DED3 /* RetailListMapTarget.swift */; };
@@ -308,11 +307,14 @@
 		72B69607266217C5007F930C /* AnalyticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B69606266217C5007F930C /* AnalyticManager.swift */; };
 		72B69609266217D4007F930C /* AnalyticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B69608266217D4007F930C /* AnalyticEngine.swift */; };
 		72B6960C26621A80007F930C /* PillicanAnalyticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6960B26621A80007F930C /* PillicanAnalyticManager.swift */; };
+		72B6960F26624BB9007F930C /* PillicanCommerceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6960E26624BB9007F930C /* PillicanCommerceManager.swift */; };
+		72B6961226624CE2007F930C /* PillicanCommerceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6961126624CE2007F930C /* PillicanCommerceEngine.swift */; };
 		72C5E4B62632583D00FEABA1 /* CardRemoveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */; };
 		72C5E4BE263261E500FEABA1 /* AddCardStatusModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */; };
 		72C5E4C22632625800FEABA1 /* AddCardStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */; };
 		72C5E4C52632660600FEABA1 /* AddCardStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */; };
 		72C5E5212632708900FEABA1 /* CardScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E51D2632708900FEABA1 /* CardScanner.swift */; };
+		72C67C1C2663723B000CB03D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72C67C1B2663723B000CB03D /* GoogleService-Info.plist */; };
 		72C922AA264E5E7A000BB0CE /* UIBar+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C922A9264E5E7A000BB0CE /* UIBar+Badge.swift */; };
 		72D219482636523E008FE635 /* PinCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D219472636523E008FE635 /* PinCoordinator.swift */; };
 		72D2194B26365250008FE635 /* PinModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D2194A26365250008FE635 /* PinModuleFactory.swift */; };
@@ -435,8 +437,6 @@
 		A44F581E25E90F5D00F5A39B /* HomeProfileMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44F581D25E90F5D00F5A39B /* HomeProfileMenu.swift */; };
 		A455B3D625E371F3006835FA /* CompaniesFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3D525E371F3006835FA /* CompaniesFlowLayout.swift */; };
 		A455B3DA25E372A5006835FA /* UICollectionView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */; };
-		A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */; };
-		A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3E125E38D55006835FA /* SwipeableTableViewCellDelegate.swift */; };
 		A455B3EC25E3B12C006835FA /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */; };
 		A468EA7D25EDF5560071FAA6 /* RetailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA7C25EDF5560071FAA6 /* RetailDetailView.swift */; };
 		A468EA8225EDFC5C0071FAA6 /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468EA8125EDFC5C0071FAA6 /* SocialNetwork.swift */; };
@@ -862,7 +862,6 @@
 		7244657D263FA4DD00C50802 /* PushNotificationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationEngine.swift; sourceTree = "<group>"; };
 		72446580263FA4EE00C50802 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		72446583263FA50800C50802 /* FirebasePushNotificationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePushNotificationEngine.swift; sourceTree = "<group>"; };
-		72446587263FAE9B00C50802 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7244658A263FB91400C50802 /* Pilican.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pilican.entitlements; sourceTree = "<group>"; };
 		724465BD263FBD7F00C50802 /* UserInfoUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdater.swift; sourceTree = "<group>"; };
 		724465CB2640101000C50802 /* FavouritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesManager.swift; sourceTree = "<group>"; };
@@ -932,11 +931,14 @@
 		72B69606266217C5007F930C /* AnalyticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticManager.swift; sourceTree = "<group>"; };
 		72B69608266217D4007F930C /* AnalyticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticEngine.swift; sourceTree = "<group>"; };
 		72B6960B26621A80007F930C /* PillicanAnalyticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillicanAnalyticManager.swift; sourceTree = "<group>"; };
+		72B6960E26624BB9007F930C /* PillicanCommerceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillicanCommerceManager.swift; sourceTree = "<group>"; };
+		72B6961126624CE2007F930C /* PillicanCommerceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillicanCommerceEngine.swift; sourceTree = "<group>"; };
 		72C5E4B52632583D00FEABA1 /* CardRemoveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRemoveResult.swift; sourceTree = "<group>"; };
 		72C5E4BD263261E500FEABA1 /* AddCardStatusModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusModule.swift; sourceTree = "<group>"; };
 		72C5E4C12632625800FEABA1 /* AddCardStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusView.swift; sourceTree = "<group>"; };
 		72C5E4C42632660600FEABA1 /* AddCardStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardStatusViewController.swift; sourceTree = "<group>"; };
 		72C5E51D2632708900FEABA1 /* CardScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardScanner.swift; sourceTree = "<group>"; };
+		72C67C1B2663723B000CB03D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72C922A9264E5E7A000BB0CE /* UIBar+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBar+Badge.swift"; sourceTree = "<group>"; };
 		72D219472636523E008FE635 /* PinCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCoordinator.swift; sourceTree = "<group>"; };
 		72D2194A26365250008FE635 /* PinModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinModuleFactory.swift; sourceTree = "<group>"; };
@@ -1060,8 +1062,6 @@
 		A44F581D25E90F5D00F5A39B /* HomeProfileMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileMenu.swift; sourceTree = "<group>"; };
 		A455B3D525E371F3006835FA /* CompaniesFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesFlowLayout.swift; sourceTree = "<group>"; };
 		A455B3D925E372A5006835FA /* UICollectionView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuse.swift"; sourceTree = "<group>"; };
-		A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableCollectionViewCell.swift; sourceTree = "<group>"; };
-		A455B3E125E38D55006835FA /* SwipeableTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		A455B3EB25E3B12C006835FA /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		A468EA7C25EDF5560071FAA6 /* RetailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailDetailView.swift; sourceTree = "<group>"; };
 		A468EA8125EDFC5C0071FAA6 /* SocialNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
@@ -3552,6 +3552,29 @@
 			path = PillicanAnalyticManager;
 			sourceTree = "<group>";
 		};
+		72B6960D26624BA1007F930C /* PillicanCommerce */ = {
+			isa = PBXGroup;
+			children = (
+				72B6960E26624BB9007F930C /* PillicanCommerceManager.swift */,
+			);
+			path = PillicanCommerce;
+			sourceTree = "<group>";
+		};
+		72B6961026624CC9007F930C /* PillicanCommerceEngine */ = {
+			isa = PBXGroup;
+			children = (
+				72B6961126624CE2007F930C /* PillicanCommerceEngine.swift */,
+			);
+			path = PillicanCommerceEngine;
+			sourceTree = "<group>";
+		};
+		72B6961326625CE9007F930C /* PillicanCommerEvent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PillicanCommerEvent;
+			sourceTree = "<group>";
+		};
 		72C5E4B82632616300FEABA1 /* AddCardStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -4589,15 +4612,6 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
-		A455B3DD25E38D2F006835FA /* SwipableCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				A455B3DE25E38D43006835FA /* SwipableCollectionViewCell.swift */,
-				A455B3E125E38D55006835FA /* SwipeableTableViewCellDelegate.swift */,
-			);
-			path = SwipableCollectionViewCell;
-			sourceTree = "<group>";
-		};
 		A455B3EA25E3B11B006835FA /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -4893,6 +4907,9 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				72B6961326625CE9007F930C /* PillicanCommerEvent */,
+				72B6961026624CC9007F930C /* PillicanCommerceEngine */,
+				72B6960D26624BA1007F930C /* PillicanCommerce */,
 				72B6960A26621A71007F930C /* PillicanAnalyticManager */,
 				72B69605266217B0007F930C /* AnalyticManager */,
 				72B6960226621734007F930C /* AnalyticEvent */,
@@ -5134,6 +5151,7 @@
 		A4A9DE9725E6666500A711CA /* Plists */ = {
 			isa = PBXGroup;
 			children = (
+				72C67C1B2663723B000CB03D /* GoogleService-Info.plist */,
 				A4B310F425D10C3C0003BA0B /* Info.plist */,
 			);
 			path = Plists;
@@ -5159,7 +5177,6 @@
 		A4B310DA25D10C370003BA0B = {
 			isa = PBXGroup;
 			children = (
-				72446587263FAE9B00C50802 /* GoogleService-Info.plist */,
 				A483E21025D40AB4006D2DAF /* Core */,
 				F4A48B6650245955DD4DC49B /* Frameworks */,
 				A4DD3DC625D24359002D2186 /* Helpers */,
@@ -5503,7 +5520,6 @@
 				72FB0803261DA6D600F04395 /* UIView+Extension */,
 				A4EFD4D62613208A00694D18 /* ScrollableSegment */,
 				A4EFD4CC2612F87800694D18 /* DeliveryButtonsView */,
-				A455B3DD25E38D2F006835FA /* SwipableCollectionViewCell */,
 				A47CA10B25E1587700EB091C /* LabelBackGroundView */,
 				A40B95F325DE658C00E507FB /* SetSizedHeaderView */,
 				A40B95EC25DE3A8900E507FB /* CategoryView */,
@@ -5802,7 +5818,7 @@
 				A40A547D25D26FA600BBFDFA /* Whitney-Light.ttf in Resources */,
 				A40A547725D26F9F00BBFDFA /* Whitney-BoldItalic.ttf in Resources */,
 				A4EFD3B42612E19700694D18 /* success-animation.json in Resources */,
-				72446588263FAE9B00C50802 /* GoogleService-Info.plist in Resources */,
+				72C67C1C2663723B000CB03D /* GoogleService-Info.plist in Resources */,
 				A4B9A3AF25F1045500F0A3D6 /* Loader.json in Resources */,
 				720BA2F526564DDB00E2AA92 /* ShymkentArea.geojson in Resources */,
 				A4D7644125DA748C009A6651 /* city.json in Resources */,
@@ -5989,6 +6005,7 @@
 				A483E29E25D40ABE006D2DAF /* KingfisherSource.swift in Sources */,
 				55E757B92638F80400B7FEB5 /* HowItWorkViewController.swift in Sources */,
 				A483E27625D40ABE006D2DAF /* ApiRequestable.swift in Sources */,
+				72B6961226624CE2007F930C /* PillicanCommerceEngine.swift in Sources */,
 				55A5CD562600D64D004AA13C /* MyCardsFooterView.swift in Sources */,
 				556543F0261DD294009A4E62 /* RateView.swift in Sources */,
 				A468EA8D25EE3D390071FAA6 /* IdentificatorView.swift in Sources */,
@@ -6159,16 +6176,15 @@
 				A4EFD4DC261320B200694D18 /* ScrollabeSegmentControl.swift in Sources */,
 				A483E29B25D40ABE006D2DAF /* ImageSlideshow.swift in Sources */,
 				724FC5AD262419BE00C1DED3 /* AnimationParameters.swift in Sources */,
+				72B6960F26624BB9007F930C /* PillicanCommerceManager.swift in Sources */,
 				A4B312B925D117A60003BA0B /* DependencyContainerAssembly.swift in Sources */,
 				72340C5D262FC739000569D6 /* AddCardModule.swift in Sources */,
 				5FF910C92625748300E1EF00 /* PillikanInfoViewModel.swift in Sources */,
 				A40B960725DE70EC00E507FB /* Retail.swift in Sources */,
 				55D26C7A25FA1845005A36BD /* EditAccountViewController.swift in Sources */,
-				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
 				72340C4F262FC439000569D6 /* CardNumberTextField.swift in Sources */,
 				556543AA261D7B33009A4E62 /* OrderTypeViewController.swift in Sources */,
 				72FB0801261DA57900F04395 /* SearchViewController.swift in Sources */,
-				A455B3E225E38D55006835FA /* SwipeableTableViewCellDelegate.swift in Sources */,
 				55FCC70525F8D499000DED49 /* AboutView.swift in Sources */,
 				A4057DC62611DA310062BB5B /* DeliveryRetailListView.swift in Sources */,
 				72340C2C262F5D94000569D6 /* OrderValue.swift in Sources */,
@@ -6282,7 +6298,6 @@
 				724FC5B2262419BE00C1DED3 /* Clamp.swift in Sources */,
 				A4DD3DD725D24527002D2186 /* Color.swift in Sources */,
 				5526DAD72603822800536589 /* PayDetailView.swift in Sources */,
-				A455B3DF25E38D43006835FA /* SwipableCollectionViewCell.swift in Sources */,
 				728434BE261D7F6100E21209 /* DishList.swift in Sources */,
 				552531B22629BF1800888DEE /* DeliveryMenuViewController.swift in Sources */,
 				5525318626293E9B00888DEE /* FavoritesViewController.swift in Sources */,
@@ -6581,7 +6596,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6664,7 +6679,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6808,7 +6823,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6835,7 +6850,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

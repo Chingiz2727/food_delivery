@@ -30,7 +30,8 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     private let deliveryAmountSubject: BehaviorSubject<Int> = .init(value: 0)
     private let useCashbackSubject: BehaviorSubject<Bool> = .init(value: false)
     private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
-
+    private let commerceManager = assembler.resolver.resolve(PillicanCommerceManager.self)!
+    
     init(viewModel: MakeOrderViewModel, userLocation: CLLocationCoordinate2D) {
         self.viewModel = viewModel
         self.userLocation = userLocation
@@ -57,6 +58,10 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         bindView()
         currentLocation.onNext(.init(point: .init(latitude: userLocation.latitude, longitude: userLocation.longitude), name: ""))
         analytics.log(.deliverytabbar)
+        let ymkProducts: [YMKOrderProduct] = viewModel.dishList.products.map { product in
+            return YMKOrderProduct(productId: product.id, productName: product.name, productCount: product.shoppingCount ?? 1, productPrice: product.price)
+        }
+        commerceManager.log(.beginCommerce(query: viewModel.dishList.retail?.name ?? "", products: ymkProducts))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,10 +98,13 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         order.element
             .subscribe(onNext: { [unowned self] res in
                 if res.status == 200 {
-                    viewModel.dishList.products = []
                     self.analytics.log(.cartpay)
-
+                    let ymkProducts: [YMKOrderProduct] = viewModel.dishList.products.map { product in
+                        return YMKOrderProduct(productId: product.id, productName: product.name, productCount: product.shoppingCount ?? 1, productPrice: product.price)
+                    }
+                    commerceManager.log(.purchaseCommerce(query: viewModel.dishList.retail?.name ?? "", products: ymkProducts))
                     self.orderSuccess?(res.order?.id ?? 0)
+                    viewModel.dishList.products = []
                 } else {
                     self.orderError?()
                 }

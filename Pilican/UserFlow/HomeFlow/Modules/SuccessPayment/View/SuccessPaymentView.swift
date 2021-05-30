@@ -60,6 +60,15 @@ class SuccessPaymentView: UIView {
         button.layer.addShadow()
         return button
     }()
+    
+    let cashbackStatusLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Вы получили"
+        label.font = .book16
+        label.textColor = .pilicanGray
+        label.textAlignment = .center
+        return label
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,6 +79,7 @@ class SuccessPaymentView: UIView {
         scrollView.bounces = false
     }
 
+    
     private lazy var bonusStack = UIStackView(
         views: [paymentCashbackLabel, bonusImageView],
         axis: .horizontal,
@@ -96,6 +106,7 @@ class SuccessPaymentView: UIView {
 
     private func setupInitialLayouts() {
         addSubview(scrollView)
+        scrollView.addSubview(cashbackStatusLabel)
         scrollView.snp.makeConstraints { $0.edges.width.height.equalToSuperview()
         }
 
@@ -122,12 +133,16 @@ class SuccessPaymentView: UIView {
             make.top.equalTo(paymentStatusLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
         }
-        
+        scrollView.addSubview(cashbackStatusLabel)
+        cashbackStatusLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(paymentPriceLabel.snp.bottom).offset(10)
+        }
         scrollView.addSubview(bonusStack)
         
         bonusStack.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(paymentPriceLabel.snp.bottom).offset(10)
+            make.top.equalTo(cashbackStatusLabel.snp.bottom).offset(10)
         }
         bonusImageView.snp.makeConstraints { $0.width.equalTo(15) }
         scrollView.addSubview(nextButton)

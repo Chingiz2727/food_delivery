@@ -33,9 +33,11 @@ final class HomeViewModel: ViewModel {
         
 
         let token = apiService.sendFiretoken().publish()
+        
             token
             .subscribe(onNext: { _ in })
             .disposed(by: disposeBag)
+        
         token.connect()
             .disposed(by: disposeBag)
         

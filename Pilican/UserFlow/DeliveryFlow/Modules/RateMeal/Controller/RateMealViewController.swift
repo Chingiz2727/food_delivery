@@ -17,7 +17,7 @@ class RateMealViewController: ViewController, ViewHolder, RateMealModule {
     private let order: DeliveryOrderResponse
     private let viewModel: RateMealViewModel
     private let userInfo: UserInfoStorage
-
+    private let analytic = assembler.resolver.resolve(PillicanAnalyticManager.self)
     override func loadView() {
         view = RateMealView()
     }
@@ -50,6 +50,7 @@ class RateMealViewController: ViewController, ViewHolder, RateMealModule {
                 showRateAlert {
                     NotificationCenter.default.post(name: NSNotification.Name.init(NotificationsString.reloadRetailsBadge.rawValue), object: nil, userInfo: nil)
                     self.rateMealTapped?()
+                    self.analytic?.log(.ratefood)
                 }
             }).disposed(by: disposeBag)
 
@@ -62,6 +63,7 @@ class RateMealViewController: ViewController, ViewHolder, RateMealModule {
         rootView.skipButton.rx.tap
             .subscribe(onNext: { [unowned self] in
                 self.rateMealTapped?()
+                self.analytic?.log(.skiprate)
             }).disposed(by: disposeBag)
 
         rootView.nextButton.rx.tap

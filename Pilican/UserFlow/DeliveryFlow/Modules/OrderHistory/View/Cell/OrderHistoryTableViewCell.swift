@@ -146,7 +146,7 @@ final class OrderHistoryTableViewCell: UITableViewCell {
             setupProduct(items: data)
         }
         retryButton.tag = data.status ?? 2
-        let title = (data.status ?? 2) == 2 ? "Посмотреть статус" : "Заказать еще раз"
+        let title = (data.status ?? 2) != 6 ? "Посмотреть статус" : "Заказать еще раз"
         retryButton.setTitle(title, for: .normal)
         totalAmountLabel.text = "\(data.fullAmount ?? 0) 〒"
     }

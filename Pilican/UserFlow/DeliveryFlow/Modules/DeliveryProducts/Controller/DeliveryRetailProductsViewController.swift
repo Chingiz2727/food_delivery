@@ -18,7 +18,8 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
     private let favouriteManager: FavouritesManager
     private let workCalendar: WorkCalendar
     private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
-
+    private let commerceManager = assembler.resolver.resolve(PillicanCommerceManager.self)!
+    
     init(viewModel: DeliveryRetailProductViewModel, favouriteManager: FavouritesManager, workCalendar: WorkCalendar) {
         self.viewModel = viewModel
         self.workCalendar = workCalendar
@@ -44,6 +45,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
         rootView.tableView.estimatedRowHeight = 140
         navigationItem.title = viewModel.retailInfo.name
         viewModel.dishList.products = []
+        commerceManager.log(.openPage(query: viewModel.retailInfo.name))
         analytics.log(.deliverycafe)
     }
 

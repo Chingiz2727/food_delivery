@@ -34,9 +34,6 @@ final class FirebasePushNotificationEngine: NSObject, PushNotificationEngine, Me
         userNotificationCenter.delegate = self
         Messaging.messaging().delegate = self
         Messaging.messaging().isAutoInitEnabled = true
-        userNotificationCenter.getNotificationSettings { notification in
-            print(notification)
-        }
         application.registerForRemoteNotifications()
     }
     
@@ -51,31 +48,17 @@ final class FirebasePushNotificationEngine: NSObject, PushNotificationEngine, Me
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        guard fcmToken != appSession.pushNotificationToken else { return }
+//        guard fcmToken != appSession.pushNotificationToken else { return }
         appSession.pushNotificationToken = fcmToken
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        guard appSession.isPushNotificationsEnabled else { return }
+//        guard appSession.isPushNotificationsEnabled else { return }
         NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.handleBadge.rawValue), object: nil)
 
         completionHandler(Constants.notificationPresentationOptions)
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        let pushNotificationInfo = response.notification.request.content.userInfo
-        guard let pushAction = deepLinkActionFactory.getNotificationDeepLinkAction(from: pushNotificationInfo) else { return }
-        NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.handleBadge.rawValue), object: nil)
-
-        coordinator?.performDeepLinkActionAfterStart(pushAction)
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        print(notification)
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

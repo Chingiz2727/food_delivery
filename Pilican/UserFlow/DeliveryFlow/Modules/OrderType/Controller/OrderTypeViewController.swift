@@ -71,16 +71,14 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
             .disposed(by: disposeBag)
         
         rootView.tableView.rx.itemSelected
-            .withLatestFrom(userCoordinate) { index, coordinate in
-                return (index.row, coordinate)
-            }.subscribe(onNext: { [unowned self] item in
-                if item.0 != 2 {
-                    self.onDeliveryChoose?(self.orderCases[item.0], item.1)
+            .subscribe(onNext: { [unowned self] index in
+                if index.row != 2 {
+                    self.onDeliveryChoose?(self.orderCases[index.row], locationManager.location?.coordinate ?? .init())
                 }
-                if item.0 == 0 {
+                if index.row == 0 {
                     self.analytics.log(.paydelivery)
                 }
-                if item.0 == 1 {
+                if index.row == 1 {
                     self.analytics.log(.paytakaway)
                 }
             }).disposed(by: disposeBag)
@@ -113,5 +111,6 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
 extension OrderTypeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard let coordinate = manager.location else { return }
+        userCoordinate.onNext(coordinate.coordinate)
     }
 }

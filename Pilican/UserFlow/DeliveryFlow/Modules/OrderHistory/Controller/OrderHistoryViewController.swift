@@ -18,7 +18,7 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
     private let viewModel: OrderHistoryViewModel
     private let disposeBag = DisposeBag()
     private let dishList: DishList
-    
+    private let analytic = assembler.resolver.resolve(PillicanAnalyticManager.self)!
     init(viewModel: OrderHistoryViewModel, dishList: DishList) {
         self.viewModel = viewModel
         self.dishList = dishList
@@ -64,7 +64,7 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
                 cell.onTryTap = { [unowned self] tag in
                     print(model)
                     let retail = DeliveryRetail(id: model.retailId ?? 0, cashBack: 0, isWork: 1, longitude: model.longitude ?? 0, latitude: model.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: model.retailLogo ?? "", address: model.retailAdress ?? "", workDays: [], payIsWork: 0, name: model.retailName ?? "", status: model.retailStatus ?? 0, rating: model.retailRating)
-                    if tag != 2 {
+                    if tag == 6 {
                         if model.retailId ?? 0 != self.dishList.retail?.id && !dishList.products.isEmpty {
                             self.showBasketAlert {
                                 self.dishList.products = []
@@ -76,6 +76,7 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
                         }
                     } else {
                         print(tag)
+                        self.analytic.log(.orderagain)
                         self.onSelectOrderHistory?(model, tag)
                     }
                 }

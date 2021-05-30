@@ -53,9 +53,10 @@ final class DeliveryMenuCoordinatorImpl: BaseCoordinator, DeliveryMenuCoordinato
             if type == .delivery && retail.isWork == 1 {
                 self?.showDeliveryProduct(retail: retail)
             }
-            if type != .delivery {
-                self?.showOrderStatus(orderId: retail.id)
-            }
+        }
+        
+        module.onSelectOrderHistory = { [weak self] retail, type in
+            self?.showOrderStatus(orderId: retail.id!)
         }
         router.push(module)
     }

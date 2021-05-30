@@ -21,6 +21,11 @@ enum PillicanAnalyticEvent: AnalyticsEvent {
     case carttabbar
     case maintabbar
     case deliverytabbar
+    case ratedelivery
+    case ratefood
+    case skiprate
+    case deliverystatus
+    case orderagain
     
     var name: String {
         switch self {
@@ -66,6 +71,16 @@ enum PillicanAnalyticEvent: AnalyticsEvent {
             return "deliverytabbar"
         case .deletefood:
             return "deletefood"
+        case .ratefood:
+            return "ratefood"
+        case .ratedelivery:
+            return "ratedelivery"
+        case .skiprate:
+            return "skiprate"
+        case .deliverystatus:
+            return "deliverystatus"
+        case .orderagain:
+            return "orderagain"
         }
     }
     

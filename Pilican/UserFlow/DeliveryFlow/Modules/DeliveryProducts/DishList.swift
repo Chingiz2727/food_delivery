@@ -9,7 +9,8 @@ final class DishList {
     
     var utensils = 0
     private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
-
+    private let commerceManager = assembler.resolver.resolve(PillicanCommerceManager.self)!
+    
     var retail: DeliveryRetail? {
         didSet {
             if let retail = retail {
@@ -52,8 +53,8 @@ final class DishList {
             }
         } else {
             product.shoppingCount = 1
-            analytics.log(.cartaddfood)
             products.append(product)
+            commerceManager.log(.addProduct(query: retail?.name ?? "", productId: product.id, price: "\(product.price)", productName: product.name))
         }
         wishDishList.onNext(products)
         return product
@@ -67,7 +68,6 @@ final class DishList {
                 guard let count = products[row].shoppingCount else { return product }
                 if count == 1 {
                     products.remove(at: row)
-                    analytics.log(.deletefood)
                     product.shoppingCount! = 0
                 } else {
                     products[row].shoppingCount! -= 1

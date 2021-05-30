@@ -40,6 +40,11 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
         nil
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("tab appeared")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
@@ -54,6 +59,22 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
         activeOrder.element.map { $0.orders }.subscribe(onNext: { [unowned self] myOrders in
             self.overlayViews.removeAll()
             self.deliveryDetailsVCData.removeAll()
+            
+            self.overlayViews = [RetailCardView]()
+            deliveryDetailsVCData = [[UIView: DeliveryOrderResponse?]]()
+            view.subviews.forEach { view in
+                if view is RetailCardView {
+                    view.removeFromSuperview()
+                }
+            }
+            myOrders.forEach { response in
+                let v = RetailCardView()
+                let imgUrl = "https://st.pillikan.kz/retail/logo\(response.retailLogo ?? "")"
+                v.setup(imgUrl: imgUrl)
+                let dataFor = [v: response] as [UIView : DeliveryOrderResponse]
+                self.deliveryDetailsVCData.append(dataFor)
+                self.overlayViews.append(v)
+            }
             self.setupOverlays(orderResponse: myOrders)
         })
         .disposed(by: disposeBag)
@@ -86,17 +107,8 @@ final class DeliveryTabBarController: UITabBarController, DeliveryTabBarPresenta
     var appFullscreenBeginOffset: CGFloat = 0
 
     private func setupOverlays(orderResponse: [DeliveryOrderResponse]) {
-        for order in orderResponse {
-            let v = RetailCardView()
-            let imgUrl = "https://st.pillikan.kz/retail/logo\(order.retailLogo ?? "")"
-            v.setup(imgUrl: imgUrl)
-            let dataFor = [v: order] as [UIView : DeliveryOrderResponse]
-            self.deliveryDetailsVCData.append(dataFor)
-            if !view.subviews.contains(v) {
-                view.addSubview(v)
-                self.overlayViews.append(v)
-            }
-
+        for v in overlayViews {
+            view.addSubview(v)
             v.frame = .init(x: 10,
                             y: 100,
                             width: 70,
