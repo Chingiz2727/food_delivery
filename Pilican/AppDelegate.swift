@@ -23,10 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupKeyboardManager()
         setupNavigationBar()
         setupKingfisher()
-//        setupFirebase()
-        configureFirebase()
+        setupFirebase()
         setupYandexAnalitic()
-
+        #if DEBUG
+        LoggerConfigurator.configure()
+        #endif
         YMKMapKit.setApiKey("7b4d5f85-da95-462c-a67c-61a2f218cc13")
         
         guard let rootController = application.windows.first?.rootViewController as? CoordinatorNavigationController else {
@@ -42,9 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             appCoordinator?.start()
         }
-        #if DEBUG
-        LoggerConfigurator.configure()
-        #endif
         return true
     }
 
@@ -103,16 +101,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         options.apiKey = "AIzaSyBFSa125L3_r3K5BBDh1Frp-wvN3zFT0X0"
         options.clientID = "965585821604-3sge2e3qkercm96magfkepdvv7aakr17.apps.googleusercontent.com"
         FirebaseApp.configure(options: options)
-        registerForPushNotifications()
     }
     
     private func setupFirebase() {
-        guard let path = Bundle.main.path(forResource: AppEnviroment.googleServiceFileName, ofType: "plist"),
-            let options = FirebaseOptions(contentsOfFile: path)
-        else {
-            return
-        }
-        FirebaseApp.configure(options: options)
+        FirebaseApp.configure()
         registerForPushNotifications()
     }
     

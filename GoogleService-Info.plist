@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>965585821604-3sge2e3qkercm96magfkepdvv7aakr17.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.965585821604-3sge2e3qkercm96magfkepdvv7aakr17</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBFSa125L3_r3K5BBDh1Frp-wvN3zFT0X0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>965585821604</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.wezom.Pillikan</string>
+	<key>PROJECT_ID</key>
+	<string>pillikan-fb3cb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pillikan-fb3cb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:965585821604:ios:b11b7d21d3c60d15c36b31</string>
+	<key>DATABASE_URL</key>
+	<string>https://pillikan-fb3cb.firebaseio.com</string>
+</dict>
+</plist>
