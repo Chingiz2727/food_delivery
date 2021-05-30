@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01842F6297D537FBB0CFACB5 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */; };
 		55173251261D6BAE0031623B /* OrderTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55173250261D6BAE0031623B /* OrderTypeView.swift */; };
 		5523EDEE263BD81800719596 /* CreateOrderRatings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523EDED263BD81800719596 /* CreateOrderRatings.swift */; };
 		5523EE12263BDBA100719596 /* CreateOrderRatingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523EE11263BDBA100719596 /* CreateOrderRatingsViewModel.swift */; };
@@ -622,11 +621,13 @@
 		A4FD7DAA25DCEF50000DD49D /* UserAuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD7DA925DCEF4F000DD49D /* UserAuthResponse.swift */; };
 		A4FD7DAF25DD3306000DD49D /* TabImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD7DAE25DD3306000DD49D /* TabImageInfoView.swift */; };
 		A4FD7DB425DD380C000DD49D /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD7DB325DD380C000DD49D /* HomeTabView.swift */; };
+		DD94A305DA9E1E44D05282A3 /* Pods_Pilican.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AE96003C0047036C4B511F /* Pods_Pilican.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
-		206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
+		289EC12DFC0C419EAC9D80F7 /* Pods-Pilican.debug(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(production).xcconfig"; sourceTree = "<group>"; };
+		41AE96003C0047036C4B511F /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A304A33C30782A96568B38F /* Pods-Pilican.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(production).xcconfig"; sourceTree = "<group>"; };
 		55173250261D6BAE0031623B /* OrderTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeView.swift; sourceTree = "<group>"; };
 		5523EDED263BD81800719596 /* CreateOrderRatings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderRatings.swift; sourceTree = "<group>"; };
 		5523EE11263BDBA100719596 /* CreateOrderRatingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderRatingsViewModel.swift; sourceTree = "<group>"; };
@@ -790,6 +791,7 @@
 		55FCC70425F8D499000DED49 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		55FCC70825F8E2D4000DED49 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		55FCC70D25F8E31C000DED49 /* AboutModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModule.swift; sourceTree = "<group>"; };
+		591F6B52B62DD9EDB95BC433 /* Pods-Pilican.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(development).xcconfig"; sourceTree = "<group>"; };
 		5FD2F04F26240BB80012110C /* NotificationListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListModule.swift; sourceTree = "<group>"; };
 		5FD2F05326240C0C0012110C /* NotificationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListController.swift; sourceTree = "<group>"; };
 		5FD2F057262417FB0012110C /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
@@ -806,7 +808,6 @@
 		5FF910DB2625B5FE00E1EF00 /* PillikanPayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanPayViewModel.swift; sourceTree = "<group>"; };
 		5FF910DF2625B80600E1EF00 /* PillikanPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanPayView.swift; sourceTree = "<group>"; };
 		5FF910E32625B90B00E1EF00 /* PillikanNotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillikanNotificationsTableViewCell.swift; sourceTree = "<group>"; };
-		65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilican.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7201594E262CC6EE0083C758 /* DeliveryLocationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationModule.swift; sourceTree = "<group>"; };
 		72015953262CC7370083C758 /* DeliveryLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationViewController.swift; sourceTree = "<group>"; };
 		72015958262CC7B60083C758 /* DeliveryLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationMapView.swift; sourceTree = "<group>"; };
@@ -1261,8 +1262,7 @@
 		A4FD7DA925DCEF4F000DD49D /* UserAuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthResponse.swift; sourceTree = "<group>"; };
 		A4FD7DAE25DD3306000DD49D /* TabImageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabImageInfoView.swift; sourceTree = "<group>"; };
 		A4FD7DB325DD380C000DD49D /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
-		D5C20A718C6C2EF62F69CAAE /* Pods-Pilican.release(production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(production).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(production).xcconfig"; sourceTree = "<group>"; };
-		EDE3DBB34269FEF88C2EB979 /* Pods-Pilican.debug(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.debug(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.debug(development).xcconfig"; sourceTree = "<group>"; };
+		ED1A433847DA837A77474986 /* Pods-Pilican.release(development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilican.release(development).xcconfig"; path = "Target Support Files/Pods-Pilican/Pods-Pilican.release(development).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1270,13 +1270,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01842F6297D537FBB0CFACB5 /* Pods_Pilican.framework in Frameworks */,
+				DD94A305DA9E1E44D05282A3 /* Pods_Pilican.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		254BFFE766D447B4C7E00C53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41AE96003C0047036C4B511F /* Pods_Pilican.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5517324E261D6B970031623B /* OrderType */ = {
 			isa = PBXGroup;
 			children = (
@@ -3982,10 +3990,10 @@
 		8176B9877CE758347B33479A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */,
-				EDE3DBB34269FEF88C2EB979 /* Pods-Pilican.debug(development).xcconfig */,
-				D5C20A718C6C2EF62F69CAAE /* Pods-Pilican.release(production).xcconfig */,
-				206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */,
+				289EC12DFC0C419EAC9D80F7 /* Pods-Pilican.debug(production).xcconfig */,
+				591F6B52B62DD9EDB95BC433 /* Pods-Pilican.debug(development).xcconfig */,
+				4A304A33C30782A96568B38F /* Pods-Pilican.release(production).xcconfig */,
+				ED1A433847DA837A77474986 /* Pods-Pilican.release(development).xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -5178,12 +5186,12 @@
 			isa = PBXGroup;
 			children = (
 				A483E21025D40AB4006D2DAF /* Core */,
-				F4A48B6650245955DD4DC49B /* Frameworks */,
 				A4DD3DC625D24359002D2186 /* Helpers */,
 				A4B310E525D10C370003BA0B /* Pilican */,
 				8176B9877CE758347B33479A /* Pods */,
 				A4B310E425D10C370003BA0B /* Products */,
 				728434B0261D7E6000E21209 /* Recovered References */,
+				254BFFE766D447B4C7E00C53 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -5737,14 +5745,6 @@
 			path = HomeTabView;
 			sourceTree = "<group>";
 		};
-		F4A48B6650245955DD4DC49B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				65B440D530A57ABFECA0C3EE /* Pods_Pilican.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5752,13 +5752,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4B310F725D10C3C0003BA0B /* Build configuration list for PBXNativeTarget "Pilican" */;
 			buildPhases = (
-				BFD1EA0E2C4A76195AEFE459 /* [CP] Check Pods Manifest.lock */,
+				34392D039AC0D5D1B26E86AF /* [CP] Check Pods Manifest.lock */,
 				A4B310DF25D10C370003BA0B /* Sources */,
 				A4B310E025D10C370003BA0B /* Frameworks */,
 				A4B310E125D10C370003BA0B /* Resources */,
 				A483E1C925D3E61C006D2DAF /* SwiftLint */,
-				11D002D8A8529FEC3C94A48F /* [CP] Embed Pods Frameworks */,
-				1A388752DDF0E928E4836B6D /* [CP] Copy Pods Resources */,
+				BB6BAF43C51C26459E81A578 /* [CP] Embed Pods Frameworks */,
+				CF13582BAE74641D26AE4EFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -5832,38 +5832,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11D002D8A8529FEC3C94A48F /* [CP] Embed Pods Frameworks */ = {
+		34392D039AC0D5D1B26E86AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pilican-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1A388752DDF0E928E4836B6D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A483E1C925D3E61C006D2DAF /* SwiftLint */ = {
@@ -5884,26 +5872,38 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		BFD1EA0E2C4A76195AEFE459 /* [CP] Check Pods Manifest.lock */ = {
+		BB6BAF43C51C26459E81A578 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Pilican-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF13582BAE74641D26AE4EFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pilican/Pods-Pilican-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -6589,7 +6589,7 @@
 		};
 		A4A9DE0725E664C100A711CA /* Debug(Development) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDE3DBB34269FEF88C2EB979 /* Pods-Pilican.debug(development).xcconfig */;
+			baseConfigurationReference = 591F6B52B62DD9EDB95BC433 /* Pods-Pilican.debug(development).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -6672,7 +6672,7 @@
 		};
 		A4A9DE0925E664D800A711CA /* Release(Development) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 206E118F77FAEAB0CE9621CF /* Pods-Pilican.release(development).xcconfig */;
+			baseConfigurationReference = ED1A433847DA837A77474986 /* Pods-Pilican.release(development).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -6816,7 +6816,7 @@
 		};
 		A4B310F825D10C3C0003BA0B /* Debug(Production) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 124BE75EB2260CDCA659AE3E /* Pods-Pilican.debug(production).xcconfig */;
+			baseConfigurationReference = 289EC12DFC0C419EAC9D80F7 /* Pods-Pilican.debug(production).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -6843,7 +6843,7 @@
 		};
 		A4B310F925D10C3C0003BA0B /* Release(Production) */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5C20A718C6C2EF62F69CAAE /* Pods-Pilican.release(production).xcconfig */;
+			baseConfigurationReference = 4A304A33C30782A96568B38F /* Pods-Pilican.release(production).xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
