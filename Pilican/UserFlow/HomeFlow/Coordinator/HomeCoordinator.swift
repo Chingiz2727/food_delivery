@@ -47,7 +47,7 @@ final class HomeCoordinator: BaseCoordinator {
         logoutFlow.setCoordinator(self)
         let viewControllers = tabRootContainers.map { $0.viewController }
         tabBarController.setViewControllers(viewControllers)
-        router.setRootModule(tabBarController, isNavigationBarHidden: true)
+        router.setRootModule(tabBarController, isNavigationBarHidden: false)
     }
 
     

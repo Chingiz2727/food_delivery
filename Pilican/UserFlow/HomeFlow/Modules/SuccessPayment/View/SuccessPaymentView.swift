@@ -94,7 +94,9 @@ class SuccessPaymentView: UIView {
         paymentPriceLabel.text = "\(price) 〒"
         
         paymentCashbackLabel.text = "+ \(cashback)"
-        paymentCashbackLabel.isHidden = cashback == "0"
+        bonusStack.isHidden = cashback == "0"
+        cashbackStatusLabel.isHidden = cashback == "0"
+
     }
 
     private func setAnimation() {

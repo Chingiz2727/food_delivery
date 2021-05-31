@@ -29,6 +29,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     private let userInfo: UserInfoStorage
     private var textPrice: String?
     private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
+    
     init(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage, textPrice: String?) {
         self.viewModel = viewModel
         self.userInfo = userInfo
@@ -63,11 +64,14 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
+
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isHidden = false
     }
 
     private func bindView() {
