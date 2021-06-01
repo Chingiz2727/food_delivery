@@ -2,9 +2,9 @@ import RxSwift
 import AVFoundation
 
 final class CameraUsagePermission {
-    let isAccesGranted: BehaviorSubject<Bool> = .init(value: false)
+    let isAccesGranted = PublishSubject<Bool>()
 
-    private let avAuthorizationStatus: AVAuthorizationStatus
+    let avAuthorizationStatus: AVAuthorizationStatus
 
     init(avAuthorizationStatus: AVAuthorizationStatus) {
         self.avAuthorizationStatus = avAuthorizationStatus
@@ -17,12 +17,14 @@ final class CameraUsagePermission {
         case .notDetermined:
             requestCameraUsagePermission()
         default:
-            isAccesGranted.onNext(false)
+            requestCameraUsagePermission()
+//            isAccesGranted.onNext(false)
         }
     }
 
     private func requestCameraUsagePermission() {
         AVCaptureDevice.requestAccess(for: .video) { [unowned self] access in
+            print(access)
             self.isAccesGranted.onNext(access)
         }
     }

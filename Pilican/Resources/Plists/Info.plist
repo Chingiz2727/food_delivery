@@ -80,7 +80,7 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Please Accept to use your camera</string>
+	<string>Нам необходима доступ к камере, для сканирования  QR кода, чтобы продолжить оплату</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Используя Face ID, Вы сможете быстро войти в приложение</string>
 	<key>NSLocationAlwaysUsageDescription</key>

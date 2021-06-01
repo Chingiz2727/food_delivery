@@ -73,29 +73,24 @@ class CameraViewController: UIViewController, CameraModule {
     }
 
     private func bindViewModel() {
-        cameraUsagePermission.checkStatus()
+        switch cameraUsagePermission.avAuthorizationStatus {
+        case .authorized:
+            DispatchQueue.main.async {
+                self.setupCamera()
+            }
+        default:
+            cameraUsagePermission.checkStatus()
+        }
+        
         cameraUsagePermission.isAccesGranted
             .subscribe(onNext: { [unowned self] isEnabled in
                 if isEnabled {
-                    self.setupCamera()
+                    DispatchQueue.main.async {
+                        self.setupCamera()
+                    }
                 }
             }).disposed(by: disposeBag)
 
-        cameraView.closeButton.rx.tap
-            .subscribe(onNext: { [unowned self] in
-                self.closeButton?()
-            }).disposed(by: disposeBag)
-
-        cameraView.rotateCameraButton.rx.tap
-            .subscribe(onNext: { [unowned self] _ in
-                self.rotateCamera()
-            })
-            .disposed(by: disposeBag)
-
-        cameraView.flashLightButton.rx.tap
-            .subscribe(onNext: { [unowned self] _ in
-                self.setFlash()
-            }).disposed(by: disposeBag)
 
         avCaptureMetadaDegelegate?.qrScanned = { [unowned self] qr in
             self.avCaptureSession.stopRunning()
@@ -170,10 +165,6 @@ class CameraViewController: UIViewController, CameraModule {
         result.connect()
             .disposed(by: disposeBag)
 
-        cameraView.howItWorkButton.rx.tap
-            .subscribe(onNext: { [unowned self] in
-                self.howItWorkTapped?()
-            }).disposed(by: disposeBag)
 
         cameraView.tableView.rx.itemSelected
             .withLatestFrom(retailList.element) { $1[$0.row] }
@@ -186,8 +177,7 @@ class CameraViewController: UIViewController, CameraModule {
                 self.cameraView.drawerView.setState(.middle, animated: true)
                 view.endEditing(true)
             }).disposed(by: disposeBag)
-
-        self.cameraView.drawerView.isHidden = true
+        view.backgroundColor = .clear
     }
 
     private func qrScanned(qr: String, price: String?) {
@@ -228,6 +218,7 @@ class CameraViewController: UIViewController, CameraModule {
         addCameraSession()
         addCameraOutput()
         addPreviewLayer()
+        cameraView.isHidden = false
     }
 
     private func addCameraSession() {
@@ -249,6 +240,29 @@ class CameraViewController: UIViewController, CameraModule {
         view.layer.addSublayer(avCapturePreviewLayer)
         cameraView.frame = view.frame
         view.addSubview(cameraView)
+        
+        cameraView.closeButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.closeButton?()
+            }).disposed(by: disposeBag)
+
+        cameraView.rotateCameraButton.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                self.rotateCamera()
+            })
+            .disposed(by: disposeBag)
+
+        cameraView.flashLightButton.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                self.setFlash()
+            }).disposed(by: disposeBag)
+        
+        cameraView.howItWorkButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                self.howItWorkTapped?()
+            }).disposed(by: disposeBag)
+        self.cameraView.drawerView.isHidden = true
+
     }
 
     private func rotateCamera() {
