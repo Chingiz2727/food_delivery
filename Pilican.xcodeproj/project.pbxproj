@@ -5786,10 +5786,10 @@
 			};
 			buildConfigurationList = A4B310DE25D10C370003BA0B /* Build configuration list for PBXProject "Pilican" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				ru,
 				Base,
 			);
 			mainGroup = A4B310DA25D10C370003BA0B;

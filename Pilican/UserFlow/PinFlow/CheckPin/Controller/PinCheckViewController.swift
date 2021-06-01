@@ -49,7 +49,7 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
                             self?.onPinSatisfy?()
                         }
                     case .error(let error):
-                        self?.showErrorInAlert(error)
+                        self?.showErrorInAlert(text: "Не удалость войти")
                     }
                 }
             }
