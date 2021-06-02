@@ -80,6 +80,7 @@ class CameraViewController: UIViewController, CameraModule {
             }
         default:
             cameraUsagePermission.checkStatus()
+            addEmptyButton()
         }
         
         cameraUsagePermission.isAccesGranted
@@ -177,7 +178,7 @@ class CameraViewController: UIViewController, CameraModule {
                 self.cameraView.drawerView.setState(.middle, animated: true)
                 view.endEditing(true)
             }).disposed(by: disposeBag)
-        view.backgroundColor = .clear
+        view.backgroundColor = .black
     }
 
     private func qrScanned(qr: String, price: String?) {
@@ -303,5 +304,28 @@ class CameraViewController: UIViewController, CameraModule {
         } catch let error {
             print(error)
         }
+    }
+    
+    private func addEmptyButton() {
+        let button = UIButton()
+        view.addSubview(button)
+        button.setTitle("Для сканирования QR, дайте доступ к камере", for: .normal)
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(.white, for: .normal)
+        button.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        button.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                guard let url = URL(string: UIApplication.openSettingsURLString) else {
+                   return
+                }
+                if UIApplication.shared.canOpenURL(url) {
+                   UIApplication.shared.open(url, options: [:])
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
