@@ -89,6 +89,10 @@ class CameraViewController: UIViewController, CameraModule {
                     DispatchQueue.main.async {
                         self.setupCamera()
                     }
+                } else {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
             }).disposed(by: disposeBag)
 
