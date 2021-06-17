@@ -56,14 +56,14 @@ enum AuthTarget: ApiTarget {
         switch self {
         case .loginUser(let phone, let password):
             return ["userName": phone, "password": password]
-        case .getSmsCode:
+        case .getSmsCode: 
             return ["test": "value"]
         case let .register(username, password, fullName, cityId, promo):
             let params = [
                 "username": username.toBase64(),
                 "password": password.toBase64(),
                 "fullName": fullName.toBase64(),
-                "cityId": "\(cityId)".toBase64(),
+                "cityId": "\(176)".toBase64(),
                 "promo": promo?.toBase64()
             ] as [String: Any]
             return params

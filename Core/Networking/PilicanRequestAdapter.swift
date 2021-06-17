@@ -12,7 +12,8 @@ public struct PilicanRequestAdapter: RequestAdapter {
 //        resultRequest.setValue(configService.redirectionUrl.absoluteString, forHTTPHeaderField: "X-User-Host")
 
     resultRequest.setValue(String(AppEnviroment.appVersion), forHTTPHeaderField: "appver")
-    if let token = authService.token {
+    let userSession = assembler.resolver.resolve(UserSessionStorage.self)!
+    if let token = userSession.accessToken {
       resultRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     }
     return resultRequest

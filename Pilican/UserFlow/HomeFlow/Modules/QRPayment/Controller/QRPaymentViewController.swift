@@ -24,7 +24,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     private let epayAmountSubject = BehaviorSubject<Double>(value: 0.0)
     private let priceSubject = BehaviorSubject<Double>(value: 0.0)
     private var epayAmount = 0
-    private var price = 0
+    private var price: Double = 0
     private var cashback = 0
     private let userInfo: UserInfoStorage
     private var textPrice: String?
@@ -52,10 +52,11 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         bindViewModel()
         if let textPrice = textPrice {
             rootView.priceView.priceTextField.text = textPrice
-            self.price = Int(textPrice)!
+            self.price = Double(textPrice)!
             self.priceSubject.onNext(Double(textPrice)!)
             let amount = self.calculateCashback(isOn: false, amount: textPrice)
             rootView.priceView.setData(cashback: amount.0)
+            rootView.priceView.priceTextField.isEnabled = false
             rootView.calculatePayView.setData(cardValue: amount.1, cashbackValue: amount.2)
         }
         title = "Оплата"
@@ -84,7 +85,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
             rootView.priceView.priceTextField.rx.text.asObservable())
             .subscribe(onNext: { [unowned self] isOn, amount in
                 self.toggleSwitch(sender: isOn)
-                self.price = Int(amount ?? "0") ?? 0
+                self.price = Double(Int(amount ?? "0") ?? 0)
                 self.priceSubject.onNext(Double(price))
                 let amount = self.calculateCashback(isOn: isOn, amount: amount)
                 rootView.priceView.setData(cashback: amount.0)
@@ -120,10 +121,14 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
 
         result.element
             .subscribe(onNext: { [unowned self] result in
-                if result.status == 200 {
-                    userInfo.balance = result.user.balance
-                    openSuccessPayment?(viewModel.info.retail, price, cashback)
+                if result.success == true {
+//                    userInfo.balance = result.user.balance
+                    openSuccessPayment?(viewModel.info.retail, Int(price), cashback)
                 }
+//                if result.status == 200 {
+//                    userInfo.balance = result.user.balance
+//                    openSuccessPayment?(viewModel.info.retail, price, cashback)
+//                }
             }).disposed(by: disposeBag)
 
         result.errors
@@ -145,7 +150,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         } else {
             rootView.calculatePayView.isHidden = true
             rootView.paymentChoiceView.choiceSwitch.thumbTintColor = .pilicanLightGray
-            epayAmount = price
+            epayAmount = Int(price)
         }
     }
 

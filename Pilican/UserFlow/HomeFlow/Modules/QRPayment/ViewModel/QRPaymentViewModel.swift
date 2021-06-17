@@ -18,7 +18,7 @@ final class QRPaymentViewModel: ViewModel {
     }
 
     struct Output {
-        let payByQRPartnerResponse: Observable<LoadingSequence<PayByQRPartnerResponse>>
+        let payByQRPartnerResponse: Observable<LoadingSequence<PayStatus>>
         let scanRetailResponse: Observable<LoadingSequence<ScanRetailResponse>>
     }
     var info: ScanRetailResponse
@@ -34,7 +34,7 @@ final class QRPaymentViewModel: ViewModel {
     func transform(input: Input) -> Output {
         let payResponse = input.payTapped
             .withLatestFrom(Observable.combineLatest(input.amount, input.epayAmount, input.comment))
-            .flatMap { [unowned self] amount, epay, comment -> Observable<LoadingSequence<PayByQRPartnerResponse>> in
+            .flatMap { [unowned self] amount, epay, comment -> Observable<LoadingSequence<PayStatus>> in
                 let orderId = self.info.orderId
                 let createdAt = String(NSDate().timeIntervalSince1970).split(separator: ".")[0]
                 let token = userSessionStorage.accessToken
@@ -47,9 +47,10 @@ final class QRPaymentViewModel: ViewModel {
                                                 amount: Double(amount),
                                                 epayAmount: Double(epay),
                                                 comment: comment ?? ""))
-                    .result(PayByQRPartnerResponse.self)
+                    .result(PayStatus.self)
                     .asLoadingSequence()
             }.share()
+        
         
         let scanRetailResponse = input.loadInfo
             .flatMap { [unowned self] _ -> Observable<ScanRetailResponse> in
@@ -66,4 +67,9 @@ final class QRPaymentViewModel: ViewModel {
         
         return .init(payByQRPartnerResponse: payResponse, scanRetailResponse: scanRetailResponse)
     }
+}
+
+struct PayStatus: Codable {
+    let success: Bool
+    let data: Int
 }

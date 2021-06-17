@@ -103,11 +103,12 @@ class CameraViewController: UIViewController, CameraModule {
             case .readPromoCode:
                 self.promoCodeScanned?(qr)
             case .makePayment:
-                let paymentQr = qr.components(separatedBy: "/")
-                print(paymentQr)
-                if paymentQr.count > 1 {
-                    let id = paymentQr.first!.replacingOccurrences(of: " ", with: "")
-                    let price = paymentQr.last!.replacingOccurrences(of: " ", with: "")
+                let objectString = qr.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
+                let array = objectString.split(separator: .init(","))
+                let values = array.map { $0.split(separator: ":").last }
+                if values.count > 1 {
+                    let id = String(values[1] ?? "")
+                    let price = String(values[0] ?? "")
                     self.qrScanned(qr: id, price: price)
                 } else {
                     self.qrScanned(qr: qr, price: nil)

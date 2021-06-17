@@ -9,17 +9,23 @@ import Foundation
 
 enum QRPaymentTarget: ApiTarget {
     case payByQRPartner(sig: String, orderId: String, createdAt: String, amount: Double, epayAmount: Double, comment: String)
-
+    case payQr(orderId: String)
     var version: ApiVersion {
         .custom("")
     }
 
+    var mainUrl: String? {
+        return "https://java.pillikan.org.kz/api"
+    }
+        
     var servicePath: String { "" }
 
     var path: String {
         switch self {
         case .payByQRPartner:
-            return "a/cb/purchase/pay/to/retail/by/muser"
+            return "transaction"
+        case .payQr:
+            return "transaction/pay"
         }
     }
 
@@ -31,14 +37,13 @@ enum QRPaymentTarget: ApiTarget {
         switch self {
         case .payByQRPartner(let sig, let orderId, let createdAt, let amount, let epayAmount, let comment):
             let params = [
-                "sig": sig,
                 "orderId": orderId,
-                "createdAt": createdAt,
                 "amount": amount,
-                "epayAmount": epayAmount,
-                "comment": comment
+                "terminalId": "sd:33:dg:ss:22:33"
             ] as [String: Any]
             return params
+        case .payQr(let orderId):
+            return ["orderId": orderId]
         }
     }
 
@@ -48,7 +53,7 @@ enum QRPaymentTarget: ApiTarget {
 
     var headers: [String : String]? {
         switch self {
-        case .payByQRPartner:
+        case .payByQRPartner,.payQr:
             return
                 [
                     "clientId": "bW9iaWxl",
