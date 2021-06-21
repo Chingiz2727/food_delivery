@@ -6,9 +6,9 @@ struct Slider: Codable {
     let title: String
     let image: String
     let url: String
-    let retailId: Int
+    let retailId: Int?
     let type: Int
-
+    let retail: DeliveryRetail?
     var imgLogo: String {
         return "https://st.pillikan.kz/slider/\(image)"
     }

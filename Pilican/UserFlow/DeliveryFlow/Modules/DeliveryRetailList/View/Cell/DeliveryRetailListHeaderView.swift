@@ -10,7 +10,7 @@ import RxSwift
 import Kingfisher
 
 final class DeliveryRetailListHeaderView: UITableViewHeaderFooterView {
-    var retailSliderId: PublishSubject<Int> = .init()
+    var retailSliderId: PublishSubject<DeliveryRetail?> = .init()
     private let carouselView = ImageSlideshow()
     private let disposeBag = DisposeBag()
     private var currentSliders: [Slider] = []
@@ -55,8 +55,8 @@ final class DeliveryRetailListHeaderView: UITableViewHeaderFooterView {
         carouselView.addGestureRecognizer(gesture)
 }
     @objc private func printSelectedIndex() {
-        let retailId = currentSliders[carouselView.currentPage].retailId
-        self.retailSliderId.onNext(retailId)
+        let retail = currentSliders[carouselView.currentPage].retail
+        self.retailSliderId.onNext(retail)
     }
 
     private func configureView() {

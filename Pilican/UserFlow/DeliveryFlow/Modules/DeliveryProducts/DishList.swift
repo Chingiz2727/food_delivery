@@ -95,4 +95,20 @@ final class DishList {
         }
         return listCategory
     }
+    
+    func orderItemsToProduct(items: [OrderItems]) -> [Product] {
+        let products: [Product] = items.map { item in
+            let product = Product(
+                status: item.dish?.status ?? 0,
+                img: item.dish?.img ?? "",
+                id: item.dish?.id ?? 0,
+                price: item.dish?.price ?? 0,
+                composition: item.dish?.composition ?? "",
+                age_access: item.dish?.age_access ?? 0,
+                name: item.dish?.name ?? "",
+                isExpanded: false, shoppingCount: item.dish?.shoppingCount ?? 1)
+            return product
+        }
+        return products
+    }
 }

@@ -68,6 +68,7 @@ public struct DeliveryOrderResponse: Codable, RetailAdapter {
     var retailLogo: String? = ""
     var retailName: String? = ""
     var isExpanded: Bool? = false
+    let retail: DeliveryRetail?
 }
 
 struct OrderItems: Codable {

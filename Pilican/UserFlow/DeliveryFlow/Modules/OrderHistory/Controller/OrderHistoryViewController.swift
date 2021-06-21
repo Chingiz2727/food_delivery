@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreLocation
 import RxSwift
 
 final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistoryModule {
+    var remakeOrder: RemakeOrder?
+    
     var selectedOrderHistory: SelectedOrderHistory?
     
     typealias RootViewType = OrderHistoryView
@@ -17,6 +20,8 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
 
     private let viewModel: OrderHistoryViewModel
     private let disposeBag = DisposeBag()
+    private let locationManager = CLLocationManager()
+    private var location: CLLocationCoordinate2D?
     private let dishList: DishList
     private let analytic = assembler.resolver.resolve(PillicanAnalyticManager.self)!
     init(viewModel: OrderHistoryViewModel, dishList: DishList) {
@@ -35,6 +40,7 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
         bindView()
     }
 
@@ -62,20 +68,9 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
             .bind(to: rootView.tableView.rx.items(OrderHistoryTableViewCell.self)) { row, model, cell in
                 cell.setData(data: model)
                 cell.onTryTap = { [unowned self] tag in
-                    print(model)
-                    let retail = DeliveryRetail(id: model.retailId ?? 0, cashBack: 0, isWork: 1, longitude: model.longitude ?? 0, latitude: model.latitude ?? 0, dlvCashBack: 0, pillikanDelivery: 0, logo: model.retailLogo ?? "", address: model.retailAdress ?? "", workDays: [], payIsWork: 0, name: model.retailName ?? "", status: model.retailStatus ?? 0, rating: model.retailRating)
                     if tag == 6 {
-                        if model.retailId ?? 0 != self.dishList.retail?.id && !dishList.products.isEmpty {
-                            self.showBasketAlert {
-                                self.dishList.products = []
-                                self.dishList.wishDishList.onNext([])
-                                self.selectedOrderHistory?(retail, .delivery)
-                            }
-                        } else {
-                            self.selectedOrderHistory?(retail, .delivery)
-                        }
+                        self.goToTryOrder(order: model)
                     } else {
-                        print(tag)
                         self.analytic.log(.orderagain)
                         self.onSelectOrderHistory?(model, tag)
                     }
@@ -94,31 +89,36 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
             self?.rootView.tableView.endUpdates()
           })
             .disposed(by: disposeBag)
+        location = locationManager.location?.coordinate
     }
     
     private func goToTryOrder(order: DeliveryOrderResponse) {
-        print(order)
-        guard let items = order.orderItems else { return }
-        let products: [Product] = items.map { orderItem in
-            let product = Product(status: orderItem.dish?.status ?? 0, img: orderItem.dish?.img ?? "", id: orderItem.dish?.id ?? 0, price: orderItem.dish?.price ?? 0, composition: orderItem.dish?.composition ?? "", age_access: orderItem.dish?.age_access ?? 0, name: orderItem.dish?.name ?? "", shoppingCount: orderItem.dish?.shoppingCount ?? 0)
-            return product
+        if order.retail?.isWork == 0 {
+            showErrorInAlert(text: "Заведение сейчас не работает")
+        } else {
+            dishList.wishDishList.onNext([])
+            let dishList = assembler.resolver.resolve(DishList.self)!
+            let products = dishList.orderItemsToProduct(items: order.orderItems ?? [])
+            dishList.products = products
+            dishList.wishDishList.onNext(products)
+            dishList.retail = order.retail
+            guard let location = location else {
+                self.showErrorInAlert(text: "Дайте доступ к вашему местоположению")
+                return
+            }
+            self.remakeOrder?(.delivery, location)
         }
-        
-        dishList.retail = DeliveryRetail(
-            id: order.retailId ?? 0,
-            cashBack: 0,
-            isWork: 0,
-            longitude: order.longitude ?? 0,
-            latitude: order.latitude ?? 0,
-            dlvCashBack: 0,
-            pillikanDelivery: 0,
-            logo: order.retailLogo ?? "",
-            address: order.address ?? "",
-            workDays: [],
-            payIsWork: 0,
-            name: order.retailName ?? "",
-            status: order.status ?? 0,
-            rating: order.retailRating ?? 0)
-        dishList.wishDishList.onNext(products)
+    }
+}
+
+extension OrderHistoryViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways,.authorizedWhenInUse:
+            let location = manager.location?.coordinate
+            self.location = location
+        default:
+            break
+        }
     }
 }
