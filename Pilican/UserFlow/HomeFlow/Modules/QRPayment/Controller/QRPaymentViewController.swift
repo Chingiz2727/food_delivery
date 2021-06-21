@@ -100,7 +100,8 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
                                             amount: priceSubject,
                                             epayAmount: epayAmountSubject,
                                             comment: rootView.commentView.commentTextField.rx.text.asObservable(),
-                                            loadInfo: .just(())))
+                                            loadInfo: .just(()),
+                                            useCashBack: rootView.paymentChoiceView.choiceSwitch.rx.isOn.asObservable()))
         
         let scan = output.scanRetailResponse.publish()
         

@@ -51,14 +51,13 @@ final class FirebasePushNotificationEngine: NSObject, PushNotificationEngine, Me
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        guard fcmToken != appSession.pushNotificationToken else { return }
+//        guard fcmToken != appSession.pushNotificationToken else { return }
         appSession.pushNotificationToken = fcmToken
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        guard appSession.isPushNotificationsEnabled else { return }
         NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.handleBadge.rawValue), object: nil)
 
         completionHandler(Constants.notificationPresentationOptions)
@@ -72,14 +71,15 @@ final class FirebasePushNotificationEngine: NSObject, PushNotificationEngine, Me
         NotificationCenter.default.post(name: NSNotification.Name(NotificationsString.handleBadge.rawValue), object: nil)
 
         coordinator?.performDeepLinkActionAfterStart(pushAction)
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        print(notification)
+        completionHandler()
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for notifications: \(error.localizedDescription)")
     }
     
     func subscribeToTopic(_ topic: PushNotificationTopic) {

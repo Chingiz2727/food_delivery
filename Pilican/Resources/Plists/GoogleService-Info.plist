@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:965585821604:ios:b11b7d21d3c60d15c36b31</string>
+	<string>1:965585821604:ios:d4f4d764bb28ec5cc36b31</string>
 	<key>DATABASE_URL</key>
 	<string>https://pillikan-fb3cb.firebaseio.com</string>
 </dict>

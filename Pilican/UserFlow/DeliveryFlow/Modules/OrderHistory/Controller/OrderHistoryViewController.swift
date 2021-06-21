@@ -47,7 +47,6 @@ final class OrderHistoryViewController: ViewController, ViewHolder, OrderHistory
     private func bindView() {
         rootView.tableView.registerClassForCell(OrderHistoryTableViewCell.self)
         rootView.tableView.estimatedRowHeight = UITableView.automaticDimension
-
         let output = viewModel.transform(input: .init(loadOrderHistory: .just(())))
 
         let orderHistory = output.payHistory.publish()

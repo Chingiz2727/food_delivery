@@ -8,8 +8,8 @@
 import Foundation
 
 enum QRPaymentTarget: ApiTarget {
-    case payByQRPartner(sig: String, orderId: String, createdAt: String, amount: Double, epayAmount: Double, comment: String)
-    case payQr(orderId: String)
+    case payByQRPartner(sig: String, orderId: String, createdAt: String, amount: Double, epayAmount: Double, comment: String,  useCashback: Bool)
+    case payQr(orderId: String, useCashback: Bool)
     var version: ApiVersion {
         .custom("")
     }
@@ -35,15 +35,16 @@ enum QRPaymentTarget: ApiTarget {
 
     var parameters: [String : Any]? {
         switch self {
-        case .payByQRPartner(let sig, let orderId, let createdAt, let amount, let epayAmount, let comment):
+        case .payByQRPartner(let sig, let orderId, let createdAt, let amount, let epayAmount, let comment, let use):
             let params = [
                 "orderId": orderId,
                 "amount": amount,
-                "terminalId": "sd:33:dg:ss:22:33"
+                "terminalId": "sd:33:dg:ss:22:33",
+                "useCashback": use
             ] as [String: Any]
             return params
-        case .payQr(let orderId):
-            return ["orderId": orderId]
+        case .payQr(let orderId, let useCashback):
+            return ["orderId": orderId, "useCashback": useCashback]
         }
     }
 

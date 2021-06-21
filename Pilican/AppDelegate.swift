@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupKingfisher()
         setupFirebase()
         setupYandexAnalitic()
+        
         #if DEBUG
         LoggerConfigurator.configure()
         #endif
