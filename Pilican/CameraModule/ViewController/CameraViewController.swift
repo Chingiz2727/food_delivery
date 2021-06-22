@@ -107,7 +107,7 @@ class CameraViewController: UIViewController, CameraModule {
                 let array = objectString.split(separator: .init(","))
                 let values = array.map { $0.split(separator: ":").last }
                 if values.count > 1 {
-                    let id = String(values[1] ?? "")
+                    let id = String(values[3] ?? "")
                     let price = String(values[0] ?? "")
                     self.qrScanned(qr: id, price: price)
                 } else {

@@ -23,7 +23,7 @@ enum QRPaymentTarget: ApiTarget {
     var path: String {
         switch self {
         case .payByQRPartner:
-            return "transaction"
+            return "transaction/pay"
         case .payQr:
             return "transaction/pay"
         }
@@ -37,14 +37,14 @@ enum QRPaymentTarget: ApiTarget {
         switch self {
         case .payByQRPartner(let sig, let orderId, let createdAt, let amount, let epayAmount, let comment, let use):
             let params = [
-                "orderId": orderId,
-                "amount": amount,
-                "terminalId": "sd:33:dg:ss:22:33",
+                "transactionId": orderId,
+//                "amount": amount,
+//                "terminalId": "sd:33:dg:ss:22:33",
                 "useCashback": use
             ] as [String: Any]
             return params
         case .payQr(let orderId, let useCashback):
-            return ["orderId": orderId, "useCashback": useCashback]
+            return ["transactionId": orderId, "useCashback": useCashback]
         }
     }
 
