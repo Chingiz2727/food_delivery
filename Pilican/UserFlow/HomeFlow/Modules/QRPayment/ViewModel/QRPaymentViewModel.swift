@@ -37,13 +37,18 @@ final class QRPaymentViewModel: ViewModel {
         let payResponse = input.payTapped
             .withLatestFrom(Observable.combineLatest(input.amount, input.epayAmount, input.comment, input.useCashBack))
             .flatMap { [unowned self] amount, epay, comment, useCashBack -> Observable<LoadingSequence<PayStatus>> in
-                let orderId = self.info.orderId
+                let orderId: String
+                if let transactionId = self.info.transactionId {
+                    orderId = transactionId
+                } else {
+                    orderId = "\(self.info.orderId)"
+                }
                 let createdAt = String(NSDate().timeIntervalSince1970).split(separator: ".")[0]
                 let token = userSessionStorage.accessToken
                 let substring = ((token! as NSString).substring(with: NSMakeRange(11, 21)) as NSString).substring(with: NSMakeRange(0, 10))
                 let sig = ((substring + String(amount) + String(createdAt) + String(self.info.orderId)).toBase64()).md5()
                 return apiService.makeRequest(to: QRPaymentTarget.payByQRPartner(
-                                                sig: sig,
+                                                sig: "\(self.info.retail.id)",
                                                 orderId: "\(orderId)",
                                                 createdAt: "\(createdAt)",
                                                 amount: Double(amount),
@@ -74,5 +79,5 @@ final class QRPaymentViewModel: ViewModel {
 
 struct PayStatus: Codable {
     let success: Bool
-    let data: Int
+    let data: Int?
 }

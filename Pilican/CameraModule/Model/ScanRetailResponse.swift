@@ -12,4 +12,5 @@ struct ScanRetailResponse: Codable {
     let fullName: String
     var type: Int
     let retail: Retail
+    var transactionId: String?
 }

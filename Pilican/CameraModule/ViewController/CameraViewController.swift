@@ -12,7 +12,7 @@ class CameraViewController: UIViewController, CameraModule {
     var paymentMaked: PaymentMaked?
     var cameraActionType: CameraAction?
     var retailTapped: RetailTapped?
-
+    private var transactionId: String?
     private var price: String?
     private let scanSubject = PublishSubject<Void>()
     private let createdAtSubject = PublishSubject<String>()
@@ -109,7 +109,10 @@ class CameraViewController: UIViewController, CameraModule {
                 if values.count > 1 {
                     let id = String(values[3] ?? "")
                     let price = String(values[0] ?? "")
-                    self.qrScanned(qr: id, price: price)
+                    let retailId = String(values[1] ?? "")
+                    self.transactionId = id
+                    
+                    self.qrScanned(qr: retailId, price: price)
                 } else {
                     self.qrScanned(qr: qr, price: nil)
                 }
@@ -157,6 +160,8 @@ class CameraViewController: UIViewController, CameraModule {
 
         result.element
             .subscribe(onNext: { [unowned self] info in
+                var info = info
+                info.transactionId = self.transactionId
                 self.paymentMaked?(info,price)
             }).disposed(by: disposeBag)
 

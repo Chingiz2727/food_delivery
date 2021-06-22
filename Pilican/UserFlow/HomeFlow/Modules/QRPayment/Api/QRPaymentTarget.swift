@@ -38,7 +38,9 @@ enum QRPaymentTarget: ApiTarget {
         case .payByQRPartner(let sig, let orderId, let createdAt, let amount, let epayAmount, let comment, let use):
             let params = [
                 "transactionId": orderId,
-//                "amount": amount,
+                "retailId": sig,
+                "amount": amount,
+                "bonusAmount": epayAmount,
 //                "terminalId": "sd:33:dg:ss:22:33",
                 "useCashback": use
             ] as [String: Any]
