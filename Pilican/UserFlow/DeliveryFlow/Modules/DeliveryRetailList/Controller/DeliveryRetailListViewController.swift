@@ -55,13 +55,13 @@ final class DeliveryRetailListViewController: UIViewController, DeliveryRetailLi
 
         let slider = output.sliders.publish()
 
-        slider.loading
-            .bind(to: ProgressView.instance.rx.loading)
-            .disposed(by: disposeBag)
-        
-        slider.errors
-            .bind(to: rootView.rx.error)
-            .disposed(by: disposeBag)
+//        slider.loading
+//            .bind(to: ProgressView.instance.rx.loading)
+//            .disposed(by: disposeBag)
+////
+////        slider.errors
+////            .bind(to: rootView.rx.error)
+////            .disposed(by: disposeBag)
         
         slider.subscribe(onNext: { [unowned self] sliders in
             guard let sliderList = sliders.result?.element else { return }

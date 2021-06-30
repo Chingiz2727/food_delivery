@@ -9,6 +9,7 @@ final class DeliveryLocationMapViewModel: ViewModel {
     private let location: PublishSubject<DeliveryLocation> = .init()
     private let locationArray: PublishSubject<[DeliveryLocation]> = .init()
     private let disposeBag = DisposeBag()
+    private let apiService = assembler.resolver.resolve(ApiService.self)!
     private let cache = DiskCache<String, [DeliveryLocation]>()
 
     init(mapManager: MapManager<YandexMapViewModel>, userInfoStorage: UserInfoStorage) {
@@ -18,11 +19,13 @@ final class DeliveryLocationMapViewModel: ViewModel {
     
     struct Input {
         let text: Observable<String>
+        let loadLocations: Observable<Void>
     }
     
     struct Output {
         let locationName: Observable<DeliveryLocation>
         let locationArray: Observable<[DeliveryLocation]>
+        let locationData: Observable<LoadingSequence<Data>>
     }
     
     func transform(input: Input) -> Output {
@@ -43,7 +46,14 @@ final class DeliveryLocationMapViewModel: ViewModel {
             })
             .disposed(by: disposeBag)
 
-        return .init(locationName: location, locationArray: locationArray)
+        let locationArea = input.loadLocations
+            .flatMap { [unowned self] in
+                return self.apiService.makeRequest(to: MapApiTarget.getPolylines)
+                    .run()
+                    .asLoadingSequence()
+            }
+        
+        return .init(locationName: location, locationArray: locationArray, locationData: locationArea)
     }
     
     func saveAdress(adress: DeliveryLocation) {

@@ -50,7 +50,7 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
     }
     
     private func bindViewModel() {
-        let output = viewModel.transform(input: .init(text: rootView.textField.rx.text.unwrap()))
+        let output = viewModel.transform(input: .init(text: rootView.textField.rx.text.unwrap(), loadLocations: .just(())))
         
         let locationArray = output.locationArray.share()
         
@@ -101,6 +101,16 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
             .subscribe(onNext: { [unowned self] in
                 self.moveToMyLocation()
             }).disposed(by: disposeBag)
+        
+        let polyline = output.locationData.publish()
+        
+        polyline.element
+            .subscribe(onNext: { [unowned self] data in
+                
+            })
+            .disposed(by: disposeBag)
+        polyline.connect()
+            .disposed(by: disposeBag)
     }
     
     private func moveToMyLocation() {

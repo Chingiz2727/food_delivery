@@ -2,6 +2,8 @@ import RxSwift
 import YandexMapsMobile
 import CoreLocation
 import UIKit
+import PassKit
+
 // swiftlint:disable function_body_length
 
 class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
@@ -319,7 +321,15 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         present(alert, animated: true, completion: nil)
     }
     
-    
+    private func makeApplePayRequest() {
+        let paymentRequest = PKPaymentRequest()
+        paymentRequest.merchantIdentifier = "merchant.com.wezom.Pillikan"
+        paymentRequest.supportedNetworks = [.visa, .masterCard]
+        paymentRequest.countryCode = "KZ"
+        paymentRequest.currencyCode = "KZT"
+//        paymentRequest.paymentSummaryItems = [PKPaymentSummaryItem(label: "Оплата Pillikan", amount: <#T##NSDecimalNumber#>)]
+
+    }
 }
 
 extension MakeOrderViewController: CLLocationManagerDelegate {
@@ -329,5 +339,15 @@ extension MakeOrderViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard let coordinate = manager.location else { return }
+    }
+}
+
+extension MakeOrderViewController: PKPaymentAuthorizationViewControllerDelegate {
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
     }
 }

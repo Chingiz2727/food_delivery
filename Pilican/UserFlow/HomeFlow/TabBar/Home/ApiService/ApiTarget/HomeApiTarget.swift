@@ -9,7 +9,7 @@ enum HomeApiTarget: ApiTarget {
     var version: ApiVersion {
         .custom("")
     }
-
+    
     var servicePath: String { return "" }
 
     var path: String {

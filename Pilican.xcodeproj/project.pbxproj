@@ -299,6 +299,7 @@
 		728434E9261D807300E21209 /* DeliveryRetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */; };
 		728434ED261D808400E21209 /* DeliveryRetailProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */; };
 		728434F2261D80AA00E21209 /* DeliveryRetailProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */; };
+		72881C00268455FD00A2D8D6 /* MapApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72881BFF268455FD00A2D8D6 /* MapApiTarget.swift */; };
 		728F7F3426484F7E008C5DC3 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F7F3326484F7E008C5DC3 /* GradientView.swift */; };
 		7292A092263B26D40098E03B /* MyCardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7292A091263B26D40098E03B /* MyCardCoordinator.swift */; };
 		7292A096263B27CD0098E03B /* MyCardModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7292A095263B27CD0098E03B /* MyCardModuleFactory.swift */; };
@@ -926,6 +927,7 @@
 		728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailHeaderView.swift; sourceTree = "<group>"; };
 		728434EC261D808400E21209 /* DeliveryRetailProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductsView.swift; sourceTree = "<group>"; };
 		728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRetailProductViewModel.swift; sourceTree = "<group>"; };
+		72881BFF268455FD00A2D8D6 /* MapApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApiTarget.swift; sourceTree = "<group>"; };
 		728F7F3326484F7E008C5DC3 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7292A091263B26D40098E03B /* MyCardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardCoordinator.swift; sourceTree = "<group>"; };
 		7292A095263B27CD0098E03B /* MyCardModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardModuleFactory.swift; sourceTree = "<group>"; };
@@ -2847,6 +2849,7 @@
 		7201594C262CC6CC0083C758 /* DeliveryLocationMap */ = {
 			isa = PBXGroup;
 			children = (
+				72881BFE268455EB00A2D8D6 /* ApiTarget */,
 				7201595E262CD7AB0083C758 /* Model */,
 				72015957262CC7A20083C758 /* View */,
 				72015956262CC79A0083C758 /* ViewModel */,
@@ -3509,6 +3512,14 @@
 				728434F1261D80AA00E21209 /* DeliveryRetailProductViewModel.swift */,
 			);
 			path = DeliveryRetailProductViewModel;
+			sourceTree = "<group>";
+		};
+		72881BFE268455EB00A2D8D6 /* ApiTarget */ = {
+			isa = PBXGroup;
+			children = (
+				72881BFF268455FD00A2D8D6 /* MapApiTarget.swift */,
+			);
+			path = ApiTarget;
 			sourceTree = "<group>";
 		};
 		728F7F3226484F70008C5DC3 /* GradientView */ = {
@@ -6447,6 +6458,7 @@
 				5556434D2637F71700B56670 /* RetailMapViewController.swift in Sources */,
 				A483E29F25D40ABE006D2DAF /* SwiftSupport.swift in Sources */,
 				A437A0B825ECC4DF00910A2D /* RetailDetailHeaderView.swift in Sources */,
+				72881C00268455FD00A2D8D6 /* MapApiTarget.swift in Sources */,
 				721127FA262014DA0055A83A /* UserLocationStatus.swift in Sources */,
 				5584E84325EE406F00025251 /* CashbackMenuView.swift in Sources */,
 				724FC5A8262419BE00C1DED3 /* DrawerViewContent.swift in Sources */,
