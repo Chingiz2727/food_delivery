@@ -103,6 +103,7 @@ class CameraViewController: UIViewController, CameraModule {
             case .readPromoCode:
                 self.promoCodeScanned?(qr)
             case .makePayment:
+                // swiftlint:disable line_length
                 let objectString = qr.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "", with: "").replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "{", with: "").replacingOccurrences(of: "}", with: "")
                 let array = objectString.split(separator: .init(","))
                 let values = array.map { $0.split(separator: ":").last }

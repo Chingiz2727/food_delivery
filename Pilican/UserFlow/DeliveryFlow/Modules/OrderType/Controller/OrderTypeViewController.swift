@@ -92,6 +92,7 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
         if let coordinate = locationManager.location?.coordinate {
             self.userCoordinate.onNext(coordinate)
             let retail = self.dishList.retail
+            // swiftlint:disable line_length
             self.mapManager.getDistance(firstPoint: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), secondPoint: MapPoint(latitude: retail?.latitude ?? 0, longitude: retail?.longitude ?? 0), completion: { [unowned self] distance in
                 self.distance = distance
                 self.rootView.headerView.descriptionLabel.text = "\(distance) км до \(String(describing: retail?.name ?? ""))"

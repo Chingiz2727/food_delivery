@@ -56,7 +56,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
             self.priceSubject.onNext(Double(textPrice)!)
             let amount = self.calculateCashback(isOn: false, amount: textPrice)
             rootView.priceView.setData(cashback: amount.0)
-            rootView.priceView.priceTextField.isEnabled = false
+            //rootView.priceView.priceTextField.isEnabled = false
             rootView.calculatePayView.setData(cardValue: amount.1, cashbackValue: amount.2)
         }
         title = "Оплата"
@@ -76,6 +76,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     }
 
     private func bindView() {
+        rootView.priceView.priceTextField.becomeFirstResponder()
         rootView.retailView.setRetail(retail: viewModel.info.retail)
         guard let balance = userInfo.balance else { return }
         rootView.paymentChoiceView.setData(cashback: String(balance))
@@ -161,7 +162,8 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
             myBonus = balance
         }
         
-        guard let intAmount = Int(amount ?? "0") else { return ("0", "0", "0") }
+        guard let doubleAmount = Double(amount ?? "") else { return ("0", "0", "0") }
+        let intAmount = Int(doubleAmount)
         let payAmount = isOn ? intAmount - myBonus : intAmount
         let totalAmount = payAmount < 0 ? 0 : payAmount
         let cashBack = (totalAmount * (viewModel.info.retail.cashBack ?? 1) / 100)
@@ -175,7 +177,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         let spendBonusAmount = myBonus > intAmount ? intAmount : myBonus
         epayAmount = amountByBonus
 
-        epayAmountSubject.onNext(Double(epayAmount))
+        epayAmountSubject.onNext(Double(spendBonusAmount))
         return (String(cashBack), String(amountByBonus), String(spendBonusAmount))
     }
     
