@@ -6,7 +6,7 @@ import PassKit
 
 // swiftlint:disable function_body_length
 
-class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
+class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder, PKPaymentAuthorizationViewControllerDelegate {
     var putAddress: PutAddress?
     
     var orderError: OrderError?
@@ -16,6 +16,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
     typealias RootViewType = MakeOrderView
     var onMapShowDidSelect: Callback?
     var orderType: OrderType!
+    var totalSumAmount: NSDecimalNumber = 0
     private let userLocation: CLLocationCoordinate2D
     private let viewModel: MakeOrderViewModel
     private let disposeBag = DisposeBag()
@@ -285,6 +286,11 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             }
         })
         .disposed(by: disposeBag)
+        
+        totalSum.subscribe(onNext: { [unowned self] sum in
+            self.totalSumAmount = NSDecimalNumber(value: sum)
+        })
+        .disposed(by: disposeBag)
     }
 
     func changeDishList(action: DishListAction) {
@@ -296,6 +302,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
         rootView.tableView.rowHeight = 100
         rootView.tableView.estimatedRowHeight = 100
         rootView.setOrderType(orderType: orderType, address: viewModel.dishList.retail?.address ?? "")
+        rootView.payAmountView.pkPaymentButton.addTarget(self, action: #selector(makeApplePayRequest), for: .touchUpInside)
 //        if let coordinate = locationManager.location?.coordinate {
 //            currentLocation.onNext(DeliveryLocation(point: MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude), name: ""))
 //        }
@@ -319,16 +326,20 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder {
             alert.addAction(action)
         }
         present(alert, animated: true, completion: nil)
+        
     }
     
-    private func makeApplePayRequest() {
+    @objc private func makeApplePayRequest() {
         let paymentRequest = PKPaymentRequest()
         paymentRequest.merchantIdentifier = "merchant.com.wezom.Pillikan"
         paymentRequest.supportedNetworks = [.visa, .masterCard]
         paymentRequest.countryCode = "KZ"
         paymentRequest.currencyCode = "KZT"
-//        paymentRequest.paymentSummaryItems = [PKPaymentSummaryItem(label: "Оплата Pillikan", amount: <#T##NSDecimalNumber#>)]
-
+        paymentRequest.merchantCapabilities = .capability3DS
+        paymentRequest.paymentSummaryItems = [PKPaymentSummaryItem(label: "Оплата Pillikan", amount: totalSumAmount)]
+        let controller = PKPaymentAuthorizationController(paymentRequest: paymentRequest)
+        controller.delegate = self
+        controller.present(completion: nil)
     }
 }
 
@@ -342,7 +353,11 @@ extension MakeOrderViewController: CLLocationManagerDelegate {
     }
 }
 
-extension MakeOrderViewController: PKPaymentAuthorizationViewControllerDelegate {
+extension MakeOrderViewController: PKPaymentAuthorizationControllerDelegate {
+    func paymentAuthorizationControllerDidFinish(_ controller: PKPaymentAuthorizationController) {
+        controller.dismiss(completion: nil)
+    }
+    
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
         controller.dismiss(animated: true, completion: nil)
     }

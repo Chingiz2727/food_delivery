@@ -11,11 +11,7 @@ final class DeliveryRetailHeaderView: UIView {
     var stickyHeaderrHeightConstraint: Constraint?
     var stickyHeaderRatingImageConstraint: Constraint?
 
-    private let productImageView: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleToFill
-        return image
-    }()
+    private let productImageView = ImageSlideshow()
 
     private let companyNameLabel: UILabel = {
         let label = UILabel()
@@ -147,9 +143,13 @@ final class DeliveryRetailHeaderView: UIView {
         ratingLabel.text = "\(rating)"
         ratingView.rating = rating
         workTimeLabel.text = "Режим работы \n\(workTime)"
-        productImageView.kf.setImage(with: URL(string: retail.imgLogo ?? "")!)
     }
 
+    func setSlider(images: [RetailImages]) {
+        let imgSource = images.compactMap { KingfisherSource(urlString: $0.imgUrl ?? "")}
+        productImageView.contentMode = .scaleAspectFill
+        productImageView.setImageInputs(imgSource)
+    }
     private func setupInitialLayout() {
         addSubview(fullStackView)
         fullStackView.snp.makeConstraints { make in

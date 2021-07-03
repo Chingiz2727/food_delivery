@@ -93,6 +93,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 self.rootView.setTitles(titles: categoriesTitle)
                 self.sourceDelegate.productCategory = productCategory
                 self.rootView.tableView.reloadData()
+                self.rootView.stickyHeaderView.setSlider(images: retail.retail.images)
             })
             .disposed(by: disposeBag)
 

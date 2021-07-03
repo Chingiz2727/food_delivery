@@ -3417,7 +3417,6 @@
 			isa = PBXGroup;
 			children = (
 				728434F0261D809C00E21209 /* DeliveryRetailProductViewModel */,
-				728434EF261D809400E21209 /* ViewModel */,
 				728434DC261D802700E21209 /* View */,
 				728434D7261D800C00E21209 /* Module */,
 				728434CA261D7FB900E21209 /* Model */,
@@ -3497,13 +3496,6 @@
 				728434E8261D807300E21209 /* DeliveryRetailHeaderView.swift */,
 			);
 			path = DeliveryRetailHeaderView;
-			sourceTree = "<group>";
-		};
-		728434EF261D809400E21209 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		728434F0261D809C00E21209 /* DeliveryRetailProductViewModel */ = {
@@ -4640,6 +4632,13 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		A464AF4C268F3653004C8B3C /* Rebranding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rebranding;
+			sourceTree = "<group>";
+		};
 		A468EA7B25EDF5060071FAA6 /* SocialNetworkListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -5197,6 +5196,7 @@
 		A4B310DA25D10C370003BA0B = {
 			isa = PBXGroup;
 			children = (
+				A464AF4C268F3653004C8B3C /* Rebranding */,
 				A483E21025D40AB4006D2DAF /* Core */,
 				A4DD3DC625D24359002D2186 /* Helpers */,
 				A4B310E525D10C370003BA0B /* Pilican */,
@@ -6613,6 +6613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6699,6 +6700,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6846,6 +6848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -6876,6 +6879,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

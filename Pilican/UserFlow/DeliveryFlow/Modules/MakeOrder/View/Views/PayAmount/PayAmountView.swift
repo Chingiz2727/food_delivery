@@ -1,3 +1,4 @@
+import PassKit
 import UIKit
 
 final class PayAmountView: UIView {
@@ -10,6 +11,7 @@ final class PayAmountView: UIView {
         return label
     }()
 
+    
     private let totalLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -28,6 +30,8 @@ final class PayAmountView: UIView {
         return label
     }()
 
+    let pkPaymentButton = PKPaymentButton(paymentButtonType: .buy, paymentButtonStyle: .black)
+    
     let payButton = PrimaryButton()
     let orderCost = PayValueView()
     let deliveryCost = PayValueView()
@@ -44,7 +48,7 @@ final class PayAmountView: UIView {
         distribution: .fillEqually)
 
     private lazy var fullInfoStackView = UIStackView(
-        views: [titleLabel, orderCost, deliveryCost, extraPayment, UIView(), dividerLine, UIView(), stackView, UIView(), payButton],
+        views: [titleLabel, orderCost, deliveryCost, extraPayment, UIView(), dividerLine, UIView(), stackView, UIView(), payButton, pkPaymentButton],
         axis: .vertical,
         spacing: 6)
 
@@ -95,6 +99,8 @@ final class PayAmountView: UIView {
             make.left.right.equalToSuperview().inset(6)
             make.height.equalTo(54)
         }
+        pkPaymentButton.snp.makeConstraints { $0.height.equalTo(54) }
+        
         backgroundColor = .white
     }
 
@@ -103,6 +109,8 @@ final class PayAmountView: UIView {
         payButton.titleLabel?.font = .semibold18
         layer.cornerRadius = 10
         payButton.layer.cornerRadius = 12
+        pkPaymentButton.layer.cornerRadius = 12
+        pkPaymentButton.setTitle("Оплатить с", for: .normal)
         dividerLine.backgroundColor = UIColor.pilicanLightGray.withAlphaComponent(0.5)
     }
 }
