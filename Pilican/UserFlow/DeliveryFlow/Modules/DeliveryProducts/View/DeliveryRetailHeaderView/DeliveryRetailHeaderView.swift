@@ -147,7 +147,7 @@ final class DeliveryRetailHeaderView: UIView {
 
     func setSlider(images: [RetailImages]) {
         let imgSource = images.compactMap { KingfisherSource(urlString: $0.imgUrl ?? "")}
-        productImageView.contentMode = .scaleAspectFill
+        productImageView.contentScaleMode = .scaleAspectFill
         productImageView.setImageInputs(imgSource)
     }
     private func setupInitialLayout() {
