@@ -12,14 +12,8 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
     private let disposeBag = DisposeBag()
     private let userLocationStatusSubject: PublishSubject<UserLocationStatus> = .init()
     
-    let points = LocationArea().location
+    private var points: [YMKPoint] = []
     
-    let lines = [
-        CLLocationCoordinate2D(latitude: 42.271008, longitude: 69.558747),
-        CLLocationCoordinate2D(latitude: 42.382227, longitude: 69.491084),
-        CLLocationCoordinate2D(latitude: 42.410608, longitude: 69.636103),
-        CLLocationCoordinate2D(latitude: 42.311006, longitude: 69.660448)
-    ]
     
     private let locationManager = CLLocationManager()
     private let secondManager = CLLocationManager()
@@ -46,7 +40,6 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
         viewModel.mapManager.setupCameraListener(in: rootView.mapView)
         bindViewModel()
         setupMap()
-        deliveryZone()
     }
     
     private func bindViewModel() {
@@ -62,16 +55,18 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
         let location = output.locationName.share()
         location.subscribe(onNext: { [unowned self] location in
             self.rootView.textField.text = location.name
+            
             self.deliveryLocationObject.onNext(location)
         }).disposed(by: disposeBag)
-        let newPoint: [YMKPoint] = points.map { YMKPoint(latitude: $0.longitude, longitude: $0.latitude) }
+    
 
-        let polygonCoordinates: [CLLocationCoordinate2D] = newPoint.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)}
-        let deliveryPolygon = MKPolygon(coordinates: polygonCoordinates, count: polygonCoordinates.count)
+
         
         rootView.saveButton.rx.tap
             .withLatestFrom(deliveryLocationObject)
             .subscribe(onNext: { [unowned self] location in
+                let polygonCoordinates: [CLLocationCoordinate2D] = self.points.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)}
+                let deliveryPolygon = MKPolygon(coordinates: polygonCoordinates, count: polygonCoordinates.count)
                 let deliveryCoordinate = CLLocationCoordinate2D(latitude: location.point.latitude, longitude: location.point.longitude)
                 let isOnRegion = deliveryPolygon.contain(coor: deliveryCoordinate)
                 if isOnRegion {
@@ -106,7 +101,11 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
         
         polyline.element
             .subscribe(onNext: { [unowned self] data in
+                guard let coordinates = data.area.params.coordinates.first else { return }
                 
+                let deliveryPoints: [YMKPoint] = coordinates.map { YMKPoint(latitude: $0[1], longitude: $0[0])}
+                self.points = deliveryPoints
+                self.deliveryZone(point: deliveryPoints)
             })
             .disposed(by: disposeBag)
         polyline.connect()
@@ -141,9 +140,8 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
     }
     
     
-    private func deliveryZone() {
-        let newPoint: [YMKPoint] = points.map { YMKPoint(latitude: $0.longitude, longitude: $0.latitude) }
-        let addPolygon = YMKPolygon(outerRing: YMKLinearRing(points: newPoint), innerRings: [])
+    private func deliveryZone(point: [YMKPoint]) {
+        let addPolygon = YMKPolygon(outerRing: YMKLinearRing(points: point), innerRings: [])
         
         let mapObjects = rootView.mapView.mapWindow.map.mapObjects.addPolygon(with: addPolygon)
         

@@ -25,7 +25,7 @@ final class DeliveryLocationMapViewModel: ViewModel {
     struct Output {
         let locationName: Observable<DeliveryLocation>
         let locationArray: Observable<[DeliveryLocation]>
-        let locationData: Observable<LoadingSequence<Data>>
+        let locationData: Observable<LoadingSequence<DeliveryLocationArea>>
     }
     
     func transform(input: Input) -> Output {
@@ -49,7 +49,7 @@ final class DeliveryLocationMapViewModel: ViewModel {
         let locationArea = input.loadLocations
             .flatMap { [unowned self] in
                 return self.apiService.makeRequest(to: MapApiTarget.getPolylines)
-                    .run()
+                    .result(DeliveryLocationArea.self)
                     .asLoadingSequence()
             }
         

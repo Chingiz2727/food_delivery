@@ -3580,13 +3580,6 @@
 			path = PillicanCommerceEngine;
 			sourceTree = "<group>";
 		};
-		72B6961326625CE9007F930C /* PillicanCommerEvent */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PillicanCommerEvent;
-			sourceTree = "<group>";
-		};
 		72C5E4B82632616300FEABA1 /* AddCardStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -4632,13 +4625,6 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
-		A464AF4C268F3653004C8B3C /* Rebranding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Rebranding;
-			sourceTree = "<group>";
-		};
 		A468EA7B25EDF5060071FAA6 /* SocialNetworkListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4926,7 +4912,6 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				72B6961326625CE9007F930C /* PillicanCommerEvent */,
 				72B6961026624CC9007F930C /* PillicanCommerceEngine */,
 				72B6960D26624BA1007F930C /* PillicanCommerce */,
 				72B6960A26621A71007F930C /* PillicanAnalyticManager */,
@@ -5196,7 +5181,6 @@
 		A4B310DA25D10C370003BA0B = {
 			isa = PBXGroup;
 			children = (
-				A464AF4C268F3653004C8B3C /* Rebranding */,
 				A483E21025D40AB4006D2DAF /* Core */,
 				A4DD3DC625D24359002D2186 /* Helpers */,
 				A4B310E525D10C370003BA0B /* Pilican */,
