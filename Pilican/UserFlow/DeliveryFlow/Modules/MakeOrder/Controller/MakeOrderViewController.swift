@@ -18,6 +18,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder, PKPa
     var orderType: OrderType!
     var totalSumAmount: NSDecimalNumber = 0
     private let userLocation: CLLocationCoordinate2D
+    private let userInfo = assembler.resolver.resolve(UserInfoStorage.self)!
     private let viewModel: MakeOrderViewModel
     private let disposeBag = DisposeBag()
     private var searchManager: YMKSearchManager?
@@ -101,10 +102,12 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder, PKPa
         order.element
             .subscribe(onNext: { [unowned self] res in
                 if res.status == 200 {
+                    self.userInfo.balance = res.newBalance
                     self.analytics.log(.cartpay)
                     let ymkProducts: [YMKOrderProduct] = viewModel.dishList.products.map { product in
                         return YMKOrderProduct(productId: product.id, productName: product.name, productCount: product.shoppingCount ?? 1, productPrice: product.price)
                     }
+                    
                     commerceManager.log(.purchaseCommerce(query: viewModel.dishList.retail?.name ?? "", products: ymkProducts))
                     self.orderSuccess?(res.order?.id ?? 0)
                     viewModel.dishList.products = []

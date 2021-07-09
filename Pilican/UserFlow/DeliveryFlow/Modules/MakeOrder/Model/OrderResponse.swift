@@ -8,6 +8,7 @@
 import Foundation
 struct OrderResponse: Codable {
     let order: Order?
+    let newBalance: Int?
     let status: Int?
 }
 
