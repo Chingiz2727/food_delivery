@@ -199,12 +199,12 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder, PKPa
                 let totalSum = amount.reduce(0, +)
                 self.foodAmountSubject.onNext(totalSum)
                 if orderType.title == "Доставка Pillikan" {
-                    if totalSum < 1499 {
-                        self.addAmountSubject.onNext(600)
+                    if totalSum < rate.minimalRate {
+                        self.addAmountSubject.onNext(rate.minimalRate)
                         self.totalSum.onNext(totalSum)
                         self.deliveryAmountSubject.onNext(rate.rate)
                         self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate, orderType: orderType)
-                        self.fullAmountSubject.onNext(totalSum + rate.rate + 600)
+                        self.fullAmountSubject.onNext(totalSum + rate.rate + rate.minimalRate)
                     } else {
                         self.addAmountSubject.onNext(0)
                         self.deliveryAmountSubject.onNext(rate.rate)
@@ -335,6 +335,7 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder, PKPa
         paymentRequest.supportedNetworks = [.visa, .masterCard]
         paymentRequest.countryCode = "KZ"
         paymentRequest.currencyCode = "KZT"
+        
         paymentRequest.merchantCapabilities = .capability3DS
         paymentRequest.paymentSummaryItems = [PKPaymentSummaryItem(label: "Оплата Pillikan", amount: totalSumAmount)]
         let controller = PKPaymentAuthorizationController(paymentRequest: paymentRequest)
@@ -360,6 +361,10 @@ extension MakeOrderViewController: PKPaymentAuthorizationControllerDelegate {
     
     func paymentAuthorizationController(_ controller: PKPaymentAuthorizationController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
         if payment.token.transactionIdentifier != "" {
+            do{
+                let json = try JSONSerialization.jsonObject(with: payment.token.paymentData, options: []) as? [String : Any]
+                print(json)
+            }catch{ print("erroMsg") }
             
             completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
         } else {

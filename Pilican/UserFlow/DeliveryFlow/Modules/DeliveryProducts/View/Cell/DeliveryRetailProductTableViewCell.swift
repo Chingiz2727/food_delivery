@@ -55,8 +55,8 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
     }()
 
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel, UIView(), priceStackView])
-        stackView.distribution = .fillProportionally
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel, priceStackView])
+        stackView.distribution = .fill
         stackView.axis = .vertical
         stackView.spacing = 3
         return stackView
@@ -66,7 +66,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
     private lazy var horizontalStack = UIStackView(views: [stackView, UIView(), productImage], axis: .horizontal, distribution: .fill, spacing: 10)
     
     private lazy var verticalStack = UIStackView(
-        views: [secondImage,horizontalStack],
+        views: [secondImage, horizontalStack],
         axis: .vertical,
         distribution: .fill,
         spacing: 5)
@@ -131,15 +131,20 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
             make.edges.equalToSuperview()
         }
         contentView.addSubview(backView)
+        
         backView.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
+        
         backView.addSubview(verticalStack)
+        
         verticalStack.snp.makeConstraints { make in
             make.top.trailing.bottom.equalToSuperview().inset(5)
             make.leading.equalTo(deliveryLine.snp.trailing).offset(4)
         }
+        
         productImage.snp.makeConstraints { make in
             make.size.equalTo(100)
         }
+        
         deliveryLine.snp.makeConstraints { make in
             make.top.bottom.leading.equalToSuperview()
             make.width.equalTo(5)
