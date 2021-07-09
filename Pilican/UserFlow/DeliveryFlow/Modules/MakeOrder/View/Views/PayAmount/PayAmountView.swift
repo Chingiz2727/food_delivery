@@ -48,7 +48,7 @@ final class PayAmountView: UIView {
         distribution: .fillEqually)
 
     private lazy var fullInfoStackView = UIStackView(
-        views: [titleLabel, orderCost, deliveryCost, extraPayment, UIView(), dividerLine, UIView(), stackView, UIView(), payButton],
+        views: [titleLabel, orderCost, deliveryCost, extraPayment, UIView(), dividerLine, UIView(), stackView, UIView(), payButton, pkPaymentButton],
         axis: .vertical,
         spacing: 6)
 
@@ -98,7 +98,9 @@ final class PayAmountView: UIView {
         payButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(6)
             make.height.equalTo(54)
-        }        
+        }
+        
+        pkPaymentButton.snp.makeConstraints { $0.height.equalTo(54) }
         backgroundColor = .white
     }
 
@@ -108,7 +110,6 @@ final class PayAmountView: UIView {
         layer.cornerRadius = 10
         payButton.layer.cornerRadius = 12
         pkPaymentButton.layer.cornerRadius = 12
-        pkPaymentButton.setTitle("Оплатить с", for: .normal)
         dividerLine.backgroundColor = UIColor.pilicanLightGray.withAlphaComponent(0.5)
     }
 }

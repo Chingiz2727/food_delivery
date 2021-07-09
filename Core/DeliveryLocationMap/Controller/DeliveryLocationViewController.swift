@@ -5,27 +5,28 @@ import MapKit
 import UIKit
 
 class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, ViewHolder {
+    
     typealias RootViewType = DeliveryLocationMapView
+    
     var onlocationDidSelect: OnLocationDidSelect?
+    
+    private var points: [YMKPoint] = []
     private let deliveryLocationObject: PublishSubject<DeliveryLocation> = .init()
     private let viewModel: DeliveryLocationMapViewModel
     private let disposeBag = DisposeBag()
     private let userLocationStatusSubject: PublishSubject<UserLocationStatus> = .init()
-    
-    private var points: [YMKPoint] = []
-    
-    
     private let locationManager = CLLocationManager()
     private let secondManager = CLLocationManager()
     private let mapManager: MapManager<YandexMapViewModel>
-    override func loadView() {
-        view = DeliveryLocationMapView()
-    }
     
     init(viewModel: DeliveryLocationMapViewModel, mapManager: MapManager<YandexMapViewModel>) {
         self.viewModel = viewModel
         self.mapManager = mapManager
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    override func loadView() {
+        view = DeliveryLocationMapView()
     }
     
     required init?(coder: NSCoder) {
@@ -58,9 +59,6 @@ class DeliveryLocationViewController: UIViewController, DeliveryLocationModule, 
             
             self.deliveryLocationObject.onNext(location)
         }).disposed(by: disposeBag)
-    
-
-
         
         rootView.saveButton.rx.tap
             .withLatestFrom(deliveryLocationObject)
@@ -171,29 +169,29 @@ extension DeliveryLocationViewController: CLLocationManagerDelegate {
 }
 
 extension CLLocationCoordinate2D {
-
+    
     func liesInsideRegion(region: [CLLocationCoordinate2D]) -> Bool {
         var liesInside = false
         var i = 0
         var j = region.count-1
-
+        
         while i < region.count {
-
+            
             let iCoordinate = region[i]
             let jCoordinate = region[j]
-
+            
             if (iCoordinate.latitude > self.latitude) != (jCoordinate.latitude > self.latitude) {
                 if self.longitude < (iCoordinate.longitude - jCoordinate.longitude) * (self.latitude - iCoordinate.latitude) / (jCoordinate.latitude-iCoordinate.latitude) + iCoordinate.longitude {
                     liesInside = !liesInside
-                    }
+                }
             }
-
+            
             i += 1
             j = i+1
         }
         return liesInside
     }
-
+    
 }
 
 extension MKPolygon {
@@ -202,9 +200,9 @@ extension MKPolygon {
         let currentMapPoint: MKMapPoint = MKMapPoint(coor)
         let polygonViewPoint: CGPoint = polygonRenderer.point(for: currentMapPoint)
         if polygonRenderer.path == nil {
-          return false
+            return false
         }else{
-          return polygonRenderer.path.contains(polygonViewPoint)
+            return polygonRenderer.path.contains(polygonViewPoint)
         }
     }
 }

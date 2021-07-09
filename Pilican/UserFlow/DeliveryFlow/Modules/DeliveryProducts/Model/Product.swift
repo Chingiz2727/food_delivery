@@ -1,4 +1,4 @@
-struct Product: Codable {
+struct Product: Codable, Equatable {
     let status: Int
     let img: String?
     let id, price: Int

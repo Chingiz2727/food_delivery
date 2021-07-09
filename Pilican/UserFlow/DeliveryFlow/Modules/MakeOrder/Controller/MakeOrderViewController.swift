@@ -358,11 +358,23 @@ extension MakeOrderViewController: PKPaymentAuthorizationControllerDelegate {
         controller.dismiss(completion: nil)
     }
     
+    func paymentAuthorizationController(_ controller: PKPaymentAuthorizationController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        if payment.token.transactionIdentifier != "" {
+            
+            completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+        } else {
+            completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
+        }
+    }
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
     
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
-        completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+        if payment.token.transactionIdentifier != "" {
+            completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+        } else {
+            completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
+        }
     }
 }

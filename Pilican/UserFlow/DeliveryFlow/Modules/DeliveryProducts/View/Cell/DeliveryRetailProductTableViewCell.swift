@@ -56,7 +56,7 @@ class DeliveryRetailProductTableViewCell: UITableViewCell {
 
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nameLabel, descriptionLabel, UIView(), priceStackView])
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.axis = .vertical
         stackView.spacing = 3
         return stackView

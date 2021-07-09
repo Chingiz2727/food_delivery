@@ -136,7 +136,6 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
 
         rootView.tableView.rx.willDisplayCell.asObservable()
             .subscribe(onNext: { [unowned self] _, indexPath in
-//                self.rootView.setupHeader(point: indexPath.section)
                 if self.rootView.tableView.numberOfSections > 2 {
                     self.rootView.scrollSegmentToSection(section: indexPath.section)
                 }
@@ -150,6 +149,7 @@ class DeliveryRetailProductsViewController: UIViewController, DeliveryRetailProd
                 }
             })
             .disposed(by: disposeBag)
+
         rootView.calculateView.control.rx.controlEvent(.touchUpInside)
             .subscribe(onNext: { [unowned self] in
                 self.onMakeOrdedDidTap?()

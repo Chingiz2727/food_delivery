@@ -419,6 +419,11 @@
 		A40B961125DE766E00E507FB /* RetailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B961025DE766E00E507FB /* RetailList.swift */; };
 		A40B961525DE779400E507FB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B961425DE779400E507FB /* HomeViewModel.swift */; };
 		A429BCAA2689CC4F008DD172 /* TextField+Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = A429BCA92689CC4F008DD172 /* TextField+Done.swift */; };
+		A42B1DF826957F800032E94D /* FTDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B1DF726957F800032E94D /* FTDelegate.swift */; };
+		A42B1DFA26957F930032E94D /* FTStickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B1DF926957F930032E94D /* FTStickyHeader.swift */; };
+		A42B1DFC26957FA70032E94D /* FTStickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B1DFB26957FA70032E94D /* FTStickyHeaderView.swift */; };
+		A42B1DFE26957FBD0032E94D /* StickyTableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B1DFD26957FBD0032E94D /* StickyTableView+Extension.swift */; };
+		A42B1E0026957FD00032E94D /* UIView+Extension+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42B1DFF26957FD00032E94D /* UIView+Extension+Anchors.swift */; };
 		A436BC2425D1A9C500DEC963 /* AuthModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BC2325D1A9C500DEC963 /* AuthModule.swift */; };
 		A436BC2925D1AA2E00DEC963 /* AuthModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BC2825D1AA2E00DEC963 /* AuthModuleFactory.swift */; };
 		A436BCB625D1AB4B00DEC963 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BCB525D1AB4B00DEC963 /* AuthView.swift */; };
@@ -1048,6 +1053,11 @@
 		A40B961025DE766E00E507FB /* RetailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailList.swift; sourceTree = "<group>"; };
 		A40B961425DE779400E507FB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A429BCA92689CC4F008DD172 /* TextField+Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Done.swift"; sourceTree = "<group>"; };
+		A42B1DF726957F800032E94D /* FTDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTDelegate.swift; sourceTree = "<group>"; };
+		A42B1DF926957F930032E94D /* FTStickyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTStickyHeader.swift; sourceTree = "<group>"; };
+		A42B1DFB26957FA70032E94D /* FTStickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTStickyHeaderView.swift; sourceTree = "<group>"; };
+		A42B1DFD26957FBD0032E94D /* StickyTableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StickyTableView+Extension.swift"; sourceTree = "<group>"; };
+		A42B1DFF26957FD00032E94D /* UIView+Extension+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension+Anchors.swift"; sourceTree = "<group>"; };
 		A436BC2325D1A9C500DEC963 /* AuthModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModule.swift; sourceTree = "<group>"; };
 		A436BC2825D1AA2E00DEC963 /* AuthModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleFactory.swift; sourceTree = "<group>"; };
 		A436BCB525D1AB4B00DEC963 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -4416,6 +4426,18 @@
 			path = Retail;
 			sourceTree = "<group>";
 		};
+		A42B1DF626957F6C0032E94D /* StickyHeader */ = {
+			isa = PBXGroup;
+			children = (
+				A42B1DF726957F800032E94D /* FTDelegate.swift */,
+				A42B1DF926957F930032E94D /* FTStickyHeader.swift */,
+				A42B1DFB26957FA70032E94D /* FTStickyHeaderView.swift */,
+				A42B1DFD26957FBD0032E94D /* StickyTableView+Extension.swift */,
+				A42B1DFF26957FD00032E94D /* UIView+Extension+Anchors.swift */,
+			);
+			path = StickyHeader;
+			sourceTree = "<group>";
+		};
 		A436BC1F25D1A99800DEC963 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -4912,6 +4934,7 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A42B1DF626957F6C0032E94D /* StickyHeader */,
 				72B6961026624CC9007F930C /* PillicanCommerceEngine */,
 				72B6960D26624BA1007F930C /* PillicanCommerce */,
 				72B6960A26621A71007F930C /* PillicanAnalyticManager */,
@@ -5949,6 +5972,7 @@
 				724FC5BF262419F600C1DED3 /* SVPrivateScrollDelegateProxy.m in Sources */,
 				724FC5B3262419BE00C1DED3 /* UIImage+Rounded.swift in Sources */,
 				55A7C076260B38720037D567 /* QRPaymentView.swift in Sources */,
+				A42B1DFA26957F930032E94D /* FTStickyHeader.swift in Sources */,
 				728434D9261D801900E21209 /* DeliveryRetailProductsModule.swift in Sources */,
 				5578855925FF639400B3A798 /* ChangePinView.swift in Sources */,
 				5555236E25EF8FBA00537D3F /* Profile.swift in Sources */,
@@ -6052,6 +6076,7 @@
 				A483E28325D40ABE006D2DAF /* WorkingTime.swift in Sources */,
 				A4057DAF2611C5780062BB5B /* AppSessionManager.swift in Sources */,
 				5584E82F25EE370900025251 /* HomeCashbackMenu.swift in Sources */,
+				A42B1DFC26957FA70032E94D /* FTStickyHeaderView.swift in Sources */,
 				72FB083D261DC02600F04395 /* ItemSearchViewModel.swift in Sources */,
 				55BEF36325FB393000205BBD /* GenderPickerViewDelegate.swift in Sources */,
 				A4B3136B25D143030003BA0B /* AuthTarget.swift in Sources */,
@@ -6124,6 +6149,7 @@
 				55A5CD2F2600A427004AA13C /* MyQRView.swift in Sources */,
 				55A7C083260B6C4F0037D567 /* PaymentChoiceView.swift in Sources */,
 				A483E29825D40ABE006D2DAF /* UIImageView+Tools.swift in Sources */,
+				A42B1DF826957F800032E94D /* FTDelegate.swift in Sources */,
 				724FC5AF262419BE00C1DED3 /* FloatingPoint+Utils.swift in Sources */,
 				5584E81B25EDFBD200025251 /* AccountKey.swift in Sources */,
 				A4BBC6E925D639DA006AF382 /* BackButtonContainerViewController.swift in Sources */,
@@ -6210,6 +6236,7 @@
 				A483E29A25D40ABE006D2DAF /* ActivityIndicator.swift in Sources */,
 				A4057DF62611E50A0062BB5B /* DeliveryApiTarget.swift in Sources */,
 				A40B95FC25DE6A5500E507FB /* HomeApiTarget.swift in Sources */,
+				A42B1E0026957FD00032E94D /* UIView+Extension+Anchors.swift in Sources */,
 				A43BC83625DFC2A600D45225 /* HomeTabBarCoordinator.swift in Sources */,
 				728434DF261D803B00E21209 /* ProductCalculateView.swift in Sources */,
 				728434E9261D807300E21209 /* DeliveryRetailHeaderView.swift in Sources */,
@@ -6407,6 +6434,7 @@
 				55A5CD4A2600C55F004AA13C /* MyCardsViewController.swift in Sources */,
 				72FC29B126311BB10042745F /* MoyaApiService.swift in Sources */,
 				A4B9A3AA25F0EBDC00F0A3D6 /* HomeCategoryMenu.swift in Sources */,
+				A42B1DFE26957FBD0032E94D /* StickyTableView+Extension.swift in Sources */,
 				5555236625EF672300537D3F /* DiskCache.swift in Sources */,
 				55312292262EC37400D33A1E /* BalanceViewModel.swift in Sources */,
 				A483E29D25D40ABE006D2DAF /* FullScreenSlideshowViewController.swift in Sources */,

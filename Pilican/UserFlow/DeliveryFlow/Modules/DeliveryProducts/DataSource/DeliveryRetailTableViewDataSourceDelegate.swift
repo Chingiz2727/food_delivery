@@ -2,11 +2,13 @@ import UIKit
 
 final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewDataSource {
     var productCategory: [ProductCategory] = []
-    private let dishList: DishList
     var selectedCellIndexPath: NSIndexPath?
     let selectedCellHeight: CGFloat = 300
     let unselectedCellHeight: CGFloat = 140
+    
+    private let dishList: DishList
     private let analytic = assembler.resolver.resolve(PillicanAnalyticManager.self)!
+    
     init(dishList: DishList) {
         self.dishList = dishList
     }
@@ -21,18 +23,30 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DeliveryRetailProductTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        
         let product = productCategory[indexPath.section].dishes[indexPath.row]
+        
         cell.buttonsLabel.addToDish = { [unowned self] product in
-            self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .addToDish(product))
-            cell.setData(product: product)
+            let dishProduct = self.dishList.changeDishList(dishAction: .addToDish(product))
+            self.getProductIndexAndSection(product: product) { index in
+                self.productCategory[index.section].dishes[index.row] = dishProduct
+            }
             self.analytic.log(.cafefood)
+            cell.setData(product: product)
+            tableView.reloadData()
         }
         
         cell.buttonsLabel.removeFromDish = { [unowned self] product in
-            self.productCategory[indexPath.section].dishes[indexPath.row] = self.dishList.changeDishList(dishAction: .removeFromDish(product))
             self.analytic.log(.deletefood)
+            let dishProduct = self.dishList.changeDishList(dishAction: .removeFromDish(product))
+            self.getProductIndexAndSection(product: product) { index in
+                self.productCategory[index.section].dishes[index.row] = dishProduct
+            }
             cell.setData(product: product)
+            tableView.reloadData()
+
         }
+        
         cell.setSelected(selected: product.isExpanded ?? false)
         cell.setData(product: product)
         return cell
@@ -41,7 +55,7 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell: DeliveryRetailProductTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let expanded = productCategory[indexPath.section].dishes[indexPath.row].isExpanded
-
+        
         if expanded == true {
             cell.setSelected(selected: false)
             productCategory[indexPath.section].dishes[indexPath.row].isExpanded = false
@@ -61,11 +75,11 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
         }
         return unselectedCellHeight
     }
-
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return productCategory[indexPath.section].dishes[indexPath.row].status == 2
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         let label = UILabel()
@@ -89,7 +103,7 @@ final class DeliveryRetailTableViewDataSourceDelegate: NSObject, UITableViewData
 extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let cell = tableView.cellForRow(at: indexPath) as? DeliveryRetailProductTableViewCell
-
+        
         let action = UIContextualAction(
             style: .normal,
             title: "") { [unowned self] _, _, completionHandler in
@@ -119,5 +133,15 @@ extension DeliveryRetailTableViewDataSourceDelegate: UITableViewDelegate {
         action.backgroundColor = .red
         action.image = Images.decline.image?.withRenderingMode(.alwaysOriginal)
         return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    func getProductIndexAndSection(product: Product, completion: @escaping(IndexPath)->()) {
+        for (section, category) in productCategory.enumerated() {
+            for (row, dish) in category.dishes.enumerated() {
+                if product.id == dish.id {
+                    completion(IndexPath(row: row, section: section))
+                }
+            }
+        }
     }
 }
