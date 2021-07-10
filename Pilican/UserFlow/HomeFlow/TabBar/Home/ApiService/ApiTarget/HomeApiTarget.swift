@@ -57,7 +57,7 @@ enum HomeApiTarget: ApiTarget {
             return ["pageNumber": pageNumber, "size": size]
         case let.fullPaginatedRetailList(pageNumber, cityId, size, categoryId, name):
             let filter = [
-                "cityId": "176",
+                "cityId": "174".toBase64(),
                 "categoryId": categoryId,
                 "name": name
             ] as [String: Any]

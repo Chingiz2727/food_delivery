@@ -110,9 +110,9 @@ final class MakeOrderView: UIView {
         heightConstraint?.activate()
     }
 
-    func setupAmount(totalSum: Int, delivery: Int, orderType: OrderType) {
-        if totalSum < 1499 {
-            payAmountView.setupExtraCost()
+    func setupAmount(totalSum: Int, delivery: Int, orderType: OrderType, extraValue: Int) {
+        if totalSum < extraValue {
+            payAmountView.setupExtraCost(extraValue: extraValue)
             if orderType ==  .takeAway {
                 payAmountView.setupFullCost(cost: totalSum + delivery)
             } else {

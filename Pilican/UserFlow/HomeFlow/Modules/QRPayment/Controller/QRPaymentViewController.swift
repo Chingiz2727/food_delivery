@@ -56,7 +56,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
             self.priceSubject.onNext(Double(textPrice)!)
             let amount = self.calculateCashback(isOn: false, amount: textPrice)
             rootView.priceView.setData(cashback: amount.0)
-            //rootView.priceView.priceTextField.isEnabled = false
+            rootView.priceView.priceTextField.isEnabled = false
             rootView.calculatePayView.setData(cardValue: amount.1, cashbackValue: amount.2)
         }
         title = "Оплата"

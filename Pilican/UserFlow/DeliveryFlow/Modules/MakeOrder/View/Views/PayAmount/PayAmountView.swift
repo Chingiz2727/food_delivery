@@ -48,7 +48,7 @@ final class PayAmountView: UIView {
         distribution: .fillEqually)
 
     private lazy var fullInfoStackView = UIStackView(
-        views: [titleLabel, orderCost, deliveryCost, extraPayment, UIView(), dividerLine, UIView(), stackView, UIView(), payButton, pkPaymentButton],
+        views: [titleLabel, orderCost, deliveryCost, extraPayment, UIView(), dividerLine, UIView(), stackView, UIView(), payButton],
         axis: .vertical,
         spacing: 6)
 
@@ -72,10 +72,10 @@ final class PayAmountView: UIView {
         deliveryCost.setup(price: cost)
     }
 
-    func setupExtraCost() {
+    func setupExtraCost(extraValue: Int) {
         extraPayment.isHidden = false
         extraPayment.setup(title: "Доплата до минимальной суммы заказа")
-        extraPayment.setup(detail: "Минимальная сумма заказа - 1500 тенге. За заказы меньше этой сумма взимается дополнительная комиссия.")
+        extraPayment.setup(detail: "Минимальная сумма заказа - \(extraValue) тенге. За заказы меньше этой сумма взимается дополнительная комиссия.")
         extraPayment.setup(price: "600 〒")
     }
 

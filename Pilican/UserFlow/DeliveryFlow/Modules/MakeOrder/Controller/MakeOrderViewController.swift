@@ -206,18 +206,18 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder, PKPa
                         self.addAmountSubject.onNext(rate.minimalRate)
                         self.totalSum.onNext(totalSum)
                         self.deliveryAmountSubject.onNext(rate.rate)
-                        self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate, orderType: orderType)
+                        self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate, orderType: orderType, extraValue: rate.minimalRate)
                         self.fullAmountSubject.onNext(totalSum + rate.rate + rate.minimalRate)
                     } else {
                         self.addAmountSubject.onNext(0)
                         self.deliveryAmountSubject.onNext(rate.rate)
-                        self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate, orderType: orderType)
+                        self.rootView.setupAmount(totalSum: totalSum, delivery: rate.rate, orderType: orderType, extraValue: rate.minimalRate)
                         self.totalSum.onNext(totalSum + rate.rate)
                         self.fullAmountSubject.onNext(totalSum + rate.rate)
                     }
                 } else {
                     self.totalSum.onNext(totalSum)
-                    self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                    self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType, extraValue: rate.minimalRate)
                     self.rootView.payAmountView.clearExtraCost()
                     self.fullAmountSubject.onNext(totalSum)
                 }
@@ -267,16 +267,16 @@ class MakeOrderViewController: ViewController, MakeOrderModule, ViewHolder, PKPa
                         if totalSum < 1499 {
                             self.addAmountSubject.onNext(0)
                             self.totalSum.onNext(totalSum)
-                            self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                            self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType, extraValue: 0)
                         } else {
                             self.addAmountSubject.onNext(0)
-                            self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                            self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType, extraValue: 0)
                             self.totalSum.onNext(totalSum)
                             self.fullAmountSubject.onNext(totalSum)
                         }
                     } else {
                         self.totalSum.onNext(totalSum)
-                        self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType)
+                        self.rootView.setupAmount(totalSum: totalSum, delivery: 0, orderType: orderType, extraValue: 0)
                         self.rootView.payAmountView.clearExtraCost()
                         self.fullAmountSubject.onNext(totalSum)
                     }
