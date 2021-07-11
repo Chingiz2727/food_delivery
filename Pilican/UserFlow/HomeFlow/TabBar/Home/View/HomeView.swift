@@ -7,7 +7,7 @@ final class HomeView: UIView {
     let searchBar: SearchBar = {
         let searchBar = SearchBar()
         searchBar.backgroundColor = .pilicanWhite
-        searchBar.placeholder = "Поиск..."
+        searchBar.placeholder = "Поиск ресторанов и магазинов"
         return searchBar
     }()
         

@@ -13,7 +13,7 @@ class BalanceView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Пополнение Pillikan баланс"
+        label.text = "Пополнение Pillikan баланса"
         label.textColor = .pilicanBlack
         label.font = UIFont.semibold20
         label.textAlignment = .center

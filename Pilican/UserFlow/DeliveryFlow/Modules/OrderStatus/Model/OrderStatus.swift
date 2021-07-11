@@ -12,7 +12,7 @@ enum OrderStatus: Int, CaseIterable {
         case .onFetching:
             return "Заказ обрабатывается"
         case .onPreparing:
-            return "Заказ готовиться"
+            return "Заказ готовится"
         case .onDelivery:
             return "Заказ отправлен"
         case .finished:

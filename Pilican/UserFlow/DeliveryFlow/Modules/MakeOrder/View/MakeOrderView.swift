@@ -15,7 +15,7 @@ final class MakeOrderView: UIView {
         let label = UILabel()
         label.font = .heading1
         label.textAlignment = .left
-        label.text = "Детали Заказа"
+        label.text = "Детали заказа"
         return label
     }()
 
@@ -32,7 +32,7 @@ final class MakeOrderView: UIView {
         let label = UILabel()
         label.font = .semibold24
         label.textAlignment = .left
-        label.text = "Ваш заказ"
+        label.text = "Мой заказ"
         return label
     }()
 
@@ -145,7 +145,7 @@ final class MakeOrderView: UIView {
     }
 
     private func configureView() {
-        deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка Pillikan", image: Images.pillikanDelivery.image)
+        deliveryView.setup(title: "Доставка Pillikan", subTitle: "Доставка через 45 мин.", image: Images.pillikanDelivery.image)
         locationView.setup(title: "Адрес доставки", subTitle: "", image: Images.LocationSelected.image)
         maskEscapeView.setup(title: "Бесконтактная доставка", subTitle: "Пожалуйста, оставьте заказ возле двери/входа", image: Images.contactlessDellivery.image)
         maskEscapeView.uiControl.isHidden = true

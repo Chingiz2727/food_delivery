@@ -1,15 +1,15 @@
 import UIKit
 
 public extension UIFont {
-    static let heading1 = UIFont(name: "Montserrat-Bold", size: 24)!
-    static let heading2 = UIFont(name: "Montserrat-Bold", size: 16)!
+    static let heading1 = UIFont(name: "Montserrat-Semibold", size: 24)!
+    static let heading2 = UIFont(name: "Montserrat-Semibold", size: 16)!
     static let description1 = UIFont(name: "Montserrat-Light", size: 14)!
     static let description2 = UIFont(name: "Montserrat-Light", size: 13)!
     static let description3 = UIFont(name: "Montserrat-Light", size: 10)!
     static let light12 = UIFont(name: "Montserrat-Light", size: 12)!
-    static let regular1 = UIFont(name: "Montserrat-Black", size: 14)!
-    static let regular2 = UIFont(name: "Montserrat-Black", size: 9)!
-    static let regular16 = UIFont(name: "Montserrat-Black", size: 16)!
+    static let regular1 = UIFont(name: "Montserrat-Bold", size: 14)!
+    static let regular2 = UIFont(name: "Montserrat-Bold", size: 9)!
+    static let regular16 = UIFont(name: "Montserrat-Bold", size: 16)!
     static let semibold24 = UIFont(name: "Montserrat-Semibold", size: 24)!
     static let semibold16 = UIFont(name: "Montserrat-Semibold", size: 16)!
     static let semibold20 = UIFont(name: "Montserrat-Semibold", size: 20)!

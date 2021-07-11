@@ -132,10 +132,10 @@ final class RegisterView: UIView {
 
     private func configureView() {
         loginContainer.title = " Номер телефона "
-        userNameContainer.title = " Ф.И.О "
+        userNameContainer.title = " Имя "
         cityContainer.title = " Город "
         promoCodeContainer.title = " Промо код (не обязательно) "
-        smsContainer.title = " СМС Код "
+        smsContainer.title = " Смс Код "
         welcomeLabel.text = "Cоздать учетную запись"
         welcomeDescriptionLabel.text = "Зарегистрируйтесь, чтобы начать"
         registerButton.setTitle("Регистрация", for: .normal)

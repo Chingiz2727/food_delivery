@@ -55,7 +55,7 @@ class BalanceViewController: ViewController, ViewHolder, BalanceModule {
             .subscribe(onNext: { [unowned self] result in
                 self.userInfoStorage.balance = result.user.balance
                 self.userInfoStorage.updateInfo.onNext(())
-                self.showSuccessMessageAlert(message: "Вы успешно пополнили баланс на сумму \(rootView.enterBalanceTextField.text ?? "0")") {
+                self.showSuccessMessageAlert(message: "Вы успешно пополнили баланс на сумму ₸ \(rootView.enterBalanceTextField.text ?? "0")") {
                     self.navigationController?.popViewController(animated: true)
                     self.dissmissBalanceModule?()
                 }

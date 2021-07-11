@@ -29,7 +29,7 @@ public extension UIView {
 
     errorView = ErrorView(
       title: "Ошибка загрузки",
-      subtitle: "Потеряно связь с интернетом",
+      subtitle: "Потеряна связь с интернетом",
       image: image,
       titleFont: titleFont,
       subtitleFont: subtitleFont,

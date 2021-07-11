@@ -34,7 +34,7 @@ final class OrderStatusView: UIView {
         let label = UILabel()
         label.font = .semibold24
         label.textAlignment = .left
-        label.text = "Ваш заказ"
+        label.text = "Мой заказ"
         return label
     }()
 

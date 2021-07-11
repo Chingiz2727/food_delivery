@@ -18,7 +18,7 @@ class ProblemView: UIView, TagListViewDelegate {
         Claim(id: 1, name: "Другое"),
         Claim(id: 2, name: "Не приняли оплату"),
         Claim(id: 3, name: "Не начислили кэшбэк"),
-        Claim(id: 4, name: "Нет  QR-Код"),
+        Claim(id: 4, name: "Нет QR-кода"),
         Claim(id: 5, name: "Pillikan не работает здесь"),
         Claim(id: 6, name: "Плохое обслуживание")
     ]
@@ -32,7 +32,7 @@ class ProblemView: UIView, TagListViewDelegate {
 
     let sendButton: UIButton = {
         let button = UIButton()
-        button.setTitle("ОТПРАВИТЬ", for: .normal)
+        button.setTitle("Отправить", for: .normal)
         button.setTitleColor(.pilicanWhite, for: .normal)
         button.titleLabel?.font = UIFont.medium16
         button.clipsToBounds = false

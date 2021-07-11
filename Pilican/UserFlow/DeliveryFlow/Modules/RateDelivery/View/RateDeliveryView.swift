@@ -42,7 +42,7 @@ class RateDeliveryView: UIView {
 
     let subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ваш отзыв поможет нам улучшить качетсво нашей доставки"
+        label.text = "Ваш отзыв поможет нам улучшить качество нашего сервиса"
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = .book18

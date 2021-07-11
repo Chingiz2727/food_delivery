@@ -16,14 +16,14 @@ class OrderSuccessView: UIView {
 
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ваш заказ оформлен"
+        label.text = "Заказ оформлен"
         label.font = .semibold18
         return label
     }()
 
     let subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ваш заказ обработан скоро \nкурьер доставить ваш заказ"
+        label.text = "Заказ обработан, скоро \nкурьер доставить ваш заказ"
         label.font = .book14
         label.numberOfLines = 0
         return label

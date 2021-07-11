@@ -37,7 +37,7 @@ class ChangePinViewController: ViewController, ViewHolder, ChangePinModule {
         bindViewModel()
         navigationController?.navigationBar.isHidden = false
         addCustomizedNotifyBar()
-        title = "Сменить PIN код"
+        title = "Сменить  пин-код"
     }
 
     private func bindViewModel() {

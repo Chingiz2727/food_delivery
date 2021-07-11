@@ -20,7 +20,7 @@ class AccountKey: UIControl {
     
     private let cellTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Сменить PIN код"
+        label.text = "Сменить пин-код"
         label.font = UIFont.medium14
         label.textAlignment = .left
         label.textColor = .black

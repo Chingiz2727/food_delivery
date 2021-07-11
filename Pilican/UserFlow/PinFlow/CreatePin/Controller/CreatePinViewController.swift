@@ -97,7 +97,7 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
         } else {
             self.userSession.pin = self.rootView.passCodeView.getPin()
             self.userSession.isBiometricAuthBeingUsed = true
-            self.showSuccessMessageAlert(message: "Пин код успешно сохранен") { [unowned self] in
+            self.showSuccessMessageAlert(message: "Пин-код успешно сохранен") { [unowned self] in
                 self.onCodeValidate?()
             }
         }
@@ -115,8 +115,8 @@ class CreatePinViewController: ViewController, CreatePinModule, ViewHolder {
 }
 
 private enum PinCodeError: String {
-    case notValid = "Введите корректный пин"
-    case notEqual = "Пин код не совпадают"
+    case notValid = "Введите корректный пин-код"
+    case notEqual = "Пин-код не совпадает"
 }
 
 enum ChangePinType {

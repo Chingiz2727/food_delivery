@@ -9,9 +9,9 @@ public class SearchView: UIView {
     public let searchBar: SearchBar = {
         let searchBar = SearchBar()
         searchBar.backgroundColor = .pilicanWhite
-        searchBar.placeholder = "Поиск..."
+        searchBar.placeholder = "Поиск еды и ресторанов"
         searchBar.returnKeyType = .done
-        searchBar.addDoneOnKeyboardWithTarget(nil, action: #selector(dismissKeyboard), titleText: "Поиск")
+        searchBar.addDoneOnKeyboardWithTarget(nil, action: #selector(dismissKeyboard), titleText: "Поиск еды и ресторанов")
         
         return searchBar
     }()
