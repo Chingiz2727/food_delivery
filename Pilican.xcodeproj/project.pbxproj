@@ -6623,7 +6623,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6709,7 +6709,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6856,7 +6856,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6885,9 +6885,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Pilican/PilicanRelease(Production).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
-				DEVELOPMENT_TEAM = V66TRWU4S3;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

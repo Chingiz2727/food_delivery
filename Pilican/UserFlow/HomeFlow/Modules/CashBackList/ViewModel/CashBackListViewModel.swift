@@ -6,7 +6,7 @@ final class CashBackListViewModel: ViewModel {
     private lazy var manager = PaginationManager<RetailList> { [unowned self] page, pageSize, _ in
         return self.apiService.makeRequest(
             to: HomeApiTarget.fullPaginatedRetailList(
-                pageNumber: page, cityId: nil, size: pageSize, categoryId: self.categoryId, name: "")
+                pageNumber: page, cityId: 176, size: pageSize, categoryId: self.categoryId, name: "")
         )
         .result()
     }

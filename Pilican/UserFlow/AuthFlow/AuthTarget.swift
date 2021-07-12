@@ -63,7 +63,7 @@ enum AuthTarget: ApiTarget {
                 "username": username.toBase64(),
                 "password": password.toBase64(),
                 "fullName": fullName.toBase64(),
-                "cityId": "\(174)".toBase64(),
+                "cityId": "\(176)".toBase64(),
                 "promo": promo?.toBase64()
             ] as [String: Any]
             return params

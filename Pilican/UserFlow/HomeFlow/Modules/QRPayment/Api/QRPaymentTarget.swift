@@ -10,12 +10,9 @@ import Foundation
 enum QRPaymentTarget: ApiTarget {
     case payByQRPartner(sig: String, orderId: String, createdAt: String, amount: Double, epayAmount: Double, comment: String,  useCashback: Bool)
     case payQr(orderId: String, useCashback: Bool)
+    
     var version: ApiVersion {
         .custom("")
-    }
-
-    var mainUrl: String? {
-        return "https://java.pillikan.org.kz/api"
     }
         
     var servicePath: String { "" }
