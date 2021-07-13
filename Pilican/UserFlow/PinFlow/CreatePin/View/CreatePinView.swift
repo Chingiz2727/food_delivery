@@ -7,7 +7,7 @@ final class CreatePinView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.font = .semibold24
-        label.text = "Создать PIN код"
+        label.text = "Создать пин-код"
         label.textAlignment = .center
         return label
     }()
@@ -17,7 +17,7 @@ final class CreatePinView: UIView {
         label.textColor = .gray
         label.font = .medium14
         label.textAlignment = .center
-        label.text = "Вы будете использовать этот пин код для входа"
+        label.text = "Вы будете использовать этот пин-код для входа"
         return label
     }()
 
@@ -26,7 +26,7 @@ final class CreatePinView: UIView {
         label.textColor = .gray
         label.font = .medium14
         label.textAlignment = .center
-        label.text = "Повторите пин код"
+        label.text = "Повторите пин-код"
         return label
     }()
     let passCodeView: SVPinView = {
@@ -130,8 +130,8 @@ final class CreatePinView: UIView {
 
     private func configureView() {
         backgroundColor = .white
-        sendButton.setTitle("Создать PIN", for: .normal)
+        sendButton.setTitle("Создать пин-код", for: .normal)
         sendButton.setTitleColor(.white, for: .normal)
-        titleLabel.text = "Создайте пин код"
+        titleLabel.text = "Создайте пин-код"
     }
 }

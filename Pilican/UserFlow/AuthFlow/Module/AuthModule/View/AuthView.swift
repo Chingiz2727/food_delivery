@@ -28,7 +28,7 @@ final class AuthView: UIView {
 
         attributedTitle.append(
             NSAttributedString(
-                string: " регистрация",
+                string: " зарегистрироваться",
                 attributes: [
                     NSAttributedString.Key.font: UIFont.book14,
                     NSAttributedString.Key.foregroundColor: UIColor.primary]
@@ -104,7 +104,7 @@ final class AuthView: UIView {
 
     private func configureView() {
         backgroundColor = .background
-        phoneContainer.title = " Номер Телефона "
+        phoneContainer.title = " Номер телефона "
         passwordContainer.title = " Пароль "
         signInButton.backgroundColor = .primary
         authBySmsButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

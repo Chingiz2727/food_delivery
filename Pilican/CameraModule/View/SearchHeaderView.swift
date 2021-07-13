@@ -18,7 +18,7 @@ class SearchHeaderView: UITableViewHeaderFooterView {
 
     let searchButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Поиск", for: .normal)
+        button.setTitle("Поиск ресторанов и магазинов", for: .normal)
         button.backgroundColor = .primary
         button.setTitleColor(.pilicanWhite, for: .normal)
         button.layer.cornerRadius = 10

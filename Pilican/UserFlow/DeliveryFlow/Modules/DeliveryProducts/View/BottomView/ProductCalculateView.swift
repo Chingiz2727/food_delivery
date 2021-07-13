@@ -8,7 +8,7 @@ final class ProductCalculateView: UIView {
         label.textColor = .white
         label.textAlignment = .left
         label.font = .medium21
-        label.text = "Перейте к оплате"
+        label.text = "Перейти к оплате"
         label.numberOfLines = 1
         return label
     }()

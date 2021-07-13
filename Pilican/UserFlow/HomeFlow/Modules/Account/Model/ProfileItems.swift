@@ -8,7 +8,7 @@
 enum ProfileItems: String, CaseIterable {
     case editAccount = "Изменить профиль"
     case myCards = "Мои карты"
-    case changePin = "Сменить PIN код"
+    case changePin = "Сменить пин-код"
     case changePassword = "Сменить пароль"
     case myQR = "Мой QR"
     case logout = ""

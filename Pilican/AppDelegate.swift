@@ -87,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.shadowImage = UIImage()
         navigationBar.titleTextAttributes = Constants.titleTextAttributes
         navigationBar.tintColor = .pilicanBlack
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Montserrat-Semibold", size: 18)!]
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for:UIBarMetrics.default)
         navigationBar.barTintColor = .pilicanWhite
     }

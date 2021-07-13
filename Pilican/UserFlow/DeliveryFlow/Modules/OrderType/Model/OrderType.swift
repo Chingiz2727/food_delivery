@@ -17,11 +17,11 @@ enum OrderType: CaseIterable {
     var description: String {
         switch self {
         case .delivery:
-            return "Доставка через 55 мин."
+            return "Доставка через 45 мин."
         case .takeAway:
             return "С собой через 15-20 мин."
         case .onRestaurant:
-            return "Недоступно"
+            return "Скоро!"
         }
     }
     

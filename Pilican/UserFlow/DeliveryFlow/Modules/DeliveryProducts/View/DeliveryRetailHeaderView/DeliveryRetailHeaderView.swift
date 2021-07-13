@@ -82,7 +82,7 @@ final class DeliveryRetailHeaderView: UIView {
 
     private let deliveryTitle: UILabel = {
         let label = UILabel()
-        label.text = "Доставка \n30-60 мин"
+        label.text = "Доставка \n30-45 мин"
         label.numberOfLines = 0
         label.font = .book10
         return label

@@ -38,8 +38,8 @@ final class RetailDescriptionView: UIView {
         titleDescriptionLabel.text = retail.description
         paymentItemView.isHidden = retail.paymentOptions.isEmpty
         optionsItemView.isHidden = retail.additionalOptions.isEmpty
-        paymentItemView.setupData(title: "Способы Оплаты", items: retail.paymentOptions)
-        optionsItemView.setupData(title: "Дополнительные Опции", items: retail.additionalOptions)
+        paymentItemView.setupData(title: "Способы оплаты", items: retail.paymentOptions)
+        optionsItemView.setupData(title: "Дополнительные опции", items: retail.additionalOptions)
     }
 
     private func setupInitialLayout() {

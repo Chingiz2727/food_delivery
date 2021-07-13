@@ -35,7 +35,7 @@ final class PinCheckView: UIView {
 
     let resetButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Восстановить пин", for: .normal)
+        button.setTitle("Восстановить пин-код", for: .normal)
         button.setTitleColor(.primary, for: .normal)
         return button
     }()
@@ -84,7 +84,7 @@ final class PinCheckView: UIView {
 
     private func configureView() {
         backgroundColor = .background
-        titleLabel.text = "Введите пин"
+        titleLabel.text = "Введите пин-код"
         sendButton.setTitle("Войти", for: .normal)
     }
 }

@@ -27,7 +27,7 @@ final class AuthBySmsView: UIView {
 
         attributedTitle.append(
             NSAttributedString(
-                string: " регистрация",
+                string: " зарегистрироваться",
                 attributes: [
                     NSAttributedString.Key.font: UIFont.book14,
                     NSAttributedString.Key.foregroundColor: UIColor.primary
@@ -116,7 +116,7 @@ final class AuthBySmsView: UIView {
     private func configureView() {
         backgroundColor = .background
         phoneContainer.title = " Номер телефона "
-        passwordContainer.title = " СМС Код "
+        passwordContainer.title = " Смс код "
         passwordContainer.textField.textContentType = .oneTimeCode
         signInButton.backgroundColor = .primary
         signInButton.layer.cornerRadius = 20
@@ -124,8 +124,8 @@ final class AuthBySmsView: UIView {
         getSmsButton.layer.cornerRadius = 20
         authStackView.setCustomSpacing(15, after: passwordContainer)
         registerButton.setTitleColor(.primary, for: .normal)
-        welcomeLabel.text = "Вход по СМС"
-        welcomeDescriptionLabel.text = "Напишите номер телефона чтобы получить смс"
+        welcomeLabel.text = "Вход по смс"
+        welcomeDescriptionLabel.text = "Введите номер телефона чтобы получить смс"
         passwordContainer.isHidden = true
         signInButton.isHidden = true
     }

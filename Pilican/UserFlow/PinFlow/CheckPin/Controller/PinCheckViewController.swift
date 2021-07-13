@@ -35,7 +35,7 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
                     self.onPinSatisfy?()
                 } else {
                     self.rootView.passCodeView.clearPin()
-                    self.showSimpleAlert(title: "Ошибка", message: "Неверный пинкод")
+                    self.showSimpleAlert(title: "Ошибка", message: "Неверный пин-код")
                 }
             })
             .disposed(by: disposeBag)
@@ -49,7 +49,7 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
                             self?.onPinSatisfy?()
                         }
                     case .error(let error):
-                        self?.showErrorInAlert(text: "Не удалость войти")
+                        self?.showErrorInAlert(text: "Не удалось войти")
                     }
                 }
             }
@@ -65,7 +65,7 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
                 self.onPinSatisfy?()
             } else {
                 self.rootView.passCodeView.clearPin()
-                self.showSimpleAlert(title: "Ошибка", message: "Неверный пинкод")
+                self.showSimpleAlert(title: "Ошибка", message: "Неверный пин-код")
             }
         }
     }
@@ -75,9 +75,9 @@ class PinCheckViewController: ViewController, PinCheckModule, ViewHolder {
         case .none:
             return ""
         case .touchId:
-            return "Touch id"
+            return "Touch ID"
         case .faceId:
-            return "Face id"
+            return "Face ID"
         }
     }
 }

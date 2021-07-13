@@ -42,7 +42,7 @@ class OrderTypeViewController: ViewController, ViewHolder, OrderTypeModule {
         bindViewModel()
         setupMap()
         analytics.log(.carttabbar)
-        navigationItem.title = "Выберите доставку"
+        navigationItem.title = "Способ доставки"
     }
     
     override func viewWillAppear(_ animated: Bool) {

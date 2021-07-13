@@ -6,7 +6,7 @@ final class DeliveryRetailListView: UIView {
     public let searchBar: SearchBar = {
         let searchBar = SearchBar()
         searchBar.backgroundColor = .pilicanWhite
-        searchBar.placeholder = "Поиск..."
+        searchBar.placeholder = "Поиск еды и ресторанов"
         return searchBar
     }()
 

@@ -103,6 +103,16 @@
 		<string>Whitney-MediumItalic.ttf</string>
 		<string>Whitney-Semibold.ttf</string>
 		<string>Whitney-SemiboldItalic.ttf</string>
+		<string>Montserrat-ThinItalic.ttf</string>
+		<string>Montserrat-Thin.ttf</string>
+		<string>Montserrat-SemiBoldItalic.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-Light.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-Black.ttf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

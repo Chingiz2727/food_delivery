@@ -13,7 +13,7 @@ class TermsofPolicyView: UIView {
 
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Пользовательское соглашение на использование программы Pillikan для Мобильных устройств"
+        label.text = "Пользовательское соглашение на использование программы Pillikan для мобильных устройств"
         label.font = UIFont.semibold16
         label.numberOfLines = 3
         label.textColor = .pilicanGray
