@@ -9,7 +9,7 @@ final class DeliveryButtonsView: UIView {
         didSet {
             countLabel.text = "\(currentDish?.shoppingCount ?? 0)"
             minusButton.isHidden = currentDish?.shoppingCount ?? 0 < 1
-            countLabel.isHidden =  currentDish?.shoppingCount ?? 0 < 1
+            countLabel.isHidden = currentDish?.shoppingCount ?? 0 < 1
         }
     }
 
@@ -49,13 +49,13 @@ final class DeliveryButtonsView: UIView {
         switch button.tag {
         case 0:
             var count = dish.shoppingCount ?? 0
-            count += 1
+            //count += 1
             dish.shoppingCount = count
             self.currentDish = dish
             self.addToDish?(dish)
         case 1:
             var count = dish.shoppingCount ?? 0
-            count -= 1
+            //count -= 1
             dish.shoppingCount = count
             self.currentDish = dish
             self.removeFromDish?(dish)
