@@ -14,7 +14,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     var openSuccessPayment: OpenSuccesPayment?
     
     typealias RootViewType = QRPaymentView
-
+    
     private let cache = DiskCache<String, Any>()
     private let disposeBag = DisposeBag()
     private let viewModel: QRPaymentViewModel
@@ -29,22 +29,24 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
     private let userInfo: UserInfoStorage
     private var textPrice: String?
     private let analytics = assembler.resolver.resolve(PillicanAnalyticManager.self)!
-    
+    private let makeMuserPay = PublishSubject<Void>()
+    private let makeRetailPay = PublishSubject<Void>()
+    private var payType = 0
     init(viewModel: QRPaymentViewModel, userInfo: UserInfoStorage, textPrice: String?) {
         self.viewModel = viewModel
         self.userInfo = userInfo
         self.textPrice = textPrice
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func loadView() {
         view = QRPaymentView()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         analytics.log(.cafepay)
@@ -58,6 +60,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
             rootView.priceView.setData(cashback: amount.0)
             rootView.priceView.priceTextField.isEnabled = false
             rootView.calculatePayView.setData(cardValue: amount.1, cashbackValue: amount.2)
+            payType = 1
         }
         title = "Оплата"
     }
@@ -66,15 +69,15 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.isHidden = false
-
+        
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.isHidden = false
     }
-
+    
     private func bindView() {
         rootView.priceView.priceTextField.becomeFirstResponder()
         rootView.retailView.setRetail(retail: viewModel.info.retail)
@@ -94,15 +97,16 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
             })
             .disposed(by: disposeBag)
     }
-
+    
     private func bindViewModel() {
         let output = viewModel.transform(input: QRPaymentViewModel.Input(
-                                            payTapped: rootView.payButton.rx.tap.asObservable(),
+                                            makeRetailPay: makeRetailPay,
                                             amount: priceSubject,
                                             epayAmount: epayAmountSubject,
                                             comment: rootView.commentView.commentTextField.rx.text.asObservable(),
                                             loadInfo: .just(()),
-                                            useCashBack: rootView.paymentChoiceView.choiceSwitch.rx.isOn.asObservable()))
+                                            useCashBack: rootView.paymentChoiceView.choiceSwitch.rx.isOn.asObservable(),
+                                            makeMuserPay: makeMuserPay))
         
         let scan = output.scanRetailResponse.publish()
         
@@ -118,21 +122,21 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         
         scan.connect()
             .disposed(by: disposeBag)
-
+        
         let result = output.payByQRPartnerResponse.publish()
-
+        
         result.element
             .subscribe(onNext: { [unowned self] result in
                 if result.success == true {
-//                    userInfo.balance = result.user.balance
+                    //                    userInfo.balance = result.user.balance
                     openSuccessPayment?(viewModel.info.retail, Int(price), cashback)
                 }
-//                if result.status == 200 {
-//                    userInfo.balance = result.user.balance
-//                    openSuccessPayment?(viewModel.info.retail, price, cashback)
-//                }
+                //                if result.status == 200 {
+                //                    userInfo.balance = result.user.balance
+                //                    openSuccessPayment?(viewModel.info.retail, price, cashback)
+                //                }
             }).disposed(by: disposeBag)
-
+        
         result.errors
             .bind(to: rx.error)
             .disposed(by: disposeBag)
@@ -143,8 +147,34 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         
         result.connect()
             .disposed(by: disposeBag)
+        
+        rootView.payButton.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                if payType == 1 {
+                    self.makeRetailPay.onNext(())
+                } else {
+                    self.makeMuserPay.onNext(())
+                }
+            })
+            .disposed(by: disposeBag)
+        let muserPay = output.muserResponse.publish()
+        
+        muserPay.element
+            .subscribe(onNext: { [unowned self] result in
+                if result.status == 200 {
+                    userInfo.balance = result.user.balance
+                    openSuccessPayment?(viewModel.info.retail, Int(price), cashback)
+                }
+            })
+            .disposed(by: disposeBag)
+        muserPay.loading
+            .bind(to: ProgressView.instance.rx.loading)
+            .disposed(by: disposeBag)
+        muserPay.connect()
+            .disposed(by: disposeBag)
+        
     }
-
+    
     private func toggleSwitch(sender: Bool) {
         if sender {
             rootView.calculatePayView.isHidden = false
@@ -155,7 +185,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
             epayAmount = Int(price)
         }
     }
-
+    
     private func calculateCashback(isOn: Bool, amount: String?) -> (String, String, String) {
         var myBonus = 0
         if let balance = userInfo.balance {
@@ -176,7 +206,7 @@ class QRPaymentViewController: ViewController, ViewHolder, QRPaymentModule {
         }
         let spendBonusAmount = myBonus > intAmount ? intAmount : myBonus
         epayAmount = amountByBonus
-
+        
         epayAmountSubject.onNext(Double(spendBonusAmount))
         return (String(cashBack), String(amountByBonus), String(spendBonusAmount))
     }

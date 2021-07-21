@@ -1,6 +1,7 @@
 import RxSwift
 
 final class AuthBySmsViewModel: ViewModel {
+    
     struct Input {
         let getSmsTapped: Observable<Void>
         let authTapped: Observable<Void>

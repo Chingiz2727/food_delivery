@@ -12,6 +12,7 @@ class AuthBySmsViewController: ViewController, AuthBySmsModule, ViewHolder {
     let sessionStorage: UserSessionStorage
     private let sendSms: PublishSubject<Void> = .init()
     private var tryCount = 0
+    
     init(viewModel: AuthBySmsViewModel, sessionStorage: UserSessionStorage) {
         self.viewModel = viewModel
         self.sessionStorage = sessionStorage
