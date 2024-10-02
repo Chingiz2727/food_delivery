@@ -35,6 +35,7 @@ final class OrderHistoryViewModel: ViewModel {
             .subscribe(onNext: { [unowned self] _ in
                 self.manager.resetData()
             }).disposed(by: disposeBag)
+        
         return .init(payHistory: self.manager.contentUpdate.asLoadingSequence())
     }
 }

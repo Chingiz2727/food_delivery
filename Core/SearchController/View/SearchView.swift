@@ -105,4 +105,5 @@ public class SearchView: UIView {
         tableView.separatorStyle = .none
         tableView.bounces = false
     }
+    
 }

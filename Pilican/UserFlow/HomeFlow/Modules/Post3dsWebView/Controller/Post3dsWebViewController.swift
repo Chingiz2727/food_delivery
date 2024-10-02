@@ -78,6 +78,7 @@ final class Post3dsWebViewController: UIViewController, Post3dsWebViewModule, WK
                 self.paRes = "\(value)"
             }
         })
+        
         webView.evaluateJavaScript("document.getElementsByName('PaRes')[0].value") { (result, error) in
             if let value = result {
                 print(value)

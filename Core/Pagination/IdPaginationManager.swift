@@ -7,7 +7,7 @@ public final class IdPaginationManager<Page: IdPagination> {
   public typealias RequestParameters = (id: Page.IdType?, count: Int)
 
   public var contentUpdate: Observable<[Page.Content]> {
-    contentSubject.asObservable()
+    contentSubject.asObservapble()
   }
   public var stateChange: Observable<PaginationState> {
     stateChangeSubject.asObservable()

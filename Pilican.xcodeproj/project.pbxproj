@@ -4988,14 +4988,9 @@
 		A483E21025D40AB4006D2DAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A42B1DF626957F6C0032E94D /* StickyHeader */,
-				72B6961026624CC9007F930C /* PillicanCommerceEngine */,
-				72B6960D26624BA1007F930C /* PillicanCommerce */,
-				72B6960A26621A71007F930C /* PillicanAnalyticManager */,
-				72B69605266217B0007F930C /* AnalyticManager */,
-				72B6960226621734007F930C /* AnalyticEvent */,
-				72B695FC2662152F007F930C /* YandexAnalyticConfiguration */,
 				A483E21925D40ABD006D2DAF /* AccessCode */,
+				72B6960226621734007F930C /* AnalyticEvent */,
+				72B69605266217B0007F930C /* AnalyticManager */,
 				A4E5815725D540E700EDC053 /* AppEnviroment */,
 				A4057DAD2611C56D0062BB5B /* AppSessionManager */,
 				72D21958263652CC008FE635 /* AuthStateObserver */,
@@ -5017,10 +5012,14 @@
 				A4BBC6D925D638C6006AF382 /* NavigationBarConfigurable */,
 				A483E22525D40ABD006D2DAF /* Networking */,
 				A483E23B25D40ABE006D2DAF /* Pagination */,
+				72B6960A26621A71007F930C /* PillicanAnalyticManager */,
+				72B6960D26624BA1007F930C /* PillicanCommerce */,
+				72B6961026624CC9007F930C /* PillicanCommerceEngine */,
 				7244657C263FA4C000C50802 /* PushNotificationManager */,
 				A483E21125D40ABD006D2DAF /* Rx+Extension */,
 				72FB07DE261DA4B200F04395 /* SearchContainerModule */,
 				72FB07EA261DA4EE00F04395 /* SearchController */,
+				A42B1DF626957F6C0032E94D /* StickyHeader */,
 				A483E22325D40ABD006D2DAF /* TokenKeyChain */,
 				A4E581E625D543B000EDC053 /* UIView+Extension */,
 				724FC58E262419BD00C1DED3 /* UltraDrawerView */,
@@ -5032,6 +5031,7 @@
 				A483E24925D40ABE006D2DAF /* View */,
 				A48CD00A25DBC9D20010829F /* ViewController */,
 				A483E24725D40ABE006D2DAF /* ViewModel */,
+				72B695FC2662152F007F930C /* YandexAnalyticConfiguration */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -6695,7 +6695,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6703,7 +6703,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6781,7 +6781,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6789,7 +6789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6928,7 +6928,7 @@
 				CODE_SIGN_ENTITLEMENTS = Pilican/Pilican.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -6936,7 +6936,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6957,16 +6957,16 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Pilican/PilicanRelease(Production).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = V66TRWU4S3;
 				INFOPLIST_FILE = Pilican/Resources/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.2.2;
+				MARKETING_VERSION = 3.3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wezom.Pillikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
